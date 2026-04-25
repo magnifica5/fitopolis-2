@@ -1,0 +1,201 @@
+[gd_scene load_steps=18 format=3 uid="uid://b15y51ipnvbeq"]
+
+[ext_resource type="Script" uid="uid://crrx5y3d4afv7" path="res://login.gd" id="1_0s12h"]
+[ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_cau7c"]
+[ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="3_2rjvb"]
+[ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="3_xlo4h"]
+[ext_resource type="Texture2D" uid="uid://dvedne034ji7d" path="res://assets/bara meniu/oras.png" id="4_eqty5"]
+[ext_resource type="Script" uid="uid://0bftw0mtie0e" path="res://texture_button.gd" id="5_0trqi"]
+[ext_resource type="Texture2D" uid="uid://d1hao38c6qxwj" path="res://assets/bara meniu/parinti.png" id="5_ma4wh"]
+[ext_resource type="Texture2D" uid="uid://dtsa03c6hr31p" path="res://assets/bara meniu/exercitii.png" id="7_0trqi"]
+[ext_resource type="Texture2D" uid="uid://bjnaxpevceujt" path="res://assets/bara meniu/stikere.jpg" id="9_2rjvb"]
+[ext_resource type="Texture2D" uid="uid://dc0gqvsbb6mku" path="res://assets/happyB.png" id="14_qyti6"]
+[ext_resource type="Texture2D" uid="uid://d3cvf2cjwrkmr" path="res://assets/happyF.png" id="15_osbi4"]
+[ext_resource type="Script" uid="uid://cgqb5jx370b1g" path="res://catre_oras.gd" id="16_621tt"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="16_qyti6"]
+[ext_resource type="AudioStream" uid="uid://tkntsuwyygk5" path="res://audio/menu_music.mp3" id="17_osbi4"]
+[ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="18_621tt"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="19_t1khq"]
+[ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="20_hkpux"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0s12h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="bg" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="bg"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -557.0
+offset_top = -365.0
+offset_right = 489.0
+offset_bottom = 365.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_cau7c")
+stretch_mode = 6
+
+[node name="levels" type="CanvasLayer" parent="."]
+
+[node name="Level1Button" type="TextureButton" parent="levels"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -521.0
+offset_top = -258.0
+offset_right = -38.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+size_flags_horizontal = 2
+texture_normal = ExtResource("3_2rjvb")
+texture_pressed = ExtResource("3_2rjvb")
+texture_hover = ExtResource("3_2rjvb")
+script = ExtResource("5_0trqi")
+
+[node name="Label" type="Label" parent="levels/Level1Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -397.5
+offset_top = -77.5
+offset_right = 425.5
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_xlo4h")
+theme_override_font_sizes/font_size = 65
+text = "ÎNCEPE
+MISIUNEA"
+horizontal_alignment = 1
+
+[node name="meniu" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="meniu"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -938.0
+offset_top = -194.0
+offset_right = 15.0
+offset_bottom = -100.21045
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 11
+
+[node name="TextureButton" type="TextureButton" parent="meniu/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_eqty5")
+texture_pressed = ExtResource("4_eqty5")
+texture_hover = ExtResource("4_eqty5")
+script = ExtResource("16_621tt")
+
+[node name="TextureButton2" type="TextureButton" parent="meniu/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_ma4wh")
+texture_pressed = ExtResource("5_ma4wh")
+texture_hover = ExtResource("5_ma4wh")
+
+[node name="TextureButton3" type="TextureButton" parent="meniu/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_2rjvb")
+texture_pressed = ExtResource("9_2rjvb")
+texture_hover = ExtResource("9_2rjvb")
+
+[node name="TextureButton4" type="TextureButton" parent="meniu/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_0trqi")
+texture_pressed = ExtResource("7_0trqi")
+texture_hover = ExtResource("7_0trqi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -635.0
+offset_top = 25.0
+offset_right = -61.666748
+offset_bottom = 215.0
+grow_horizontal = 0
+texture = ExtResource("18_621tt")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.166626
+offset_top = -51.0
+offset_right = 203.83337
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("19_t1khq")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("20_hkpux")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -280.0
+offset_right = 920.0
+offset_bottom = 744.0
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("14_qyti6")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -273.0
+offset_right = 524.0
+offset_bottom = 751.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("15_osbi4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_qyti6")
+volume_db = -10.0
+
+[node name="menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_osbi4")
+
+[connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
+[connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
+[connection signal="pressed" from="meniu/HBoxContainer/TextureButton" to="." method="_catre_oras_pressed"]
+[connection signal="pressed" from="meniu/HBoxContainer/TextureButton2" to="." method="_catre_parinti"]
+[connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]
+[connection signal="pressed" from="meniu/HBoxContainer/TextureButton4" to="." method="_catre_exercitii"]

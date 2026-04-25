@@ -1,0 +1,156 @@
+[gd_scene load_steps=32 format=3 uid="uid://c6ykvrd4fsawh"]
+
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="1_xsdo2"]
+[ext_resource type="Texture2D" uid="uid://d116aoywr74mx" path="res://exercitii_dimineata/animatie2/animatie2_0000.png" id="2_uooto"]
+[ext_resource type="Texture2D" uid="uid://d3goqm3e5ddsq" path="res://exercitii_dimineata/animatie2/animatie2_0001.png" id="3_a03kd"]
+[ext_resource type="Texture2D" uid="uid://btsuwg81bix0m" path="res://exercitii_dimineata/animatie2/animatie2_0002.png" id="4_sbrha"]
+[ext_resource type="Texture2D" uid="uid://crbmukbqot3yg" path="res://exercitii_dimineata/animatie2/animatie2_0003.png" id="5_ew6qf"]
+[ext_resource type="Texture2D" uid="uid://dn0n3h148rax8" path="res://exercitii_dimineata/animatie2/animatie2_0004.png" id="6_g1fs7"]
+[ext_resource type="Texture2D" uid="uid://bjl4olifrutqb" path="res://exercitii_dimineata/animatie2/animatie2_0005.png" id="7_bqljt"]
+[ext_resource type="Texture2D" uid="uid://dxgw0mbubrsl7" path="res://exercitii_dimineata/animatie2/animatie2_0006.png" id="8_8thnm"]
+[ext_resource type="Texture2D" uid="uid://bg15s1et6811w" path="res://exercitii_dimineata/animatie2/animatie2_0007.png" id="9_iy5e1"]
+[ext_resource type="Texture2D" uid="uid://cxmdufiuqi4lv" path="res://exercitii_dimineata/animatie2/animatie2_0008.png" id="10_u1rhm"]
+[ext_resource type="Texture2D" uid="uid://bsugxsfm7adib" path="res://exercitii_dimineata/animatie2/animatie2_0009.png" id="11_87d7c"]
+[ext_resource type="Texture2D" uid="uid://bcs1ky5rgwr5p" path="res://exercitii_dimineata/animatie2/animatie2_0010.png" id="12_yvqoj"]
+[ext_resource type="Texture2D" uid="uid://coheaej78f3l0" path="res://exercitii_dimineata/animatie2/animatie2_0011.png" id="13_v2t3d"]
+[ext_resource type="Texture2D" uid="uid://cks15yixmxvgu" path="res://exercitii_dimineata/animatie2/animatie2_0012.png" id="14_0o0de"]
+[ext_resource type="Texture2D" uid="uid://dk5jx3rfkbxuk" path="res://exercitii_dimineata/animatie2/animatie2_0013.png" id="15_ati1v"]
+[ext_resource type="Texture2D" uid="uid://bnod2o8o2rlgf" path="res://exercitii_dimineata/animatie2/animatie2_0014.png" id="16_2fcuv"]
+[ext_resource type="Texture2D" uid="uid://dotv0c41qr06n" path="res://exercitii_dimineata/animatie2/animatie2_0015.png" id="17_k2oqk"]
+[ext_resource type="Texture2D" uid="uid://cy6bk86uxsnv8" path="res://exercitii_dimineata/animatie2/animatie2_0016.png" id="18_rxcwh"]
+[ext_resource type="Texture2D" uid="uid://3kppobprb2ls" path="res://exercitii_dimineata/animatie2/animatie2_0017.png" id="19_nvu4m"]
+[ext_resource type="Texture2D" uid="uid://0sdx5g545j3y" path="res://exercitii_dimineata/animatie2/animatie2_0018.png" id="20_ytu8e"]
+[ext_resource type="Texture2D" uid="uid://dxu8oiy8gt35a" path="res://exercitii_dimineata/animatie2/animatie2_0019.png" id="21_owbww"]
+[ext_resource type="Texture2D" uid="uid://vywhdotwlbnn" path="res://exercitii_dimineata/animatie2/animatie2_0020.png" id="22_2kid2"]
+[ext_resource type="Texture2D" uid="uid://gjeuw73omedm" path="res://exercitii_dimineata/animatie2/animatie2_0021.png" id="23_qcjru"]
+[ext_resource type="Texture2D" uid="uid://dnmfckeq256g" path="res://exercitii_dimineata/animatie2/animatie2_0022.png" id="24_pvoa4"]
+[ext_resource type="Texture2D" uid="uid://bpua0nxc5fn6m" path="res://exercitii_dimineata/animatie2/animatie2_0023.png" id="25_xvhuw"]
+[ext_resource type="Texture2D" uid="uid://ka6tqg2six3j" path="res://exercitii_dimineata/animatie2/animatie2_0024.png" id="26_qw27j"]
+[ext_resource type="Texture2D" uid="uid://beanb4e6j2kyy" path="res://exercitii_dimineata/animatie2/animatie2_0025.png" id="27_hv5d4"]
+[ext_resource type="Texture2D" uid="uid://djo6xmge550hd" path="res://exercitii_dimineata/animatie2/animatie2_0026.png" id="28_tkc13"]
+[ext_resource type="Texture2D" uid="uid://dqlb17unf4cin" path="res://exercitii_dimineata/animatie2/animatie2_0027.png" id="29_w6t1o"]
+[ext_resource type="Texture2D" uid="uid://bx4s30fge3dwh" path="res://exercitii_dimineata/animatie2/animatie2_0028.png" id="30_3vrtj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jo0mn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uooto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a03kd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sbrha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ew6qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g1fs7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bqljt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8thnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iy5e1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u1rhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_87d7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yvqoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_v2t3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0o0de")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ati1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2fcuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_k2oqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rxcwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nvu4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ytu8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_owbww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2kid2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qcjru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_pvoa4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xvhuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_qw27j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hv5d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_tkc13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_w6t1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_3vrtj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -564.0
+offset_top = -184.0
+offset_right = 812.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_xsdo2")
+theme_override_font_sizes/font_size = 100
+text = "Copiază aceste mișcări"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1063, 436.99997)
+scale = Vector2(4.1500006, 3.6)
+sprite_frames = SubResource("SpriteFrames_jo0mn")
+autoplay = "default"
+frame = 2
+frame_progress = 0.8485256

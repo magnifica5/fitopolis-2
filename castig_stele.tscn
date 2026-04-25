@@ -1,0 +1,170 @@
+[gd_scene load_steps=14 format=3 uid="uid://d10fgv60nsp07"]
+
+[ext_resource type="Texture2D" uid="uid://bydnxw3csuyet" path="res://assets/castig/castig.png" id="1_ltfix"]
+[ext_resource type="Script" uid="uid://p45saxptuddr" path="res://castig_stele.gd" id="1_oraxl"]
+[ext_resource type="Script" uid="uid://bue6dcw6vh5lm" path="res://afisare_stele.gd" id="2_oraxl"]
+[ext_resource type="PackedScene" uid="uid://cbtqwb3drt75i" path="res://stea_animatie.tscn" id="2_xmo2p"]
+[ext_resource type="Texture2D" uid="uid://cnhxu2r52cjxs" path="res://assets/castig/stele_goale.png" id="3_xmo2p"]
+[ext_resource type="Texture2D" uid="uid://bqkyyqh371m3g" path="res://assets/castig/stea1.png" id="4_nrb4k"]
+[ext_resource type="Texture2D" uid="uid://dx1kk0h60jx2r" path="res://assets/castig/stea2.png" id="5_yvdf8"]
+[ext_resource type="Texture2D" uid="uid://b8sxscmoedm3p" path="res://assets/castig/stea3.png" id="6_n4h24"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="7_q52pp"]
+[ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="8_e85e1"]
+[ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="9_tupam"]
+[ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="12_xmo2p"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="13_nrb4k"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_oraxl")
+star_scene = ExtResource("2_xmo2p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -241.0
+offset_top = -148.0
+offset_right = 213.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ltfix")
+stretch_mode = 6
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("2_oraxl")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -584.99994
+offset_top = 164.0
+offset_right = -101.99994
+offset_bottom = 406.0
+grow_horizontal = 2
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_xmo2p")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -8.4
+offset_top = -161.20001
+offset_right = 167.2
+offset_bottom = 3.1999817
+grow_vertical = 0
+texture = ExtResource("4_nrb4k")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.29999
+offset_top = -5.199997
+offset_right = 106.099976
+offset_bottom = 211.19998
+grow_horizontal = 2
+texture = ExtResource("5_yvdf8")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.19998
+offset_top = -159.2
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("6_n4h24")
+
+[node name="afisare_stele" type="Timer" parent="CanvasLayer2"]
+wait_time = 0.3
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer3"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -728.0
+offset_top = -310.0
+offset_right = 780.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_q52pp")
+theme_override_font_sizes/font_size = 90
+text = "Felicitări pentru activitățile de ieri, super-eroule!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer4"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -593.0
+offset_top = 7.999999
+offset_right = -207.66675
+offset_bottom = 142.66667
+grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_e85e1")
+
+[node name="Label" type="Label" parent="CanvasLayer4/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.666656
+offset_top = -33.333344
+offset_right = 154.99997
+offset_bottom = 26.833328
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_q52pp")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_tupam")
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer5"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -282.99994
+offset_right = -86.0
+offset_bottom = -91.666626
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("12_xmo2p")
+texture_pressed = ExtResource("12_xmo2p")
+texture_hover = ExtResource("12_xmo2p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_nrb4k")
+volume_db = -10.0
+
+[connection signal="spawn_stars" from="CanvasLayer2" to="." method="_spawn_stars"]
+[connection signal="timeout" from="CanvasLayer2/afisare_stele" to="CanvasLayer2" method="_on_afisare_stele_timeout"]
+[connection signal="pressed" from="CanvasLayer5/TextureButton" to="." method="_back_to_levels"]

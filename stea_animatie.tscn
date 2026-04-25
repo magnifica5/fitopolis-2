@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbtqwb3drt75i"]
+
+[ext_resource type="Script" uid="uid://rymgknogq15v" path="res://animatie_stea.gd" id="1_w4wiw"]
+[ext_resource type="Texture2D" uid="uid://bqkyyqh371m3g" path="res://assets/castig/stea1.png" id="2_84yqn"]
+
+[sub_resource type="Curve2D" id="Curve2D_c3iv3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 970, 429, 0, 0, 0, 0, 1271, 300, 0, 0, 0, 0, 1975, 49)
+}
+point_count = 3
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer6" type="CanvasLayer" parent="."]
+
+[node name="Path2D" type="Path2D" parent="CanvasLayer6"]
+position = Vector2(0, 42.9)
+scale = Vector2(1, 0.9)
+curve = SubResource("Curve2D_c3iv3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CanvasLayer6/Path2D"]
+position = Vector2(970, 429)
+rotation = -0.40489176
+script = ExtResource("1_w4wiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer6/Path2D/PathFollow2D"]
+z_index = 1
+position = Vector2(24.55432, -1.4443645)
+scale = Vector2(0.95231795, 1.0202329)
+texture = ExtResource("2_84yqn")

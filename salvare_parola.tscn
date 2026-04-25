@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://cppkytj4sgmqa"]
+
+[ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_cu7cj"]
+[ext_resource type="Script" uid="uid://ciufjbnlak1ob" path="res://salveaza_parola.gd" id="1_o6lyb"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_o6lyb"]
+[ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="3_amw0d"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="5_amw0d"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_o6lyb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -507.0
+offset_top = -242.0
+offset_right = 342.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cu7cj")
+stretch_mode = 6
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Password_Input" type="LineEdit" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -39.0
+offset_right = 497.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_o6lyb")
+theme_override_font_sizes/font_size = 60
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer3"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -643.0
+offset_top = 76.0
+offset_right = 616.0
+offset_bottom = 382.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o6lyb")
+theme_override_font_sizes/font_size = 100
+text = "Introduceți parola cu care veți accesa secțiunea de părinte"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer4"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -353.0
+offset_right = 267.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_amw0d")
+texture_pressed = ExtResource("3_amw0d")
+texture_hover = ExtResource("3_amw0d")
+
+[node name="Label" type="Label" parent="CanvasLayer4/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_o6lyb")
+theme_override_font_sizes/font_size = 60
+text = "SALVEAZĂ"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_amw0d")
+volume_db = -10.0
+
+[connection signal="text_changed" from="CanvasLayer2/Password_Input" to="." method="_on_password_changed"]
+[connection signal="pressed" from="CanvasLayer4/TextureButton" to="." method="_on_salveaza_pressed"]

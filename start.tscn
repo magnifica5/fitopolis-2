@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0vra38li0jb7"]
+
+[ext_resource type="Script" uid="uid://ewmkn7cvwkds" path="res://start_scene.gd" id="1_4a3qj"]
+[ext_resource type="Texture2D" uid="uid://cy4c3f31o7jx5" path="res://assets/logo_final.png" id="3_gophc"]
+[ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="3_pob1m"]
+[ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="5_p0nl4"]
+[ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="6_da165"]
+[ext_resource type="Texture2D" uid="uid://dy5owb5quhb3i" path="res://assets/about.png" id="7_g38d0"]
+[ext_resource type="Script" uid="uid://dgue21fgqlxtq" path="res://addons/NotificationSchedulerPlugin/NotificationScheduler.gd" id="7_pob1m"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="8_pob1m"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4a3qj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="bg" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="bg"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1542.0
+offset_top = -794.0
+offset_right = 1612.0
+offset_bottom = 956.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("3_pob1m")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="title" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="title"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -768.0
+offset_top = -512.0
+offset_right = 768.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("3_gophc")
+stretch_mode = 3
+
+[node name="start_btn" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="start_btn"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 382.0
+offset_top = -421.0
+offset_right = 1029.615
+offset_bottom = -2.4140625
+grow_vertical = 0
+scale = Vector2(1.3, 1.3)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("5_p0nl4")
+texture_pressed = ExtResource("5_p0nl4")
+texture_hover = ExtResource("5_p0nl4")
+
+[node name="Label" type="Label" parent="start_btn"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 559.0
+offset_top = -340.0
+offset_right = 910.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_da165")
+theme_override_font_sizes/font_size = 95
+text = "START"
+
+[node name="about game" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="about game"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -760.0
+offset_top = -386.0
+offset_right = 54.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("7_g38d0")
+texture_pressed = ExtResource("7_g38d0")
+texture_hover = ExtResource("7_g38d0")
+
+[node name="NotificationScheduler" type="Node" parent="."]
+script = ExtResource("7_pob1m")
+metadata/_custom_type_script = "uid://dgue21fgqlxtq"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_pob1m")
+volume_db = -10.0
+
+[connection signal="pressed" from="start_btn/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="initialization_completed" from="NotificationScheduler" to="." method="_on_initialization_completed"]

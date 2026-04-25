@@ -1,0 +1,121 @@
+[gd_scene load_steps=14 format=3 uid="uid://d3mmmcgei8kcp"]
+
+[ext_resource type="Script" uid="uid://cbnljq1pxhlaw" path="res://spalat_pe_dinti.gd" id="1_7gmd0"]
+[ext_resource type="Script" uid="uid://dbidmmg3sw4qj" path="res://numaratoare_dinti.gd" id="2_4ax15"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="3_5abcd"]
+[ext_resource type="Texture2D" uid="uid://c5wnkkpmoyv40" path="res://spalat pe dinti/t.png" id="4_7gmd0"]
+[ext_resource type="Script" uid="uid://xawpdt1yhwd" path="res://fin_dinti.gd" id="4_p1k7a"]
+[ext_resource type="Texture2D" uid="uid://ixm2a5vbsjt5" path="res://spalat pe dinti/s7.png" id="5_sigox"]
+[ext_resource type="Script" uid="uid://cido6mp1ecxcw" path="res://verif_dinti.gd" id="6_nfpl5"]
+[ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="7_0jqvx"]
+[ext_resource type="Script" uid="uid://b8fg8wo6wid17" path="res://inapoi_baie.gd" id="9_a1de4"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="10_a1de4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1de4"]
+atlas = ExtResource("4_7gmd0")
+region = Rect2(0, 0, 253, 345)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_538pd"]
+atlas = ExtResource("4_7gmd0")
+region = Rect2(253, 0, 253, 345)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sigox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1de4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_538pd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7gmd0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_4ax15")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -974.0
+offset_top = -223.0
+offset_right = -538.0
+offset_bottom = 198.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.01171875, 0.00064086914, 0.00064086914, 1)
+theme_override_fonts/font = ExtResource("3_5abcd")
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(406.4, 537.00006)
+scale = Vector2(3.212648, 3.15)
+sprite_frames = SubResource("SpriteFrames_sigox")
+autoplay = "default"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("4_p1k7a")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+visible = false
+z_index = 1
+z_as_relative = false
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -539.0
+offset_right = 819.0
+offset_bottom = 536.0
+grow_vertical = 2
+texture = ExtResource("5_sigox")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+script = ExtResource("6_nfpl5")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer3"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -348.0
+offset_top = -349.0
+offset_right = -151.0
+offset_bottom = -157.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("7_0jqvx")
+texture_pressed = ExtResource("7_0jqvx")
+texture_hover = ExtResource("7_0jqvx")
+script = ExtResource("9_a1de4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_a1de4")
+volume_db = -10.0
+
+[connection signal="final_dinti" from="CanvasLayer" to="CanvasLayer2" method="_final_dinti"]
+[connection signal="final_dinti" from="CanvasLayer" to="CanvasLayer3" method="_final_dinti"]
+[connection signal="pressed" from="CanvasLayer3/TextureButton" to="." method="_spala_fata"]

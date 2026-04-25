@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://1i10p7xpxl0k"]
+
+[ext_resource type="Script" uid="uid://df4l5akj72nbh" path="res://code_email.gd" id="1_2co20"]
+[ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_lf5kb"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_55731"]
+[ext_resource type="Script" uid="uid://bvmhl51co4p0q" path="res://code_input.gd" id="3_2co20"]
+[ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="4_7f7mq"]
+[ext_resource type="Script" uid="uid://djxduytswe8n7" path="res://salv_code.gd" id="5_55731"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="5_fwxah"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2co20")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -507.0
+offset_top = -242.0
+offset_right = 342.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lf5kb")
+stretch_mode = 6
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Password_Input" type="LineEdit" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -39.0
+offset_right = 497.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_55731")
+theme_override_font_sizes/font_size = 60
+script = ExtResource("3_2co20")
+
+[node name="Label" type="Label" parent="CanvasLayer2/Password_Input"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -476.5
+offset_top = 86.5
+offset_right = 479.5
+offset_bottom = 156.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_55731")
+theme_override_font_sizes/font_size = 50
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer3"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -643.0
+offset_top = 142.0
+offset_right = 616.0
+offset_bottom = 448.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_55731")
+theme_override_font_sizes/font_size = 94
+text = "Verificați adresa de email și introduceți codul de verificare"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer4"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -353.0
+offset_right = 267.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_7f7mq")
+texture_pressed = ExtResource("4_7f7mq")
+texture_hover = ExtResource("4_7f7mq")
+script = ExtResource("5_55731")
+
+[node name="Label" type="Label" parent="CanvasLayer4/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_55731")
+theme_override_font_sizes/font_size = 60
+text = "CONTINUĂ"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fwxah")
+volume_db = -10.0
+
+[connection signal="apari" from="CanvasLayer2/Password_Input" to="CanvasLayer4/TextureButton" method="_on_apari"]
+[connection signal="text_changed" from="CanvasLayer2/Password_Input" to="CanvasLayer2/Password_Input" method="_on_text_changed"]
+[connection signal="pressed" from="CanvasLayer4/TextureButton" to="." method="_on_pressed"]

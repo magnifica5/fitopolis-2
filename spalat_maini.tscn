@@ -1,0 +1,174 @@
+[gd_scene load_steps=21 format=3 uid="uid://c864c5wuonsrs"]
+
+[ext_resource type="Script" uid="uid://dbidmmg3sw4qj" path="res://numaratoare_dinti.gd" id="1_r2uc7"]
+[ext_resource type="Script" uid="uid://bk07nul7cqlqs" path="res://spalat_maini.gd" id="1_ry1mv"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="3_801v6"]
+[ext_resource type="Texture2D" uid="uid://jhhs1ne4un78" path="res://spalat pe dinti/spalat_maini_b_fin.png" id="3_agy53"]
+[ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="4_801v6"]
+[ext_resource type="Script" uid="uid://b0iq25oo8uktk" path="res://back_to_levels.gd" id="4_idunr"]
+[ext_resource type="Script" uid="uid://c3corcmfufupq" path="res://baiat.gd" id="4_tp7ag"]
+[ext_resource type="Texture2D" uid="uid://c47s0qqdoamyl" path="res://spalat pe dinti/spalat_maini_f.png" id="5_agy53"]
+[ext_resource type="Script" uid="uid://bl344u5hv6t5o" path="res://fata.gd" id="7_xwsei"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="10_xwsei"]
+[ext_resource type="AudioStream" uid="uid://b2bkea040v7rc" path="res://audio/voices/miss_nutri_sm.mp3" id="11_ygyv1"]
+[ext_resource type="AudioStream" uid="uid://2f1meowc8shn" path="res://audio/voices/santos_sm.mp3" id="12_lh6ws"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maqut"]
+atlas = ExtResource("3_agy53")
+region = Rect2(1, 0, 511, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygyv1"]
+atlas = ExtResource("3_agy53")
+region = Rect2(512, 0, 511, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh6ws"]
+atlas = ExtResource("3_agy53")
+region = Rect2(1023, 0, 511, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_agy53"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maqut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygyv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh6ws")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.5
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q2ol"]
+atlas = ExtResource("5_agy53")
+region = Rect2(1, 0, 511, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp7ag"]
+atlas = ExtResource("5_agy53")
+region = Rect2(512, 0, 511, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwsei"]
+atlas = ExtResource("5_agy53")
+region = Rect2(1023, 0, 511, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_maqut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q2ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp7ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwsei")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ry1mv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_r2uc7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+z_index = 1
+position = Vector2(445.404, 624)
+scale = Vector2(1.7863168, 1.6143577)
+sprite_frames = SubResource("SpriteFrames_agy53")
+autoplay = "default"
+frame_progress = 0.46392146
+script = ExtResource("4_tp7ag")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -840.0
+offset_top = -86.0
+offset_right = -214.0
+offset_bottom = 214.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_801v6")
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1039.0
+offset_top = -11.0
+offset_right = -62.0
+offset_bottom = 501.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.59375, 0.04638672, 0.04638672, 1)
+theme_override_fonts/font = ExtResource("3_801v6")
+theme_override_font_sizes/font_size = 100
+text = "Mereu spală-te pe mâini înainte de a mânca"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(449.99988, 617.99994)
+scale = Vector2(1.7571555, 1.6411134)
+sprite_frames = SubResource("SpriteFrames_maqut")
+autoplay = "default"
+frame_progress = 0.7888156
+script = ExtResource("7_xwsei")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("4_idunr")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer2"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -305.0
+offset_top = -272.0
+offset_right = -108.0
+offset_bottom = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("4_801v6")
+texture_pressed = ExtResource("4_801v6")
+texture_hover = ExtResource("4_801v6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_xwsei")
+volume_db = -10.0
+
+[node name="miss_nutri" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ygyv1")
+
+[node name="santos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_lh6ws")
+
+[connection signal="final_dinti" from="CanvasLayer" to="CanvasLayer2" method="_final_dinti"]
+[connection signal="pressed" from="CanvasLayer2/TextureButton" to="." method="_back_to_levels"]

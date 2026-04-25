@@ -1,0 +1,329 @@
+[gd_scene load_steps=76 format=3 uid="uid://bfsfjosx0ct4"]
+
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="1_5fckf"]
+[ext_resource type="Texture2D" uid="uid://dh6w3u52tp2iv" path="res://exercitii_dimineata/animatie13/animatie13_0000.png" id="2_dpiy8"]
+[ext_resource type="Texture2D" uid="uid://ba28h3svhavcn" path="res://exercitii_dimineata/animatie13/animatie13_0001.png" id="3_ej06j"]
+[ext_resource type="Texture2D" uid="uid://biw43a5y7dloy" path="res://exercitii_dimineata/animatie13/animatie13_0002.png" id="4_urx5p"]
+[ext_resource type="Texture2D" uid="uid://cxgjo48e5awb4" path="res://exercitii_dimineata/animatie13/animatie13_0003.png" id="5_eqkd5"]
+[ext_resource type="Texture2D" uid="uid://c4dwi0r0db8uc" path="res://exercitii_dimineata/animatie13/animatie13_0004.png" id="6_txrvp"]
+[ext_resource type="Texture2D" uid="uid://bl0vms64260jr" path="res://exercitii_dimineata/animatie13/animatie13_0005.png" id="7_af0ms"]
+[ext_resource type="Texture2D" uid="uid://cp4wvshnbxabb" path="res://exercitii_dimineata/animatie13/animatie13_0006.png" id="8_oftlq"]
+[ext_resource type="Texture2D" uid="uid://slanqwlqifqq" path="res://exercitii_dimineata/animatie13/animatie13_0007.png" id="9_1ktpv"]
+[ext_resource type="Texture2D" uid="uid://d3ll8mt0mlm84" path="res://exercitii_dimineata/animatie13/animatie13_0008.png" id="10_k6puf"]
+[ext_resource type="Texture2D" uid="uid://c260fd3scr1a2" path="res://exercitii_dimineata/animatie13/animatie13_0009.png" id="11_igg5q"]
+[ext_resource type="Texture2D" uid="uid://c7y5mj3cxjteq" path="res://exercitii_dimineata/animatie13/animatie13_0010.png" id="12_riflk"]
+[ext_resource type="Texture2D" uid="uid://grcocakp6o5b" path="res://exercitii_dimineata/animatie13/animatie13_0011.png" id="13_eaw7o"]
+[ext_resource type="Texture2D" uid="uid://c6vxtwctu81yx" path="res://exercitii_dimineata/animatie13/animatie13_0012.png" id="14_supu3"]
+[ext_resource type="Texture2D" uid="uid://dmkfogujge8to" path="res://exercitii_dimineata/animatie13/animatie13_0013.png" id="15_0qj8s"]
+[ext_resource type="Texture2D" uid="uid://dprwbq6pg4qdt" path="res://exercitii_dimineata/animatie13/animatie13_0014.png" id="16_6bhf6"]
+[ext_resource type="Texture2D" uid="uid://bjfmjdlfout0n" path="res://exercitii_dimineata/animatie13/animatie13_0015.png" id="17_7nosv"]
+[ext_resource type="Texture2D" uid="uid://brbwtebuxxqe3" path="res://exercitii_dimineata/animatie13/animatie13_0016.png" id="18_d345j"]
+[ext_resource type="Texture2D" uid="uid://bucnx0j8mbed" path="res://exercitii_dimineata/animatie13/animatie13_0017.png" id="19_ou4mj"]
+[ext_resource type="Texture2D" uid="uid://gs3k8uni3mtv" path="res://exercitii_dimineata/animatie13/animatie13_0018.png" id="20_ga7dk"]
+[ext_resource type="Texture2D" uid="uid://cjawxte4bhrp5" path="res://exercitii_dimineata/animatie13/animatie13_0019.png" id="21_wycbj"]
+[ext_resource type="Texture2D" uid="uid://cgwavly1mn80n" path="res://exercitii_dimineata/animatie13/animatie13_0020.png" id="22_etv1j"]
+[ext_resource type="Texture2D" uid="uid://c6r4w6nlfxk6b" path="res://exercitii_dimineata/animatie13/animatie13_0021.png" id="23_koy4v"]
+[ext_resource type="Texture2D" uid="uid://d4r33raviu61" path="res://exercitii_dimineata/animatie13/animatie13_0022.png" id="24_xfpdb"]
+[ext_resource type="Texture2D" uid="uid://cc1ih3ucnwu2a" path="res://exercitii_dimineata/animatie13/animatie13_0023.png" id="25_p1feb"]
+[ext_resource type="Texture2D" uid="uid://d34caduhj1om7" path="res://exercitii_dimineata/animatie13/animatie13_0024.png" id="26_x38x3"]
+[ext_resource type="Texture2D" uid="uid://dccmemudu18su" path="res://exercitii_dimineata/animatie13/animatie13_0025.png" id="27_q2or2"]
+[ext_resource type="Texture2D" uid="uid://due550xeyvijp" path="res://exercitii_dimineata/animatie13/animatie13_0026.png" id="28_3dccv"]
+[ext_resource type="Texture2D" uid="uid://c8856amsjhj6d" path="res://exercitii_dimineata/animatie13/animatie13_0027.png" id="29_uo6df"]
+[ext_resource type="Texture2D" uid="uid://ddw4lhw1wvwcc" path="res://exercitii_dimineata/animatie13/animatie13_0028.png" id="30_idouf"]
+[ext_resource type="Texture2D" uid="uid://b0pmfqho73jgb" path="res://exercitii_dimineata/animatie13/animatie13_0029.png" id="31_0uwaw"]
+[ext_resource type="Texture2D" uid="uid://ctyfuoasrqj6k" path="res://exercitii_dimineata/animatie13/animatie13_0030.png" id="32_cut7m"]
+[ext_resource type="Texture2D" uid="uid://dmwgcccik210q" path="res://exercitii_dimineata/animatie13/animatie13_0031.png" id="33_kqm8l"]
+[ext_resource type="Texture2D" uid="uid://bo33sl0kawp7o" path="res://exercitii_dimineata/animatie13/animatie13_0032.png" id="34_hexnu"]
+[ext_resource type="Texture2D" uid="uid://0qxa51empsww" path="res://exercitii_dimineata/animatie13/animatie13_0033.png" id="35_fstuk"]
+[ext_resource type="Texture2D" uid="uid://culuhmh01rp4t" path="res://exercitii_dimineata/animatie13/animatie13_0034.png" id="36_e82wp"]
+[ext_resource type="Texture2D" uid="uid://bvkl4kejfwr2a" path="res://exercitii_dimineata/animatie13/animatie13_0035.png" id="37_5bq5c"]
+[ext_resource type="Texture2D" uid="uid://gyttls4crcd0" path="res://exercitii_dimineata/animatie13/animatie13_0036.png" id="38_dacp3"]
+[ext_resource type="Texture2D" uid="uid://iwnfyc6p0fp" path="res://exercitii_dimineata/animatie13/animatie13_0037.png" id="39_ptdbo"]
+[ext_resource type="Texture2D" uid="uid://ccrmyk17hh7nu" path="res://exercitii_dimineata/animatie13/animatie13_0038.png" id="40_qo0fh"]
+[ext_resource type="Texture2D" uid="uid://b6whjif2etu4q" path="res://exercitii_dimineata/animatie13/animatie13_0039.png" id="41_t7nwl"]
+[ext_resource type="Texture2D" uid="uid://bdmebmw7hy2yq" path="res://exercitii_dimineata/animatie13/animatie13_0040.png" id="42_8sqtl"]
+[ext_resource type="Texture2D" uid="uid://c4y4ejjbo8oum" path="res://exercitii_dimineata/animatie13/animatie13_0041.png" id="43_p5ovy"]
+[ext_resource type="Texture2D" uid="uid://cfkbw036rwgsm" path="res://exercitii_dimineata/animatie13/animatie13_0042.png" id="44_6jawt"]
+[ext_resource type="Texture2D" uid="uid://cgo16aj0b4dpi" path="res://exercitii_dimineata/animatie13/animatie13_0043.png" id="45_lheqg"]
+[ext_resource type="Texture2D" uid="uid://b164n1upocjuq" path="res://exercitii_dimineata/animatie13/animatie13_0044.png" id="46_y0ig6"]
+[ext_resource type="Texture2D" uid="uid://crin65o24fykp" path="res://exercitii_dimineata/animatie13/animatie13_0045.png" id="47_lwl8e"]
+[ext_resource type="Texture2D" uid="uid://bv7rcwt8vxxm4" path="res://exercitii_dimineata/animatie13/animatie13_0046.png" id="48_18nho"]
+[ext_resource type="Texture2D" uid="uid://cmpur2skqotwd" path="res://exercitii_dimineata/animatie13/animatie13_0047.png" id="49_uaha3"]
+[ext_resource type="Texture2D" uid="uid://ciwjd0a64yuhl" path="res://exercitii_dimineata/animatie13/animatie13_0048.png" id="50_jwhew"]
+[ext_resource type="Texture2D" uid="uid://bnb40uh65xgi4" path="res://exercitii_dimineata/animatie13/animatie13_0049.png" id="51_w3ame"]
+[ext_resource type="Texture2D" uid="uid://cwacfg2qg2p7m" path="res://exercitii_dimineata/animatie13/animatie13_0050.png" id="52_jjqnw"]
+[ext_resource type="Texture2D" uid="uid://kujcddn528hb" path="res://exercitii_dimineata/animatie13/animatie13_0051.png" id="53_wnh8x"]
+[ext_resource type="Texture2D" uid="uid://f4mhes1bog14" path="res://exercitii_dimineata/animatie13/animatie13_0052.png" id="54_6oa3h"]
+[ext_resource type="Texture2D" uid="uid://dugwoi5gmchcu" path="res://exercitii_dimineata/animatie13/animatie13_0053.png" id="55_dc4ar"]
+[ext_resource type="Texture2D" uid="uid://bpmuaicve4wug" path="res://exercitii_dimineata/animatie13/animatie13_0054.png" id="56_6048n"]
+[ext_resource type="Texture2D" uid="uid://ditky7rhk084u" path="res://exercitii_dimineata/animatie13/animatie13_0055.png" id="57_t4a5b"]
+[ext_resource type="Texture2D" uid="uid://8n6k8p5bb04e" path="res://exercitii_dimineata/animatie13/animatie13_0056.png" id="58_u175v"]
+[ext_resource type="Texture2D" uid="uid://ckofs647pp7nk" path="res://exercitii_dimineata/animatie13/animatie13_0057.png" id="59_gmhri"]
+[ext_resource type="Texture2D" uid="uid://cgeua04xl5fag" path="res://exercitii_dimineata/animatie13/animatie13_0058.png" id="60_nfhjl"]
+[ext_resource type="Texture2D" uid="uid://gxb0ff1h5g5l" path="res://exercitii_dimineata/animatie13/animatie13_0059.png" id="61_2l804"]
+[ext_resource type="Texture2D" uid="uid://dt1cjyy6gcfp6" path="res://exercitii_dimineata/animatie13/animatie13_0060.png" id="62_dbwf2"]
+[ext_resource type="Texture2D" uid="uid://dfyvf6jdpwgds" path="res://exercitii_dimineata/animatie13/animatie13_0061.png" id="63_piiwi"]
+[ext_resource type="Texture2D" uid="uid://d2jbttdmnwweo" path="res://exercitii_dimineata/animatie13/animatie13_0062.png" id="64_5b51g"]
+[ext_resource type="Texture2D" uid="uid://bk51661ebphah" path="res://exercitii_dimineata/animatie13/animatie13_0063.png" id="65_cficg"]
+[ext_resource type="Texture2D" uid="uid://c204nni5vtk4a" path="res://exercitii_dimineata/animatie13/animatie13_0064.png" id="66_iyety"]
+[ext_resource type="Texture2D" uid="uid://1n14qadst4eb" path="res://exercitii_dimineata/animatie13/animatie13_0065.png" id="67_bnfct"]
+[ext_resource type="Texture2D" uid="uid://c2pqbj4hc0y5o" path="res://exercitii_dimineata/animatie13/animatie13_0066.png" id="68_f73jh"]
+[ext_resource type="Texture2D" uid="uid://1mppnx3ahhhu" path="res://exercitii_dimineata/animatie13/animatie13_0067.png" id="69_r67ug"]
+[ext_resource type="Texture2D" uid="uid://c614ho1gsm7w0" path="res://exercitii_dimineata/animatie13/animatie13_0068.png" id="70_jen1y"]
+[ext_resource type="Texture2D" uid="uid://dmrpyy566i1p4" path="res://exercitii_dimineata/animatie13/animatie13_0069.png" id="71_aky2f"]
+[ext_resource type="Texture2D" uid="uid://dmo63s51jbwld" path="res://exercitii_dimineata/animatie13/animatie13_0070.png" id="72_6h8if"]
+[ext_resource type="Texture2D" uid="uid://ceu6rampmp8a8" path="res://exercitii_dimineata/animatie13/animatie13_0071.png" id="73_rj3hw"]
+[ext_resource type="Texture2D" uid="uid://ia707x4m8kpa" path="res://exercitii_dimineata/animatie13/animatie13_0072.png" id="74_0m6yt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_708of"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dpiy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ej06j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_urx5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eqkd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_txrvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_af0ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oftlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1ktpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_k6puf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_igg5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_riflk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_eaw7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_supu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0qj8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6bhf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7nosv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_d345j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ou4mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ga7dk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wycbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_etv1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_koy4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xfpdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_p1feb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_x38x3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_q2or2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3dccv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_uo6df")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_idouf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_0uwaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_cut7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_kqm8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_hexnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_fstuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_e82wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_5bq5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_dacp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ptdbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_qo0fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_t7nwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_8sqtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_p5ovy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_6jawt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_lheqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_y0ig6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_lwl8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_18nho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_uaha3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_jwhew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_w3ame")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_jjqnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_wnh8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_6oa3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_dc4ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_6048n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_t4a5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_u175v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_gmhri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_nfhjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_2l804")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_dbwf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_piiwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_5b51g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_cficg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_iyety")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_bnfct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_f73jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_r67ug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_jen1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_aky2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_6h8if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_rj3hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_0m6yt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -564.0
+offset_top = -184.0
+offset_right = 812.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5fckf")
+theme_override_font_sizes/font_size = 100
+text = "Copiază aceste mișcări"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1072.5, 428.50003)
+scale = Vector2(4.2578125, 3.6583333)
+sprite_frames = SubResource("SpriteFrames_708of")

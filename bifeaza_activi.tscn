@@ -1,0 +1,212 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmh7bpqsh7wdu"]
+
+[ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_i3qld"]
+[ext_resource type="Script" uid="uid://mq5xobah3gjy" path="res://bifeaza_activi.gd" id="1_s7x7j"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_saa1d"]
+[ext_resource type="Texture2D" uid="uid://m2jb6cspt5ui" path="res://assets/buton_simplu.png" id="3_dthr3"]
+[ext_resource type="Texture2D" uid="uid://dcnfwp3m4001b" path="res://assets/buton_bifa.png" id="3_s7x7j"]
+[ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="6_nqjwd"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="7_nqjwd"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_s7x7j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -693.0
+offset_top = -439.0
+offset_right = 537.0
+offset_bottom = 453.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i3qld")
+stretch_mode = 6
+
+[node name="CanvasLayer9" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/CanvasLayer9"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 292.0
+offset_top = 29.0
+offset_right = 204.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 400
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_saa1d")
+theme_override_font_sizes/font_size = 70
+theme_override_icons/checked = ExtResource("3_s7x7j")
+theme_override_icons/unchecked = ExtResource("3_dthr3")
+text = "Trezire Dimineață"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 400
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_saa1d")
+theme_override_font_sizes/font_size = 70
+theme_override_icons/checked = ExtResource("3_s7x7j")
+theme_override_icons/unchecked = ExtResource("3_dthr3")
+text = "Exerciții dimineața"
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 400
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_saa1d")
+theme_override_font_sizes/font_size = 70
+theme_override_icons/checked = ExtResource("3_s7x7j")
+theme_override_icons/unchecked = ExtResource("3_dthr3")
+text = "Masa de dimineață"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 400
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_saa1d")
+theme_override_font_sizes/font_size = 70
+theme_override_icons/checked = ExtResource("3_s7x7j")
+theme_override_icons/unchecked = ExtResource("3_dthr3")
+text = "Masa de prânz"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 400
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_saa1d")
+theme_override_font_sizes/font_size = 70
+theme_override_icons/checked = ExtResource("3_s7x7j")
+theme_override_icons/unchecked = ExtResource("3_dthr3")
+text = "Exerciții după-amiază"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 400
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_saa1d")
+theme_override_font_sizes/font_size = 70
+theme_override_icons/checked = ExtResource("3_s7x7j")
+theme_override_icons/unchecked = ExtResource("3_dthr3")
+text = "Masa de seară"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 400
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_saa1d")
+theme_override_font_sizes/font_size = 70
+theme_override_icons/checked = ExtResource("3_s7x7j")
+theme_override_icons/unchecked = ExtResource("3_dthr3")
+text = "Activități înainte de somn"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer2"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -234.0
+offset_top = -220.00006
+offset_right = -37.0
+offset_bottom = -28.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.1, 1.1)
+texture_normal = ExtResource("6_nqjwd")
+texture_pressed = ExtResource("6_nqjwd")
+texture_hover = ExtResource("6_nqjwd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nqjwd")
+volume_db = -10.0
+
+[connection signal="pressed" from="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_trezire_pressed"]
+[connection signal="pressed" from="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer2/CheckBox" to="." method="_on_ex_pressed"]
+[connection signal="pressed" from="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer8/CheckBox" to="." method="_on_dejun_pressed"]
+[connection signal="pressed" from="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer3/CheckBox" to="." method="_on_pranz_pressed"]
+[connection signal="pressed" from="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer4/CheckBox" to="." method="_on_ex2_pressed"]
+[connection signal="pressed" from="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer5/CheckBox" to="." method="_on_cina_pressed"]
+[connection signal="pressed" from="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer6/CheckBox" to="." method="_on_somn_pressed"]
+[connection signal="pressed" from="CanvasLayer2/TextureButton" to="." method="_back_to_start"]

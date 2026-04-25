@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://dusqkcfdnqgn7"]
+
+[ext_resource type="Texture2D" uid="uid://d2sb8pinqfabg" path="res://spalat pe dinti/fata spalat_dinti.png" id="1_el0bg"]
+[ext_resource type="Script" uid="uid://dpi7a00calruy" path="res://spalat_dinti_fata.gd" id="1_kla15"]
+[ext_resource type="Script" uid="uid://dbidmmg3sw4qj" path="res://numaratoare_dinti.gd" id="1_q4n57"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="3_72k1y"]
+[ext_resource type="Script" uid="uid://xawpdt1yhwd" path="res://fin_dinti.gd" id="4_o3rc8"]
+[ext_resource type="Texture2D" uid="uid://c0xme8c5axc82" path="res://spalat pe dinti/final_fata.png" id="5_kla15"]
+[ext_resource type="Script" uid="uid://cido6mp1ecxcw" path="res://verif_dinti.gd" id="6_vlao8"]
+[ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="7_kla15"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="9_vlao8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el0bg"]
+atlas = ExtResource("1_el0bg")
+region = Rect2(768, 0, 256, 342)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4n57"]
+atlas = ExtResource("1_el0bg")
+region = Rect2(512, 342, 256, 342)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f361e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el0bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4n57")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kla15")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_q4n57")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+z_index = 1
+position = Vector2(385, 539.97003)
+scale = Vector2(3, 3.192807)
+sprite_frames = SubResource("SpriteFrames_f361e")
+autoplay = "default"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -982.0
+offset_top = -223.0
+offset_right = -629.0
+offset_bottom = 94.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_72k1y")
+theme_override_font_sizes/font_size = 300
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("4_o3rc8")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 772.0
+grow_vertical = 2
+texture = ExtResource("5_kla15")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+script = ExtResource("6_vlao8")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer3"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -370.0
+offset_right = -178.0
+offset_bottom = -178.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("7_kla15")
+texture_pressed = ExtResource("7_kla15")
+texture_hover = ExtResource("7_kla15")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_vlao8")
+volume_db = -10.0
+
+[connection signal="final_dinti" from="CanvasLayer" to="CanvasLayer2" method="_final_dinti"]
+[connection signal="final_dinti" from="CanvasLayer" to="CanvasLayer3" method="_final_dinti"]
+[connection signal="pressed" from="CanvasLayer3/TextureButton" to="." method="_spalat_dinti"]

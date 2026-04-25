@@ -1,0 +1,370 @@
+[gd_scene load_steps=14 format=3 uid="uid://cs5s2q3xvif0e"]
+
+[ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_0vaj2"]
+[ext_resource type="Script" uid="uid://cv84ul8l7pbh5" path="res://alege_parinte.gd" id="1_3lvgo"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_288ex"]
+[ext_resource type="Script" uid="uid://d1nmadtcjsojw" path="res://hour_input_trezire.gd" id="3_3lvgo"]
+[ext_resource type="Script" uid="uid://b4kxb60q6lb82" path="res://hour_input_ex.gd" id="4_icpug"]
+[ext_resource type="Script" uid="uid://cd53h8c006jf5" path="res://hour_input_dejun.gd" id="5_dlgmu"]
+[ext_resource type="Script" uid="uid://eh7ge8cxhdj3" path="res://hour_input_pranz.gd" id="6_6dl7k"]
+[ext_resource type="Script" uid="uid://dewy62jk5c41u" path="res://hour_input_ex_2.gd" id="7_4wrvx"]
+[ext_resource type="Script" uid="uid://c4iuq1pc58o2p" path="res://hour_input_cina.gd" id="8_oyw4b"]
+[ext_resource type="Script" uid="uid://dex5vpp0oatvj" path="res://hour_input_somn.gd" id="9_u82v7"]
+[ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="10_1t47e"]
+[ext_resource type="Script" uid="uid://cqq83gi0i5uos" path="res://hour_input_parinte.gd" id="13_dlgmu"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="14_icpug"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3lvgo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -693.0
+offset_top = -439.0
+offset_right = 537.0
+offset_bottom = 453.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0vaj2")
+stretch_mode = 6
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_icpug")
+volume_db = -10.0
+
+[node name="CanvasLayer9" type="CanvasLayer" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer9"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 140.0
+offset_top = 48.0
+offset_right = 253.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer9/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 55
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 400
+
+[node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 60
+text = "Ora de Trezire:"
+
+[node name="HourInput-trezire" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(650, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "intre 06:30 si 7:30"
+max_length = 100
+script = ExtResource("3_3lvgo")
+
+[node name="Label-trezire" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer/HourInput-trezire"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -734.0
+offset_top = 55.0
+offset_bottom = 115.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.27058825, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 55
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 210
+
+[node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 60
+text = "Exercitii dimineata:"
+
+[node name="HourInput-ex" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "intre 07:00 si 8:00"
+script = ExtResource("4_icpug")
+
+[node name="Label-ex" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer2/HourInput-ex"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -734.0
+offset_top = 59.0
+offset_bottom = 115.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.27058825, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 55
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 284
+
+[node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 60
+text = "Masa de dimineata:"
+
+[node name="HourInput-dejun" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "intre 07:20 si 9:00"
+script = ExtResource("5_dlgmu")
+
+[node name="Label-dejun" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer3/HourInput-dejun"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -734.0
+offset_top = 62.0
+offset_bottom = 118.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.27058825, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 55
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 435
+
+[node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 60
+text = "Masa de pranz:"
+
+[node name="HourInput-pranz" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "intre 13:00 si 15:45"
+script = ExtResource("6_6dl7k")
+
+[node name="Label-pranz" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer4/HourInput-pranz"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -734.0
+offset_top = 66.0
+offset_bottom = 122.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.27058825, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 55
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 135
+
+[node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 60
+text = "Exercitii dupa-amiaza:"
+
+[node name="HourInput-ex2" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "intre 16:00 si 19:00"
+emoji_menu_enabled = false
+script = ExtResource("7_4wrvx")
+
+[node name="Label-ex2" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer5/HourInput-ex2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -734.0
+offset_top = 55.0
+offset_bottom = 111.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.27058825, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 55
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 437
+
+[node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 60
+text = "Masa de seara:"
+
+[node name="HourInput-cina" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "intre 20:00 si 20:30"
+emoji_menu_enabled = false
+script = ExtResource("8_oyw4b")
+
+[node name="Label-cina" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer6/HourInput-cina"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -734.0
+offset_top = 55.0
+offset_bottom = 111.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.27058825, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 55
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 397
+
+[node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 60
+text = "Ora de culcare:"
+
+[node name="HourInput-somn" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "intre 20:40 si 22:00"
+emoji_menu_enabled = false
+script = ExtResource("9_u82v7")
+
+[node name="Label-somn" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer7/HourInput-somn"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -734.0
+offset_top = 62.0
+offset_bottom = 118.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.27058825, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 55
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 60
+text = "Ora verificare parentală:"
+
+[node name="HourInput-parinte" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer8"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "intre 22:00 si 00:00"
+emoji_menu_enabled = false
+script = ExtResource("13_dlgmu")
+
+[node name="Label-parinte" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer8/HourInput-parinte"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -605.0
+offset_top = 63.0
+offset_right = 76.0
+offset_bottom = 130.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.27058825, 0, 1)
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 55
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer2"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 52.999996
+offset_top = -165.0
+offset_right = 536.0
+offset_bottom = 56.0
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("10_1t47e")
+texture_pressed = ExtResource("10_1t47e")
+texture_hover = ExtResource("10_1t47e")
+
+[node name="Label" type="Label" parent="CanvasLayer2/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 70
+text = "Salvează"
+
+[connection signal="pressed" from="CanvasLayer2/TextureButton" to="." method="_salveaza_ore_noi"]

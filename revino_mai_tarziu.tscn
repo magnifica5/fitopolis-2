@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://by5g5oonik4dq"]
+
+[ext_resource type="Script" uid="uid://b14oj42bfkqsp" path="res://tarziu.gd" id="1_akq2s"]
+[ext_resource type="Texture2D" uid="uid://dc0gqvsbb6mku" path="res://assets/happyB.png" id="2_jvenn"]
+[ext_resource type="Texture2D" uid="uid://d3cvf2cjwrkmr" path="res://assets/happyF.png" id="3_3gdt7"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="4_y60k2"]
+[ext_resource type="Texture2D" uid="uid://b415284iuneso" path="res://assets/acasa_buton.png" id="5_aq4hd"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="6_jvenn"]
+[ext_resource type="AudioStream" uid="uid://ca3jivv1v7xn7" path="res://audio/voices/miss_nutri_r.mp3" id="7_y60k2"]
+[ext_resource type="AudioStream" uid="uid://b1k612eb0pv36" path="res://audio/voices/santos_r.mp3" id="8_aq4hd"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_akq2s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4555359, 0.97579503, 0.98828125, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -723.0
+offset_top = -781.8001
+offset_right = 1329.0
+offset_bottom = 242.19995
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_jvenn")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_3gdt7")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer3"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -612.0
+offset_top = 43.0
+offset_right = 663.0
+offset_bottom = 336.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_y60k2")
+theme_override_font_sizes/font_size = 70
+text = "Revino mai târziu pentru noi activități. Între timp poți face exerciții fizice din secțiunea din meniu!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer4"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -294.0
+offset_top = -290.0
+offset_right = -80.92322
+offset_bottom = -99.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("5_aq4hd")
+texture_pressed = ExtResource("5_aq4hd")
+texture_hover = ExtResource("5_aq4hd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_jvenn")
+volume_db = -10.0
+
+[node name="miss_nutri" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_y60k2")
+
+[node name="santos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_aq4hd")
+
+[connection signal="pressed" from="CanvasLayer4/TextureButton" to="." method="_back_to_levels"]

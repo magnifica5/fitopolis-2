@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=3 uid="uid://djbk86hj3mldy"]
+
+[ext_resource type="Script" uid="uid://bbabh1xbn4van" path="res://email.gd" id="1_ylg70"]
+[ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="2_d56f8"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="3_6h618"]
+[ext_resource type="Script" uid="uid://cil0eu86r1m5s" path="res://email_input.gd" id="4_rftt7"]
+[ext_resource type="Script" uid="uid://obil8gjyfdjm" path="res://complete.gd" id="5_d56f8"]
+[ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="5_dj8t0"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="6_rafew"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ylg70")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -507.0
+offset_top = -242.0
+offset_right = 342.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_d56f8")
+stretch_mode = 6
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Password_Input" type="LineEdit" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -39.0
+offset_right = 497.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_6h618")
+theme_override_font_sizes/font_size = 60
+script = ExtResource("4_rftt7")
+
+[node name="Label" type="Label" parent="CanvasLayer2/Password_Input"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -476.5
+offset_top = 86.5
+offset_right = 479.5
+offset_bottom = 156.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_6h618")
+theme_override_font_sizes/font_size = 50
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer3"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -643.0
+offset_top = 142.0
+offset_right = 616.0
+offset_bottom = 448.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6h618")
+theme_override_font_sizes/font_size = 100
+text = "Introduceți emailul dumneavoastră"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+script = ExtResource("5_d56f8")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer4"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -353.0
+offset_right = 267.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_dj8t0")
+texture_pressed = ExtResource("5_dj8t0")
+texture_hover = ExtResource("5_dj8t0")
+
+[node name="Label" type="Label" parent="CanvasLayer4/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_6h618")
+theme_override_font_sizes/font_size = 60
+text = "SALVEAZĂ"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rafew")
+volume_db = -10.0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="complete" from="CanvasLayer2/Password_Input" to="CanvasLayer4" method="_on_complete"]
+[connection signal="text_changed" from="CanvasLayer2/Password_Input" to="CanvasLayer2/Password_Input" method="_on_text_changed"]
+[connection signal="pressed" from="CanvasLayer4/TextureButton" to="." method="_on_complete_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

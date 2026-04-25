@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dac6n5ecyw0v3"]
+
+[ext_resource type="Texture2D" uid="uid://cx4xk55hdkcnp" path="res://spalat pe dinti/santos_dus_final.png" id="1_b1c5n"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_b1c5n")

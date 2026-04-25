@@ -1,0 +1,152 @@
+[gd_scene load_steps=21 format=3 uid="uid://b8j0aosn6mx6r"]
+
+[ext_resource type="Texture2D" uid="uid://4bn6ytmlhqsn" path="res://spalat pe dinti/spal1(1).png" id="1_egpqi"]
+[ext_resource type="Script" uid="uid://di7be68h5wvfq" path="res://spalat_fata.gd" id="1_qquos"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="1_vgtuo"]
+[ext_resource type="Texture2D" uid="uid://dm833t8ai5dfj" path="res://spalat pe dinti/spal3 (1).png" id="3_4cd5n"]
+[ext_resource type="Texture2D" uid="uid://b8v5rbo2x5260" path="res://spalat pe dinti/spal4 (1).png" id="4_vgtuo"]
+[ext_resource type="Texture2D" uid="uid://bv5yntews1oh5" path="res://spalat pe dinti/spal5 (1).png" id="5_tn8ab"]
+[ext_resource type="Texture2D" uid="uid://cdxv4kwgifdo7" path="res://spalat pe dinti/spal6(1).png" id="6_ejss8"]
+[ext_resource type="Texture2D" uid="uid://bd12n1xn73e0p" path="res://spalat pe dinti/baiat_fata2.2.png" id="7_4cd5n"]
+[ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="8_tn8ab"]
+[ext_resource type="Texture2D" uid="uid://dpni258hbrco5" path="res://spalat pe dinti/spalatf1.png" id="9_u7k7v"]
+[ext_resource type="Texture2D" uid="uid://cgukwqpb10mbu" path="res://spalat pe dinti/spalatf2.png" id="10_51wvh"]
+[ext_resource type="Texture2D" uid="uid://seml4wo2j0de" path="res://spalat pe dinti/spalatf3.png" id="11_plbc5"]
+[ext_resource type="Texture2D" uid="uid://de51e38lwukya" path="res://spalat pe dinti/spalatf4.png" id="12_bl0dt"]
+[ext_resource type="Texture2D" uid="uid://bfn6a8ab7lq5x" path="res://spalat pe dinti/spalatf5.png" id="13_yjrt8"]
+[ext_resource type="Texture2D" uid="uid://c1eu4xc8ir1xu" path="res://spalat pe dinti/spalatf6.png" id="14_ywg04"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="16_u7k7v"]
+[ext_resource type="AudioStream" uid="uid://clyuy25tqrkll" path="res://audio/voices/miss_nutri_f.mp3" id="17_plbc5"]
+[ext_resource type="AudioStream" uid="uid://bhjk68yk5stsj" path="res://audio/voices/santos_f.mp3" id="18_bl0dt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgtuo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_egpqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4cd5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4cd5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vgtuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tn8ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ejss8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mll01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_u7k7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_51wvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_plbc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bl0dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yjrt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ywg04")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qquos")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.49803922, 0.8039216, 0.90588236, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer2/ColorRect"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -116.0
+offset_right = 815.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_vgtuo")
+theme_override_font_sizes/font_size = 80
+text = "  Acum este 
+ timpul să ne
+ spălăm pe față"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2"]
+z_index = 1
+position = Vector2(440.1403, 529.59045)
+scale = Vector2(2.5401142, 2.8797395)
+sprite_frames = SubResource("SpriteFrames_vgtuo")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer2"]
+position = Vector2(471.00006, 543.00006)
+scale = Vector2(1.5, 1.6119597)
+sprite_frames = SubResource("SpriteFrames_mll01")
+autoplay = "default"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -353.0
+offset_top = -335.0
+offset_right = -50.0
+offset_bottom = -78.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("8_tn8ab")
+texture_pressed = ExtResource("8_tn8ab")
+texture_hover = ExtResource("8_tn8ab")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_u7k7v")
+volume_db = -10.0
+
+[node name="miss_nutri" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_plbc5")
+
+[node name="santos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_bl0dt")
+
+[connection signal="pressed" from="CanvasLayer/CanvasLayer/TextureButton" to="." method="_final_preg_dimi"]

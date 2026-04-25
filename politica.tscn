@@ -1,0 +1,174 @@
+[gd_scene load_steps=6 format=3 uid="uid://kq8cwg4uqls3"]
+
+[ext_resource type="Script" uid="uid://bkjbk26j7062n" path="res://politica.gd" id="1_1j2hm"]
+[ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_3l8xl"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_1j2hm"]
+[ext_resource type="Texture2D" uid="uid://b415284iuneso" path="res://assets/acasa_buton.png" id="3_n3hoy"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="4_sf5os"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1j2hm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -562.0
+offset_top = -424.0
+offset_right = 469.0
+offset_bottom = 345.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3l8xl")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -356.0
+offset_top = 54.0
+offset_right = 357.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_1j2hm")
+theme_override_font_sizes/font_size = 60
+text = "Politica de confidențialitate"
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -925.0
+offset_top = -392.0
+offset_right = 923.0
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_1j2hm")
+theme_override_font_sizes/normal_font_size = 60
+text = "1. Introducere
+
+Aplicația Fit’O Polis respectă confidențialitatea utilizatorilor.
+
+Această politică explică ce date colectăm, cum le folosim și cum le protejăm.
+
+2. Ce date colectăm
+
+Aplicația poate colecta următoarele date:
+
+=> adresa de email a părintelui
+=> orele activităților zilnice (ora de trezire, mese, exerciții, ora de somn)
+=> progresul copilului (activități completate, steluțe)
+=> parola dedicată secțiunii parentale (stocată securizat)
+=> date necesare procesării plăților (ex: informații legate de tranzacții, fără a stoca direct datele complete ale cardului)
+
+Nu colectăm:
+
+=> nume reale
+=> adresă fizică
+=> locație GPS
+=> date sensibile
+
+3. Scopul colectării datelor
+
+Datele sunt colectate pentru:
+
+=> funcționarea corectă a aplicației
+=> monitorizarea progresului copilului
+=> trimiterea de rapoarte zilnice către părinți
+=> îmbunătățirea experienței utilizatorului
+=> procesarea plăților pentru serviciile premium
+
+4. Temeiul legal al prelucrării
+
+Prelucrarea datelor se realizează în baza:
+
+=> consimțământului părintelui sau tutorelui legal
+=> executării contractului (furnizarea serviciilor aplicației – servicii ale societății informaționale)
+
+5. Consimțământul parental
+
+Aplicația este destinată copiilor și poate fi utilizată doar cu acordul unui părinte sau tutore legal.
+
+6. Utilizarea adresei de email
+
+Adresa de email este utilizată exclusiv pentru:
+
+=> trimiterea rapoartelor zilnice privind activitățile copilului
+=> confirmarea plăților destinate programelor premium
+
+7. Stocarea și securitatea datelor
+
+Datele sunt protejate prin măsuri de securitate adecvate, cum ar fi:
+
+=> stocarea securizată a informațiilor
+=> criptarea parolelor
+=> utilizarea conexiunilor securizate
+
+8. Durata stocării datelor
+
+Datele sunt păstrate doar atât timp cât este necesar pentru funcționarea aplicației.
+
+Datele utilizate pentru procesarea plăților sunt păstrate conform obligațiilor legale aplicabile.
+
+Utilizatorii pot șterge datele prin dezinstalarea aplicației.
+
+9. Drepturile utilizatorilor
+
+Părinții au dreptul să:
+
+=> acceseze datele colectate
+=> modifice datele
+=> solicite ștergerea datelor
+=> retragă consimțământul
+
+10. Partajarea datelor
+
+Nu vindem și nu distribuim datele către terți.
+
+Datele pot fi folosite doar în cadrul funcționării aplicației.
+
+11. Scop educativ
+
+Aplicația are scop educativ și nu înlocuiește sfatul medical sau nutrițional oferit de specialiști.
+
+12. Modificări ale politicii
+
+Ne rezervăm dreptul de a modifica această politică.
+
+Utilizarea aplicației după modificări reprezintă acceptarea acestora.
+
+13. Contact
+
+Pentru întrebări sau solicitări:
+
+Email: fitopolis.channel@gmail.com"
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer4"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -191.0
+offset_right = 236.0
+grow_vertical = 0
+texture_normal = ExtResource("3_n3hoy")
+texture_pressed = ExtResource("3_n3hoy")
+texture_hover = ExtResource("3_n3hoy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sf5os")
+volume_db = -10.0
+
+[connection signal="pressed" from="CanvasLayer4/TextureButton" to="." method="_on_back"]

@@ -1,0 +1,205 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvacxsidmqpf2"]
+
+[ext_resource type="Script" uid="uid://emnflpckhyu3" path="res://termeni.gd" id="1_mq6ft"]
+[ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_ygt3x"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_mq6ft"]
+[ext_resource type="Texture2D" uid="uid://b415284iuneso" path="res://assets/acasa_buton.png" id="3_7bovy"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="5_7bovy"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mq6ft")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -562.0
+offset_top = -424.0
+offset_right = 469.0
+offset_bottom = 345.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ygt3x")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -356.0
+offset_top = 54.0
+offset_right = 357.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mq6ft")
+theme_override_font_sizes/font_size = 60
+text = "Termeni și condiții"
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -925.0
+offset_top = -392.0
+offset_right = 923.0
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_mq6ft")
+theme_override_font_sizes/normal_font_size = 60
+text = "Ultima actualizare: [05.04.2026]
+
+1. Introducere
+
+Bine ați venit în aplicația Fit’O Polis. Această aplicație este un joc educativ destinat copiilor, care promovează un stil de viață sănătos prin activități zilnice interactive.
+
+Utilizarea aplicației este permisă doar cu acordul și sub supravegherea unui părinte sau tutore legal.
+
+2. Acceptarea termenilor
+
+Prin utilizarea aplicației, părintele sau tutorele legal confirmă că a citit, înțeles și acceptat acești Termeni și condiții.
+
+Dacă nu sunteți de acord cu acești termeni, vă rugăm să nu utilizați aplicația.
+
+3. Descrierea serviciului
+
+Fit’O Polis oferă:
+
+=> activități zilnice (exerciții fizice, mese, programe de seară și dimineață)
+=> sistem de recompense (steluțe și stickere)
+=> monitorizarea progresului zilnic al copilului
+=> posibilitatea trimiterii de rapoarte prin email către părinți
+=> conținut educativ despre nutriție și stil de viață sănătos
+
+4. Contul parental
+
+Pentru utilizarea completă a aplicației, este necesar un cont parental.
+
+Părintele este responsabil pentru:
+
+=> setarea și păstrarea parolei în siguranță
+=> verificarea activităților copilului
+=> corectitudinea datelor introduse
+
+Aplicația nu este responsabilă pentru accesul neautorizat rezultat din neprotejarea parolei.
+
+5. Utilizarea aplicației
+
+Utilizatorii se obligă:
+
+=> să folosească aplicația în scop educativ
+=> să nu încerce modificarea, copierea sau compromiterea aplicației
+=> să nu utilizeze aplicația pentru activități ilegale sau abuzive
+
+6. Sistemul de recompense
+
+Steluțele și stickerele:
+
+=> au scop exclusiv educativ și motivațional
+=> nu au valoare monetară
+=> nu pot fi convertite în bani sau alte beneficii reale
+
+7. Emailuri și notificări
+
+Aplicația poate trimite emailuri cu progresul copilului și confirmarea plăților variantelor premium.
+
+Adresa de email:
+
+=> este utilizată exclusiv pentru trimiterea rapoartelor
+=> nu este folosită pentru marketing
+
+8. Protecția datelor
+
+Datele utilizatorilor sunt colectate și procesate în conformitate cu:
+Regulamentul General privind Protecția Datelor
+
+Pentru mai multe informații, consultați Politica de confidențialitate.
+
+9. Securitatea aplicației
+
+Este realizata protejarea datelor prin:
+=> utilizarea conexiunilor securizate
+=> protejarea parolelor
+=> limitarea accesului la informații
+
+10. Plăți și abonamente
+
+Aplicația Fit’O Polis oferă atât funcționalități gratuite, cât și funcționalități disponibile prin programe plătite.
+
+Sunt disponibile următoarele programe:
+
+Program Super Saver:
+=> acces la un număr dublu de exerciții fizice
+=> acces la încă 16 rețete destinate părinților (codul de activare este disponibil pe site)
+=> 3 șanse suplimentare pentru a evita pierderea punctelor
+
+Program Ultimate Saver:
+=> deblocarea unor modele suplimentare de stickere
+=> acces la statistici avansate pentru părinți
+=> acces la mai multe hărți ale orașelor Fit’O Polis (5 hărți suplimentare)
+=> eliminarea reclamelor din aplicație
+=> posibilitatea de a modifica durata activităților
+
+Accesul la aceste programe se face contra cost și este permis doar părinților sau tutorilor legali.
+
+Plățile:
+
+=> sunt procesate prin servicii securizate furnizate de terți
+=> pot fi recurente (abonament) sau unice, în funcție de opțiunea aleasă
+=> nu sunt rambursabile, cu excepția cazurilor prevăzute de legislația în vigoare
+
+Părintele sau tutorele legal este responsabil pentru gestionarea abonamentului, inclusiv pentru anularea acestuia înainte de reînnoire.
+
+Ne rezervăm dreptul de a modifica prețurile sau structura programelor, cu informarea utilizatorilor în prealabil.
+
+11. Modificări ale aplicației
+
+Ne rezervăm dreptul de a:
+
+=> modifica funcționalitățile aplicației
+=> actualiza acești termeni
+
+Utilizarea continuă a aplicației reprezintă acceptarea modificărilor.
+
+12. Încetarea utilizării
+
+Utilizatorul poate înceta utilizarea aplicației în orice moment prin dezinstalare.
+
+Ne rezervăm dreptul de a restricționa accesul în caz de utilizare abuzivă.
+
+13. Proprietate intelectuală
+
+Toate elementele aplicației (grafică, personaje, conținut) sunt protejate și nu pot fi copiate sau distribuite fără permisiune.
+
+14. Contact
+
+Pentru întrebări sau solicitări:
+Email: fitopolis.channel@gmail.com"
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer4"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -191.0
+offset_right = 236.0
+grow_vertical = 0
+texture_normal = ExtResource("3_7bovy")
+texture_pressed = ExtResource("3_7bovy")
+texture_hover = ExtResource("3_7bovy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7bovy")
+volume_db = -10.0
+
+[connection signal="pressed" from="CanvasLayer4/TextureButton" to="." method="_on_back_pressed"]

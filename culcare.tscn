@@ -1,0 +1,121 @@
+[gd_scene load_steps=13 format=3 uid="uid://c465adgbhcaq5"]
+
+[ext_resource type="Texture2D" uid="uid://ctr0noj2rj1d2" path="res://assets/fundal_camera.png" id="1_f1h3s"]
+[ext_resource type="Script" uid="uid://s0tetkbdhgsl" path="res://culcare.gd" id="1_x4b07"]
+[ext_resource type="Texture2D" uid="uid://deiw22ksl5fhn" path="res://spalat pe dinti/pijamale_b.png" id="2_phfnb"]
+[ext_resource type="Script" uid="uid://cbf4hr4p1wdfw" path="res://baiat_somn.gd" id="3_vskik"]
+[ext_resource type="Texture2D" uid="uid://bmps5ubjj0o78" path="res://spalat pe dinti/pijamale_f.png" id="4_7ujln"]
+[ext_resource type="Script" uid="uid://cewlmmyyft7p8" path="res://fata_somn.gd" id="5_phfnb"]
+[ext_resource type="Texture2D" uid="uid://dqju5q6qwh7ad" path="res://assets/cuv_nor.png" id="6_7ujln"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="7_b6qa8"]
+[ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="8_b6qa8"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="10_krmw2"]
+[ext_resource type="AudioStream" uid="uid://ksb1qxlsbywp" path="res://audio/voices/miss_nutri_s.mp3" id="11_o24ry"]
+[ext_resource type="AudioStream" uid="uid://bvpah7hktkaxd" path="res://audio/voices/santos_s.mp3" id="12_mj8pn"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_x4b07")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f1h3s")
+stretch_mode = 6
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -326.0
+offset_right = 767.0
+offset_bottom = 698.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_phfnb")
+script = ExtResource("3_vskik")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -324.0
+offset_right = 763.0
+offset_bottom = 700.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_7ujln")
+script = ExtResource("5_phfnb")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer3"]
+offset_left = 142.0
+offset_right = 1678.0
+offset_bottom = 1024.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_7ujln")
+
+[node name="Label" type="Label" parent="CanvasLayer3/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -706.0
+offset_top = -306.0
+offset_right = 706.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_b6qa8")
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="replica_b_seara" type="Timer" parent="CanvasLayer3"]
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer4"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = -275.0
+offset_right = 330.0
+offset_bottom = -45.0
+grow_vertical = 0
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("8_b6qa8")
+texture_pressed = ExtResource("8_b6qa8")
+texture_hover = ExtResource("8_b6qa8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_krmw2")
+volume_db = -10.0
+
+[node name="miss_nutri" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_o24ry")
+
+[node name="santos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_mj8pn")
+
+[connection signal="pressed" from="CanvasLayer4/TextureButton" to="." method="_back_to_levels"]

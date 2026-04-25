@@ -1,0 +1,141 @@
+[gd_scene load_steps=17 format=3 uid="uid://bqh58m7uspn6o"]
+
+[ext_resource type="Script" uid="uid://qs6ipn8peqnu" path="res://manacare.gd" id="1_2vouo"]
+[ext_resource type="Texture2D" uid="uid://dp2x7a8o62h7u" path="res://assets/bucatarie 2.0.png" id="2_ymb87"]
+[ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="3_o7r20"]
+[ext_resource type="Texture2D" uid="uid://bvia00w06754j" path="res://masa_dimi/sup1.png" id="4_k30fw"]
+[ext_resource type="Texture2D" uid="uid://ddi7nehub2mvf" path="res://masa_dimi/supica1.png" id="5_8jyr5"]
+[ext_resource type="Texture2D" uid="uid://dqju5q6qwh7ad" path="res://assets/cuv_nor.png" id="6_g8gkr"]
+[ext_resource type="Script" uid="uid://bl344u5hv6t5o" path="res://fata.gd" id="6_k30fw"]
+[ext_resource type="Texture2D" uid="uid://5dot875wpu1b" path="res://masa_dimi/supfinb.png" id="6_o7r20"]
+[ext_resource type="Texture2D" uid="uid://dgpbghamya1sa" path="res://masa_dimi/bsup.png" id="7_k30fw"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="7_y6o63"]
+[ext_resource type="Script" uid="uid://c3corcmfufupq" path="res://baiat.gd" id="9_8jyr5"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="12_g8gkr"]
+[ext_resource type="AudioStream" uid="uid://b8ulfuxl4ov1u" path="res://audio/voices/miss_nutri_m.mp3" id="13_x4vyr"]
+[ext_resource type="AudioStream" uid="uid://ck36iomg2h75" path="res://audio/voices/santos_m.mp3" id="14_6lg6k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xgpa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k30fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8jyr5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jyr5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_o7r20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k30fw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2vouo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ymb87")
+stretch_mode = 6
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer2"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -272.99988
+offset_top = -286.0
+offset_right = -15.999878
+offset_bottom = -87.53845
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("3_o7r20")
+texture_pressed = ExtResource("3_o7r20")
+texture_hover = ExtResource("3_o7r20")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer3"]
+position = Vector2(982.9999, 628)
+scale = Vector2(2.0410156, 2.0725808)
+sprite_frames = SubResource("SpriteFrames_0xgpa")
+autoplay = "default"
+script = ExtResource("6_k30fw")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer3"]
+position = Vector2(988, 676.00006)
+scale = Vector2(1.4012926, 1.4177756)
+sprite_frames = SubResource("SpriteFrames_8jyr5")
+autoplay = "default"
+frame_progress = 0.55873495
+script = ExtResource("9_8jyr5")
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer4"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 321.0
+offset_top = -385.0
+offset_right = 1857.0
+offset_bottom = 639.0
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_g8gkr")
+
+[node name="Label" type="Label" parent="CanvasLayer4/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -373.0
+offset_top = -151.99997
+offset_right = 358.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_y6o63")
+theme_override_font_sizes/font_size = 130
+text = "Haide să luăm masa"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_g8gkr")
+volume_db = -10.0
+
+[node name="miss_nutri" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_x4vyr")
+
+[node name="santos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_6lg6k")
+
+[connection signal="pressed" from="CanvasLayer2/TextureButton" to="." method="_back_to_levels"]
