@@ -22,6 +22,7 @@ var codep
 signal verif_trezire
 signal verif_ex
 signal final_settings
+var where
 var path_hours = "user://hours.save"
 var verif_hours = 0
 var avertisment_vizualizat: bool = false
@@ -83,6 +84,7 @@ func salveaza_avertisment():
 	data["channel"] = channel_exists
 	data["parinte"] = parinte
 	data["score"] = 200
+	data["where"] = where
 	avertisment_vizualizat = true
 	var file = FileAccess.open(path_hours, FileAccess.WRITE)
 	file.store_string(JSON.stringify(data))
@@ -119,6 +121,23 @@ func adauga_personaj(valoare: int):
 		data_existenta = {}
 	data_existenta["personaj"] = valoare #atribuie dictionarului cheia pe care o vreau
 	personaj = valoare
+	var file = FileAccess.open(path_hours, FileAccess.WRITE) #salveaza noul dictionar
+	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
+	file.close()
+
+func adauga_locatie_info(valoare: String):
+	var data_existenta = {}
+	if FileAccess.file_exists(path_hours): # verifica daca exista
+		var file = FileAccess.open(path_hours, FileAccess.READ) #citeste
+		var content = file.get_as_text() #ia ca string
+		file.close()
+		var result = JSON.parse_string(content) #transforma in dictionar
+		if result:
+			data_existenta = result #egaleaza ce era cu noul dictionar din functie
+	else:
+		data_existenta = {}
+	data_existenta["where"] = valoare #atribuie dictionarului cheia pe care o vreau
+	where = valoare
 	var file = FileAccess.open(path_hours, FileAccess.WRITE) #salveaza noul dictionar
 	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
 	file.close()
@@ -253,6 +272,13 @@ func citeste_personaj():
 	file.close()
 	var valori = JSON.parse_string(content)
 	return int(valori["personaj"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
+
+func citeste_locatie_info():
+	var file = FileAccess.open(path_hours, FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+	var valori = JSON.parse_string(content)
+	return str(valori["where"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
 
 func citeste_code():
 	var file = FileAccess.open(path_hours, FileAccess.READ)

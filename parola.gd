@@ -67,3 +67,10 @@ func _back_home() -> void:
 	SoundManager.play_music(preload("res://audio/background_sound.mp3"))
 	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://login.tscn")
+
+
+func _despre_joc() -> void:
+	$AudioStreamPlayer.play()
+	await get_tree().create_timer(0.1).timeout
+	Globals.adauga_locatie_info("parinte")
+	get_tree().change_scene_to_file("res://functionare.tscn")

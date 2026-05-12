@@ -14,4 +14,8 @@ func _process(delta: float) -> void:
 func _to_start() -> void:
 	$AudioStreamPlayer.play()
 	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file("res://start.tscn")
+	var where = Globals.citeste_locatie_info()
+	if where == "start":
+		get_tree().change_scene_to_file("res://start.tscn")
+	else:
+		get_tree().change_scene_to_file("res://parola.tscn")

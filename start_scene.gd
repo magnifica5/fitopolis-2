@@ -92,4 +92,5 @@ func _on_texture_button_pressed() -> void:
 func _functionare() -> void:
 	$AudioStreamPlayer.play()
 	await get_tree().create_timer(0.1).timeout
+	Globals.adauga_locatie_info("start")
 	get_tree().change_scene_to_file("res://functionare.tscn")
