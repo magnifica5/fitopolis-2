@@ -1,13 +1,13 @@
+RichTextLabel
+VBoxContainer
 Label
 TextureButton
 CanvasLayer
 HTTPRequest
 AudioStreamPlayer
-RichTextLabel
 TextureRect
 CheckBox
 ScrollContainer
-VBoxContainer
 VScrollBar
 AudioStreamPlayer      - Matches the "sound" keyword.
 Sprite2D
