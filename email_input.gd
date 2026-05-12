@@ -8,6 +8,7 @@ func _ready() -> void:
 	
 
 func is_valid_email(email: String):
+	email = email.strip_edges()
 	var pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
 	var regex = RegEx.new()
 	var error = regex.compile(pattern)

@@ -110,4 +110,5 @@ stream = ExtResource("8_pob1m")
 volume_db = -10.0
 
 [connection signal="pressed" from="start_btn/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="about game/TextureButton" to="." method="_functionare"]
 [connection signal="initialization_completed" from="NotificationScheduler" to="." method="_on_initialization_completed"]

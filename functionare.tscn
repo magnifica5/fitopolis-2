@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://dka5fymqx1fgb"]
+
+[ext_resource type="Script" uid="uid://b0gwhgo0nyafa" path="res://functionare.gd" id="1_2mdsp"]
+[ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="2_xgd5f"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="3_crf4o"]
+[ext_resource type="Texture2D" uid="uid://b415284iuneso" path="res://assets/acasa_buton.png" id="4_a415a"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="5_wifb5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2mdsp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -562.0
+offset_top = -424.0
+offset_right = 469.0
+offset_bottom = 345.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xgd5f")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -356.0
+offset_top = 54.0
+offset_right = 357.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_crf4o")
+theme_override_font_sizes/font_size = 60
+text = "Cum funcționează jocul?"
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -925.0
+offset_top = -392.0
+offset_right = 923.0
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_crf4o")
+theme_override_font_sizes/normal_font_size = 60
+text = "La deschiderea jocului apar două butoane: START și ?. Butonul ? oferă informații despre modul de funcționare al jocului, iar butonul START pornește procesul de configurare.
+
+Configurarea aplicației (setup)
+Apăsând START, veți fi direcționat către Termenii și condițiile și Politica de confidențialitate ale jocului. Citiți-le cu atenție și bifați acordul pentru a continua.
+În continuare, va trebui să introduceți adresa de email, necesară pentru a primi mesaje legate de progresul copilului și pentru validări viitoare. După introducerea emailului, veți primi un cod de confirmare pe acea adresă, pe care va trebui să îl introduceți pentru a continua.
+Următorul pas este programarea activităților zilnice ale copilului, în format HH:MM. Activitățile care trebuie setate sunt: trezirea, culcarea, mesele principale, exercițiile fizice și verificarea parentală. Pentru fiecare activitate, există o marjă de 7 minute în care copilul o poate realiza.
+Va trebui să setați și o parolă pentru secțiunea părinților, care îl împiedică pe copil să modifice orele sau să valideze activitățile în locul dumneavoastră. Această parolă poate fi schimbată ulterior prin adresa de email.
+În final, copilul își va alege personajul preferat: Miss Nutri (feminin) sau Santos (masculin).
+Odată finalizați acești pași, veți ajunge la pagina principală (Home Page). Important de reținut: această configurare se realizează o singură dată, la prima deschidere a aplicației.
+
+Utilizarea aplicației
+Aplicația are două zone distincte: una pentru copil și una pentru părinți.
+Apăsând butonul Părinți și introducând parola setată, puteți accesa oricând secțiunea dedicată controlului parental. Aici puteți modifica orele activităților și, la ora stabilită pentru verificarea parentală, puteți valida progresul copilului din ziua respectivă.
+Apăsând butonul Oraș, copilul ajunge în Fit'O Polis, un oraș împărțit în 9 zone, fiecare deblocându-se progresiv, câte una pe lună. Programul este conceput pentru o durată de 9 luni.
+Apăsând butonul Exerciții, copilul va vedea un set de 5 exerciții alese aleatoriu, fiecare cu o durată de 1 minut și jumătate.
+Apăsând butonul Stickere, copilul poate achiziționa stickere folosind steluțele acumulate din activități.
+Apăsând butonul Începe Misiunea:
+
+Dacă este ora stabilită pentru o activitate, copilul va fi direcționat automat către activitatea corespunzătoare.
+Dacă nu este ora unei activități, copilul va fi îndrumat către secțiunea de exerciții.
+
+
+Sistemul de recompense
+
+  +200 steluțe pentru fiecare activitate realizată
+  -50 steluțe pentru fiecare activitate nerealizată
+
+Steluțele acumulate pot fi folosite pentru a cumpăra stickere în secțiunea dedicată."
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer4"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -191.0
+offset_right = 236.0
+grow_vertical = 0
+texture_normal = ExtResource("4_a415a")
+texture_pressed = ExtResource("4_a415a")
+texture_hover = ExtResource("4_a415a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wifb5")
+volume_db = -10.0
+
+[connection signal="pressed" from="CanvasLayer4/TextureButton" to="." method="_to_start"]

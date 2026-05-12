@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func trimite_mail(email: String, activi: Array):
-	var url = "http://127.0.0.1:5000/trimite"#"https://python-fit-o-polis.onrender.com/trimite"
+	var url = "https://server-python-fitopolis-final.onrender.com/trimite"#"https://python-fit-o-polis.onrender.com/trimite"
 	var headers = [
 		"Content-Type: application/json",
 		"Authorization: Bearer f1t0p0l110"
