@@ -1,3 +1,7 @@
 *.apk
 *.aab
 *.aar*.apk
+android/build/build/intermediates/merged_jni_libs/standardDebug/mergeStandardDebugJniLibFolders/out/godot-lib.template_debug.aar
+android/build/libs/debug/godot-lib.template_debug.aar
+android/build/libs/release/godot-lib.template_release.aar
+assets/DiscordSetup.exe
