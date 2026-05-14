@@ -1,5 +1,5 @@
 # LanguageSwitcher.gd
-extends TextureButton
+extends Button
 
 @export var languages: Array[String] = ["ro", "en"]
 var current_index := 0

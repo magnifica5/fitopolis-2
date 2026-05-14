@@ -5,31 +5,39 @@
 
 [node name="Control" type="Control"]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -31.0
+offset_right = 11.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 10.0
-offset_top = -34.0
-offset_right = 448.0
-offset_bottom = 95.0
+[node name="Button" type="Button" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "apasamA"
 script = ExtResource("2_7oa8a")
 
-[node name="Label" type="Label" parent="TextureButton"]
+[node name="Label" type="Label" parent="CenterContainer/GridContainer/Button"]
 layout_mode = 0
-offset_left = -1721.0
-offset_top = -788.0
-offset_right = 2281.0
-offset_bottom = 574.0
-theme_override_font_sizes/font_size = 1000
-text = "greeting"
+offset_left = 5.0
+offset_top = -12.0
+offset_right = 81.0
+offset_bottom = 11.0
+text = "Bună ziua"
 script = ExtResource("3_0o32a")
-theme_override_font_sizes/font_size = 1000
