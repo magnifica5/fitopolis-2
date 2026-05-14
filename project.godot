@@ -22,6 +22,7 @@ Globals="*res://globals.gd"
 Unlock_levels="*res://unlock_levels.gd"
 HourActivity="*res://hour_activity.gd"
 SoundManager="*res://sound_manager.tscn"
+Localization="*res://Localization.gd"
 
 [display]
 

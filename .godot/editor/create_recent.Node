@@ -1,7 +1,8 @@
-RichTextLabel
-VBoxContainer
+Camera2D
 Label
 TextureButton
+RichTextLabel
+VBoxContainer
 CanvasLayer
 HTTPRequest
 AudioStreamPlayer
