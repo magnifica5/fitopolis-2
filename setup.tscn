@@ -122,7 +122,7 @@ theme_override_fonts/font = ExtResource("3_mpvgy")
 theme_override_font_sizes/font_size = 60
 theme_override_icons/checked = ExtResource("8_s3lmn")
 theme_override_icons/unchecked = ExtResource("9_6s8x8")
-text = "Termenii și condițiile"
+text = "Termeni și condițiile"
 
 [node name="CheckBox2" type="CheckBox" parent="CanvasLayer4"]
 anchors_preset = 4

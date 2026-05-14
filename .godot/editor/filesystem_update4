@@ -1,4 +1,4 @@
-res://script buton schimbare limba.gd
-res://scena de test.tscn
+res://setup.tscn
 res://gri.gdshader
-res://eticheta.gd
+res://scena de test.tscn
+res://code_email.tscn
