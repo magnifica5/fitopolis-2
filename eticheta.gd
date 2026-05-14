@@ -1,7 +1,7 @@
 # LocalizedLabel.gd
 extends Label
 
-@export var translation_key: String = ""
+@export var translation_key: String = "greeting"
 
 func _ready() -> void:
 	Localization.language_changed.connect(_update_text)

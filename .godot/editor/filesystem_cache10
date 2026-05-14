@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1778744538
+::res://::1778750274
 1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png::CompressedTexture2D::7536361269957601271::1778606586::1778606982::1::::<><><>0<>0<>90887020950a425c34a5a32d52c2c2b1<>res://.godot/imported/1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png-31eeab7255796e435b6bef19b2230d3b.ctex::
 3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png::CompressedTexture2D::7203370797049039625::1778606586::1778606982::1::::<><><>0<>0<>d5101df9ac9e6f9ffa28680a865de1e5<>res://.godot/imported/3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png-905d6c87ca81b69e818b1aa13f4ebe47.ctex::
 046af01fa841d786d1e967f8797ece8c-removebg-preview.png::CompressedTexture2D::4015776957699399800::1778606586::1778606982::1::::<><><>0<>0<>0b1d9f31e2a0afb977f3245961ba208a<>res://.godot/imported/046af01fa841d786d1e967f8797ece8c-removebg-preview.png-d634b8e8ab617928486f71008f63f162.ctex::
@@ -132,7 +132,7 @@ Gemini_Generated_Image_on5q7oon5q7oon5q.png::CompressedTexture2D::23858909091794
 get_dressed.gd::GDScript::2514238448190102263::1778606604::0::1::::<>Node2D<><>0<>0<><>::
 get_dressed.tscn::PackedScene::5251435939577006539::1778606604::0::1::::<><><>0<>0<><>::uid://bb26e0y5tl03t::::res://get_dressed.gd<>uid://ctr0noj2rj1d2::::res://assets/fundal_camera.png<>uid://cwn37rwjmkiit::::res://spalat pe dinti/schimbare_baiat.png<>uid://bo6yt35i8f6ej::::res://fata_costum.gd<>uid://bjuhu53phohpc::::res://spalat pe dinti/schimbare_fata.png<>uid://bsa5171xfi46h::::res://baiat_costum.gd<>uid://dqju5q6qwh7ad::::res://assets/cuv_nor.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://covmoie8dsgvh::::res://assets/finished.png<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://chpl2cembjbi3::::res://audio/voices/miss_nutri_t.mp3<>uid://bkhphqaadjjsi::::res://audio/voices/santos_t.mp3
 globals.gd::GDScript::4964902973038403940::1778606604::0::1::::<>Node<><>0<>0<><>::
-gri.gdshader::Shader::8055856347479267610::1778737171::0::1::::<><><>0<>0<><>::
+gri.gdshader::Shader::8055856347479267610::1778744653::0::1::::<><><>0<>0<><>::
 heroes.gd::GDScript::2841224823414598261::1778606604::0::1::::<>HBoxContainer<><>0<>0<><>::
 holder_text_salut.gd::GDScript::8849101904003110678::1778606604::0::1::::<>CanvasLayer<><>0<>0<><>::
 hours_daily_tasks.gd::GDScript::155498569977134794::1778606604::0::1::::<>Node2D<><>0<>0<><>::
@@ -282,9 +282,9 @@ salveaza_parola.gd::GDScript::5375959401786653877::1778606604::0::1::::<>Node2D<
 salv_code.gd::GDScript::7838661489780487006::1778606604::0::1::::<>TextureButton<><>0<>0<><>::
 santos.gd::GDScript::938458148436052142::1778606604::0::1::::<>TextureButton<><>0<>0<><>::
 santos_dormitor.gd::GDScript::902480673289726773::1778606604::0::1::::<>TextureRect<><>0<>0<><>::
-scena de test.tscn::PackedScene::2385171827737704063::1778738141::0::1::::<><><>0<>0<><>::uid://btmv00k6gtwqp::::res://script buton schimbare limba.gd<>uid://bgxsn1epni2pi::::res://eticheta.gd
+scena de test.tscn::PackedScene::2385171827737704063::1778749210::0::1::::<><><>0<>0<><>::uid://btmv00k6gtwqp::::res://script buton schimbare limba.gd<>uid://bgxsn1epni2pi::::res://eticheta.gd
 score.gd::GDScript::3711623276088660537::1778606604::0::1::::<>Label<><>0<>0<><>::
-script buton schimbare limba.gd::GDScript::3746102277509238495::1778737935::0::1::::<>TextureButton<><>0<>0<><>::
+script buton schimbare limba.gd::GDScript::3746102277509238495::1778748596::0::1::::<>Button<><>0<>0<><>::
 select_level.gd::GDScript::8869354021500198633::1778606604::0::1::::<>Label<><>0<>0<><>::
 setup.gd::GDScript::4978321840933142322::1778606604::0::1::::<>Node2D<><>0<>0<><>::
 setup.tscn::PackedScene::3613093329569214552::1778606604::0::1::::<><><>0<>0<><>::uid://cc6sh61x0r17s::::res://setup.gd<>uid://bx4dgeewi1s58::::res://assets/level_bg.png<>uid://dyctoekm4grj7::::res://holder_text_salut.gd<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://du37ys0hpl703::::res://assets/Button.png<>uid://c8hd3e0voh8v8::::res://program button 2.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://dcnfwp3m4001b::::res://assets/buton_bifa.png<>uid://m2jb6cspt5ui::::res://assets/buton_simplu.png
