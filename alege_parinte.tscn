@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cs5s2q3xvif0e"]
+[gd_scene load_steps=25 format=3 uid="uid://cs5s2q3xvif0e"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_0vaj2"]
 [ext_resource type="Script" uid="uid://cv84ul8l7pbh5" path="res://alege_parinte.gd" id="1_3lvgo"]
@@ -6,13 +6,24 @@
 [ext_resource type="Script" uid="uid://d1nmadtcjsojw" path="res://hour_input_trezire.gd" id="3_3lvgo"]
 [ext_resource type="Script" uid="uid://b4kxb60q6lb82" path="res://hour_input_ex.gd" id="4_icpug"]
 [ext_resource type="Script" uid="uid://cd53h8c006jf5" path="res://hour_input_dejun.gd" id="5_dlgmu"]
+[ext_resource type="Script" uid="uid://mfevxt6j8qc8" path="res://labeltrezire.gd" id="5_ljehh"]
 [ext_resource type="Script" uid="uid://eh7ge8cxhdj3" path="res://hour_input_pranz.gd" id="6_6dl7k"]
 [ext_resource type="Script" uid="uid://dewy62jk5c41u" path="res://hour_input_ex_2.gd" id="7_4wrvx"]
+[ext_resource type="Script" uid="uid://brhh3gfr68my1" path="res://labelexdimineata.gd" id="7_jtuh6"]
 [ext_resource type="Script" uid="uid://c4iuq1pc58o2p" path="res://hour_input_cina.gd" id="8_oyw4b"]
 [ext_resource type="Script" uid="uid://dex5vpp0oatvj" path="res://hour_input_somn.gd" id="9_u82v7"]
+[ext_resource type="Script" uid="uid://uhyknbnovnuk" path="res://labelbreakfast.gd" id="9_x2imh"]
 [ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="10_1t47e"]
+[ext_resource type="Script" uid="uid://dmpvsb5qtp1lt" path="res://labellunch.gd" id="11_md178"]
 [ext_resource type="Script" uid="uid://cqq83gi0i5uos" path="res://hour_input_parinte.gd" id="13_dlgmu"]
+[ext_resource type="Script" uid="uid://vg77sl600xlg" path="res://labelexdupa-amiaza.gd" id="13_sdh0f"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="14_icpug"]
+[ext_resource type="Script" uid="uid://20ynvmjpcdjk" path="res://labeldinner.gd" id="15_dlg3o"]
+[ext_resource type="Script" uid="uid://cmsk4k8d5h6os" path="res://labelculcare.gd" id="17_het2j"]
+[ext_resource type="Script" uid="uid://db2wefu8wqed1" path="res://labelparentalcontrol.gd" id="19_jo3wm"]
+[ext_resource type="Texture2D" uid="uid://dq4s8ytaf3nsl" path="res://assets/level.png" id="21_md178"]
+[ext_resource type="Script" uid="uid://btmv00k6gtwqp" path="res://script buton schimbare limba.gd" id="21_x2imh"]
+[ext_resource type="Script" uid="uid://bgxsn1epni2pi" path="res://eticheta.gd" id="22_md178"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3lvgo")
@@ -42,7 +53,7 @@ volume_db = -10.0
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 140.0
+offset_left = 256.0
 offset_top = 48.0
 offset_right = 253.0
 offset_bottom = 28.0
@@ -67,6 +78,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_288ex")
 theme_override_font_sizes/font_size = 60
 text = "Ora de Trezire:"
+script = ExtResource("5_ljehh")
 
 [node name="HourInput-trezire" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(650, 30)
@@ -102,6 +114,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_288ex")
 theme_override_font_sizes/font_size = 60
 text = "Exercitii dimineata:"
+script = ExtResource("7_jtuh6")
 
 [node name="HourInput-ex" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(650, 0)
@@ -136,6 +149,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_288ex")
 theme_override_font_sizes/font_size = 60
 text = "Masa de dimineata:"
+script = ExtResource("9_x2imh")
 
 [node name="HourInput-dejun" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(650, 0)
@@ -170,6 +184,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_288ex")
 theme_override_font_sizes/font_size = 60
 text = "Masa de pranz:"
+script = ExtResource("11_md178")
 
 [node name="HourInput-pranz" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(650, 0)
@@ -204,6 +219,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_288ex")
 theme_override_font_sizes/font_size = 60
 text = "Exercitii dupa-amiaza:"
+script = ExtResource("13_sdh0f")
 
 [node name="HourInput-ex2" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer5"]
 custom_minimum_size = Vector2(650, 0)
@@ -239,6 +255,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_288ex")
 theme_override_font_sizes/font_size = 60
 text = "Masa de seara:"
+script = ExtResource("15_dlg3o")
 
 [node name="HourInput-cina" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer6"]
 custom_minimum_size = Vector2(650, 0)
@@ -274,6 +291,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_288ex")
 theme_override_font_sizes/font_size = 60
 text = "Ora de culcare:"
+script = ExtResource("17_het2j")
 
 [node name="HourInput-somn" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer7"]
 custom_minimum_size = Vector2(650, 0)
@@ -309,6 +327,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_288ex")
 theme_override_font_sizes/font_size = 60
 text = "Ora verificare parentală:"
+script = ExtResource("19_jo3wm")
 
 [node name="HourInput-parinte" type="LineEdit" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer8"]
 custom_minimum_size = Vector2(650, 0)
@@ -334,16 +353,49 @@ theme_override_colors/font_color = Color(1, 0.27058825, 0, 1)
 theme_override_fonts/font = ExtResource("2_288ex")
 theme_override_font_sizes/font_size = 55
 
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer9"]
+offset_left = 14.0
+offset_top = 22.0
+offset_right = 219.0
+offset_bottom = 261.0
+texture_normal = ExtResource("21_md178")
+texture_pressed = ExtResource("21_md178")
+texture_hover = ExtResource("21_md178")
+texture_disabled = ExtResource("21_md178")
+texture_focused = ExtResource("21_md178")
+script = ExtResource("21_x2imh")
+
+[node name="Label" type="Label" parent="CanvasLayer9/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -45.5
+offset_right = 38.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_288ex")
+theme_override_font_sizes/font_size = 60
+text = "RO"
+script = ExtResource("22_md178")
+
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer2"]
-anchors_preset = 2
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 52.999996
-offset_top = -165.0
-offset_right = 536.0
-offset_bottom = 56.0
+offset_left = -201.0
+offset_top = -158.0
+offset_right = 282.0
+offset_bottom = 63.0
+grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("10_1t47e")

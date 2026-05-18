@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://4lyq80ulrok5"]
+[gd_scene load_steps=23 format=3 uid="uid://4lyq80ulrok5"]
 
 [ext_resource type="Script" uid="uid://chlbk1g25xao" path="res://hours_daily_tasks.gd" id="1_8uqhl"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_r6epk"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://d1nmadtcjsojw" path="res://hour_input_trezire.gd" id="3_vcfl4"]
 [ext_resource type="Script" uid="uid://b4kxb60q6lb82" path="res://hour_input_ex.gd" id="4_75c2p"]
 [ext_resource type="Script" uid="uid://mfevxt6j8qc8" path="res://labeltrezire.gd" id="4_c5gyp"]
-[ext_resource type="Script" uid="uid://bgxsn1epni2pi" path="res://eticheta.gd" id="4_j6mdc"]
 [ext_resource type="Script" uid="uid://cd53h8c006jf5" path="res://hour_input_dejun.gd" id="4_vo1bk"]
 [ext_resource type="Script" uid="uid://brhh3gfr68my1" path="res://labelexdimineata.gd" id="6_0e1mn"]
 [ext_resource type="Script" uid="uid://eh7ge8cxhdj3" path="res://hour_input_pranz.gd" id="6_8xipo"]
@@ -21,7 +20,6 @@
 [ext_resource type="Script" uid="uid://vg77sl600xlg" path="res://labelexdupa-amiaza.gd" id="12_u6wj7"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="13_i1nse"]
 [ext_resource type="Script" uid="uid://20ynvmjpcdjk" path="res://labeldinner.gd" id="14_w1jni"]
-[ext_resource type="Script" uid="uid://btmv00k6gtwqp" path="res://script buton schimbare limba.gd" id="16_c5gyp"]
 [ext_resource type="Script" uid="uid://cmsk4k8d5h6os" path="res://labelculcare.gd" id="16_mpcoc"]
 [ext_resource type="Script" uid="uid://db2wefu8wqed1" path="res://labelparentalcontrol.gd" id="18_lr180"]
 
@@ -348,26 +346,6 @@ grow_horizontal = 0
 theme_override_colors/font_color = Color(1, 0.27058825, 0, 1)
 theme_override_fonts/font = ExtResource("2_vcfl4")
 theme_override_font_sizes/font_size = 55
-
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer"]
-layout_mode = 2
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/CenterContainer"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="CanvasLayer/CanvasLayer9/ScrollContainer/CenterContainer/GridContainer"]
-layout_mode = 2
-text = "apasamA"
-script = ExtResource("16_c5gyp")
-
-[node name="Label" type="Label" parent="CanvasLayer/CanvasLayer9/ScrollContainer/CenterContainer/GridContainer/Button"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 6.0
-offset_right = 83.0
-offset_bottom = 29.0
-text = "Bună ziua"
-script = ExtResource("4_j6mdc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer"]
 
