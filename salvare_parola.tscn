@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cppkytj4sgmqa"]
+[gd_scene load_steps=8 format=3 uid="uid://cppkytj4sgmqa"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_cu7cj"]
 [ext_resource type="Script" uid="uid://ciufjbnlak1ob" path="res://salveaza_parola.gd" id="1_o6lyb"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_o6lyb"]
 [ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="3_amw0d"]
+[ext_resource type="Script" uid="uid://chrdj2x24hc6w" path="res://parrent_pass.gd" id="4_nbiay"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="5_amw0d"]
+[ext_resource type="Script" uid="uid://5nte4r6sh4ap" path="res://labelsave.gd" id="6_56m83"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_o6lyb")
@@ -59,6 +61,7 @@ theme_override_font_sizes/font_size = 100
 text = "Introduceți parola cu care veți accesa secțiunea de părinte"
 horizontal_alignment = 1
 autowrap_mode = 2
+script = ExtResource("4_nbiay")
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
 
@@ -93,7 +96,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_o6lyb")
 theme_override_font_sizes/font_size = 60
-text = "SALVEAZĂ"
+text = "Salvează"
+script = ExtResource("6_56m83")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_amw0d")

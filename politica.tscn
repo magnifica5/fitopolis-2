@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://kq8cwg4uqls3"]
+[gd_scene load_steps=8 format=3 uid="uid://kq8cwg4uqls3"]
 
 [ext_resource type="Script" uid="uid://bkjbk26j7062n" path="res://politica.gd" id="1_1j2hm"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_3l8xl"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_1j2hm"]
 [ext_resource type="Texture2D" uid="uid://b415284iuneso" path="res://assets/acasa_buton.png" id="3_n3hoy"]
+[ext_resource type="Script" uid="uid://b2k5e8eucowr3" path="res://labelpolitica.gd" id="4_n3hoy"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="4_sf5os"]
+[ext_resource type="Script" uid="uid://cqevm1oiwpecs" path="res://label_politica_continut.gd" id="5_sf5os"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1j2hm")
@@ -38,6 +40,7 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1j2hm")
 theme_override_font_sizes/font_size = 60
 text = "Politica de confidențialitate"
+script = ExtResource("4_n3hoy")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
@@ -153,6 +156,7 @@ Utilizarea aplicației după modificări reprezintă acceptarea acestora.
 Pentru întrebări sau solicitări:
 
 Email: fitopolis.channel@gmail.com"
+script = ExtResource("5_sf5os")
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
 

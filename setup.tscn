@@ -1,14 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://brqheb4lm3o77"]
+[gd_scene load_steps=20 format=3 uid="uid://brqheb4lm3o77"]
 
 [ext_resource type="Script" uid="uid://cc6sh61x0r17s" path="res://setup.gd" id="1_s3lmn"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="2_11tsp"]
 [ext_resource type="Script" uid="uid://dyctoekm4grj7" path="res://holder_text_salut.gd" id="2_mpvgy"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="3_mpvgy"]
 [ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="5_0w6cg"]
+[ext_resource type="Script" uid="uid://cjn3hyx8e8o1x" path="res://atentieparinti.gd" id="5_fbap6"]
+[ext_resource type="Script" uid="uid://cndqckt1lkp2b" path="res://accept.gd" id="6_fyyrs"]
 [ext_resource type="Script" uid="uid://c8hd3e0voh8v8" path="res://program button 2.gd" id="7_0w6cg"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="8_6ks2e"]
 [ext_resource type="Texture2D" uid="uid://dcnfwp3m4001b" path="res://assets/buton_bifa.png" id="8_s3lmn"]
 [ext_resource type="Texture2D" uid="uid://m2jb6cspt5ui" path="res://assets/buton_simplu.png" id="9_6s8x8"]
+[ext_resource type="Script" uid="uid://d24e0744pipls" path="res://continue.gd" id="9_cdlwo"]
+[ext_resource type="Texture2D" uid="uid://dq4s8ytaf3nsl" path="res://assets/level.png" id="10_cpoej"]
+[ext_resource type="Script" uid="uid://btmv00k6gtwqp" path="res://script buton schimbare limba.gd" id="11_fbap6"]
+[ext_resource type="Script" uid="uid://bgxsn1epni2pi" path="res://eticheta.gd" id="12_fyyrs"]
+[ext_resource type="Script" uid="uid://bnoqy4wkxt3xh" path="res://check_box1.gd" id="12_q52y2"]
+[ext_resource type="Script" uid="uid://cb1ss7n5kk86m" path="res://check_box_2.gd" id="13_65vhc"]
+[ext_resource type="Script" uid="uid://rqvxhiiqoqkg" path="res://vezit.gd" id="14_sqo7r"]
+[ext_resource type="Script" uid="uid://ds53lr6b0ibe3" path="res://vezip.gd" id="15_4xct3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_s3lmn")
@@ -34,15 +44,17 @@ script = ExtResource("2_mpvgy")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -460.5
-offset_top = 71.0
-offset_right = 460.5
-offset_bottom = 134.0
+offset_left = -460.0
+offset_top = 46.0
+offset_right = 461.0
+offset_bottom = 109.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.2901961, 0, 1)
 theme_override_fonts/font = ExtResource("3_mpvgy")
 theme_override_font_sizes/font_size = 60
 text = "In atentia parintilor!"
+horizontal_alignment = 1
+script = ExtResource("5_fbap6")
 
 [node name="Label2" type="Label" parent="CanvasLayer2"]
 anchors_preset = 8
@@ -50,16 +62,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -860.0
-offset_top = -355.0
-offset_right = 640.0
-offset_bottom = -205.0
+offset_left = -856.0
+offset_top = -287.0
+offset_right = 644.0
+offset_bottom = -137.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_mpvgy")
 theme_override_font_sizes/font_size = 60
 text = "Pentru a continua, trebuie să acceptați:"
+script = ExtResource("6_fyyrs")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
@@ -69,10 +82,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -241.0
-offset_top = -214.0
-offset_right = 242.0
-offset_bottom = 7.0
+offset_left = -241.5
+offset_top = -221.0
+offset_right = 241.5
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("5_0w6cg")
@@ -87,15 +99,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -134.0
-offset_top = -39.500008
-offset_right = 193.0
-offset_bottom = 32.30768
+offset_left = -145.0
+offset_top = -32.50003
+offset_right = 182.0
+offset_bottom = 39.307648
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_mpvgy")
 theme_override_font_sizes/font_size = 60
 text = "Continua"
+script = ExtResource("9_cdlwo")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_6ks2e")
@@ -123,6 +136,7 @@ theme_override_font_sizes/font_size = 60
 theme_override_icons/checked = ExtResource("8_s3lmn")
 theme_override_icons/unchecked = ExtResource("9_6s8x8")
 text = "Termeni și condițiile"
+script = ExtResource("12_q52y2")
 
 [node name="CheckBox2" type="CheckBox" parent="CanvasLayer4"]
 anchors_preset = 4
@@ -144,6 +158,7 @@ theme_override_font_sizes/font_size = 60
 theme_override_icons/checked = ExtResource("8_s3lmn")
 theme_override_icons/unchecked = ExtResource("9_6s8x8")
 text = "Politica de confidențialitate"
+script = ExtResource("13_65vhc")
 
 [node name="CanvasLayer5" type="CanvasLayer" parent="."]
 
@@ -162,15 +177,15 @@ texture_hover = ExtResource("5_0w6cg")
 
 [node name="Label" type="Label" parent="CanvasLayer5/TextureButton"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.50100005
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.50100005
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -185.98302
-offset_top = -68.5
-offset_right = 220.01698
-offset_bottom = 54.5
+offset_left = -203.0
+offset_top = -61.5
+offset_right = 203.0
+offset_bottom = 61.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_mpvgy")
@@ -178,6 +193,7 @@ theme_override_font_sizes/font_size = 60
 text = "Vezi
 Termenii"
 horizontal_alignment = 1
+script = ExtResource("14_sqo7r")
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer5"]
 anchors_preset = 3
@@ -197,15 +213,15 @@ texture_hover = ExtResource("5_0w6cg")
 
 [node name="Label" type="Label" parent="CanvasLayer5/TextureButton2"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.50100005
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.50100005
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -185.98302
-offset_top = -68.5
-offset_right = 220.01698
-offset_bottom = 54.5
+offset_left = -203.0
+offset_top = -61.5
+offset_right = 203.0
+offset_bottom = 61.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_mpvgy")
@@ -213,6 +229,38 @@ theme_override_font_sizes/font_size = 60
 text = "Vezi
 Politica"
 horizontal_alignment = 1
+script = ExtResource("15_4xct3")
+
+[node name="CanvasLayer6" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer6"]
+offset_left = 10.0
+offset_top = 11.0
+offset_right = 215.0
+offset_bottom = 250.0
+texture_normal = ExtResource("10_cpoej")
+texture_pressed = ExtResource("10_cpoej")
+texture_hover = ExtResource("10_cpoej")
+texture_disabled = ExtResource("10_cpoej")
+texture_focused = ExtResource("10_cpoej")
+script = ExtResource("11_fbap6")
+
+[node name="Label" type="Label" parent="CanvasLayer6/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -45.5
+offset_right = 38.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_mpvgy")
+theme_override_font_sizes/font_size = 60
+script = ExtResource("12_fyyrs")
 
 [connection signal="pressed" from="CanvasLayer3/TextureButton2" to="." method="_on_button_pressed"]
 [connection signal="toggled" from="CanvasLayer4/CheckBox" to="." method="_on_check_box_toggled"]

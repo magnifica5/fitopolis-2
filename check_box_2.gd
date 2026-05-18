@@ -2,8 +2,13 @@ extends CheckBox
 signal appear
 
 # Called when the node enters the scene tree for the first time.
+@export var translation_key: String = "Privacy policy"
 func _ready() -> void:
-	pass # Replace with function body.
+	Localization.language_changed.connect(_update_text)
+	_update_text()
+
+func _update_text() -> void:
+	text = Localization.get_text(translation_key)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cs5s2q3xvif0e"]
+[gd_scene load_steps=26 format=3 uid="uid://cs5s2q3xvif0e"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_0vaj2"]
 [ext_resource type="Script" uid="uid://cv84ul8l7pbh5" path="res://alege_parinte.gd" id="1_3lvgo"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dq4s8ytaf3nsl" path="res://assets/level.png" id="21_md178"]
 [ext_resource type="Script" uid="uid://btmv00k6gtwqp" path="res://script buton schimbare limba.gd" id="21_x2imh"]
 [ext_resource type="Script" uid="uid://bgxsn1epni2pi" path="res://eticheta.gd" id="22_md178"]
+[ext_resource type="Script" uid="uid://5nte4r6sh4ap" path="res://labelsave.gd" id="25_sdh0f"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3lvgo")
@@ -418,5 +419,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_288ex")
 theme_override_font_sizes/font_size = 70
 text = "Salvează"
+script = ExtResource("25_sdh0f")
 
 [connection signal="pressed" from="CanvasLayer2/TextureButton" to="." method="_salveaza_ore_noi"]

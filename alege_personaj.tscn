@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjx3p1ptw7ecg"]
+[gd_scene load_steps=11 format=3 uid="uid://cjx3p1ptw7ecg"]
 
 [ext_resource type="Script" uid="uid://qfqf74d1b7eq" path="res://alege_personaj.gd" id="1_d3isc"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="1_rk5yx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://nmujeq3hp37w" path="res://santos.gd" id="5_dtbfq"]
 [ext_resource type="Script" uid="uid://d2y84dqqq5pys" path="res://miss_nutri.gd" id="7_dtbfq"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="9_8shbx"]
+[ext_resource type="Script" uid="uid://cy7e2b0lt8ml0" path="res://characterlabel.gd" id="9_dihqw"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_d3isc")
@@ -92,8 +93,9 @@ offset_bottom = 135.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_rk5yx")
 theme_override_font_sizes/font_size = 70
-text = "Apasa pe personajul care te reprezinta:"
+text = "Apasa pe personajul care te reprezintă:"
 horizontal_alignment = 1
+script = ExtResource("9_dihqw")
 
 [node name="Timer" type="Timer" parent="CanvasLayer3"]
 

@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://1i10p7xpxl0k"]
+[gd_scene load_steps=10 format=3 uid="uid://1i10p7xpxl0k"]
 
 [ext_resource type="Script" uid="uid://df4l5akj72nbh" path="res://code_email.gd" id="1_2co20"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_lf5kb"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_55731"]
 [ext_resource type="Script" uid="uid://bvmhl51co4p0q" path="res://code_input.gd" id="3_2co20"]
 [ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="4_7f7mq"]
+[ext_resource type="Script" uid="uid://b183rhltuhtgd" path="res://verif_email_code.gd" id="5_7f7mq"]
 [ext_resource type="Script" uid="uid://djxduytswe8n7" path="res://salv_code.gd" id="5_55731"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="5_fwxah"]
+[ext_resource type="Script" uid="uid://d24e0744pipls" path="res://continue.gd" id="8_fwxah"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2co20")
@@ -34,32 +36,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -480.0
-offset_top = -39.0
-offset_right = 497.0
-offset_bottom = 114.0
+offset_left = -490.0
+offset_top = 9.0
+offset_right = 487.0
+offset_bottom = 162.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_55731")
 theme_override_font_sizes/font_size = 60
 script = ExtResource("3_2co20")
-
-[node name="Label" type="Label" parent="CanvasLayer2/Password_Input"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -476.5
-offset_top = 86.5
-offset_right = 479.5
-offset_bottom = 156.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_55731")
-theme_override_font_sizes/font_size = 50
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
@@ -69,7 +55,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -643.0
 offset_top = 142.0
-offset_right = 616.0
+offset_right = 602.0
 offset_bottom = 448.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -78,6 +64,7 @@ theme_override_font_sizes/font_size = 94
 text = "Verificați adresa de email și introduceți codul de verificare"
 horizontal_alignment = 1
 autowrap_mode = 2
+script = ExtResource("5_7f7mq")
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
 
@@ -113,7 +100,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_55731")
 theme_override_font_sizes/font_size = 60
-text = "CONTINUĂ"
+text = "Continuă"
+script = ExtResource("8_fwxah")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_fwxah")

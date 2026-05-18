@@ -24,6 +24,7 @@ signal verif_ex
 signal final_settings
 var where
 var path_hours = "user://hours.save"
+var language_path = "user://language.save"
 var verif_hours = 0
 var avertisment_vizualizat: bool = false
 var personaj = -1
