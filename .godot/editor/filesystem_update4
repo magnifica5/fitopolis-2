@@ -1,4 +1,15 @@
-res://cod_sparola.tscn
+res://hours_daily_tasks.tscn
 res://gri.gdshader
-res://scena de test.tscn
 res://Localization.gd
+res://setup.tscn
+res://eticheta.gd
+res://labeltrezire.gd
+res://labelexdimineata.gd
+res://labelbreakfast.gd
+res://labellunch.gd
+res://labelculcare.gd
+res://labeldinner.gd
+res://labelexdupa-amiaza.gd
+res://labelparentalcontrol.gd
+res://hour_input_trezire.gd
+res://hour_input_ex.gd

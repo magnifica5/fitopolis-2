@@ -2,11 +2,19 @@ extends LineEdit
 # label da cu rosu msj daca nu e corect, cand e corect se face verde in input
 @onready var label = $"Label-trezire"
 signal trezire_validata
+@export var translation_key: String = "between 06:30 and 7:30"
 func _ready():
 	connect("text_changed", Callable(self, "_on_text_changed"))
 	add_theme_color_override("font_color", Color.WHITE)
 	label.text = ""
 	Globals.trezire = 0
+	
+
+	Localization.language_changed.connect(_update_text)
+	_update_text()
+
+func _update_text() -> void:
+	placeholder_text = Localization.get_text(translation_key)
 func _on_text_changed(new_text):
 	add_theme_color_override("font_color", Color.WHITE)
 	var filtered_text = ""
