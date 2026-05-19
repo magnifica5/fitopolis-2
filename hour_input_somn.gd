@@ -2,6 +2,7 @@ extends LineEdit
 # label da cu rosu msj daca nu e corect, cand e corect se face verde in input
 @onready var label = $"Label-somn"
 @export var translation_key: String = "between 20:40 and 22:00"
+@export var translation_key1: String = ""
 func _ready():
 	connect("text_changed", Callable(self, "_on_text_changed"))
 	add_theme_color_override("font_color", Color.WHITE)
@@ -35,7 +36,8 @@ func _on_text_changed(new_text):
 		#add_theme_color_override("font_color", Color.RED)
 		#placeholder_text = "Format invalid (HH:MM)"
 		Globals.somn = 0
-		label.text = "Format invalid (HH:MM)"
+		translation_key1 = "Invalid format (HH:MM)"
+		label.text = Localization.get_text(translation_key1)
 		return
 	
 	var hour = int(text.substr(0, 2))
