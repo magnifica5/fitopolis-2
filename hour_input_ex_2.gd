@@ -1,11 +1,24 @@
 extends LineEdit
 # label da cu rosu msj daca nu e corect, cand e corect se face verde in input
 @onready var label = $"Label-ex2"
+@export var translation_key: String = "between 16:00 and 19:00"
 func _ready():
 	connect("text_changed", Callable(self, "_on_text_changed"))
 	add_theme_color_override("font_color", Color.WHITE)
 	label.text = ""
 	Globals.ex2 = 0
+	Localization.language_changed.connect(_update_text)
+	_update_text()
+
+func _update_text() -> void:
+	placeholder_text = Localization.get_text(translation_key)
+	# mărește automat lățimea
+	custom_minimum_size.x = get_theme_font("font").get_string_size(
+		placeholder_text,
+		HORIZONTAL_ALIGNMENT_LEFT,
+		-1,
+		get_theme_font_size("font_size")
+	).x + 20
 func _on_text_changed(new_text):
 	add_theme_color_override("font_color", Color.WHITE)
 	var filtered_text = ""
