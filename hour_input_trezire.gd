@@ -66,5 +66,6 @@ func _on_text_changed(new_text):
 		Globals.trezire = total_minutes
 		add_theme_color_override("font_color", Color.GREEN)
 		label.text = ""
+		translation_key1 = ""
 		if Globals.ex != 0:
 			Globals.emit_signal("verif_trezire")

@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1779197001
+::res://::1779226023
 1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png::CompressedTexture2D::7536361269957601271::1778606586::1778606982::1::::<><><>0<>0<>90887020950a425c34a5a32d52c2c2b1<>res://.godot/imported/1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png-31eeab7255796e435b6bef19b2230d3b.ctex::
 3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png::CompressedTexture2D::7203370797049039625::1778606586::1778606982::1::::<><><>0<>0<>d5101df9ac9e6f9ffa28680a865de1e5<>res://.godot/imported/3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png-905d6c87ca81b69e818b1aa13f4ebe47.ctex::
 046af01fa841d786d1e967f8797ece8c-removebg-preview.png::CompressedTexture2D::4015776957699399800::1778606586::1778606982::1::::<><><>0<>0<>0b1d9f31e2a0afb977f3245961ba208a<>res://.godot/imported/046af01fa841d786d1e967f8797ece8c-removebg-preview.png-d634b8e8ab617928486f71008f63f162.ctex::
@@ -142,18 +142,18 @@ gri.gdshader::Shader::8055856347479267610::1779120564::0::1::::<><><>0<>0<><>::
 heroes.gd::GDScript::2841224823414598261::1778606604::0::1::::<>HBoxContainer<><>0<>0<><>::
 holder_text_salut.gd::GDScript::8849101904003110678::1778606604::0::1::::<>CanvasLayer<><>0<>0<><>::
 hours_daily_tasks.gd::GDScript::155498569977134794::1778606604::0::1::::<>Node2D<><>0<>0<><>::
-hours_daily_tasks.tscn::PackedScene::2059672174141228194::1779137707::0::1::::<><><>0<>0<><>::uid://chlbk1g25xao::::res://hours_daily_tasks.gd<>uid://bx4dgeewi1s58::::res://assets/level_bg.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://d1nmadtcjsojw::::res://hour_input_trezire.gd<>uid://b4kxb60q6lb82::::res://hour_input_ex.gd<>uid://mfevxt6j8qc8::::res://labeltrezire.gd<>uid://cd53h8c006jf5::::res://hour_input_dejun.gd<>uid://brhh3gfr68my1::::res://labelexdimineata.gd<>uid://eh7ge8cxhdj3::::res://hour_input_pranz.gd<>uid://dewy62jk5c41u::::res://hour_input_ex_2.gd<>uid://uhyknbnovnuk::::res://labelbreakfast.gd<>uid://c4iuq1pc58o2p::::res://hour_input_cina.gd<>uid://dex5vpp0oatvj::::res://hour_input_somn.gd<>uid://du37ys0hpl703::::res://assets/Button.png<>uid://dmpvsb5qtp1lt::::res://labellunch.gd<>uid://cqq83gi0i5uos::::res://hour_input_parinte.gd<>uid://ddr64xhai7smq::::res://incepe_jocul.gd<>uid://vg77sl600xlg::::res://labelexdupa-amiaza.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://20ynvmjpcdjk::::res://labeldinner.gd<>uid://cmsk4k8d5h6os::::res://labelculcare.gd<>uid://db2wefu8wqed1::::res://labelparentalcontrol.gd<>uid://bouopmts0y4jr::::res://labelincepejocul.gd<>uid://dq4s8ytaf3nsl::::res://assets/level.png<>uid://btmv00k6gtwqp::::res://script buton schimbare limba.gd<>uid://bgxsn1epni2pi::::res://eticheta.gd
+hours_daily_tasks.tscn::PackedScene::2059672174141228194::1779223950::0::1::::<><><>0<>0<><>::uid://chlbk1g25xao::::res://hours_daily_tasks.gd<>uid://bx4dgeewi1s58::::res://assets/level_bg.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://d1nmadtcjsojw::::res://hour_input_trezire.gd<>uid://b4kxb60q6lb82::::res://hour_input_ex.gd<>uid://mfevxt6j8qc8::::res://labeltrezire.gd<>uid://cd53h8c006jf5::::res://hour_input_dejun.gd<>uid://brhh3gfr68my1::::res://labelexdimineata.gd<>uid://eh7ge8cxhdj3::::res://hour_input_pranz.gd<>uid://dewy62jk5c41u::::res://hour_input_ex_2.gd<>uid://uhyknbnovnuk::::res://labelbreakfast.gd<>uid://c4iuq1pc58o2p::::res://hour_input_cina.gd<>uid://dex5vpp0oatvj::::res://hour_input_somn.gd<>uid://du37ys0hpl703::::res://assets/Button.png<>uid://dmpvsb5qtp1lt::::res://labellunch.gd<>uid://cqq83gi0i5uos::::res://hour_input_parinte.gd<>uid://ddr64xhai7smq::::res://incepe_jocul.gd<>uid://vg77sl600xlg::::res://labelexdupa-amiaza.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://20ynvmjpcdjk::::res://labeldinner.gd<>uid://cmsk4k8d5h6os::::res://labelculcare.gd<>uid://db2wefu8wqed1::::res://labelparentalcontrol.gd<>uid://bouopmts0y4jr::::res://labelincepejocul.gd<>uid://dq4s8ytaf3nsl::::res://assets/level.png<>uid://btmv00k6gtwqp::::res://script buton schimbare limba.gd<>uid://bgxsn1epni2pi::::res://eticheta.gd
 hour_activity.gd::GDScript::3993156593214266602::1778606604::0::1::::<>Node<><>0<>0<><>::
 hour_input.gd::GDScript::4571641373004368544::1778606604::0::1::::<>LineEdit<><>0<>0<><>::
-hour_input_cina.gd::GDScript::6826077156390872133::1779136804::0::1::::<>LineEdit<><>0<>0<><>::
-hour_input_dejun.gd::GDScript::5047053544807574420::1779136611::0::1::::<>LineEdit<><>0<>0<><>::
-hour_input_ex.gd::GDScript::4443940870976964233::1779094821::0::1::::<>LineEdit<><>0<>0<><>::
-hour_input_ex_2.gd::GDScript::7486947736186445676::1779136804::0::1::::<>LineEdit<><>0<>0<><>::
+hour_input_cina.gd::GDScript::6826077156390872133::1779223861::0::1::::<>LineEdit<><>0<>0<><>::
+hour_input_dejun.gd::GDScript::5047053544807574420::1779223861::0::1::::<>LineEdit<><>0<>0<><>::
+hour_input_ex.gd::GDScript::4443940870976964233::1779222980::0::1::::<>LineEdit<><>0<>0<><>::
+hour_input_ex_2.gd::GDScript::7486947736186445676::1779223861::0::1::::<>LineEdit<><>0<>0<><>::
 hour_input_gustare.gd::GDScript::7393975337023412922::1778606604::0::1::::<>LineEdit<><>0<>0<><>::
-hour_input_parinte.gd::GDScript::5930946901296622286::1779136804::0::1::::<>LineEdit<><>0<>0<><>::
-hour_input_pranz.gd::GDScript::297159938556336002::1779136611::0::1::::<>LineEdit<><>0<>0<><>::
-hour_input_somn.gd::GDScript::7489357937606739679::1779121458::0::1::::<>LineEdit<><>0<>0<><>::
-hour_input_trezire.gd::GDScript::9011737687409076000::1779121078::0::1::::<>LineEdit<><>0<>0<><>::
+hour_input_parinte.gd::GDScript::5930946901296622286::1779223861::0::1::::<>LineEdit<><>0<>0<><>::
+hour_input_pranz.gd::GDScript::297159938556336002::1779223861::0::1::::<>LineEdit<><>0<>0<><>::
+hour_input_somn.gd::GDScript::7489357937606739679::1779223862::0::1::::<>LineEdit<><>0<>0<><>::
+hour_input_trezire.gd::GDScript::9011737687409076000::1779208604::0::1::::<>LineEdit<><>0<>0<><>::
 icon.svg::CompressedTexture2D::8448219222678256099::1778606604::1779197031::1::::<><><>0<>0<>8384042b90f14e22aa99cf13c008c67f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 image-removebg-preview (1).png::CompressedTexture2D::4557724284065833844::1778606604::1778606983::1::::<><><>0<>0<>13abe573f87964a565eced8bc1dcf842<>res://.godot/imported/image-removebg-preview (1).png-647283c848a3a819ee2ea5621a55b767.ctex::
 image-removebg-preview (2).png::CompressedTexture2D::9167705960712221409::1778606604::1778606983::1::::<><><>0<>0<>ccd6197970f34037e8585393b1fb7414<>res://.godot/imported/image-removebg-preview (2).png-8866cb77df469c449dae03cd5049779b.ctex::
@@ -232,7 +232,7 @@ lkj1.png::CompressedTexture2D::815546542852758400::1778606604::1778606982::1::::
 lkj3.png::CompressedTexture2D::8443023340101057030::1778606604::1778606982::1::::<><><>0<>0<>2aba964e7d4f4f69c568c13f1f0f240b<>res://.godot/imported/lkj3.png-c8d1ceff09a78238791e0f00d90916af.ctex::
 lkj23-removebg-preview.png::CompressedTexture2D::5323871704545707947::1778606604::1778606981::1::::<><><>0<>0<>b5ed9b76a47439e4f6817362926c9af2<>res://.godot/imported/lkj23-removebg-preview.png-63973883f5c5c88665ded9dc57d82df1.ctex::
 lkjj.png::CompressedTexture2D::5527321796864503150::1778606604::1778606981::1::::<><><>0<>0<>cebc54a33146f0d8119fbd2ae6655c46<>res://.godot/imported/lkjj.png-ba3783329145a207dc24ff5719be7f82.ctex::
-Localization.gd::GDScript::3701584146304775924::1779136611::0::1::::<>Node<><>0<>0<><>::
+Localization.gd::GDScript::3701584146304775924::1779222980::0::1::::<>Node<><>0<>0<><>::
 login.gd::GDScript::6002597499692538030::1778606604::0::1::::<>Node2D<><>0<>0<><>::
 login.tscn::PackedScene::4274774111212547828::1779196716::0::1::::<><><>0<>0<><>::uid://crrx5y3d4afv7::::res://login.gd<>uid://bx4dgeewi1s58::::res://assets/level_bg.png<>uid://du37ys0hpl703::::res://assets/Button.png<>uid://bd8iwvq5kuijk::::res://assets/font/kenvector_future_thin.ttf<>uid://dvedne034ji7d::::res://assets/bara meniu/oras.png<>uid://0bftw0mtie0e::::res://texture_button.gd<>uid://d1hao38c6qxwj::::res://assets/bara meniu/parinti.png<>uid://dtsa03c6hr31p::::res://assets/bara meniu/exercitii.png<>uid://bjnaxpevceujt::::res://assets/bara meniu/stikere.jpg<>uid://dc0gqvsbb6mku::::res://assets/happyB.png<>uid://d3cvf2cjwrkmr::::res://assets/happyF.png<>uid://cgqb5jx370b1g::::res://catre_oras.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://tkntsuwyygk5::::res://audio/menu_music.mp3<>uid://pdofnn67ch6d::::res://assets/castig/scor_bar.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://bs465mnx66o1f::::res://score.gd
 manacare.gd::GDScript::1162077620360893438::1778606604::0::1::::<>Node2D<><>0<>0<><>::
@@ -494,7 +494,7 @@ santos_s.mp3::AudioStreamMP3::3891366259000986001::1778606601::1778606970::1::::
 santos_sm.mp3::AudioStreamMP3::1907020971060192555::1778606601::1778606970::1::::<><><>0<>0<>1aba1c502eefd16c36da5a4f7d213c07<>res://.godot/imported/santos_sm.mp3-3e57af2fae1821f2c681cf9a4e34204b.mp3str::
 santos_t.mp3::AudioStreamMP3::3103683860178650632::1778606601::1778606970::1::::<><><>0<>0<>e630a7216d1b574fcc0dbe50044e1167<>res://.godot/imported/santos_t.mp3-36a750f641273d937a247a38de59df05.mp3str::
 win music 3.wav::AudioStreamWAV::7755423472132614106::1778606601::1778607004::1::::<><><>0<>0<>d4c1c940b1cfcb34d053b4f8df68d2c0<>res://.godot/imported/win music 3.wav-0276e89c3337539e663f8cbe8bc76a11.sample::
-::res://audio/voices_eng/::1779196716
+::res://audio/voices_eng/::1779197031
 miss_nuti_eng_eat.mp3::AudioStreamMP3::4670867845059304597::1779196716::1779197031::1::::<><><>0<>0<>9b7b58d53eb6c0d797a180ff2b9e1145<>res://.godot/imported/miss_nuti_eng_eat.mp3-bcbe259416e7f968e366370901a655c6.mp3str::
 miss_nutri_eng_comebackLater.mp3::AudioStreamMP3::2550019105620761519::1779196716::1779197031::1::::<><><>0<>0<>2cfb22bf3c547f1c8f309164439d4375<>res://.godot/imported/miss_nutri_eng_comebackLater.mp3-f5d7c6b80717658b94e5b95e07c1ab93.mp3str::
 miss_nutri_eng_wHands.mp3::AudioStreamMP3::5145200941743819052::1779196716::1779197031::1::::<><><>0<>0<>86f86ce6fba5314930c10ab89f74eff2<>res://.godot/imported/miss_nutri_eng_wHands.mp3-9af60d55ddda36da14ebeac3d4d3f43c.mp3str::

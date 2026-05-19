@@ -50,39 +50,48 @@ func _on_text_changed(new_text):
 	if minute < 0 or minute > 59:
 		#add_theme_color_override("font_color", Color.RED)
 		#placeholder_text = "Minute invalide (0–59)"
-		label.text = "Minute invalide (0–59)" 
+		translation_key1 ="Invalid minutes (0–59)"
+		label.text = Localization.get_text(translation_key1)
 		Globals.dejun = 0
 
 	elif total_minutes < min_allowed or total_minutes > max_allowed:
-		label.text = "În afara intervalului (07:20–09:00)"
+		translation_key1 ="Outside the interval (07:20–09:00)"
+		label.text = Localization.get_text(translation_key1)
 		Globals.dejun = 0
 		return
 	elif total_minutes <= Globals.ex and Globals.ex != 0:
-		label.text = "Respectati ordinea activităților."
+		translation_key1 ="Respect the order of activities"
+		label.text = Localization.get_text(translation_key1)
 		Globals.dejun = 0
 		return
 	elif Globals.ex == 0:
-		label.text = "Stergeti si completati casetele anterioare."
+		translation_key1 ="Delete and complete the previous boxes."
+		label.text = Localization.get_text(translation_key1)
 		Globals.dejun = 0
 		return
 	elif total_minutes - Globals.ex < 15:
-		label.text = "Intre activitati trebuie sa fie minim 15 minute."
+		translation_key1 ="There must be at least 15 minutes between activities."
+		label.text = Localization.get_text(translation_key1)
 		Globals.dejun = 0
 		return
 	else:
 		Globals.dejun = total_minutes
 		add_theme_color_override("font_color", Color.GREEN)
 		label.text = ""
+		translation_key1 = ""
 func _on_verif_ex():
 	if Globals.dejun <= Globals.ex and Globals.ex != 0:
-		label.text = "Respectati ordinea activităților."
+		translation_key1 ="Respect the order of activities"
+		label.text = Localization.get_text(translation_key1)
 		Globals.dejun = 0
 		return
 	elif Globals.ex == 0:
-		label.text = "Stergeti si completati casetele anterioare."
+		translation_key1 ="Delete and complete the previous boxes."
+		label.text = Localization.get_text(translation_key1)
 		Globals.dejun = 0
 		return
 	elif Globals.dejun - Globals.ex < 10:
-		label.text = "Intre activitati trebuie sa fie minim 10 minute."
+		translation_key1 ="There must be at least 15 minutes between activities."
+		label.text = Localization.get_text(translation_key1)
 		Globals.dejun = 0
 		return

@@ -287,9 +287,9 @@ Politica""",
 		"Parental control time:": "Ora verificare parentală:",
 		"Start the Game": "Incepe Jocul",
 		"Save": "Salvează",
-		"between 06:30 and 7:30": "intre 06:30 si 07:30",
-		"between 07:00 and 8:00": "intre 07:00 si 08:00",
-		"between 07:20 and 9:00": "intre 07:20 si 09:00",
+		"between 06:30 and 07:30": "intre 06:30 si 07:30",
+		"between 07:00 and 08:00": "intre 07:00 si 08:00",
+		"between 07:20 and 09:00": "intre 07:20 si 09:00",
 		"between 13:00 and 15:45": "intre 13:00 si 15:45",
 		"between 16:00 and 19:00": "intre 16:00 si 19:00",
 		"between 20:00 and 20:30": "intre 20:00 si 20:30",
@@ -311,8 +311,8 @@ Politica""",
 		"Outside the interval (22:00–00:00)":"În afara intervalului (22:00–00:00)",
 		"Respect the order of activities":"Respectati ordinea activităților",
 		"Delete and complete the previous boxes.":"Stergeti si completati casetele anterioare.",
-		"There must be at least 15 minutes between activities.":"Intre activitati trebuie sa fie minim 15 minute."
-		
+		"There must be at least 15 minutes between activities.":"Intre activitati trebuie sa fie minim 15 minute.",
+		"There are not 10 hours of sleep in the selected range.":"Nu sunt 10 ore de somn in intervalul selectat."
 		
 	},
 	"en": {
@@ -587,9 +587,9 @@ The accumulated stars can be used to purchase stickers in the dedicated section.
 		"Parental control time:": "Parental control time:",
 		"Start the Game": "Start the Game",
 		"Save": "Save",
-		"between 06:30 and 7:30": "between 06:30 and 07:30",
-		"between 07:00 and 8:00": "between 07:00 and 08:00",
-		"between 07:20 and 9:00": "between 07:20 and 09:00",
+		"between 06:30 and 07:30": "between 06:30 and 07:30",
+		"between 07:00 and 08:00": "between 07:00 and 08:00",
+		"between 07:20 and 09:00": "between 07:20 and 09:00",
 		"between 13:00 and 15:45": "between 13:00 and 15:45",
 		"between 16:00 and 19:00": "between 16:00 and 19:00",
 		"between 20:00 and 20:30": "between 20:00 and 20:30",
@@ -619,8 +619,8 @@ The accumulated stars can be used to purchase stickers in the dedicated section.
 		"Outside the interval (22:00–00:00)":"Outside the interval (22:00–00:00)",
 		"Respect the order of activities":"Respect the order of activities",
 		"Delete and complete the previous boxes.":"Delete and complete the previous boxes.",
-		"There must be at least 15 minutes between activities.":"There must be at least 15 minutes between activities."
-		
+		"There must be at least 15 minutes between activities.":"There must be at least 15 minutes between activities.",
+		"There are not 10 hours of sleep in the selected range.":"There are not 10 hours of sleep in the selected range."
 	}
 }
 

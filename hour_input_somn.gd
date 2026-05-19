@@ -20,6 +20,7 @@ func _update_text() -> void:
 		-1,
 		get_theme_font_size("font_size")
 	).x + 20
+	label.text = Localization.get_text(translation_key1) #face sa se traduca mereu
 func _on_text_changed(new_text):
 	add_theme_color_override("font_color", Color.WHITE)
 	var filtered_text = ""
@@ -49,24 +50,30 @@ func _on_text_changed(new_text):
 		Globals.somn = 0
 		#add_theme_color_override("font_color", Color.RED)
 		#placeholder_text = "Minute invalide (0–59)"
-		label.text = "Minute invalide (0–59)" 
+		translation_key1 ="Invalid minutes (0–59)"
+		label.text = Localization.get_text(translation_key1)
 
 	elif total_minutes < min_allowed or total_minutes > max_allowed:
 		Globals.somn = 0
-		label.text = "În afara intervalului (20:40–22:00)"
+		translation_key1 ="Outside the interval (20:40–22:00)"
+		label.text = Localization.get_text(translation_key1)
 		return
 	elif total_minutes <= Globals.cina and Globals.cina != 0:
-		label.text = "Respectati ordinea activităților."
+		translation_key1 ="Respect the order of activities"
+		label.text = Localization.get_text(translation_key1)
 		Globals.somn = 0
 		return
 	elif Globals.cina == 0:
-		label.text = "Stergeti si completati casetele anterioare."
+		translation_key1 ="Delete and complete the previous boxes."
+		label.text = Localization.get_text(translation_key1)
 		Globals.somn = 0
 		return
 	elif total_minutes - Globals.trezire < 600:
 		add_theme_color_override("font_color", Color.WHITE)
-		label.text = "Nu sunt 10 ore de somn in intervalul selectat."
+		translation_key1 ="There are not 10 hours of sleep in the selected range."
+		label.text = Localization.get_text(translation_key1)
 	else:
 		Globals.somn = total_minutes
 		add_theme_color_override("font_color", Color.GREEN)
 		label.text = ""
+		translation_key1 = ""

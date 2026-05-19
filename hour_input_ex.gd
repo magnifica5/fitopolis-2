@@ -78,6 +78,7 @@ func _on_text_changed(new_text):
 		Globals.ex = total_minutes
 		add_theme_color_override("font_color", Color.GREEN)
 		label.text = ""
+		translation_key1 = ""
 		if Globals.dejun != 0:
 			Globals.emit_signal("verif_ex")
 func _on_verif_trezire():
@@ -91,7 +92,7 @@ func _on_verif_trezire():
 		label.text = Localization.get_text(translation_key1)
 		Globals.ex = 0
 		return
-	elif Globals.ex - Globals.trezire < 10:
+	elif Globals.ex - Globals.trezire < 15:
 		translation_key1 ="There must be at least 15 minutes between activities."
 		label.text = Localization.get_text(translation_key1)
 		Globals.ex = 0
