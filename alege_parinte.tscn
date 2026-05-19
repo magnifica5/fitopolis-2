@@ -71,7 +71,8 @@ theme_override_constants/separation = 55
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
 layout_mode = 2
-theme_override_constants/separation = 400
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -107,7 +108,8 @@ theme_override_font_sizes/font_size = 55
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
 layout_mode = 2
-theme_override_constants/separation = 210
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -142,7 +144,8 @@ theme_override_font_sizes/font_size = 55
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
 layout_mode = 2
-theme_override_constants/separation = 284
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
@@ -177,7 +180,8 @@ theme_override_font_sizes/font_size = 55
 [node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
 layout_mode = 2
-theme_override_constants/separation = 435
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
@@ -212,7 +216,8 @@ theme_override_font_sizes/font_size = 55
 [node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
 layout_mode = 2
-theme_override_constants/separation = 135
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
@@ -248,7 +253,8 @@ theme_override_font_sizes/font_size = 55
 [node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
 layout_mode = 2
-theme_override_constants/separation = 437
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
@@ -284,7 +290,8 @@ theme_override_font_sizes/font_size = 55
 [node name="HBoxContainer7" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
 layout_mode = 2
-theme_override_constants/separation = 397
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer7"]
 layout_mode = 2
@@ -320,7 +327,8 @@ theme_override_font_sizes/font_size = 55
 [node name="HBoxContainer8" type="HBoxContainer" parent="CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer9/ScrollContainer/VBoxContainer/HBoxContainer8"]
 layout_mode = 2
