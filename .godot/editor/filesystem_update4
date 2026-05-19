@@ -1,12 +1,1 @@
-res://hours_daily_tasks.tscn
-res://gri.gdshader
-res://hour_input_somn.gd
-res://hour_input_trezire.gd
-res://hour_input_dejun.gd
-res://hour_input_pranz.gd
-res://Localization.gd
-res://hour_input_cina.gd
-res://hour_input_ex_2.gd
-res://hour_input_parinte.gd
-res://labelincepejocul.gd
-res://alege_parinte.tscn
+res://login.tscn
