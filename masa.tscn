@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bqh58m7uspn6o"]
+[gd_scene load_steps=23 format=3 uid="uid://bqh58m7uspn6o"]
 
 [ext_resource type="Script" uid="uid://qs6ipn8peqnu" path="res://manacare.gd" id="1_2vouo"]
 [ext_resource type="Texture2D" uid="uid://dp2x7a8o62h7u" path="res://assets/bucatarie 2.0.png" id="2_ymb87"]
@@ -11,9 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://dgpbghamya1sa" path="res://masa_dimi/bsup.png" id="7_k30fw"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="7_y6o63"]
 [ext_resource type="Script" uid="uid://c3corcmfufupq" path="res://baiat.gd" id="9_8jyr5"]
+[ext_resource type="Script" uid="uid://bfs0j5av1pefj" path="res://labelmasa.gd" id="12_6lg6k"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="12_g8gkr"]
 [ext_resource type="AudioStream" uid="uid://b8ulfuxl4ov1u" path="res://audio/voices/miss_nutri_m.mp3" id="13_x4vyr"]
 [ext_resource type="AudioStream" uid="uid://ck36iomg2h75" path="res://audio/voices/santos_m.mp3" id="14_6lg6k"]
+[ext_resource type="Texture2D" uid="uid://dq4s8ytaf3nsl" path="res://assets/level.png" id="16_pgmlb"]
+[ext_resource type="Script" uid="uid://btmv00k6gtwqp" path="res://script buton schimbare limba.gd" id="17_sutq1"]
+[ext_resource type="Script" uid="uid://bgxsn1epni2pi" path="res://eticheta.gd" id="18_sg11b"]
+[ext_resource type="AudioStream" uid="uid://b7surmx1yhgjt" path="res://audio/voices_eng/miss_nuti_eng_eat.mp3" id="19_sg11b"]
+[ext_resource type="AudioStream" uid="uid://dyt6fvkeprlo5" path="res://audio/voices_eng/santos_eng_eat.mp3" id="20_20l0v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xgpa"]
 animations = [{
@@ -127,6 +133,7 @@ text = "Haide să luăm masa"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+script = ExtResource("12_6lg6k")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_g8gkr")
@@ -137,5 +144,42 @@ stream = ExtResource("13_x4vyr")
 
 [node name="santos" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_6lg6k")
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer5"]
+offset_left = 14.0
+offset_top = 22.0
+offset_right = 219.0
+offset_bottom = 261.0
+texture_normal = ExtResource("16_pgmlb")
+texture_pressed = ExtResource("16_pgmlb")
+texture_hover = ExtResource("16_pgmlb")
+texture_disabled = ExtResource("16_pgmlb")
+texture_focused = ExtResource("16_pgmlb")
+script = ExtResource("17_sutq1")
+
+[node name="Label" type="Label" parent="CanvasLayer5/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -45.5
+offset_right = 38.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_y6o63")
+theme_override_font_sizes/font_size = 60
+script = ExtResource("18_sg11b")
+
+[node name="miss_nutri_eng" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_sg11b")
+
+[node name="santos_eng" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_20l0v")
 
 [connection signal="pressed" from="CanvasLayer2/TextureButton" to="." method="_back_to_levels"]

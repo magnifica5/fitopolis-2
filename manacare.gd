@@ -1,14 +1,22 @@
 extends Node2D
 @onready var rm = $miss_nutri
 @onready var rs = $santos
+@onready var rme = $miss_nutri_eng
+@onready var rse = $santos_eng
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var personaj = Globals.citeste_personaj()
 	if personaj == 1:
-		rm.play()
+		if Localization.current_language == "ro":
+			rm.play()
+		else:
+			rme.play()
 	else:
-		rs.play()
+		if Localization.current_language == "en":
+			rse.play()
+		else:
+			rs.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -6,11 +6,18 @@ var current_language := "ro"
 var translations := {
 	"ro": {
 		"greeting": "Bună ziua!",
+		"comeback": "Revino mai târziu pentru noi 
+		activități. Între timp poți 
+		face exerciții fizice din 
+		secțiunea din meniu!",
+		"spalat_maini": "Mereu spală-te pe mâini înainte de a mânca",
 		"start_game": "Începe jocul",
 		"settings": "Setări",
 		"Enter your email": "Introduceți emailul dumneavoastră",
 		"SAVE": "SALVEAZĂ",
 		"START": "START",
+		"start_mission": "INCEPE 
+		MISIUNEA",
 		"info":"""La deschiderea jocului apar două butoane: START și ?. Butonul ? oferă informații despre modul de funcționare al jocului, iar butonul START pornește procesul de configurare.
 
 Configurarea aplicației (setup)
@@ -312,12 +319,20 @@ Politica""",
 		"Respect the order of activities":"Respectati ordinea activităților",
 		"Delete and complete the previous boxes.":"Stergeti si completati casetele anterioare.",
 		"There must be at least 15 minutes between activities.":"Intre activitati trebuie sa fie minim 15 minute.",
-		"There are not 10 hours of sleep in the selected range.":"Nu sunt 10 ore de somn in intervalul selectat."
+		"There are not 10 hours of sleep in the selected range.":"Nu sunt 10 ore de somn in intervalul selectat.",
+		"masa": "Haide să luăm masa"
 		
 	},
 	"en": {
+		"comeback": "Come back later for new
+activities. In the meantime, you can exercise
+from the menu section.",
+		"spalat_maini": "Always wash your hands before eating",
 		"greeting": "Hello!",
 		"start_game": "Start Game",
+		"start_mission": "START 
+		MISSION",
+		"masa": "Let's eat!",
 		"utilizationp": """
 1. Introduction
 
@@ -619,7 +634,7 @@ The accumulated stars can be used to purchase stickers in the dedicated section.
 		"Outside the interval (22:00–00:00)":"Outside the interval (22:00–00:00)",
 		"Respect the order of activities":"Respect the order of activities",
 		"Delete and complete the previous boxes.":"Delete and complete the previous boxes.",
-		"There must be at least 15 minutes between activities.":"There must be at least 15 minutes between activities.",
+		"There must be at least 15 minutes between activities.":"Must be at least 15 minutes between activities.",
 		"There are not 10 hours of sleep in the selected range.":"There are not 10 hours of sleep in the selected range."
 	}
 }

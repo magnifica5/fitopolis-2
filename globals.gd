@@ -14,7 +14,7 @@ var pranz = 0
 var ex2 = 0
 var cina = 0
 var somn = 0
-var parinte
+var parinte = 0
 var parola
 var channel_exists = 0
 var email

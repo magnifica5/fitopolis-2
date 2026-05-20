@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c864c5wuonsrs"]
+[gd_scene load_steps=24 format=3 uid="uid://c864c5wuonsrs"]
 
 [ext_resource type="Script" uid="uid://dbidmmg3sw4qj" path="res://numaratoare_dinti.gd" id="1_r2uc7"]
 [ext_resource type="Script" uid="uid://bk07nul7cqlqs" path="res://spalat_maini.gd" id="1_ry1mv"]
@@ -8,10 +8,13 @@
 [ext_resource type="Script" uid="uid://b0iq25oo8uktk" path="res://back_to_levels.gd" id="4_idunr"]
 [ext_resource type="Script" uid="uid://c3corcmfufupq" path="res://baiat.gd" id="4_tp7ag"]
 [ext_resource type="Texture2D" uid="uid://c47s0qqdoamyl" path="res://spalat pe dinti/spalat_maini_f.png" id="5_agy53"]
+[ext_resource type="Script" uid="uid://bj73xwmgcxhqh" path="res://spalat_maini_label.gd" id="6_lh6ws"]
 [ext_resource type="Script" uid="uid://bl344u5hv6t5o" path="res://fata.gd" id="7_xwsei"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="10_xwsei"]
 [ext_resource type="AudioStream" uid="uid://b2bkea040v7rc" path="res://audio/voices/miss_nutri_sm.mp3" id="11_ygyv1"]
 [ext_resource type="AudioStream" uid="uid://2f1meowc8shn" path="res://audio/voices/santos_sm.mp3" id="12_lh6ws"]
+[ext_resource type="AudioStream" uid="uid://cfkmycg4ubtds" path="res://audio/voices_eng/miss_nutri_eng_wHands.mp3" id="14_hk1u2"]
+[ext_resource type="AudioStream" uid="uid://d4nkvr1v8ogm6" path="res://audio/voices_eng/santos_eng_wHands.mp3" id="15_4ch15"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_maqut"]
 atlas = ExtResource("3_agy53")
@@ -129,6 +132,7 @@ text = "Mereu spală-te pe mâini înainte de a mânca"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+script = ExtResource("6_lh6ws")
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 
@@ -169,6 +173,12 @@ stream = ExtResource("11_ygyv1")
 
 [node name="santos" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_lh6ws")
+
+[node name="miss_nutri_eng" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_hk1u2")
+
+[node name="santos_eng" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_4ch15")
 
 [connection signal="final_dinti" from="CanvasLayer" to="CanvasLayer2" method="_final_dinti"]
 [connection signal="pressed" from="CanvasLayer2/TextureButton" to="." method="_back_to_levels"]

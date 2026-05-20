@@ -1,5 +1,7 @@
-Label
+AudioStreamPlayer
+AudioStreamPlayer2D
 CanvasLayer
+Label
 TextureButton
 Button
 GridContainer
@@ -8,7 +10,5 @@ Camera2D
 RichTextLabel
 VBoxContainer
 HTTPRequest
-AudioStreamPlayer
 TextureRect
 CheckBox
-ScrollContainer

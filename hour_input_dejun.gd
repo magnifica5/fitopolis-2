@@ -46,7 +46,7 @@ func _on_text_changed(new_text):
 	var minute = int(text.substr(3, 2))
 	var total_minutes = hour * 60 + minute
 	var min_allowed = 7 * 60 + 20   
-	var max_allowed = 9 * 60  
+	var max_allowed = 10 * 60  
 	if minute < 0 or minute > 59:
 		#add_theme_color_override("font_color", Color.RED)
 		#placeholder_text = "Minute invalide (0–59)"
@@ -90,7 +90,7 @@ func _on_verif_ex():
 		label.text = Localization.get_text(translation_key1)
 		Globals.dejun = 0
 		return
-	elif Globals.dejun - Globals.ex < 10:
+	elif Globals.dejun - Globals.ex < 15:
 		translation_key1 ="There must be at least 15 minutes between activities."
 		label.text = Localization.get_text(translation_key1)
 		Globals.dejun = 0
