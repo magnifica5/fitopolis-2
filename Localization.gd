@@ -5,6 +5,8 @@ var current_language := "ro"
 
 var translations := {
 	"ro": {
+		"complete_activity": "Activitate
+Finalizată",
 		"greeting": "Bună ziua!",
 		"comeback": "Revino mai târziu pentru noi 
 		activități. Între timp poți 
@@ -332,9 +334,13 @@ Politica""",
 		"RESET PASSWORD":"""RESETEAZĂ 
 PAROLA""",
 "ABOUT THE GAME":"""DESPRE
-JOC"""
+JOC""",
+"codereset": "Verificați adresa de email și introduceți codul primit"
 	},
 	"en": {
+		"codereset": "Check your email address and enter the code you received",
+		"complete_activity": "Completed
+Activity",
 		"comeback": "Come back later for new
 activities. In the meantime, you can exercise
 from the menu section.",

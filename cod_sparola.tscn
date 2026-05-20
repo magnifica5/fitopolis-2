@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvcee8yy30o63"]
+[gd_scene load_steps=10 format=3 uid="uid://dvcee8yy30o63"]
 
 [ext_resource type="Script" uid="uid://cgei1tg7vwisr" path="res://cod_sparola.gd" id="1_ee5ta"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_vdqsm"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_ee5ta"]
 [ext_resource type="Script" uid="uid://bxmi24sgqy24b" path="res://password_inputp.gd" id="4_ee5ta"]
 [ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="4_xrbi6"]
+[ext_resource type="Script" uid="uid://nnqsif5layjl" path="res://resetcode.gd" id="5_7si2y"]
 [ext_resource type="Script" uid="uid://djxduytswe8n7" path="res://salv_code.gd" id="5_pshod"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="6_86mml"]
+[ext_resource type="Script" uid="uid://d24e0744pipls" path="res://continue.gd" id="8_xrbi6"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ee5ta")
@@ -78,6 +80,7 @@ theme_override_font_sizes/font_size = 94
 text = "Verificați adresa de email și introduceți codul primit"
 horizontal_alignment = 1
 autowrap_mode = 2
+script = ExtResource("5_7si2y")
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
 
@@ -114,6 +117,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_ee5ta")
 theme_override_font_sizes/font_size = 60
 text = "CONTINUĂ"
+script = ExtResource("8_xrbi6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_86mml")
