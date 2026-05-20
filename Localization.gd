@@ -331,8 +331,13 @@ Politica""",
 		"TO THE SITE":"CATRE SITE",
 		"RESET PASSWORD":"""RESETEAZĂ 
 PAROLA""",
+"Good morning, little hero! Fitopolis awaits you — but first, make your bed like a true champion!":"Bună dimineața, mic erou! Fitopolis te așteaptă — dar mai întâi, fă-ți patul ca un adevărat campion!",
 "ABOUT THE GAME":"""DESPRE
-JOC"""
+JOC""",
+"wash our faces":"""  Acum este 
+ timpul să ne
+ spălăm pe față
+"""
 	},
 	"en": {
 		"comeback": "Come back later for new
@@ -658,7 +663,12 @@ The accumulated stars can be used to purchase stickers in the dedicated section.
 		"RESET PASSWORD":"""RESET 
 		PASSWORD""",
 "ABOUT THE GAME":"""ABOUT 
-THE GAME"""
+THE GAME""",
+"Good morning, little hero! Fitopolis awaits you — but first, make your bed like a true champion!":"Good morning, little hero! Fitopolis awaits you — but first, make your bed like a true champion!",
+"wash our faces":"""Now it's 
+time to 
+wash our faces
+"""
 	}
 }
 
