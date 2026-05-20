@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c08n8p35w8ufo"]
+[gd_scene load_steps=15 format=3 uid="uid://c08n8p35w8ufo"]
 
 [ext_resource type="Script" uid="uid://rq0r175tfe4t" path="res://complete_activity.gd" id="1_8isn1"]
 [ext_resource type="Texture2D" uid="uid://bydnxw3csuyet" path="res://assets/castig/castig.png" id="1_kskps"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="6_6fsdy"]
 [ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="8_0p0x0"]
 [ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="9_6fsdy"]
+[ext_resource type="Script" uid="uid://c28tm426hxo1j" path="res://activitate_finalizata.gd" id="10_f07xr"]
 [ext_resource type="Texture2D" uid="uid://b415284iuneso" path="res://assets/acasa_buton.png" id="10_yvnjm"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="13_op5q4"]
 
@@ -108,6 +109,7 @@ theme_override_font_sizes/font_size = 120
 text = "Activitate
 Finalizată"
 horizontal_alignment = 1
+script = ExtResource("10_f07xr")
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
 
