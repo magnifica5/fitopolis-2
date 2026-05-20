@@ -13195,6 +13195,7 @@ tile_map_data = PackedByteArray("AAA6AAYAAAADACQAAAA7AAUAAAADACQAAAA6AAUAAAADACQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer10" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(10, 10)
@@ -13202,6 +13203,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer11" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(15, 15)
@@ -13209,6 +13211,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer12" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(18, 18)
@@ -13216,6 +13219,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer16" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(10, 10)
@@ -13223,6 +13227,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer17" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(15, 15)
@@ -13230,6 +13235,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer18" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(18, 18)
@@ -13237,6 +13243,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer13" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(10, 10)
@@ -13244,6 +13251,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer14" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(15, 15)
@@ -13251,6 +13259,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer15" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(18, 18)
@@ -13258,6 +13267,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer19" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(10, 10)
@@ -13265,6 +13275,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer20" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(15, 15)
@@ -13272,6 +13283,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer21" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(18, 18)
@@ -13279,6 +13291,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer22" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(10, 10)
@@ -13286,6 +13299,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer23" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(15, 15)
@@ -13293,6 +13307,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer24" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(18, 18)
@@ -13300,6 +13315,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer25" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(10, 10)
@@ -13307,6 +13323,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer26" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(15, 15)
@@ -13314,6 +13331,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer27" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(18, 18)
@@ -13321,6 +13339,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer28" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(10, 10)
@@ -13328,6 +13347,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer29" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(15, 15)
@@ -13335,6 +13355,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer30" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(18, 18)
@@ -13342,6 +13363,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer31" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(10, 10)
@@ -13349,6 +13371,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer32" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(15, 15)
@@ -13356,6 +13379,7 @@ tile_map_data = PackedByteArray("AACvA/MAAAACAAQAAACwA/MAAAACAAQAAACxA/MAAAACAAQ
 tile_set = SubResource("TileSet_ykcqp")
 
 [node name="Layer33" type="TileMapLayer" parent="."]
+texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 0)
 scale = Vector2(18, 18)

@@ -22,6 +22,7 @@ func _on_password_changed(new_text: String) -> void:
 	if input.text != "":
 		butoane.visible = true
 		label_incorect.visible = false
+		
 	else:
 		butoane.visible = false 
 		label_incorect.visible = false

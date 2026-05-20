@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b15y51ipnvbeq"]
+[gd_scene load_steps=26 format=3 uid="uid://b15y51ipnvbeq"]
 
 [ext_resource type="Script" uid="uid://crrx5y3d4afv7" path="res://login.gd" id="1_0s12h"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_cau7c"]
@@ -10,9 +10,13 @@
 [ext_resource type="Script" uid="uid://scoir5hqbjh3" path="res://start_mission.gd" id="6_621tt"]
 [ext_resource type="Texture2D" uid="uid://dtsa03c6hr31p" path="res://assets/bara meniu/exercitii.png" id="7_0trqi"]
 [ext_resource type="Texture2D" uid="uid://bjnaxpevceujt" path="res://assets/bara meniu/stikere.jpg" id="9_2rjvb"]
+[ext_resource type="Script" uid="uid://bj8h8sxumd4ug" path="res://labeloras.gd" id="10_mgw1h"]
+[ext_resource type="Script" uid="uid://dvlbkija7xuno" path="res://labelparinti.gd" id="12_xqlb1"]
+[ext_resource type="Script" uid="uid://dmryn8xccyd2f" path="res://labelstickere.gd" id="14_affgl"]
 [ext_resource type="Texture2D" uid="uid://dc0gqvsbb6mku" path="res://assets/happyB.png" id="14_qyti6"]
 [ext_resource type="Texture2D" uid="uid://d3cvf2cjwrkmr" path="res://assets/happyF.png" id="15_osbi4"]
 [ext_resource type="Script" uid="uid://cgqb5jx370b1g" path="res://catre_oras.gd" id="16_621tt"]
+[ext_resource type="Script" uid="uid://b1bj2pe11r16j" path="res://labelexerciti.gd" id="16_mee7c"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="16_qyti6"]
 [ext_resource type="AudioStream" uid="uid://tkntsuwyygk5" path="res://audio/menu_music.mp3" id="17_osbi4"]
 [ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="18_621tt"]
@@ -128,6 +132,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("19_t1khq")
 theme_override_font_sizes/font_size = 27
 text = "ORAȘ"
+script = ExtResource("10_mgw1h")
 
 [node name="TextureButton2" type="TextureButton" parent="meniu/HBoxContainer"]
 layout_mode = 2
@@ -151,6 +156,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("19_t1khq")
 theme_override_font_sizes/font_size = 27
 text = "PĂRINȚI"
+script = ExtResource("12_xqlb1")
 
 [node name="TextureButton3" type="TextureButton" parent="meniu/HBoxContainer"]
 layout_mode = 2
@@ -174,6 +180,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("19_t1khq")
 theme_override_font_sizes/font_size = 27
 text = "STICKERE"
+script = ExtResource("14_affgl")
 
 [node name="TextureButton4" type="TextureButton" parent="meniu/HBoxContainer"]
 layout_mode = 2
@@ -197,6 +204,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("19_t1khq")
 theme_override_font_sizes/font_size = 27
 text = "EXERCIȚII"
+script = ExtResource("16_mee7c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -297,8 +305,8 @@ theme_override_fonts/font = ExtResource("19_t1khq")
 theme_override_font_sizes/font_size = 60
 script = ExtResource("21_ywne8")
 
-[connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
 [connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
+[connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton" to="." method="_catre_oras_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton2" to="." method="_catre_parinti"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]
