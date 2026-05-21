@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b15y51ipnvbeq"]
+[gd_scene load_steps=23 format=3 uid="uid://b15y51ipnvbeq"]
 
 [ext_resource type="Script" uid="uid://crrx5y3d4afv7" path="res://login.gd" id="1_0s12h"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_cau7c"]
@@ -21,10 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://tkntsuwyygk5" path="res://audio/menu_music.mp3" id="17_osbi4"]
 [ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="18_621tt"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="19_t1khq"]
-[ext_resource type="Texture2D" uid="uid://dq4s8ytaf3nsl" path="res://assets/level.png" id="19_t5wce"]
 [ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="20_hkpux"]
-[ext_resource type="Script" uid="uid://btmv00k6gtwqp" path="res://script buton schimbare limba.gd" id="20_nmqm8"]
-[ext_resource type="Script" uid="uid://bgxsn1epni2pi" path="res://eticheta.gd" id="21_ywne8"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0s12h")
@@ -273,37 +270,6 @@ volume_db = -10.0
 
 [node name="menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_osbi4")
-
-[node name="CanvasLayer5" type="CanvasLayer" parent="."]
-
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer5"]
-offset_left = 14.0
-offset_top = 22.0
-offset_right = 219.0
-offset_bottom = 261.0
-texture_normal = ExtResource("19_t5wce")
-texture_pressed = ExtResource("19_t5wce")
-texture_hover = ExtResource("19_t5wce")
-texture_disabled = ExtResource("19_t5wce")
-texture_focused = ExtResource("19_t5wce")
-script = ExtResource("20_nmqm8")
-
-[node name="Label" type="Label" parent="CanvasLayer5/TextureButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -44.5
-offset_top = -45.5
-offset_right = 38.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("19_t1khq")
-theme_override_font_sizes/font_size = 60
-script = ExtResource("21_ywne8")
 
 [connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
 [connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
