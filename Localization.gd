@@ -5,8 +5,6 @@ var current_language := "ro"
 
 var translations := {
 	"ro": {
-		"complete_activity": "Activitate
-Finalizată",
 		"greeting": "Bună ziua!",
 		"comeback": "Revino mai târziu pentru noi 
 		activități. Între timp poți 
@@ -333,14 +331,15 @@ Politica""",
 		"TO THE SITE":"CATRE SITE",
 		"RESET PASSWORD":"""RESETEAZĂ 
 PAROLA""",
+"Good morning, little hero! Fitopolis awaits you — but first, make your bed like a true champion!":"Bună dimineața, mic erou! Fitopolis te așteaptă — dar mai întâi, fă-ți patul ca un adevărat campion!",
 "ABOUT THE GAME":"""DESPRE
 JOC""",
-"codereset": "Verificați adresa de email și introduceți codul primit"
+"wash our faces":"""  Acum este 
+ timpul să ne
+ spălăm pe față
+"""
 	},
 	"en": {
-		"codereset": "Check your email address and enter the code you received",
-		"complete_activity": "Completed
-Activity",
 		"comeback": "Come back later for new
 activities. In the meantime, you can exercise
 from the menu section.",
@@ -664,7 +663,12 @@ The accumulated stars can be used to purchase stickers in the dedicated section.
 		"RESET PASSWORD":"""RESET 
 		PASSWORD""",
 "ABOUT THE GAME":"""ABOUT 
-THE GAME"""
+THE GAME""",
+"Good morning, little hero! Fitopolis awaits you — but first, make your bed like a true champion!":"Good morning, little hero! Fitopolis awaits you — but first, make your bed like a true champion!",
+"wash our faces":"""Now it's 
+time to 
+wash our faces
+"""
 	}
 }
 

@@ -3,10 +3,13 @@ extends Node2D
 @onready var label = $CanvasLayer3/TextureRect/Label
 @onready var rm = $miss_nutri
 @onready var rs = $santos
+@export var translation_key: String = "Good morning, little hero! Fitopolis awaits you — but first, make your bed like a true champion!"
 var char_index = 0
 var replica_aleatorie = ""
 var current_text = ""
 func _ready():
+	Localization.language_changed.connect(_update_text)
+	_update_text()
 	#randomize()
 	#var replici = []
 	## Deschide fișierul
@@ -16,7 +19,8 @@ func _ready():
 		#var result = JSON.parse_string(json_text)
 		#replici = result
 	# Alege aleatoriu
-	replica_aleatorie = "Bună dimineața, mic erou! Fitopolis te așteaptă — dar mai întâi, fă-ți patul ca un adevărat campion!"#replici[randi() % replici.size()]
+	
+	replica_aleatorie = Localization.get_text(translation_key) #replici[randi() % replici.size()]
 	var speed = 0.07
 	timer.wait_time = speed
 	timer.connect("timeout", Callable(self, "_on_TypeTimer_timeout"))
@@ -26,7 +30,10 @@ func _ready():
 		rm.play()
 	else:
 		rs.play()
-	
+func _update_text() -> void:
+	replica_aleatorie = Localization.get_text(translation_key)
+
+
 func _on_TypeTimer_timeout():
 	if char_index < replica_aleatorie.length():
 		current_text += replica_aleatorie[char_index]
@@ -34,8 +41,6 @@ func _on_TypeTimer_timeout():
 		char_index += 1
 	else:
 		timer.stop()
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

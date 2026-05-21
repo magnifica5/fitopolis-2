@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8j0aosn6mx6r"]
+[gd_scene load_steps=22 format=3 uid="uid://b8j0aosn6mx6r"]
 
 [ext_resource type="Texture2D" uid="uid://4bn6ytmlhqsn" path="res://spalat pe dinti/spal1(1).png" id="1_egpqi"]
 [ext_resource type="Script" uid="uid://di7be68h5wvfq" path="res://spalat_fata.gd" id="1_qquos"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="1_vgtuo"]
 [ext_resource type="Texture2D" uid="uid://dm833t8ai5dfj" path="res://spalat pe dinti/spal3 (1).png" id="3_4cd5n"]
+[ext_resource type="Script" uid="uid://bl0hf7cxn7c2g" path="res://labelspalat_fata.gd" id="3_bl0dt"]
 [ext_resource type="Texture2D" uid="uid://b8v5rbo2x5260" path="res://spalat pe dinti/spal4 (1).png" id="4_vgtuo"]
 [ext_resource type="Texture2D" uid="uid://bv5yntews1oh5" path="res://spalat pe dinti/spal5 (1).png" id="5_tn8ab"]
 [ext_resource type="Texture2D" uid="uid://cdxv4kwgifdo7" path="res://spalat pe dinti/spal6(1).png" id="6_ejss8"]
@@ -104,6 +105,7 @@ text = "  Acum este
  timpul să ne
  spălăm pe față"
 horizontal_alignment = 1
+script = ExtResource("3_bl0dt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2"]
 z_index = 1
