@@ -19,7 +19,7 @@ func _on_complete_pressed() -> void:
 	trimite_mail(email, code)
 	
 func trimite_mail(email: String, code: String):
-	var url = "http://127.0.0.1:5000/trimite" #"https://server-python-fitopolis-final.onrender.com/trimite" # nu uita ca aici trebuie sa fie pe render ca sa se trimita pe telefon
+	var url = "https://server-trimitere-mail.onrender.com/trimite" #"https://server-python-fitopolis-final.onrender.com/trimite" # nu uita ca aici trebuie sa fie pe render ca sa se trimita pe telefon
 	#"https://python-fit-o-polis.onrender.com/trimite" #"https://server-python-fitopolis.onrender.com/trimite"
 	var headers = [
 		"Content-Type: application/json",
