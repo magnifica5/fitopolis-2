@@ -1,2 +1,15 @@
-res://masa.tscn
-res://login.tscn
+res://baie_dimineata.tscn
+res://baie_dimineata.gd
+res://Localization.gd
+res://bifeaza_activi.tscn
+res://check_box1.gd
+res://check_box2.gd
+res://check_box3.gd
+res://check_box4.gd
+res://check_box5.gd
+res://check_box6.gd
+res://check_box.gd
+res://culcare.tscn
+res://congrats.gd
+res://culcare.gd
+res://castig_stele.tscn

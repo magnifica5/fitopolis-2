@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmh7bpqsh7wdu"]
+[gd_scene load_steps=15 format=3 uid="uid://dmh7bpqsh7wdu"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_i3qld"]
 [ext_resource type="Script" uid="uid://mq5xobah3gjy" path="res://bifeaza_activi.gd" id="1_s7x7j"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_saa1d"]
 [ext_resource type="Texture2D" uid="uid://m2jb6cspt5ui" path="res://assets/buton_simplu.png" id="3_dthr3"]
 [ext_resource type="Texture2D" uid="uid://dcnfwp3m4001b" path="res://assets/buton_bifa.png" id="3_s7x7j"]
+[ext_resource type="Script" uid="uid://kg7a78vs73bh" path="res://check_box.gd" id="6_ambmn"]
 [ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="6_nqjwd"]
+[ext_resource type="Script" uid="uid://bnoqy4wkxt3xh" path="res://check_box1.gd" id="7_4bgrg"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="7_nqjwd"]
+[ext_resource type="Script" uid="uid://dsn5vg3kr47f0" path="res://check_box2.gd" id="8_eosf4"]
+[ext_resource type="Script" uid="uid://ctyfmghut327v" path="res://check_box3.gd" id="9_nu5tg"]
+[ext_resource type="Script" uid="uid://k7ggvt4cwub5" path="res://check_box4.gd" id="10_pgfsj"]
+[ext_resource type="Script" uid="uid://di38fr4dysrtl" path="res://check_box5.gd" id="11_dga5i"]
+[ext_resource type="Script" uid="uid://cihqd3p6i1vvf" path="res://check_box6.gd" id="12_86xgr"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_s7x7j")
@@ -64,6 +71,7 @@ theme_override_font_sizes/font_size = 70
 theme_override_icons/checked = ExtResource("3_s7x7j")
 theme_override_icons/unchecked = ExtResource("3_dthr3")
 text = "Trezire Dimineață"
+script = ExtResource("6_ambmn")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
@@ -83,6 +91,7 @@ theme_override_font_sizes/font_size = 70
 theme_override_icons/checked = ExtResource("3_s7x7j")
 theme_override_icons/unchecked = ExtResource("3_dthr3")
 text = "Exerciții dimineața"
+script = ExtResource("7_4bgrg")
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
@@ -102,6 +111,7 @@ theme_override_font_sizes/font_size = 70
 theme_override_icons/checked = ExtResource("3_s7x7j")
 theme_override_icons/unchecked = ExtResource("3_dthr3")
 text = "Masa de dimineață"
+script = ExtResource("8_eosf4")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
@@ -121,6 +131,7 @@ theme_override_font_sizes/font_size = 70
 theme_override_icons/checked = ExtResource("3_s7x7j")
 theme_override_icons/unchecked = ExtResource("3_dthr3")
 text = "Masa de prânz"
+script = ExtResource("9_nu5tg")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
@@ -140,6 +151,7 @@ theme_override_font_sizes/font_size = 70
 theme_override_icons/checked = ExtResource("3_s7x7j")
 theme_override_icons/unchecked = ExtResource("3_dthr3")
 text = "Exerciții după-amiază"
+script = ExtResource("10_pgfsj")
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
@@ -159,6 +171,7 @@ theme_override_font_sizes/font_size = 70
 theme_override_icons/checked = ExtResource("3_s7x7j")
 theme_override_icons/unchecked = ExtResource("3_dthr3")
 text = "Masa de seară"
+script = ExtResource("11_dga5i")
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/CanvasLayer9/ScrollContainer/VBoxContainer"]
 layout_direction = 2
@@ -178,6 +191,7 @@ theme_override_font_sizes/font_size = 70
 theme_override_icons/checked = ExtResource("3_s7x7j")
 theme_override_icons/unchecked = ExtResource("3_dthr3")
 text = "Activități înainte de somn"
+script = ExtResource("12_86xgr")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 

@@ -337,7 +337,13 @@ JOC""",
 "wash our faces":"""  Acum este 
  timpul să ne
  spălăm pe față
-"""
+""",
+"periuta":"Pregătește-ți periuța și apasă pe bifă",
+"Morning Wake-up":"Trezire Dimineață",
+"Activities before bed":"Activități înainte de somn",
+"Congratulations on yesterday's activities, superheroes!":"Felicitări pentru activitățile de ieri, super-eroule!",
+"It's bedtime!":"A venit ora de culcare! Apasa pe bifă și intră în lumea somnului!
+Noapte bună!"
 	},
 	"en": {
 		"comeback": "Come back later for new
@@ -668,7 +674,13 @@ THE GAME""",
 "wash our faces":"""Now it's 
 time to 
 wash our faces
-"""
+""",
+"periuta":"Get your toothbrush ready and click the check mark",
+"Morning Wake-up":"Morning Wake-up",
+"Activities before bed":"Activities before bed",
+"Congratulations on yesterday's activities, superheroes!":"Congratulations on yesterday's activities, superheroes!",
+"It's bedtime!":"It's bedtime! Click the tick and enter the world of sleep!
+Good night!"
 	}
 }
 
