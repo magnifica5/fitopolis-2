@@ -16,6 +16,7 @@ var translations := {
 		"Enter your email": "Introduceți emailul dumneavoastră",
 		"SAVE": "SALVEAZĂ",
 		"START": "START",
+		"codereset":"Verificați adresa de email și introduceți codul primit",
 		"start_mission": "INCEPE 
 		MISIUNEA",
 		"info":"""La deschiderea jocului apar două butoane: START și ?. Butonul ? oferă informații despre modul de funcționare al jocului, iar butonul START pornește procesul de configurare.
@@ -343,8 +344,21 @@ JOC""",
 "Activities before bed":"Activități înainte de somn",
 "Congratulations on yesterday's activities, superheroes!":"Felicitări pentru activitățile de ieri, super-eroule!",
 "It's bedtime!":"A venit ora de culcare! Apasa pe bifă și intră în lumea somnului!
-Noapte bună!"
+Noapte bună!",
+"Cod valid":"Cod valid",
+"Cod invalid":"Cod invalid",
+"Activity
+Completed":"Activitate
+Finalizată"
 	},
+	
+	
+	
+	
+	
+	
+	
+	
 	"en": {
 		"comeback": "Come back later for new
 activities. In the meantime, you can exercise
@@ -642,6 +656,7 @@ The accumulated stars can be used to purchase stickers in the dedicated section.
 		"Continue": "Continue",
 		"intro_email": "Please enter your email",
 		"email_code": "Verify your email address and enter the verification code.",
+		"codereset":"Check your email address and enter the code you received.",
 		"parrent_pass": "Enter the password with which you will access the parent section",
 		"character": "Click on the character that represents you:",
 		"Invalid format (HH:MM)":"Invalid format (HH:MM)",
@@ -680,7 +695,12 @@ wash our faces
 "Activities before bed":"Activities before bed",
 "Congratulations on yesterday's activities, superheroes!":"Congratulations on yesterday's activities, superheroes!",
 "It's bedtime!":"It's bedtime! Click the tick and enter the world of sleep!
-Good night!"
+Good night!",
+"Cod valid":"Valid Code",
+"Cod invalid":"Invalid code",
+"Activity
+Completed":"Activity
+Completed"
 	}
 }
 

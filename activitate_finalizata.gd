@@ -2,7 +2,8 @@ extends Label
 
 
 # Called when the node enters the scene tree for the first time.
-@export var translation_key: String = "complete_activity"
+@export var translation_key: String = "Activity
+Completed"
 func _ready() -> void:
 	Localization.language_changed.connect(_update_text)
 	_update_text()
