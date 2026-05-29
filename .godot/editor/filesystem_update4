@@ -1,6 +1,2 @@
-res://resetcode.gd
-res://Localization.gd
-res://password_inputp.gd
-res://code_email.tscn
-res://activitate_finalizata.gd
-res://complete_activity.tscn
+res://oras2.0.tscn
+res://layer_1.gd
