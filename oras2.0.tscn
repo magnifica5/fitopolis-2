@@ -2839,7 +2839,10 @@ texture = ExtResource("3_rnnjr")
 40:33/size_in_atlas = Vector2i(4, 5)
 40:33/0 = 0
 40:43/size_in_atlas = Vector2i(4, 5)
+40:43/next_alternative_id = 3
 40:43/0 = 0
+40:43/1 = 1
+40:43/2 = 2
 46:24/size_in_atlas = Vector2i(3, 2)
 46:24/0 = 0
 43:53/0 = 0
@@ -2860,6 +2863,9 @@ texture = ExtResource("3_rnnjr")
 40:13/0 = 0
 50:24/size_in_atlas = Vector2i(2, 4)
 50:24/0 = 0
+76:36/0 = 0
+76:7/0 = 0
+78:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58vau"]
 texture = ExtResource("4_kq0ma")
