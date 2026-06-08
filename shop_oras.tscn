@@ -1,21 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq7g65wpt238b"]
+[gd_scene load_steps=5 format=3 uid="uid://bq7g65wpt238b"]
 
-[ext_resource type="Texture2D" uid="uid://d17jq0fmfkk6r" path="res://image-removebg-preview (47).png" id="1_jco80"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_m7bmd"]
-[ext_resource type="Texture2D" uid="uid://1dvxleah0tmr" path="res://image-removebg-preview (48).png" id="2_m7bmd"]
+[ext_resource type="Texture2D" uid="uid://ca7j377dadnxj" path="res://assets/shop_slot2.png" id="2_i607x"]
+[ext_resource type="Texture2D" uid="uid://dck2xo0e02g8f" path="res://assets/nigu14.png" id="3_0ip6e"]
+[ext_resource type="Texture2D" uid="uid://c788w1sqp31sj" path="res://assets/nigu.png" id="3_n1ppx"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = 71.0
+offset_right = 49.0
+offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LevelBg" type="Sprite2D" parent="."]
-position = Vector2(917.00006, 542.00006)
-scale = Vector2(3.2408855, 3.1479483)
+position = Vector2(834.00006, 479.00003)
+scale = Vector2(4.076172, 3.813715)
 texture = ExtResource("1_m7bmd")
+metadata/_edit_lock_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -26,8 +32,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -935.0
 offset_top = -534.0
-offset_right = 935.0
-offset_bottom = 534.0
+offset_right = 886.0
+offset_bottom = 455.0
 grow_horizontal = 2
 grow_vertical = 2
 vertical_scroll_mode = 0
@@ -35,47 +41,46 @@ vertical_scroll_mode = 0
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_jco80")
+texture = ExtResource("2_i607x")
 
-[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("2_m7bmd")
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.5
+offset_top = -239.5
+offset_right = 222.5
+offset_bottom = 233.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0ip6e")
 
-[node name="TextureButton3" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
+texture = ExtResource("2_i607x")
 
-[node name="TextureButton4" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect2"]
+layout_mode = 0
+offset_left = -75.0
+offset_top = 15.0
+offset_right = 481.0
+offset_bottom = 467.0
+texture = ExtResource("3_n1ppx")
+expand_mode = 1
 
-[node name="TextureButton5" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
+texture = ExtResource("2_i607x")
 
-[node name="TextureButton6" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
+[node name="TextureRect4" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_jco80")
+texture = ExtResource("2_i607x")
 
-[node name="TextureButton7" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
+[node name="TextureRect5" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_jco80")
-
-[node name="TextureButton8" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("1_jco80")
-
-[node name="TextureButton9" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("1_jco80")
-
-[node name="TextureButton10" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("1_jco80")
-
-[node name="TextureButton11" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("1_jco80")
-
-[node name="TextureButton12" type="TextureButton" parent="ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("1_jco80")
+texture = ExtResource("2_i607x")

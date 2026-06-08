@@ -1,3 +1,5 @@
+TextureRect
+Sprite2D
 TextureButton
 HBoxContainer
 ScrollContainer
@@ -10,5 +12,3 @@ Button
 GridContainer
 CenterContainer
 Camera2D
-RichTextLabel
-VBoxContainer
