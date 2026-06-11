@@ -1,3 +1,4 @@
+Button
 TextureRect
 Sprite2D
 TextureButton
@@ -8,7 +9,6 @@ CanvasLayer
 AudioStreamPlayer
 AudioStreamPlayer2D
 Label
-Button
 GridContainer
 CenterContainer
 Camera2D

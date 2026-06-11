@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq7g65wpt238b"]
+[gd_scene load_steps=9 format=3 uid="uid://bq7g65wpt238b"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_m7bmd"]
 [ext_resource type="Texture2D" uid="uid://ca7j377dadnxj" path="res://assets/shop_slot2.png" id="2_i607x"]
 [ext_resource type="Texture2D" uid="uid://dck2xo0e02g8f" path="res://assets/nigu14.png" id="3_0ip6e"]
 [ext_resource type="Texture2D" uid="uid://c788w1sqp31sj" path="res://assets/nigu.png" id="3_n1ppx"]
+[ext_resource type="Texture2D" uid="uid://gp8uoihmi6rl" path="res://assets/nigu2.png" id="5_vigl0"]
+[ext_resource type="Texture2D" uid="uid://ca3kfjp3epnjg" path="res://assets/nigu4.png" id="6_svqdx"]
+[ext_resource type="Texture2D" uid="uid://dr4lbscfbjbeb" path="res://assets/nigu7.png" id="7_thdux"]
+[ext_resource type="Texture2D" uid="uid://dv3jlg2naq8y6" path="res://assets/nigu1.png" id="8_m36ju"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -32,7 +36,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -935.0
 offset_top = -534.0
-offset_right = 886.0
+offset_right = 2745.0
 offset_bottom = 455.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -77,10 +81,117 @@ expand_mode = 1
 layout_mode = 2
 texture = ExtResource("2_i607x")
 
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect3"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -45.0
+offset_right = 494.0
+offset_bottom = 400.0
+texture = ExtResource("5_vigl0")
+expand_mode = 1
+
 [node name="TextureRect4" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_i607x")
 
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -150.0
+offset_right = 141.5
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_svqdx")
+expand_mode = 1
+
 [node name="TextureRect5" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_i607x")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect5"]
+layout_mode = 0
+offset_left = -266.0
+offset_top = -157.0
+offset_right = 741.0
+offset_bottom = 595.0
+texture = ExtResource("7_thdux")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_i607x")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect6"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 103.0
+offset_right = 387.0
+offset_bottom = 383.0
+texture = ExtResource("8_m36ju")
+expand_mode = 1
+
+[node name="TextureRect7" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_i607x")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect7"]
+layout_mode = 0
+offset_left = -266.0
+offset_top = -157.0
+offset_right = 741.0
+offset_bottom = 595.0
+expand_mode = 1
+
+[node name="TextureRect8" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_i607x")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect8"]
+layout_mode = 0
+offset_left = -266.0
+offset_top = -157.0
+offset_right = 741.0
+offset_bottom = 595.0
+expand_mode = 1
+
+[node name="TextureRect9" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_i607x")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect9"]
+layout_mode = 0
+offset_left = -266.0
+offset_top = -157.0
+offset_right = 741.0
+offset_bottom = 595.0
+expand_mode = 1
+
+[node name="TextureRect10" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_i607x")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect10"]
+layout_mode = 0
+offset_left = -266.0
+offset_top = -157.0
+offset_right = 741.0
+offset_bottom = 595.0
+expand_mode = 1
+
+[node name="TextureRect11" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_i607x")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect11"]
+layout_mode = 0
+offset_left = -266.0
+offset_top = -157.0
+offset_right = 741.0
+offset_bottom = 595.0
+expand_mode = 1
