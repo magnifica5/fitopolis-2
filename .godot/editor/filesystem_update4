@@ -1,1 +1,12 @@
 res://shop_oras.tscn
+res://background_login.tscn
+res://login_control.gd
+res://register_parrent.tscn
+res://register_control.gd
+res://termeni.tscn
+res://termeni.gd
+res://politica.gd
+res://politica.tscn
+res://account_type.tscn
+res://popup_avatars.gd
+res://login_child.tscn

@@ -1,29 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvacxsidmqpf2"]
+[gd_scene load_steps=12 format=3 uid="uid://cvacxsidmqpf2"]
 
 [ext_resource type="Script" uid="uid://emnflpckhyu3" path="res://termeni.gd" id="1_mq6ft"]
-[ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_ygt3x"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="2_mq6ft"]
 [ext_resource type="Texture2D" uid="uid://b415284iuneso" path="res://assets/acasa_buton.png" id="3_7bovy"]
 [ext_resource type="Script" uid="uid://g66nex1ju0pe" path="res://labelterms.gd" id="4_tk4oa"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="5_7bovy"]
 [ext_resource type="Script" uid="uid://c1h4gb2jyef0n" path="res://label_continut_termeni.gd" id="5_qig8m"]
+[ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="5_tk4oa"]
+[ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="6_qig8m"]
+[ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="7_eepun"]
+[ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="8_ojh6l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ji3a"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.12941177, 0.09803922, 0.09803922, 0.34509805)
+shadow_size = 20
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_mq6ft")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -562.0
-offset_top = -424.0
-offset_right = 469.0
-offset_bottom = 345.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_ygt3x")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -42,23 +40,95 @@ theme_override_font_sizes/font_size = 60
 text = "Termeni și condiții"
 script = ExtResource("4_tk4oa")
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7bovy")
+volume_db = -10.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer3"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_tk4oa")
+script = ExtResource("6_qig8m")
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer5"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.7372549)
+script = ExtResource("7_eepun")
+
+[node name="CanvasLayer6" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer6"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -910.0
-offset_top = -312.0
-offset_right = 938.0
-offset_bottom = 317.0
+offset_left = -486.25
+offset_top = -375.0
+offset_right = 486.25
+offset_bottom = 375.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ji3a")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer6/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = -3.0
+offset_right = 543.0
+offset_bottom = 550.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_ojh6l")
+
+[node name="Label" type="Label" parent="CanvasLayer6/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -225.0
+offset_right = 306.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mq6ft")
+theme_override_font_sizes/font_size = 50
+text = "Termeni și condiții"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer6/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -376.0
+offset_top = -143.0
+offset_right = 407.0
+offset_bottom = 333.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_mq6ft")
-theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/normal_font_size = 40
 text = "Ultima actualizare: [05.04.2026]
 
 1. Introducere
@@ -195,17 +265,13 @@ script = ExtResource("5_qig8m")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -191.0
-offset_right = 236.0
+offset_left = 62.0
+offset_top = -214.0
+offset_right = 298.0
+offset_bottom = -23.0
 grow_vertical = 0
 texture_normal = ExtResource("3_7bovy")
 texture_pressed = ExtResource("3_7bovy")
 texture_hover = ExtResource("3_7bovy")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_7bovy")
-volume_db = -10.0
-
-[node name="CanvasLayer5" type="CanvasLayer" parent="."]
-
-[connection signal="pressed" from="CanvasLayer4/TextureButton" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer4/TextureButton" to="." method="_on_back"]

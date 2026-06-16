@@ -1,15 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://gxs45gia7rxs"]
+[gd_scene load_steps=15 format=3 uid="uid://bwqws34e2046k"]
 
-[ext_resource type="Script" uid="uid://dd1uwnwvv757h" path="res://login_control.gd" id="1_a8ete"]
-[ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_kbc7m"]
-[ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="2_5h77j"]
-[ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="3_5h77j"]
-[ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="4_h3scs"]
-[ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="5_3mimh"]
-[ext_resource type="Script" uid="uid://ywf71p3plovo" path="res://eye_script.gd" id="6_3mimh"]
-[ext_resource type="Texture2D" uid="uid://byddn16umbufm" path="res://assets/signsc.png" id="7_yfcf3"]
+[ext_resource type="Script" uid="uid://dmw4vh7y3qymp" path="res://register_control.gd" id="1_c65vi"]
+[ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_lh1r4"]
+[ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="2_c65vi"]
+[ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="3_da11b"]
+[ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="4_fttpq"]
+[ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="5_ijb4i"]
+[ext_resource type="Script" uid="uid://ywf71p3plovo" path="res://eye_script.gd" id="6_slult"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h77j"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8subr"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
@@ -18,7 +17,7 @@ corner_radius_bottom_left = 20
 shadow_color = Color(0.12941177, 0.09803922, 0.09803922, 0.34509805)
 shadow_size = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3scs"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krglf"]
 bg_color = Color(0.45031738, 0.8735113, 0.9296875, 0.7411765)
 border_color = Color(0.8, 0.8, 0.8, 0)
 corner_radius_top_left = 20
@@ -26,7 +25,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mimh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bh1gv"]
 bg_color = Color(0.4509804, 0.8745098, 0.92941177, 0.7411765)
 border_width_left = 20
 border_width_top = 20
@@ -34,7 +33,7 @@ border_width_right = 20
 border_width_bottom = 20
 border_color = Color(0.8, 0.8, 0.8, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfcf3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca0ls"]
 bg_color = Color(0.4509804, 0.8745098, 0.92941177, 0.7411765)
 border_color = Color(0.8, 0.8, 0.8, 0)
 corner_radius_top_left = 20
@@ -42,7 +41,11 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8ete"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_da11b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lh1r4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c65vi"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -51,7 +54,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_a8ete")
+script = ExtResource("1_c65vi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -61,8 +64,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_kbc7m")
-script = ExtResource("2_5h77j")
+texture = ExtResource("1_lh1r4")
+script = ExtResource("2_c65vi")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -73,7 +76,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.7372549)
-script = ExtResource("3_5h77j")
+script = ExtResource("3_da11b")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
@@ -83,26 +86,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -367.5
+offset_left = -377.0
 offset_top = -375.0
-offset_right = 367.5
+offset_right = 358.0
 offset_bottom = 375.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_5h77j")
+theme_override_styles/panel = SubResource("StyleBoxFlat_8subr")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer3/Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -85.0
-offset_top = 1.0
-offset_right = 538.0
-offset_bottom = 554.0
+offset_left = -80.0
+offset_top = -3.0
+offset_right = 543.0
+offset_bottom = 550.0
 grow_horizontal = 2
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_h3scs")
+texture = ExtResource("4_fttpq")
 
 [node name="Label" type="Label" parent="CanvasLayer3/Panel"]
 layout_mode = 1
@@ -111,16 +114,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = -235.0
-offset_right = 123.0
-offset_bottom = -139.0
+offset_left = -146.0
+offset_top = -249.0
+offset_right = 163.0
+offset_bottom = -153.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("5_ijb4i")
 theme_override_font_sizes/font_size = 60
-text = "Autentificare"
+text = "inregistrare"
 
 [node name="Label2" type="Label" parent="CanvasLayer3/Panel"]
 layout_mode = 1
@@ -129,14 +132,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -301.0
-offset_top = -2.0
-offset_right = -70.0
-offset_bottom = 94.0
+offset_left = -311.0
+offset_top = -37.0
+offset_right = -80.0
+offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("5_ijb4i")
 theme_override_font_sizes/font_size = 40
 text = "Parola"
 
@@ -147,14 +150,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -299.0
-offset_top = -161.0
-offset_right = -78.0
-offset_bottom = -65.0
+offset_left = -305.0
+offset_top = -184.0
+offset_right = -84.0
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("5_ijb4i")
 theme_override_font_sizes/font_size = 40
 text = "Email"
 
@@ -163,10 +166,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 65.5
-offset_top = -101.0
-offset_right = 671.5
-offset_bottom = -45.0
+offset_left = 61.5
+offset_top = -128.0
+offset_right = 667.5
+offset_bottom = -72.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 
@@ -175,14 +178,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 62.5
-offset_top = 62.0
-offset_right = 671.5
-offset_bottom = 117.0
+offset_left = 55.5
+offset_top = 25.0
+offset_right = 664.5
+offset_bottom = 80.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 secret = true
-script = ExtResource("6_3mimh")
+script = ExtResource("6_slult")
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer3/Panel/LineEdit2"]
 layout_mode = 1
@@ -206,16 +209,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -281.0
-offset_top = -76.0
-offset_right = 143.0
-offset_bottom = -36.0
+offset_left = -311.0
+offset_top = -263.0
+offset_right = 346.0
+offset_bottom = -223.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("5_ijb4i")
 theme_override_font_sizes/font_size = 30
-text = "nu ai un cont?"
+text = "sunt de acord cu:"
 
 [node name="LinkButton" type="LinkButton" parent="CanvasLayer3/Panel"]
 layout_mode = 1
@@ -224,19 +227,40 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -389.5
-offset_top = -74.0
-offset_right = -79.5
-offset_bottom = -39.0
+offset_left = -596.5
+offset_top = -213.0
+offset_right = -226.5
+offset_bottom = -178.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.38006842, 0.1613617, 0.91796875, 1)
 theme_override_colors/font_focus_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
 theme_override_colors/font_pressed_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
 theme_override_colors/font_hover_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("5_ijb4i")
 theme_override_font_sizes/font_size = 30
-text = "Inregistreaza-te"
+text = "termenii si conditiile"
+
+[node name="LinkButton2" type="LinkButton" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -596.5
+offset_top = -172.0
+offset_right = -79.5
+offset_bottom = -137.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.38006842, 0.1613617, 0.91796875, 1)
+theme_override_colors/font_focus_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
+theme_override_colors/font_pressed_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
+theme_override_colors/font_hover_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
+theme_override_fonts/font = ExtResource("5_ijb4i")
+theme_override_font_sizes/font_size = 30
+text = "politica de confidentialitate"
 
 [node name="Button" type="Button" parent="CanvasLayer3/Panel"]
 layout_mode = 1
@@ -245,16 +269,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -147.0
-offset_top = -215.0
-offset_right = 141.0
-offset_bottom = -111.0
+offset_left = -189.49997
+offset_top = -104.0
+offset_right = 329.21436
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_h3scs")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3mimh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yfcf3")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_a8ete")
+scale = Vector2(0.7, 0.7)
+theme_override_styles/normal = SubResource("StyleBoxFlat_krglf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bh1gv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ca0ls")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_da11b")
 
 [node name="Label" type="Label" parent="CanvasLayer3/Panel/Button"]
 layout_mode = 1
@@ -270,24 +294,36 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("5_ijb4i")
 theme_override_font_sizes/font_size = 40
-text = "intra"
+text = "inregistreaza-te"
 
-[node name="Button2" type="TextureButton" parent="CanvasLayer3/Panel"]
+[node name="CheckBox2" type="CheckBox" parent="CanvasLayer3/Panel"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -114.5
-offset_top = 32.0
-offset_right = 449.5
-offset_bottom = 648.0
-grow_horizontal = 0
-scale = Vector2(0.15, 0.15)
-texture_normal = ExtResource("7_yfcf3")
-texture_pressed = ExtResource("7_yfcf3")
-texture_hover = ExtResource("7_yfcf3")
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 83.5
+offset_top = -216.0
+offset_right = 107.5
+offset_bottom = -192.0
+grow_vertical = 0
+scale = Vector2(1.8, 1.8)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lh1r4")
+
+[node name="CheckBox3" type="CheckBox" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 83.5
+offset_top = -180.0
+offset_right = 107.5
+offset_bottom = -156.0
+grow_vertical = 0
+scale = Vector2(1.8, 1.8)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c65vi")
 
 [connection signal="pressed" from="CanvasLayer3/Panel/LineEdit2/TextureButton" to="CanvasLayer3/Panel/LineEdit2" method="_on_eye_pressed"]
-[connection signal="pressed" from="CanvasLayer3/Panel/LinkButton" to="." method="_on_registered_pressed"]
+[connection signal="pressed" from="CanvasLayer3/Panel/LinkButton" to="." method="_on_terms_pressed"]
+[connection signal="pressed" from="CanvasLayer3/Panel/LinkButton2" to="." method="_on_policy_pressed"]

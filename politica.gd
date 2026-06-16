@@ -11,7 +11,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_back() -> void:
+
+func _on_back_pressed() -> void:
 	$AudioStreamPlayer.play()
 	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file("res://setup.tscn")
+	get_tree().change_scene_to_file("res://register_parrent.tscn")

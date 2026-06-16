@@ -1,4 +1,9 @@
+GridContainer
+PopupPanel
 TextureButton
+CanvasLayer
+CheckBox
+CheckButton
 Label
 Button
 LinkButton
@@ -6,9 +11,5 @@ LineEdit
 TextureRect
 Panel
 ColorRect
-CanvasLayer
 AudioStreamPlayer
 AudioStreamPlayer2D
-GridContainer
-CenterContainer
-Camera2D
