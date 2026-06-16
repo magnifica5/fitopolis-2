@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d10fgv60nsp07"]
+[gd_scene load_steps=15 format=3 uid="uid://d10fgv60nsp07"]
 
 [ext_resource type="Texture2D" uid="uid://bydnxw3csuyet" path="res://assets/castig/castig.png" id="1_ltfix"]
 [ext_resource type="Script" uid="uid://p45saxptuddr" path="res://castig_stele.gd" id="1_oraxl"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="7_q52pp"]
 [ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="8_e85e1"]
 [ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="9_tupam"]
+[ext_resource type="Script" uid="uid://cbil3ykrngcbr" path="res://congrats.gd" id="10_yvdf8"]
 [ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="12_xmo2p"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="13_nrb4k"]
 
@@ -108,6 +109,7 @@ theme_override_font_sizes/font_size = 90
 text = "Felicitări pentru activitățile de ieri, super-eroule!"
 horizontal_alignment = 1
 autowrap_mode = 2
+script = ExtResource("10_yvdf8")
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
 
