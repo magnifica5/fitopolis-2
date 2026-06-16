@@ -1,0 +1,271 @@
+[gd_scene load_steps=11 format=3 uid="uid://gxs45gia7rxs"]
+
+[ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_kbc7m"]
+[ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="2_5h77j"]
+[ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="3_5h77j"]
+[ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="4_h3scs"]
+[ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="5_3mimh"]
+[ext_resource type="Script" uid="uid://ywf71p3plovo" path="res://eye_script.gd" id="6_3mimh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h77j"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.12941177, 0.09803922, 0.09803922, 0.34509805)
+shadow_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3scs"]
+bg_color = Color(0.45031738, 0.8735113, 0.9296875, 0.7411765)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mimh"]
+bg_color = Color(0.4509804, 0.8745098, 0.92941177, 0.7411765)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfcf3"]
+bg_color = Color(0.4509804, 0.8745098, 0.92941177, 0.7411765)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kbc7m")
+script = ExtResource("2_5h77j")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.7372549)
+script = ExtResource("3_5h77j")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.5
+offset_top = -375.0
+offset_right = 367.5
+offset_bottom = 375.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5h77j")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_top = 1.0
+offset_right = 538.0
+offset_bottom = 554.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_h3scs")
+
+[node name="Label" type="Label" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -235.0
+offset_right = 123.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_font_sizes/font_size = 60
+text = "Login"
+
+[node name="Label2" type="Label" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.0
+offset_top = -2.0
+offset_right = -70.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_font_sizes/font_size = 40
+text = "Password"
+
+[node name="Label3" type="Label" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = -161.0
+offset_right = -78.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_font_sizes/font_size = 40
+text = "Email"
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 65.5
+offset_top = -101.0
+offset_right = 671.5
+offset_bottom = -45.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="LineEdit2" type="LineEdit" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 62.5
+offset_top = 62.0
+offset_right = 671.5
+offset_bottom = 117.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+secret = true
+script = ExtResource("6_3mimh")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer3/Panel/LineEdit2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -19.5
+offset_right = -2.75
+offset_bottom = 36.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+
+[node name="Label4" type="Label" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -305.0
+offset_top = -78.0
+offset_right = 119.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_font_sizes/font_size = 30
+text = "Do not have an account?"
+
+[node name="LinkButton" type="LinkButton" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -236.5
+offset_top = -78.0
+offset_right = -79.5
+offset_bottom = -43.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.38006842, 0.1613617, 0.91796875, 1)
+theme_override_colors/font_focus_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
+theme_override_colors/font_pressed_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
+theme_override_colors/font_hover_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
+theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_font_sizes/font_size = 30
+text = "Register"
+
+[node name="Button" type="Button" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -147.0
+offset_top = -215.0
+offset_right = 141.0
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_h3scs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3mimh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yfcf3")
+
+[node name="Label" type="Label" parent="CanvasLayer3/Panel/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_font_sizes/font_size = 40
+text = "ENTER"
+
+[connection signal="pressed" from="CanvasLayer3/Panel/LineEdit2/TextureButton" to="CanvasLayer3/Panel/LineEdit2" method="_on_eye_pressed"]

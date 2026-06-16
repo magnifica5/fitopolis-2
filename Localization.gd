@@ -5,19 +5,24 @@ var current_language := "ro"
 
 var translations := {
 	"ro": {
+		"codereset": "Verificați adresa de
+		email și introduceți
+		codul primit",
 		"greeting": "Bună ziua!",
-		"comeback": "Revino mai târziu pentru noi 
-		activități. Între timp poți 
-		face exerciții fizice din 
-		secțiunea din meniu!",
+		"complete_activity": "Activitate
+		Finalizată",
+		"comeback": """Revino mai târziu pentru noi
+		activități. Între timp poți
+		face exerciții fizice din
+		secțiunea din meniu!""",
 		"spalat_maini": "Mereu spală-te pe mâini înainte de a mânca",
 		"start_game": "Începe jocul",
 		"settings": "Setări",
 		"Enter your email": "Introduceți emailul dumneavoastră",
 		"SAVE": "SALVEAZĂ",
 		"START": "START",
-		"start_mission": "INCEPE 
-		MISIUNEA",
+		"start_mission": """INCEPE
+		MISIUNEA""",
 		"info":"""La deschiderea jocului apar două butoane: START și ?. Butonul ? oferă informații despre modul de funcționare al jocului, iar butonul START pornește procesul de configurare.
 
 Configurarea aplicației (setup)
@@ -280,10 +285,10 @@ Email: fitopolis.channel@gmail.com""",
 		"To continue, you must accept:": "Pentru a continua, trebuie să acceptați:",
 		"Privacy policy": "Politica de confidențialitate",
 		"SeeTerms": """Vezi
-Termenii""",
+		Termenii""",
 		"Continue": "Continua",
 		"SeePolicy": """Vezi
-Politica""",
+		Politica""",
 		"Wake Up Time:": "Ora de Trezire:",
 		"Morning exercises:": "Exercitii dimineata:",
 		"Breakfast:": "Masa de dimineata:",
@@ -329,8 +334,8 @@ Politica""",
 		"Incorrect Password":"parola incorecta",
 		"ENTER":"INTRA",
 		"TO THE SITE":"CATRE SITE",
-		"RESET PASSWORD":"""RESETEAZĂ 
-PAROLA""",
+		"RESET PASSWORD":"""RESETEAZĂ
+		PAROLA""",
 "Good morning, little hero! Fitopolis awaits you — but first, make your bed like a true champion!":"Bună dimineața, mic erou! Fitopolis te așteaptă — dar mai întâi, fă-ți patul ca un adevărat campion!",
 "ABOUT THE GAME":"""DESPRE
 JOC""",
@@ -340,14 +345,19 @@ JOC""",
 """
 	},
 	"en": {
-		"comeback": "Come back later for new
-activities. In the meantime, you can exercise
-from the menu section.",
+		"codereset": "Check your email address
+		and enter the code
+		you received.",
+		"complete_activity": "Completed
+		Activity",
+		"comeback": """Come back later for new
+		activities. In the meantime, you can exercise
+		from the menu section.""",
 		"spalat_maini": "Always wash your hands before eating",
 		"greeting": "Hello!",
 		"start_game": "Start Game",
-		"start_mission": "START 
-		MISSION",
+		"start_mission": """START
+		MISSION""",
 		"masa": "Let's eat!",
 		"utilizationp": """
 1. Introduction
@@ -660,9 +670,9 @@ The accumulated stars can be used to purchase stickers in the dedicated section.
 		"Incorrect Password":"Incorrect Password",
 		"ENTER":"ENTER",
 		"TO THE SITE":"TO THE SITE",
-		"RESET PASSWORD":"""RESET 
+		"RESET PASSWORD":"""RESET
 		PASSWORD""",
-"ABOUT THE GAME":"""ABOUT 
+"ABOUT THE GAME":"""ABOUT
 THE GAME""",
 "Good morning, little hero! Fitopolis awaits you — but first, make your bed like a true champion!":"Good morning, little hero! Fitopolis awaits you — but first, make your bed like a true champion!",
 "wash our faces":"""Now it's 
