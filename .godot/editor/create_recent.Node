@@ -1,15 +1,14 @@
+Label
+ColorRect
 GridContainer
 PopupPanel
 TextureButton
 CanvasLayer
 CheckBox
 CheckButton
-Label
 Button
 LinkButton
 LineEdit
 TextureRect
 Panel
-ColorRect
 AudioStreamPlayer
-AudioStreamPlayer2D

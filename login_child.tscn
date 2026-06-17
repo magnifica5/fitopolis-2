@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cre8m6c8gjig1"]
+[gd_scene load_steps=11 format=3 uid="uid://cre8m6c8gjig1"]
 
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_doo0l"]
 [ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="2_xi2yv"]
 [ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="3_pc6y0"]
 [ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="4_mrssb"]
 [ext_resource type="Script" uid="uid://cf6fc5bpmj85p" path="res://popup_avatars.gd" id="5_skj27"]
-[ext_resource type="Texture2D" uid="uid://ck0qgg5ysblmc" path="res://lkjj.png" id="6_xi2yv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctjn6"]
 bg_color = Color(1, 1, 1, 1)
@@ -80,10 +79,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -377.0
-offset_top = -375.0
-offset_right = 358.0
-offset_bottom = 375.0
+offset_left = -393.0
+offset_top = -376.0
+offset_right = 342.0
+offset_bottom = 374.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ctjn6")
@@ -143,6 +142,9 @@ offset_right = 46.0
 offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 7
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer4"]
 anchors_preset = 8
@@ -150,10 +152,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 456.0
-offset_top = -350.0
-offset_right = 795.0
-offset_bottom = 386.0
+offset_left = -130.0
+offset_top = -249.0
+offset_right = 123.0
+offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("6_xi2yv")
