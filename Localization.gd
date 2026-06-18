@@ -5,6 +5,7 @@ var current_language := "ro"
 
 var translations := {
 	"ro": {
+		"Upgrade": "Upgradeaza",
 		"codereset": "Verificați adresa de
 		email și introduceți
 		codul primit",
@@ -617,6 +618,7 @@ Reward system
 -50 stars for each uncompleted activity
 
 The accumulated stars can be used to purchase stickers in the dedicated section.""",
+"Upgrade": "Upgrade",
 		"settings": "Settings",
 		"Wake Up Time:": "Wake Up Time:",
 		"Morning exercises:": "Morning exercises:",

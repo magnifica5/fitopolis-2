@@ -1,8 +1,9 @@
 Label
+TextureButton
+Sprite2D
 ColorRect
 GridContainer
 PopupPanel
-TextureButton
 CanvasLayer
 CheckBox
 CheckButton
@@ -11,4 +12,3 @@ LinkButton
 LineEdit
 TextureRect
 Panel
-AudioStreamPlayer
