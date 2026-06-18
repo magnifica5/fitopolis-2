@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://gxs45gia7rxs"]
+[gd_scene load_steps=15 format=3 uid="uid://gxs45gia7rxs"]
 
 [ext_resource type="Script" uid="uid://dd1uwnwvv757h" path="res://login_control.gd" id="1_a8ete"]
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_kbc7m"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="4_h3scs"]
 [ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="5_3mimh"]
 [ext_resource type="Script" uid="uid://ywf71p3plovo" path="res://eye_script.gd" id="6_3mimh"]
+[ext_resource type="Script" uid="uid://cil0eu86r1m5s" path="res://email_input.gd" id="7_wptht"]
 [ext_resource type="Texture2D" uid="uid://byddn16umbufm" path="res://assets/signsc.png" id="7_yfcf3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h77j"]
@@ -169,6 +170,7 @@ offset_right = 671.5
 offset_bottom = -45.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
+script = ExtResource("7_wptht")
 
 [node name="LineEdit2" type="LineEdit" parent="CanvasLayer3/Panel"]
 layout_mode = 1
@@ -289,5 +291,6 @@ texture_normal = ExtResource("7_yfcf3")
 texture_pressed = ExtResource("7_yfcf3")
 texture_hover = ExtResource("7_yfcf3")
 
+[connection signal="text_changed" from="CanvasLayer3/Panel/LineEdit" to="CanvasLayer3/Panel/LineEdit" method="_on_text_changed"]
 [connection signal="pressed" from="CanvasLayer3/Panel/LineEdit2/TextureButton" to="CanvasLayer3/Panel/LineEdit2" method="_on_eye_pressed"]
 [connection signal="pressed" from="CanvasLayer3/Panel/LinkButton" to="." method="_on_registered_pressed"]
