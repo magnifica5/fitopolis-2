@@ -137,7 +137,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_o3n0i")
 theme_override_font_sizes/font_size = 40
 text = "introdu codul asociat
-parintelui tau"
+parintelui"
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer3/Panel"]
 layout_mode = 1

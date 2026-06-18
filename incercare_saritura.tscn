@@ -1,0 +1,146 @@
+[gd_scene load_steps=20 format=3 uid="uid://buhpglppumj05"]
+
+[ext_resource type="Texture2D" uid="uid://c3pwr1hnunfmc" path="res://assets/saritura miss nutri.png" id="1_0b1j0"]
+[ext_resource type="Texture2D" uid="uid://uicxnwe81vy4" path="res://assets/santos_saritura.png" id="2_nvdtl"]
+[ext_resource type="Texture2D" uid="uid://bma5bqjpuab75" path="res://assets/genoflexiune_miss_nutri.png" id="3_ufw4d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvdtl"]
+atlas = ExtResource("1_0b1j0")
+region = Rect2(256, 0, 256, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asm3x"]
+atlas = ExtResource("1_0b1j0")
+region = Rect2(768, 0, 256, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24krg"]
+atlas = ExtResource("1_0b1j0")
+region = Rect2(0, 682, 256, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xnx2"]
+atlas = ExtResource("1_0b1j0")
+region = Rect2(512, 682, 256, 341)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jaspj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvdtl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asm3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24krg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xnx2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8yhy"]
+atlas = ExtResource("2_nvdtl")
+region = Rect2(256, 0, 256, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5ida"]
+atlas = ExtResource("2_nvdtl")
+region = Rect2(768, 0, 256, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsqm6"]
+atlas = ExtResource("2_nvdtl")
+region = Rect2(768, 341, 256, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6plm"]
+atlas = ExtResource("2_nvdtl")
+region = Rect2(512, 682, 256, 341)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_24krg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8yhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5ida")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsqm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6plm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwkoq"]
+atlas = ExtResource("3_ufw4d")
+region = Rect2(0, 0, 256, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaspj"]
+atlas = ExtResource("3_ufw4d")
+region = Rect2(256, 0, 256, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sklmj"]
+atlas = ExtResource("3_ufw4d")
+region = Rect2(512, 0, 256, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nwq8"]
+atlas = ExtResource("3_ufw4d")
+region = Rect2(768, 0, 256, 341)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fody"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwkoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaspj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sklmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nwq8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ruc7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1532, 548)
+scale = Vector2(3.0859375, 3.156891)
+sprite_frames = SubResource("SpriteFrames_jaspj")
+autoplay = "default"
+frame_progress = 0.016572015
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(505, 543)
+scale = Vector2(3.2, 3.2)
+sprite_frames = SubResource("SpriteFrames_24krg")
+frame = 3
+frame_progress = 0.6041536
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(896, 555)
+scale = Vector2(3.2, 3.2)
+sprite_frames = SubResource("SpriteFrames_3fody")
+frame_progress = 0.72867215
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(816, 528)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_7ruc7")
+frame_progress = 0.8421776

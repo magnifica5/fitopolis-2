@@ -1,0 +1,10 @@
+res://login_child.tscn
+res://popup_avatars.gd
+res://incercare_saritura.tscn
+res://background_login.tscn
+res://email_input.gd
+res://alege_cont.gd
+res://parental_code.tscn
+res://register_parrent.tscn
+res://account_type.tscn
+res://eye_script.gd

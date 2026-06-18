@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1781717770
+::res://::1781798202
 1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png::CompressedTexture2D::7536361269957601271::1772212221::1774848301::1::::<><><>0<>0<>90887020950a425c34a5a32d52c2c2b1<>res://.godot/imported/1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png-31eeab7255796e435b6bef19b2230d3b.ctex::
 3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png::CompressedTexture2D::7203370797049039625::1772211421::1774848301::1::::<><><>0<>0<>d5101df9ac9e6f9ffa28680a865de1e5<>res://.godot/imported/3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png-905d6c87ca81b69e818b1aa13f4ebe47.ctex::
 046af01fa841d786d1e967f8797ece8c-removebg-preview.png::CompressedTexture2D::4015776957699399800::1772444930::1774848301::1::::<><><>0<>0<>0b1d9f31e2a0afb977f3245961ba208a<>res://.godot/imported/046af01fa841d786d1e967f8797ece8c-removebg-preview.png-d634b8e8ab617928486f71008f63f162.ctex::
@@ -262,7 +262,7 @@ login.gd::GDScript::6002597499692538030::1776242647::0::1::::<>Node2D<><>0<>0<><
 login.tscn::PackedScene::4274774111212547828::1779441119::0::1::::<><><>0<>0<><>::uid://crrx5y3d4afv7::::res://login.gd<>uid://bx4dgeewi1s58::::res://assets/level_bg.png<>uid://du37ys0hpl703::::res://assets/Button.png<>uid://bd8iwvq5kuijk::::res://assets/font/kenvector_future_thin.ttf<>uid://dvedne034ji7d::::res://assets/bara meniu/oras.png<>uid://0bftw0mtie0e::::res://texture_button.gd<>uid://d1hao38c6qxwj::::res://assets/bara meniu/parinti.png<>uid://scoir5hqbjh3::::res://start_mission.gd<>uid://dtsa03c6hr31p::::res://assets/bara meniu/exercitii.png<>uid://bjnaxpevceujt::::res://assets/bara meniu/stikere.jpg<>uid://bj8h8sxumd4ug::::res://labeloras.gd<>uid://dvlbkija7xuno::::res://labelparinti.gd<>uid://dmryn8xccyd2f::::res://labelstickere.gd<>uid://dc0gqvsbb6mku::::res://assets/happyB.png<>uid://d3cvf2cjwrkmr::::res://assets/happyF.png<>uid://cgqb5jx370b1g::::res://catre_oras.gd<>uid://b1bj2pe11r16j::::res://labelexerciti.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://tkntsuwyygk5::::res://audio/menu_music.mp3<>uid://pdofnn67ch6d::::res://assets/castig/scor_bar.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://bs465mnx66o1f::::res://score.gd
 login_backround.gd::GDScript::6800842481451306988::1781513819::0::1::::<>TextureRect<><>0<>0<><>::
 login_block.gd::GDScript::2589808303962335827::1781513178::0::1::::<>ColorRect<><>0<>0<><>::
-login_child.tscn::PackedScene::5976335943358357326::1781717358::0::1::::<><><>0<>0<><>::uid://bwu0vd6pflcw7::::res://assets/Sunnyside_World_ExampleScene.png<>uid://c35m48wiqvudo::::res://login_backround.gd<>uid://d2twt3gac7xts::::res://login_rect.gd<>uid://bd8iwvq5kuijk::::res://assets/font/kenvector_future_thin.ttf<>uid://cf6fc5bpmj85p::::res://popup_avatars.gd
+login_child.tscn::PackedScene::5976335943358357326::1781792543::0::1::::<><><>0<>0<><>::uid://bwu0vd6pflcw7::::res://assets/Sunnyside_World_ExampleScene.png<>uid://c35m48wiqvudo::::res://login_backround.gd<>uid://d2twt3gac7xts::::res://login_rect.gd<>uid://bd8iwvq5kuijk::::res://assets/font/kenvector_future_thin.ttf<>uid://cf6fc5bpmj85p::::res://popup_avatars.gd<>uid://b3e6fqck1gbna::::res://assets/poza_goala_profilf.png
 login_control.gd::GDScript::7424756748692940975::1781619724::0::1::::<>Control<><>0<>0<><>::
 login_rect.gd::GDScript::9094955190484956692::1781512924::0::1::::<>ColorRect<><>0<>0<><>::
 manacare.gd::GDScript::1162077620360893438::1779259157::0::1::::<>Node2D<><>0<>0<><>::
@@ -290,13 +290,14 @@ password_inputp.gd::GDScript::4026072124072730183::1781616279::0::1::::<>LineEdi
 pisicaaa-removebg-preview.png::CompressedTexture2D::1114105126510305606::1774538277::1774848301::1::::<><><>0<>0<>1576059b74f4be08e4d03d5e2e43ed1a<>res://.godot/imported/pisicaaa-removebg-preview.png-cf9c145f37bd023b87a209a450ab50a1.ctex::
 politica.gd::GDScript::3106968561263870023::1781625170::0::1::::<>Node2D<><>0<>0<><>::
 politica.tscn::PackedScene::736926878921909260::1781625170::0::1::::<><><>0<>0<><>::uid://bkjbk26j7062n::::res://politica.gd<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://b415284iuneso::::res://assets/acasa_buton.png<>uid://bwu0vd6pflcw7::::res://assets/Sunnyside_World_ExampleScene.png<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://c35m48wiqvudo::::res://login_backround.gd<>uid://cqevm1oiwpecs::::res://label_politica_continut.gd<>uid://d2twt3gac7xts::::res://login_rect.gd<>uid://duk1lu8hdgurn::::res://assets/logo_final1.png
-popup_avatars.gd::GDScript::5188090030447128247::1781715460::0::1::::<>CanvasLayer<><>0<>0<><>::
+popup_avatars.gd::GDScript::5188090030447128247::1781788751::0::1::::<>CanvasLayer<><>0<>0<><>::
 program button 2.gd::GDScript::7103756254614003303::1775383760::0::1::::<>TextureButton<><>0<>0<><>::
 program button 3.gd::GDScript::1491196669001601810::1769527034::0::1::::<>TextureButton<><>0<>0<><>::
 program button.gd::GDScript::6649383647478289793::1769526837::0::1::::<>TextureButton<><>0<>0<><>::
 raf_360x360_075_t_fafafa_ca443f4786-removebg-preview.png::CompressedTexture2D::1944752966074156067::1772182226::1774848301::1::::<><><>0<>0<>2b12cdb7b3e265006011fe30c5ef785d<>res://.godot/imported/raf_360x360_075_t_fafafa_ca443f4786-removebg-preview.png-0b433a43945e3c1e7aa8c938a5ea4da1.ctex::
 register_control.gd::GDScript::8048743198012954055::1781622893::0::1::::<>Control<><>0<>0<><>::
 register_parrent.tscn::PackedScene::3964974721597892308::1781625482::0::1::::<><><>0<>0<><>::uid://dmw4vh7y3qymp::::res://register_control.gd<>uid://bwu0vd6pflcw7::::res://assets/Sunnyside_World_ExampleScene.png<>uid://c35m48wiqvudo::::res://login_backround.gd<>uid://d2twt3gac7xts::::res://login_rect.gd<>uid://duk1lu8hdgurn::::res://assets/logo_final1.png<>uid://bd8iwvq5kuijk::::res://assets/font/kenvector_future_thin.ttf<>uid://ywf71p3plovo::::res://eye_script.gd
+incercare_saritura.tscn::PackedScene::3805570272024752340::1781798202::0::1::::<><><>0<>0<><>::uid://c3pwr1hnunfmc::::res://assets/saritura miss nutri.png
 resetcode.gd::GDScript::940295923560363341::1781616279::0::1::::<>Label<><>0<>0<><>::
 revino_mai_tarziu.tscn::PackedScene::4133302896957358938::1779441345::0::1::::<><><>0<>0<><>::uid://b14oj42bfkqsp::::res://tarziu.gd<>uid://dc0gqvsbb6mku::::res://assets/happyB.png<>uid://d3cvf2cjwrkmr::::res://assets/happyF.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://b415284iuneso::::res://assets/acasa_buton.png<>uid://d3v23clat8kbj::::res://labelcomeback.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://ca3jivv1v7xn7::::res://audio/voices/miss_nutri_r.mp3<>uid://b1k612eb0pv36::::res://audio/voices/santos_r.mp3<>uid://bclipbctwpknv::::res://audio/voices_eng/miss_nutri_eng_comebackLater.mp3<>uid://3uoyjslim22k::::res://audio/voices_eng/santos_eng_comebackLater.mp3
 rosie-removebg-preview.png::CompressedTexture2D::3348052942184256593::1774522599::1774848301::1::::<><><>0<>0<>b825cb71aa76489922d5b66dcb84a8e0<>res://.godot/imported/rosie-removebg-preview.png-05307f069782e12bfaf7a83ae1cdae22.ctex::
@@ -406,7 +407,7 @@ WhatsApp_Image_2026-03-25_at_11.17.12_AM-removebg-preview.png::CompressedTexture
 ::res://addons/::1774034333
 ::res://addons/NotificationSchedulerPlugin/::1774034334
 icon.png::CompressedTexture2D::1766889892145055744::1774034333::1774034334::1::::<><><>0<>0<>2aefbca702f4ae5e58ea0393dc05ba6a<>res://.godot/imported/icon.png-838f73c17a0e540d021697cea4772ebd.ctex::
-NotificationScheduler.gd::GDScript::7621975126020770378::1774034333::0::1::::NotificationScheduler<>Node<>res://addons/NotificationSchedulerPlugin/icon.png<>0<>1<><>::
+NotificationScheduler.gd::GDScript::7621975126020770378::1774034333::0::1::::NotificationScheduler<>Node<><>0<>1<><>::
 NotificationSchedulerPlugin.gd::GDScript::1501499521028646264::1774034333::0::1::::<>EditorPlugin<><>0<>1<><>::
 plugin.cfg::TextFile::-1::1774034333::0::1::::<><><>0<>0<><>::
 ::res://addons/NotificationSchedulerPlugin/bin/::1774034333
@@ -417,10 +418,10 @@ CustomData.gd::GDScript::8771099636417732368::1774034333::0::1::::CustomData<>Re
 NotificationChannel.gd::GDScript::4312613090390956932::1774034333::0::1::::NotificationChannel<>RefCounted<><>0<>0<><>::
 NotificationData.gd::GDScript::4709873664417198732::1774034333::0::1::::NotificationData<>RefCounted<><>0<>0<><>::
 ::res://android/::1773916501
-::res://assets/::1781717638
+::res://assets/::1781803732
 about.png::CompressedTexture2D::8906615055999965244::1767380776::1767380782::1::::<><><>0<>0<>7427f7100d655caeefcedbdc335b2389<>res://.godot/imported/about.png-bcd05af39060efb42baa388ffea59109.ctex::
 acasa_buton.png::CompressedTexture2D::4477442475480629610::1771334987::1771334991::1::::<><><>0<>0<>054a11ad45070e8cec8907ffb5d41fd4<>res://.godot/imported/acasa_buton.png-dd88d5f9a6af2285a22cfe8d66fc5ead.ctex::
-animals.png::CompressedTexture2D::17446401618146394::1781717629::1781717638::1::::<><><>0<>0<>473982cc9cf9739b6c98cd2986becb59<>res://.godot/imported/animals.png-2a92ecbd216db02d443718b81df7fa03.ctex::
+animals.png::CompressedTexture2D::17446401618146394::1781791631::1781791636::1::::<><><>0<>0<>473982cc9cf9739b6c98cd2986becb59<>res://.godot/imported/animals.png-2a92ecbd216db02d443718b81df7fa03.ctex::
 baiat_trist.png::CompressedTexture2D::1637833741911484590::1771517062::1771517077::1::::<><><>0<>0<>246b9914f8730c7e2131d5febd6e0bb0<>res://.godot/imported/baiat_trist.png-bc57d95076eceb541277a949c4804088.ctex::
 baie.png::CompressedTexture2D::1059409102766146712::1771351091::1771351093::1::::<><><>0<>0<>34dd9c76166da315ff9f356719e92841<>res://.godot/imported/baie.png-195894635cfebda23f976f339db25873.ctex::
 bara.JPG::CompressedTexture2D::3519512978605383082::1767460621::1767460641::1::::<><><>0<>0<>f9ba158a8ad29d4e50d4278d5e11c3b4<>res://.godot/imported/bara.JPG-6b187d0490e85e696ffc4b35e678150e.ctex::
@@ -435,10 +436,12 @@ casa fara fundal 1.png::CompressedTexture2D::3005426054227437387::1768577272::17
 clasa.png::CompressedTexture2D::5238608017593451345::1771694516::1771694521::1::::<><><>0<>0<>40f16773d612e0663911d5f4ee45aa2c<>res://.godot/imported/clasa.png-3a5d4f6e2d77d71ce490bfe0ea881b13.ctex::
 Cloud Canopy.png::CompressedTexture2D::2545826230562591018::1769975768::1771330772::1::::<><><>0<>0<>a6a81aeb781e24a3df417b3130bb1019<>res://.godot/imported/Cloud Canopy.png-e332b6d9f9ed8818c00b19c0939a986a.ctex::
 cuv_nor.png::CompressedTexture2D::8302131751766052955::1771338791::1771338794::1::::<><><>0<>0<>df333f38a0f31e8598a5d2594c88a683<>res://.godot/imported/cuv_nor.png-86d1ba7fbc89260f8f328f1def6f0182.ctex::
+edit-pen.svg::CompressedTexture2D::5599621835584148412::1781791997::1781791998::1::::<><><>0<>0<>b5d075646fcdc8d4712ea394ccdb3629<>res://.godot/imported/edit-pen.svg-e6558682a557b2f42d2fce862484cf54.ctex::
 fata_trista.png::CompressedTexture2D::6498995690529165692::1771517043::1771517077::1::::<><><>0<>0<>19c4551a8a707f0233f8151c618d13e3<>res://.godot/imported/fata_trista.png-8dd7a3891383b3d473ffdcae6e3f9514.ctex::
 finished.png::CompressedTexture2D::5799591144051888841::1771350311::1771350316::1::::<><><>0<>0<>ba2263f811965436aceb6e7cccc7a158<>res://.godot/imported/finished.png-6b50f7db41212e87c74a1e46ab831736.ctex::
 forest.png::CompressedTexture2D::8534181423862493233::1767359659::1767359713::1::::<><><>0<>0<>2692b04de6c9916655b8ad9141a42e34<>res://.godot/imported/forest.png-3b217249c881492c4f7ec73306a77592.ctex::
 fundal_camera.png::CompressedTexture2D::6143065708947758689::1771336690::1771336692::1::::<><><>0<>0<>b037d1ca1175cef46c8a43c2d712d44a<>res://.godot/imported/fundal_camera.png-403bb3a6a71661a4016f8a34b054f94a.ctex::
+genoflexiune_miss_nutri.png::CompressedTexture2D::3230510957911490882::1781803290::1781803291::1::::<><><>0<>0<>8363e9f9d0f4d79c251d2aa4f436b0c8<>res://.godot/imported/genoflexiune_miss_nutri.png-8790771d427ee776dfd1a43c626f658d.ctex::
 happyB.png::CompressedTexture2D::7351643187710776384::1771519071::1771519104::1::::<><><>0<>0<>bbaba340240b508d21726586c929db38<>res://.godot/imported/happyB.png-af37485b96e05cc4e1a9825d3aaaf956.ctex::
 happyF.png::CompressedTexture2D::9129963835929010777::1771519098::1771519104::1::::<><><>0<>0<>ee1882b9decf038833d6586d76698e9e<>res://.godot/imported/happyF.png-1b11a422c7d2ae1d99f5ee1e99ea1726.ctex::
 icon.png::CompressedTexture2D::4947957724510665492::1773917926::1773917930::1::::<><><>0<>0<>ad5429d9658a9f521bf8b9d9d7822c1d<>res://.godot/imported/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.ctex::
@@ -472,10 +475,16 @@ nigu17.png::CompressedTexture2D::2453861397068473502::1768690264::1771330772::1:
 nigu18.png::CompressedTexture2D::5517807345806186599::1768692420::1771330772::1::::<><><>0<>0<>c32f03d01182ddd81a6022f3687ca609<>res://.godot/imported/nigu18.png-6f46a66f81043c61f2580ccec0fdec9e.ctex::
 nigu232-removebg-preview.png::CompressedTexture2D::6346461686775215488::1781616279::1781616279::1::::<><><>0<>0<>086282fb516f91abbe007ad1c4e3205d<>res://.godot/imported/nigu232-removebg-preview.png-37af2b2c471b5208d5086271eabf4a36.ctex::
 nigu.png::CompressedTexture2D::7089053172076138277::1768578693::1771330772::1::::<><><>0<>0<>b2d27c512fa8065f6953351b89c3408a<>res://.godot/imported/nigu.png-b0db69deb04c5943c3273190593c6376.ctex::
+poza_goala_profil.jpg::CompressedTexture2D::7081334734647471007::1781789931::1781789957::1::::<><><>0<>0<>8d879023931041e61e97d507860abec6<>res://.godot/imported/poza_goala_profil.jpg-bfa34c15a10ff1f6c50738f334b8656d.ctex::
+poza_goala_profil.webp::CompressedTexture2D::8648922751303954296::1781787365::1781787367::1::::<><><>0<>0<>6006720055b3e06c84c9c1ecebfa3350<>res://.godot/imported/poza_goala_profil.webp-3fb8df2471a53be060c28bf87a534d5f.ctex::
+poza_goala_profilf.png::CompressedTexture2D::4361857816272079310::1781790000::1781790008::1::::<><><>0<>0<>413f19379bca1ddacec187cc97243f95<>res://.godot/imported/poza_goala_profilf.png-cf266f2d44d398f1fbfafd2ec5b83561.ctex::
 program 2.png::CompressedTexture2D::6131632414141153623::1769525400::1769525461::1::::<><><>0<>0<>bcb236315949e4d464d49497b6b3bb0c<>res://.godot/imported/program 2.png-7077d18787160f622f6df5f4116ce70d.ctex::
 program 3.png::CompressedTexture2D::892838516972845815::1769525796::1769525800::1::::<><><>0<>0<>2fcbcf60f70f25a3f9d033de1decd652<>res://.godot/imported/program 3.png-4429c471d31d706beed6dd7867c9a554.ctex::
 santos.png::CompressedTexture2D::1294627923305150408::1770185701::1770185707::1::::<><><>0<>0<>203a33439d3c5c6c8776c356df6b7083<>res://.godot/imported/santos.png-f9596706e2f0374924c15cc45aaea6f6.ctex::
+santos_genoflexiuni.png::CompressedTexture2D::1811767194078429689::1781803732::1781803735::1::::<><><>0<>0<>1473b8774d85e442393549484e8465d7<>res://.godot/imported/santos_genoflexiuni.png-be84db3e09b1594d873c602c4932b2e7.ctex::
 santos_pijama.png::CompressedTexture2D::3593241272383137692::1771852427::1771852480::1::::<><><>0<>0<>ebe003dafbc9908895d762ca7ed9528b<>res://.godot/imported/santos_pijama.png-026f9950114d7f495b5c493955063a68.ctex::
+santos_saritura.png::CompressedTexture2D::1420455119054608257::1781800468::1781800470::1::::<><><>0<>0<>70e3b293291552aeee1190599a3d9a46<>res://.godot/imported/santos_saritura.png-4fa59893e66d150cbcc7cbffb8fd9580.ctex::
+saritura miss nutri.png::CompressedTexture2D::6770462164937889974::1781792941::1781792942::1::::<><><>0<>0<>7ccf91d273ec2a2caea758af70267740<>res://.godot/imported/saritura miss nutri.png-f7f53146247c3d7625db9b557fb4a646.ctex::
 shop slot.webp::CompressedTexture2D::2573057060653629674::1781616279::1781616279::1::::<><><>0<>0<>813e51ae490e30e40e4e4ff9171aa088<>res://.godot/imported/shop slot.webp-7a2b77a7b2e72c20f495eb12a0bf7741.ctex::
 shop_slot2.png::CompressedTexture2D::4839499640997736131::1781616279::1781616279::1::::<><><>0<>0<>e06fed22d66d7ac6a5a321de552bb243<>res://.godot/imported/shop_slot2.png-054425892edd78b6cceac4a7e517a967.ctex::
 signa.png::CompressedTexture2D::3729717096421119562::1781619132::1781619134::1::::<><><>0<>0<>ceb7074096bdfcd6ed382787c5e18ad3<>res://.godot/imported/signa.png-9aa1aea68aeb185c3549bbfac0e4a5c4.ctex::

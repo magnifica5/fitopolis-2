@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://gihr3xrif4w7"]
+[gd_scene load_steps=12 format=3 uid="uid://gihr3xrif4w7"]
 
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_2gqxg"]
+[ext_resource type="Script" uid="uid://bgh8etp43iwnt" path="res://alege_cont.gd" id="1_vimky"]
 [ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="2_xttd6"]
 [ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="3_qyisc"]
 [ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="4_vimky"]
 [ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="5_5dkrp"]
 [ext_resource type="Texture2D" uid="uid://byddn16umbufm" path="res://assets/signsc.png" id="6_lfrf0"]
 [ext_resource type="Texture2D" uid="uid://btex5pnaeiqva" path="res://assets/signa.png" id="7_sd7iv"]
+[ext_resource type="Script" uid="uid://kdsg4gy3mif8" path="res://catre_login_copil.gd" id="8_5dkrp"]
+[ext_resource type="Script" uid="uid://dteoyr0hmao8l" path="res://catre_parinte.gd" id="10_lfrf0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_di07j"]
 bg_color = Color(1, 1, 1, 1)
@@ -24,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vimky")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -130,6 +134,7 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("6_lfrf0")
 texture_pressed = ExtResource("6_lfrf0")
 texture_hover = ExtResource("6_lfrf0")
+script = ExtResource("8_5dkrp")
 
 [node name="Label" type="Label" parent="CanvasLayer3/Panel/Button"]
 layout_mode = 1
@@ -166,6 +171,7 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("7_sd7iv")
 texture_pressed = ExtResource("7_sd7iv")
 texture_hover = ExtResource("7_sd7iv")
+script = ExtResource("10_lfrf0")
 
 [node name="Label" type="Label" parent="CanvasLayer3/Panel/Button2"]
 layout_mode = 1
@@ -184,3 +190,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_5dkrp")
 theme_override_font_sizes/font_size = 70
 text = "Parinte"
+
+[connection signal="pressed" from="CanvasLayer3/Panel/Button" to="." method="_on_copil_pressed"]
+[connection signal="pressed" from="CanvasLayer3/Panel/Button2" to="." method="_on_parinte_pressed"]

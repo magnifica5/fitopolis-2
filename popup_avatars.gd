@@ -1,5 +1,6 @@
 extends CanvasLayer
-@onready var buton_profil = $TextureButton
+@onready var buton_profil = $PanelContainer/TextureButton
+@onready var panel_button = $PanelContainer
 @onready var panel = $PopupPanel
 @onready var grid = $PopupPanel/GridContainer
 # Called when the node enters the scene tree for the first time.

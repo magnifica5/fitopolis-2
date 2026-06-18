@@ -1,4 +1,7 @@
 Label
+AnimatedSprite2D
+Panel
+PanelContainer
 ColorRect
 GridContainer
 PopupPanel
@@ -9,6 +12,3 @@ CheckButton
 Button
 LinkButton
 LineEdit
-TextureRect
-Panel
-AudioStreamPlayer
