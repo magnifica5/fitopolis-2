@@ -21,8 +21,8 @@ res://revino_mai_tarziu.tscn::d66b5d88c46251e48522cc81b49c95a8::1779441345::res:
 res://spalat_maini.tscn::bdcb801bd3763f813c076553827d7f88::1779260058::res://.godot/exported/133200997/export-8934bd0831d9f9645748c56132047fa3-spalat_maini.scn
 res://stea_animatie.tscn::ae74c5b97844fef02b9ec5f5187f0372::1773325382::res://.godot/exported/133200997/export-1c3ca74390de8949a79747ef85a42d7d-stea_animatie.scn
 res://alege_parinte.tscn::6326842ba6e05fea23525058d583f776::1779178686::res://.godot/exported/133200997/export-f77c08cb1e2ea75e7378f62805058885-alege_parinte.scn
-res://bifeaza_activi.tscn::046c9a86ce995dcea7db9de790f6c38d::1774708499::res://.godot/exported/133200997/export-5b0c19696e014d96e1529f57929a86ce-bifeaza_activi.scn
-res://castig_stele.tscn::a4886f35b4b99f1c23a05b1a73d8d336::1774802947::res://.godot/exported/133200997/export-c08a90b25545ac2f71c6be06db5ba2dd-castig_stele.scn
+res://bifeaza_activi.tscn::522a4caa4b9183f1abf1812dc2d5a97a::1781616279::res://.godot/exported/133200997/export-5b0c19696e014d96e1529f57929a86ce-bifeaza_activi.scn
+res://castig_stele.tscn::f935305efad7fe5f7fb76850c80f2efe::1781616279::res://.godot/exported/133200997/export-c08a90b25545ac2f71c6be06db5ba2dd-castig_stele.scn
 res://intra_bifa.tscn::cb3b50b5f700882a893d85b5db8c1b31::1777207361::res://.godot/exported/133200997/export-30632a3ee00e04fc08367572121ac8f2-intra_bifa.scn
 res://parola.tscn::3d30e568b8bf23b0128291593f29defd::1779441200::res://.godot/exported/133200997/export-42811c7f2de76c6044f1036bfdba3670-parola.scn
 res://salvare_parola.tscn::b7f43c1bc86d19cc248936ae47f1bcf9::1779116594::res://.godot/exported/133200997/export-7d4d97dcf817c1e9142dffb8d1be6772-salvare_parola.scn
@@ -52,7 +52,17 @@ res://stikere.tscn::b6f86e3d18f67abffd785dfc2f1a3f7a::1779274277::res://.godot/e
 res://code_email.tscn::ce572aaf3bc0b033a985eb579df1e53c::1779118531::res://.godot/exported/133200997/export-9eb830e5a2d05c99e90e5aaefc207c2c-code_email.scn
 res://cod_sparola.tscn::0a69bdc2a6eb24da81fe61d5215c444e::1779447336::res://.godot/exported/133200997/export-3153c369f258aad5155c4ef39a64a7c2-cod_sparola.scn
 res://email.tscn::c18824d8de4c4eeb3308690702b316d9::1779377007::res://.godot/exported/133200997/export-6952a17269826fbe8b67819c96b9f926-email.scn
-res://politica.tscn::dc97b52448b4e98cc2df205cb8f0882b::1779111639::res://.godot/exported/133200997/export-5776a430c9bc31bb990174a924454985-politica.scn
-res://termeni.tscn::19dc4d27a45c0f6628701a0573cdb0ae::1779114720::res://.godot/exported/133200997/export-fef45a6401ceb5d0f582c28682b7931d-termeni.scn
+res://politica.tscn::9c41bafe6ed5d174260e8cea95ee0f27::1781625170::res://.godot/exported/133200997/export-5776a430c9bc31bb990174a924454985-politica.scn
+res://termeni.tscn::257372066e168da39296896a9b0ab46c::1781625500::res://.godot/exported/133200997/export-fef45a6401ceb5d0f582c28682b7931d-termeni.scn
 res://functionare.tscn::b9de7f76821305965aa4b645c1e634f7::1779114550::res://.godot/exported/133200997/export-3cf261261ec593200e68cbd9fd1c2cd9-functionare.scn
 res://scena de test.tscn::a888e00456b2468a1f47e08b09ddb87b::1779030708::res://.godot/exported/133200997/export-406c14072c047cf048b8071cabe1ec61-scena de test.scn
+res://account_type.tscn::641c89eb53e5343978b2200f2074df15::1781805309::res://.godot/exported/133200997/export-2559c8dcf1491cf6b39d4f43a791f440-account_type.scn
+res://background_login.tscn::680121e026d7ad8090f675245ec0da6f::1781805015::res://.godot/exported/133200997/export-c3eb58822853a79a92de885843e6d05f-background_login.scn
+res://incercare_saritura.tscn::d2e46ce87f211e33a3a86394834a13c6::1781804053::res://.godot/exported/133200997/export-20e2d27dfadfafa2c977234e55606631-incercare_saritura.scn
+res://login_child.tscn::7d42cb8dd91c423ec82ad396b02adbbb::1781792543::res://.godot/exported/133200997/export-16813ea01c260d0eb844ebb52b17b2ee-login_child.scn
+res://oras2.0.tscn::6db309db22d707b836592198cc31a7ac::1781895181::res://.godot/exported/133200997/export-53e961a374c0dd1b56c1fc8ec21741b6-oras2.0.scn
+res://parental_code.tscn::2967c2f4917d078ad77aec9e685c969e::1781805246::res://.godot/exported/133200997/export-342a539df8d76c9815c27531b7a5c109-parental_code.scn
+res://parental_code_kid.tscn::e5c732cb074d0ac66b449a4fb8e9cf7d::1781630020::res://.godot/exported/133200997/export-a7540ca0943f5e05ba14aeb945285a55-parental_code_kid.scn
+res://register_parrent.tscn::d505c2b3ad7566a2a157b698f8322b1e::1781807971::res://.godot/exported/133200997/export-6df776c8d05ac21e6c46158631557773-register_parrent.scn
+res://shop_oras.tscn::0205fdb84ab8d9cc8c42d0f3b362bb27::1781616930::res://.godot/exported/133200997/export-e7d8783dbac83a6cc11199a82c26fc34-shop_oras.scn
+res://verif_account.tscn::6ba6fd8c8ec3bd3079b574a1ae28a779::1781625731::res://.godot/exported/133200997/export-1a9a239e91e29f6dafb5d49663261364-verif_account.scn
