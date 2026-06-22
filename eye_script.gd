@@ -4,6 +4,10 @@ extends LineEdit
 var eye_open = preload("res://assets/icon_open_eye.png")
 var eye_closed = preload("res://assets/icon_closed_eye.png")
 @onready var label = $Label
+var regex_upper = RegEx.create_from_string("[A-Z]")
+var regex_lower = RegEx.create_from_string("[a-z]")
+var regex_digit = RegEx.create_from_string("[0-9]")
+var regex_special = RegEx.create_from_string("[^a-zA-Z0-9]")
 func _ready() -> void:
 	if secret:
 		eye.texture_normal = eye_closed
@@ -25,21 +29,29 @@ func _on_eye_pressed() -> void:
 		eye.texture_normal = eye_open
 
 
-func is_valid_email(password: String):
-	var regex = RegEx.new()
-	regex.compile("[^a-zA-Z0-9]")
-	var rezultat = regex.search(password)
-	if len(password) < 12:
-		label.text = "Parola trebuie sa aiba minim 12 caractere"
+func is_valid_password(password: String):
+	if len(password) < 8:
+		label.text = "Parola trebuie sa aiba minim 8 caractere"
 		return false
-	elif rezultat == false:
-		label.text = "Parola nu este destul de sigura"
+	if regex_upper.search(password) == null:
+		label.text = "Parola trebuie sa contina cel putin o litera mare"
+		return false
+	if regex_lower.search(password) == null:
+		label.text = "Parola trebuie sa contina cel putin o litera mica"
+		return false
+	if regex_digit.search(password) == null:
+		label.text = "Parola trebuie sa contina cel putin o cifra"
+		return false
+	if regex_special.search(password) == null:
+		label.text = "Parola trebuie sa contina cel putin un caracter special"
+		return false
+	label.text = ""
+	return true
+	
 		
 
-func _on_text_changed(new_text: String) -> void:
-	if is_valid_email(password):
+func _on_text_changed(password: String) -> void:
+	if is_valid_password(password):
 		add_theme_color_override("font_color", Color.GREEN)
-		Globals.adauga_email(password)
-		complete.emit()
 	else:
 		add_theme_color_override("font_color", Color.RED)
