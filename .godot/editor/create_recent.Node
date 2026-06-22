@@ -1,6 +1,12 @@
 Label
+<<<<<<< HEAD
 TextureButton
 Sprite2D
+=======
+AnimatedSprite2D
+Panel
+PanelContainer
+>>>>>>> 415eab5631001185aa03f5c102be6229cebb294f
 ColorRect
 GridContainer
 PopupPanel
@@ -10,5 +16,8 @@ CheckButton
 Button
 LinkButton
 LineEdit
+<<<<<<< HEAD
 TextureRect
 Panel
+=======
+>>>>>>> 415eab5631001185aa03f5c102be6229cebb294f
