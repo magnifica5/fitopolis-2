@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1782134618
+::res://::1782141934
 1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png::CompressedTexture2D::7536361269957601271::1772212221::1774848301::1::::<><><>0<>0<>90887020950a425c34a5a32d52c2c2b1<>res://.godot/imported/1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png-31eeab7255796e435b6bef19b2230d3b.ctex::
 3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png::CompressedTexture2D::7203370797049039625::1772211421::1774848301::1::::<><><>0<>0<>d5101df9ac9e6f9ffa28680a865de1e5<>res://.godot/imported/3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png-905d6c87ca81b69e818b1aa13f4ebe47.ctex::
 046af01fa841d786d1e967f8797ece8c-removebg-preview.png::CompressedTexture2D::4015776957699399800::1772444930::1774848301::1::::<><><>0<>0<>0b1d9f31e2a0afb977f3245961ba208a<>res://.godot/imported/046af01fa841d786d1e967f8797ece8c-removebg-preview.png-d634b8e8ab617928486f71008f63f162.ctex::
@@ -302,8 +302,8 @@ program button 3.gd::GDScript::1491196669001601810::1769527034::0::1::::<>Textur
 program button.gd::GDScript::6649383647478289793::1769526837::0::1::::<>TextureButton<><>0<>0<><>::
 raf_360x360_075_t_fafafa_ca443f4786-removebg-preview.png::CompressedTexture2D::1944752966074156067::1772182226::1774848301::1::::<><><>0<>0<>2b12cdb7b3e265006011fe30c5ef785d<>res://.godot/imported/raf_360x360_075_t_fafafa_ca443f4786-removebg-preview.png-0b433a43945e3c1e7aa8c938a5ea4da1.ctex::
 README.md::TextFile::-1::1782119435::0::1::::<><><>0<>0<><>::
-register_control.gd::GDScript::8048743198012954055::1782133532::0::1::::<>Control<><>0<>0<><>::
-register_parrent.tscn::PackedScene::3964974721597892308::1782133532::0::1::::<><><>0<>0<><>::uid://dmw4vh7y3qymp::::res://register_control.gd<>uid://bwu0vd6pflcw7::::res://assets/Sunnyside_World_ExampleScene.png<>uid://c35m48wiqvudo::::res://login_backround.gd<>uid://d2twt3gac7xts::::res://login_rect.gd<>uid://duk1lu8hdgurn::::res://assets/logo_final1.png<>uid://bd8iwvq5kuijk::::res://assets/font/kenvector_future_thin.ttf<>uid://ywf71p3plovo::::res://eye_script.gd<>uid://cil0eu86r1m5s::::res://email_input.gd
+register_control.gd::GDScript::8048743198012954055::1782141934::0::1::::<>Control<><>0<>0<><>::
+register_parrent.tscn::PackedScene::3964974721597892308::1782141934::0::1::::<><><>0<>0<><>::uid://dmw4vh7y3qymp::::res://register_control.gd<>uid://bwu0vd6pflcw7::::res://assets/Sunnyside_World_ExampleScene.png<>uid://c35m48wiqvudo::::res://login_backround.gd<>uid://d2twt3gac7xts::::res://login_rect.gd<>uid://duk1lu8hdgurn::::res://assets/logo_final1.png<>uid://bd8iwvq5kuijk::::res://assets/font/kenvector_future_thin.ttf<>uid://ywf71p3plovo::::res://eye_script.gd<>uid://cil0eu86r1m5s::::res://email_input.gd
 resetcode.gd::GDScript::940295923560363341::1781616279::0::1::::<>Label<><>0<>0<><>::
 revino_mai_tarziu.tscn::PackedScene::4133302896957358938::1779441345::0::1::::<><><>0<>0<><>::uid://b14oj42bfkqsp::::res://tarziu.gd<>uid://dc0gqvsbb6mku::::res://assets/happyB.png<>uid://d3cvf2cjwrkmr::::res://assets/happyF.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://b415284iuneso::::res://assets/acasa_buton.png<>uid://d3v23clat8kbj::::res://labelcomeback.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://ca3jivv1v7xn7::::res://audio/voices/miss_nutri_r.mp3<>uid://b1k612eb0pv36::::res://audio/voices/santos_r.mp3<>uid://bclipbctwpknv::::res://audio/voices_eng/miss_nutri_eng_comebackLater.mp3<>uid://3uoyjslim22k::::res://audio/voices_eng/santos_eng_comebackLater.mp3
 rosie-removebg-preview.png::CompressedTexture2D::3348052942184256593::1774522599::1774848301::1::::<><><>0<>0<>b825cb71aa76489922d5b66dcb84a8e0<>res://.godot/imported/rosie-removebg-preview.png-05307f069782e12bfaf7a83ae1cdae22.ctex::
@@ -413,7 +413,7 @@ WhatsApp_Image_2026-03-25_at_11.17.12_AM-removebg-preview.png::CompressedTexture
 ::res://addons/::1782119435
 ::res://addons/NotificationSchedulerPlugin/::1774034334
 icon.png::CompressedTexture2D::1766889892145055744::1774034333::1774034334::1::::<><><>0<>0<>2aefbca702f4ae5e58ea0393dc05ba6a<>res://.godot/imported/icon.png-838f73c17a0e540d021697cea4772ebd.ctex::
-NotificationScheduler.gd::GDScript::7621975126020770378::1774034333::0::1::::NotificationScheduler<>Node<>res://addons/NotificationSchedulerPlugin/icon.png<>0<>1<><>::
+NotificationScheduler.gd::GDScript::7621975126020770378::1774034333::0::1::::NotificationScheduler<>Node<><>0<>1<><>::
 NotificationSchedulerPlugin.gd::GDScript::1501499521028646264::1774034333::0::1::::<>EditorPlugin<><>0<>1<><>::
 plugin.cfg::TextFile::-1::1774034333::0::1::::<><><>0<>0<><>::
 ::res://addons/NotificationSchedulerPlugin/bin/::1774034333
@@ -451,7 +451,7 @@ storage_task.gd::GDScript::3999283318880161718::1782119435::0::1::::StorageTask<
 ::res://addons/supabase/Supabase/::1782119436
 supabase.gd::GDScript::120352095999156786::1782134587::0::1::::<>Node<><>0<>1<><>::
 ::res://android/::1773916501
-::res://assets/::1782119321
+::res://assets/::1782142579
 about.png::CompressedTexture2D::8906615055999965244::1767380776::1767380782::1::::<><><>0<>0<>7427f7100d655caeefcedbdc335b2389<>res://.godot/imported/about.png-bcd05af39060efb42baa388ffea59109.ctex::
 acasa_buton.png::CompressedTexture2D::4477442475480629610::1771334987::1771334991::1::::<><><>0<>0<>054a11ad45070e8cec8907ffb5d41fd4<>res://.godot/imported/acasa_buton.png-dd88d5f9a6af2285a22cfe8d66fc5ead.ctex::
 animals.png::CompressedTexture2D::17446401618146394::1781791631::1781791636::1::::<><><>0<>0<>473982cc9cf9739b6c98cd2986becb59<>res://.godot/imported/animals.png-2a92ecbd216db02d443718b81df7fa03.ctex::
@@ -528,6 +528,7 @@ Sunnyside_World_ExampleScene.png::CompressedTexture2D::3973418431449809244::1781
 supa.png::CompressedTexture2D::7584142947304033218::1771841755::1771842050::1::::<><><>0<>0<>f7b12c2a5c6f1b6514192fa5ea47a121<>res://.godot/imported/supa.png-91b5b5218637a23461ef8e7b43be54b5.ctex::
 titlu joc.png::CompressedTexture2D::124208439651446606::1767186408::1767351921::1::::<><><>0<>0<>dbf41773d57584280b1473b6e845874b<>res://.godot/imported/titlu joc.png-351f6c90d2e9925dac393592c32ca4cd.ctex::
 whole world.png::CompressedTexture2D::1021205927667233851::1767359613::1767359714::1::::<><><>0<>0<>5a6fc3c71188e907ec9b43a483bc8e9c<>res://.godot/imported/whole world.png-d3abcc39bc99a24839e3b92f3828ca28.ctex::
+x-.png::CompressedTexture2D::5912387354711115422::1782142579::1782142595::1::::<><><>0<>0<>d7afe821534d04ef96e30817e7c67266<>res://.godot/imported/x-.png-c83a37fafc706549e813bb4bb27b9846.ctex::
 ::res://assets/bara meniu/::1779191572
 exercitii.png::CompressedTexture2D::8530054999784583627::1779191468::1779191572::1::::<><><>0<>0<>c77359e81b44da35a1d52674649421a6<>res://.godot/imported/exercitii.png-b54b80bdb67592c640fb2415b8a9a7b2.ctex::
 nivele.png::CompressedTexture2D::8320134604712273178::1773768422::1773768483::1::::<><><>0<>0<>f21ff67aa37e3c6cd49f0375eb6f6264<>res://.godot/imported/nivele.png-cf441586c2ffa60a7a2273055f12b52c.ctex::

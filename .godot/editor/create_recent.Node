@@ -1,5 +1,6 @@
 Label
 TextureButton
+Panel
 Sprite2D
 ColorRect
 GridContainer
@@ -11,4 +12,3 @@ Button
 LinkButton
 LineEdit
 TextureRect
-Panel

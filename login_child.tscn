@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cre8m6c8gjig1"]
+[gd_scene load_steps=14 format=3 uid="uid://cre8m6c8gjig1"]
 
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_doo0l"]
+[ext_resource type="Script" uid="uid://cu7qpaac5cx3u" path="res://login_child.gd" id="1_pc6y0"]
 [ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="2_xi2yv"]
 [ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="3_pc6y0"]
 [ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="4_mrssb"]
@@ -61,6 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pc6y0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -92,9 +94,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -393.0
+offset_left = -422.0
 offset_top = -376.0
-offset_right = 342.0
+offset_right = 376.0
 offset_bottom = 374.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -161,9 +163,9 @@ theme_override_constants/v_separation = 0
 columns = 7
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer3/Panel/CanvasLayer4"]
-offset_left = 833.0
+offset_left = 822.0
 offset_top = 216.0
-offset_right = 1078.0
+offset_right = 1063.0
 offset_bottom = 450.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xi2yv")
 
@@ -180,9 +182,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -301.5
-offset_right = -70.5
-offset_bottom = 96.0
+offset_left = -312.0
+offset_top = -2.0
+offset_right = -81.0
+offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -195,9 +198,28 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 66.0
-offset_top = 62.0
-offset_right = 672.0
-offset_bottom = 118.0
+offset_left = 87.0
+offset_top = 59.0
+offset_right = 693.0
+offset_bottom = 115.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
+
+[node name="Label" type="Label" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.703
+anchor_right = 0.5
+anchor_bottom = 0.703
+offset_left = -298.5
+offset_top = -31.25
+offset_right = 303.5
+offset_bottom = 26.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mrssb")
+theme_override_font_sizes/font_size = 30
+
+[connection signal="pressed" from="CanvasLayer3/Panel/Button" to="." method="_on_inregistreaza"]

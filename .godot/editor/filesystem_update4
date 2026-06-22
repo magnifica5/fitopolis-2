@@ -1,1 +1,5 @@
 res://register_parrent.tscn
+res://register_control.gd
+res://login_child.tscn
+res://login_child.gd
+res://popup_avatars.gd

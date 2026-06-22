@@ -5,11 +5,12 @@ extends Control
 @onready var politica_check = $CanvasLayer3/Panel/CheckBox3
 @onready var password_check = $CanvasLayer3/Panel/LineEdit2/Label
 @onready var erori = $CanvasLayer3/Panel/Label5
-
+@onready var popup_termeni = $CanvasLayer3/Panel/Panel
+@onready var popup_conditii = $CanvasLayer3/Panel/Panel2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Supabase.config.supabase_url = "https://etvqohlilszwtwbqobtq.supabase.co"
-	Supabase.config.supabase_anon_key = "sb_publishable_Y-5_r6PoTMff-eDLJj0FMw_gLCxdGwG"
+	popup_termeni.hide()
+	popup_conditii.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,11 +18,11 @@ func _process(delta: float) -> void:
 
 
 func _on_terms_pressed() -> void:
-	get_tree().change_scene_to_file("res://termeni.tscn")
+	popup_termeni.show()
 
 
 func _on_policy_pressed() -> void:
-	get_tree().change_scene_to_file("res://politica.tscn")
+	popup_conditii.show()
 
 
 func is_valid_email(email: String):
@@ -52,8 +53,13 @@ func _on_inregistreaza() -> void:
 	if result.error == null:
 		print("Cont de părinte creat! ID-ul lui este: ", result.data.id)
 	else:
-		print("Eroare la creare părinte: ", result.error.message)
-	
-	
+		var mesaj_eroare = result.error.message.to_lower()
+		if "already registered" in mesaj_eroare or "already exists" in mesaj_eroare:
+			erori.text = "Acest email este deja asociat unui cont! Încearca sa te loghezi."
 		
-	
+func _close_termeni() -> void:
+	popup_termeni.hide()
+
+
+func _close_politica() -> void:
+	popup_conditii.hide()
