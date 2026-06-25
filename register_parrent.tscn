@@ -386,7 +386,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer3/Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -603,7 +602,6 @@ theme_override_font_sizes/font_size = 50
 text = "X"
 
 [node name="Panel2" type="Panel" parent="CanvasLayer3/Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -790,6 +788,464 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
 
+[node name="Panel2" type="Panel" parent="CanvasLayer3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -407.0
+offset_right = 429.0
+offset_bottom = 404.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8subr")
+
+[node name="Label" type="Label" parent="CanvasLayer3/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -69.5
+offset_right = 332.0
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_ijb4i")
+theme_override_font_sizes/font_size = 60
+text = "Verifica adresa 
+de email introdusa"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="CanvasLayer3/Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -578.5
+offset_top = 28.0
+offset_right = 589.5
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.99609375, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_ijb4i")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer3/Panel2"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -559.5
+offset_top = -431.5
+offset_right = 558.5
+offset_bottom = 425.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jb31o")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer3/Panel2/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = -3.0
+offset_right = 543.0
+offset_bottom = 550.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_fttpq")
+
+[node name="Label" type="Label" parent="CanvasLayer3/Panel2/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = -279.5
+offset_right = 308.0
+offset_bottom = -183.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_ijb4i")
+theme_override_font_sizes/font_size = 50
+text = "Termeni și condiții"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer3/Panel2/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.0
+offset_top = -174.5
+offset_right = 497.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("9_ijb4i")
+theme_override_font_sizes/normal_font_size = 40
+text = "Ultima actualizare: [05.04.2026]
+
+1. Introducere
+
+Bine ați venit în aplicația Fit’O Polis. Această aplicație este un joc educativ destinat copiilor, care promovează un stil de viață sănătos prin activități zilnice interactive.
+
+Utilizarea aplicației este permisă doar cu acordul și sub supravegherea unui părinte sau tutore legal.
+
+2. Acceptarea termenilor
+
+Prin utilizarea aplicației, părintele sau tutorele legal confirmă că a citit, înțeles și acceptat acești Termeni și condiții.
+
+Dacă nu sunteți de acord cu acești termeni, vă rugăm să nu utilizați aplicația.
+
+3. Descrierea serviciului
+
+Fit’O Polis oferă:
+
+=> activități zilnice (exerciții fizice, mese, programe de seară și dimineață)
+=> sistem de recompense (steluțe și stickere)
+=> monitorizarea progresului zilnic al copilului
+=> posibilitatea trimiterii de rapoarte prin email către părinți
+=> conținut educativ despre nutriție și stil de viață sănătos
+
+4. Contul parental
+
+Pentru utilizarea completă a aplicației, este necesar un cont parental.
+
+Părintele este responsabil pentru:
+
+=> setarea și păstrarea parolei în siguranță
+=> verificarea activităților copilului
+=> corectitudinea datelor introduse
+
+Aplicația nu este responsabilă pentru accesul neautorizat rezultat din neprotejarea parolei.
+
+5. Utilizarea aplicației
+
+Utilizatorii se obligă:
+
+=> să folosească aplicația în scop educativ
+=> să nu încerce modificarea, copierea sau compromiterea aplicației
+=> să nu utilizeze aplicația pentru activități ilegale sau abuzive
+
+6. Sistemul de recompense
+
+Steluțele și stickerele:
+
+=> au scop exclusiv educativ și motivațional
+=> nu au valoare monetară
+=> nu pot fi convertite în bani sau alte beneficii reale
+
+7. Emailuri și notificări
+
+Aplicația poate trimite emailuri cu progresul copilului și confirmarea plăților variantelor premium.
+
+Adresa de email:
+
+=> este utilizată exclusiv pentru trimiterea rapoartelor
+=> nu este folosită pentru marketing
+
+8. Protecția datelor
+
+Datele utilizatorilor sunt colectate și procesate în conformitate cu:
+Regulamentul General privind Protecția Datelor
+
+Pentru mai multe informații, consultați Politica de confidențialitate.
+
+9. Securitatea aplicației
+
+Este realizata protejarea datelor prin:
+=> utilizarea conexiunilor securizate
+=> protejarea parolelor
+=> limitarea accesului la informații
+
+10. Plăți și abonamente
+
+Aplicația Fit’O Polis oferă atât funcționalități gratuite, cât și funcționalități disponibile prin programe plătite.
+
+Sunt disponibile următoarele programe:
+
+Program Super Saver:
+=> acces la un număr dublu de exerciții fizice
+=> acces la încă 16 rețete destinate părinților (codul de activare este disponibil pe site)
+=> 3 șanse suplimentare pentru a evita pierderea punctelor
+
+Program Ultimate Saver:
+=> deblocarea unor modele suplimentare de stickere
+=> acces la statistici avansate pentru părinți
+=> acces la mai multe hărți ale orașelor Fit’O Polis (5 hărți suplimentare)
+=> eliminarea reclamelor din aplicație
+=> posibilitatea de a modifica durata activităților
+
+Accesul la aceste programe se face contra cost și este permis doar părinților sau tutorilor legali.
+
+Plățile:
+
+=> sunt procesate prin servicii securizate furnizate de terți
+=> pot fi recurente (abonament) sau unice, în funcție de opțiunea aleasă
+=> nu sunt rambursabile, cu excepția cazurilor prevăzute de legislația în vigoare
+
+Părintele sau tutorele legal este responsabil pentru gestionarea abonamentului, inclusiv pentru anularea acestuia înainte de reînnoire.
+
+Ne rezervăm dreptul de a modifica prețurile sau structura programelor, cu informarea utilizatorilor în prealabil.
+
+11. Modificări ale aplicației
+
+Ne rezervăm dreptul de a:
+
+=> modifica funcționalitățile aplicației
+=> actualiza acești termeni
+
+Utilizarea continuă a aplicației reprezintă acceptarea modificărilor.
+
+12. Încetarea utilizării
+
+Utilizatorul poate înceta utilizarea aplicației în orice moment prin dezinstalare.
+
+Ne rezervăm dreptul de a restricționa accesul în caz de utilizare abuzivă.
+
+13. Proprietate intelectuală
+
+Toate elementele aplicației (grafică, personaje, conținut) sunt protejate și nu pot fi copiate sau distribuite fără permisiune.
+
+14. Contact
+
+Pentru întrebări sau solicitări:
+Email: fitopolis.channel@gmail.com"
+script = ExtResource("10_slult")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer3/Panel2/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -229.0
+offset_bottom = 136.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="CanvasLayer3/Panel2/Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -126.0
+offset_top = 49.0
+offset_right = -13.0
+offset_bottom = 150.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[node name="Panel2" type="Panel" parent="CanvasLayer3/Panel2"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -555.5
+offset_top = -429.5
+offset_right = 557.5
+offset_bottom = 441.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qwk2g")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer3/Panel2/Panel2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.0
+offset_top = -5.0
+offset_right = 550.0
+offset_bottom = 548.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_fttpq")
+
+[node name="Label" type="Label" parent="CanvasLayer3/Panel2/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.5
+offset_top = -292.25
+offset_right = 318.5
+offset_bottom = -187.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_ijb4i")
+theme_override_font_sizes/font_size = 50
+text = "Politica de
+confidențialitate"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer3/Panel2/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -443.5
+offset_top = -173.25
+offset_right = 451.5
+offset_bottom = 363.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("9_ijb4i")
+theme_override_font_sizes/normal_font_size = 40
+text = "1. Introducere
+
+Aplicația Fit’O Polis respectă confidențialitatea utilizatorilor.
+
+Această politică explică ce date colectăm, cum le folosim și cum le protejăm.
+
+2. Ce date colectăm
+
+Aplicația poate colecta următoarele date:
+
+=> adresa de email a părintelui
+=> orele activităților zilnice (ora de trezire, mese, exerciții, ora de somn)
+=> progresul copilului (activități completate, steluțe)
+=> parola dedicată secțiunii parentale (stocată securizat)
+=> date necesare procesării plăților (ex: informații legate de tranzacții, fără a stoca direct datele complete ale cardului)
+
+Nu colectăm:
+
+=> nume reale
+=> adresă fizică
+=> locație GPS
+=> date sensibile
+
+3. Scopul colectării datelor
+
+Datele sunt colectate pentru:
+
+=> funcționarea corectă a aplicației
+=> monitorizarea progresului copilului
+=> trimiterea de rapoarte zilnice către părinți
+=> îmbunătățirea experienței utilizatorului
+=> procesarea plăților pentru serviciile premium
+
+4. Temeiul legal al prelucrării
+
+Prelucrarea datelor se realizează în baza:
+
+=> consimțământului părintelui sau tutorelui legal
+=> executării contractului (furnizarea serviciilor aplicației – servicii ale societății informaționale)
+
+5. Consimțământul parental
+
+Aplicația este destinată copiilor și poate fi utilizată doar cu acordul unui părinte sau tutore legal.
+
+6. Utilizarea adresei de email
+
+Adresa de email este utilizată exclusiv pentru:
+
+=> trimiterea rapoartelor zilnice privind activitățile copilului
+=> confirmarea plăților destinate programelor premium
+
+7. Stocarea și securitatea datelor
+
+Datele sunt protejate prin măsuri de securitate adecvate, cum ar fi:
+
+=> stocarea securizată a informațiilor
+=> criptarea parolelor
+=> utilizarea conexiunilor securizate
+
+8. Durata stocării datelor
+
+Datele sunt păstrate doar atât timp cât este necesar pentru funcționarea aplicației.
+
+Datele utilizate pentru procesarea plăților sunt păstrate conform obligațiilor legale aplicabile.
+
+Utilizatorii pot șterge datele prin dezinstalarea aplicației.
+
+9. Drepturile utilizatorilor
+
+Părinții au dreptul să:
+
+=> acceseze datele colectate
+=> modifice datele
+=> solicite ștergerea datelor
+=> retragă consimțământul
+
+10. Partajarea datelor
+
+Nu vindem și nu distribuim datele către terți.
+
+Datele pot fi folosite doar în cadrul funcționării aplicației.
+
+11. Scop educativ
+
+Aplicația are scop educativ și nu înlocuiește sfatul medical sau nutrițional oferit de specialiști.
+
+12. Modificări ale politicii
+
+Ne rezervăm dreptul de a modifica această politică.
+
+Utilizarea aplicației după modificări reprezintă acceptarea acestora.
+
+13. Contact
+
+Pentru întrebări sau solicitări:
+
+Email: fitopolis.channel@gmail.com"
+script = ExtResource("11_slult")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer3/Panel2/Panel2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -229.0
+offset_bottom = 136.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="CanvasLayer3/Panel2/Panel2/TextureButton"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -126.0
+offset_top = 49.0
+offset_right = -13.0
+offset_bottom = 150.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "X"
+
 [connection signal="text_changed" from="CanvasLayer3/Panel/LineEdit" to="CanvasLayer3/Panel/LineEdit" method="_on_text_changed"]
 [connection signal="text_changed" from="CanvasLayer3/Panel/LineEdit2" to="CanvasLayer3/Panel/LineEdit2" method="_on_text_changed"]
 [connection signal="pressed" from="CanvasLayer3/Panel/LineEdit2/TextureButton" to="CanvasLayer3/Panel/LineEdit2" method="_on_eye_pressed"]
@@ -798,3 +1254,5 @@ text = "X"
 [connection signal="pressed" from="CanvasLayer3/Panel/Button" to="." method="_on_inregistreaza"]
 [connection signal="pressed" from="CanvasLayer3/Panel/Panel/TextureButton" to="." method="_close_termeni"]
 [connection signal="pressed" from="CanvasLayer3/Panel/Panel2/TextureButton" to="." method="_close_politica"]
+[connection signal="pressed" from="CanvasLayer3/Panel2/Panel/TextureButton" to="." method="_close_termeni"]
+[connection signal="pressed" from="CanvasLayer3/Panel2/Panel2/TextureButton" to="." method="_close_politica"]

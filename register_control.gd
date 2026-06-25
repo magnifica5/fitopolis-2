@@ -7,10 +7,15 @@ extends Control
 @onready var erori = $CanvasLayer3/Panel/Label5
 @onready var popup_termeni = $CanvasLayer3/Panel/Panel
 @onready var popup_conditii = $CanvasLayer3/Panel/Panel2
+@onready var panel_register = $CanvasLayer3/Panel
+@onready var panel_check = $CanvasLayer3/Panel2
+var result
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	popup_termeni.hide()
 	popup_conditii.hide()
+	panel_register.show()
+	panel_check.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -49,9 +54,12 @@ func _on_inregistreaza() -> void:
 		return
 	erori.text = ""
 	var task = Supabase.auth.sign_up(email, parola)
-	var result = await task.completed
+	result = await task.completed
 	if result.error == null:
-		print("Cont de părinte creat! ID-ul lui este: ", result.data.id)
+		print("Cont de părinte creat! ID-ul lui este: ")
+		#asociaza_cod()
+		panel_register.hide()
+		panel_check.show()
 	else:
 		var mesaj_eroare = result.error.message.to_lower()
 		if "already registered" in mesaj_eroare or "already exists" in mesaj_eroare:
