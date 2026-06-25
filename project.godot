@@ -24,6 +24,8 @@ HourActivity="*res://hour_activity.gd"
 SoundManager="*res://sound_manager.tscn"
 Localization="*res://Localization.gd"
 Supabase="*res://addons/supabase/Supabase/supabase.gd"
+GameState="*res://GameState.gd"
+Itemshop="*res://itemshop.gd"
 
 [display]
 
