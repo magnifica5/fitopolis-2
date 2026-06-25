@@ -1,5 +1,7 @@
-res://register_parrent.tscn
-res://register_control.gd
-res://login_child.tscn
-res://login_child.gd
-res://popup_avatars.gd
+res://oras2.0.tscn
+res://GameState.gd
+res://leveloras2.gd
+res://leveloras3.gd
+res://shop_oras.tscn
+res://casashop.gd
+res://itemshop.gd
