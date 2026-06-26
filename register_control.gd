@@ -56,14 +56,13 @@ func _on_inregistreaza() -> void:
 	var task = Supabase.auth.sign_up(email, parola)
 	result = await task.completed
 	if result.error == null:
-		print("Cont de părinte creat! ID-ul lui este: ")
-		#asociaza_cod()
-		panel_register.hide()
-		panel_check.show()
-	else:
-		var mesaj_eroare = result.error.message.to_lower()
-		if "already registered" in mesaj_eroare or "already exists" in mesaj_eroare:
-			erori.text = "Acest email este deja asociat unui cont! Încearca sa te loghezi."
+		if result.data.identities.size() == 0:
+			erori.text = "Acest email este deja asociat unui cont! Incearca sa te loghezi."
+			print("Utilizatorul există deja (Enumeration Protection)")
+		else:
+			# UTILIZATOR NOU: Totul a mers bine
+			panel_register.hide()
+			panel_check.show()
 		
 func _close_termeni() -> void:
 	popup_termeni.hide()
