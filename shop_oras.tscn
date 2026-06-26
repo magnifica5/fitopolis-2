@@ -42,13 +42,16 @@ offset_right = 898.0
 offset_bottom = 455.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 vertical_scroll_mode = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_i607x")
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect"]
@@ -60,6 +63,7 @@ offset_left = -185.75
 offset_right = 185.75
 offset_bottom = 407.5
 grow_horizontal = 2
+mouse_filter = 2
 texture = ExtResource("3_0ip6e")
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect/TextureRect"]
@@ -272,3 +276,5 @@ offset_top = -157.0
 offset_right = 741.0
 offset_bottom = 595.0
 expand_mode = 1
+
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" to="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" method="_on_button_pressed"]

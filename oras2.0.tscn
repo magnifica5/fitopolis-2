@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://byxvirf2mbluu"]
+[gd_scene load_steps=51 format=4 uid="uid://byxvirf2mbluu"]
 
 [ext_resource type="Script" uid="uid://dgkvg0xvuouo" path="res://oras_scene.gd" id="1_8qvay"]
 [ext_resource type="Script" uid="uid://bkfahxr3xddjx" path="res://miscare_oras_camera.gd" id="2_04nbv"]
@@ -28,7 +28,6 @@
 [ext_resource type="Script" uid="uid://cu2yympoe80bm" path="res://leveloras3.gd" id="23_8ef1k"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="23_it6mh"]
 [ext_resource type="Script" uid="uid://cmlq7emof78r3" path="res://labelupgrade.gd" id="24_3i3l4"]
-[ext_resource type="Texture2D" uid="uid://ck0qgg5ysblmc" path="res://lkjj.png" id="24_kq0ma"]
 [ext_resource type="Script" uid="uid://dic70hk36gi06" path="res://obiect.gd" id="24_rnnjr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_flyhl"]
@@ -13231,6 +13230,5 @@ z_index = 4
 position = Vector2(1012, 440)
 scale = Vector2(0.30671296, 0.25)
 script = ExtResource("24_rnnjr")
-poza = ExtResource("24_kq0ma")
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_acasa_pressed"]
