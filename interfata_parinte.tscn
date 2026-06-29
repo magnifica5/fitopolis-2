@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbskm1dx6uboe"]
+
+[ext_resource type="Script" uid="uid://dkwb0h1caxnuk" path="res://interfata_parinte.gd" id="1_be4ta"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycc2j"]
+bg_color = Color(0.5529412, 0.50980395, 0.50980395, 0.4745098)
+corner_radius_top_left = 180
+corner_radius_top_right = 180
+corner_radius_bottom_right = 180
+corner_radius_bottom_left = 180
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_be4ta")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 62.0
+offset_top = 37.0
+offset_right = 279.0
+offset_bottom = 251.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_ycc2j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ycc2j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ycc2j")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_ycc2j")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ycc2j")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ycc2j")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ycc2j")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ycc2j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ycc2j")
+text = "+"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 36.0
+offset_top = -278.0
+offset_right = 310.0
+offset_bottom = -209.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Adauga copil"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 471.0
+offset_top = -232.0
+offset_right = 1802.0
+offset_bottom = 229.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "in continuare aici vor veni copiii, practic
+mai multe texture rect care se creeaza atunci cand
+apasa pe plus si creeaza contul de copil.
+copiii pe tel lor doar baga codul ala si sunt direct
+autentificati. la parinti pe cont in schimb se seteaza
+poza de profil si username ul.
+cand se da click pe un copil din lista asta se poate vedea progresul lui
+si de asemenea sa se bifeze activitatile facute si sa se modifice orele"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_adauga_copil"]

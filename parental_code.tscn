@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://drx173vklsppq"]
+[gd_scene load_steps=12 format=3 uid="uid://drx173vklsppq"]
 
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_8by23"]
+[ext_resource type="Script" uid="uid://c0btjs7jmfflh" path="res://parental_code.gd" id="1_refpg"]
 [ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="2_refpg"]
 [ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="3_sf7og"]
 [ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="4_lq3lr"]
@@ -48,6 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_refpg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -151,6 +153,24 @@ offset_bottom = 133.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 
+[node name="Label2" type="Label" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -293.5
+offset_top = -242.0
+offset_right = 310.5
+offset_bottom = -198.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.99609375, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Button" type="Button" parent="CanvasLayer3/Panel"]
 layout_mode = 1
 anchors_preset = 7
@@ -186,3 +206,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_o3n0i")
 theme_override_font_sizes/font_size = 40
 text = "verifica"
+
+[connection signal="pressed" from="CanvasLayer3/Panel/Button" to="." method="_on_verifica"]

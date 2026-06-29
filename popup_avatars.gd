@@ -31,13 +31,8 @@ func build_avatar_grid():
 			var atlas = AtlasTexture.new()
 			atlas.atlas = sprite_sheet
 			atlas.region = Rect2(Vector2(j, i) * cell_size, cell_size)
-			#atlas.filter_clip = true
 			var btn = TextureButton.new()
 			btn.texture_normal = atlas
-			#btn.custom_minimum_size = Vector2(80, 80)
-			#btn.ignore_texture_size = true # Permite redimensionarea texturii
-			#btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED # Menține proporțiile
-			
 			btn.pressed.connect(_select_avatar.bind(index))
 			grid.add_child(btn)
 			index += 1
@@ -49,14 +44,7 @@ func _open_popup():
 
 func _select_avatar(index: int):
 	selected_index = index
+	print(selected_index)
 	var btn = grid.get_child(index)
 	buton_profil.texture_normal = btn.texture_normal
-	save_avatar(index)
 	panel.hide()
-	
-func save_avatar(index: int):
-	var file = FileAccess.open("user://save.dat", FileAccess.WRITE)
-	file.store_var(index)
-	
-	
-			
