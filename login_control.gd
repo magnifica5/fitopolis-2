@@ -1,4 +1,5 @@
 extends Control
+
 @onready var email = $CanvasLayer3/Panel/LineEdit
 @onready var password = $CanvasLayer3/Panel/LineEdit2
 @onready var label = $CanvasLayer3/Panel/Label5
@@ -14,7 +15,9 @@ extends Control
 @onready var cod_input = $CanvasLayer3/Panel3/LineEdit
 @onready var error = $CanvasLayer3/Panel3/Label5
 @onready var final = $CanvasLayer3/Panel4
+
 var result
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	panel_auth.show()
@@ -23,33 +26,48 @@ func _ready() -> void:
 	final.hide()
 	cod_input.editable = true
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_registered_pressed() -> void:
 	get_tree().change_scene_to_file("res://account_type.tscn")
-
 
 func _on_login() -> void:
 	var e = email.text.strip_edges()
 	var p = password.text
 	var task = Supabase.auth.sign_in(e, p)
 	result = await task.completed
+	
 	if result.error == null:
 		print("Logare reusita")
 		label.text = ""
-		asociaza_cod()
+		var user = result.data.user
+		print(user)
+		
+		var query := SupabaseQuery.new()
+		query.from("parents").select(["*"]).eq("id", user.id)
+		
+		var task2 = Supabase.database.query(query)
+		var response = await task2.completed
+		
+		if response.error:
+			print(response.error)
+			return
+			
+		if response.data.size() > 0:
+			print("Utilizatorul există.")
+		else:
+			print("Utilizatorul nu există.")
+			asociaza_cod()
+		get_tree().change_scene_to_file("res://interfata_parinte.tscn")
 	else:
 		var message = result.error.message.to_lower()
 		if "invalid login credentials" in message:
 			print("Email-ul sau parola sunt greșite. Te rugăm să încerci din nou.")
 			label.text = "Email-ul sau parola sunt gresite. Te rugam sa incerci din nou."
 
-
-func genereaza_cod():
+func genereaza_cod() -> String:
 	var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 	var res = ""
 	for i in range(6):
@@ -57,10 +75,11 @@ func genereaza_cod():
 		res += chr
 	return res
 
-func asociaza_cod():
+func asociaza_cod() -> void:
 	var salvat = false
 	var id_parinte = result.data.user.id
 	var incercari = 0
+	
 	# OBLIGATORIU: Așteptăm un frame ca addon-ul de Supabase 
 	# să apuce să salveze local token-ul utilizatorului proaspăt înregistrat
 	await get_tree().create_timer(0.5).timeout
@@ -75,7 +94,6 @@ func asociaza_cod():
 		
 		print("Încercarea ", incercari, " pentru ID parent: ", id_parinte)
 		
-		# Sintaxa corectă pentru versiunea ta de addon:
 		var query = SupabaseQuery.new().from("parents").insert([save])
 		var task = Supabase.database.query(query)
 		var res = await task.completed
@@ -88,22 +106,20 @@ func asociaza_cod():
 			if "duplicate" in res.error.message.to_lower():
 				print("Codul exista deja. Generăm altul...")
 			else:
-				# Dacă e eroare de RLS (de ex: "violates row-level security policy"), o afișăm și ne oprim
 				break
 
 func _on_reseteaza() -> void:
 	panel_auth.hide()
 	panel_reset.show()
-	
-
 
 func _on_continua() -> void:
-	var email = email_input.text.strip_edges()
-	var task = Supabase.auth.reset_password_for_email(email)
+	var e = email_input.text.strip_edges()
+	var task = Supabase.auth.reset_password_for_email(e)
 	var res = await task.completed
+	
 	if res.error == null:
 		errors.text = "Email-ul de resetare a fost trimis! Verifică-ți inbox-ul."
-		print("Succes: Email de resetare trimis către ", email)
+		print("Succes: Email de resetare trimis către ", e)
 		panel_reset.hide()
 		label_pas.hide()
 		new_pass.hide()
@@ -113,14 +129,13 @@ func _on_continua() -> void:
 	else:
 		errors.text = "Eroare: " + res.error.message
 		print("Eroare la resetare: ", res.error.message)
-	
-
 
 func _on_verifica_cod() -> void:
 	var cod = cod_input.text.strip_edges()
-	var email = email_input.text.strip_edges()
-	var task = Supabase.auth.verify_otp_email(email, cod, "recovery")
+	var e = email_input.text.strip_edges()
+	var task = Supabase.auth.verify_otp_email(e, cod, "recovery")
 	var res = await task.completed
+	
 	if res.error == null:
 		print("Cod corect! Acum poți seta noua parolă.")
 		new_pass.show()
@@ -140,7 +155,6 @@ func _on_reset_password() -> void:
 		if res.error == null:
 			panel_reset_final.hide()
 			final.show()
-
 
 func _on_catre_login() -> void:
 	final.hide()

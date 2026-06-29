@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://gxs45gia7rxs"]
+[gd_scene load_steps=14 format=3 uid="uid://gxs45gia7rxs"]
 
 [ext_resource type="Script" uid="uid://dd1uwnwvv757h" path="res://login_control.gd" id="1_a8ete"]
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_kbc7m"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="4_h3scs"]
 [ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="5_3mimh"]
 [ext_resource type="Script" uid="uid://ywf71p3plovo" path="res://eye_script.gd" id="6_3mimh"]
-[ext_resource type="Texture2D" uid="uid://byddn16umbufm" path="res://assets/signsc.png" id="7_yfcf3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h77j"]
 bg_color = Color(1, 1, 1, 1)
@@ -87,7 +86,6 @@ script = ExtResource("3_5h77j")
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer3"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -305,21 +303,6 @@ theme_override_fonts/font = ExtResource("5_3mimh")
 theme_override_font_sizes/font_size = 40
 text = "intra"
 
-[node name="Button2" type="TextureButton" parent="CanvasLayer3/Panel"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -114.5
-offset_top = 32.0
-offset_right = 449.5
-offset_bottom = 648.0
-grow_horizontal = 0
-scale = Vector2(0.15, 0.15)
-texture_normal = ExtResource("7_yfcf3")
-texture_pressed = ExtResource("7_yfcf3")
-texture_hover = ExtResource("7_yfcf3")
-
 [node name="Label5" type="Label" parent="CanvasLayer3/Panel"]
 layout_mode = 1
 anchors_preset = 7
@@ -508,6 +491,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel3" type="Panel" parent="CanvasLayer3"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -739,6 +723,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel4" type="Panel" parent="CanvasLayer3"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
