@@ -1,5 +1,3 @@
-res://oras2.0.tscn
-res://obiect.gd
-res://casashop.gd
 res://shop_oras.tscn
-res://itemshop.gd
+res://casashop.gd
+res://oras2.0.tscn
