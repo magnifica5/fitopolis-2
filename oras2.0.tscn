@@ -13221,6 +13221,10 @@ text = "Upgrade"
 script = ExtResource("24_3i3l4")
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_jjpv3")
 volume_db = -10.0
