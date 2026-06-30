@@ -1,5 +1,2 @@
-res://interfata_parinte.gd
-res://login_child.tscn
-res://interfata_parinte.tscn
 res://background_login.tscn
-res://login_control.gd
+res://login_child.gd

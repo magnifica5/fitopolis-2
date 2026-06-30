@@ -7,7 +7,6 @@ extends CanvasLayer
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
-var selected_index := -1
 func _ready() -> void:
 	build_avatar_grid()
 	buton_profil.pressed.connect(_open_popup)
@@ -43,8 +42,7 @@ func _open_popup():
 	panel.show()
 
 func _select_avatar(index: int):
-	selected_index = index
-	print(selected_index)
+	Globals.selected_index = index
 	var btn = grid.get_child(index)
 	buton_profil.texture_normal = btn.texture_normal
 	panel.hide()

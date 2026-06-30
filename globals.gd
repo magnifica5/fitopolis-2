@@ -22,6 +22,7 @@ var codep
 signal verif_trezire
 signal verif_ex
 signal final_settings
+var selected_index := -1
 var where
 var path_hours = "user://hours.save"
 var language_path = "user://language.save"
