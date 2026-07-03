@@ -5,6 +5,7 @@ var current_language := "ro"
 
 var translations := {
 	"ro": {
+		"shop":"magazin",
 		"Upgrade": "Upgradeaza",
 		"codereset": "Verificați adresa de
 		email și introduceți
@@ -345,7 +346,43 @@ JOC""",
  spălăm pe față
 """
 	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	"en": {
+		"shop":"shop",
 		"codereset": "Check your email address
 		and enter the code
 		you received.",

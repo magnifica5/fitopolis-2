@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bq7g65wpt238b"]
+[gd_scene load_steps=14 format=3 uid="uid://bq7g65wpt238b"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_m7bmd"]
 [ext_resource type="Texture2D" uid="uid://ca7j377dadnxj" path="res://assets/shop_slot2.png" id="2_i607x"]
@@ -6,10 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://cwojkdbr0vwtk" path="res://assets/nigu232-removebg-preview.png" id="4_svqdx"]
 [ext_resource type="Script" uid="uid://bsw8nfhjqxvcp" path="res://casashop.gd" id="4_thdux"]
 [ext_resource type="Texture2D" uid="uid://gp8uoihmi6rl" path="res://assets/nigu2.png" id="5_vigl0"]
+[ext_resource type="Script" uid="uid://fj6s36sw1kih" path="res://casashop2.gd" id="6_m36ju"]
 [ext_resource type="Texture2D" uid="uid://ca3kfjp3epnjg" path="res://assets/nigu4.png" id="6_svqdx"]
 [ext_resource type="Texture2D" uid="uid://dr4lbscfbjbeb" path="res://assets/nigu7.png" id="7_thdux"]
 [ext_resource type="Texture2D" uid="uid://dv3jlg2naq8y6" path="res://assets/nigu1.png" id="8_m36ju"]
 [ext_resource type="Texture2D" uid="uid://b8hxqe7rwhkgu" path="res://assets/nigu13.png" id="9_svqdx"]
+[ext_resource type="Texture2D" uid="uid://n5slharny2wh" path="res://image-removebg-preview (60).png" id="12_ay86s"]
+[ext_resource type="Script" path="return2" id="13_r6vcd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -31,19 +34,20 @@ metadata/_edit_lock_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
+anchors_preset = -1
+anchor_left = 0.013
+anchor_top = 0.006
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -935.0
-offset_top = -534.0
-offset_right = 898.0
-offset_bottom = 455.0
+offset_left = 0.03999901
+offset_top = -0.48000002
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
+scroll_deadzone = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
@@ -100,6 +104,7 @@ offset_left = 4.0
 offset_top = -70.5
 offset_right = 452.0
 offset_bottom = 389.5
+script = ExtResource("6_m36ju")
 
 [node name="TextureRect3" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -277,4 +282,18 @@ offset_right = 741.0
 offset_bottom = 595.0
 expand_mode = 1
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="return" type="TextureButton" parent="CanvasLayer"]
+offset_left = 26.0
+offset_top = 38.000004
+offset_right = 458.49994
+offset_bottom = 506.50024
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_ay86s")
+ignore_texture_size = true
+script = ExtResource("13_r6vcd")
+
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" to="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" method="_on_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton" to="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/return" to="CanvasLayer/return" method="_on_pressed"]

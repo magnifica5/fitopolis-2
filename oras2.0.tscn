@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://byxvirf2mbluu"]
+[gd_scene load_steps=55 format=4 uid="uid://byxvirf2mbluu"]
 
 [ext_resource type="Script" uid="uid://dgkvg0xvuouo" path="res://oras_scene.gd" id="1_8qvay"]
 [ext_resource type="Script" uid="uid://bkfahxr3xddjx" path="res://miscare_oras_camera.gd" id="2_04nbv"]
@@ -29,6 +29,10 @@
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="23_it6mh"]
 [ext_resource type="Script" uid="uid://cmlq7emof78r3" path="res://labelupgrade.gd" id="24_3i3l4"]
 [ext_resource type="Script" uid="uid://dic70hk36gi06" path="res://obiect.gd" id="24_rnnjr"]
+[ext_resource type="Texture2D" uid="uid://n5slharny2wh" path="res://image-removebg-preview (60).png" id="28_0tq3r"]
+[ext_resource type="Script" uid="uid://dembm5egdbicj" path="res://labelshop.gd" id="29_8ef1k"]
+[ext_resource type="Script" uid="uid://boe1waprc7pv3" path="res://return.gd" id="29_vp3yx"]
+[ext_resource type="Script" uid="uid://ckjh1ndvevrk4" path="res://texture_button_32.gd" id="30_5j8e4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_flyhl"]
 resource_name = "1"
@@ -13205,10 +13209,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Label2" type="Label" parent="CanvasLayer/TextureButton2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.30331263
-anchor_top = 0.45927602
-anchor_right = 0.63871634
-anchor_bottom = 0.49095023
+anchor_left = 0.32194617
+anchor_top = 0.4366516
+anchor_right = 0.6573499
+anchor_bottom = 0.4683258
 offset_left = -30.5
 offset_top = -19.5
 offset_right = 74.5
@@ -13216,14 +13220,49 @@ offset_bottom = 35.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("23_it6mh")
-theme_override_font_sizes/font_size = 61
+theme_override_font_sizes/font_size = 58
 text = "Upgrade"
 script = ExtResource("24_3i3l4")
 metadata/_edit_use_anchors_ = true
 
+[node name="return" type="TextureButton" parent="CanvasLayer"]
+visible = false
+offset_left = 32.000008
+offset_top = 52.00006
+offset_right = 535.0
+offset_bottom = 548.0001
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("28_0tq3r")
+ignore_texture_size = true
+script = ExtResource("29_vp3yx")
+
 [node name="TextureButton3" type="TextureButton" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1568.0001
+offset_top = 914.00006
+offset_right = 2051.0
+offset_bottom = 1135.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("22_3i3l4")
+script = ExtResource("30_5j8e4")
+
+[node name="Label3" type="Label" parent="CanvasLayer/TextureButton3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2992836
+anchor_top = 0.31143227
+anchor_right = 0.80997515
+anchor_bottom = 0.7090793
+offset_left = -0.042007446
+offset_top = -0.041007996
+offset_right = -26.706024
+offset_bottom = 0.07899475
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("23_it6mh")
+theme_override_font_sizes/font_size = 80
+text = "Shop"
+script = ExtResource("29_8ef1k")
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_jjpv3")
@@ -13236,3 +13275,4 @@ scale = Vector2(0.30671296, 0.25)
 script = ExtResource("24_rnnjr")
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_acasa_pressed"]
+[connection signal="pressed" from="CanvasLayer/return" to="CanvasLayer/return" method="_on_pressed"]

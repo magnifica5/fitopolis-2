@@ -1,11 +1,12 @@
-TextureButton
+VBoxContainer
+CanvasLayer
 Label
+TextureButton
 Panel
 Sprite2D
 ColorRect
 GridContainer
 PopupPanel
-CanvasLayer
 CheckBox
 CheckButton
 Button
