@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://4rx7sd64eyov"]
+
+[ext_resource type="Script" uid="uid://dronrtx2rxai8" path="res://cont_copil.gd" id="1_ptt8r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptt8r"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.13333334, 0.12156863, 0.12156863, 0.54509807)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="VBoxContainer2" type="VBoxContainer"]
+script = ExtResource("1_ptt8r")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ptt8r")
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1

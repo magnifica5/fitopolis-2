@@ -1,7 +1,9 @@
-VBoxContainer
-CanvasLayer
-Label
 TextureButton
+Label
+VBoxContainer
+HBoxContainer
+CanvasLayer
+Container
 Panel
 Sprite2D
 ColorRect
@@ -10,6 +12,3 @@ PopupPanel
 CheckBox
 CheckButton
 Button
-LinkButton
-LineEdit
-TextureRect

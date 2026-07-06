@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bq7g65wpt238b"]
+[gd_scene load_steps=13 format=3 uid="uid://bq7g65wpt238b"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_m7bmd"]
 [ext_resource type="Texture2D" uid="uid://ca7j377dadnxj" path="res://assets/shop_slot2.png" id="2_i607x"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dv3jlg2naq8y6" path="res://assets/nigu1.png" id="8_m36ju"]
 [ext_resource type="Texture2D" uid="uid://b8hxqe7rwhkgu" path="res://assets/nigu13.png" id="9_svqdx"]
 [ext_resource type="Texture2D" uid="uid://n5slharny2wh" path="res://image-removebg-preview (60).png" id="12_ay86s"]
-[ext_resource type="Script" path="return2" id="13_r6vcd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -292,7 +291,6 @@ offset_bottom = 506.50024
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("12_ay86s")
 ignore_texture_size = true
-script = ExtResource("13_r6vcd")
 
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" to="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" method="_on_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton" to="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton" method="_on_button_pressed"]

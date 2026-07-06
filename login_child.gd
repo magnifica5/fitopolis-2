@@ -8,17 +8,15 @@ func _on_inregistreaza() -> void:
 	if username.text == "":
 		error.text = "Alege un username pentru profilul tau"
 		return
-	
+	var nume_introdus = username.text.strip_edges()
+	if " " in nume_introdus:
+		error.text = "Username-ul nu poate conține spații!"
+		return
 	error.text = ""
-	
-	# PASUL 1: Verificăm dacă username-ul există folosind SELECT
 	var is_taken = await check_unique_username(username.text)
-	
 	if is_taken:
 		error.text = "Acest nume este deja folosit!"
 		return
-	
-	# PASUL 2: Dacă e liber, procedăm la inserare
 	var user = Supabase.auth.client
 	if user == null:
 		error.text = "Eroare: Sesiune expirată. Loghează-te din nou."
@@ -37,6 +35,7 @@ func _on_inregistreaza() -> void:
 	
 	if res_insert.error == null:
 		print("Succes! Copilul a fost adăugat.")
+		get_tree().change_scene_to_file("res://interfata_parinte.tscn")
 		# Aici poți schimba scena sau închide meniul
 	else:
 		error.text = "Eroare la salvare: " + res_insert.error.message
