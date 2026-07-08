@@ -1,0 +1,33 @@
+In ceea ce priveste informatiile furnizate pe site-ul web aferent aplicatiei, acestea sunt preluate din surse sigure, precum:
+1. Surse pentru informații despre sănătate și nutriție
+    World Health Organization (WHO) - https://www.who.int/ 
+    Centers for Disease Control and Prevention (CDC) - https://www.cdc.gov/index.html
+    National Institutes of Health (NIH) - https://www.nih.gov/
+    Harvard T.H. Chan School of Public Health - https://www.hsph.harvard.edu
+    Mayo Clinic - https://www.mayoclinic.org/
+    European Food Information Council (EUFIC) - https://www.eufic.org
+2. Surse pentru rețete alimentare
+    BBC Good Food - https://www.bbcgoodfood.com
+    EatingWell - https://www.eatingwell.com
+    Allrecipes - https://www.allrecipes.com
+    Food Network - https://www.foodnetwork.com
+Linkurile furnizate au fost utilizate ca surse de informare, prezentarea notiunilor a fost reformulata integral de catre autorii proiectului.
+
+Elementele grafice ale jocului sunt preluate din pachete de asseturi free to use:
+  https://penzilla.itch.io/top-down-retro-interior
+  https://danieldiggle.itch.io/sunnyside
+  https://pzuh.itch.io/free-game-gui
+Acestea au fost imbinate si mulate pe ideea si functionalitatile jocului.
+
+De asemenea, pentru crearea personajelor Miss Nutri si Santos si a frame-urilor cu acestia utilizate in realizarea exercitiilor fizice, a fost
+folosit modelul ai Gemini. Integrarea frame-urilor in joc a fost realizata de autorii proiectului.
+
+Au fost utilizate pluginurile:
+  https://github.com/godot-mobile-plugins/godot-notification-scheduler => pentru trimiterea notificarilor catre utilozatori
+  https://github.com/supabase-community/godot-engine.supabase => pentru conectarea la baza de date Supabase
+
+In realizarea proiectului:
+  Tăbârcă Ioana - clasa a X-a - rolul în echipă: Programarea unor funcționalități ale jocului, realizarea site-ului web, 
+  gestionarea bazei de date, pregătirea discursului
+  Buțea Nicolae Eugen Cristian - clasa a XI-a - rolul in echipă: Programarea unor funcționalități ale jocului, realizarea animațiilor,
+  analiza asupra problemelor identificate spre rezolvare

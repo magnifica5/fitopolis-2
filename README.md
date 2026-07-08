@@ -1,59 +1,28 @@
-<p align="center"><img src="addons/supabase/icon.svg" width="80px"/></p>
+# Fit'O Polis
 
-👉 [3.x](https://github.com/supabase-community/godot-engine.supabase/tree/main)
-
-# Godot Engine - Supabase (4.x)
-A lightweight addon which integrates Supabase APIs for Godot Engine out of the box.  
-
-- [x] Authentication (/auth)
-- [x] Database (/database)
-- [x] Realtime (/realtime)
-- [x] Storage (/storage)
+Fit'O Polis este un joc 2D realizat în Godot, destinat copiilor, având ca scop sprijinirea formării unei rutine sănătoase. De asemenea, punem la dispoziție și un site web dedicat părinților, care cuprinde informații legate de nutriție, somn și odihnă, precum și explicații despre modul în care ar trebui analizate etichetele alimentare pentru alegerea unor produse corespunzătoare. 
+Link cattre site web:  https://www.cngmm.ro/fitopolis/
 
 
-### UI Library
-A drag&drop UI Library is available at [supabase-ui](https://github.com/fenix-hub/godot-engine.supabase-ui).
 
-### examples and demos
-A collection of examples and live demos is available at [*fenix-hub/godot-engine.supabase-examples*](https://github.com/fenix-hub/godot-engine.supabase-examples), both with source code and exported binaries.  
+## Cerinte de sistem
+Conexiune la Internet
+Android 7.0 sau versiune mai nouă
+iOS 13 sau versiune mai nouă
 
-### how to use
-A wiki is available [*here*](https://github.com/fenix-hub/godot-engine.supabase/wiki).  
-Even though it is still not complete, Classes and APIs references are always listed and updated.  
 
-### code snippet
-Multiple approaches!
+## Instalare
+În prezent, aplicația este disponibilă exclusiv pentru dispozitive Android prin descărcarea fișierului APK de pe site-ul web. 
+Pentru a instala respectivul fișier este nevoie ca utilizatorul să:
+1) Apese pe butonul “Download Now” din meniul site-ului web
+2) Să citească cu atenție instrucțiunile și indicațiile puse la dispoziție 
+3) Să apese pe butonul “Download APK”
+4) Să apese pe semnul de download din site-ul MediaFire către care a fost redirecționat
+5) Să permită instalarea din setările telefonului (Setări → Aplicații → Chrome → Permite surse necunoscute → Activează)
+6) Să deschidă fișierul din bara de notificări sau din Downloads și să apese Instalează.
 
-*Asynchronous (signals)*
-```gdscript
-# method 1 (connecting to `Supabase.auth.signed_in` signal)
-func _ready():
-	Supabase.auth.signed_in.connect(_on_signed_in)
-	Supabase.auth.sign_in(
-		"user@supabase.email",
-		"userpwd"
-	)
+## Ajutor
+Pentru orice problema intalnita puteti trimite un email la adresa: fitopolis.channel@gmail.com
 
-func _on_signed_in(user: SupabaseUser) -> void:
-	print(user)
-
-# method 2 (using lambdas, connecting to the `AuthTask.completed` signal)
-func _ready():
-	Supabase.auth.sign_in(
-		"user@supabase.email",
-		"userpwd"
-	).completed.connect(
-		func(authTask: AuthTask) -> void:
-			print(auth_task.user)
-	)
-```
-
-*Synchronous (await)*
-```gdscript
-func _ready():
-	var auth_task: AuthTask = await Supabase.auth.sign_in(
-		"user@supabase.email",
-		"userpwd"
-	).completed
-	print(auth_task.user)
-```
+## Autori
+Ioana Tabarca si Butea Nicolae
