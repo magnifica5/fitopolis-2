@@ -55,6 +55,7 @@ offset_left = 50.0
 offset_top = 54.0
 offset_right = 1865.0
 offset_bottom = 1028.0
+theme_override_constants/separation = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/VBoxContainer"]
 layout_mode = 2
@@ -92,8 +93,10 @@ vertical_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer2/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 30
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer2/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 30
 
 [connection signal="pressed" from="CanvasLayer2/VBoxContainer/HBoxContainer/VBoxContainer_Adauga/Button" to="." method="_on_adauga_copil"]

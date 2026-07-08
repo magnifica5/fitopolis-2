@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_registered_pressed() -> void:
-	get_tree().change_scene_to_file("res://account_type.tscn")
+	get_tree().change_scene_to_file("res://register_parrent.tscn")
 
 func _on_login() -> void:
 	var e = email.text.strip_edges()
@@ -42,71 +42,12 @@ func _on_login() -> void:
 	if result.error == null:
 		print("Logare reusita")
 		label.text = ""
-		var user = result.data.user
-		print(user)
-		
-		var query := SupabaseQuery.new()
-		query.from("parents").select(["*"]).eq("id", user.id)
-		
-		var task2 = Supabase.database.query(query)
-		var response = await task2.completed
-		
-		if response.error:
-			print(response.error)
-			return
-			
-		if response.data.size() > 0:
-			print("Utilizatorul există.")
-		else:
-			print("Utilizatorul nu există.")
-			asociaza_cod()
 		get_tree().change_scene_to_file("res://interfata_parinte.tscn")
 	else:
 		var message = result.error.message.to_lower()
 		if "invalid login credentials" in message:
 			print("Email-ul sau parola sunt greșite. Te rugăm să încerci din nou.")
 			label.text = "Email-ul sau parola sunt gresite. Te rugam sa incerci din nou."
-
-func genereaza_cod() -> String:
-	var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-	var res = ""
-	for i in range(6):
-		var chr = characters[randi() % characters.length()]
-		res += chr
-	return res
-
-func asociaza_cod() -> void:
-	var salvat = false
-	var id_parinte = result.data.user.id
-	var incercari = 0
-	
-	# OBLIGATORIU: Așteptăm un frame ca addon-ul de Supabase 
-	# să apuce să salveze local token-ul utilizatorului proaspăt înregistrat
-	await get_tree().create_timer(0.5).timeout
-	
-	while salvat == false and incercari < 5:
-		incercari += 1
-		var cod = genereaza_cod()
-		var save = {
-			"id" : id_parinte,
-			"connection_code": cod
-		}
-		
-		print("Încercarea ", incercari, " pentru ID parent: ", id_parinte)
-		
-		var query = SupabaseQuery.new().from("parents").insert([save])
-		var task = Supabase.database.query(query)
-		var res = await task.completed
-		
-		if res.error == null:
-			salvat = true
-			print("Codul UNIC de conectare este: ", cod)
-		else:
-			print("Eroare de la Supabase: ", res.error.message)
-			if "duplicate" in res.error.message.to_lower():
-				print("Codul exista deja. Generăm altul...")
-			else:
-				break
 
 func _on_reseteaza() -> void:
 	panel_auth.hide()
@@ -159,3 +100,6 @@ func _on_reset_password() -> void:
 func _on_catre_login() -> void:
 	final.hide()
 	panel_auth.show()
+
+func _autentificare_copil() -> void:
+	get_tree().change_scene_to_file("res://autentificare_copil.tscn")

@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 func _on_verifica() -> void:
 	var code = parental_code.text.strip_edges()
 	var query := SupabaseQuery.new()
-	query.from("parents").select(["connection_code"]).eq("connection_code", code)
+	query.from("children").select(["connection_code"]).eq("connection_code", code)
 	var task = Supabase.database.query(query)
 	var response = await task.completed
 	if response.error:
@@ -23,6 +23,6 @@ func _on_verifica() -> void:
 	if response.data.size() > 0:
 		print("Cod valid! Am găsit utilizatorul cu ID-ul: ")
 		errors.text = ""
-		get_tree().change_scene_to_file("res://login_child.tscn")
+		get_tree().change_scene_to_file("res://alege_personaj.tscn")
 	else:
 		errors.text = "Codul introdus nu este valid."
