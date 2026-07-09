@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel = "stylesheet" href = "style3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Fitopolis</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light meniu p-0 fixed-top">
+        <a class="navbar-brand ml-3" href="#">
+          <img src="assets/logo_final1.png" class="d-inline-block align-top" style="height:70px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse p-0" id="navbarNav" style = "justify-content: center;">
+          <ul class="navbar-nav" id = "sites">
+            <li class="nav-item p-3">
+              <a href="index.html" class="nav-link active">Acasa</a>
+            </li>
+            <li class="nav-item p-3">
+              <a href="alimentatie.html" class="nav-link active">Alimentatie</a>
+            </li>
+            <li class="nav-item p-3">
+              <a href="etichete_alimentare.html" class="nav-link active">Despre etichetele alimentare</a>
+            </li>
+            <li class="nav-item p-2">
+              <button onclick="document.getElementById('downloadModal').style.display='flex'"
+  class="btn" style="border-radius:10px; background-color:orange; border:none; cursor:pointer; padding:8px 16px;">
+  <span style="font-weight:bold;">Download Now</span>
+</button>
+
+<!-- Modal -->
+<div id="downloadModal" onclick="if(event.target===this) this.style.display='none'"
+  style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9999; align-items:center; justify-content:center; padding:16px 12px;">
+  <div style="background:#fff; border-radius:16px; padding:20px 24px 20px; max-width:460px; width:100%; max-height:90vh; overflow-y:hidden; position:relative; text-align:center; font-family:'Montserrat',sans-serif;">
+
+    <button onclick="document.getElementById('downloadModal').style.display='none'"
+      style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:22px; cursor:pointer; color:#888;">
+      &times;
+    </button>
+
+    <div style="font-size:36px; margin-bottom:8px;">📱</div>
+    <div style="font-size:20px; font-weight:800; color:#2F7F39; margin-bottom:4px;">Descarcă Fit'O Polis</div>
+    <div style="font-size:13px; color:#555; margin-bottom:16px;">Urmează pașii de mai jos pentru a instala aplicația pe telefonul tău.</div>
+
+    <!-- Pași -->
+    <div style="text-align:left; background:#f7f7f7; border-radius:12px; padding:12px 14px; margin-bottom:16px;">
+
+      <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:8px;">
+        <div style="min-width:24px; height:24px; border-radius:50%; background:#2F7F39; color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</div>
+        <div style="font-size:13px; color:#333; line-height:1.4;">
+          <strong style="display:block; font-weight:700; color:#222; margin-bottom:2px;">Apasă butonul de download</strong>
+          Vei fi redirectionat catre MediaFire unde trebuie trebuie sa apesi pe semnul de download.
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:8px;">
+        <div style="min-width:24px; height:24px; border-radius:50%; background:#2F7F39; color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</div>
+        <div style="font-size:13px; color:#333; line-height:1.4;">
+          <strong style="display:block; font-weight:700; color:#222; margin-bottom:2px;">Permite instalarea</strong>
+          Dacă apare blocare:<br>
+          <em>Setări → Aplicații → Chrome → Permite surse necunoscute → Activează</em>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <div style="min-width:24px; height:24px; border-radius:50%; background:#2F7F39; color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;">3</div>
+        <div style="font-size:13px; color:#333; line-height:1.4;">
+          <strong style="display:block; font-weight:700; color:#222; margin-bottom:2px;">Instalează aplicația</strong>
+          Deschide fișierul din bara de notificari sau din <em>Downloads</em> și apasă <em>Instalează</em>.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Warning -->
+    <div style="background:#fff8e1; border-left:4px solid #FFA500; border-radius:8px; padding:10px 12px; margin-bottom:16px; text-align:left; font-size:12px; color:#5a4000; line-height:1.4;">
+      ⚠️ <strong style="color:#b36a00;">Notă:</strong> Funcționează doar pe <strong>Android</strong>. Nu se poate instala pe iPhone / iPad.
+    </div>
+
+    <!-- Buton Download -->
+    <a href="https://www.mediafire.com/file/wyfpud57b1cskdz/fitopolis2.apk/file"
+      onclick="document.getElementById('downloadModal').style.display='none'"
+      style="display:block; background:orange; color:#fff; font-family:'Montserrat',sans-serif; font-weight:800; font-size:15px; padding:12px; border-radius:12px; text-decoration:none; width:100%; text-align:center;">
+      ⬇️ Descarcă APK
+    </a>
+
+  </div>
+</div>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <h1 class="q1" style="text-align: center; color: #2F7F39; padding: 80px; font-weight: bold; margin-top: 50px;">De ce este important să analizăm etichetele?</h1>
+    <div class="container mb-5">
+        <div class="row d-index justify-content-center align-items-center">
+            <div class="col-md-5 col-10 card2 p-5 mb-3">
+            <!-- <h1 style = "font-weight: bold; color: #2F7F39" class="pb-3 q1">Despre Fitopolis</h1> -->
+            <p class = "cont">Citirea etichetelor produselor alimentare are multiple beneficii, inclusiv monitorizarea aportului nutritiv si controlul continutului de zahar si sare pentru o dieta echilibrata. De asemenea, ajuta la identificarea alergenilor, permite alegeri mai sanatoase si faciliteaza identificarea aditivilor si conservantilor pentru o alimentatie mai informata si constienta.</p>
+        </div>
+        <div class="col-md-5 col-10 card2 p-1">
+            <img src="assets\etichete_1.png" style="border-radius: 10px; width: 90%;">
+        </div>
+        </div>
+    </div>
+    <h1 class="q1" style="text-align: center; color: #2F7F39; padding: 80px; font-weight: bold; margin-top: 50px;">Dicționar alimentar rapid</h1>
+    <div id="sfaturiCarousel" class="carousel slide mb-5" data-ride="carousel">
+  
+  <div class="carousel-inner">
+
+    <!-- SLIDE 1 -->
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card p-4 m-2 justify-content-center">
+              <h5>🟢 Conservanți</h5>
+              <p>Substanțe adăugate pentru a prelungi durata de valabilitate.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card p-4 m-2 justify-content-center">
+              <h5>🟡 E-uri</h5>
+              <p>Substanțe precum coloranți sau conservanți, marcate prin coduri.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card p-4 m-2 justify-content-center">
+              <h5>🔴 Zaharuri</h5>
+              <p>Zahăr adăugat în produse, consumul excesiv fiind dăunător.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card p-4 m-2 justify-content-center">
+              <h5>🔵 Calorii</h5>
+              <p>Unitatea de măsură a energiei oferite de alimente.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card p-4 m-2 justify-content-center">
+              <h5>🟣 Grăsimi saturate</h5>
+              <p>Grăsimi care, în exces, pot afecta sănătatea inimii.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card p-4 m-2 justify-content-center">
+              <h5>⚪ Carbohidrați</h5>
+              <p>Principala sursă de energie pentru organism.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Săgeți -->
+  <a class="carousel-control-prev" href="#sfaturiCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+
+  <a class="carousel-control-next" href="#sfaturiCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+<h1 class="q1" style="text-align: center; color: #2F7F39; padding: 60px; font-weight: bold; margin-top: 50px;">Criterii esențiale în citirea etichetelor alimentare</h1>
+<div class="container">
+  <div class="row justify-content-center align-items-center mb-5">
+      <div class="col-md-10 col-10 card2 p-5 mr-0">
+            <h4 class="q1" style="font-weight: bold; color:#2F7F39; margin-bottom: 20px;">Partea din față a ambalajului</h4>
+          <p class="cont">• De cele mai multe ori în partea din față a ambalajelor se oferă câteva detalii despre produs, detalii care în general pun produsul într-o lumină favorabilă și au menirea să garanteze cumpărarea acestuia de către client. 
+Astfel, pe partea din față vedem adesea mesaje de tipul: nu conține zahăr sau este sărac în zaharuri, are un conținut redus de grăsimi, este vegan/vegetarian, bio sau este un produs bogat în proteine. 
+<span style="color: red;">Aceste informații pot fi adevărate, însă lista de ingrediente este cea care confirmă acest lucru.</span> <br><br>• De exemplu: pe un produs poate fi precizat faptul că nu are zahăr adăugat, însă fiind bogat în fructe va conține o cantitate mare de zahăr natural, 
+care poate fi și el în exces raportat la produs și la cantitatea consumată. <span style="color: red;">Un produs alcătuit doar din ingrediente naturale nu este neapărat sănătos și nu are întotdeauna proporțiile de macronutrienți corespunzătoare nevoilor noastre.</span></p>
+
+        </div>
+      </div>
+  <div class="row justify-content-center align-items-center mb-5">
+      <div class="col-md-10 col-10 card2 p-5 mr-0">
+            <h4 class="q1" style="font-weight: bold; color:#2F7F39; margin-bottom: 20px;">Tabelul cu valori nutriționale</h4>
+          <p class="cont">
+          •  Acesta prezintă în mod detaliat cantitățile de macronutrienți din 100 de grame de produs și, în unele cazuri, per porție. <span style="color: red;">Atunci când consultăm acest tabel, ar trebui să fim atenți la calorii, la cantitatea de grăsimi pe care o conține produsul și mai ales la cantitatea de grăsimi saturate, la cât de mult zahăr se află în produs și cât de multă sare.</span> Comparând tabelul cu valori nutriționale de pe mai multe produse, îl putem alege pe cel care are cel mai bun raport al macronutrienților și putem evita să consumăm zahăr și sare în exces.<br><br>
+• Consultând acest tabel, putem vedea dacă produsul într-adevăr respectă ceea ce promite pe partea din față a ambalajului, dacă se potrivește nevoilor noastre ca și calorii și, totodată, câte calorii ar avea o porție din acel produs. Numărul de calorii per porție sau per produs întreg ne arată cât de dens caloric este alimentul respectiv.<br><br>
+• <span style="color: red;">În general, alimentele ambalate fac parte din categoria celor procesate și înalt procesate și sunt, de multe ori, dense caloric.</span>Obișnuiți fiind poate să consumăm întreaga cantitate dintr-un ambalaj, citind eticheta putem constata că aportul caloric adus de produsul respectiv este foarte mare, peste nevoia noastră, și poate fi una dintre cauzele creșterii în greutate.<br>
+          </p>
+
+        </div>
+      </div>
+  <div class="row justify-content-center align-items-center mb-5">
+      <div class="col-md-10 col-10 card2 p-5 mr-0">
+            <h4 class="q1" style="font-weight: bold; color:#2F7F39; margin-bottom: 20px;">Lista de ingrediente</h4>
+          <p class="cont">
+          • <span style="color: red;">Primul ingredient din această listă se află în procentul cel mai mare în produsul respectiv.</span> Dacă lista de ingrediente începe cu zahăr, urmat apoi de alte componente, atunci zahărul se află în cantitatea cea mai mare în produsul respectiv. Această listă nu ar trebui să fie extrem de lungă și <span style="color: red;">nu ar trebui să conțină foarte multe E-uri, conservanți și aditivi.</span><br><br>
+          • Un alt aspect la care ar trebui să fim atenți atunci când citim lista de ingrediente este acela că pe fața ambalajului poate fi menționat faptul că <span style="color: red;">produsul nu are zahăr adăugat, iar în lista de ingrediente să descoperim alte forme de zahăr/cu alte denumiri precum: dextroză, zaharoză, fructoză, maltoză, sirop de porumb etc.
+</span><br><br>
+          • Pe lângă acestea, în componența multor produse există îndulcitori naturali – alcooli ai zahărului <span style="color: red;">(sorbitol, xylitol, maltitol, mannitol, eritritol) </span>cu o putere de îndulcire similară cu a zahărului, însă cu un număr mai mic de calorii (între 1,6 și 3 calorii/g). Aceștia nu determină o creștere la fel de mare a glicemiei ca și zahărul, <span style="color: red;">însă pot duce la tulburări digestive precum balonare și diaree, întrucât nu se digeră în totalitate și sunt fermentați în colon.</span><br><br>
+          • <span style="color: red;">Produsele care sunt sărace în calorii și/sau zahăr pot conține îndulcitori artificiali de tipul aspartam, sucraloză, care, deși nu cresc glicemia, influențează biochimic atât creierul, cât și intestinul</span>, par să stimuleze pofta de dulce și pot duce la dezechilibre ale florei intestinale atunci când sunt consumate în exces.
+          </p>
+
+        </div>
+      </div>
+</div>
+<footer style="margin:0px; background-color: #2F7F39; padding-top: 30px;"><p style="margin: 0px; text-align: center; color: white; padding-bottom: 20px;">&copy;2026 Fit'O Polis</p></footer>
+    
+    
+    
+    
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

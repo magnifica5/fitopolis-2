@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Fit'O Polis</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light meniu p-0 fixed-top">
+        <a class="navbar-brand ml-3" href="#">
+          <img src="assets/logo_final1.png" class="d-inline-block align-top" style="height:70px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse p-0" id="navbarNav" style = "justify-content: center;">
+          <ul class="navbar-nav" id = "sites">
+            <li class="nav-item p-3">
+              <a href="index.html" class="nav-link active">Acasa</a>
+            </li>
+            <li class="nav-item p-3">
+              <a href="alimentatie.html" class="nav-link active">Alimentatie</a>
+            </li>
+            <li class="nav-item p-3">
+              <a href="etichete_alimentare.html" class="nav-link active">Despre etichetele alimentare</a>
+            </li>
+             <li class="nav-item p-2">
+             <!-- Buton trigger -->
+<button onclick="document.getElementById('downloadModal').style.display='flex'"
+  class="btn" style="border-radius:10px; background-color:orange; border:none; cursor:pointer; padding:8px 16px;">
+  <span style="font-weight:bold;">Download Now</span>
+</button>
+
+<!-- Modal -->
+<div id="downloadModal" onclick="if(event.target===this) this.style.display='none'"
+  style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9999; align-items:center; justify-content:center; padding:16px 12px;">
+  <div style="background:#fff; border-radius:16px; padding:20px 24px 20px; max-width:460px; width:100%; max-height:90vh; overflow-y:hidden; position:relative; text-align:center; font-family:'Montserrat',sans-serif;">
+
+    <button onclick="document.getElementById('downloadModal').style.display='none'"
+      style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:22px; cursor:pointer; color:#888;">
+      &times;
+    </button>
+
+    <div style="font-size:36px; margin-bottom:8px;">📱</div>
+    <div style="font-size:20px; font-weight:800; color:#2F7F39; margin-bottom:4px;">Descarcă Fit'O Polis</div>
+    <div style="font-size:13px; color:#555; margin-bottom:16px;">Urmează pașii de mai jos pentru a instala aplicația pe telefonul tău.</div>
+
+    <!-- Pași -->
+    <div style="text-align:left; background:#f7f7f7; border-radius:12px; padding:12px 14px; margin-bottom:16px;">
+
+      <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:8px;">
+        <div style="min-width:24px; height:24px; border-radius:50%; background:#2F7F39; color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</div>
+        <div style="font-size:13px; color:#333; line-height:1.4;">
+          <strong style="display:block; font-weight:700; color:#222; margin-bottom:2px;">Apasă butonul de download</strong>
+          Vei fi redirectionat catre MediaFire unde trebuie trebuie sa apesi pe semnul de download.
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:8px;">
+        <div style="min-width:24px; height:24px; border-radius:50%; background:#2F7F39; color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</div>
+        <div style="font-size:13px; color:#333; line-height:1.4;">
+          <strong style="display:block; font-weight:700; color:#222; margin-bottom:2px;">Permite instalarea</strong>
+          Dacă apare blocare:<br>
+          <em>Setări → Aplicații → Chrome → Permite surse necunoscute → Activează</em>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <div style="min-width:24px; height:24px; border-radius:50%; background:#2F7F39; color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;">3</div>
+        <div style="font-size:13px; color:#333; line-height:1.4;">
+          <strong style="display:block; font-weight:700; color:#222; margin-bottom:2px;">Instalează aplicația</strong>
+          Deschide fișierul din bara de notificari sau din <em>Downloads</em> și apasă <em>Instalează</em>.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Warning -->
+    <div style="background:#fff8e1; border-left:4px solid #FFA500; border-radius:8px; padding:10px 12px; margin-bottom:16px; text-align:left; font-size:12px; color:#5a4000; line-height:1.4;">
+      ⚠️ <strong style="color:#b36a00;">Notă:</strong> Funcționează doar pe <strong>Android</strong>. Nu se poate instala pe iPhone / iPad.
+    </div>
+
+    <!-- Buton Download -->
+    <a href="https://www.mediafire.com/file/wyfpud57b1cskdz/fitopolis2.apk/file"
+      onclick="document.getElementById('downloadModal').style.display='none'"
+      style="display:block; background:orange; color:#fff; font-family:'Montserrat',sans-serif; font-weight:800; font-size:15px; padding:12px; border-radius:12px; text-decoration:none; width:100%; text-align:center;">
+      ⬇️ Descarcă APK
+    </a>
+
+  </div>
+</div>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <div class="intro_fundal" style="margin-bottom: 50px; margin-top: 40px; margin-left: 0px; margin-right: 0px;">
+          <h1 style="font-weight:bolder" class = "titlu">FIT'O POLIS</h1>
+          <h3 class = "content">Sănătatea copilului tău <br>
+            începe cu tine!</h3>
+    </div>
+    <div class="container mb-5">
+        <div class="row d-index justify-content-center align-items-center">
+            <div class="col-md-6 col-10 card3 p-5">
+            <h1 style = "font-weight: bold; color: #2F7F39" class="pb-3 q1">Despre Fit'O Polis</h1>
+            <p class = "cont">Fit'O Polis este un joc pentru copii între 6 și 12 ani care îi ajută să adopte un stil de viață sănătos.
+Cei mici sunt ghidați de Miss Nutri și Santos, doi supereroi animați, în aventuri distractive.
+Explorând orașul Fit'O Polis, copiii pot câștiga recompense amuzante, precum stickere cu animale.
+Programul zilnic este flexibil și personalizabil, cu replici scrise și sonore pentru a fi cât mai captivant.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="assets\intro_pers.png" style="max-width: 100%; height: auto;">
+        </div>
+        </div>
+    </div>
+    <div class="container mb-5">
+            <h1 style = "text-align: center; font-weight: bold; color: #2F7F39; margin-bottom: 70px;" class="pb-3 q3">Ce oferă jocul</h1>
+        <div class="row d-index justify-content-center">
+            <div class="card col-lg-3 col-md-6 col-8 rect p-3" style="margin-bottom: 100px;">
+                <div class = "card_image m-0">
+                        <img src="assets\1-beneficiu.png" style="width: 70%; height: auto;">
+                </div>
+                <div class="content-box">
+                    <h3 class = "tben q2">Alimentație:</h3>
+                    <p style="text-align: center;">Ghiduri<br>
+                       Activități<br>
+                       Educație prin joc</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-8 rect p-3 card" style="margin-bottom: 100px;">
+                 <div class = "card_image m-0" >
+                        <img src="assets\2-beneficiu.png" style="width: 70%; height: auto;">
+                </div>
+                <div class="content-box">
+                    <h3 class = "tben q2">Relație familială:</h3>
+                    <p style="text-align: center;">Comunicare<br>
+                       Timp de calitate<br>
+                       Sprijin emoțional</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-8 rect mb-5 p-3 card">
+                <div class = "card_image m-0">
+                        <img src="assets\3-beneficiu.png" style="width: 70%; height: auto;">
+                </div>
+                <div class="content-box">
+                    <h3 class = "tben q2">Somn și rutină:</h3>
+                    <p style="text-align: center;">Program zilnic<br>
+                       Ritual de seară<br>
+                       Importanța odihnei</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-5">
+      <h1 class = "q3 pb-3" style = "text-align: center; font-weight: bold; color: #2F7F39; margin-bottom: 70px;">Despre Noi</h1>
+      <div class="row d-index justify-content-center">
+        <div class="col-md-5 col-10 card2 p-5 mb-5">
+          <h4 class="q1" style="font-weight: bold; color:#2F7F39; margin-bottom: 20px;">Echipa Noastră</h4>
+          <p>Echipa Fit'O Polis este formată dintr-un grup dedicat să transforme învățarea despre stilul de viață sănătos într-o experiență unică.
+            Prin formarea copiilor cu ajutorul Fit'O Polis prevenim posibile probleme de sănătate.
+            Ne dorim să formăm obiceiuri sănătoase în rândul copiilor de azi pentru a crește calitatea vieții adulților de mâine.</p>
+        </div>
+        <div class="col-md-5 col-10 card2 p-5">
+          <h4 class="q1" style="font-weight: bold; color:#2F7F39; margin-bottom: 20px;">Cum a luat naștere proiectul</h4>
+          <p>Ideea jocului a pornit o dată cu descoperirea a 2 probleme foarte des întâlnite: timpul excesiv petrecut de copii în fața ecranelor și creșterea ratei obezității infantile. 
+            Astfel, jocul nostru își propune să se folosească de familiaritatea celor mici față de dispozitivele mobile într-un scop nobil, acela de a-i motiva să abordeze un stil de viață sănătos.</p>
+        </div>
+      </div>
+    </div>
+    <div class="intro_fundal_future" style="margin-top: 40px; margin-left: 0px; margin-right: 0px;">
+      <h1 class = "q3 pb-3 viitor_title" style = "padding-left: 20px; padding-right: 20px; padding-top: 150px; text-align: center; font-weight: bold; color: #2F7F39; margin-bottom: 70px;">Planuri de viitor</h1>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="icon-wrapper">
+            <img src="assets/plan1.png">
+          </div>
+          <p>Extinderea programului la mai mult de 9 luni</p>
+        </div>
+        <div class="timeline-item">
+          <div class="icon-wrapper">
+            <img src="assets/plan2.png">
+          </div>
+          <p>Diversificarea și automatizarea orașului</p>
+        </div>
+        <div class="timeline-item">
+          <div class="icon-wrapper">
+            <img src="assets/plan3.png">
+          </div>
+          <p>Traducerea conținutului în mai multe limbi</p>
+        </div>
+        <div class="timeline-item">
+          <div class="icon-wrapper">
+            <img src="assets\plan4.png">
+          </div>
+          <p>Animații suplimentare cu exerciții fizice</p>
+        </div>
+      </div>
+    </div>
+    <footer style="margin:0px; background-color: #2F7F39; padding-top: 30px;"><p style="margin: 0px; text-align: center; color: white; padding-bottom: 20px;">&copy;2026 Fit'O Polis</p></footer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
