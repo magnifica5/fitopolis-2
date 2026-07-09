@@ -1,0 +1,229 @@
+body{
+  font-family: "Montserrat", sans-serif !important;
+  background-color: bisque !important;
+}
+#sites{
+  font-weight: bold;
+}
+.intro_fundal {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("assets/fitopolis_landscape_city_no_text.png");
+    background-size: cover;      /* asigură acoperire completă */
+    background-position: center; /* centrează imaginea */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100dvh;           /* ocupă întotdeauna tot viewport-ul */
+    width: 100%;
+}
+.intro_fundal_future {
+    background: url("assets/planuri_viitor2.0.png");
+    background-size: cover;      /* asigură acoperire completă */
+    background-position: center; /* centrează imaginea */
+    background-repeat: no-repeat;         /* ocupă întotdeauna tot viewport-ul */
+    width: 100%;
+    min-height: auto;
+}
+.titlu {
+    font-size: clamp(40px, 10vw, 110px);
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 
+        -3px -3px 0 #000,  
+         3px -3px 0 #000,
+        -3px  3px 0 #000,
+         3px  3px 0 #000,
+         0px 10px 20px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.content {
+    font-size: clamp(20px, 4vw, 30px); /* 4% din dimensiunea ecranului*/
+    color: #FFD700;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+nav{
+  background-color: #2F7F39;
+}
+.nav-link{
+    color: white !important;
+}
+@media(max-width: 500px){
+    .q1{
+        font-size: 20px !important;
+    }
+}
+@media(max-width: 1196px){
+    .q2{
+        font-size: 25px !important;
+    }
+}
+@media(max-width: 398px){
+    .q1{
+        font-size: 20px !important;
+    }
+}
+@media(max-width: 442px){
+    .q2{
+        font-size: 25px !important;
+    }
+}
+@media(max-width: 365px){
+    .q1{
+        font-size: 20px !important;
+    }
+    .q2{
+        font-size: 20px !important;
+    }
+}
+.tben{
+    color: #2F7F39; 
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0px;
+}
+.card{
+    position: relative;
+    height: 200px;
+    background: white;
+    border-radius: 20px !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+    padding-top: 50%; /* spațiu pentru imagine */
+    text-align: center;
+}
+.card2{
+    position: relative;
+    height: 100%;
+    background: white;
+    border-radius: 20px !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+}
+.card3{
+    position: relative;
+    height: 100%;
+    background: white;
+    border-radius: 20px !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+}
+@media(min-width: 730px){
+    .card, .card2 {
+        margin-right: 3rem !important;
+    }
+
+}
+.card_image{
+  position: absolute;
+  top: -25%; /* scoate imaginea în afara cardului */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.timeline {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 80px auto 0px;
+  position: relative;
+}
+
+/* linia punctată  pseudo element*/
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 5%;
+  width: 90%;
+  height: 4px;
+  border-top: 3px dashed white;
+  z-index: 0;
+}
+
+.timeline-item {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  width: 200px;
+}
+
+.icon-wrapper {
+  width: 100px;
+  height: 100px;
+  background: #f4f1e8;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px; /*am setat toate marginile: top left/right bottom*/
+}
+
+.icon-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.timeline-item p {
+  color: white;
+  font-weight: 600;
+  /* font-size: clamp(8px, 2vw, 15px); */
+
+}
+@media(max-width: 698px){
+    .timeline {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 900px;
+        margin: 0px auto 0px;
+        position: relative;
+    }
+    .timeline::before{
+        content: "";
+        border-top: none;
+    }
+    .viitor_title{
+        margin-bottom: 30px !important;
+
+    }
+    .timeline-item{
+        padding-bottom: 30px;
+    }
+
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+.rect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 300px;
+  text-align: center;
+}
+
+.content-box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card_image img {
+  max-width: 55%;
+  height: auto;
+}
+
+.rect p {
+  margin: 0;
+}

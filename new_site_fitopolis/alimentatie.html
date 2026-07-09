@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel = "stylesheet" href = "style3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Fitopolis</title>
+  </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light meniu p-0 fixed-top">
+        <a class="navbar-brand ml-3" href="#">
+          <img src="assets/logo_final1.png" class="d-inline-block align-top" style="height:70px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse p-0" id="navbarNav" style = "justify-content: center;">
+          <ul class="navbar-nav" id = "sites">
+            <li class="nav-item p-3">
+              <a href="index.html" class="nav-link active">Acasa</a>
+            </li>
+            <li class="nav-item p-3">
+              <a href="alimentatie.html" class="nav-link active">Alimentatie</a>
+            </li>
+            <li class="nav-item p-3">
+              <a href="etichete_alimentare.html" class="nav-link active">Despre etichetele alimentare</a>
+            </li>
+            <li class="nav-item p-2">
+              <button onclick="document.getElementById('downloadModal').style.display='flex'"
+  class="btn" style="border-radius:10px; background-color:orange; border:none; cursor:pointer; padding:8px 16px;">
+  <span style="font-weight:bold;">Download Now</span>
+</button>
+
+<!-- Modal -->
+<div id="downloadModal" onclick="if(event.target===this) this.style.display='none'"
+  style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9999; align-items:center; justify-content:center; padding:16px 12px;">
+  <div style="background:#fff; border-radius:16px; padding:20px 24px 20px; max-width:460px; width:100%; max-height:90vh; overflow-y:hidden; position:relative; text-align:center; font-family:'Montserrat',sans-serif;">
+
+    <button onclick="document.getElementById('downloadModal').style.display='none'"
+      style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:22px; cursor:pointer; color:#888;">
+      &times;
+    </button>
+
+    <div style="font-size:36px; margin-bottom:8px;">📱</div>
+    <div style="font-size:20px; font-weight:800; color:#2F7F39; margin-bottom:4px;">Descarcă Fit'O Polis</div>
+    <div style="font-size:13px; color:#555; margin-bottom:16px;">Urmează pașii de mai jos pentru a instala aplicația pe telefonul tău.</div>
+
+    <!-- Pași -->
+    <div style="text-align:left; background:#f7f7f7; border-radius:12px; padding:12px 14px; margin-bottom:16px;">
+
+      <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:8px;">
+        <div style="min-width:24px; height:24px; border-radius:50%; background:#2F7F39; color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</div>
+        <div style="font-size:13px; color:#333; line-height:1.4;">
+          <strong style="display:block; font-weight:700; color:#222; margin-bottom:2px;">Apasă butonul de download</strong>
+          Vei fi redirectionat catre MediaFire unde trebuie trebuie sa apesi pe semnul de download.
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:8px;">
+        <div style="min-width:24px; height:24px; border-radius:50%; background:#2F7F39; color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</div>
+        <div style="font-size:13px; color:#333; line-height:1.4;">
+          <strong style="display:block; font-weight:700; color:#222; margin-bottom:2px;">Permite instalarea</strong>
+          Dacă apare blocare:<br>
+          <em>Setări → Aplicații → Chrome → Permite surse necunoscute → Activează</em>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <div style="min-width:24px; height:24px; border-radius:50%; background:#2F7F39; color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;">3</div>
+        <div style="font-size:13px; color:#333; line-height:1.4;">
+          <strong style="display:block; font-weight:700; color:#222; margin-bottom:2px;">Instalează aplicația</strong>
+          Deschide fișierul din bara de notificari sau din <em>Downloads</em> și apasă <em>Instalează</em>.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Warning -->
+    <div style="background:#fff8e1; border-left:4px solid #FFA500; border-radius:8px; padding:10px 12px; margin-bottom:16px; text-align:left; font-size:12px; color:#5a4000; line-height:1.4;">
+      ⚠️ <strong style="color:#b36a00;">Notă:</strong> Funcționează doar pe <strong>Android</strong>. Nu se poate instala pe iPhone / iPad.
+    </div>
+
+    <!-- Buton Download -->
+    <a href="https://www.mediafire.com/file/wyfpud57b1cskdz/fitopolis2.apk/file"
+      onclick="document.getElementById('downloadModal').style.display='none'"
+      style="display:block; background:orange; color:#fff; font-family:'Montserrat',sans-serif; font-weight:800; font-size:15px; padding:12px; border-radius:12px; text-decoration:none; width:100%; text-align:center;">
+      ⬇️ Descarcă APK
+    </a>
+
+  </div>
+</div>
+            </li>
+          </ul>
+        </div>
+    </nav>
+        <h1 class="q1" style="text-align: center; color: #2F7F39; padding: 80px; font-weight: bold; margin-top: 50px;">Aportul zilnic de calorii necesar copiilor</h1>
+       <div class="container my-3">
+        <div class="table-responsive d-flex justify-content-center">
+            <table class="table text-center" style="background-color: #2F7F39; color: #f8f9fa; border-radius: 10px;">
+  <thead>
+    <tr>
+      <th scope="col">Nr.</th>
+      <th scope="col">Gen</th>
+      <th scope="col">Vârstă</th>
+      <th scope="col">Kcal/zi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Masculin</td>
+      <td>6-8 ani</td>
+      <td>1400 kcal</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Masculin</td>
+      <td>9-12 ani</td>
+      <td>1800 kcal</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Feminin</td>
+      <td>6-8 ani</td>
+      <td>1200 kcal</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Feminin</td>
+      <td>9-12 ani</td>
+      <td>1400 kcal</td>
+    </tr>
+  </tbody>
+</table>
+        </div>  
+       </div>
+        <h1 class="q1" style="text-align: center; color: #2F7F39; padding: 50px; font-weight: bold; padding-bottom: 0px;">Exemple de retețe</h1>
+        <div class="container my-5 text-center">
+    <div class="filter-buttons">
+        <button class="btn btn-filter active" data-filter="all">Toate</button>
+        <button class="btn btn-filter" data-filter="breakfast">🥣 Mic Dejun</button>
+        <button class="btn btn-filter" data-filter="lunch">🍲 Prânz</button>
+        <button class="btn btn-filter" data-filter="dinner">🥗 Cină</button>
+        <button class="btn btn-filter" data-filter="dessert">🍰 Desert</button>
+    </div>
+<div class="container">
+    <div id="mic-dejun" class="pt-5 mb-5">
+        <h2 class="q2" style="font-weight: bold; margin-bottom: 30px;">Mic Dejun</h2>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\terci_de_ovaz.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Terci de ovăz</h5>
+                        <p class="text-muted small">Energie pentru întreaga dimineață.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 15 min</span>
+                            <a href="retete/terci_de_ovaz.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\budinca_cia.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Budincă de chia</h5>
+                        <p class="text-muted small">Energie pentru întreaga dimineață.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 10 min</span>
+                            <a href="retete/budinca_cia.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\toast2.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Toast cu banană</h5>
+                        <p class="text-muted small">Energie pentru întreaga dimineață.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 10 min</span>
+                            <a href="retete/toast_banane.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\omleta_briose.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Omletă în forme de brioșe</h5>
+                        <p class="text-muted small">Energie pentru întreaga dimineață.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 25 min</span>
+                            <a href="retete/omleta_cuptor.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\smoothie.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Smoothie energizant</h5>
+                        <p class="text-muted small">Energie pentru întreaga dimineață.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 10 min</span>
+                            <a href="retete/smoothie.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\gris.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Terci de griș cu măr</h5>
+                        <p class="text-muted small">Energie pentru întreaga dimineață.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 15 min</span>
+                            <a href="retete/gris.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\omleta.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Quesadilla cu ou și brânză</h5>
+                        <p class="text-muted small">Energie pentru întreaga dimineață.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 15 min</span>
+                            <a href="retete/omleta.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\granola.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Iaurt grecesc cu granola</h5>
+                        <p class="text-muted small">Energie pentru întreaga dimineață.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 15 min</span>
+                            <a href="retete/granola.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\sandwish_avocado.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Sandviș cu avocado și ou</h5>
+                        <p class="text-muted small">Energie pentru întreaga dimineață.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 15 min</span>
+                            <a href="retete/sandwish.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pranz" class="pt-5 mb-5">
+        <h2 class="q2" style="font-weight: bold; margin-bottom: 30px;">Prânz</h2>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\chiftele_de_curcan.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟠 Mediu</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Chifteluțe de curcan</h5>
+                        <p class="text-muted small">Energie pentru întreaga după-amiază.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 40 min</span>
+                            <a href="retete/curcan.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\mini_pizza.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Mini pizza</h5>
+                        <p class="text-muted small">Energie pentru întreaga după-amiază.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 20 min</span>
+                            <a href="retete/mini_pizza.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\paste_sos_rosu.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Paste cu sos de roșii și carne</h5>
+                        <p class="text-muted small">Energie pentru întreaga după-amiază.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 30 min</span>
+                            <a href="retete/paste.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\quesadilla.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Quesadilla sănătoasă</h5>
+                        <p class="text-muted small">Energie pentru întreaga după-amiază.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 12 min</span>
+                            <a href="retete/quesadilla.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\paste_pui.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Paste cu pui în sos cremos</h5>
+                        <p class="text-muted small">Energie pentru întreaga după-amiază.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 25 min</span>
+                            <a href="retete/paste_pui.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\orez_cu_pui.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟠 Mediu</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Orez cu legume și piept de pui</h5>
+                        <p class="text-muted small">Energie pentru întreaga după-amiază.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 25 min</span>
+                            <a href="retete/orez.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\peste_alb.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟠 Mediu</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Pește alb la cuptor cu broccoli</h5>
+                        <p class="text-muted small">Energie pentru întreaga după-amiază.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 45 min</span>
+                            <a href="retete/peste_brocoli.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\peste_la_cuptor.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟠 Mediu</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Pește la cuptor + cartofi natur</h5>
+                        <p class="text-muted small">Energie pentru întreaga după-amiază.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 45 min</span>
+                            <a href="retete/peste.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\tocanita.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟠 Mediu</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Tocăniță de pui cu legume</h5>
+                        <p class="text-muted small">Energie pentru întreaga după-amiază.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 1 oră</span>
+                            <a href="retete/tocanita.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div id="cina" class="pt-5 mb-5">
+        <h2 class="q2" style="font-weight: bold; margin-bottom: 30px;">Cină</h2>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\supa_crema.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟠 Mediu</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Supă cremă de legume</h5>
+                        <p class="text-muted small">Energie pentru întreaga seară.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 45 min</span>
+                            <a href="retete/supa_crema.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\mamaliga.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Mămăligă cu brânză și iaurt</h5>
+                        <p class="text-muted small">Energie pentru întreaga seară.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 20 min</span>
+                            <a href="retete/mamaliga.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\ton_si_porumb.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Salată cu ton și porumb</h5>
+                        <p class="text-muted small">Energie pentru întreaga seară.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 15 min</span>
+                            <a href="retete/salata_ton.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\taitei.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟠 Mediu</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Supă cu tăiței și pui</h5>
+                        <p class="text-muted small">Energie pentru întreaga seară.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 50 min</span>
+                            <a href="retete/supa_pui.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\cartofi_branza.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Cartofi umpluți</h5>
+                        <p class="text-muted small">Energie pentru întreaga seară.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 30 min</span>
+                            <a href="retete/cartofi_umpluti.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\salata_ou.jpeg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Salată cu ou și legume</h5>
+                        <p class="text-muted small">Energie pentru întreaga seară.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 15 min</span>
+                            <a href="retete/salata_ou.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\crema_rosii.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟠 Mediu</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Supă cremă de roșii</h5>
+                        <p class="text-muted small">Energie pentru întreaga seară.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 30 min</span>
+                            <a href="retete/rosii_crema.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\bruschete_rosii.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Bruschete cu roșii</h5>
+                        <p class="text-muted small">Energie pentru întreaga seară.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 10 min</span>
+                            <a href="retete/bruschete_rosii.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\branza_rosii.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Salată cu brânză și roșii</h5>
+                        <p class="text-muted small">Energie pentru întreaga seară.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 10 minute</span>
+                            <a href="retete/branza_rosii.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="desert" class="pt-5 mb-5">
+        <h2 class="q2" style="font-weight: bold; margin-bottom: 30px;">Desert</h2>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\bomboane.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Bomboane-jeleu</h5>
+                        <p class="text-muted small">Energie pentru întreaga zi.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 15 min</span>
+                            <a href="retete/bomboane.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\negresa.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Porridge-"negresă" la cuptor</h5>
+                        <p class="text-muted small">Energie pentru întreaga zi.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 25 min</span>
+                            <a href="retete/negresa.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\inghetata_casa.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Înghețată din brânză de vaci și fructe</h5>
+                        <p class="text-muted small">Energie pentru întreaga zi.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 10 min</span>
+                            <a href="retete/inghetata.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\prune.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Biluțe cu prune şi scorţişoară</h5>
+                        <p class="text-muted small">Energie pentru întreaga zi.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 10 min</span>
+                            <a href="retete/bilute_prune.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\felii_lapte.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Felii de lapte</h5>
+                        <p class="text-muted small">Energie pentru întreaga zi.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 25 min</span>
+                            <a href="retete/felii_lapte.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\pizza_pepene.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Pizza cu pepene roșu</h5>
+                        <p class="text-muted small">Energie pentru întreaga zi.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 10 min</span>
+                            <a href="retete/pizza_pepene.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-2 mb-5">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\iaurt_nuci.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Iaurt cu fructe și nuci</h5>
+                        <p class="text-muted small">Energie pentru întreaga zi.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 10 min</span>
+                            <a href="retete/iaurt_nuci.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\clatite.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Clătite din ovăz și măr</h5>
+                        <p class="text-muted small">Energie pentru întreaga zi.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 30 min</span>
+                            <a href="retete/clatite.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm recipe-card-main pt-0">
+                    <div class="position-relative">
+                        <img src="retete\pozw\bezele.jpg" class="card-img-top" alt="Terci de ovaz">
+                        <span class="badge-difficulty">🟢 Ușor</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fw-bold">Bezele de casă</h5>
+                        <p class="text-muted small">Energie pentru întreaga zi.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-secondary">⏱️ 20 minute</span>
+                            <a href="retete/bezele_casa.html" class="btn btn-sm btn-success rounded-pill px-3">Vezi Rețeta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<style>
+@media (max-width: 1004px) {
+    .col-lg-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 40px !important;
+    }
+    .row{
+        margin-bottom: 0px !important;
+    }
+}
+.recipe-card-main {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+.recipe-card-main:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1) !important;
+}
+.recipe-card-main img {
+    height: 220px;
+    object-fit: cover;
+}
+.badge-difficulty {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+</style>
+
+
+<style>
+.btn-filter {
+    margin: 1%;
+    background-color: #f8f9fa;
+    border: 2px solid #2F7F39;
+    color: #2F7F39;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s all ease;
+}
+.btn-filter:hover {
+    background-color: #2F7F39;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(47, 127, 57, 0.2);
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.btn-filter');
+    
+    // Identificăm toate secțiunile de rețete folosind ID-urile lor
+    const sections = {
+        'breakfast': document.getElementById('mic-dejun'),
+        'lunch': document.getElementById('pranz'),
+        'dinner': document.getElementById('cina'),
+        'dessert': document.getElementById('desert')
+    };
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+
+            // 1. Actualizăm aspectul butoanelor
+            buttons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active'); // se produce faza cu schimbarea de culoare in web de hover
+
+            // 2. Logica de filtrare
+            if (filter === 'all') {
+                // Afișăm toate secțiunile
+                Object.values(sections).forEach(section => {
+                    if(section) section.style.display = 'block';
+                });
+            } else {
+                // Ascundem tot și afișăm doar secțiunea selectată
+                Object.keys(sections).forEach(key => {
+                    if(sections[key]) {
+                        if (key === filter) {
+                            sections[key].style.display = 'block';
+                        } else {
+                            sections[key].style.display = 'none';
+                        }
+                    }
+                });
+            }
+        });
+    });
+});
+</script>
+<footer style="margin:0px; background-color: #2F7F39; padding-top: 30px;"><p style="margin: 0px; text-align: center; color: white; padding-bottom: 20px;">&copy;2026 Fit'O Polis</p></footer>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
