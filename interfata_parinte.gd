@@ -41,7 +41,8 @@ func creeaza_buton_copil(target_row: HBoxContainer, nume: String, avatar: int):
 	btn.clicked.connect(_on_child_select)
 	
 func _on_child_select(nume: String):
-	print("Ai selectat: ", nume)
+	Globals.username = nume
+	get_tree().change_scene_to_file("res://dashboard.tscn")
 	
 func _on_adauga_copil() -> void:
 	get_tree().change_scene_to_file("res://login_child.tscn")

@@ -1,5 +1,6 @@
 extends CanvasLayer
 @onready var buton_profil = $PanelContainer/TextureButton
+@onready var edit_buton_profil = $TextureButton2
 @onready var panel_button = $PanelContainer
 @onready var panel = $PopupPanel
 @onready var grid = $PopupPanel/GridContainer
@@ -10,6 +11,7 @@ var rows := 3
 func _ready() -> void:
 	build_avatar_grid()
 	buton_profil.pressed.connect(_open_popup)
+	edit_buton_profil.pressed.connect(_open_popup)
 	panel.hide()
 
 

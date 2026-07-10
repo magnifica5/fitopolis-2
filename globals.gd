@@ -19,6 +19,7 @@ var parola
 var channel_exists = 0
 var email
 var codep
+var username = ""
 signal verif_trezire
 signal verif_ex
 signal final_settings

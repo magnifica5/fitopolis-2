@@ -15,12 +15,12 @@ func _ready():
 func _update_text() -> void:
 	placeholder_text = Localization.get_text(translation_key)
 	# mărește automat lățimea
-	custom_minimum_size.x = get_theme_font("font").get_string_size(
-		placeholder_text,
-		HORIZONTAL_ALIGNMENT_LEFT,
-		-1,
-		get_theme_font_size("font_size")
-	).x + 20
+	#custom_minimum_size.x = get_theme_font("font").get_string_size(
+		#placeholder_text,
+		#HORIZONTAL_ALIGNMENT_LEFT,
+		#-1,
+		#get_theme_font_size("font_size")
+	#).x + 20
 	label.text = Localization.get_text(translation_key1) #face sa se traduca mereu
 func _on_text_changed(new_text):
 	add_theme_color_override("font_color", Color.WHITE)
