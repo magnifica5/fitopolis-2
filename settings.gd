@@ -4,24 +4,24 @@ extends Control
 @onready var panel_button = $PanelContainer
 @onready var username = $LineEdit
 @onready var email = $LineEdit2
-@onready var password = $LineEdit3
 @onready var termeni = $Panel
 @onready var politica = $Panel2
 @onready var panel = $PopupPanel
 @onready var grid = $PopupPanel/GridContainer
-@onready var resetare1 = $resetare_parola1
-@onready var resetare2 = $resetare_parola2
-@onready var resetare3 = $resetare_parola3
-
+@onready var erori_email = $LineEdit2/Label
+@onready var succes = $Panel4
+@onready var label_succes = $Panel4/Label
+signal start_eye
+var email_final
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
-
+var id_copil
 func _ready() -> void:
+	succes.hide()
 	termeni.hide()
 	politica.hide()
 	panel.hide()
-	password.secret = true
 	var parent = Supabase.auth.client
 	if parent == null: 
 		print("Eroare: Clientul Supabase nu este autentificat.")
@@ -31,14 +31,15 @@ func _ready() -> void:
 	var result = await task.completed
 	if result.error == null and result.data.size() > 0:
 		var data = result.data[0]
+		id_copil = data.id
+		Globals.selected_index = data.avatar_number
 		var avatar_idx = int(data.avatar_number)
 		_update_avatar_visual(avatar_idx)
 		username.text = data.username
 		username.editable = false
 		email.text = parent.email
+		email_final = parent.email
 		email.editable = false
-		password.text = "********"
-		password.editable = false
 	else:
 		var err_msg = result.error.message if result.error else "Nu s-au găsit date."
 		print("Eroare la încărcarea datelor: ", err_msg)
@@ -60,10 +61,7 @@ func _on_edit_username() -> void:
 
 func _on_edit_email() -> void:
 	email.editable = true
-
-func _on_edit_parola() -> void:
-	resetare1.show()
-
+	
 func _on_edit_avatar() -> void:
 	build_avatar_grid()
 	panel.popup_centered() # popup_centered afișează automat panel-ul
@@ -113,4 +111,43 @@ func _update_avatar_visual(index: int): # ruleaza la inceput ca sa mi puna anima
 
 
 func _on_salveaza() -> void:
-	pass # Replace with function body.
+	var new_username = username.text.strip_edges()
+	var query = SupabaseQuery.new().from("children").update({"username": new_username, "avatar_number": Globals.selected_index}).eq("id", id_copil)
+	var task = Supabase.database.query(query)
+	var res = await task.completed
+	print(res.data)
+	if res.error == null:
+		print("succes")
+		Globals.username = new_username
+		username.editable = false
+	else:
+		print(res.error.message)
+	var noul_email = email.text.strip_edges()
+	if erori_email.text == "":
+		var email_schimbat = (noul_email != email_final)
+		if email_schimbat:
+			var task1 = Supabase.auth.update_email(noul_email)
+			var res1 = await task1.completed
+			_handle_auth_result(res1, "Email")
+	else:
+		return
+		
+func _handle_auth_result(res, tip):
+	if res.error == null:
+		print("Succes actualizare: ", tip)
+		if tip == "Email":
+			email_final = email.text.strip_edges()
+			print("Verifică inbox-ul pentru confirmare.")
+			email.editable = false
+			label_succes.text = '''Verifica fosta si
+actuala adresa de 
+mail pentru a
+finaliza modificarile'''
+			succes.show()
+	else:
+		print("Eroare la ", res.error.message)
+
+
+func _close_succes() -> void:
+	succes.hide()
+	#get_tree().reload_current_scene()

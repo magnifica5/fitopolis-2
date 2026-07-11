@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://bj6f06xbk5w3q"]
+[gd_scene load_steps=57 format=3 uid="uid://bj6f06xbk5w3q"]
 
 [ext_resource type="Texture2D" uid="uid://cbhbl3xi0b88q" path="res://assets/home_d.png" id="1_gt2mv"]
 [ext_resource type="Script" uid="uid://bv1x4jakl58" path="res://dashboard.gd" id="1_uj34o"]
@@ -26,7 +26,6 @@
 [ext_resource type="Script" uid="uid://cqevm1oiwpecs" path="res://label_politica_continut.gd" id="17_jw24o"]
 [ext_resource type="Script" uid="uid://dmpvsb5qtp1lt" path="res://labellunch.gd" id="17_td0gi"]
 [ext_resource type="Script" uid="uid://eh7ge8cxhdj3" path="res://hour_input_pranz.gd" id="18_bxqq3"]
-[ext_resource type="Script" uid="uid://ywf71p3plovo" path="res://eye_script.gd" id="19_ekiu7"]
 [ext_resource type="Script" uid="uid://vg77sl600xlg" path="res://labelexdupa-amiaza.gd" id="19_i7mf3"]
 [ext_resource type="Script" uid="uid://dewy62jk5c41u" path="res://hour_input_ex_2.gd" id="20_ekiu7"]
 [ext_resource type="Script" uid="uid://20ynvmjpcdjk" path="res://labeldinner.gd" id="21_jw24o"]
@@ -119,7 +118,7 @@ corner_radius_bottom_left = 20
 shadow_color = Color(0.12941177, 0.09803922, 0.09803922, 0.34509805)
 shadow_size = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw24o"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekiu7"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
@@ -127,102 +126,6 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_color = Color(0.12941177, 0.09803922, 0.09803922, 0.34509805)
 shadow_size = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgr61"]
-bg_color = Color(0.45031738, 0.8735113, 0.9296875, 0.7411765)
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyphr"]
-bg_color = Color(0.4509804, 0.8745098, 0.92941177, 0.7411765)
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color(0.8, 0.8, 0.8, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bufbl"]
-bg_color = Color(0.4509804, 0.8745098, 0.92941177, 0.7411765)
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xeoco"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pticq"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-shadow_color = Color(0.12941177, 0.09803922, 0.09803922, 0.34509805)
-shadow_size = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3ekt"]
-bg_color = Color(0.45031738, 0.8735113, 0.9296875, 0.7411765)
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovj55"]
-bg_color = Color(0.4509804, 0.8745098, 0.92941177, 0.7411765)
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color(0.8, 0.8, 0.8, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vt8e"]
-bg_color = Color(0.4509804, 0.8745098, 0.92941177, 0.7411765)
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2mmp7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri1pc"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-shadow_color = Color(0.12941177, 0.09803922, 0.09803922, 0.34509805)
-shadow_size = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t42sb"]
-bg_color = Color(0.45031738, 0.8735113, 0.9296875, 0.7411765)
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dan5v"]
-bg_color = Color(0.4509804, 0.8745098, 0.92941177, 0.7411765)
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color(0.8, 0.8, 0.8, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df04x"]
-bg_color = Color(0.4509804, 0.8745098, 0.92941177, 0.7411765)
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8hgs0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6t5td"]
 
@@ -773,10 +676,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -564.0
-offset_top = 660.0
-offset_right = -258.0
-offset_bottom = 717.0
+offset_left = -530.0
+offset_top = 697.0
+offset_right = -224.0
+offset_bottom = 754.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_p5lni")
@@ -785,10 +688,10 @@ text = "email:"
 
 [node name="LineEdit2" type="LineEdit" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
 layout_mode = 0
-offset_left = 605.0
-offset_top = 659.0
-offset_right = 1367.0
-offset_bottom = 722.0
+offset_left = 599.0
+offset_top = 694.0
+offset_right = 1361.0
+offset_bottom = 757.0
 theme_override_font_sizes/font_size = 40
 script = ExtResource("14_i7mf3")
 
@@ -828,50 +731,6 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 
-[node name="Label5" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -565.0
-offset_top = 806.0
-offset_right = -259.0
-offset_bottom = 863.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 50
-text = "parola:"
-
-[node name="LineEdit3" type="LineEdit" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
-layout_mode = 0
-offset_left = 610.0
-offset_top = 803.0
-offset_right = 1369.0
-offset_bottom = 866.0
-theme_override_font_sizes/font_size = 40
-secret = true
-
-[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit3"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -43.00006
-offset_top = -22.0
-offset_right = 757.0
-offset_bottom = 778.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("10_k1kl5")
-texture_pressed = ExtResource("10_k1kl5")
-texture_hover = ExtResource("10_k1kl5")
-texture_disabled = ExtResource("10_k1kl5")
-texture_focused = ExtResource("10_k1kl5")
-
 [node name="Button" type="Button" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
 layout_mode = 1
 anchors_preset = 7
@@ -879,10 +738,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -198.0
-offset_top = -153.0
-offset_right = 150.0
-offset_bottom = -49.0
+offset_left = -253.0
+offset_top = -232.0
+offset_right = 95.0
+offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_k1kl5")
@@ -1410,461 +1269,61 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 7
 
-[node name="resetare_parola1" type="Panel" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
+[node name="Panel4" type="Panel" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -382.25
-offset_top = -395.5
-offset_right = 382.25
-offset_bottom = 395.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_jw24o")
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola1"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -85.0
-offset_top = 1.0
-offset_right = 538.0
-offset_bottom = 554.0
-grow_horizontal = 2
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("14_bxqq3")
-
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola1"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -294.0
-offset_top = -210.0
-offset_right = 308.0
-offset_bottom = -114.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 60
-text = "resetare parola"
-
-[node name="Label3" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola1"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -303.0
-offset_top = -96.0
-offset_right = -54.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 40
-text = "Email cont"
-
-[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola1"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -367.0
-offset_top = 37.0
-offset_right = 368.0
-offset_bottom = 110.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 30
-text = "pe acest email veti un cod pentru 
-resetarea parolei"
-horizontal_alignment = 1
-
-[node name="LineEdit" type="LineEdit" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola1"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 77.25
-offset_top = -32.0
-offset_right = 683.25
-offset_bottom = 24.0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-
-[node name="Button" type="Button" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola1"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -152.0
-offset_top = -234.5
-offset_right = 136.0
-offset_bottom = -130.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_lgr61")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qyphr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_bufbl")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_xeoco")
-
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola1/Button"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 40
-text = "continua"
-
-[node name="Label5" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola1"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -575.0
-offset_top = -890.5
-offset_right = 593.0
-offset_bottom = -826.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.99609375, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 40
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="resetare_parola2" type="Panel" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -432.0
-offset_top = -395.5
-offset_right = 400.0
-offset_bottom = 395.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_pticq")
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -85.0
-offset_top = 1.0
-offset_right = 538.0
-offset_bottom = 554.0
-grow_horizontal = 2
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("14_bxqq3")
-
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -294.0
-offset_top = -210.0
-offset_right = 308.0
-offset_bottom = -114.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 60
-text = "resetare parola"
-
-[node name="Label3" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -316.0
-offset_top = -87.0
-offset_right = 127.0
-offset_bottom = 9.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 40
-text = "cod primit pe email"
-
-[node name="LineEdit" type="LineEdit" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 98.0
-offset_top = -28.0
-offset_right = 704.0
-offset_bottom = 28.0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-
-[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -312.0
-offset_top = 46.0
-offset_right = -19.0
-offset_bottom = 142.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 40
-text = "parola noua"
-
-[node name="Button" type="Button" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -152.0
-offset_top = -168.5
-offset_right = 136.0
-offset_bottom = -64.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_b3ekt")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ovj55")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2vt8e")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_2mmp7")
-
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2/Button"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 40
-text = "verifica"
-
-[node name="Button2" type="Button" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -152.0
-offset_top = -168.5
-offset_right = 136.0
-offset_bottom = -64.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_b3ekt")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ovj55")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2vt8e")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_2mmp7")
-
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2/Button2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 40
-text = "reseteaza"
-
-[node name="Label5" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -593.0
-offset_top = -887.5
-offset_right = 575.0
-offset_bottom = -823.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.99609375, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 40
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LineEdit2" type="LineEdit" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 99.0
-offset_top = 103.0
-offset_right = 701.0
-offset_bottom = 158.0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-secret = true
-script = ExtResource("19_ekiu7")
-
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2/LineEdit2"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -54.0
-offset_top = -19.5
-offset_right = -2.75
-offset_bottom = 36.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.8, 0.8)
-
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2/LineEdit2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -370.0
-offset_top = 7.0
-offset_right = 406.0
-offset_bottom = 54.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.99609375, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="resetare_parola3" type="Panel" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -448.0
-offset_top = -407.0
-offset_right = 429.0
-offset_bottom = 404.0
+offset_left = 417.0
+offset_top = 221.0
+offset_right = -446.0
+offset_bottom = -199.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ri1pc")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekiu7")
 
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola3"]
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Panel4"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -332.0
-offset_top = -69.5
-offset_right = 332.0
-offset_bottom = 69.5
+offset_left = -379.0
+offset_top = -140.5
+offset_right = 379.0
+offset_bottom = 140.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.2803789, 0.6015625, 0.07989502, 1)
 theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 60
-text = "Parola resetata
-cu succes"
+theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola3"]
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Panel4"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -179.5
-offset_top = -214.0
-offset_right = 151.0
-offset_bottom = -88.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_t42sb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dan5v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_df04x")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_8hgs0")
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -229.0
+offset_bottom = 136.0
+grow_horizontal = 0
 
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola3/Button2"]
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Panel4/TextureButton"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -126.0
+offset_top = 49.0
+offset_right = -13.0
+offset_bottom = 150.0
+grow_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 40
-text = "catre login"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "X"
 
 [node name="Control3" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
 visible = false
@@ -2239,13 +1698,9 @@ text = "salveaza"
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit/TextureButton2" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_on_edit_username"]
 [connection signal="text_changed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit2" to="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit2" method="_on_text_changed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit2/TextureButton2" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_on_edit_email"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit3/TextureButton2" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_on_edit_parola"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/Button" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_on_salveaza"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LinkButton" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_catre_termeni"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LinkButton2" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_catre_politica"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/Panel/TextureButton" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_close_termeni"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/Panel2/TextureButton" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_close_politica"]
-[connection signal="text_changed" from="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola1/LineEdit" to="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola1/LineEdit" method="_on_text_changed"]
-[connection signal="text_changed" from="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2/LineEdit" to="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2/LineEdit" method="_on_text_changed"]
-[connection signal="text_changed" from="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2/LineEdit2" to="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2/LineEdit2" method="_on_text_changed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2/LineEdit2/TextureButton" to="HBoxContainer/MarginContainer/TabContainer/Control2/resetare_parola2/LineEdit2" method="_on_eye_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/Panel4/TextureButton" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_close_succes"]

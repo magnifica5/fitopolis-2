@@ -9,10 +9,7 @@ var regex_lower = RegEx.create_from_string("[a-z]")
 var regex_digit = RegEx.create_from_string("[0-9]")
 var regex_special = RegEx.create_from_string("[^a-zA-Z0-9]")
 func _ready() -> void:
-	if secret:
-		eye.texture_normal = eye_closed
-	else:
-		eye.texture_normal = eye_open
+	eye.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,3 +51,11 @@ func _on_text_changed(password: String) -> void:
 		add_theme_color_override("font_color", Color.GREEN)
 	else:
 		add_theme_color_override("font_color", Color.RED)
+
+
+func _on_start_eye() -> void:
+	eye.show()
+	if secret:
+		eye.texture_normal = eye_closed
+	else:
+		eye.texture_normal = eye_open

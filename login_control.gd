@@ -68,7 +68,7 @@ func _on_continua() -> void:
 		reseteaza.hide()
 		panel_reset_final.show()
 	else:
-		errors.text = "Eroare: " + res.error.message
+		errors.text = "Email invalid. "
 		print("Eroare la resetare: ", res.error.message)
 
 func _on_verifica_cod() -> void:
@@ -96,10 +96,6 @@ func _on_reset_password() -> void:
 		if res.error == null:
 			panel_reset_final.hide()
 			final.show()
-
-func _on_catre_login() -> void:
-	final.hide()
-	panel_auth.show()
 
 func _autentificare_copil() -> void:
 	get_tree().change_scene_to_file("res://autentificare_copil.tscn")
