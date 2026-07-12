@@ -1,5 +1,5 @@
 extends Control
-
+# erori legate de username + limita de caractere la username + sterge contul de vazut
 @onready var avatar_final = $PanelContainer/TextureButton
 @onready var panel_button = $PanelContainer
 @onready var username = $LineEdit
@@ -11,12 +11,16 @@ extends Control
 @onready var erori_email = $LineEdit2/Label
 @onready var succes = $Panel4
 @onready var label_succes = $Panel4/Label
+@onready var label_username = $Label5
+var trebuie_relogare : bool = false 
 signal start_eye
+var modif_username = 0
 var email_final
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
 var id_copil
+var modif_email = 0
 func _ready() -> void:
 	succes.hide()
 	termeni.hide()
@@ -58,9 +62,11 @@ func _close_politica() -> void:
 
 func _on_edit_username() -> void:
 	username.editable = true
+	modif_username = 1
 
 func _on_edit_email() -> void:
 	email.editable = true
+	modif_email = 1
 	
 func _on_edit_avatar() -> void:
 	build_avatar_grid()
@@ -111,43 +117,81 @@ func _update_avatar_visual(index: int): # ruleaza la inceput ca sa mi puna anima
 
 
 func _on_salveaza() -> void:
+	if Supabase.auth.client == null:
+		print("Eroare: Sesiunea a expirat. Te rugăm să te loghezi din nou.")
+		get_tree().change_scene_to_file("res://background_login.tscn")
+		return
 	var new_username = username.text.strip_edges()
-	var query = SupabaseQuery.new().from("children").update({"username": new_username, "avatar_number": Globals.selected_index}).eq("id", id_copil)
-	var task = Supabase.database.query(query)
-	var res = await task.completed
-	print(res.data)
-	if res.error == null:
-		print("succes")
-		Globals.username = new_username
-		username.editable = false
-	else:
-		print(res.error.message)
-	var noul_email = email.text.strip_edges()
-	if erori_email.text == "":
-		var email_schimbat = (noul_email != email_final)
-		if email_schimbat:
+	if modif_username == 1:
+		if " " in new_username:
+			label_username.text = "Username-ul nu poate contine spatii!"
+			return
+		if len(new_username) > 12:
+			label_username.text = "Username-ul trebuie sa aiba maxim 12 caractere."
+			return
+		var is_taken = await check_unique_username(new_username)
+		if is_taken:
+			label_username.text = "Acest username este deja folosit!"
+			return
+		label_username.text = ""
+	if label_username.text == "":
+		var query = SupabaseQuery.new().from("children").update({
+			"username": new_username, 
+			"avatar_number": Globals.selected_index
+		}).eq("id", id_copil)
+		var task = Supabase.database.query(query)
+		var res = await task.completed
+		if res.error == null:
+			print("Succes Bază de Date")
+			Globals.username = new_username
+			username.editable = false
+		else:
+			print("Eroare Bază de Date: ", res.error.message)
+	if modif_email == 1:
+		var noul_email = email.text.strip_edges()
+		if noul_email != email_final:
 			var task1 = Supabase.auth.update_email(noul_email)
 			var res1 = await task1.completed
 			_handle_auth_result(res1, "Email")
+		else:
+			_afiseaza_succes_simplu()
 	else:
-		return
-		
+		_afiseaza_succes_simplu()
+
+func _afiseaza_succes_simplu():
+	trebuie_relogare = false
+	label_succes.text = "Modificarile au fost\nsalvate cu succes!"
+	succes.show()
+
 func _handle_auth_result(res, tip):
 	if res.error == null:
 		print("Succes actualizare: ", tip)
-		if tip == "Email":
-			email_final = email.text.strip_edges()
-			print("Verifică inbox-ul pentru confirmare.")
-			email.editable = false
-			label_succes.text = '''Verifica fosta si
-actuala adresa de 
-mail pentru a
-finaliza modificarile'''
-			succes.show()
+		trebuie_relogare = true
+		email_final = email.text.strip_edges()
+		email.editable = false
+		label_succes.text = "Verifica ambele adrese\nde email pentru a\nfinaliza modificarile!"
+		succes.show()
 	else:
-		print("Eroare la ", res.error.message)
-
+		print("Eroare Auth (", tip, "): ", res.error.message)
 
 func _close_succes() -> void:
 	succes.hide()
-	#get_tree().reload_current_scene()
+	if trebuie_relogare:
+		print("Deconectare pentru confirmare email...")
+		await Supabase.auth.sign_out().completed
+		get_tree().change_scene_to_file("res://background_login.tscn")
+	else:
+		get_tree().reload_current_scene()
+
+func check_unique_username(u_name: String) -> bool:
+	var nume_curat = u_name.strip_edges()
+	var query = SupabaseQuery.new().from("children").select(["username"]).eq("username", nume_curat)
+	var task = Supabase.database.query(query)
+	if typeof(task) == TYPE_INT:
+		print("Eroare tehnică la baza de date (Cod: ", task, ")")
+		return true
+	var response = await task.completed
+	if response.error:
+		print("Eroare la verificare: ", response.error.message)
+		return true 
+	return response.data.size() > 0

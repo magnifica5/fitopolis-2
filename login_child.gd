@@ -44,17 +44,23 @@ func _on_inregistreaza() -> void:
 		return
 	var nume_introdus = username.text.strip_edges()
 	if " " in nume_introdus:
-		error.text = "Username-ul nu poate conține spații!"
+		error.text = "Username-ul nu poate contine spatii!"
 		return
-	error.text = ""
+	if len(nume_introdus) > 12:
+		error.text = "Username-ul trebuie sa aiba maxim 12 caractere."
+		return
 	var is_taken = await check_unique_username(username.text)
 	if is_taken:
-		error.text = "Acest nume este deja folosit!"
+		error.text = "Acest username este deja folosit!"
 		return
 	var user = Supabase.auth.client
 	if user == null:
-		error.text = "Eroare: Sesiune expirată. Loghează-te din nou."
+		error.text = "Eroare: Sesiune expirata. Logheaza-te din nou."
 		return
+	if Globals.selected_index == -1:
+		error.text = "Alege o poza de profil."
+		return
+	error.text = ""
 	var parent_id = user.id
 	print(typeof(parent_id))
 	while salvat == false:

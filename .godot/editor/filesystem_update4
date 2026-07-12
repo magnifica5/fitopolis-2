@@ -1,4 +1,5 @@
 res://dashboard.tscn
 res://settings.gd
+res://login_child.tscn
+res://login_child.gd
 res://background_login.tscn
-res://login_control.gd
