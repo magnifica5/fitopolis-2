@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1783857484
+::res://::1783933201
 1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png::CompressedTexture2D::7536361269957601271::1772212221::1774848301::1::::<><><>0<>0<>90887020950a425c34a5a32d52c2c2b1<>res://.godot/imported/1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png-31eeab7255796e435b6bef19b2230d3b.ctex::
 3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png::CompressedTexture2D::7203370797049039625::1772211421::1774848301::1::::<><><>0<>0<>d5101df9ac9e6f9ffa28680a865de1e5<>res://.godot/imported/3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png-905d6c87ca81b69e818b1aa13f4ebe47.ctex::
 046af01fa841d786d1e967f8797ece8c-removebg-preview.png::CompressedTexture2D::4015776957699399800::1772444930::1774848301::1::::<><><>0<>0<>0b1d9f31e2a0afb977f3245961ba208a<>res://.godot/imported/046af01fa841d786d1e967f8797ece8c-removebg-preview.png-d634b8e8ab617928486f71008f63f162.ctex::
@@ -430,19 +430,7 @@ WhatsApp_Image_2026-03-23_at_11.33.01_AM-removebg-preview-removebg-preview.png::
 WhatsApp_Image_2026-03-23_at_11.33.01_AM-removebg-preview.png::CompressedTexture2D::6244963987659304475::1774260045::1774848300::1::::<><><>0<>0<>7f5d135d9ec3c5970a9f623b5fbe1973<>res://.godot/imported/WhatsApp_Image_2026-03-23_at_11.33.01_AM-removebg-preview.png-590cac4f0e22ce6fead5d4fb598f1c10.ctex::
 WhatsApp_Image_2026-03-25_at_11.16.42_AM-removebg-preview (2).png::CompressedTexture2D::372410069935101650::1774432319::1774848300::1::::<><><>0<>0<>662996412889659548924b5c56905a79<>res://.godot/imported/WhatsApp_Image_2026-03-25_at_11.16.42_AM-removebg-preview (2).png-ba210e623031fdda76a8544af6bd122a.ctex::
 WhatsApp_Image_2026-03-25_at_11.17.12_AM-removebg-preview.png::CompressedTexture2D::5118877891595475889::1774475355::1774848300::1::::<><><>0<>0<>3ea5a82bac9c5621403ce01861ec9431<>res://.godot/imported/WhatsApp_Image_2026-03-25_at_11.17.12_AM-removebg-preview.png-ea67cb1123378813c0e6f403518e6f41.ctex::
-::res://addons/::1782119435
-::res://addons/NotificationSchedulerPlugin/::1774034334
-icon.png::CompressedTexture2D::1766889892145055744::1774034333::1774034334::1::::<><><>0<>0<>2aefbca702f4ae5e58ea0393dc05ba6a<>res://.godot/imported/icon.png-838f73c17a0e540d021697cea4772ebd.ctex::
-NotificationScheduler.gd::GDScript::7621975126020770378::1774034333::0::1::::NotificationScheduler<>Node<>res://addons/NotificationSchedulerPlugin/icon.png<>0<>1<><>::
-NotificationSchedulerPlugin.gd::GDScript::1501499521028646264::1774034333::0::1::::<>EditorPlugin<><>0<>1<><>::
-plugin.cfg::TextFile::-1::1774034333::0::1::::<><><>0<>0<><>::
-::res://addons/NotificationSchedulerPlugin/bin/::1774034333
-::res://addons/NotificationSchedulerPlugin/bin/debug/::1774034333
-::res://addons/NotificationSchedulerPlugin/bin/release/::1774034333
-::res://addons/NotificationSchedulerPlugin/model/::1774034333
-CustomData.gd::GDScript::8771099636417732368::1774034333::0::1::::CustomData<>RefCounted<><>0<>0<><>::
-NotificationChannel.gd::GDScript::4312613090390956932::1774034333::0::1::::NotificationChannel<>RefCounted<><>0<>0<><>::
-NotificationData.gd::GDScript::4709873664417198732::1774034333::0::1::::NotificationData<>RefCounted<><>0<>0<><>::
+::res://addons/::1783931846
 ::res://addons/supabase/::1783334742
 base_error.gd::GDScript::4560402138642516953::1782119436::0::1::::BaseError<>RefCounted<><>0<>1<><>::
 base_task.gd::GDScript::18955141269103364::1782119436::0::1::::BaseTask<>RefCounted<><>0<>1<><>::
@@ -471,7 +459,7 @@ storage_task.gd::GDScript::3999283318880161718::1782119435::0::1::::StorageTask<
 ::res://addons/supabase/Supabase/::1782119436
 supabase.gd::GDScript::120352095999156786::1782388242::0::1::::<>Node<><>0<>1<><>::
 ::res://android/::1773916501
-::res://assets/::1783536682
+::res://assets/::1783932941
 about.png::CompressedTexture2D::8906615055999965244::1767380776::1767380782::1::::<><><>0<>0<>7427f7100d655caeefcedbdc335b2389<>res://.godot/imported/about.png-bcd05af39060efb42baa388ffea59109.ctex::
 acasa_buton.png::CompressedTexture2D::4477442475480629610::1771334987::1771334991::1::::<><><>0<>0<>054a11ad45070e8cec8907ffb5d41fd4<>res://.godot/imported/acasa_buton.png-dd88d5f9a6af2285a22cfe8d66fc5ead.ctex::
 animals.png::CompressedTexture2D::17446401618146394::1781791631::1781791636::1::::<><><>0<>0<>473982cc9cf9739b6c98cd2986becb59<>res://.godot/imported/animals.png-2a92ecbd216db02d443718b81df7fa03.ctex::
