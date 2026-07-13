@@ -1,0 +1,196 @@
+[gd_scene load_steps=10 format=3 uid="uid://byyis3x80y6fg"]
+
+[ext_resource type="Script" uid="uid://cfvskj3ravqq2" path="res://tip_de_cont.gd" id="1_uldaj"]
+[ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="2_w0qrc"]
+[ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="3_gqlbd"]
+[ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="4_77mck"]
+[ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="5_e6b8j"]
+[ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="6_ylu41"]
+[ext_resource type="Texture2D" uid="uid://byddn16umbufm" path="res://assets/signsc.png" id="7_735ui"]
+[ext_resource type="Texture2D" uid="uid://btex5pnaeiqva" path="res://assets/signa.png" id="8_y4aii"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsde0"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.12941177, 0.09803922, 0.09803922, 0.34509805)
+shadow_size = 20
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uldaj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w0qrc")
+script = ExtResource("3_gqlbd")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.7372549)
+script = ExtResource("4_77mck")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -382.25
+offset_top = -395.5
+offset_right = 382.25
+offset_bottom = 395.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vsde0")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_top = 1.0
+offset_right = 538.0
+offset_bottom = 554.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_e6b8j")
+
+[node name="Label" type="Label" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -235.0
+offset_right = 123.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_ylu41")
+theme_override_font_sizes/font_size = 60
+text = "Alege tipul de cont"
+
+[node name="Label2" type="Label" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = 156.0
+offset_right = -82.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_ylu41")
+theme_override_font_sizes/font_size = 40
+text = "copil"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = 157.0
+offset_right = 296.0
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_ylu41")
+theme_override_font_sizes/font_size = 40
+text = "parinte"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -592.0
+offset_top = -892.5
+offset_right = 576.0
+offset_bottom = -828.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.99609375, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_ylu41")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 73.24999
+offset_top = -91.0
+offset_right = 637.25
+offset_bottom = 525.0
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_735ui")
+texture_pressed = ExtResource("7_735ui")
+texture_hover = ExtResource("7_735ui")
+texture_disabled = ExtResource("7_735ui")
+texture_focused = ExtResource("7_735ui")
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer3/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -316.25
+offset_top = -89.0
+offset_right = 250.75
+offset_bottom = 532.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("8_y4aii")
+texture_pressed = ExtResource("8_y4aii")
+texture_hover = ExtResource("8_y4aii")
+texture_disabled = ExtResource("8_y4aii")
+texture_focused = ExtResource("8_y4aii")
+
+[connection signal="pressed" from="CanvasLayer3/Panel/TextureButton" to="." method="_copil"]
+[connection signal="pressed" from="CanvasLayer3/Panel/TextureButton2" to="." method="_parinte"]

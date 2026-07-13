@@ -271,8 +271,8 @@ volume_db = -10.0
 [node name="menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_osbi4")
 
-[connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
 [connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
+[connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton" to="." method="_catre_oras_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton2" to="." method="_catre_parinti"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]

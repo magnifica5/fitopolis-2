@@ -41,6 +41,17 @@ func _on_login() -> void:
 	
 	if result.error == null:
 		print("Logare reusita")
+		var session = result.user
+		var session_data = {
+		"access_token": session.access_token,
+		"refresh_token": session.refresh_token,
+		"expires_in": session.expires_in,
+		"user_id": session.id,
+		"email": session.email
+		}
+		var file = FileAccess.open("user://session.save", FileAccess.WRITE)
+		file.store_string(JSON.stringify(session_data))
+		file.close()
 		label.text = ""
 		get_tree().change_scene_to_file("res://interfata_parinte.tscn")
 	else:
@@ -96,6 +107,3 @@ func _on_reset_password() -> void:
 		if res.error == null:
 			panel_reset_final.hide()
 			final.show()
-
-func _autentificare_copil() -> void:
-	get_tree().change_scene_to_file("res://autentificare_copil.tscn")

@@ -1,93 +1,83 @@
 extends Node2D
-@export var channel_id: String = "fitopolis1"
-@export var channel_name: String = "Fitopolis Channel"
-@export var channel_importance: NotificationChannel.Importance = NotificationChannel.Importance.HIGH
-@onready var notification_scheduler = $NotificationScheduler
+var path = "user://start.save"
 func _ready() -> void:
 	await get_tree().process_frame
 	SoundManager.play_music(preload("res://audio/background_sound.mp3"))
-	notification_scheduler.initialize()
 
 func _process(delta: float) -> void:
 	pass
-	
-func _on_initialization_completed() -> void:
-	if !Globals.avertisment_vizualizat:
-		if !notification_scheduler.has_post_notifications_permission():
-			notification_scheduler.request_post_notifications_permission()
-			Globals.adauga_channel(0)
-		else:
-			_create_channel()
-			Globals.adauga_channel(1)
-			
-		
-func _create_channel():
-	var canal = Globals.citeste_channel()
-	if int(canal) == 1:
-		schedule_all_notifications()
-	else:
-		var __result = notification_scheduler.create_notification_channel(
-			NotificationChannel.new()
-					.set_id(channel_id)
-					.set_name(channel_name)
-					.set_importance(channel_importance))
-		schedule_all_notifications()
-					
-func schedule_all_notifications():
-	Globals.load_hours()
-	schedule_daily_notification(int(Globals.trezire / 60.0), Globals.trezire % 60)
-	schedule_daily_notification(int(Globals.ex / 60.0), Globals.ex % 60)
-	schedule_daily_notification(int(Globals.dejun / 60.0), Globals.dejun % 60)
-	schedule_daily_notification(int(Globals.pranz / 60.0), Globals.pranz % 60)
-	schedule_daily_notification(int(Globals.ex2 / 60.0), Globals.ex2 % 60)
-	schedule_daily_notification(int(Globals.cina / 60.0), Globals.cina % 60)
-	schedule_daily_notification(int(Globals.somn / 60.0), Globals.somn % 60)
-
-func schedule_daily_notification(hour: int, minute: int):
-	var now = Time.get_unix_time_from_system()
-	var current_date = Time.get_datetime_dict_from_system()
-	var target = {
-		"year": current_date.year,
-		"month": current_date.month,
-		"day": current_date.day,
-		"hour": hour,
-		"minute": minute,
-		"second": 0
-	}
-	var target_time = Time.get_unix_time_from_datetime_dict(target)
-	var delay = target_time - now
-	if delay < 0:
-		delay += 86400
-		
-	var data = NotificationData.new()
-	data.set_channel_id(channel_id)
-	data.set_title("Misiuni noi!")
-	data.set_content("E timpul să începi o nouă misiune!")
-	data.set_delay(delay)
-	notification_scheduler.schedule(data)
-	
 func _on_texture_button_pressed() -> void:
 	$AudioStreamPlayer.play()
-	if !Globals.avertisment_vizualizat:
-		get_tree().change_scene_to_file("res://setup.tscn")
-		HourActivity.save_progress()
-	else:
-		HourActivity.load_progress()
-		var date_now = Time.get_date_string_from_system()
-		if HourActivity.date != date_now:
-			HourActivity.nr_day += 1
-			HourActivity.complete_trezire = 0
-			HourActivity.complete_ex = 0
-			HourActivity.complete_dejun = 0
-			HourActivity.complete_pranz = 0
-			HourActivity.complete_ex2 = 0
-			HourActivity.complete_cina = 0
-			HourActivity.complete_somn = 0
-			HourActivity.save_progress()
-			get_tree().change_scene_to_file("res://castig_stele.tscn")
-		else:
+	if FileAccess.file_exists(path):
+		var f = FileAccess.open(path, FileAccess.READ)
+		var content = f.get_as_text()
+		f.close()
+		print(content)
+		if content == "copil\n":
 			get_tree().change_scene_to_file("res://login.tscn")
+		else:
+			if await try_auto_login():
+				print("Autentificare automată reușită. Navighez la dashboard.")
+				get_tree().change_scene_to_file("res://interfata_parinte.tscn")
+			else:
+				print("Nu s-a putut autentifica automat. Navighez la alegerea interfeței.")
+				get_tree().change_scene_to_file("res://background_login.tscn")
+	else:
+		get_tree().change_scene_to_file("res://alege_interfata.tscn")
+func try_auto_login() -> bool:
+	if FileAccess.file_exists("user://session.save"):
+		var file = FileAccess.open("user://session.save", FileAccess.READ)
+		if file:
+			var content = file.get_as_text()
+			file.close()
+			var session_data = JSON.parse_string(content)
+			if session_data and session_data.has("refresh_token"):
+				print("Încerc să reînnoiesc sesiunea cu refresh_token...")
+				var refresh_task = await Supabase.auth.refresh_token(session_data.refresh_token, 0.0)
+				await refresh_task.completed
+				# Verificăm dacă există o eroare
+				if refresh_task.error == null:
+					# IMPORTANT: Verificăm dacă user-ul a fost populat în task
+					# Dacă refresh_task.user este null, încercăm să luăm datele din clientul global al plugin-ului
+					var user = refresh_task.user if refresh_task.user != null else Supabase.auth.client
+					if user != null:
+						# Salvăm datele noi (access_token-ul se schimbă la fiecare refresh!)
+						var updated_session_data = {
+							"access_token": user.access_token,
+							"refresh_token": user.refresh_token,
+							"expires_in": user.expires_in,
+							"user_id": user.id,
+							"email": user.email
+						}
+						var updated_file = FileAccess.open("user://session.save", FileAccess.WRITE)
+						if updated_file:
+							updated_file.store_string(JSON.stringify(updated_session_data))
+							updated_file.close()
+							print("Sesiune actualizată cu succes.")
+						return true
+					else:
+						print("Eroare: Sesiunea a fost confirmată, dar datele utilizatorului lipsesc.")
+						_clear_local_session()
+						return false
+				else:
+					print("Eroare la reînnoirea sesiunii: ", refresh_task.error.message)
+					# Sesiunea a expirat sau refresh_token-ul este invalid
+					_clear_local_session()
+					return false
+			else:
+				print("Fișierul de sesiune este gol sau nu conține refresh_token.")
+				_clear_local_session()
+				return false
+		else:
+			print("Eroare la deschiderea fișierului de sesiune.")
+			return false
+	else:
+		return false # Nu există fișier de sesiune
 
+func _clear_local_session():
+	if FileAccess.file_exists("user://session.save"):
+		DirAccess.remove_absolute("user://session.save")
+		print("Sesiune locală ștearsă.")
 
 func _functionare() -> void:
 	$AudioStreamPlayer.play()

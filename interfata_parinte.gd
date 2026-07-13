@@ -8,7 +8,6 @@ func _ready() -> void:
 	load_child_account()
 
 func load_child_account():
-	# obținem toate rândurile 
 	var rows = rows_parent.get_children()
 	# curățăm toate rândurile de butoane vechi
 	for row in rows:

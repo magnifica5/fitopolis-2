@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://gxs45gia7rxs"]
+[gd_scene load_steps=14 format=3 uid="uid://gxs45gia7rxs"]
 
 [ext_resource type="Script" uid="uid://dd1uwnwvv757h" path="res://login_control.gd" id="1_a8ete"]
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_kbc7m"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="4_h3scs"]
 [ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="5_3mimh"]
 [ext_resource type="Script" uid="uid://ywf71p3plovo" path="res://eye_script.gd" id="6_3mimh"]
-[ext_resource type="Texture2D" uid="uid://byddn16umbufm" path="res://assets/signsc.png" id="8_a8ete"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h77j"]
 bg_color = Color(1, 1, 1, 1)
@@ -340,23 +339,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_3mimh")
 theme_override_font_sizes/font_size = 30
 text = "ai uitat parola?"
-
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer3/Panel"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -148.25
-offset_top = 21.499998
-offset_right = 415.75
-offset_bottom = 637.5
-grow_horizontal = 0
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("8_a8ete")
-texture_pressed = ExtResource("8_a8ete")
-texture_hover = ExtResource("8_a8ete")
-texture_disabled = ExtResource("8_a8ete")
-texture_focused = ExtResource("8_a8ete")
 
 [node name="Panel2" type="Panel" parent="CanvasLayer3"]
 visible = false
@@ -816,7 +798,6 @@ text = "catre login"
 [connection signal="pressed" from="CanvasLayer3/Panel/LinkButton" to="." method="_on_registered_pressed"]
 [connection signal="pressed" from="CanvasLayer3/Panel/LinkButton2" to="." method="_on_reseteaza"]
 [connection signal="pressed" from="CanvasLayer3/Panel/Button" to="." method="_on_login"]
-[connection signal="pressed" from="CanvasLayer3/Panel/TextureButton" to="." method="_autentificare_copil"]
 [connection signal="text_changed" from="CanvasLayer3/Panel2/LineEdit" to="CanvasLayer3/Panel2/LineEdit" method="_on_text_changed"]
 [connection signal="pressed" from="CanvasLayer3/Panel2/Button" to="." method="_on_continua"]
 [connection signal="text_changed" from="CanvasLayer3/Panel3/LineEdit" to="CanvasLayer3/Panel3/LineEdit" method="_on_text_changed"]

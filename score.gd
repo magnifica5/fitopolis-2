@@ -3,8 +3,9 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var score = Globals.citeste_score()
-	self.text = str(int(score))
+	pass
+#	var score = Globals.citeste_score()
+	#self.text = str(int(score))
 	#var data_existenta = {}
 	#var path_hours = "user://hours.save"
 	#var file = FileAccess.open(path_hours, FileAccess.READ)
