@@ -33,272 +33,221 @@
 23    <uses-permission android:name="android.permission.VIBRATE" />
 23-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:12:5-66
 23-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:12:22-63
-24    <!-- For posting notifications on Android 13+ -->
-25    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- For scheduling exact alarms on Android 12+ -->
-25-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:8:5-77
-25-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:8:22-74
-26    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" /> <!-- For receiving boot events to reschedule notifications -->
-26-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:11:5-79
-26-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:11:22-76
-27    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- For waking device when notification fires -->
-27-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:14:5-81
-27-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:14:22-78
-28    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- For battery optimization exemption -->
-28-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:17:5-68
-28-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:17:22-65
-29    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-29-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:20:5-95
-29-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:20:22-92
-30
-31    <permission
-31-->[androidx.core:core:1.13.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\5b865cf24397a886fb85f7db84fc839f\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
-32        android:name="com.ioana.fitopolis.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-32-->[androidx.core:core:1.13.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\5b865cf24397a886fb85f7db84fc839f\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
-33        android:protectionLevel="signature" />
-33-->[androidx.core:core:1.13.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\5b865cf24397a886fb85f7db84fc839f\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
-34
-35    <uses-permission android:name="com.ioana.fitopolis.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-35-->[androidx.core:core:1.13.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\5b865cf24397a886fb85f7db84fc839f\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
-35-->[androidx.core:core:1.13.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\5b865cf24397a886fb85f7db84fc839f\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
-36
-37    <application
-37-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:18:5-52:19
-38        android:allowBackup="false"
-38-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:20:9-36
-39        android:appCategory="game"
-39-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:22:9-35
-40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-40-->[androidx.core:core:1.13.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\5b865cf24397a886fb85f7db84fc839f\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
-41        android:extractNativeLibs="false"
-42        android:hasFragileUserData="false"
-42-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:24:9-43
-43        android:icon="@mipmap/icon"
-43-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:21:9-36
-44        android:isGame="true"
-44-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:23:9-30
-45        android:label="@string/godot_project_name_string"
-45-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:19:9-58
-46        android:requestLegacyExternalStorage="false" >
-46-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:25:9-53
-47        <meta-data
-47-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:23:9-124
-48            android:name="org.godotengine.rendering.method"
-48-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:23:41-88
-49            android:value="gl_compatibility" />
-49-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:23:89-121
-50        <meta-data
-50-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:24:9-116
-51            android:name="org.godotengine.editor.version"
-51-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:24:41-86
-52            android:value="4.5.stable" />
-52-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:24:87-113
-53
-54        <activity
-54-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:26:4-32:31
-55            android:name="org.godotengine.plugin.notification.ResultActivity"
-55-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:27:5-70
-56            android:excludeFromRecents="true"
-56-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:29:5-38
-57            android:launchMode="singleTask"
-57-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:30:5-36
-58            android:noHistory="true"
-58-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:31:5-29
-59            android:taskAffinity=""
-59-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:32:5-28
-60            android:theme="@style/Theme.AppCompat.NoActionBar" />
-60-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:28:5-55
-61
-62        <receiver
-62-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:34:4-38:54
-63            android:name="org.godotengine.plugin.notification.NotificationReceiver"
-63-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:35:5-76
+24    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+24-->[local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:8:5-78
+24-->[local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:8:22-75
+25    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+25-->[local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:9:5-77
+25-->[local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:9:22-74
+26
+27    <application
+27-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:18:5-52:19
+28        android:allowBackup="false"
+28-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:20:9-36
+29        android:appCategory="game"
+29-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:22:9-35
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.8.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\1f78652368fcaf22ddb356e4bfe9a15a\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+31        android:extractNativeLibs="false"
+32        android:hasFragileUserData="false"
+32-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:24:9-43
+33        android:icon="@mipmap/icon"
+33-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:21:9-36
+34        android:isGame="true"
+34-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:23:9-30
+35        android:label="@string/godot_project_name_string"
+35-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:19:9-58
+36        android:requestLegacyExternalStorage="false" >
+36-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:25:9-53
+37        <meta-data
+37-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:23:9-124
+38            android:name="org.godotengine.rendering.method"
+38-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:23:41-88
+39            android:value="gl_compatibility" />
+39-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:23:89-121
+40        <meta-data
+40-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:24:9-116
+41            android:name="org.godotengine.editor.version"
+41-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:24:41-86
+42            android:value="4.5.stable" />
+42-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:24:87-113
+43
+44        <activity
+44-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:32:9-50:20
+45            android:name="com.godot.game.GodotApp"
+45-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:33:13-37
+46            android:configChanges="layoutDirection|locale|orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+46-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:41:13-164
+47            android:excludeFromRecents="false"
+47-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:37:13-47
+48            android:exported="true"
+48-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:38:13-36
+49            android:label="@string/godot_project_name_string"
+49-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:34:13-62
+50            android:launchMode="singleInstancePerTask"
+50-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:36:13-55
+51            android:resizeableActivity="true"
+51-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:42:13-47
+52            android:screenOrientation="landscape"
+52-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:39:13-50
+53            android:theme="@style/GodotAppSplashTheme"
+53-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:35:13-55
+54            android:windowSoftInputMode="adjustResize" >
+54-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:40:13-55
+55            <intent-filter>
+55-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:45:13-49:29
+56                <action android:name="android.intent.action.MAIN" />
+56-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:46:17-69
+56-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:46:25-66
+57
+58                <category android:name="android.intent.category.DEFAULT" />
+58-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:47:17-76
+58-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:47:27-73
+59                <category android:name="android.intent.category.LAUNCHER" />
+59-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:48:17-77
+59-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:48:27-74
+60            </intent-filter>
+61        </activity>
+62
+63        <profileable
+63-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:27:9-30:36
 64            android:enabled="true"
-64-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:36:5-27
-65            android:exported="true"
-65-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:37:5-28
-66            android:process=":godot_notification_receiver" />
-66-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:38:5-51
-67        <receiver
-67-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:40:4-43:31
-68            android:name="org.godotengine.plugin.notification.CancelNotificationReceiver"
-68-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:41:5-82
-69            android:enabled="true"
-69-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:42:5-27
-70            android:exported="true" />
-70-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:43:5-28
+64-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:29:13-35
+65            android:shell="true" />
+65-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:28:13-33
+66
+67        <meta-data
+67-->[local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:12:9-14:81
+68            android:name="org.godotengine.plugin.v1.LocalNotification"
+68-->[local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:13:13-71
+69            android:value="vn.kyoz.godot.localnotification.LocalNotification" />
+69-->[local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:14:13-78
+70
 71        <receiver
-71-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:45:4-53:15
-72            android:name="org.godotengine.plugin.notification.BootReceiver"
-72-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:46:5-68
-73            android:enabled="true"
-73-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:47:5-27
-74            android:exported="false" >
-74-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:48:5-29
-75            <intent-filter>
-75-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:49:5-52:21
-76                <action android:name="android.intent.action.BOOT_COMPLETED" />
-76-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:50:6-68
-76-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:50:14-65
-77                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-77-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:51:6-71
-77-->D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:51:14-68
-78            </intent-filter>
-79        </receiver>
-80
-81        <activity
-81-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:32:9-50:20
-82            android:name="com.godot.game.GodotApp"
-82-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:33:13-37
-83            android:configChanges="layoutDirection|locale|orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-83-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:41:13-164
-84            android:excludeFromRecents="false"
-84-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:37:13-47
-85            android:exported="true"
-85-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:38:13-36
-86            android:label="@string/godot_project_name_string"
-86-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:34:13-62
-87            android:launchMode="singleInstancePerTask"
-87-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:36:13-55
-88            android:resizeableActivity="true"
-88-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:42:13-47
-89            android:screenOrientation="landscape"
-89-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:39:13-50
-90            android:theme="@style/GodotAppSplashTheme"
-90-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:35:13-55
-91            android:windowSoftInputMode="adjustResize" >
-91-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:40:13-55
-92            <intent-filter>
-92-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:45:13-49:29
-93                <action android:name="android.intent.action.MAIN" />
-93-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:46:17-69
-93-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:46:25-66
-94
-95                <category android:name="android.intent.category.DEFAULT" />
-95-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:47:17-76
-95-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:47:27-73
-96                <category android:name="android.intent.category.LAUNCHER" />
-96-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:48:17-77
-96-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:48:27-74
-97            </intent-filter>
-98        </activity>
-99
-100        <profileable
-100-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:27:9-30:36
-101            android:enabled="true"
-101-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:29:13-35
-102            android:shell="true" />
-102-->D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:28:13-33
-103
-104        <meta-data
-104-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:23:9-25:95
-105            android:name="org.godotengine.plugin.v2.NotificationSchedulerPlugin"
-105-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:24:13-81
-106            android:value="org.godotengine.plugin.notification.NotificationSchedulerPlugin" /> <!-- Records the version of the Godot library -->
-106-->[NotificationSchedulerPlugin-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\94801b8a1da61f22cbecfb6233d5d38e\transformed\jetified-NotificationSchedulerPlugin-release\AndroidManifest.xml:25:13-92
-107        <meta-data
-107-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:12:9-14:44
-108            android:name="org.godotengine.library.version"
-108-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:13:13-59
-109            android:value="4.5.0.stable" />
-109-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:14:13-41
-110
-111        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-111-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:16:9-80
-111-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:16:18-77
-112
-113        <activity
-113-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:18:9-22:75
-114            android:name="org.godotengine.godot.utils.ProcessPhoenix"
-114-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:19:13-70
-115            android:exported="false"
-115-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:20:13-37
-116            android:process=":phoenix"
-116-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:21:13-39
-117            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-117-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:22:13-72
-118
-119        <provider
-119-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:24:9-32:20
-120            android:name="androidx.core.content.FileProvider"
-120-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:25:13-62
-121            android:authorities="com.ioana.fitopolis.fileprovider"
-121-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:26:13-64
-122            android:exported="false"
-122-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:27:13-37
-123            android:grantUriPermissions="true" >
-123-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:28:13-47
-124            <meta-data
-124-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:29:13-31:64
-125                android:name="android.support.FILE_PROVIDER_PATHS"
-125-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:30:17-67
-126                android:resource="@xml/godot_provider_paths" />
-126-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:31:17-61
-127        </provider>
-128        <provider
-128-->[androidx.emoji2:emoji2:1.3.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\0ad996b255533b4101875397c2059f3f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-129            android:name="androidx.startup.InitializationProvider"
-129-->[androidx.emoji2:emoji2:1.3.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\0ad996b255533b4101875397c2059f3f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:25:13-67
-130            android:authorities="com.ioana.fitopolis.androidx-startup"
-130-->[androidx.emoji2:emoji2:1.3.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\0ad996b255533b4101875397c2059f3f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:26:13-68
-131            android:exported="false" >
-131-->[androidx.emoji2:emoji2:1.3.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\0ad996b255533b4101875397c2059f3f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:27:13-37
-132            <meta-data
-132-->[androidx.emoji2:emoji2:1.3.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\0ad996b255533b4101875397c2059f3f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-133                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-133-->[androidx.emoji2:emoji2:1.3.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\0ad996b255533b4101875397c2059f3f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:30:17-75
-134                android:value="androidx.startup" />
-134-->[androidx.emoji2:emoji2:1.3.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\0ad996b255533b4101875397c2059f3f\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:31:17-49
-135            <meta-data
-135-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\flori\.gradle\caches\8.11.1\transforms\bfedec6821611db5ddbf3acb6d07632d\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-136                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-136-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\flori\.gradle\caches\8.11.1\transforms\bfedec6821611db5ddbf3acb6d07632d\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-137                android:value="androidx.startup" />
-137-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\flori\.gradle\caches\8.11.1\transforms\bfedec6821611db5ddbf3acb6d07632d\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-138            <meta-data
-138-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-139                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-139-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-140                android:value="androidx.startup" />
-140-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-141        </provider>
-142
-143        <receiver
-143-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-144            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-144-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-145            android:directBootAware="false"
-145-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-146            android:enabled="true"
-146-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-147            android:exported="true"
-147-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-148            android:permission="android.permission.DUMP" >
-148-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-149            <intent-filter>
-149-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-150                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-151            </intent-filter>
-152            <intent-filter>
-152-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-153                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-154            </intent-filter>
-155            <intent-filter>
-155-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-156                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-157            </intent-filter>
-158            <intent-filter>
-158-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-159                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-159-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-159-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-160            </intent-filter>
-161        </receiver>
-162    </application>
-163
-164</manifest>
+71-->[local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:16:9-18:41
+72            android:name="vn.kyoz.godot.localnotification.LocalNotificationReceiver"
+72-->[local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:17:13-85
+73            android:process=":remote" /> <!-- Records the version of the Godot library -->
+73-->[local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:18:13-38
+74        <meta-data
+74-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:12:9-14:44
+75            android:name="org.godotengine.library.version"
+75-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:13:13-59
+76            android:value="4.5.0.stable" />
+76-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:14:13-41
+77
+78        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+78-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:16:9-80
+78-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:16:18-77
+79
+80        <activity
+80-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:18:9-22:75
+81            android:name="org.godotengine.godot.utils.ProcessPhoenix"
+81-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:19:13-70
+82            android:exported="false"
+82-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:20:13-37
+83            android:process=":phoenix"
+83-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:21:13-39
+84            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+84-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:22:13-72
+85
+86        <provider
+86-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:24:9-32:20
+87            android:name="androidx.core.content.FileProvider"
+87-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:25:13-62
+88            android:authorities="com.ioana.fitopolis.fileprovider"
+88-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:26:13-64
+89            android:exported="false"
+89-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:27:13-37
+90            android:grantUriPermissions="true" >
+90-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:28:13-47
+91            <meta-data
+91-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:29:13-31:64
+92                android:name="android.support.FILE_PROVIDER_PATHS"
+92-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:30:17-67
+93                android:resource="@xml/godot_provider_paths" />
+93-->[godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:31:17-61
+94        </provider>
+95
+96        <activity
+96-->[com.google.android.gms:play-services-base:18.2.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\f7ae00a2b1e118f9d77de863d655ef37\transformed\jetified-play-services-base-18.2.0\AndroidManifest.xml:20:9-22:45
+97            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+97-->[com.google.android.gms:play-services-base:18.2.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\f7ae00a2b1e118f9d77de863d655ef37\transformed\jetified-play-services-base-18.2.0\AndroidManifest.xml:20:19-85
+98            android:exported="false"
+98-->[com.google.android.gms:play-services-base:18.2.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\f7ae00a2b1e118f9d77de863d655ef37\transformed\jetified-play-services-base-18.2.0\AndroidManifest.xml:22:19-43
+99            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+99-->[com.google.android.gms:play-services-base:18.2.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\f7ae00a2b1e118f9d77de863d655ef37\transformed\jetified-play-services-base-18.2.0\AndroidManifest.xml:21:19-78
+100
+101        <meta-data
+101-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\e90cbead98fa31a340616e42c4e82433\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+102            android:name="com.google.android.gms.version"
+102-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\e90cbead98fa31a340616e42c4e82433\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+103            android:value="@integer/google_play_services_version" />
+103-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\e90cbead98fa31a340616e42c4e82433\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+104
+105        <provider
+105-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+106            android:name="androidx.startup.InitializationProvider"
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:25:13-67
+107            android:authorities="com.ioana.fitopolis.androidx-startup"
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:26:13-68
+108            android:exported="false" >
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:27:13-37
+109            <meta-data
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+110                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+111                android:value="androidx.startup" />
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+112        </provider>
+113
+114        <receiver
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+115            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+115-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+116            android:directBootAware="false"
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+117            android:enabled="true"
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+118            android:exported="true"
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+119            android:permission="android.permission.DUMP" >
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+120            <intent-filter>
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+121                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+122            </intent-filter>
+123            <intent-filter>
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+124                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+125            </intent-filter>
+126            <intent-filter>
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+127                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+128            </intent-filter>
+129            <intent-filter>
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+130                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\flori\.gradle\caches\8.11.1\transforms\bda89bde9feba82707a3c7d4236c90c8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+131            </intent-filter>
+132        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+133        <activity
+133-->[com.google.android.play:core-common:2.0.2] C:\Users\flori\.gradle\caches\8.11.1\transforms\d78a31dd991baefaeb3dcbcd2d3108d6\transformed\jetified-core-common-2.0.2\AndroidManifest.xml:14:9-18:65
+134            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+134-->[com.google.android.play:core-common:2.0.2] C:\Users\flori\.gradle\caches\8.11.1\transforms\d78a31dd991baefaeb3dcbcd2d3108d6\transformed\jetified-core-common-2.0.2\AndroidManifest.xml:15:13-93
+135            android:exported="false"
+135-->[com.google.android.play:core-common:2.0.2] C:\Users\flori\.gradle\caches\8.11.1\transforms\d78a31dd991baefaeb3dcbcd2d3108d6\transformed\jetified-core-common-2.0.2\AndroidManifest.xml:16:13-37
+136            android:stateNotNeeded="true"
+136-->[com.google.android.play:core-common:2.0.2] C:\Users\flori\.gradle\caches\8.11.1\transforms\d78a31dd991baefaeb3dcbcd2d3108d6\transformed\jetified-core-common-2.0.2\AndroidManifest.xml:17:13-42
+137            android:theme="@style/Theme.PlayCore.Transparent" />
+137-->[com.google.android.play:core-common:2.0.2] C:\Users\flori\.gradle\caches\8.11.1\transforms\d78a31dd991baefaeb3dcbcd2d3108d6\transformed\jetified-core-common-2.0.2\AndroidManifest.xml:18:13-62
+138    </application>
+139
+140</manifest>

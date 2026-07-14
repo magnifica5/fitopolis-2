@@ -26,6 +26,7 @@ Localization="*res://Localization.gd"
 Supabase="*res://addons/supabase/Supabase/supabase.gd"
 GameState="*res://GameState.gd"
 Itemshop="*res://itemshop.gd"
+LocalNotification="*res://scripts/LocalNotification.gd"
 
 [display]
 

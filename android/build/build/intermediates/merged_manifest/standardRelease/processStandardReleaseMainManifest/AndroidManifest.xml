@@ -21,18 +21,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <!-- For posting notifications on Android 13+ -->
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- For scheduling exact alarms on Android 12+ -->
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" /> <!-- For receiving boot events to reschedule notifications -->
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- For waking device when notification fires -->
-    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- For battery optimization exemption -->
-    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-
-    <permission
-        android:name="com.ioana.fitopolis.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-        android:protectionLevel="signature" />
-
-    <uses-permission android:name="com.ioana.fitopolis.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="false"
@@ -50,33 +40,6 @@
         <meta-data
             android:name="org.godotengine.editor.version"
             android:value="4.5.stable" />
-
-        <activity
-            android:name="org.godotengine.plugin.notification.ResultActivity"
-            android:excludeFromRecents="true"
-            android:launchMode="singleTask"
-            android:noHistory="true"
-            android:taskAffinity=""
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-
-        <receiver
-            android:name="org.godotengine.plugin.notification.NotificationReceiver"
-            android:enabled="true"
-            android:exported="true"
-            android:process=":godot_notification_receiver" />
-        <receiver
-            android:name="org.godotengine.plugin.notification.CancelNotificationReceiver"
-            android:enabled="true"
-            android:exported="true" />
-        <receiver
-            android:name="org.godotengine.plugin.notification.BootReceiver"
-            android:enabled="true"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-            </intent-filter>
-        </receiver>
 
         <activity
             android:name="com.godot.game.GodotApp"
@@ -102,8 +65,12 @@
             android:shell="true" />
 
         <meta-data
-            android:name="org.godotengine.plugin.v2.NotificationSchedulerPlugin"
-            android:value="org.godotengine.plugin.notification.NotificationSchedulerPlugin" /> <!-- Records the version of the Godot library -->
+            android:name="org.godotengine.plugin.v1.LocalNotification"
+            android:value="vn.kyoz.godot.localnotification.LocalNotification" />
+
+        <receiver
+            android:name="vn.kyoz.godot.localnotification.LocalNotificationReceiver"
+            android:process=":remote" /> <!-- Records the version of the Godot library -->
         <meta-data
             android:name="org.godotengine.library.version"
             android:value="4.5.0.stable" />
@@ -125,16 +92,20 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/godot_provider_paths" />
         </provider>
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.ioana.fitopolis.androidx-startup"
             android:exported="false" >
-            <meta-data
-                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-                android:value="androidx.startup" />
             <meta-data
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
@@ -158,7 +129,12 @@
             <intent-filter>
                 <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
             </intent-filter>
-        </receiver>
+        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+        <activity
+            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+            android:exported="false"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.PlayCore.Transparent" />
     </application>
 
 </manifest>
