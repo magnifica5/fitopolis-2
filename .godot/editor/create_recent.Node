@@ -1,3 +1,4 @@
+VBoxContainer
 TextureButton
 Label
 LinkButton
@@ -9,6 +10,5 @@ Container
 LineEdit
 ScrollContainer
 TextureRect
-VBoxContainer
 GridContainer
 Panel

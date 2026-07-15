@@ -77,6 +77,7 @@ func _on_inregistreaza() -> void:
 		if res_insert.error == null:
 			print("Succes! Copilul a fost adăugat.")
 			salvat = true
+			Globals.adauga_username(username.text.strip_edges())
 			get_tree().change_scene_to_file("res://interfata_parinte.tscn")
 			# Aici poți schimba scena sau închide meniul
 		else:

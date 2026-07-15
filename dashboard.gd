@@ -30,3 +30,7 @@ func _on_schedule_pressed() -> void:
 
 func _catre_login() -> void:
 	get_tree().change_scene_to_file("res://background_login.tscn")
+
+
+func _back() -> void:
+	get_tree().change_scene_to_file("res://interfata_parinte.tscn")

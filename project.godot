@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Login="*res://login.gd"
 Globals="*res://globals.gd"
 Unlock_levels="*res://unlock_levels.gd"
 HourActivity="*res://hour_activity.gd"
@@ -27,6 +26,7 @@ Supabase="*res://addons/supabase/Supabase/supabase.gd"
 GameState="*res://GameState.gd"
 Itemshop="*res://itemshop.gd"
 LocalNotification="*res://scripts/LocalNotification.gd"
+NotificationManager="*res://NotificationManager.gd"
 
 [display]
 
