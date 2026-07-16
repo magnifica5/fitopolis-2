@@ -19,8 +19,8 @@ var parola
 var channel_exists = 0
 var email
 var codep
-var saved_hours = 0
-var username = ""
+var saved_hours
+var username
 signal verif_trezire
 signal verif_ex
 signal final_settings
@@ -128,7 +128,6 @@ func adauga_personaj(valoare: int):
 	var file = FileAccess.open(path_hours, FileAccess.WRITE) #salveaza noul dictionar
 	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
 	file.close()
-#
 #func adauga_locatie_info(valoare: String):
 	#var data_existenta = {}
 	#if FileAccess.file_exists(path_hours): # verifica daca exista
@@ -197,22 +196,22 @@ func adauga_personaj(valoare: int):
 	#file.store_string(JSON.stringify(data_existenta, "\t")) 
 	#file.close()
 #
-#func adauga_code(valoare: String):
-	#var data_existenta = {}
-	#if FileAccess.file_exists(path_hours):
-		#var file = FileAccess.open(path_hours, FileAccess.READ)
-		#var content = file.get_as_text()
-		#file.close()
-		#var result = JSON.parse_string(content)
-		#if result:
-			#data_existenta = result
-	#else:
-		#data_existenta = {}
-	#data_existenta["code"] = valoare
-	#code = valoare
-	#var file = FileAccess.open(path_hours, FileAccess.WRITE) 
-	#file.store_string(JSON.stringify(data_existenta, "\t")) 
-	#file.close()
+func adauga_code(valoare: String):
+	var data_existenta = {}
+	if FileAccess.file_exists(path_hours):
+		var file = FileAccess.open(path_hours, FileAccess.READ)
+		var content = file.get_as_text()
+		file.close()
+		var result = JSON.parse_string(content)
+		if result:
+			data_existenta = result
+	else:
+		data_existenta = {}
+	data_existenta["code"] = valoare
+	code = valoare
+	var file = FileAccess.open(path_hours, FileAccess.WRITE) 
+	file.store_string(JSON.stringify(data_existenta, "\t")) 
+	file.close()
 #
 #func adauga_codep(valoare: String):
 	#var data_existenta = {}
@@ -270,13 +269,13 @@ func adauga_personaj(valoare: int):
 	#file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
 	#file.close()
 	#
-#func citeste_personaj():
-	#var file = FileAccess.open(path_hours, FileAccess.READ)
-	#var content = file.get_as_text()
-	#file.close()
-	#var valori = JSON.parse_string(content)
-	#return int(valori["personaj"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
-#
+func citeste_personaj():
+	var file = FileAccess.open(path_hours, FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+	var valori = JSON.parse_string(content)
+	return int(valori["personaj"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
+
 #func citeste_locatie_info():
 	#var file = FileAccess.open(path_hours, FileAccess.READ)
 	#var content = file.get_as_text()
@@ -284,12 +283,14 @@ func adauga_personaj(valoare: int):
 	#var valori = JSON.parse_string(content)
 	#return str(valori["where"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
 #
-#func citeste_code():
-	#var file = FileAccess.open(path_hours, FileAccess.READ)
-	#var content = file.get_as_text()
-	#file.close()
-	#var valori = JSON.parse_string(content)
-	#return String(valori["code"])
+func citeste_code():
+	if not FileAccess.file_exists(path_hours):
+		return ""
+	var file = FileAccess.open(path_hours, FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+	var valori = JSON.parse_string(content)
+	return String(valori["code"])
 #
 #func citeste_codep():
 	#var file = FileAccess.open(path_hours, FileAccess.READ)

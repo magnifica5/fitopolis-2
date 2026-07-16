@@ -61,72 +61,84 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_choose_activity():
-	Globals.load_hours()
-	var trezire = int(Globals.trezire)
-	var ex_dimineata = int(Globals.ex)
-	var dejun = int(Globals.dejun)
-	var pranz = int(Globals.pranz)
-	var ex_seara = int(Globals.ex2)
-	var cina = int(Globals.cina)
-	var somn = int(Globals.somn)
-	var ora_curenta = Time.get_datetime_dict_from_system()
-	var mins = ora_curenta.hour * 60 + ora_curenta.minute
-	print(mins)
-	print(pranz)
-	if (not(mins >= trezire and mins <= trezire + 7) 
-	and not(mins >= ex_dimineata and mins <= ex_dimineata + 7)
-	and not(mins >= dejun and mins <= dejun + 7) 
-	and not(mins >= pranz and mins <= pranz + 7)
-	and not(mins >= ex_seara and mins <= ex_seara + 7)
-	and not(mins >= cina and mins <= cina + 7)
-	and not(mins >= somn and mins <= somn + 7)):
-		get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= trezire and mins <= trezire + 7:
-		if complete_trezire == 0:
-			complete_trezire = 1
-			save_progress()
-			get_tree().change_scene_to_file("res://trezire.tscn")
-		else:
+	var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
+	print(Globals.code)
+	var task = Supabase.database.query(query)
+	var result = await task.completed
+	if result.error == null and result.data.size() > 0:
+		var data = result.data[0]
+		var trezire = change_type(data.trezire)
+		var ex_dimineata = change_type(data.ex1)
+		var dejun = change_type(data.masa_dimineata)
+		var pranz = change_type(data.masa_pranz)
+		var ex_seara = change_type(data.ex2)
+		var cina = change_type(data.masa_seara)
+		var somn = change_type(data.culcare)
+		var ora_curenta = Time.get_datetime_dict_from_system()
+		var mins = ora_curenta.hour * 60 + ora_curenta.minute
+		print(mins)
+		print(pranz)
+		if (not(mins >= trezire and mins <= trezire + 7) 
+		and not(mins >= ex_dimineata and mins <= ex_dimineata + 7)
+		and not(mins >= dejun and mins <= dejun + 7) 
+		and not(mins >= pranz and mins <= pranz + 7)
+		and not(mins >= ex_seara and mins <= ex_seara + 7)
+		and not(mins >= cina and mins <= cina + 7)
+		and not(mins >= somn and mins <= somn + 7)):
 			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= ex_dimineata and mins <= ex_dimineata + 7:
-		if complete_ex == 0:
-			complete_ex = 1
-			save_progress()
-			get_tree().change_scene_to_file("res://exercitii_dimineata.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= dejun and mins <= dejun + 7:
-		if complete_dejun == 0:
-			complete_dejun = 1
-			save_progress()
-			get_tree().change_scene_to_file("res://spalat_maini.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= pranz and mins <= pranz + 7:
-		if complete_pranz == 0:
-			complete_pranz = 1
-			save_progress()
-			get_tree().change_scene_to_file("res://spalat_maini.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= ex_seara and mins <= ex_seara + 7:
-		if complete_ex2 == 0:
-			complete_ex2 = 1
-			save_progress()
-			get_tree().change_scene_to_file("res://exercitii_dimineata.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= cina and mins <= cina + 7:
-		if complete_cina == 0:
-			complete_cina = 1
-			save_progress()
-			get_tree().change_scene_to_file("res://spalat_maini.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= somn and mins <= somn + 7:
-		if complete_somn == 0:
-			complete_somn = 1
-			save_progress()
-			get_tree().change_scene_to_file("res://baie_dimineata.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+		elif mins >= trezire and mins <= trezire + 7:
+			if complete_trezire == 0:
+				complete_trezire = 1
+				save_progress()
+				get_tree().change_scene_to_file("res://trezire.tscn")
+			else:
+				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+		elif mins >= ex_dimineata and mins <= ex_dimineata + 7:
+			if complete_ex == 0:
+				complete_ex = 1
+				save_progress()
+				get_tree().change_scene_to_file("res://exercitii_dimineata.tscn")
+			else:
+				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+		elif mins >= dejun and mins <= dejun + 7:
+			if complete_dejun == 0:
+				complete_dejun = 1
+				save_progress()
+				get_tree().change_scene_to_file("res://spalat_maini.tscn")
+			else:
+				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+		elif mins >= pranz and mins <= pranz + 7:
+			if complete_pranz == 0:
+				complete_pranz = 1
+				save_progress()
+				get_tree().change_scene_to_file("res://spalat_maini.tscn")
+			else:
+				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+		elif mins >= ex_seara and mins <= ex_seara + 7:
+			if complete_ex2 == 0:
+				complete_ex2 = 1
+				save_progress()
+				get_tree().change_scene_to_file("res://exercitii_dimineata.tscn")
+			else:
+				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+		elif mins >= cina and mins <= cina + 7:
+			if complete_cina == 0:
+				complete_cina = 1
+				save_progress()
+				get_tree().change_scene_to_file("res://spalat_maini.tscn")
+			else:
+				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+		elif mins >= somn and mins <= somn + 7:
+			if complete_somn == 0:
+				complete_somn = 1
+				save_progress()
+				get_tree().change_scene_to_file("res://baie_dimineata.tscn")
+			else:
+				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+
+func change_type(string):
+	var parti = string.split(":")
+	var ore = parti[0].to_int()
+	var minute = parti[1].to_int()
+	var total_minute = (ore * 60) + minute
+	return total_minute

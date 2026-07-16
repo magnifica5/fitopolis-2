@@ -19,12 +19,12 @@ extends Control
 @onready var succes = $Panel4
 func _ready() -> void:
 	succes.hide()
-	if Globals.saved_hours == 0:
-		var query = SupabaseQuery.new().from("children").select().eq("username", Globals.username)
-		var task = Supabase.database.query(query)
-		var result = await task.completed
-		if result.error == null and result.data.size() > 0:
-			var data = result.data[0]
+	var query = SupabaseQuery.new().from("children").select().eq("username", Globals.username)
+	var task = Supabase.database.query(query)
+	var result = await task.completed
+	if result.error == null and result.data.size() > 0:
+		var data = result.data[0]
+		if data.trezire != null:
 			trezire.text = data.trezire.substr(0,5)
 			ex1.text = data.ex1.substr(0, 5)
 			dejun.text = data.masa_dimineata.substr(0, 5)
@@ -62,7 +62,6 @@ func _on_salveaza() -> void:
 		if res_insert.error == null:
 			print("success")
 			succes.show()
-			Globals.saved_hours = 1
 		else:
 			print(res_insert.error.message)
 		

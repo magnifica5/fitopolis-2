@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bj6f06xbk5w3q"]
+[gd_scene load_steps=59 format=3 uid="uid://bj6f06xbk5w3q"]
 
 [ext_resource type="Texture2D" uid="uid://cbhbl3xi0b88q" path="res://assets/home_d.png" id="1_gt2mv"]
 [ext_resource type="Script" uid="uid://bv1x4jakl58" path="res://dashboard.gd" id="1_uj34o"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="5_p5lni"]
 [ext_resource type="Script" uid="uid://brmon3mor6q80" path="res://home.gd" id="6_4741l"]
 [ext_resource type="Texture2D" uid="uid://dx1kk0h60jx2r" path="res://assets/castig/stea2.png" id="6_a6tsc"]
+[ext_resource type="Texture2D" uid="uid://dc6rnvvthuoqo" path="res://assets/back_sign.png" id="6_jw24o"]
 [ext_resource type="Texture2D" uid="uid://b8sxscmoedm3p" path="res://assets/castig/stea3.png" id="7_ye8m8"]
 [ext_resource type="Texture2D" uid="uid://ovx2xyfc7okv" path="res://assets/party_hat_emoji.png" id="8_0lq17"]
 [ext_resource type="Texture2D" uid="uid://cvnrfapxxx2kg" path="res://assets/confetti.png" id="9_q8aok"]
@@ -245,6 +246,17 @@ texture_hover = ExtResource("4_1cli1")
 texture_disabled = ExtResource("4_1cli1")
 texture_focused = ExtResource("4_1cli1")
 
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/Panel"]
+layout_mode = 1
+offset_right = 360.0
+offset_bottom = 360.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("6_jw24o")
+texture_pressed = ExtResource("6_jw24o")
+texture_hover = ExtResource("6_jw24o")
+texture_disabled = ExtResource("6_jw24o")
+texture_focused = ExtResource("6_jw24o")
+
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -252,11 +264,10 @@ size_flags_horizontal = 3
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tal5t")
-current_tab = 1
+current_tab = 0
 tabs_visible = false
 
 [node name="Control" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("6_4741l")
 metadata/_tab_index = 0
@@ -555,6 +566,7 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("9_q8aok")
 
 [node name="Control2" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("12_2k5vf")
 metadata/_tab_index = 1
@@ -818,6 +830,44 @@ theme_override_fonts/font = ExtResource("5_p5lni")
 theme_override_font_sizes/font_size = 30
 text = "sterge
 contul"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 425.0
+offset_top = -1051.0
+offset_right = 586.0
+offset_bottom = -970.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_45ya1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ei5kn")
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Button3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -36.5
+offset_right = 62.5
+offset_bottom = 36.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_p5lni")
+theme_override_font_sizes/font_size = 30
+text = "log out"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LinkButton" type="LinkButton" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
 layout_mode = 1
@@ -1771,11 +1821,13 @@ text = "X"
 [connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/TextureButton2" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/TextureButton3" to="." method="_on_reports_pressed"]
 [connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/TextureButton4" to="." method="_on_schedule_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel/TextureButton" to="." method="_back"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/PanelContainer/TextureButton/TextureButton2" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_on_edit_avatar"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit/TextureButton2" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_on_edit_username"]
 [connection signal="text_changed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit2" to="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit2" method="_on_text_changed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit2/TextureButton2" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_on_edit_email"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/Button" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_on_salveaza"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/Button3" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_log_out"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LinkButton" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_catre_termeni"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LinkButton2" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_catre_politica"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/Panel/TextureButton" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_close_termeni"]

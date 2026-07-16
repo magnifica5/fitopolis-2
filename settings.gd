@@ -36,6 +36,7 @@ func _ready() -> void:
 	if result.error == null and result.data.size() > 0:
 		var data = result.data[0]
 		id_copil = data.id
+		Globals.adauga_code(data.connection_code)
 		Globals.selected_index = data.avatar_number
 		var avatar_idx = int(data.avatar_number)
 		_update_avatar_visual(avatar_idx)
@@ -195,3 +196,7 @@ func check_unique_username(u_name: String) -> bool:
 		print("Eroare la verificare: ", response.error.message)
 		return true 
 	return response.data.size() > 0
+
+
+func _log_out() -> void:
+	pass # Replace with function body.
