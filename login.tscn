@@ -22,7 +22,7 @@
 [ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="20_hkpux"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkpux"]
-bg_color = Color(0.9529412, 0.85882354, 0.58431375, 1)
+bg_color = Color(1, 1, 1, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5

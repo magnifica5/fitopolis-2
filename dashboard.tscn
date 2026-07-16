@@ -264,7 +264,7 @@ size_flags_horizontal = 3
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tal5t")
-current_tab = 3
+current_tab = 1
 tabs_visible = false
 
 [node name="Control" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
@@ -567,7 +567,6 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("9_q8aok")
 
 [node name="Control2" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("12_2k5vf")
 metadata/_tab_index = 1
@@ -1327,10 +1326,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -46.0
-offset_right = 46.0
-offset_bottom = 46.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 0
@@ -1401,6 +1400,7 @@ layout_mode = 2
 metadata/_tab_index = 2
 
 [node name="Control4" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("19_ekiu7")
 metadata/_tab_index = 3

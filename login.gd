@@ -16,6 +16,7 @@ func _ready() -> void:
 	var result = await task.completed
 	if result.error == null and result.data.size() > 0:
 		var data = result.data[0]
+		Globals.adauga_scor(data.scor)
 		label_username.text = data.username
 		var avatar = int(data.avatar_number)
 		var sheet_size = sprite_sheet.get_size()
