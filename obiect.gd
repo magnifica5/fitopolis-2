@@ -21,6 +21,7 @@ func _on_schimba_poza(_textura: Texture2D):
 	get_parent().get_node("CanvasLayer/TextureButton").visible = false
 	get_parent().get_node("CanvasLayer/TextureButton2").visible = false
 	get_parent().get_node("CanvasLayer/TextureButton3").visible = false
+	get_parent().get_node("CanvasLayer/TextureButton4").visible = true
 
 
 func _process(delta):

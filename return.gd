@@ -15,3 +15,4 @@ func _on_pressed() -> void:
 	get_parent().get_node("TextureButton").visible = true
 	get_parent().get_node("TextureButton2").visible = true
 	get_parent().get_node("TextureButton3").visible = true
+	get_parent().get_node("TextureButton4").visible = false

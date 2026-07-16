@@ -1,0 +1,28 @@
+<lint-module
+    format="1"
+    dir="C:\Users\Butea Nicolae\OneDrive\Documents\Desktop\fitopolis3221\fitopolis-2\android\build"
+    name=":"
+    type="APP"
+    maven=":build:unspecified"
+    agpVersion="8.6.1"
+    buildFolder="build"
+    bootClassPath="E:\sdk_android\platforms\android-35\android.jar;E:\sdk_android\build-tools\35.0.0\core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-35"
+    neverShrinking="true">
+  <lintOptions
+      disable="MissingTranslation,UnusedResources"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true">
+    <severities>
+      <severity
+        id="MissingTranslation"
+        severity="IGNORE" />
+      <severity
+        id="UnusedResources"
+        severity="IGNORE" />
+    </severities>
+  </lintOptions>
+  <variant name="standardRelease"/>
+</lint-module>

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://byxvirf2mbluu"]
+[gd_scene load_steps=57 format=4 uid="uid://byxvirf2mbluu"]
 
 [ext_resource type="Script" uid="uid://dgkvg0xvuouo" path="res://oras_scene.gd" id="1_8qvay"]
 [ext_resource type="Script" uid="uid://bkfahxr3xddjx" path="res://miscare_oras_camera.gd" id="2_04nbv"]
@@ -33,6 +33,8 @@
 [ext_resource type="Script" uid="uid://dembm5egdbicj" path="res://labelshop.gd" id="29_8ef1k"]
 [ext_resource type="Script" uid="uid://boe1waprc7pv3" path="res://return.gd" id="29_vp3yx"]
 [ext_resource type="Script" uid="uid://ckjh1ndvevrk4" path="res://texture_button_32.gd" id="30_5j8e4"]
+[ext_resource type="Script" uid="uid://dakq5cq5fndpm" path="res://labelplace.gd" id="32_3cfb1"]
+[ext_resource type="Script" uid="uid://elh1g7lu0juv" path="res://butonplace.gd" id="32_83c5t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_flyhl"]
 resource_name = "1"
@@ -13198,9 +13200,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -957.0
-offset_top = -226.0
+offset_top = -245.0
 offset_right = -474.0
-offset_bottom = -5.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("22_3i3l4")
@@ -13237,10 +13239,10 @@ ignore_texture_size = true
 script = ExtResource("29_vp3yx")
 
 [node name="TextureButton3" type="TextureButton" parent="CanvasLayer"]
-offset_left = 1568.0001
-offset_top = 914.00006
-offset_right = 2051.0
-offset_bottom = 1135.0
+offset_left = 1532.0
+offset_top = 896.0
+offset_right = 2015.0
+offset_bottom = 1117.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("22_3i3l4")
 script = ExtResource("30_5j8e4")
@@ -13262,6 +13264,42 @@ theme_override_fonts/font = ExtResource("23_it6mh")
 theme_override_font_sizes/font_size = 80
 text = "Shop"
 script = ExtResource("29_8ef1k")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton4" type="TextureButton" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -241.5
+offset_top = -244.0
+offset_right = 241.5
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+texture_normal = ExtResource("22_3i3l4")
+script = ExtResource("32_83c5t")
+
+[node name="Label4" type="Label" parent="CanvasLayer/TextureButton4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25373492
+anchor_top = 0.3069074
+anchor_right = 0.82653826
+anchor_bottom = 0.70455444
+offset_left = -0.042007446
+offset_top = -0.041007996
+offset_right = -26.706024
+offset_bottom = 0.07899475
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("23_it6mh")
+theme_override_font_sizes/font_size = 80
+text = "Place"
+script = ExtResource("32_3cfb1")
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
