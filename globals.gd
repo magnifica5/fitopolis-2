@@ -128,6 +128,23 @@ func adauga_personaj(valoare: int):
 	var file = FileAccess.open(path_hours, FileAccess.WRITE) #salveaza noul dictionar
 	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
 	file.close()
+
+func adauga_username(valoare: String):
+	var data_existenta = {}
+	if FileAccess.file_exists(path_hours): # verifica daca exista
+		var file = FileAccess.open(path_hours, FileAccess.READ) #citeste
+		var content = file.get_as_text() #ia ca string
+		file.close()
+		var result = JSON.parse_string(content) #transforma in dictionar
+		if result:
+			data_existenta = result #egaleaza ce era cu noul dictionar din functie
+	else:
+		data_existenta = {}
+	data_existenta["username"] = valoare #atribuie dictionarului cheia pe care o vreau
+	username = valoare
+	var file = FileAccess.open(path_hours, FileAccess.WRITE) #salveaza noul dictionar
+	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
+	file.close()
 #func adauga_locatie_info(valoare: String):
 	#var data_existenta = {}
 	#if FileAccess.file_exists(path_hours): # verifica daca exista
@@ -275,6 +292,13 @@ func citeste_personaj():
 	file.close()
 	var valori = JSON.parse_string(content)
 	return int(valori["personaj"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
+
+func citeste_username():
+	var file = FileAccess.open(path_hours, FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+	var valori = JSON.parse_string(content)
+	return str(valori["username"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
 
 #func citeste_locatie_info():
 	#var file = FileAccess.open(path_hours, FileAccess.READ)

@@ -44,7 +44,7 @@ func _on_text_changed(new_text):
 	var hour = int(text.substr(0, 2))
 	var minute = int(text.substr(3, 2))
 	var total_minutes = hour * 60 + minute
-	var min_allowed = 16 * 60 
+	var min_allowed = 17 * 60 + 30
 	var max_allowed = 19 * 60 + 30  
 	if minute < 0 or minute > 59:
 		#add_theme_color_override("font_color", Color.RED)
@@ -55,7 +55,7 @@ func _on_text_changed(new_text):
 
 	elif total_minutes < min_allowed or total_minutes > max_allowed:
 		Globals.ex2 = 0
-		translation_key1 ="Outside the interval (16:00–19:00)"
+		translation_key1 ="Outside the interval (17:00–19:00)"
 		label.text = Localization.get_text(translation_key1)
 		return
 	elif total_minutes <= Globals.pranz and Globals.pranz != 0:

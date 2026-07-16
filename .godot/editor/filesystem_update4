@@ -1,10 +1,1 @@
-res://start.tscn
-res://login.tscn
-res://score.gd
-res://login.gd
-res://hour_activity.gd
-res://globals.gd
-res://NotificationManager.gd
-res://spalat_fata.gd
 res://dashboard.tscn
-res://settings.gd
