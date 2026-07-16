@@ -5,6 +5,7 @@ var current_language := "ro"
 
 var translations := {
 	"ro": {
+		"place":"plaseaza",
 		"shop":"magazin",
 		"Upgrade": "Upgradeaza",
 		"codereset": "Verificați adresa de
@@ -382,6 +383,7 @@ JOC""",
 	
 	
 	"en": {
+		"place":"place",
 		"shop":"shop",
 		"codereset": "Check your email address
 		and enter the code
