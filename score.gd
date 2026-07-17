@@ -16,21 +16,19 @@ func _process(delta: float) -> void:
 	pass
 
 
-#func _on_area_2d_modificare() -> void:
-	#var score = Globals.citeste_score()
-	#self.text = str(int(score))
+func _on_area_2d_modificare() -> void:
+	self.text = str(Globals.citeste_score())
 #
 #
-#func _on_area_2d_2_modificare() -> void:
-	#var score = Globals.citeste_score()
-	#self.text = str(int(score))
+func _on_area_2d_2_modificare() -> void:
+	self.text = str(Globals.citeste_score())
 #
 #
-#func _on_area_2d_3_modificare() -> void:
-	#var score = Globals.citeste_score()
-	#self.text = str(int(score))
+func _on_area_2d_3_modificare() -> void:
+	self.text = str(Globals.citeste_score())
+
+func _modificare():
+	self.text = str(Globals.citeste_score())
+	
 #
 #
-#func _modificare() -> void:
-	#var score = Globals.citeste_score()
-	#self.text = str(int(score))

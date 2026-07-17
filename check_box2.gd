@@ -4,8 +4,9 @@ extends CheckBox
 # Called when the node enters the scene tree for the first time.
 @export var translation_key: String = "Breakfast:"
 func _ready() -> void:
-	Localization.language_changed.connect(_update_text)
-	_update_text()
+	#Localization.language_changed.connect(_update_text)
+	#_update_text()
+	pass
 
 func _update_text() -> void:
 	text = Localization.get_text(translation_key)

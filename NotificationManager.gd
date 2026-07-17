@@ -2,11 +2,12 @@
 # ce ai salvat la inceput in fisierul acela gen copil/parinte, cel de la start
 # recomandat - prima oara se decide clar ce tip de cont este, copil/parinte dupa care se seteaza orele
 # practic, prima oara parintii autentifica copiii pe telefoanele lor, dupa care introduc orele
+# eu iau in calcul setarea notificarilor cu ore cand se deschide aplicatia pentru prima data, incearca fara aia de esti copil esti nj ce si dupa baga tel copil cu notificari
 extends Node
-
+var path = "user://start.save"
 var realtime_client : RealtimeClient
 var realtime_channel : RealtimeChannel
-
+var content
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Engine.has_singleton("LocalNotification"):
@@ -45,129 +46,138 @@ func on_realtime_connected():
 # Funcția trebuie să accepte 3 argumente conform semnalului 'update' din plugin
 func _on_child_data_updated(old_record, new_record, _channel):
 	# Verificăm dacă datele aparțin utilizatorului curent
-	if new_record.username == Globals.username:
+	Globals.code = Globals.citeste_code()
+	if new_record.connection_code == Globals.code:
 		print("Datele copilului au fost modificate.")
 		refresh_notifications()
 
 func refresh_notifications():
+	if FileAccess.file_exists(path):
+		var file = FileAccess.open(path, FileAccess.READ)
+		content = file.get_as_text()
+		print(content)
+		file.close()
 	Globals.code = Globals.citeste_code()
-	var query = SupabaseQuery.new().from("children").select().eq("username", Globals.code)
+	var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
 	var task = Supabase.database.query(query)
 	var result = await task.completed
 	if result.error == null and result.data.size() > 0:
 		var data = result.data[0]
+		print(data)
 		# ----------- notificare trezire ------------------
-		var ora_trezire = data.trezire
-		var parts = ora_trezire.split(":")
-		var hour = int(parts[0])
-		var minute = int(parts[1])
-		LocalNotification.cancel(100)
-		LocalNotification.showDaily(
-			"Activitate Noua",
-			"Buna dimineata! Este timpul sa te trezesti!",
-			hour,
-			minute,
-			100
-		)
-		print("Notificare setată pentru ora: ", hour, ":", minute)
-		# --------------- notificare ex1 --------------
-		var ora_ex1 = data.ex1
-		var parts1 = ora_ex1.split(":")
-		var hour1 = int(parts1[0])
-		var minute1 = int(parts1[1])
-		LocalNotification.cancel(101)
-		LocalNotification.showDaily(
-			"Activitate Noua",
-			"Esti pregatit? Este timpul pentru putina miscare!",
-			hour1,
-			minute1,
-			101
-		)
-		print("Notificare setată pentru ora: ", hour, ":", minute)
-		# ------------ notificare masa_dimineata ----------------
-		var ora_mdimineata = data.masa_dimineata
-		var parts2 = ora_mdimineata.split(":")
-		var hour2 = int(parts2[0])
-		var minute2 = int(parts2[1])
-		LocalNotification.cancel(102)
-		LocalNotification.showDaily(
-			"Activitate Noua",
-			"Orice erou are nevoie sa-si incarce bateriile! Este timpul pentru masa de dimineata.",
-			hour2,
-			minute2,
-			102
-		)
-		print("Notificare setată pentru ora: ", hour, ":", minute)
-		# --------------- notificare masa_pranz -----------------------
-		var ora_mpranz = data.masa_pranz
-		var parts3 = ora_mpranz.split(":")
-		var hour3 = int(parts3[0])
-		var minute3 = int(parts3[1])
-		LocalNotification.cancel(103)
-		LocalNotification.showDaily(
-			"Activitate Noua",
-			"Orice erou are nevoie sa-si incarce bateriile! Este timpul pentru masa de pranz.",
-			hour3,
-			minute3,
-			103
-		)
-		print("Notificare setată pentru ora: ", hour, ":", minute)
-		# --------------- notificare ex2 ------------------
-		var ora_ex2 = data.ex2
-		var parts4 = ora_ex2.split(":")
-		var hour4 = int(parts4[0])
-		var minute4 = int(parts4[1])
-		LocalNotification.cancel(104)
-		LocalNotification.showDaily(
-			"Activitate Noua",
-			"Esti pregatit? Este timpul pentru putina miscare!",
-			hour4,
-			minute4,
-			104
-		)
-		print("Notificare setată pentru ora: ", hour, ":", minute)
-		# ------------- notificare masa_seara --------------
-		var ora_mseara = data.masa_seara
-		var parts5 = ora_mseara.split(":")
-		var hour5 = int(parts5[0])
-		var minute5 = int(parts5[1])
-		LocalNotification.cancel(105)
-		LocalNotification.showDaily(
-			"Activitate Noua",
-			"Orice erou are nevoie sa-si incarce bateriile! Este timpul pentru masa de seara.",
-			hour5,
-			minute5,
-			105
-		)
-		print("Notificare setată pentru ora: ", hour, ":", minute)
-		# -------------- notificare culcare ---------------
-		var ora_culcare = data.culcare
-		var parts6 = ora_culcare.split(":")
-		var hour6 = int(parts6[0])
-		var minute6 = int(parts6[1])
-		LocalNotification.cancel(106)
-		LocalNotification.showDaily(
-			"Activitate Noua",
-			"Noapte buna! Este timpul să te pregătești de somn.",
-			hour6,
-			minute6,
-			106
-		)
-		print("Notificare setată pentru ora: ", hour, ":", minute)
-		# --------- notificare verificare --------
-		var ora_verificare = data.verificare
-		var parts7 = ora_verificare.split(":")
-		var hour7 = int(parts7[0])
-		var minute7 = int(parts7[1])
-		LocalNotification.cancel(107)
-		LocalNotification.showDaily(
-			"Activitate Noua",
-			"Noapte buna! Este timpul să te pregătești de somn.",
-			hour7,
-			minute7,
-			107
-		)
-		print("Notificare setată pentru ora: ", hour, ":", minute)
+		if content == "copil\n":
+			var ora_trezire = data.trezire
+			var parts = ora_trezire.split(":")
+			var hour = int(parts[0])
+			var minute = int(parts[1])
+			LocalNotification.cancel(100)
+			LocalNotification.showDaily(
+				"Activitate Noua",
+				"Buna dimineata! Este timpul sa te trezesti!",
+				hour,
+				minute,
+				100
+			)
+			print("Notificare setată pentru ora: ", hour, ":", minute)
+			# --------------- notificare ex1 --------------
+			var ora_ex1 = data.ex1
+			var parts1 = ora_ex1.split(":")
+			var hour1 = int(parts1[0])
+			var minute1 = int(parts1[1])
+			LocalNotification.cancel(101)
+			LocalNotification.showDaily(
+				"Activitate Noua",
+				"Esti pregatit? Este timpul pentru putina miscare!",
+				hour1,
+				minute1,
+				101
+			)
+			print("Notificare setată pentru ora: ", hour, ":", minute)
+			# ------------ notificare masa_dimineata ----------------
+			var ora_mdimineata = data.masa_dimineata
+			var parts2 = ora_mdimineata.split(":")
+			var hour2 = int(parts2[0])
+			var minute2 = int(parts2[1])
+			LocalNotification.cancel(102)
+			LocalNotification.showDaily(
+				"Activitate Noua",
+				"Orice erou are nevoie sa-si incarce bateriile! Este timpul pentru masa de dimineata.",
+				hour2,
+				minute2,
+				102
+			)
+			print("Notificare setată pentru ora: ", hour, ":", minute)
+			# --------------- notificare masa_pranz -----------------------
+			var ora_mpranz = data.masa_pranz
+			var parts3 = ora_mpranz.split(":")
+			var hour3 = int(parts3[0])
+			var minute3 = int(parts3[1])
+			LocalNotification.cancel(103)
+			LocalNotification.showDaily(
+				"Activitate Noua",
+				"Orice erou are nevoie sa-si incarce bateriile! Este timpul pentru masa de pranz.",
+				hour3,
+				minute3,
+				103
+			)
+			print("Notificare setată pentru ora: ", hour, ":", minute)
+			# --------------- notificare ex2 ------------------
+			var ora_ex2 = data.ex2
+			var parts4 = ora_ex2.split(":")
+			var hour4 = int(parts4[0])
+			var minute4 = int(parts4[1])
+			LocalNotification.cancel(104)
+			LocalNotification.showDaily(
+				"Activitate Noua",
+				"Esti pregatit? Este timpul pentru putina miscare!",
+				hour4,
+				minute4,
+				104
+			)
+			print("Notificare setată pentru ora: ", hour, ":", minute)
+			# ------------- notificare masa_seara --------------
+			var ora_mseara = data.masa_seara
+			var parts5 = ora_mseara.split(":")
+			var hour5 = int(parts5[0])
+			var minute5 = int(parts5[1])
+			LocalNotification.cancel(105)
+			LocalNotification.showDaily(
+				"Activitate Noua",
+				"Orice erou are nevoie sa-si incarce bateriile! Este timpul pentru masa de seara.",
+				hour5,
+				minute5,
+				105
+			)
+			print("Notificare setată pentru ora: ", hour, ":", minute)
+			# -------------- notificare culcare ---------------
+			var ora_culcare = data.culcare
+			var parts6 = ora_culcare.split(":")
+			var hour6 = int(parts6[0])
+			var minute6 = int(parts6[1])
+			LocalNotification.cancel(106)
+			LocalNotification.showDaily(
+				"Activitate Noua",
+				"Noapte buna! Este timpul să te pregătești de somn.",
+				hour6,
+				minute6,
+				106
+			)
+			print("Notificare setată pentru ora: ", hour, ":", minute)
+		elif content == "parinte\n":
+			var ora_verificare = data.verificare
+			var parts7 = ora_verificare.split(":")
+			var hour7 = int(parts7[0])
+			var minute7 = int(parts7[1])
+			LocalNotification.cancel(107)
+			LocalNotification.showDaily(
+				"Activitate Noua",
+				"Noapte buna! Este timpul să te pregătești de somn.",
+				hour7,
+				minute7,
+				107
+			)
+			print("Notificare setată pentru ora: ")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

@@ -10,47 +10,70 @@ var score = 0
 var missed = 0
 var nr_day = 0
 var date
+var is_data_loaded = false
 func save_progress():
+	if not is_data_loaded:
+		print("Salvare anulată: Datele încă nu s-au încărcat din server!")
+		return
 	var data = {
-		"trezire": complete_trezire,
-		"ex": complete_ex,
-		"dejun": complete_dejun,
-		"pranz": complete_pranz,
-		"ex2": complete_ex2,
-		"cina": complete_cina,
-		"somn": complete_somn,
-		"score": score,
-		"missed": missed,
-		"nr_day": nr_day,
-		"date": Time.get_date_string_from_system()
+		"trezire": int(complete_trezire),
+		"ex1": int(complete_ex),
+		"masa_dimineata": int(complete_dejun),
+		"masa_pranz": int(complete_pranz),
+		"ex2": int(complete_ex2),
+		"masa_seara": int(complete_cina),
+		"somn": int(complete_somn),
+		"missed": int(missed)
 	}
-	var json_string = JSON.stringify(data)
-	var file = FileAccess.open("user://progress.json", FileAccess.WRITE)
-	file.store_string(json_string)
-	file.close()
-	
+	print("ne pregatim de update")
+	var task_upsert = Supabase.database.query(SupabaseQuery.new().from("progres_copil").update(data).eq("connection_code", Globals.citeste_code()))
+	var result = await task_upsert.completed
+	if result.error == null:
+		print("success")
+	else:
+		print(result.error.message)
+	#var json_string = JSON.stringify(data)
+	#var file = FileAccess.open("user://progress.json", FileAccess.WRITE)
+	#file.store_string(json_string)
+	#file.close()
+
 func load_progress():
-	if not FileAccess.file_exists("user://progress.json"):
-		return  
-
-	var file = FileAccess.open("user://progress.json", FileAccess.READ)
-	var content = file.get_as_text()
-	file.close()
-
-	var result = JSON.parse_string(content)
-
-	if result:
-		complete_trezire = result.get("trezire", 0)
-		complete_ex = result.get("ex", 0)
-		complete_dejun = result.get("dejun", 0)
-		complete_pranz = result.get("pranz", 0)
-		complete_ex2 = result.get("ex2", 0)
-		complete_cina = result.get("cina", 0)
-		complete_somn = result.get("somn", 0)
-		score = result.get("score", 0)
-		missed = result.get("missed", 0)
-		date = result.get("date", "")
-		nr_day = result.get("nr_day", 0)
+	is_data_loaded = false
+	var query = SupabaseQuery.new().from("progres_copil").select().eq("connection_code", Globals.citeste_code())
+	var task_upsert = Supabase.database.query(query)
+	var result = await task_upsert.completed
+	if result.error == null:
+		var data = result.data
+		if data.size() > 0:
+			data = data[0]
+			complete_trezire = data.trezire
+			complete_ex = data.ex1
+			complete_dejun = data.masa_dimineata
+			complete_pranz = data.masa_pranz
+			complete_ex2 = data.ex2
+			complete_cina = data.masa_seara
+			complete_somn = data.somn
+			missed = data.missed
+		is_data_loaded = true
+	#if not FileAccess.file_exists("user://progress.json"):
+		#return  
+#
+	#var file = FileAccess.open("user://progress.json", FileAccess.READ)
+	#var content = file.get_as_text()
+	#file.close()
+#
+	#var result = JSON.parse_string(content)
+#
+	#if result:
+		#complete_trezire = result.get("trezire", 0)
+		#complete_ex = result.get("ex", 0)
+		#complete_dejun = result.get("dejun", 0)
+		#complete_pranz = result.get("pranz", 0)
+		#complete_ex2 = result.get("ex2", 0)
+		#complete_cina = result.get("cina", 0)
+		#complete_somn = result.get("somn", 0)
+		#score = result.get("score", 0)
+		#missed = result.get("missed", 0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -61,7 +84,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_choose_activity():
-	var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
+	var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.citeste_code())
 	print(Globals.code)
 	var task = Supabase.database.query(query)
 	var result = await task.completed

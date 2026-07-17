@@ -40,31 +40,31 @@ func _ready():
 	else:
 		avertisment_vizualizat = false
 		
-#func marcheaza_cumparat(id):
-	#var path = "user://stikere.save"
-	#if FileAccess.file_exists(path):
-		#var file = FileAccess.open(path, FileAccess.READ)
-		#var content = file.get_as_text()
-		#file.close()
-		#obiecte_cumparate = JSON.parse_string(content)
-	#obiecte_cumparate[id] = true
-	#var file = FileAccess.open(path, FileAccess.WRITE)
-	#file.store_string(JSON.stringify(obiecte_cumparate))
-	#file.close()
+func marcheaza_cumparat(id):
+	var path = "user://stikere.save"
+	if FileAccess.file_exists(path):
+		var file = FileAccess.open(path, FileAccess.READ)
+		var content = file.get_as_text()
+		file.close()
+		obiecte_cumparate = JSON.parse_string(content)
+	obiecte_cumparate[id] = true
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	file.store_string(JSON.stringify(obiecte_cumparate))
+	file.close()
+
 #
-#
-#func este_cumparat(id):
-	#var path = "user://stikere.save"
-	#if not FileAccess.file_exists(path):
-		#return false
-	#var file = FileAccess.open(path, FileAccess.READ)
-	#var content = file.get_as_text()
-	#file.close()
-	#var data = JSON.parse_string(content)
-	#if data == null:
-		#return false
-	#return data.has(id)
-	#
+func este_cumparat(id):
+	var path = "user://stikere.save"
+	if not FileAccess.file_exists(path):
+		return false
+	var file = FileAccess.open(path, FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+	var data = JSON.parse_string(content)
+	if data == null:
+		return false
+	return data.has(id)
+	
 #func salveaza_avertisment():
 	#var data = {}
 	#var path = "user://avertisment.save"
@@ -125,6 +125,23 @@ func adauga_personaj(valoare: int):
 		data_existenta = {}
 	data_existenta["personaj"] = valoare #atribuie dictionarului cheia pe care o vreau
 	personaj = valoare
+	var file = FileAccess.open(path_hours, FileAccess.WRITE) #salveaza noul dictionar
+	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
+	file.close()
+
+func adauga_username(valoare: String):
+	var data_existenta = {}
+	if FileAccess.file_exists(path_hours): # verifica daca exista
+		var file = FileAccess.open(path_hours, FileAccess.READ) #citeste
+		var content = file.get_as_text() #ia ca string
+		file.close()
+		var result = JSON.parse_string(content) #transforma in dictionar
+		if result:
+			data_existenta = result #egaleaza ce era cu noul dictionar din functie
+	else:
+		data_existenta = {}
+	data_existenta["username"] = valoare #atribuie dictionarului cheia pe care o vreau
+	username = valoare
 	var file = FileAccess.open(path_hours, FileAccess.WRITE) #salveaza noul dictionar
 	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
 	file.close()
@@ -242,15 +259,36 @@ func adauga_code(valoare: String):
 			#data_existenta = result #egaleaza ce era cu noul dictionar din functie
 	#else:
 		#data_existenta = {}
-	#if data_existenta.has("score"):
-		#data_existenta["score"] += valoare
-	#else:
 		#data_existenta["score"] = valoare #atribuie dictionarului cheia pe care o vreau
-	#score += valoare
 	#var file = FileAccess.open(path_hours, FileAccess.WRITE) #salveaza noul dictionar
 	#file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
 	#file.close()
-	#
+
+func adauga_scor(valoare: int):
+	var data_existenta = {}
+	
+	# 1. Citim ce există deja în fișier (dacă fișierul există)
+	if FileAccess.file_exists(path_hours):
+		var file = FileAccess.open(path_hours, FileAccess.READ)
+		var content = file.get_as_text()
+		file.close()
+		
+		var result = JSON.parse_string(content)
+		if result is Dictionary:
+			data_existenta = result
+
+	# 2. MODIFICARE / CREARE
+	# Indiferent dacă cheia exista sau nu, acum îi setăm valoarea nouă.
+	# Dacă exista, va fi suprascrisă. Dacă nu, va fi creată.
+	data_existenta["score"] = valoare 
+	
+	# 3. Salvăm dicționarul actualizat înapoi în fișier
+	var file = FileAccess.open(path_hours, FileAccess.WRITE)
+	if file:
+		file.store_string(JSON.stringify(data_existenta, "\t"))
+		file.close()
+		print("Scorul a fost actualizat local la valoarea: ", valoare)
+
 #func scade_scor(valoare: int):
 	#var data_existenta = {}
 	#if FileAccess.file_exists(path_hours): # verifica daca exista
@@ -275,6 +313,13 @@ func citeste_personaj():
 	file.close()
 	var valori = JSON.parse_string(content)
 	return int(valori["personaj"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
+
+func citeste_username():
+	var file = FileAccess.open(path_hours, FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+	var valori = JSON.parse_string(content)
+	return str(valori["username"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
 
 #func citeste_locatie_info():
 	#var file = FileAccess.open(path_hours, FileAccess.READ)
@@ -306,13 +351,13 @@ func citeste_code():
 	#var valori = JSON.parse_string(content)
 	#return String(valori["email"])
 #
-#func citeste_score():
-	#var file = FileAccess.open(path_hours, FileAccess.READ)
-	#var content = file.get_as_text()
-	#file.close()
-	#var valori = JSON.parse_string(content)
-	#return int(valori["score"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
-	#
+func citeste_score():
+	var file = FileAccess.open(path_hours, FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+	var valori = JSON.parse_string(content)
+	return int(valori["score"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
+	
 #func citeste_parola():
 	#var file = FileAccess.open(path_hours, FileAccess.READ)
 	#var content = file.get_as_text()

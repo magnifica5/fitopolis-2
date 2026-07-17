@@ -19,12 +19,26 @@ func _input_event(_viewport, event, _shape_idx):
 			
 			# Dacă e un click scurt (nu drag/scroll)
 			if duration < CLICK_THRESHOLD:
-				var score = Globals.citeste_score()
-				var text = int(label.text)
-				if score >= text:
-					Globals.scade_scor(text)
-					modificare.emit()
-					dispare_tot()
+				Globals.code = Globals.citeste_code()
+				var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
+				var task = Supabase.database.query(query)
+				var result = await task.completed
+				if result.error == null:
+					var data = result.data
+					data = data[0]
+					var score = data.scor
+					var text = int(label.text)
+					if score >= text:
+						score -= text
+						print(score)
+						var query2 = SupabaseQuery.new().from("children").update({"scor": int(score)}).eq("connection_code", Globals.code)
+						var task2 = Supabase.database.query(query2)
+						var result2 = await task2.completed
+						if result2.error == null:
+							Globals.adauga_scor(int(score))
+							modificare.emit()
+							dispare_tot()
+							print("scor modificat")
 
 func dispare_tot():
 	Globals.marcheaza_cumparat("16")
