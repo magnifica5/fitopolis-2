@@ -5,13 +5,13 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	print("Butonul a fost apasat cu succes!")
-	var poza_y = preload("res://assets/nigu14.png")
+	var poza_y = preload("res://assets/nigu22.png")
 	
 	# --- PASUL DE REDIMENSIONARE (Corectat pentru Godot 4) ---
 	var img: Image = poza_y.get_image()
 	
 	# Am schimbat în Image.INTERPOLATE_LANCZOS
-	img.resize(img.get_width() * 6, img.get_height() * 6)
+
 	
 	var poza_modificata = ImageTexture.create_from_image(img)
 	# ---------------------------------------------------------

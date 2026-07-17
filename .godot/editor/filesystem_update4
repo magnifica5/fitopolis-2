@@ -1,8 +1,7 @@
-res://oras2.0.tscn
-res://labelplace.gd
-res://Localization.gd
-res://obiect.gd
-res://return.gd
-res://butonplace.gd
 res://shop_oras.tscn
+res://butonplace.gd
 res://casashop.gd
+res://oras2.0.tscn
+res://obiect.gd
+res://itemshop.gd
+res://oras_scene.gd

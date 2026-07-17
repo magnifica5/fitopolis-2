@@ -9,9 +9,13 @@ func _on_pressed():
 
 	var casa := Sprite2D.new()
 	casa.texture = preview.texture
-	casa.scale = Vector2(0.1, 0.1)
 
 	layer.add_child(casa)
 
-	# Abia după ce este adăugată în Layer1 îi setezi poziția
+	casa.scale = preview.scale / layer.scale
+	print(preview.texture.resource_path)
 	casa.global_position = preview.global_position
+	Itemshop.cladiri.append({
+	"texture": preview.texture.resource_path,
+	"position": casa.global_position
+})
