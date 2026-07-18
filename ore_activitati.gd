@@ -64,8 +64,6 @@ func _on_salveaza() -> void:
 			succes.show()
 		else:
 			print(res_insert.error.message)
-		
-
 
 func _close_succes() -> void:
 	succes.hide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dka5fymqx1fgb"]
+[gd_scene load_steps=8 format=3 uid="uid://dka5fymqx1fgb"]
 
 [ext_resource type="Script" uid="uid://b0gwhgo0nyafa" path="res://functionare.gd" id="1_2mdsp"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="2_xgd5f"]
@@ -7,9 +7,6 @@
 [ext_resource type="Script" uid="uid://d2gere5adq5g8" path="res://labelfunctionare.gd" id="4_wifb5"]
 [ext_resource type="Script" uid="uid://cn725kfuu8ili" path="res://functionare_content.gd" id="5_r58hw"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="5_wifb5"]
-[ext_resource type="Texture2D" uid="uid://dq4s8ytaf3nsl" path="res://assets/level.png" id="7_r58hw"]
-[ext_resource type="Script" uid="uid://btmv00k6gtwqp" path="res://script buton schimbare limba.gd" id="8_jksgy"]
-[ext_resource type="Script" uid="uid://bgxsn1epni2pi" path="res://eticheta.gd" id="9_hr7yo"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2mdsp")
@@ -108,36 +105,5 @@ texture_hover = ExtResource("4_a415a")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_wifb5")
 volume_db = -10.0
-
-[node name="CanvasLayer5" type="CanvasLayer" parent="."]
-
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer5"]
-offset_left = 14.0
-offset_top = 22.0
-offset_right = 219.0
-offset_bottom = 261.0
-texture_normal = ExtResource("7_r58hw")
-texture_pressed = ExtResource("7_r58hw")
-texture_hover = ExtResource("7_r58hw")
-texture_disabled = ExtResource("7_r58hw")
-texture_focused = ExtResource("7_r58hw")
-script = ExtResource("8_jksgy")
-
-[node name="Label" type="Label" parent="CanvasLayer5/TextureButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -44.5
-offset_top = -45.5
-offset_right = 38.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_crf4o")
-theme_override_font_sizes/font_size = 60
-script = ExtResource("9_hr7yo")
 
 [connection signal="pressed" from="CanvasLayer4/TextureButton" to="." method="_to_start"]

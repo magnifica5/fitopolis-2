@@ -1,3 +1,13 @@
+#=> chestia cu activitate
+#=> exercitii fizice
+#=> emailuri cu ce activitati au facut copiii la finalul zilei
+#=> buton dinala de dezactivare battery optimization la inceput
+#=> modificare documentatie pt plugin
+#=> vazut ce scene trebuie sterse + ce scene au probleme la afisaj, text
+#=> acel succes cu faza ca nu merge ok popup ul
+#=> muzica diferita pentru interfata de parinte
+#=> de ce cand dezinstalez si instalez alea devin toate 0 din progres
+#E-mailuri cu progresul copiilor, transmise în timp real. ?
 extends Control
 @onready var home = $HBoxContainer/Panel/VBoxContainer/TextureButton
 @onready var settings = $HBoxContainer/Panel/VBoxContainer/TextureButton2
@@ -63,3 +73,7 @@ func change_type(string):
 	var minute = parti[1].to_int()
 	var total_minute = (ore * 60) + minute
 	return total_minute
+
+
+func _close_succes() -> void:
+	lacat.hide()
