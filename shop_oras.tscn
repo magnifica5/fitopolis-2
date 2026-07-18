@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bq7g65wpt238b"]
+[gd_scene load_steps=14 format=3 uid="uid://bq7g65wpt238b"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_m7bmd"]
 [ext_resource type="Texture2D" uid="uid://ca7j377dadnxj" path="res://assets/shop_slot2.png" id="2_i607x"]
-[ext_resource type="Texture2D" uid="uid://dck2xo0e02g8f" path="res://assets/nigu14.png" id="3_0ip6e"]
+[ext_resource type="Texture2D" uid="uid://bcwqh6yikw3xs" path="res://assets/nigu22.png" id="3_ay86s"]
 [ext_resource type="Texture2D" uid="uid://cwojkdbr0vwtk" path="res://assets/nigu232-removebg-preview.png" id="4_svqdx"]
 [ext_resource type="Script" uid="uid://bsw8nfhjqxvcp" path="res://casashop.gd" id="4_thdux"]
 [ext_resource type="Texture2D" uid="uid://gp8uoihmi6rl" path="res://assets/nigu2.png" id="5_vigl0"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dv3jlg2naq8y6" path="res://assets/nigu1.png" id="8_m36ju"]
 [ext_resource type="Texture2D" uid="uid://b8hxqe7rwhkgu" path="res://assets/nigu13.png" id="9_svqdx"]
 [ext_resource type="Texture2D" uid="uid://n5slharny2wh" path="res://image-removebg-preview (60).png" id="12_ay86s"]
+[ext_resource type="Script" uid="uid://ceu2tre0q1gxl" path="res://return2.gd" id="13_r6vcd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -62,12 +63,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -185.75
-offset_right = 185.75
-offset_bottom = 407.5
+offset_left = -175.75
+offset_top = 41.0
+offset_right = 195.75
+offset_bottom = 448.5
 grow_horizontal = 2
 mouse_filter = 2
-texture = ExtResource("3_0ip6e")
+texture = ExtResource("3_ay86s")
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect/TextureRect"]
 layout_mode = 0
@@ -291,6 +293,7 @@ offset_bottom = 506.50024
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("12_ay86s")
 ignore_texture_size = true
+script = ExtResource("13_r6vcd")
 
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" to="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" method="_on_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton" to="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton" method="_on_button_pressed"]

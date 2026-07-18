@@ -52,7 +52,14 @@ func toggle_layers():
 			fade_duration
 		)
 
+func _ready():
+	for cladire in Itemshop.cladiri:
+		var casa := Sprite2D.new()
+		casa.texture = load(cladire["texture"])
+		casa.scale = Vector2(3, 3) # aceeași scară locală pe care ai folosit-o
+		casa.global_position = cladire["position"]
 
+		$Layer1.add_child(casa)
 func _acasa_pressed() -> void:
 	$AudioStreamPlayer.play()
 	await get_tree().create_timer(0.1).timeout

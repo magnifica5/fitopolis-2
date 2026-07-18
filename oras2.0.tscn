@@ -13144,7 +13144,7 @@ script = ExtResource("1_8qvay")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3
-position = Vector2(0, -1)
+position = Vector2(1600, 1200)
 ignore_rotation = false
 limit_enabled = false
 limit_left = -361
@@ -13302,15 +13302,15 @@ text = "Place"
 script = ExtResource("32_3cfb1")
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_jjpv3")
-volume_db = -10.0
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 4
 position = Vector2(1012, 440)
 scale = Vector2(0.30671296, 0.25)
 script = ExtResource("24_rnnjr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_jjpv3")
+volume_db = -10.0
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_acasa_pressed"]
 [connection signal="pressed" from="CanvasLayer/return" to="CanvasLayer/return" method="_on_pressed"]
