@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 Label
 TextureButton
 VBoxContainer
@@ -11,4 +13,3 @@ LineEdit
 ScrollContainer
 TextureRect
 GridContainer
-Panel
