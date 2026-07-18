@@ -1,4 +1,4 @@
-#Thu Jul 16 16:35:46 EEST 2026
-base.0=C\:\\Users\\Butea Nicolae\\OneDrive\\Documents\\Desktop\\fitopolis3221\\fitopolis-2\\android\\build\\build\\intermediates\\dex\\standardRelease\\mergeDexStandardRelease\\classes.dex
-path.0=classes.dex
+#Sat Jul 18 21:12:42 EEST 2026
+base.0=D\:\\proiect joc final\\fitopolis\\android\\build\\build\\intermediates\\dex\\standardRelease\\mergeDexStandardRelease\\classes.dex
 renamed.0=classes.dex
+path.0=classes.dex

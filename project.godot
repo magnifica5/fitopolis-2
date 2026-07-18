@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Supabase="*res://addons/supabase/Supabase/supabase.gd"
-NotificationManager="*res://NotificationManager.gd"
+LocalNotification="*res://LocalNotification.gd"
 Globals="*res://globals.gd"
 Unlock_levels="*res://unlock_levels.gd"
 HourActivity="*res://hour_activity.gd"
@@ -26,7 +26,6 @@ SoundManager="*res://sound_manager.tscn"
 Localization="*res://Localization.gd"
 GameState="*res://GameState.gd"
 Itemshop="*res://itemshop.gd"
-LocalNotification="*res://scripts/LocalNotification.gd"
 
 [display]
 

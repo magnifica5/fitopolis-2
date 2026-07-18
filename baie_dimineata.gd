@@ -17,10 +17,11 @@ func _ready():
 		rm.play()
 	else:
 		rs.play()
-	Localization.language_changed.connect(_update_text)
 	_update_text()
 func _update_text() -> void:
-	replica = Localization.get_text(translation_key)
+	replica = "Pregateste-ti
+periuta si apasa
+pe bifa!"
 func _on_TypeTimer_timeout():
 	if char_index < replica.length():
 		current_text += replica[char_index]

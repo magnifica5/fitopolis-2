@@ -6,9 +6,11 @@ extends Control
 @onready var b5 = $ScrollContainer/VBoxContainer/HBoxContainer4/CheckBox
 @onready var b6 = $ScrollContainer/VBoxContainer/HBoxContainer5/CheckBox
 @onready var b7 = $ScrollContainer/VBoxContainer/HBoxContainer6/CheckBox
+@onready var succes = $Panel5
+@onready var lacat = $Panel4
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	succes.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -88,8 +90,14 @@ func _back_to_start() -> void:
 		var result_base = await task.completed
 		if result_base.error == null:
 			print("update reusit")
+			succes.show()
 		else:
 			print(result_base.error.message)
 		await HourActivity.save_progress()
 	else:
 		print(result1.error.message)
+
+
+func _close_succes() -> void:
+	lacat.show()
+	succes.hide()
