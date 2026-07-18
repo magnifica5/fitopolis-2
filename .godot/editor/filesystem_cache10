@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1784320305
+::res://::1784364938
 1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png::CompressedTexture2D::7536361269957601271::1772212221::1774848301::1::::<><><>0<>0<>90887020950a425c34a5a32d52c2c2b1<>res://.godot/imported/1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png-31eeab7255796e435b6bef19b2230d3b.ctex::
 3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png::CompressedTexture2D::7203370797049039625::1772211421::1774848301::1::::<><><>0<>0<>d5101df9ac9e6f9ffa28680a865de1e5<>res://.godot/imported/3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png-905d6c87ca81b69e818b1aa13f4ebe47.ctex::
 046af01fa841d786d1e967f8797ece8c-removebg-preview.png::CompressedTexture2D::4015776957699399800::1772444930::1774848301::1::::<><><>0<>0<>0b1d9f31e2a0afb977f3245961ba208a<>res://.godot/imported/046af01fa841d786d1e967f8797ece8c-removebg-preview.png-d634b8e8ab617928486f71008f63f162.ctex::
@@ -289,7 +289,7 @@ login_control.gd::GDScript::7424756748692940975::1783972872::0::1::::<>Control<>
 login_rect.gd::GDScript::9094955190484956692::1781512924::0::1::::<>ColorRect<><>0<>0<><>::
 manacare.gd::GDScript::1162077620360893438::1779259157::0::1::::<>Node2D<><>0<>0<><>::
 masa.gd::GDScript::9040981852113640349::1771934421::0::1::::<>Node2D<><>0<>0<><>::
-masa.tscn::PackedScene::3525773947809204344::1784139021::0::1::::<><><>0<>0<><>::uid://qs6ipn8peqnu::::res://manacare.gd<>uid://dp2x7a8o62h7u::::res://assets/bucatarie 2.0.png<>uid://covmoie8dsgvh::::res://assets/finished.png<>uid://bvia00w06754j::::res://masa_dimi/sup1.png<>uid://ddi7nehub2mvf::::res://masa_dimi/supica1.png<>uid://dqju5q6qwh7ad::::res://assets/cuv_nor.png<>uid://bl344u5hv6t5o::::res://fata.gd<>uid://5dot875wpu1b::::res://masa_dimi/supfinb.png<>uid://dgpbghamya1sa::::res://masa_dimi/bsup.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://c3corcmfufupq::::res://baiat.gd<>uid://bfs0j5av1pefj::::res://labelmasa.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://b8ulfuxl4ov1u::::res://audio/voices/miss_nutri_m.mp3<>uid://ck36iomg2h75::::res://audio/voices/santos_m.mp3<>uid://b7surmx1yhgjt::::res://audio/voices_eng/miss_nuti_eng_eat.mp3<>uid://dyt6fvkeprlo5::::res://audio/voices_eng/santos_eng_eat.mp3
+masa.tscn::PackedScene::3525773947809204344::1784320563::0::1::::<><><>0<>0<><>::uid://qs6ipn8peqnu::::res://manacare.gd<>uid://dp2x7a8o62h7u::::res://assets/bucatarie 2.0.png<>uid://covmoie8dsgvh::::res://assets/finished.png<>uid://bvia00w06754j::::res://masa_dimi/sup1.png<>uid://ddi7nehub2mvf::::res://masa_dimi/supica1.png<>uid://dqju5q6qwh7ad::::res://assets/cuv_nor.png<>uid://bl344u5hv6t5o::::res://fata.gd<>uid://5dot875wpu1b::::res://masa_dimi/supfinb.png<>uid://dgpbghamya1sa::::res://masa_dimi/bsup.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://c3corcmfufupq::::res://baiat.gd<>uid://bfs0j5av1pefj::::res://labelmasa.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://b8ulfuxl4ov1u::::res://audio/voices/miss_nutri_m.mp3<>uid://ck36iomg2h75::::res://audio/voices/santos_m.mp3<>uid://b7surmx1yhgjt::::res://audio/voices_eng/miss_nuti_eng_eat.mp3<>uid://dyt6fvkeprlo5::::res://audio/voices_eng/santos_eng_eat.mp3
 maxresdefault-removebg-preview (4).png::CompressedTexture2D::3370115683174096311::1772058605::1774848301::1::::<><><>0<>0<>3c985c3866feee95d3c20c5ca718e3ea<>res://.godot/imported/maxresdefault-removebg-preview (4).png-26c654abc974838c38c90f357940f48d.ctex::
 miscare_oras.gd::GDScript::9126966581548172809::1771330682::0::1::::<>Node2D<><>0<>0<><>::
 miscare_oras_camera.gd::GDScript::3098644745002835741::1775033210::0::1::::<>Camera2D<><>0<>0<><>::
@@ -457,22 +457,19 @@ storage_task.gd::GDScript::3999283318880161718::1782119435::0::1::::StorageTask<
 ::res://addons/supabase/Supabase/::1782119436
 supabase.gd::GDScript::120352095999156786::1782388242::0::1::::<>Node<><>0<>1<><>::
 ::res://android/::1784228575
-::res://assets/::1784320267
+::res://assets/::1784322139
 about.png::CompressedTexture2D::8906615055999965244::1767380776::1767380782::1::::<><><>0<>0<>7427f7100d655caeefcedbdc335b2389<>res://.godot/imported/about.png-bcd05af39060efb42baa388ffea59109.ctex::
 acasa_buton.png::CompressedTexture2D::4477442475480629610::1771334987::1771334991::1::::<><><>0<>0<>054a11ad45070e8cec8907ffb5d41fd4<>res://.godot/imported/acasa_buton.png-dd88d5f9a6af2285a22cfe8d66fc5ead.ctex::
 animals.png::CompressedTexture2D::17446401618146394::1781791631::1781791636::1::::<><><>0<>0<>473982cc9cf9739b6c98cd2986becb59<>res://.godot/imported/animals.png-2a92ecbd216db02d443718b81df7fa03.ctex::
 back_sign.png::CompressedTexture2D::7364691989233690518::1784122843::1784122845::1::::<><><>0<>0<>3fa21c53dd33ec2ebf923b1e8ca85ac8<>res://.godot/imported/back_sign.png-0bfbc8c35283c57069b6cc2bb47b25d1.ctex::
 baiat_trist.png::CompressedTexture2D::1637833741911484590::1771517062::1771517077::1::::<><><>0<>0<>246b9914f8730c7e2131d5febd6e0bb0<>res://.godot/imported/baiat_trist.png-bc57d95076eceb541277a949c4804088.ctex::
-baie.png::CompressedTexture2D::1059409102766146712::1771351091::1771351093::1::::<><><>0<>0<>34dd9c76166da315ff9f356719e92841<>res://.godot/imported/baie.png-195894635cfebda23f976f339db25873.ctex::
 bubble_text.png::CompressedTexture2D::6670521536091881931::1771338225::1771338230::1::::<><><>0<>0<>f035a114393330bfee60597d9a3de9d0<>res://.godot/imported/bubble_text.png-a44f325319a7c9f0b5022c3e6b4269e0.ctex::
 bucatarie 2.0.png::CompressedTexture2D::8269286592905126712::1771841382::1771841383::1::::<><><>0<>0<>34388e60a8b7a20556d476003aa88bf4<>res://.godot/imported/bucatarie 2.0.png-dc754c906f4cafd1dafdc35afcfa9a50.ctex::
-bucatarie.png::CompressedTexture2D::230350076707057412::1771841227::1771841231::1::::<><><>0<>0<>deb323561800c7dadb4ad304ba34a0a3<>res://.godot/imported/bucatarie.png-741656c0e572df720ff8e7736b04321f.ctex::
 butonasset.png::CompressedTexture2D::7445394425127215107::1781895181::1782119321::1::::<><><>0<>0<>1ce72e6e89626af093652502ddd50f5a<>res://.godot/imported/butonasset.png-a614732f35a562579a5a9a4d1bdcfeee.ctex::
 buton_bifa.png::CompressedTexture2D::7326820353277652081::1773128461::1773128463::1::::<><><>0<>0<>7bc11c380d7af6a07c8f394189956f5b<>res://.godot/imported/buton_bifa.png-ef1154033c7430be71ae858f9afd7378.ctex::
 buton_simplu.png::CompressedTexture2D::898554193896933744::1773128425::1773128430::1::::<><><>0<>0<>ba6b385b5cf1d4988209317c908ae8b4<>res://.godot/imported/buton_simplu.png-25751321ce6f6d6ec56770000bf3c87a.ctex::
 Button.png::CompressedTexture2D::8622828288154845142::1767190659::1767351920::1::::<><><>0<>0<>9ea0068306ba5d4143f6e34923ebe3b1<>res://.godot/imported/Button.png-f23882371519fec7c9257cf625f94c3d.ctex::
 casa fara fundal 1.png::CompressedTexture2D::3005426054227437387::1768577272::1771331644::1::::<><><>0<>0<>f9e66fb3f8e46ff776697edd4e24262e<>res://.godot/imported/casa fara fundal 1.png-6626b2345749f13fc1f56847802a15bd.ctex::
-clasa.png::CompressedTexture2D::5238608017593451345::1771694516::1771694521::1::::<><><>0<>0<>40f16773d612e0663911d5f4ee45aa2c<>res://.godot/imported/clasa.png-3a5d4f6e2d77d71ce490bfe0ea881b13.ctex::
 Cloud Canopy.png::CompressedTexture2D::2545826230562591018::1769975768::1771330772::1::::<><><>0<>0<>a6a81aeb781e24a3df417b3130bb1019<>res://.godot/imported/Cloud Canopy.png-e332b6d9f9ed8818c00b19c0939a986a.ctex::
 confetti.png::CompressedTexture2D::6274685136682965902::1783536679::1783536682::1::::<><><>0<>0<>785beea9fc0e9a12d542930c27be29e8<>res://.godot/imported/confetti.png-3f1dc2a9c476c7a3d68cab6cff989310.ctex::
 cuv_nor.png::CompressedTexture2D::8302131751766052955::1771338791::1771338794::1::::<><><>0<>0<>df333f38a0f31e8598a5d2594c88a683<>res://.godot/imported/cuv_nor.png-86d1ba7fbc89260f8f328f1def6f0182.ctex::
@@ -481,14 +478,11 @@ fata_trista.png::CompressedTexture2D::6498995690529165692::1771517043::177151707
 finished.png::CompressedTexture2D::5799591144051888841::1771350311::1771350316::1::::<><><>0<>0<>ba2263f811965436aceb6e7cccc7a158<>res://.godot/imported/finished.png-6b50f7db41212e87c74a1e46ab831736.ctex::
 forest.png::CompressedTexture2D::8534181423862493233::1767359659::1767359713::1::::<><><>0<>0<>2692b04de6c9916655b8ad9141a42e34<>res://.godot/imported/forest.png-3b217249c881492c4f7ec73306a77592.ctex::
 fundal_camera.png::CompressedTexture2D::6143065708947758689::1771336690::1771336692::1::::<><><>0<>0<>b037d1ca1175cef46c8a43c2d712d44a<>res://.godot/imported/fundal_camera.png-403bb3a6a71661a4016f8a34b054f94a.ctex::
-genoflexiune_miss_nutri.png::CompressedTexture2D::3230510957911490882::1781803290::1781803291::1::::<><><>0<>0<>8363e9f9d0f4d79c251d2aa4f436b0c8<>res://.godot/imported/genoflexiune_miss_nutri.png-8790771d427ee776dfd1a43c626f658d.ctex::
 happyB.png::CompressedTexture2D::7351643187710776384::1771519071::1771519104::1::::<><><>0<>0<>bbaba340240b508d21726586c929db38<>res://.godot/imported/happyB.png-af37485b96e05cc4e1a9825d3aaaf956.ctex::
 happyF.png::CompressedTexture2D::9129963835929010777::1771519098::1771519104::1::::<><><>0<>0<>ee1882b9decf038833d6586d76698e9e<>res://.godot/imported/happyF.png-1b11a422c7d2ae1d99f5ee1e99ea1726.ctex::
 home_d.png::CompressedTexture2D::4857562722609649230::1783528135::1783528137::1::::<><><>0<>0<>d28ffeb18cda9eae679b8e6a62cdc372<>res://.godot/imported/home_d.png-8ba79d885c8707b7e642b15bbb46afdf.ctex::
-icon.png::CompressedTexture2D::4947957724510665492::1773917926::1773917930::1::::<><><>0<>0<>ad5429d9658a9f521bf8b9d9d7822c1d<>res://.godot/imported/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.ctex::
 icon_closed_eye.png::CompressedTexture2D::1442031853054648060::1781615353::1781615390::1::::<><><>0<>0<>155b1da8de7bb4c5e96648e93342ce66<>res://.godot/imported/icon_closed_eye.png-5f475b94c2d6376176f3a26c73114f2c.ctex::
 icon_open_eye.png::CompressedTexture2D::7548173060187398613::1781615325::1781615390::1::::<><><>0<>0<>f9d83f2b7a024c44563b90012ea337cc<>res://.godot/imported/icon_open_eye.png-e035e3002a03d4b714817fa44bc79ea7.ctex::
-incercare_fundal.png::CompressedTexture2D::1952063332945255256::1771336470::1771336473::1::::<><><>0<>0<>9b8e893889594faf6618a2e2542747a7<>res://.godot/imported/incercare_fundal.png-fba650959482ae86991cc4b6bbad02d2.ctex::
 lacat_pizda.png::CompressedTexture2D::8083510140597293930::1767545820::1767545851::1::::<><><>0<>0<>c95b24618cb0f9bd2425954d9414e2a2<>res://.godot/imported/lacat_pizda.png-cff5b5816c3573ee70f3b3ad63b405a6.ctex::
 level.png::CompressedTexture2D::8343303631143697939::1767381754::1767381757::1::::<><><>0<>0<>52443b5efa7c2e52d3336aa2d7988f5d<>res://.godot/imported/level.png-36e5c7dacc88d6c8b3bc25f5ba2506ae.ctex::
 level_bg.png::CompressedTexture2D::4060824125261240181::1767381432::1767381456::1::::<><><>0<>0<>7898df6662ad6e5f77b01d6c632724fc<>res://.godot/imported/level_bg.png-bfe7a7669ccba51f830e87e7ad641632.ctex::
@@ -526,15 +520,12 @@ reports_d.png::CompressedTexture2D::7345575102578717664::1783528319::1783528321:
 santos.png::CompressedTexture2D::1294627923305150408::1770185701::1770185707::1::::<><><>0<>0<>203a33439d3c5c6c8776c356df6b7083<>res://.godot/imported/santos.png-f9596706e2f0374924c15cc45aaea6f6.ctex::
 santos_genoflexiuni.png::CompressedTexture2D::1811767194078429689::1781803732::1781803735::1::::<><><>0<>0<>1473b8774d85e442393549484e8465d7<>res://.godot/imported/santos_genoflexiuni.png-be84db3e09b1594d873c602c4932b2e7.ctex::
 santos_pijama.png::CompressedTexture2D::3593241272383137692::1771852427::1771852480::1::::<><><>0<>0<>ebe003dafbc9908895d762ca7ed9528b<>res://.godot/imported/santos_pijama.png-026f9950114d7f495b5c493955063a68.ctex::
-santos_saritura.png::CompressedTexture2D::1420455119054608257::1781800468::1781800470::1::::<><><>0<>0<>70e3b293291552aeee1190599a3d9a46<>res://.godot/imported/santos_saritura.png-4fa59893e66d150cbcc7cbffb8fd9580.ctex::
-saritura miss nutri.png::CompressedTexture2D::6770462164937889974::1781792941::1781792942::1::::<><><>0<>0<>7ccf91d273ec2a2caea758af70267740<>res://.godot/imported/saritura miss nutri.png-f7f53146247c3d7625db9b557fb4a646.ctex::
 schedule_d.png::CompressedTexture2D::6116057612909267915::1783528382::1783528384::1::::<><><>0<>0<>98079068564c760c8875311e6a2c2d58<>res://.godot/imported/schedule_d.png-a1b96a5e32dd7e3aa383120c0db253d0.ctex::
 settings_d.png::CompressedTexture2D::5149195416804271925::1783528262::1783528264::1::::<><><>0<>0<>f1cd19ecab6097d96d7145bcb1a65e0d<>res://.godot/imported/settings_d.png-23a3a91a060ecd081f64c3465c71c9da.ctex::
 shop slot.webp::CompressedTexture2D::2573057060653629674::1781616279::1782119321::1::::<><><>0<>0<>110159679e73c5c5224a2c7206fd51b7<>res://.godot/imported/shop slot.webp-7a2b77a7b2e72c20f495eb12a0bf7741.ctex::
 shop_slot2.png::CompressedTexture2D::4839499640997736131::1781616279::1782119321::1::::<><><>0<>0<>364980a4c52916de4d863342b2897252<>res://.godot/imported/shop_slot2.png-054425892edd78b6cceac4a7e517a967.ctex::
 signa.png::CompressedTexture2D::3729717096421119562::1781619132::1781619134::1::::<><><>0<>0<>ceb7074096bdfcd6ed382787c5e18ad3<>res://.godot/imported/signa.png-9aa1aea68aeb185c3549bbfac0e4a5c4.ctex::
 signsc.png::CompressedTexture2D::4077352844987968398::1781619157::1781619160::1::::<><><>0<>0<>2b9b212ca2ad5a0c4daf2abeb8a28f19<>res://.godot/imported/signsc.png-aecc5918b3ff5ba1faea2ec8b9c19812.ctex::
-stikere_buton.png::CompressedTexture2D::6038709719118944496::1773741582::1773741586::1::::<><><>0<>0<>d0691321fea5300ecf034860196a4442<>res://.godot/imported/stikere_buton.png-220cb2b6dabb7634a061767ef7bef5a8.ctex::
 Sunnyside_World_ExampleScene.png::CompressedTexture2D::3973418431449809244::1781110803::1781110810::1::::<><><>0<>0<>0d6c4e63740fc5527b74f8b8faad18da<>res://.godot/imported/Sunnyside_World_ExampleScene.png-881092b3143ea72a0aebe55e64235167.ctex::
 supa.png::CompressedTexture2D::7584142947304033218::1771841755::1771842050::1::::<><><>0<>0<>f7b12c2a5c6f1b6514192fa5ea47a121<>res://.godot/imported/supa.png-91b5b5218637a23461ef8e7b43be54b5.ctex::
 titlu joc.png::CompressedTexture2D::124208439651446606::1767186408::1767351921::1::::<><><>0<>0<>dbf41773d57584280b1473b6e845874b<>res://.godot/imported/titlu joc.png-351f6c90d2e9925dac393592c32ca4cd.ctex::
@@ -552,6 +543,10 @@ stea2.png::CompressedTexture2D::8827905629565988091::1771501457::1771501591::1::
 stea3.png::CompressedTexture2D::4741240082671089807::1771501495::1771501591::1::::<><><>0<>0<>e269fd8b73aff02df7637b6c27947929<>res://.godot/imported/stea3.png-cc1b804913449df27cd126b820d29129.ctex::
 steleg.png::CompressedTexture2D::3763299078047339036::1771501574::1771501591::1::::<><><>0<>0<>501ed016d87af686b77d7217d8a00672<>res://.godot/imported/steleg.png-a5058d8340f0a78b3f24cc77bb52b808.ctex::
 stele_goale.png::CompressedTexture2D::5701180631462130692::1771501382::1771501385::1::::<><><>0<>0<>e09adc0d5a5b9ea65f14f612492472bf<>res://.godot/imported/stele_goale.png-abd071428730fb27adab71af51b7bb23.ctex::
+::res://assets/exercitii_finale/::1784322117
+genoflexiune_miss_nutri.png::CompressedTexture2D::9162562888386708637::1781803290::1784364941::1::::<><><>0<>0<>f2f3731a2d62d7a54fc2434fa555501c<>res://.godot/imported/genoflexiune_miss_nutri.png-84c72f6a011c70b40decb7bb548b39a4.ctex::
+santos_saritura.png::CompressedTexture2D::6070849160429980266::1781800468::1784364941::1::::<><><>0<>0<>fa2c137089abc5b63a8a043bcd7d0d41<>res://.godot/imported/santos_saritura.png-39bf5047f02fb293db597fa4bc5d8b5d.ctex::
+saritura miss nutri.png::CompressedTexture2D::435450414522541339::1781792941::1784364941::1::::<><><>0<>0<>2a61a3a1c80fa216f2c974fbaba98ab2<>res://.godot/imported/saritura miss nutri.png-09468874441d584d53da574c87b0216e.ctex::
 ::res://assets/font/::1771329532
 kenvector_future_thin.ttf::FontFile::2665637832983655644::1761667255::1767351920::1::::<><><>0<>0<>489b3c09874bb57aab9b7db987b5f821<>res://.godot/imported/kenvector_future_thin.ttf-d0dd44e800854a49593e23f12768c9e1.fontdata::
 PeaberryBase.ttf::FontFile::8746305838414385451::1769522954::1769523342::1::::<><><>0<>0<>e043946e2eeeb0ae6a440228c045e33f<>res://.godot/imported/PeaberryBase.ttf-125779512a8353cbcefd077ddf3ca035.fontdata::

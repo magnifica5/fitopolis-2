@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bma5bqjpuab75"
-path="res://.godot/imported/genoflexiune_miss_nutri.png-8790771d427ee776dfd1a43c626f658d.ctex"
+uid="uid://csq087rkjyj43"
+path="res://.godot/imported/santos_saritura.png-39bf5047f02fb293db597fa4bc5d8b5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/genoflexiune_miss_nutri.png"
-dest_files=["res://.godot/imported/genoflexiune_miss_nutri.png-8790771d427ee776dfd1a43c626f658d.ctex"]
+source_file="res://assets/exercitii_finale/santos_saritura.png"
+dest_files=["res://.godot/imported/santos_saritura.png-39bf5047f02fb293db597fa4bc5d8b5d.ctex"]
 
 [params]
 

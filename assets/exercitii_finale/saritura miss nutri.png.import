@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3pwr1hnunfmc"
-path="res://.godot/imported/saritura miss nutri.png-f7f53146247c3d7625db9b557fb4a646.ctex"
+uid="uid://gg62mihbtx60"
+path="res://.godot/imported/saritura miss nutri.png-09468874441d584d53da574c87b0216e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/saritura miss nutri.png"
-dest_files=["res://.godot/imported/saritura miss nutri.png-f7f53146247c3d7625db9b557fb4a646.ctex"]
+source_file="res://assets/exercitii_finale/saritura miss nutri.png"
+dest_files=["res://.godot/imported/saritura miss nutri.png-09468874441d584d53da574c87b0216e.ctex"]
 
 [params]
 
