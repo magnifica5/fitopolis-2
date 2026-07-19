@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bq7g65wpt238b"]
+[gd_scene load_steps=15 format=3 uid="uid://bq7g65wpt238b"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_m7bmd"]
 [ext_resource type="Texture2D" uid="uid://ca7j377dadnxj" path="res://assets/shop_slot2.png" id="2_i607x"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ca3kfjp3epnjg" path="res://assets/nigu4.png" id="6_svqdx"]
 [ext_resource type="Texture2D" uid="uid://dr4lbscfbjbeb" path="res://assets/nigu7.png" id="7_thdux"]
 [ext_resource type="Texture2D" uid="uid://dv3jlg2naq8y6" path="res://assets/nigu1.png" id="8_m36ju"]
+[ext_resource type="Script" uid="uid://c47r35rm2aknv" path="res://casashop3.gd" id="8_vkt0n"]
 [ext_resource type="Texture2D" uid="uid://b8hxqe7rwhkgu" path="res://assets/nigu13.png" id="9_svqdx"]
 [ext_resource type="Texture2D" uid="uid://n5slharny2wh" path="res://image-removebg-preview (60).png" id="12_ay86s"]
 [ext_resource type="Script" uid="uid://ceu2tre0q1gxl" path="res://return2.gd" id="13_r6vcd"]
@@ -19,9 +20,9 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 49.0
+offset_left = 95.0
 offset_top = 71.0
-offset_right = 49.0
+offset_right = 95.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -60,23 +61,26 @@ texture = ExtResource("2_i607x")
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -175.75
-offset_top = 41.0
-offset_right = 195.75
-offset_bottom = 448.5
+anchor_bottom = 0.5
+offset_left = -127.9375
+offset_top = -135.625
+offset_right = 127.9375
+offset_bottom = 135.625
 grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("3_ay86s")
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect/TextureRect"]
 layout_mode = 0
-offset_left = -32.25
-offset_top = -5.0
-offset_right = 395.75
-offset_bottom = 443.0
+offset_left = -82.0625
+offset_top = -96.375
+offset_right = 336.9375
+offset_bottom = 349.625
 script = ExtResource("4_thdux")
 
 [node name="TextureRect2" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
@@ -90,10 +94,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -223.0
-offset_top = -158.5
-offset_right = 191.5
-offset_bottom = 175.0
+offset_left = -155.625
+offset_top = -123.375
+offset_right = 155.625
+offset_bottom = 123.375
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_svqdx")
@@ -101,10 +105,10 @@ expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect2/TextureRect"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = -70.5
-offset_right = 452.0
-offset_bottom = 389.5
+offset_left = -63.375
+offset_top = -103.625
+offset_right = 373.625
+offset_bottom = 348.375
 script = ExtResource("6_m36ju")
 
 [node name="TextureRect3" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
@@ -112,20 +116,28 @@ layout_mode = 2
 texture = ExtResource("2_i607x")
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/TextureRect3"]
-layout_mode = 0
-offset_left = -20.0
-offset_top = -45.0
-offset_right = 494.0
-offset_bottom = 400.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = -150.0
+offset_right = 166.5
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("5_vigl0")
 expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect3/TextureRect"]
 layout_mode = 0
-offset_left = 29.0
-offset_top = 54.0
-offset_right = 477.0
-offset_bottom = 507.0
+offset_left = -40.5
+offset_top = -76.0
+offset_right = 376.5
+offset_bottom = 364.0
+script = ExtResource("8_vkt0n")
 
 [node name="TextureRect4" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -286,10 +298,10 @@ expand_mode = 1
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="return" type="TextureButton" parent="CanvasLayer"]
-offset_left = 26.0
-offset_top = 38.000004
-offset_right = 458.49994
-offset_bottom = 506.50024
+offset_left = 12.0
+offset_top = 19.000004
+offset_right = 444.49994
+offset_bottom = 487.50024
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("12_ay86s")
 ignore_texture_size = true

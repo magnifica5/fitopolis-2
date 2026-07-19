@@ -1,26 +1,21 @@
 extends TileMapLayer
 
 func _ready() -> void:
-	# 1. Încărcăm datele din fișier în Autoload dacă memoria e goală
 	if Itemshop.cladiri.is_empty():
 		Itemshop.incarca_jocul()
 	
-	# 2. Reconstruim toate sprite-urile salvate anterior
 	for date_casa in Itemshop.cladiri:
 		recreaza_casa(date_casa)
 
 func recreaza_casa(date: Dictionary) -> void:
-	# Verificare de siguranță: dicționarul trebuie să aibă cheile corecte
 	if not date.has("texture") or not date.has("position_x") or not date.has("position_y"):
 		print("Eroare: Datele clădirii sunt corupte sau incomplete în fișier!")
 		return
 		
-	# Filtru pentru erori sau căi invalide generate din shop
 	if date["texture"] == "res://" or date["texture"] == "":
 		print("Ignorat: Textură invalidă în fișier (cale goală).")
 		return
 
-	# Încercăm să încărcăm resursa în mod securizat
 	var tex = load(date["texture"])
 	if not tex:
 		print("Eroare: Nu s-a putut încărca textura de la calea: ", date["texture"])
@@ -29,11 +24,14 @@ func recreaza_casa(date: Dictionary) -> void:
 	var casa := Sprite2D.new()
 	casa.texture = tex
 	
-	# O adăugăm ca și copil direct în acest TileMapLayer
 	add_child(casa)
 	
-	# Păstrăm formula ta de scalare care folosește dimensiunea tilemap-ului
-	casa.scale = Vector2(2, 2) / scale 
+	# NOU: Extragem scala salvată în JSON (dacă nu există dintr-o salvare veche, punem fallback 1.0)
+	var s_factor = date.get("scale_casa", 1.0)
 	
-	# Reconstruim poziția globală stabilă
-	casa.global_position = Vector2(date["position_x"], date["position_y"])
+	# Înlocuim Vector2(2,2) cu scala dinamică stocată în s_factor
+	casa.scale = Vector2(s_factor, s_factor) / scale 
+	
+	casa.global_position = Vector2(date["position_x"], date["date_casa" if date.has("date_casa") else "position_y"]) 
+	# (Siguranță pentru axa Y pe care o aveai deja):
+	casa.global_position.y = date["position_y"]

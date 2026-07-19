@@ -5,6 +5,8 @@ var current_language := "ro"
 
 var translations := {
 	"ro": {
+		"edit":"""                  Modul de editare activat
+Personalizează-ți jocul exact așa cum dorești.""",
 		"place":"plaseaza",
 		"shop":"magazin",
 		"Upgrade": "Upgradeaza",
@@ -345,7 +347,9 @@ JOC""",
 "wash our faces":"""  Acum este 
  timpul să ne
  spălăm pe față
-"""
+""",
+"delete":"""          Modul de ștergere activat
+apasa pe casa pe care vrei sa o stergi"""
 	},
 	
 	
@@ -383,6 +387,10 @@ JOC""",
 	
 	
 	"en": {
+		"delete":"""                 Delete mode ON
+Tap on the house you want to delete""",
+		"edit":"""                        Edit Mode ON
+Customize your game however you like.""",
 		"place":"place",
 		"shop":"shop",
 		"codereset": "Check your email address
