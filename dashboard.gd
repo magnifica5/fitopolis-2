@@ -1,13 +1,11 @@
 #=> chestia cu activitate
-#=> exercitii fizice
 #=> emailuri cu ce activitati au facut copiii la finalul zilei
 #=> buton dinala de dezactivare battery optimization la inceput
 #=> modificare documentatie pt plugin
 #=> vazut ce scene trebuie sterse + ce scene au probleme la afisaj, text
-#=> acel succes cu faza ca nu merge ok popup ul
 #=> muzica diferita pentru interfata de parinte
 #=> de ce cand dezinstalez si instalez alea devin toate 0 din progres
-#E-mailuri cu progresul copiilor, transmise în timp real. ?
+# buton de back pt parola resetare + inregistrare
 extends Control
 @onready var home = $HBoxContainer/Panel/VBoxContainer/TextureButton
 @onready var settings = $HBoxContainer/Panel/VBoxContainer/TextureButton2
@@ -15,6 +13,7 @@ extends Control
 @onready var schedule = $HBoxContainer/Panel/VBoxContainer/TextureButton4
 @onready var tabs = $HBoxContainer/MarginContainer/TabContainer
 @onready var lacat = $HBoxContainer/MarginContainer/TabContainer/Control3/Panel4
+@onready var succes = $HBoxContainer/MarginContainer/TabContainer/Control3/Panel5
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	tabs.current_tab = 0
@@ -45,8 +44,13 @@ func _on_reports_pressed() -> void:
 			var mins = ora_curenta.hour * 60 + ora_curenta.minute
 			if mins >= ora and mins <= ora + 7:
 				tabs.current_tab = 2
-				lacat.hide()
+				Globals.succes_inchis = Globals.citeste_succes()
+				if Globals.succes_inchis == false:
+					lacat.hide()
+				else:
+					lacat.show()
 			else:
+				Globals.adauga_succes(false)
 				lacat.show()
 				tabs.current_tab = 2
 				print("merge")
@@ -76,4 +80,6 @@ func change_type(string):
 
 
 func _close_succes() -> void:
-	lacat.hide()
+	succes.hide()
+	lacat.show()
+	Globals.adauga_succes(true)
