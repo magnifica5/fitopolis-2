@@ -38,6 +38,11 @@ func save_progress():
 	#file.close()
 
 func load_progress():
+	var code = Globals.citeste_code()
+	if code == "" or code == null:
+		is_data_loaded = false
+		print("HourActivity: Așteptăm introducerea codului...")
+		return
 	is_data_loaded = false
 	var query = SupabaseQuery.new().from("progres_copil").select().eq("connection_code", Globals.citeste_code())
 	var task_upsert = Supabase.database.query(query)

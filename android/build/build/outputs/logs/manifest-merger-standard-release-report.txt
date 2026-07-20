@@ -1,10 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:2:1-54:12
-MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:2:1-54:12
-INJECTED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:2:1-36:12
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:2:1-61:12
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:2:1-38:12
 MERGED from [local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:2:1-21:12
 MERGED from [godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:2:1-35:12
 MERGED from [com.google.android.gms:play-services-base:18.2.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\f7ae00a2b1e118f9d77de863d655ef37\transformed\jetified-play-services-base-18.2.0\AndroidManifest.xml:16:1-24:12
@@ -62,19 +62,57 @@ REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:8
 		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:10:9-37
 	android:xlargeScreens
 		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:12:9-37
+uses-permission#android.permission.INTERNET
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:14:5-67
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:14:5-67
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:14:5-67
+	android:name
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:14:22-64
+uses-permission#android.permission.WAKE_LOCK
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:15:5-68
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:15:5-68
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:15:5-68
+	android:name
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:15:22-65
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:16:5-81
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:16:5-81
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:16:5-81
+	android:name
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:16:22-78
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:17:5-77
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:17:5-77
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:17:5-77
+MERGED from [local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:9:5-77
+MERGED from [local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:9:5-77
+	android:name
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:17:22-74
+uses-permission#android.permission.SCHEDULE_EXACT_ALARM
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:18:5-79
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:18:5-79
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:18:5-79
+	android:name
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:18:22-76
+uses-permission#android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:19:5-95
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:19:5-95
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:19:5-95
+	android:name
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:19:22-92
 uses-feature#0x00030000
-ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:14:5-16:35
-MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:14:5-16:35
-MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:14:5-16:35
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:21:5-23:35
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:21:5-23:35
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:21:5-23:35
 	android:glEsVersion
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:15:9-41
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:22:9-41
 	android:required
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:16:9-32
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:23:9-32
 application
-ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:18:5-52:19
-MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:18:5-52:19
-MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:18:5-52:19
-INJECTED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:16:5-35:19
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:25:5-59:19
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:25:5-59:19
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:25:5-59:19
+INJECTED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:18:5-37:19
 MERGED from [local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:11:5-19:19
 MERGED from [local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:11:5-19:19
 MERGED from [godot-lib.template_release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\99a8982c1699a1e9ae1fe10efcdda675\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:9:5-33:19
@@ -100,131 +138,113 @@ MERGED from [com.google.android.play:core-common:2.0.2] C:\Users\flori\.gradle\c
 	android:extractNativeLibs
 		INJECTED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml
 	android:requestLegacyExternalStorage
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:25:9-53
-		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:25:9-53
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:32:9-53
+		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:32:9-53
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] C:\Users\flori\.gradle\caches\8.11.1\transforms\1f78652368fcaf22ddb356e4bfe9a15a\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:19:9-58
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:26:9-58
 	android:appCategory
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:22:9-35
-		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:22:9-35
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:29:9-35
+		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:29:9-35
 	tools:ignore
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:26:9-48
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:33:9-48
 	android:icon
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:21:9-36
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:28:9-36
 	android:allowBackup
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:20:9-36
-		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:20:9-36
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:27:9-36
+		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:27:9-36
 	tools:replace
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:23:9-143
+		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:25:9-143
 	android:isGame
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:23:9-30
-		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:23:9-30
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:30:9-30
+		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:30:9-30
 	android:hasFragileUserData
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:24:9-43
-		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:24:9-43
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:31:9-43
+		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:31:9-43
 profileable
-ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:27:9-30:36
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:34:9-37:36
 	android:enabled
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:29:13-35
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:36:13-35
 	android:shell
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:28:13-33
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:35:13-33
 	tools:targetApi
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:30:13-33
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:37:13-33
 activity#com.godot.game.GodotApp
-ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:32:9-50:20
-MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:32:9-50:20
-MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:32:9-50:20
-REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:45:13-49:29
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:39:9-57:20
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:39:9-57:20
+MERGED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:39:9-57:20
+REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:52:13-56:29
 	tools:node
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:28:140-172
+		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:30:140-172
 	android:excludeFromRecents
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:37:13-47
-		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:37:13-47
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:44:13-47
+		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:44:13-47
 	android:launchMode
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:36:13-55
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:36:13-55
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:43:13-55
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:43:13-55
 	android:windowSoftInputMode
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:40:13-55
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:40:13-55
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:47:13-55
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:47:13-55
 	android:exported
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:38:13-36
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:38:13-36
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:45:13-36
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:45:13-36
 	tools:ignore
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:43:13-43
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:43:13-43
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:50:13-43
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:50:13-43
 	android:configChanges
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:41:13-164
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:41:13-164
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:48:13-164
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:48:13-164
 	android:screenOrientation
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:39:13-50
-		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:39:13-50
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:46:13-50
+		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:46:13-50
 	android:label
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:34:13-62
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:34:13-62
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:41:13-62
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:41:13-62
 	android:resizeableActivity
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:42:13-47
-		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:42:13-47
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:49:13-47
+		REJECTED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:49:13-47
 	android:theme
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:35:13-55
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:35:13-55
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:42:13-55
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:42:13-55
 	tools:replace
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:28:44-139
+		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:30:44-139
 	android:name
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:33:13-37
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:40:13-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
-ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:45:13-49:29
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:52:13-56:29
 action#android.intent.action.MAIN
-ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:46:17-69
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:53:17-69
 	android:name
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:46:25-66
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:53:25-66
 category#android.intent.category.DEFAULT
-ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:47:17-76
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:54:17-76
 	android:name
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:47:27-73
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:54:27-73
 category#android.intent.category.LAUNCHER
-ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:48:17-77
+ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:55:17-77
 	android:name
-		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:48:27-74
-uses-permission#android.permission.INTERNET
-ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:11:5-67
-	android:name
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:11:22-64
-uses-permission#android.permission.POST_NOTIFICATIONS
-ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:12:5-77
-MERGED from [local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:9:5-77
-MERGED from [local-notification-release.aar] C:\Users\flori\.gradle\caches\8.11.1\transforms\b2436db3abba16057b8ce16e7254232e\transformed\jetified-local-notification-release\AndroidManifest.xml:9:5-77
-	android:name
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:12:22-74
-uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:13:5-81
-	android:name
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:13:22-78
+		ADDED from D:\proiect joc final\fitopolis\android\build\AndroidManifest.xml:55:27-74
 uses-permission#android.permission.VIBRATE
 ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:14:5-66
 	android:name
 		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:14:22-63
-uses-permission#android.permission.WAKE_LOCK
-ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:15:5-68
-	android:name
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:15:22-65
 meta-data#org.godotengine.rendering.method
-ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:26:9-124
+ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:28:9-124
 	tools:node
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:26:20-40
+		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:28:20-40
 	android:value
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:26:89-121
+		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:28:89-121
 	android:name
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:26:41-88
+		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:28:41-88
 meta-data#org.godotengine.editor.version
-ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:27:9-116
+ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:29:9-116
 	tools:node
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:27:20-40
+		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:29:20-40
 	android:value
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:27:87-113
+		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:29:87-113
 	android:name
-		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:27:41-86
+		ADDED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml:29:41-86
 uses-sdk
 INJECTED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\proiect joc final\fitopolis\android\build\src\release\AndroidManifest.xml

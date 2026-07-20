@@ -55,7 +55,7 @@ func _on_text_changed(new_text):
 
 	elif total_minutes < min_allowed or total_minutes > max_allowed:
 		Globals.ex2 = 0
-		translation_key1 ="Outside the interval (17:00–19:00)"
+		translation_key1 ="Outside the interval (16:00–19:00)"
 		label.text = Localization.get_text(translation_key1)
 		return
 	elif total_minutes <= Globals.pranz and Globals.pranz != 0:

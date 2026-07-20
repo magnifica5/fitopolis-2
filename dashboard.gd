@@ -5,6 +5,7 @@
 #=> vazut ce scene trebuie sterse + ce scene au probleme la afisaj, text
 #=> muzica diferita pentru interfata de parinte
 #=> de ce cand dezinstalez si instalez alea devin toate 0 din progres
+# buton de back pt parola resetare + inregistrare
 extends Control
 @onready var home = $HBoxContainer/Panel/VBoxContainer/TextureButton
 @onready var settings = $HBoxContainer/Panel/VBoxContainer/TextureButton2
