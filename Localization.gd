@@ -5,6 +5,10 @@ var current_language := "ro"
 
 var translations := {
 	"ro": {
+		"ireversibil":"""              Esti sigur?
+Stergerea este ireversibila!""",
+		"YES":"DA",
+		"NO":"NU",
 		"edit":"""                  Modul de editare activat
 Personalizează-ți jocul exact așa cum dorești.""",
 		"place":"plaseaza",
@@ -349,7 +353,9 @@ JOC""",
  spălăm pe față
 """,
 "delete":"""          Modul de ștergere activat
-apasa pe casa pe care vrei sa o stergi"""
+apasa pe casa pe care vrei sa o stergi""",
+"citylevel":"Vrei sa upgradezi orasul la levelul",
+"cancel":"anuleaza"
 	},
 	
 	
@@ -387,6 +393,12 @@ apasa pe casa pe care vrei sa o stergi"""
 	
 	
 	"en": {
+		"cancel":"Cancel",
+		"citylevel":"Do you want to upgrade the city to level",
+		"ireversibil":"""           Are you sure?
+   Deletion is irreversible!""",
+		"YES":"YES",
+		"NO":"NO",
 		"delete":"""                 Delete mode ON
 Tap on the house you want to delete""",
 		"edit":"""                        Edit Mode ON
