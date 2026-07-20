@@ -274,7 +274,7 @@ size_flags_horizontal = 3
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tal5t")
-current_tab = 2
+current_tab = 3
 tabs_visible = false
 
 [node name="Control" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
@@ -1406,6 +1406,7 @@ theme_override_font_sizes/font_size = 50
 text = "X"
 
 [node name="Control3" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("20_2vt8e")
 metadata/_tab_index = 2
@@ -1639,6 +1640,7 @@ zilei"
 horizontal_alignment = 1
 
 [node name="Panel5" type="Panel" parent="HBoxContainer/MarginContainer/TabContainer/Control3"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1697,7 +1699,6 @@ theme_override_font_sizes/font_size = 50
 text = "X"
 
 [node name="Control4" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("19_ekiu7")
 metadata/_tab_index = 3

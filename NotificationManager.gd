@@ -94,9 +94,27 @@ func _setup_notif(time_str: String, id: int, title: String, message: String):
 	var parts = time_str.split(":")
 	if parts.size() < 2: return
 	
-	var hour = int(parts[0])
-	var minute = int(parts[1])
+	var target_hour = int(parts[0])
+	var target_minute = int(parts[1])
 	
-	LocalNotification.cancel(id)
-	LocalNotification.showDaily(title, message, hour, minute, id)
-	print("Notificare ID ", id, " setată pentru ora: ", hour, ":", minute)
+	# 1. Luăm ora locală exactă a telefonului (ce scrie pe ecran)
+	var now = Time.get_time_dict_from_system()
+	
+	# 2. Convertim totul în secunde de la începutul zilei
+	var now_seconds = (now.hour * 3600) + (now.minute * 60) + now.second
+	var target_seconds = (target_hour * 3600) + (target_minute * 60)
+	
+	# 3. Calculăm delay-ul
+	var delay = target_seconds - now_seconds
+	
+	# 4. Dacă ora a trecut deja astăzi, programăm pentru mâine
+	if delay <= 0:
+		delay += 86400 # adăugăm 24 ore în secunde
+	
+	if Engine.has_singleton("LocalNotification"):
+		var ln = Engine.get_singleton("LocalNotification")
+		ln.cancel(id)
+		# Folosim 'show' în loc de 'showDaily' pentru a controla noi timpul exact
+		# API: show(mesaj, titlu, secunde_delay, id)
+		ln.show(message, title, delay, id)
+		print("Programat: ", title, " peste ", delay, " secunde (Ora locală)")

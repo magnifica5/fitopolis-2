@@ -1,15 +1,3 @@
 res://dashboard.tscn
-res://ore_activitati.gd
-res://NotificationManager.gd
-res://baie_dimineata.tscn
-res://baie_dimineata.gd
-res://complete_activity.tscn
-res://activitate_finalizata.gd
-res://start.tscn
-res://globals.gd
-res://functionare.tscn
-res://functionare.gd
-res://labelfunctionare.gd
-res://start_scene.gd
-res://bifeaza_activi.gd
 res://dashboard.gd
+res://NotificationManager.gd
