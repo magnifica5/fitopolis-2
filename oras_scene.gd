@@ -25,7 +25,6 @@ extends Node2D
 	$Layer31,
 	$Layer32,
 	$Layer33
-	
 ]
 
 var layers_hidden := false
@@ -53,13 +52,9 @@ func toggle_layers():
 		)
 
 func _ready():
-	for cladire in Itemshop.cladiri:
-		var casa := Sprite2D.new()
-		casa.texture = load(cladire["texture"])
-		casa.scale = Vector2(3, 3) # aceeași scară locală pe care ai folosit-o
-		casa.global_position = cladire["position"]
+	# Curățat complet: Generarea a fost mutată exclusiv în TileMapLayer pentru a evita clonele și distorsiunile.
+	pass
 
-		$Layer1.add_child(casa)
 func _acasa_pressed() -> void:
 	$AudioStreamPlayer.play()
 	await get_tree().create_timer(0.1).timeout
