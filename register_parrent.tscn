@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bwqws34e2046k"]
+[gd_scene load_steps=22 format=3 uid="uid://bwqws34e2046k"]
 
 [ext_resource type="Script" uid="uid://dmw4vh7y3qymp" path="res://register_control.gd" id="1_c65vi"]
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_lh1r4"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="9_ijb4i"]
 [ext_resource type="Script" uid="uid://c1h4gb2jyef0n" path="res://label_continut_termeni.gd" id="10_slult"]
 [ext_resource type="Script" uid="uid://cqevm1oiwpecs" path="res://label_politica_continut.gd" id="11_slult"]
+[ext_resource type="Texture2D" uid="uid://dc6rnvvthuoqo" path="res://assets/back_sign.png" id="12_8subr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8subr"]
 bg_color = Color(1, 1, 1, 1)
@@ -790,6 +791,18 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
 
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer3/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 370.0
+offset_bottom = 360.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_8subr")
+texture_pressed = ExtResource("12_8subr")
+texture_hover = ExtResource("12_8subr")
+texture_disabled = ExtResource("12_8subr")
+texture_focused = ExtResource("12_8subr")
+
 [node name="Panel2" type="Panel" parent="CanvasLayer3"]
 visible = false
 anchors_preset = 8
@@ -1257,5 +1270,6 @@ text = "X"
 [connection signal="pressed" from="CanvasLayer3/Panel/Button" to="." method="_on_inregistreaza"]
 [connection signal="pressed" from="CanvasLayer3/Panel/Panel/TextureButton" to="." method="_close_termeni"]
 [connection signal="pressed" from="CanvasLayer3/Panel/Panel2/TextureButton" to="." method="_close_politica"]
+[connection signal="pressed" from="CanvasLayer3/Panel/TextureButton" to="." method="_back_inregistrare"]
 [connection signal="pressed" from="CanvasLayer3/Panel2/Panel/TextureButton" to="." method="_close_termeni"]
 [connection signal="pressed" from="CanvasLayer3/Panel2/Panel2/TextureButton" to="." method="_close_politica"]

@@ -78,6 +78,7 @@ func _back_to_start() -> void:
 		missed += 1
 		print("s7")
 	HourActivity.missed = missed
+	print(missed)
 	var query1 = SupabaseQuery.new().from("children").select(["scor"]).eq("connection_code", Globals.citeste_code())
 	var task1 = Supabase.database.query(query1)
 	var result1 = await task1.completed

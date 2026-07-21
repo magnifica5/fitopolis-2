@@ -5,6 +5,7 @@ extends Control
 @onready var activ = $Panel/HBoxContainer2/Label3
 @onready var days = $Panel2/Label2
 @onready var avatar_final = $HBoxContainer/VBoxContainer/PanelContainer/TextureButton
+@onready var activity = $Panel/HBoxContainer2/Label3
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
@@ -26,6 +27,7 @@ func _ready() -> void:
 		days.text = str(int(data_acum) - creation_day)
 		username.text = data.username
 		cod.text = data.connection_code
+		Globals.adauga_code(data.connection_code)
 		scor.text = str(int(data.scor))
 		var avatar = int(data.avatar_number)
 		var sheet_size = sprite_sheet.get_size()
@@ -40,7 +42,15 @@ func _ready() -> void:
 		avatar_final.texture_hover = atlas
 		avatar_final.texture_focused = atlas
 		avatar_final.texture_disabled = atlas
-
+	var query_activity = SupabaseQuery.new().from("progres_copil").select(["missed"]).eq("connection_code", Globals.citeste_code())
+	var task_activity = Supabase.database.query(query_activity)
+	var result_activity = await task_activity.completed
+	if result_activity.error == null:
+		var data = result_activity.data
+		data = data[0]
+		var value = int(100 - int(data.missed / 7 * 100))
+		activity.text = str(value) + "%"
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

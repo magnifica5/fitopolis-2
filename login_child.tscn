@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cre8m6c8gjig1"]
+[gd_scene load_steps=16 format=3 uid="uid://cre8m6c8gjig1"]
 
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_doo0l"]
 [ext_resource type="Script" uid="uid://cu7qpaac5cx3u" path="res://login_child.gd" id="1_pc6y0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cf6fc5bpmj85p" path="res://popup_avatars.gd" id="5_skj27"]
 [ext_resource type="Texture2D" uid="uid://b3e6fqck1gbna" path="res://assets/poza_goala_profilf.png" id="6_xi2yv"]
 [ext_resource type="Texture2D" uid="uid://cl1q7ojbg6b5e" path="res://assets/edit-pen.svg" id="8_mrssb"]
+[ext_resource type="Texture2D" uid="uid://dc6rnvvthuoqo" path="res://assets/back_sign.png" id="9_skj27"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctjn6"]
 bg_color = Color(1, 1, 1, 1)
@@ -243,4 +244,16 @@ theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer3/Panel"]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 360.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("9_skj27")
+texture_pressed = ExtResource("9_skj27")
+texture_hover = ExtResource("9_skj27")
+texture_disabled = ExtResource("9_skj27")
+texture_focused = ExtResource("9_skj27")
+
 [connection signal="pressed" from="CanvasLayer3/Panel/Button" to="." method="_on_inregistreaza"]
+[connection signal="pressed" from="CanvasLayer3/Panel/TextureButton" to="." method="_on_back"]
