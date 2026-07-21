@@ -70,3 +70,7 @@ func _close_termeni() -> void:
 
 func _close_politica() -> void:
 	popup_conditii.hide()
+
+
+func _back_inregistrare() -> void:
+	get_tree().change_scene_to_file("res://background_login.tscn")

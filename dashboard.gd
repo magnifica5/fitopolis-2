@@ -1,11 +1,8 @@
-#=> chestia cu activitate
 #=> emailuri cu ce activitati au facut copiii la finalul zilei
-#=> buton dinala de dezactivare battery optimization la inceput
 #=> modificare documentatie pt plugin
 #=> vazut ce scene trebuie sterse + ce scene au probleme la afisaj, text
 #=> muzica diferita pentru interfata de parinte
-#=> de ce cand dezinstalez si instalez alea devin toate 0 din progres
-# buton de back pt parola resetare + inregistrare
+#=> trebuie sa vad cum retin in baza de date corect check_activity
 extends Control
 @onready var home = $HBoxContainer/Panel/VBoxContainer/TextureButton
 @onready var settings = $HBoxContainer/Panel/VBoxContainer/TextureButton2
@@ -33,7 +30,7 @@ func _on_settings_pressed() -> void:
 
 func _on_reports_pressed() -> void:
 	Globals.code = Globals.citeste_code()
-	var query = SupabaseQuery.new().from("children").select(["verificare"]).eq("connection_code", Globals.code)
+	var query = SupabaseQuery.new().from("children").select(["verificare", "check_verificare"]).eq("connection_code", Globals.code)
 	var task = Supabase.database.query(query)
 	var result = await task.completed
 	if result.error == null:
@@ -44,8 +41,8 @@ func _on_reports_pressed() -> void:
 			var mins = ora_curenta.hour * 60 + ora_curenta.minute
 			if mins >= ora and mins <= ora + 7:
 				tabs.current_tab = 2
-				Globals.succes_inchis = Globals.citeste_succes()
-				if Globals.succes_inchis == false:
+				#var check = data.check_verificare
+				if Globals.citeste_succes() == false:
 					lacat.hide()
 				else:
 					lacat.show()
@@ -83,3 +80,10 @@ func _close_succes() -> void:
 	succes.hide()
 	lacat.show()
 	Globals.adauga_succes(true)
+	#var query = SupabaseQuery.new().from("children").update({"check_verificare": true}).eq("connection_code", Globals.code)
+	#var task = Supabase.database.query(query)
+	#var result = await task.completed
+	#if result.error == null:
+		#print("a mers")
+	#else:
+		#print(result.error.message)

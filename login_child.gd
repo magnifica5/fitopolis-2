@@ -113,3 +113,7 @@ func check_unique_username(u_name: String) -> bool:
 	
 	# Dacă response.data are elemente, înseamnă că numele există deja
 	return response.data.size() > 0
+
+
+func _on_back() -> void:
+	get_tree().change_scene_to_file("res://interfata_parinte.tscn")

@@ -1,4 +1,0 @@
-#Mon Jul 20 15:42:50 EEST 2026
-base.0=D\:\\proiect joc final\\fitopolis\\android\\build\\build\\intermediates\\dex\\standardRelease\\mergeDexStandardRelease\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

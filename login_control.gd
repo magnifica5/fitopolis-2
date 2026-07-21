@@ -107,3 +107,8 @@ func _on_reset_password() -> void:
 		if res.error == null:
 			panel_reset_final.hide()
 			final.show()
+
+
+func _on_back() -> void:
+	panel_auth.show()
+	panel_reset.hide()
