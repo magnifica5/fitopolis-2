@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://byxvirf2mbluu"]
+[gd_scene load_steps=78 format=4 uid="uid://byxvirf2mbluu"]
 
 [ext_resource type="Script" uid="uid://dgkvg0xvuouo" path="res://oras_scene.gd" id="1_8qvay"]
 [ext_resource type="Script" uid="uid://bkfahxr3xddjx" path="res://miscare_oras_camera.gd" id="2_04nbv"]
@@ -51,6 +51,7 @@
 [ext_resource type="Script" uid="uid://e0rqw1buvie0" path="res://labelno.gd" id="45_1qshh"]
 [ext_resource type="Script" uid="uid://bnivn3f3u64r4" path="res://labelstergereireversibila.gd" id="46_nlo5q"]
 [ext_resource type="Texture2D" uid="uid://bydnxw3csuyet" path="res://assets/castig/castig.png" id="50_smqs4"]
+[ext_resource type="Script" uid="uid://tj6chvnlgpi5" path="res://upgradegamestate.gd" id="50_xptqq"]
 [ext_resource type="Script" uid="uid://cmlq7emof78r3" path="res://labelupgrade.gd" id="51_k3t6u"]
 [ext_resource type="Script" uid="uid://d3voxhw5catlx" path="res://labelcancel.gd" id="52_k3t6u"]
 [ext_resource type="Script" uid="uid://rc8o8mt63b8q" path="res://labelcitylevel.gd" id="52_u2kys"]
@@ -13510,6 +13511,7 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("22_3i3l4")
+script = ExtResource("50_xptqq")
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureRect/TextureButton"]
 layout_mode = 1

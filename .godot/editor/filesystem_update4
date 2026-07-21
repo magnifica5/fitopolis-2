@@ -1,12 +1,5 @@
-res://shop_oras.tscn
 res://oras2.0.tscn
-res://labelno.gd
-res://labelyes.gd
-res://Localization.gd
-res://labelstergereireversibila.gd
+res://upgradegamestate.gd
 res://GameState.gd
 res://labelcitylevel.gd
-res://labelgamestate.gd
-res://upgradebutton.gd
-res://labelcancel.gd
-res://buttoncancel.gd
+res://shop_oras.tscn
