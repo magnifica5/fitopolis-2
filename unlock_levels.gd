@@ -6,7 +6,8 @@ var unlocked_levels = []
 var start_time = 0         
 
 func save_data():
-	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(SAVE_PATH, FileAccess.WRITE, key)
 	if file:
 		var data = {
 			"unlocked_levels": unlocked_levels,
@@ -17,7 +18,8 @@ func save_data():
 
 func load_data():
 	if FileAccess.file_exists(SAVE_PATH):
-		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		var key = Globals.get_secure_key()
+		var file = FileAccess.open_encrypted(SAVE_PATH, FileAccess.READ, key)
 		var data = JSON.parse_string(file.get_as_text())
 		file.close()
 		if data:

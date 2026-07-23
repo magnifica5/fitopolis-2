@@ -502,7 +502,6 @@ texture_disabled = ExtResource("8_a8ete")
 texture_focused = ExtResource("8_a8ete")
 
 [node name="Panel3" type="Panel" parent="CanvasLayer3"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -734,7 +733,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel4" type="Panel" parent="CanvasLayer3"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

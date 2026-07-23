@@ -34,6 +34,7 @@ func _on_registered_pressed() -> void:
 	get_tree().change_scene_to_file("res://register_parrent.tscn")
 
 func _on_login() -> void:
+	var key = Globals.get_secure_key()
 	var e = email.text.strip_edges()
 	var p = password.text
 	var task = Supabase.auth.sign_in(e, p)
@@ -49,7 +50,7 @@ func _on_login() -> void:
 		"user_id": session.id,
 		"email": session.email
 		}
-		var file = FileAccess.open("user://session.save", FileAccess.WRITE)
+		var file = FileAccess.open_encrypted("user://session.save", FileAccess.WRITE, key)
 		file.store_string(JSON.stringify(session_data))
 		file.close()
 		label.text = ""
@@ -112,3 +113,7 @@ func _on_reset_password() -> void:
 func _on_back() -> void:
 	panel_auth.show()
 	panel_reset.hide()
+
+func _on_catre_login():
+	panel_auth.show()
+	final.hide()

@@ -16,7 +16,8 @@ func _copil() -> void:
 
 
 func _parinte() -> void:
-	var f = FileAccess.open(path, FileAccess.WRITE)
+	var key = Globals.get_secure_key()
+	var f = FileAccess.open_encrypted(path, FileAccess.WRITE, key)
 	f.store_line("parinte")
 	f.close()
 	get_tree().change_scene_to_file("res://background_login.tscn")

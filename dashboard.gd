@@ -46,7 +46,6 @@ func _on_reports_pressed() -> void:
 				else:
 					lacat.show()
 			else:
-				Globals.adauga_succes(false)
 				lacat.show()
 				tabs.current_tab = 2
 				print("merge")

@@ -43,29 +43,37 @@ func _ready():
 		
 func marcheaza_cumparat(id):
 	var path = "user://stikere.save"
+	var key = Globals.get_secure_key()
 	if FileAccess.file_exists(path):
-		var file = FileAccess.open(path, FileAccess.READ)
+		var file = FileAccess.open_encrypted(path, FileAccess.READ, key)
 		var content = file.get_as_text()
 		file.close()
 		obiecte_cumparate = JSON.parse_string(content)
 	obiecte_cumparate[id] = true
-	var file = FileAccess.open(path, FileAccess.WRITE)
+	var file = FileAccess.open_encrypted(path, FileAccess.WRITE, key)
 	file.store_string(JSON.stringify(obiecte_cumparate))
 	file.close()
 
 #
 func este_cumparat(id):
 	var path = "user://stikere.save"
+	var key = Globals.get_secure_key()
 	if not FileAccess.file_exists(path):
 		return false
-	var file = FileAccess.open(path, FileAccess.READ)
+	var file = FileAccess.open_encrypted(path, FileAccess.READ, key)
 	var content = file.get_as_text()
 	file.close()
 	var data = JSON.parse_string(content)
 	if data == null:
 		return false
 	return data.has(id)
-	
+
+func get_secure_key() -> PackedByteArray:
+	var device_id = OS.get_unique_id() # id unic al device ului
+	var my_secret_salt = "Fitopolis2026"
+	var combined_string = device_id + my_secret_salt
+	return combined_string.sha256_buffer()
+
 #func salveaza_avertisment():
 	#var data = {}
 	#var path = "user://avertisment.save"
@@ -115,8 +123,9 @@ func este_cumparat(id):
 			#
 func adauga_personaj(valoare: int):
 	var data_existenta = {}
+	var key = Globals.get_secure_key()
 	if FileAccess.file_exists(path_hours): # verifica daca exista
-		var file = FileAccess.open(path_hours, FileAccess.READ) #citeste
+		var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key) #citeste
 		var content = file.get_as_text() #ia ca string
 		file.close()
 		var result = JSON.parse_string(content) #transforma in dictionar
@@ -126,31 +135,15 @@ func adauga_personaj(valoare: int):
 		data_existenta = {}
 	data_existenta["personaj"] = valoare #atribuie dictionarului cheia pe care o vreau
 	succes_inchis = valoare
-	var file = FileAccess.open(path_hours, FileAccess.WRITE) #salveaza noul dictionar
-	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
-	file.close()
-
-func adauga_succes(valoare: bool):
-	var data_existenta = {}
-	if FileAccess.file_exists(path_hours): # verifica daca exista
-		var file = FileAccess.open(path_hours, FileAccess.READ) #citeste
-		var content = file.get_as_text() #ia ca string
-		file.close()
-		var result = JSON.parse_string(content) #transforma in dictionar
-		if result:
-			data_existenta = result #egaleaza ce era cu noul dictionar din functie
-	else:
-		data_existenta = {}
-	data_existenta["succes"] = valoare #atribuie dictionarului cheia pe care o vreau
-	personaj = valoare
-	var file = FileAccess.open(path_hours, FileAccess.WRITE) #salveaza noul dictionar
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.WRITE, key) #salveaza noul dictionar
 	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
 	file.close()
 
 func adauga_username(valoare: String):
 	var data_existenta = {}
+	var key = Globals.get_secure_key()
 	if FileAccess.file_exists(path_hours): # verifica daca exista
-		var file = FileAccess.open(path_hours, FileAccess.READ) #citeste
+		var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key) #citeste
 		var content = file.get_as_text() #ia ca string
 		file.close()
 		var result = JSON.parse_string(content) #transforma in dictionar
@@ -160,7 +153,7 @@ func adauga_username(valoare: String):
 		data_existenta = {}
 	data_existenta["username"] = valoare #atribuie dictionarului cheia pe care o vreau
 	username = valoare
-	var file = FileAccess.open(path_hours, FileAccess.WRITE) #salveaza noul dictionar
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.WRITE, key) #salveaza noul dictionar
 	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
 	file.close()
 #func adauga_locatie_info(valoare: String):
@@ -233,8 +226,9 @@ func adauga_username(valoare: String):
 #
 func adauga_code(valoare: String):
 	var data_existenta = {}
+	var key = Globals.get_secure_key()
 	if FileAccess.file_exists(path_hours):
-		var file = FileAccess.open(path_hours, FileAccess.READ)
+		var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key)
 		var content = file.get_as_text()
 		file.close()
 		var result = JSON.parse_string(content)
@@ -244,7 +238,7 @@ func adauga_code(valoare: String):
 		data_existenta = {}
 	data_existenta["code"] = valoare
 	code = valoare
-	var file = FileAccess.open(path_hours, FileAccess.WRITE) 
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.WRITE, key) 
 	file.store_string(JSON.stringify(data_existenta, "\t")) 
 	file.close()
 #
@@ -284,10 +278,10 @@ func adauga_code(valoare: String):
 
 func adauga_scor(valoare: int):
 	var data_existenta = {}
-	
+	var key = Globals.get_secure_key()
 	# 1. Citim ce există deja în fișier (dacă fișierul există)
 	if FileAccess.file_exists(path_hours):
-		var file = FileAccess.open(path_hours, FileAccess.READ)
+		var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key)
 		var content = file.get_as_text()
 		file.close()
 		
@@ -301,7 +295,7 @@ func adauga_scor(valoare: int):
 	data_existenta["score"] = valoare 
 	
 	# 3. Salvăm dicționarul actualizat înapoi în fișier
-	var file = FileAccess.open(path_hours, FileAccess.WRITE)
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.WRITE, key)
 	if file:
 		file.store_string(JSON.stringify(data_existenta, "\t"))
 		file.close()
@@ -326,21 +320,24 @@ func adauga_scor(valoare: int):
 	#file.close()
 	#
 func citeste_personaj():
-	var file = FileAccess.open(path_hours, FileAccess.READ)
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key)
 	var content = file.get_as_text()
 	file.close()
 	var valori = JSON.parse_string(content)
 	return int(valori["personaj"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
 
 func citeste_username():
-	var file = FileAccess.open(path_hours, FileAccess.READ)
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key)
 	var content = file.get_as_text()
 	file.close()
 	var valori = JSON.parse_string(content)
 	return str(valori["username"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
 
 func citeste_succes():
-	var file = FileAccess.open(path_hours, FileAccess.READ)
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key)
 	var content = file.get_as_text()
 	file.close()
 	var valori = JSON.parse_string(content)
@@ -356,7 +353,8 @@ func citeste_succes():
 func citeste_code():
 	if not FileAccess.file_exists(path_hours):
 		return ""
-	var file = FileAccess.open(path_hours, FileAccess.READ)
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key)
 	var content = file.get_as_text()
 	file.close()
 	var valori = JSON.parse_string(content)
@@ -377,7 +375,8 @@ func citeste_code():
 	#return String(valori["email"])
 #
 func citeste_score():
-	var file = FileAccess.open(path_hours, FileAccess.READ)
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key)
 	var content = file.get_as_text()
 	file.close()
 	var valori = JSON.parse_string(content)
