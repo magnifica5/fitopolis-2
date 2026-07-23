@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://byxvirf2mbluu"]
+[gd_scene load_steps=78 format=4 uid="uid://byxvirf2mbluu"]
 
 [ext_resource type="Script" uid="uid://dgkvg0xvuouo" path="res://oras_scene.gd" id="1_8qvay"]
 [ext_resource type="Script" uid="uid://bkfahxr3xddjx" path="res://miscare_oras_camera.gd" id="2_04nbv"]
@@ -29,6 +29,7 @@
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="23_it6mh"]
 [ext_resource type="Script" uid="uid://dic70hk36gi06" path="res://obiect.gd" id="24_rnnjr"]
 [ext_resource type="Texture2D" uid="uid://3a5j2ykmvykc" path="res://assets/white-double-arrow-to-up-icon-transparent-png-701751695032806lbmpmfuw05-removebg-preview.png" id="26_7jke4"]
+[ext_resource type="Script" uid="uid://cppl4kjo76y12" path="res://upgradebutton.gd" id="26_k3t6u"]
 [ext_resource type="Texture2D" uid="uid://n5slharny2wh" path="res://image-removebg-preview (60).png" id="28_0tq3r"]
 [ext_resource type="Script" uid="uid://dembm5egdbicj" path="res://labelshop.gd" id="29_8ef1k"]
 [ext_resource type="Script" uid="uid://boe1waprc7pv3" path="res://return.gd" id="29_vp3yx"]
@@ -45,7 +46,16 @@
 [ext_resource type="Script" uid="uid://ci0x2i4w8e6d3" path="res://deletepopup.gd" id="41_8f85f"]
 [ext_resource type="Script" uid="uid://1ey7bcc5emoc" path="res://deleteyes.gd" id="42_nc24j"]
 [ext_resource type="Script" uid="uid://p76a10lsa5e2" path="res://deleteno.gd" id="43_l1lfh"]
+[ext_resource type="Script" uid="uid://cnti6eqvhxahw" path="res://labelyes.gd" id="43_nlo5q"]
 [ext_resource type="Script" uid="uid://ds83la7us4kpf" path="res://deleteX.gd" id="44_nlo5q"]
+[ext_resource type="Script" uid="uid://e0rqw1buvie0" path="res://labelno.gd" id="45_1qshh"]
+[ext_resource type="Script" uid="uid://bnivn3f3u64r4" path="res://labelstergereireversibila.gd" id="46_nlo5q"]
+[ext_resource type="Texture2D" uid="uid://bydnxw3csuyet" path="res://assets/castig/castig.png" id="50_smqs4"]
+[ext_resource type="Script" uid="uid://tj6chvnlgpi5" path="res://upgradegamestate.gd" id="50_xptqq"]
+[ext_resource type="Script" uid="uid://cmlq7emof78r3" path="res://labelupgrade.gd" id="51_k3t6u"]
+[ext_resource type="Script" uid="uid://d3voxhw5catlx" path="res://labelcancel.gd" id="52_k3t6u"]
+[ext_resource type="Script" uid="uid://rc8o8mt63b8q" path="res://labelcitylevel.gd" id="52_u2kys"]
+[ext_resource type="Script" uid="uid://b8wv2epf0um72" path="res://buttoncancel.gd" id="52_xptqq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_flyhl"]
 resource_name = "1"
@@ -13213,18 +13223,20 @@ texture_hover = ExtResource("21_uinss")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -939.0
-offset_top = -248.0
-offset_right = -456.0
-offset_bottom = -9.0
+z_index = 18
+anchors_preset = -1
+anchor_left = 0.29200003
+anchor_top = 0.99200004
+anchor_right = 0.29200003
+anchor_bottom = 0.99200004
+offset_left = -539.6401
+offset_top = -239.3601
+offset_right = -334.64008
+offset_bottom = -0.36010742
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("34_vvtkl")
+script = ExtResource("26_k3t6u")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/TextureButton2"]
@@ -13403,6 +13415,7 @@ offset_right = 456.0
 offset_bottom = 230.0
 theme_override_font_sizes/font_size = 170
 text = "YES"
+script = ExtResource("43_nlo5q")
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer/ColorRect"]
 layout_mode = 0
@@ -13427,6 +13440,7 @@ offset_right = 432.0
 offset_bottom = 230.0
 theme_override_font_sizes/font_size = 170
 text = "NO"
+script = ExtResource("45_1qshh")
 
 [node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
 layout_mode = 0
@@ -13435,8 +13449,9 @@ offset_top = 15.0
 offset_right = 963.0
 offset_bottom = 184.0
 theme_override_font_sizes/font_size = 60
-text = "              Esti sigur?
-Stergerea este ireversibila"
+text = "           Are you sure?
+   Deletion is irreversible."
+script = ExtResource("46_nlo5q")
 
 [node name="ColorRect3" type="ColorRect" parent="CanvasLayer/ColorRect"]
 layout_mode = 0
@@ -13462,6 +13477,103 @@ offset_right = 41.0
 offset_bottom = 53.0
 theme_override_font_sizes/font_size = 49
 text = "x"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
+z_index = 13
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.0
+offset_top = -229.0
+offset_right = 422.0
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.7)
+size_flags_horizontal = 4
+texture = ExtResource("50_smqs4")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.5
+offset_top = -233.42865
+offset_right = 469.5
+offset_bottom = -12.428589
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("22_3i3l4")
+script = ExtResource("50_xptqq")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = -38.5
+offset_right = 115.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "Upgrade"
+script = ExtResource("51_k3t6u")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.5
+offset_top = -110.5
+offset_right = 317.5
+offset_bottom = -64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "Do you want to upgrade the city to level"
+script = ExtResource("52_u2kys")
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/TextureRect"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 298.57147
+offset_right = 535.0
+offset_bottom = 519.5715
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("22_3i3l4")
+script = ExtResource("52_xptqq")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect/TextureButton2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -29.5
+offset_right = 69.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "Cancel"
+script = ExtResource("52_k3t6u")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_jjpv3")

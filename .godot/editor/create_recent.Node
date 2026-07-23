@@ -1,9 +1,10 @@
-ColorRect
+Sprite2D
 Label
 TextureButton
+TextureRect
+ColorRect
 CanvasLayer
 Window
-Sprite2D
 CollisionShape2D
 Area2D
 VBoxContainer
@@ -11,4 +12,3 @@ LinkButton
 HBoxContainer
 Control
 Button
-Container
