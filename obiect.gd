@@ -31,6 +31,7 @@ func _on_schimba_poza(_textura: Texture2D):
 		canvas.get_node("TextureButton2").visible = false
 		canvas.get_node("TextureButton3").visible = false
 		canvas.get_node("TextureButton4").visible = true
+		canvas.get_node("TextureButton5").visible = false
 
 func actualizeaza_dimensiune_indicator() -> void:
 	if texture and indicator_fundal:
