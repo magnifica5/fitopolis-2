@@ -13,8 +13,7 @@ func _process(delta: float) -> void:
 func _back_to_levels() -> void:
 	$AudioStreamPlayer.play()
 	await get_tree().create_timer(0.1).timeout
-	if Globals.completeaza == 1:
-		get_tree().change_scene_to_file("res://login.tscn")
+	get_tree().change_scene_to_file("res://login.tscn")
 	
 #func _spawn_stars() -> void:
 	#for i in range(20):
