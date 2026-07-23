@@ -34,7 +34,7 @@ func _on_button_pressed() -> void:
 				Itemshop.cale_textura_salvata = cale_imagine
 				
 				# AICI SETEZI MARIMEA DORITA (de exemplu 4.5, sau 6.0, sau 2.0)
-				Itemshop.scale_salvat = 0.5 
+				Itemshop.scale_salvat = 0.4 
 				
 				# 2. Emitem semnalul
 				Itemshop.schimba_poza_mouse.emit(poza_modificata) 

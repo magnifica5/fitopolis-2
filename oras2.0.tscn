@@ -13305,12 +13305,12 @@ script = ExtResource("32_83c5t")
 [node name="Label4" type="Label" parent="CanvasLayer/TextureButton4"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25373492
-anchor_top = 0.3069074
+anchor_left = 0.254
+anchor_top = 0.307
 anchor_right = 0.82653826
 anchor_bottom = 0.70455444
-offset_left = -0.042007446
-offset_top = -0.041007996
+offset_left = -0.17005157
+offset_top = -0.06147766
 offset_right = -26.706024
 offset_bottom = 0.07899475
 grow_horizontal = 2
@@ -13356,10 +13356,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -316.5
-offset_top = -171.0
-offset_right = 335.5
-offset_bottom = -74.0
+offset_left = -357.0
+offset_top = -230.0
+offset_right = 384.0
+offset_bottom = -83.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 34
@@ -13370,10 +13370,10 @@ script = ExtResource("37_uinss")
 [node name="Label2" type="Label" parent="CanvasLayer"]
 visible = false
 z_index = 10
-offset_left = 696.0
-offset_top = 907.0
-offset_right = 1294.0
-offset_bottom = 1004.0
+offset_left = 666.0
+offset_top = 850.0
+offset_right = 1264.0
+offset_bottom = 997.0
 theme_override_font_sizes/font_size = 34
 text = "                 Delete mode ON
 Tap on the house you want to delete"
@@ -13481,6 +13481,7 @@ theme_override_font_sizes/font_size = 49
 text = "x"
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
 z_index = 13
 anchors_preset = 8
 anchor_left = 0.5
@@ -13576,9 +13577,9 @@ theme_override_font_sizes/font_size = 56
 text = "Cancel"
 script = ExtResource("52_k3t6u")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer"]
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer"]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CanvasLayer2"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -13589,7 +13590,7 @@ offset_bottom = 209.0
 grow_horizontal = 0
 texture = ExtResource("55_evmu3")
 
-[node name="Label" type="Label" parent="CanvasLayer/CanvasLayer/TextureRect"]
+[node name="Label" type="Label" parent="CanvasLayer/CanvasLayer2/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
