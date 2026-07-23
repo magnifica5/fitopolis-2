@@ -1,10 +1,2 @@
 res://dashboard.tscn
 res://dashboard.gd
-res://register_control.gd
-res://register_parrent.tscn
-res://background_login.tscn
-res://login_control.gd
-res://login_child.gd
-res://login_child.tscn
-res://home.gd
-res://bifeaza_activi.gd

@@ -274,10 +274,11 @@ size_flags_horizontal = 3
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tal5t")
-current_tab = 0
+current_tab = 2
 tabs_visible = false
 
 [node name="Control" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("6_4741l")
 metadata/_tab_index = 0
@@ -339,7 +340,7 @@ text = "cod de conectare:"
 [node name="Label3" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control/HBoxContainer/VBoxContainer2/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
+theme_override_fonts/font = ExtResource("15_i7mf3")
 theme_override_font_sizes/font_size = 60
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/MarginContainer/TabContainer/Control/HBoxContainer/VBoxContainer2"]
@@ -1405,7 +1406,6 @@ theme_override_font_sizes/font_size = 50
 text = "X"
 
 [node name="Control3" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("20_2vt8e")
 metadata/_tab_index = 2
@@ -1819,7 +1819,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_p5lni")
 theme_override_font_sizes/font_size = 50
-placeholder_text = "intre 07:20 si 09:00"
+placeholder_text = "intre 07:20 si 11:00"
 alignment = 1
 script = ExtResource("16_ei5kn")
 
