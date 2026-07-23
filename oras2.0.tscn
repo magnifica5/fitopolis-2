@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=4 uid="uid://byxvirf2mbluu"]
+[gd_scene load_steps=81 format=4 uid="uid://byxvirf2mbluu"]
 
 [ext_resource type="Script" uid="uid://dgkvg0xvuouo" path="res://oras_scene.gd" id="1_8qvay"]
 [ext_resource type="Script" uid="uid://bkfahxr3xddjx" path="res://miscare_oras_camera.gd" id="2_04nbv"]
@@ -50,13 +50,14 @@
 [ext_resource type="Script" uid="uid://ds83la7us4kpf" path="res://deleteX.gd" id="44_nlo5q"]
 [ext_resource type="Script" uid="uid://e0rqw1buvie0" path="res://labelno.gd" id="45_1qshh"]
 [ext_resource type="Script" uid="uid://bnivn3f3u64r4" path="res://labelstergereireversibila.gd" id="46_nlo5q"]
+[ext_resource type="Script" uid="uid://c7pwtmbaq1h76" path="res://pannel_upgrade.gd" id="50_i6juc"]
 [ext_resource type="Texture2D" uid="uid://bydnxw3csuyet" path="res://assets/castig/castig.png" id="50_smqs4"]
-[ext_resource type="Script" uid="uid://tj6chvnlgpi5" path="res://upgradegamestate.gd" id="50_xptqq"]
 [ext_resource type="Script" uid="uid://cmlq7emof78r3" path="res://labelupgrade.gd" id="51_k3t6u"]
 [ext_resource type="Script" uid="uid://d3voxhw5catlx" path="res://labelcancel.gd" id="52_k3t6u"]
 [ext_resource type="Script" uid="uid://rc8o8mt63b8q" path="res://labelcitylevel.gd" id="52_u2kys"]
 [ext_resource type="Script" uid="uid://b8wv2epf0um72" path="res://buttoncancel.gd" id="52_xptqq"]
 [ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="55_evmu3"]
+[ext_resource type="Texture2D" uid="uid://bwy3ghmhj1wrb" path="res://stea2-removebg-preview.png" id="55_r7cxl"]
 [ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="56_i6juc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_flyhl"]
@@ -6032,7 +6033,6 @@ texture = ExtResource("13_3cfb1")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tq2mi"]
 texture = ExtResource("14_83c5t")
-0:1/size_in_atlas = Vector2i(52, 77)
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wvia0"]
@@ -13335,11 +13335,10 @@ scale = Vector2(0.19333363, 0.21141668)
 texture = ExtResource("36_7jke4")
 
 [node name="TextureButton6" type="TextureButton" parent="CanvasLayer"]
-visible = false
-offset_left = 1597.0
-offset_top = 32.0
-offset_right = 1802.0
-offset_bottom = 271.0
+offset_left = 1091.0
+offset_top = 19.0
+offset_right = 1317.0
+offset_bottom = 258.0
 texture_normal = ExtResource("34_vvtkl")
 script = ExtResource("36_m51ev")
 
@@ -13497,6 +13496,7 @@ grow_vertical = 2
 scale = Vector2(1, 0.7)
 size_flags_horizontal = 4
 texture = ExtResource("50_smqs4")
+script = ExtResource("50_i6juc")
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
@@ -13513,7 +13513,6 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("22_3i3l4")
-script = ExtResource("50_xptqq")
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureRect/TextureButton"]
 layout_mode = 1
@@ -13534,17 +13533,14 @@ script = ExtResource("51_k3t6u")
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -317.5
-offset_top = -110.5
-offset_right = 317.5
-offset_bottom = -64.5
+offset_left = -326.5
+offset_top = 38.57141
+offset_right = 326.5
+offset_bottom = 85.714264
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
 text = "Do you want to upgrade the city to level"
@@ -13576,6 +13572,27 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 56
 text = "Cancel"
 script = ExtResource("52_k3t6u")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/TextureRect"]
+position = Vector2(373.99997, 168.57144)
+scale = Vector2(1.3432845, 1.8705033)
+texture = ExtResource("55_r7cxl")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect/Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.36772
+offset_top = -81.16109
+offset_right = -29.367722
+offset_bottom = -42.161087
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "1500"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer"]
 
@@ -13621,3 +13638,4 @@ script = ExtResource("24_rnnjr")
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_acasa_pressed"]
 [connection signal="pressed" from="CanvasLayer/return" to="CanvasLayer/return" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/TextureButton" to="CanvasLayer/TextureRect" method="_on_upgrade"]
