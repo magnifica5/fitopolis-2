@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 
 func _catre_oras_pressed() -> void:
 	$AudioStreamPlayer.play()
-	get_tree().change_scene_to_file("res://oras.tscn")
+	get_tree().change_scene_to_file("res://oras2.0.tscn")
 
 
 func _catre_parinti() -> void:

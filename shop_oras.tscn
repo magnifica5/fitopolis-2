@@ -1,10 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://bq7g65wpt238b"]
+[gd_scene load_steps=19 format=3 uid="uid://bq7g65wpt238b"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_m7bmd"]
+[ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="2_1fpbl"]
 [ext_resource type="Texture2D" uid="uid://ca7j377dadnxj" path="res://assets/shop_slot2.png" id="2_i607x"]
+[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="3_a7wd6"]
 [ext_resource type="Texture2D" uid="uid://bcwqh6yikw3xs" path="res://assets/nigu22.png" id="3_ay86s"]
 [ext_resource type="Texture2D" uid="uid://cwojkdbr0vwtk" path="res://assets/nigu232-removebg-preview.png" id="4_svqdx"]
 [ext_resource type="Script" uid="uid://bsw8nfhjqxvcp" path="res://casashop.gd" id="4_thdux"]
+[ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="4_viup1"]
 [ext_resource type="Texture2D" uid="uid://bwy3ghmhj1wrb" path="res://stea2-removebg-preview.png" id="5_c2cj5"]
 [ext_resource type="Texture2D" uid="uid://gp8uoihmi6rl" path="res://assets/nigu2.png" id="5_vigl0"]
 [ext_resource type="Script" uid="uid://fj6s36sw1kih" path="res://casashop2.gd" id="6_m36ju"]
@@ -23,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 95.0
 offset_top = 71.0
-offset_right = 95.0
+offset_right = 3729.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -34,6 +37,38 @@ scale = Vector2(4.076172, 3.813715)
 texture = ExtResource("1_m7bmd")
 metadata/_edit_lock_ = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="LevelBg"]
+
+[node name="TextureRect" type="TextureRect" parent="LevelBg/CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -635.0
+offset_top = 25.0
+offset_right = -61.666748
+offset_bottom = 215.0
+grow_horizontal = 0
+texture = ExtResource("2_1fpbl")
+
+[node name="Label" type="Label" parent="LevelBg/CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.166626
+offset_top = -51.0
+offset_right = 203.83337
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_a7wd6")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_viup1")
+
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -41,9 +76,10 @@ anchor_left = 0.013
 anchor_top = 0.006
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 0.03999901
-offset_top = -1.48
-offset_bottom = 1.0
+offset_left = -107.96
+offset_top = 238.52
+offset_right = -1516.0
+offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -78,25 +114,25 @@ texture = ExtResource("3_ay86s")
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect/TextureRect"]
 layout_mode = 0
-offset_left = -82.0625
-offset_top = -96.375
-offset_right = 336.9375
-offset_bottom = 349.625
+offset_left = -2.0625
+offset_top = 4.625
+offset_right = 252.9375
+offset_bottom = 265.625
 script = ExtResource("4_thdux")
 
-[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/HBoxContainer/TextureRect"]
-position = Vector2(224.99998, 389)
-scale = Vector2(1.3843282, 1.2284173)
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton"]
+position = Vector2(132.87498, 322)
+scale = Vector2(1.192164, 1.2086334)
 texture = ExtResource("5_c2cj5")
 
-[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/TextureRect/Sprite2D"]
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton/Sprite2D"]
 offset_left = -20.226421
 offset_top = -8.954609
 offset_right = 82.773575
 offset_bottom = 82.045395
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-text = "300"
+text = "150"
 
 [node name="TextureRect2" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -109,29 +145,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -155.625
-offset_top = -123.375
-offset_right = 155.625
-offset_bottom = 123.375
+offset_left = -159.0
+offset_top = -171.0
+offset_right = 152.25
+offset_bottom = 75.75
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_svqdx")
 expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect2/TextureRect"]
-layout_mode = 0
-offset_left = -63.375
-offset_top = -103.625
-offset_right = 373.625
-offset_bottom = 348.375
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.625
+offset_top = -156.375
+offset_right = 161.375
+offset_bottom = 128.625
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("6_m36ju")
 
-[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/HBoxContainer/TextureRect2"]
-position = Vector2(224.99998, 389)
-scale = Vector2(1.3843282, 1.2284173)
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton"]
+position = Vector2(170.00003, 347.50003)
+scale = Vector2(1.2089554, 1.2302157)
 texture = ExtResource("5_c2cj5")
 
-[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/TextureRect2/Sprite2D"]
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton/Sprite2D"]
 offset_left = -20.226421
 offset_top = -8.954609
 offset_right = 82.773575
@@ -152,9 +195,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -166.5
-offset_top = -150.0
-offset_right = 166.5
-offset_bottom = 150.0
+offset_top = -189.0
+offset_right = 169.0
+offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_vigl0")
@@ -162,25 +205,25 @@ expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect3/TextureRect"]
 layout_mode = 0
-offset_left = -40.5
-offset_top = -76.0
-offset_right = 376.5
-offset_bottom = 364.0
+offset_left = -1.5
+offset_top = -4.0
+offset_right = 344.5
+offset_bottom = 301.0
 script = ExtResource("8_vkt0n")
 
-[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/HBoxContainer/TextureRect3"]
-position = Vector2(224.99998, 389)
-scale = Vector2(1.3843282, 1.2284173)
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/HBoxContainer/TextureRect3/TextureRect/TextureButton"]
+position = Vector2(154.5, 336.5)
+scale = Vector2(1.1716421, 1.1294965)
 texture = ExtResource("5_c2cj5")
 
-[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/TextureRect3/Sprite2D"]
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/TextureRect3/TextureRect/TextureButton/Sprite2D"]
 offset_left = -20.226421
 offset_top = -8.954609
 offset_right = 82.773575
 offset_bottom = 82.045395
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-text = "300"
+text = "400"
 
 [node name="TextureRect4" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -194,9 +237,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -125.5
-offset_top = -150.0
+offset_top = -183.0
 offset_right = 141.5
-offset_bottom = 124.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_svqdx")
@@ -204,24 +247,24 @@ expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect4/TextureRect"]
 layout_mode = 0
-offset_left = -90.5
-offset_top = -68.0
-offset_right = 343.5
-offset_bottom = 369.0
+offset_left = -2.5
+offset_top = 11.0
+offset_right = 259.5
+offset_bottom = 267.0
 
-[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/HBoxContainer/TextureRect4"]
-position = Vector2(224.99998, 389)
-scale = Vector2(1.3843282, 1.2284173)
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/HBoxContainer/TextureRect4/TextureRect/TextureButton"]
+position = Vector2(118.5, 314)
+scale = Vector2(1.1567167, 1.0791366)
 texture = ExtResource("5_c2cj5")
 
-[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/TextureRect4/Sprite2D"]
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/TextureRect4/TextureRect/TextureButton/Sprite2D"]
 offset_left = -20.226421
 offset_top = -8.954609
 offset_right = 82.773575
 offset_bottom = 82.045395
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-text = "300"
+text = "100"
 
 [node name="TextureRect5" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -234,10 +277,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -503.5
-offset_top = -376.0
-offset_right = 503.5
-offset_bottom = 376.0
+offset_left = -497.55396
+offset_top = -418.0
+offset_right = 512.3921
+offset_bottom = 332.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_thdux")
@@ -245,14 +288,14 @@ expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect5/TextureRect"]
 layout_mode = 0
-offset_left = 288.5
-offset_top = 152.0
-offset_right = 711.5
-offset_bottom = 600.0
+offset_left = 361.0
+offset_top = 258.0
+offset_right = 666.0
+offset_bottom = 490.0
 
 [node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/HBoxContainer/TextureRect5"]
-position = Vector2(224.99998, 389)
-scale = Vector2(1.3843282, 1.2284173)
+position = Vector2(231.44601, 371.5)
+scale = Vector2(1.1492552, 1.2014385)
 texture = ExtResource("5_c2cj5")
 
 [node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/TextureRect5/Sprite2D"]
@@ -262,7 +305,7 @@ offset_right = 82.773575
 offset_bottom = 82.045395
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-text = "300"
+text = "500"
 
 [node name="TextureRect6" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -275,10 +318,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.5
-offset_top = -140.0
-offset_right = 146.5
-offset_bottom = 140.0
+offset_left = -146.55396
+offset_top = -159.0
+offset_right = 146.44604
+offset_bottom = 121.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_m36ju")
@@ -286,14 +329,14 @@ expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect6/TextureRect"]
 layout_mode = 0
-offset_left = -81.5
-offset_top = -74.0
-offset_right = 359.5
-offset_bottom = 354.0
+offset_left = 18.946045
+offset_top = -5.0
+offset_right = 285.94604
+offset_bottom = 216.0
 
 [node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/HBoxContainer/TextureRect6"]
-position = Vector2(224.99998, 389)
-scale = Vector2(1.3843282, 1.2284173)
+position = Vector2(237.94597, 369.5)
+scale = Vector2(1.1417915, 1.1151078)
 texture = ExtResource("5_c2cj5")
 
 [node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/TextureRect6/Sprite2D"]
@@ -316,10 +359,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -401.0
-offset_top = -321.5
-offset_right = 401.0
-offset_bottom = 321.5
+offset_left = -431.8269
+offset_top = -362.0
+offset_right = 370.1731
+offset_bottom = 281.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_svqdx")
@@ -327,14 +370,14 @@ expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/TextureRect7/TextureRect"]
 layout_mode = 0
-offset_left = 206.0
-offset_top = 93.5
-offset_right = 600.75
-offset_bottom = 541.5
+offset_left = 253.1731
+offset_top = 165.0
+offset_right = 603.0
+offset_bottom = 451.0
 
 [node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/HBoxContainer/TextureRect7"]
-position = Vector2(224.99998, 389)
-scale = Vector2(1.3843282, 1.2284173)
+position = Vector2(240.9615, 380.81247)
+scale = Vector2(1.1460967, 1.1106112)
 texture = ExtResource("5_c2cj5")
 
 [node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/TextureRect7/Sprite2D"]
@@ -344,7 +387,7 @@ offset_right = 82.773575
 offset_bottom = 82.045395
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-text = "300"
+text = "600"
 
 [node name="TextureRect8" type="TextureRect" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2

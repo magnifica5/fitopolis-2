@@ -1,12 +1,11 @@
-#=> emailuri cu ce activitati au facut copiii la finalul zilei
 #=> modificare documentatie pt plugin
 #=> vazut ce scene trebuie sterse + ce scene au probleme la afisaj, text
 #=> muzica diferita pentru interfata de parinte
-#=> trebuie sa vad cum retin in baza de date corect check_activity
+#=> optinuea de a scoate muzica
 extends Control
 @onready var home = $HBoxContainer/Panel/VBoxContainer/TextureButton
 @onready var settings = $HBoxContainer/Panel/VBoxContainer/TextureButton2
-@onready var reports = $HBoxContainer/Panel/VBoxContainer/TextureButton3
+@onready var reports = $HBoxContainer/Panel/VoxContainer/TextureButton3
 @onready var schedule = $HBoxContainer/Panel/VBoxContainer/TextureButton4
 @onready var tabs = $HBoxContainer/MarginContainer/TabContainer
 @onready var lacat = $HBoxContainer/MarginContainer/TabContainer/Control3/Panel4
@@ -41,8 +40,8 @@ func _on_reports_pressed() -> void:
 			var mins = ora_curenta.hour * 60 + ora_curenta.minute
 			if mins >= ora and mins <= ora + 7:
 				tabs.current_tab = 2
-				#var check = data.check_verificare
-				if Globals.citeste_succes() == false:
+				var check = data.check_verificare
+				if check == true:
 					lacat.hide()
 				else:
 					lacat.show()
@@ -79,11 +78,10 @@ func change_type(string):
 func _close_succes() -> void:
 	succes.hide()
 	lacat.show()
-	Globals.adauga_succes(true)
-	#var query = SupabaseQuery.new().from("children").update({"check_verificare": true}).eq("connection_code", Globals.code)
-	#var task = Supabase.database.query(query)
-	#var result = await task.completed
-	#if result.error == null:
-		#print("a mers")
-	#else:
-		#print(result.error.message)
+	var query = SupabaseQuery.new().from("children").update({"check_verificare": false}).eq("connection_code", Globals.code)
+	var task = Supabase.database.query(query)
+	var result = await task.completed
+	if result.error == null:
+		print("a mers")
+	else:
+		print(result.error.message)

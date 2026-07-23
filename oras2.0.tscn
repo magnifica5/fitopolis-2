@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://byxvirf2mbluu"]
+[gd_scene load_steps=80 format=4 uid="uid://byxvirf2mbluu"]
 
 [ext_resource type="Script" uid="uid://dgkvg0xvuouo" path="res://oras_scene.gd" id="1_8qvay"]
 [ext_resource type="Script" uid="uid://bkfahxr3xddjx" path="res://miscare_oras_camera.gd" id="2_04nbv"]
@@ -56,6 +56,8 @@
 [ext_resource type="Script" uid="uid://d3voxhw5catlx" path="res://labelcancel.gd" id="52_k3t6u"]
 [ext_resource type="Script" uid="uid://rc8o8mt63b8q" path="res://labelcitylevel.gd" id="52_u2kys"]
 [ext_resource type="Script" uid="uid://b8wv2epf0um72" path="res://buttoncancel.gd" id="52_xptqq"]
+[ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="55_evmu3"]
+[ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="56_i6juc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_flyhl"]
 resource_name = "1"
@@ -13320,16 +13322,16 @@ script = ExtResource("32_3cfb1")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton5" type="TextureButton" parent="CanvasLayer"]
-offset_left = 1702.0
-offset_top = 13.0
-offset_right = 1907.0
-offset_bottom = 252.0
+offset_left = 29.0
+offset_top = 588.0
+offset_right = 234.0
+offset_bottom = 827.0
 texture_normal = ExtResource("34_vvtkl")
 script = ExtResource("35_m51ev")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/TextureButton5"]
-position = Vector2(96.166504, 99)
-scale = Vector2(0.2033333, 0.21083333)
+position = Vector2(93.66659, 99.145836)
+scale = Vector2(0.19333363, 0.21141668)
 texture = ExtResource("36_7jke4")
 
 [node name="TextureButton6" type="TextureButton" parent="CanvasLayer"]
@@ -13479,7 +13481,6 @@ theme_override_font_sizes/font_size = 49
 text = "x"
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-visible = false
 z_index = 13
 anchors_preset = 8
 anchor_left = 0.5
@@ -13574,6 +13575,38 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 56
 text = "Cancel"
 script = ExtResource("52_k3t6u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -591.0
+offset_top = 19.0
+offset_right = -17.666748
+offset_bottom = 209.0
+grow_horizontal = 0
+texture = ExtResource("55_evmu3")
+
+[node name="Label" type="Label" parent="CanvasLayer/CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.166626
+offset_top = -51.0
+offset_right = 203.83337
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("23_it6mh")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("56_i6juc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_jjpv3")
