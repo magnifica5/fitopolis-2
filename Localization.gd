@@ -355,7 +355,8 @@ JOC""",
 "delete":"""          Modul de ștergere activat
 apasa pe casa pe care vrei sa o stergi""",
 "citylevel":"Vrei sa upgradezi orasul la levelul",
-"cancel":"anuleaza"
+"cancel":"anuleaza",
+"It's bedtime!": "A venit ora de culcare!"
 	},
 	
 	

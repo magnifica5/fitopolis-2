@@ -9,7 +9,8 @@ func _process(delta: float) -> void:
 func _on_texture_button_pressed() -> void:
 	$AudioStreamPlayer.play()
 	if FileAccess.file_exists(path):
-		var f = FileAccess.open(path, FileAccess.READ)
+		var key = Globals.get_secure_key()
+		var f = FileAccess.open_encrypted(path, FileAccess.READ, key)
 		var content = f.get_as_text()
 		f.close()
 		print(content)
@@ -26,7 +27,8 @@ func _on_texture_button_pressed() -> void:
 		get_tree().change_scene_to_file("res://alege_interfata.tscn")
 func try_auto_login() -> bool:
 	if FileAccess.file_exists("user://session.save"):
-		var file = FileAccess.open("user://session.save", FileAccess.READ)
+		var key = Globals.get_secure_key()
+		var file = FileAccess.open_encrypted("user://session.save", FileAccess.READ, key)
 		if file:
 			var content = file.get_as_text()
 			file.close()
@@ -49,7 +51,7 @@ func try_auto_login() -> bool:
 							"user_id": user.id,
 							"email": user.email
 						}
-						var updated_file = FileAccess.open("user://session.save", FileAccess.WRITE)
+						var updated_file = FileAccess.open_encrypted("user://session.save", FileAccess.WRITE, key)
 						if updated_file:
 							updated_file.store_string(JSON.stringify(updated_session_data))
 							updated_file.close()

@@ -18,7 +18,8 @@ var casa_editata_index := -1 # Reține poziția casei în Array ca să o putem a
 var delete_mode := false
 
 func salveaza_jocul() -> void:
-	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(SAVE_PATH, FileAccess.WRITE, key)
 	if file:
 		var json_string = JSON.stringify(cladiri)
 		file.store_string(json_string)
@@ -31,8 +32,8 @@ func incarca_jocul() -> void:
 	if not FileAccess.file_exists(SAVE_PATH):
 		print("Nu s-a găsit niciun fișier de salvare existent. Pornire curată.")
 		return
-
-	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(SAVE_PATH, FileAccess.READ, key)
 	if file:
 		var json_string = file.get_as_text()
 		file.close()

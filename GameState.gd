@@ -17,9 +17,9 @@ func salveaza_jocul() -> void:
 	var date_salvate := {
 		"valoare_globala": valoare_globala
 	}
-	
+	var key = Globals.get_secure_key()
 	var json_string := JSON.stringify(date_salvate, "\t")
-	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	var file := FileAccess.open_encrypted(SAVE_PATH, FileAccess.WRITE, key)
 	
 	if file:
 		file.store_string(json_string)
@@ -31,8 +31,8 @@ func incarca_jocul() -> void:
 	if not FileAccess.file_exists(SAVE_PATH):
 		print("Nu există salvări anterioare. Se folosesc valorile implicite.")
 		return
-		
-	var file := FileAccess.open(SAVE_PATH, FileAccess.READ)
+	var key = Globals.get_secure_key()
+	var file := FileAccess.open_encrypted(SAVE_PATH, FileAccess.READ, key)
 	if file:
 		var json_string := file.get_as_text()
 		file.close()

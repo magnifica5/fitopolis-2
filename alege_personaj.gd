@@ -16,7 +16,8 @@ func _on_santos_pressed() -> void:
 	$AudioStreamPlayer.play()
 	await get_tree().create_timer(0.1).timeout
 	Globals.adauga_personaj(0)
-	var f = FileAccess.open(path, FileAccess.WRITE)
+	var key = Globals.get_secure_key()
+	var f = FileAccess.open_encrypted(path, FileAccess.WRITE, key)
 	f.store_line("copil")
 	f.close()
 	get_tree().change_scene_to_file("res://login.tscn")
@@ -26,7 +27,8 @@ func _on_miss_nutri_pressed() -> void:
 	$AudioStreamPlayer.play()
 	await get_tree().create_timer(0.1).timeout
 	Globals.adauga_personaj(1)
-	var f = FileAccess.open(path, FileAccess.WRITE)
+	var key = Globals.get_secure_key()
+	var f = FileAccess.open_encrypted(path, FileAccess.WRITE, key)
 	f.store_line("copil")
 	f.close()
 	get_tree().change_scene_to_file("res://login.tscn")
