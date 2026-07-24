@@ -13335,10 +13335,11 @@ scale = Vector2(0.19333363, 0.21141668)
 texture = ExtResource("36_7jke4")
 
 [node name="TextureButton6" type="TextureButton" parent="CanvasLayer"]
-offset_left = 1091.0
-offset_top = 19.0
-offset_right = 1317.0
-offset_bottom = 258.0
+visible = false
+offset_left = 1694.0
+offset_top = 216.0
+offset_right = 1920.0
+offset_bottom = 455.0
 texture_normal = ExtResource("34_vvtkl")
 script = ExtResource("36_m51ev")
 

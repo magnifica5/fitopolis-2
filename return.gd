@@ -21,3 +21,4 @@ func _on_pressed() -> void:
 	get_parent().get_node("Label").visible = false
 	get_parent().get_node("Label2").visible = false
 	get_parent().get_node("TextureButton6").visible = false
+	$"../CanvasLayer2".visible = true
