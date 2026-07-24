@@ -34,6 +34,7 @@ var avertisment_vizualizat: bool = false
 var personaj = -1
 var score = 0
 var obiecte_cumparate = {}
+var is_audio_on: bool = true
 func _ready():
 	var path = "user://avertisment.save"
 	if FileAccess.file_exists(path):

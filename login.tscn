@@ -1,13 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://b15y51ipnvbeq"]
+[gd_scene load_steps=27 format=3 uid="uid://b15y51ipnvbeq"]
 
 [ext_resource type="Script" uid="uid://crrx5y3d4afv7" path="res://login.gd" id="1_0s12h"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_cau7c"]
 [ext_resource type="Texture2D" uid="uid://du37ys0hpl703" path="res://assets/Button.png" id="3_2rjvb"]
 [ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="3_xlo4h"]
 [ext_resource type="Texture2D" uid="uid://dvedne034ji7d" path="res://assets/bara meniu/oras.png" id="4_eqty5"]
+[ext_resource type="Texture2D" uid="uid://m2jb6cspt5ui" path="res://assets/buton_simplu.png" id="4_xqlb1"]
 [ext_resource type="Script" uid="uid://0bftw0mtie0e" path="res://texture_button.gd" id="5_0trqi"]
+[ext_resource type="Script" uid="uid://tqhx8ig88y7m" path="res://butonsonor2.gd" id="5_affgl"]
 [ext_resource type="Script" uid="uid://scoir5hqbjh3" path="res://start_mission.gd" id="6_621tt"]
+[ext_resource type="Texture2D" uid="uid://dcweiycnpfna5" path="res://assets/images-removebg-preview (3).png" id="6_mee7c"]
 [ext_resource type="Texture2D" uid="uid://dtsa03c6hr31p" path="res://assets/bara meniu/exercitii.png" id="7_0trqi"]
+[ext_resource type="Texture2D" uid="uid://cbnjdq8xtv12b" path="res://assets/1000_F_262551537_Rk34ewPEqNd257BAfimSPaSLzAwYfPsx-removebg-preview.png" id="7_on3y8"]
+[ext_resource type="Texture2D" uid="uid://bcekdlppvjn0j" path="res://addons/supabase/Storage/images-removebg-preview (2).png" id="8_ysypo"]
 [ext_resource type="Texture2D" uid="uid://bjnaxpevceujt" path="res://assets/bara meniu/stikere.jpg" id="9_2rjvb"]
 [ext_resource type="Script" uid="uid://bj8h8sxumd4ug" path="res://labeloras.gd" id="10_mgw1h"]
 [ext_resource type="Script" uid="uid://dmryn8xccyd2f" path="res://labelstickere.gd" id="14_affgl"]
@@ -45,10 +50,10 @@ anchor_mode = 0
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -557.0
-offset_top = -365.0
-offset_right = 489.0
-offset_bottom = 365.0
+offset_left = -552.0
+offset_top = -347.0
+offset_right = 494.0
+offset_bottom = 383.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -77,6 +82,31 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="bg"]
+offset_left = 43.0
+offset_top = 315.0
+offset_right = 137.0
+offset_bottom = 411.0
+toggle_mode = true
+texture_normal = ExtResource("4_xqlb1")
+script = ExtResource("5_affgl")
+
+[node name="SpriteOn" type="Sprite2D" parent="bg/TextureButton"]
+visible = false
+position = Vector2(64, 43)
+scale = Vector2(0.22694147, 0.23555075)
+texture = ExtResource("6_mee7c")
+
+[node name="SpriteOff" type="Sprite2D" parent="bg/TextureButton"]
+position = Vector2(64.032104, 44.66147)
+scale = Vector2(0.17548633, 0.23375332)
+texture = ExtResource("7_on3y8")
+
+[node name="ImageRemovebgPreview(63)" type="Sprite2D" parent="bg/TextureButton"]
+position = Vector2(34, 44)
+scale = Vector2(0.26388273, 0.20689014)
+texture = ExtResource("8_ysypo")
 
 [node name="levels" type="CanvasLayer" parent="."]
 
@@ -118,6 +148,7 @@ text = "ÎNCEPE
 MISIUNEA"
 horizontal_alignment = 1
 script = ExtResource("6_621tt")
+metadata/_edit_lock_ = true
 
 [node name="meniu" type="CanvasLayer" parent="."]
 
@@ -256,6 +287,7 @@ offset_bottom = 851.0
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_qyti6")
+metadata/_edit_lock_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer2"]
 anchors_preset = 6
@@ -271,6 +303,7 @@ grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("15_osbi4")
+metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_qyti6")
@@ -279,8 +312,8 @@ volume_db = -10.0
 [node name="menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_osbi4")
 
-[connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
 [connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
+[connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton" to="." method="_catre_oras_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton4" to="." method="_catre_exercitii"]

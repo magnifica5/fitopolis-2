@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://bj6f06xbk5w3q"]
+[gd_scene load_steps=73 format=3 uid="uid://bj6f06xbk5w3q"]
 
 [ext_resource type="Texture2D" uid="uid://cbhbl3xi0b88q" path="res://assets/home_d.png" id="1_gt2mv"]
 [ext_resource type="Script" uid="uid://bv1x4jakl58" path="res://dashboard.gd" id="1_uj34o"]
@@ -24,12 +24,16 @@
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="15_i7mf3"]
 [ext_resource type="Script" uid="uid://cd53h8c006jf5" path="res://hour_input_dejun.gd" id="16_ei5kn"]
 [ext_resource type="Script" uid="uid://c1h4gb2jyef0n" path="res://label_continut_termeni.gd" id="16_ekiu7"]
+[ext_resource type="Script" uid="uid://cd5ty5g3rbx5t" path="res://butonsonor.gd" id="17_dan5v"]
 [ext_resource type="Script" uid="uid://cqevm1oiwpecs" path="res://label_politica_continut.gd" id="17_jw24o"]
 [ext_resource type="Script" uid="uid://dmpvsb5qtp1lt" path="res://labellunch.gd" id="17_td0gi"]
 [ext_resource type="Script" uid="uid://eh7ge8cxhdj3" path="res://hour_input_pranz.gd" id="18_bxqq3"]
+[ext_resource type="Texture2D" uid="uid://drdnhn1abp3w4" path="res://assets/image-removebg-preview (62).png" id="18_df04x"]
+[ext_resource type="Texture2D" uid="uid://dxnqbgwrhtds1" path="res://assets/510-5103107_mute-volume-sound-music-off-silent-audio-svg.png" id="19_8hgs0"]
 [ext_resource type="Script" uid="uid://bldkbu2kbbwsg" path="res://ore_activitati.gd" id="19_ekiu7"]
 [ext_resource type="Script" uid="uid://vg77sl600xlg" path="res://labelexdupa-amiaza.gd" id="19_i7mf3"]
 [ext_resource type="Script" uid="uid://mq5xobah3gjy" path="res://bifeaza_activi.gd" id="20_2vt8e"]
+[ext_resource type="Texture2D" uid="uid://duvsbfmjpihei" path="res://exercitii_dimineata/image-removebg-preview (63).png" id="20_d434x"]
 [ext_resource type="Script" uid="uid://dewy62jk5c41u" path="res://hour_input_ex_2.gd" id="20_ekiu7"]
 [ext_resource type="Script" uid="uid://kg7a78vs73bh" path="res://check_box.gd" id="20_ovj55"]
 [ext_resource type="Texture2D" uid="uid://dcnfwp3m4001b" path="res://assets/buton_bifa.png" id="21_2vt8e"]
@@ -274,7 +278,7 @@ size_flags_horizontal = 3
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tal5t")
-current_tab = 2
+current_tab = 1
 tabs_visible = false
 
 [node name="Control" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
@@ -577,7 +581,6 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("9_q8aok")
 
 [node name="Control2" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("12_2k5vf")
 metadata/_tab_index = 1
@@ -879,6 +882,41 @@ theme_override_font_sizes/font_size = 30
 text = "log out"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -499.0
+offset_right = 754.0
+offset_bottom = -418.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_45ya1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ei5kn")
+toggle_mode = true
+script = ExtResource("17_dan5v")
+
+[node name="SpriteOn" type="Sprite2D" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Button4"]
+visible = false
+position = Vector2(60, 42)
+scale = Vector2(0.30973914, 0.29141396)
+texture = ExtResource("18_df04x")
+
+[node name="SpriteOff" type="Sprite2D" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Button4"]
+visible = false
+position = Vector2(59.40625, 42.083496)
+scale = Vector2(0.08778104, 0.08333471)
+texture = ExtResource("19_8hgs0")
+
+[node name="ImageRemovebgPreview(63)" type="Sprite2D" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Button4"]
+position = Vector2(24.000015, 42.000015)
+scale = Vector2(0.31250027, 0.2879334)
+texture = ExtResource("20_d434x")
 
 [node name="LinkButton" type="LinkButton" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
 layout_mode = 1
@@ -1406,6 +1444,7 @@ theme_override_font_sizes/font_size = 50
 text = "X"
 
 [node name="Control3" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("20_2vt8e")
 metadata/_tab_index = 2

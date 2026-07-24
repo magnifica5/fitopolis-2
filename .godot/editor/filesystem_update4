@@ -1,4 +1,9 @@
 res://oras2.0.tscn
-res://return.gd
-res://casashop.gd
+res://butonplace.gd
 res://shop_oras.tscn
+res://dashboard.tscn
+res://butonsonor.gd
+res://start.tscn
+res://globals.gd
+res://login.tscn
+res://butonsonor2.gd

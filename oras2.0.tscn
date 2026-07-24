@@ -13176,6 +13176,7 @@ limit_right = 3793
 limit_bottom = 2553
 position_smoothing_speed = 4.0
 script = ExtResource("2_04nbv")
+limit_max = Vector2(3000, 2000)
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
