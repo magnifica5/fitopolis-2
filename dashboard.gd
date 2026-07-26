@@ -1,7 +1,3 @@
-#=> modificare documentatie pt plugin
-#=> vazut ce scene trebuie sterse + ce scene au probleme la afisaj, text
-#=> muzica diferita pentru interfata de parinte
-#=> optinuea de a scoate muzica
 extends Control
 @onready var home = $HBoxContainer/Panel/VBoxContainer/TextureButton
 @onready var settings = $HBoxContainer/Panel/VBoxContainer/TextureButton2

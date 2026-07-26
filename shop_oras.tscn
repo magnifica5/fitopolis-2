@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bq7g65wpt238b"]
+[gd_scene load_steps=24 format=3 uid="uid://bq7g65wpt238b"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_m7bmd"]
 [ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="2_1fpbl"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://d0wauq3klxln0" path="res://casashop5.gd" id="16_viup1"]
 [ext_resource type="Script" uid="uid://boas1hl7y4f5q" path="res://casashop6.gd" id="19_8k30y"]
 [ext_resource type="Script" uid="uid://cvcjind643db2" path="res://casashop7.gd" id="20_vaca7"]
+[ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="23_uf0uh"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,7 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 95.0
 offset_top = 71.0
-offset_right = 3729.0
+offset_right = 3712.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -83,7 +84,7 @@ anchor_bottom = 0.5
 offset_left = -155.202
 offset_top = 238.52
 offset_right = -3724.0
-offset_bottom = 192.0
+offset_bottom = 317.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -411,6 +412,10 @@ scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("12_ay86s")
 ignore_texture_size = true
 script = ExtResource("13_r6vcd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/return"]
+stream = ExtResource("23_uf0uh")
+volume_db = -10.0
 
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" to="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" method="_on_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton" to="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton" method="_on_button_pressed"]

@@ -26,6 +26,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
     <application
         android:allowBackup="false"
@@ -43,7 +44,7 @@
             android:value="gl_compatibility" />
         <meta-data
             android:name="org.godotengine.editor.version"
-            android:value="4.5.1.stable" />
+            android:value="4.5.stable" />
 
         <activity
             android:name="com.godot.game.GodotApp"
@@ -69,7 +70,7 @@
             android:shell="true" /> <!-- Records the version of the Godot library -->
         <meta-data
             android:name="org.godotengine.library.version"
-            android:value="4.5.1.stable" />
+            android:value="4.5.0.stable" />
 
         <service android:name="org.godotengine.godot.GodotDownloaderService" />
 
@@ -88,6 +89,24 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/godot_provider_paths" />
         </provider>
+
+        <meta-data
+            android:name="org.godotengine.plugin.v1.LocalNotification"
+            android:value="vn.kyoz.godot.localnotification.LocalNotification" />
+
+        <receiver
+            android:name="vn.kyoz.godot.localnotification.LocalNotificationReceiver"
+            android:process=":remote" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.ioana.fitopolis.androidx-startup"
@@ -115,7 +134,12 @@
             <intent-filter>
                 <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
             </intent-filter>
-        </receiver>
+        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+        <activity
+            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+            android:exported="false"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.PlayCore.Transparent" />
     </application>
 
 </manifest>

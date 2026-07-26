@@ -199,4 +199,12 @@ func check_unique_username(u_name: String) -> bool:
 
 
 func _log_out() -> void:
-	pass # Replace with function body.
+	var auth_task = await Supabase.auth.sign_out().completed
+	if auth_task.error == null:
+		print("Delogare reușită!")
+		DirAccess.remove_absolute("user://session.save")
+		DirAccess.remove_absolute("user://start.save")
+		DirAccess.remove_absolute("user://hours.save")
+		get_tree().change_scene_to_file("res://start.tscn")
+	else:
+		print("Eroare la delogare: ", auth_task.error.message)

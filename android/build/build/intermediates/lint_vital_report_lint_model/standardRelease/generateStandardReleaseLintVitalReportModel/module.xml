@@ -1,12 +1,12 @@
 <lint-module
     format="1"
-    dir="C:\Users\Butea Nicolae\OneDrive\Documents\Desktop\fitopolis3221\fitopolis-2\android\build"
+    dir="D:\proiect joc final\fitopolis\android\build"
     name=":"
     type="APP"
     maven=":build:unspecified"
     agpVersion="8.6.1"
     buildFolder="build"
-    bootClassPath="E:\sdk_android\platforms\android-35\android.jar;E:\sdk_android\build-tools\35.0.0\core-lambda-stubs.jar"
+    bootClassPath="C:\Users\flori\AppData\Local\Android\Sdk\platforms\android-35\android.jar;C:\Users\flori\AppData\Local\Android\Sdk\build-tools\35.0.0\core-lambda-stubs.jar"
     javaSourceLevel="17"
     compileTarget="android-35"
     neverShrinking="true">

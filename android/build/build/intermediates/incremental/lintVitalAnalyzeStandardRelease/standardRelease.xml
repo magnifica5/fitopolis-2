@@ -6,7 +6,7 @@
     mergedManifest="build\intermediates\merged_manifest\standardRelease\processStandardReleaseMainManifest\AndroidManifest.xml"
     proguardFiles="build\intermediates\default_proguard_files\global\proguard-android.txt-8.6.1"
     partialResultsDir="build\intermediates\lint_vital_partial_results\standardRelease\lintVitalAnalyzeStandardRelease\out"
-    desugaredMethodsFiles="C:\Users\Butea Nicolae\.gradle\caches\8.11.1\transforms\66980b22a791903c8bd72bc5bd728105\transformed\D8BackportedDesugaredMethods.txt">
+    desugaredMethodsFiles="C:\Users\flori\.gradle\caches\8.11.1\transforms\66980b22a791903c8bd72bc5bd728105\transformed\D8BackportedDesugaredMethods.txt">
   <buildFeatures
       namespacing="REQUIRED"/>
   <sourceProviders>
@@ -26,6 +26,6 @@
       applicationId="com.ioana.fitopolis"
       generatedSourceFolders="build\generated\ap_generated_sources\standardRelease\out;build\generated\source\buildConfig\standard\release"
       generatedResourceFolders="build\generated\res\resValues\standard\release"
-      desugaredMethodsFiles="C:\Users\Butea Nicolae\.gradle\caches\8.11.1\transforms\66980b22a791903c8bd72bc5bd728105\transformed\D8BackportedDesugaredMethods.txt">
+      desugaredMethodsFiles="C:\Users\flori\.gradle\caches\8.11.1\transforms\66980b22a791903c8bd72bc5bd728105\transformed\D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bj6f06xbk5w3q"]
+[gd_scene load_steps=75 format=3 uid="uid://bj6f06xbk5w3q"]
 
 [ext_resource type="Texture2D" uid="uid://cbhbl3xi0b88q" path="res://assets/home_d.png" id="1_gt2mv"]
 [ext_resource type="Script" uid="uid://bv1x4jakl58" path="res://dashboard.gd" id="1_uj34o"]
@@ -110,6 +110,20 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ei5kn"]
+bg_color = Color(1, 0.5411765, 0.5411765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df04x"]
+bg_color = Color(1, 0.5411765, 0.5411765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hgs0"]
 bg_color = Color(1, 0.5411765, 0.5411765, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -278,11 +292,10 @@ size_flags_horizontal = 3
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tal5t")
-current_tab = 1
+current_tab = 0
 tabs_visible = false
 
 [node name="Control" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("6_4741l")
 metadata/_tab_index = 0
@@ -581,6 +594,7 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("9_q8aok")
 
 [node name="Control2" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("12_2k5vf")
 metadata/_tab_index = 1
@@ -810,43 +824,6 @@ theme_override_fonts/font = ExtResource("5_p5lni")
 theme_override_font_sizes/font_size = 40
 text = "salveaza"
 
-[node name="Button2" type="Button" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 615.0
-offset_top = -1051.0
-offset_right = 776.0
-offset_bottom = -970.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_45ya1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ei5kn")
-
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Button2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -62.0
-offset_top = -36.5
-offset_right = 62.0
-offset_bottom = 36.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_p5lni")
-theme_override_font_sizes/font_size = 30
-text = "sterge
-contul"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Button3" type="Button" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
 layout_mode = 1
 anchors_preset = 7
@@ -854,14 +831,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 425.0
-offset_top = -1051.0
-offset_right = 586.0
-offset_bottom = -970.0
+offset_left = -773.0
+offset_top = -509.0
+offset_right = -612.0
+offset_bottom = -428.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_45ya1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ei5kn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_df04x")
 
 [node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Button3"]
 layout_mode = 1
@@ -890,31 +868,32 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 675.0
+offset_left = 669.0
 offset_top = -499.0
-offset_right = 754.0
-offset_bottom = -418.0
+offset_right = 771.0
+offset_bottom = -395.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_45ya1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ei5kn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8hgs0")
 toggle_mode = true
 script = ExtResource("17_dan5v")
 
 [node name="SpriteOn" type="Sprite2D" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Button4"]
 visible = false
-position = Vector2(60, 42)
+position = Vector2(77, 54)
 scale = Vector2(0.30973914, 0.29141396)
 texture = ExtResource("18_df04x")
 
 [node name="SpriteOff" type="Sprite2D" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Button4"]
 visible = false
-position = Vector2(59.40625, 42.083496)
+position = Vector2(76, 53)
 scale = Vector2(0.08778104, 0.08333471)
 texture = ExtResource("19_8hgs0")
 
 [node name="ImageRemovebgPreview(63)" type="Sprite2D" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Button4"]
-position = Vector2(24.000015, 42.000015)
+position = Vector2(43.000015, 52.000015)
 scale = Vector2(0.31250027, 0.2879334)
 texture = ExtResource("20_d434x")
 
