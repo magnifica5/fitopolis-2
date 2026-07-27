@@ -45,7 +45,7 @@ func _on_text_changed(new_text):
 	var hour = int(text.substr(0, 2))
 	var minute = int(text.substr(3, 2))
 	var total_minutes = hour * 60 + minute
-	var min_allowed = 7 * 60 + 20   
+	var min_allowed = 9 * 60 + 00   
 	var max_allowed = 11 * 60  
 	if minute < 0 or minute > 59:
 		#add_theme_color_override("font_color", Color.RED)
