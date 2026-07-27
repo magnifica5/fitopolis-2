@@ -20,6 +20,9 @@ Pentru a instala respectivul fișier este nevoie ca utilizatorul să:
 4) Să apese pe semnul de download din site-ul MediaFire către care a fost redirecționat
 5) Să permită instalarea din setările telefonului (Setări → Aplicații → Chrome → Permite surse necunoscute → Activează)
 6) Să deschidă fișierul din bara de notificări sau din Downloads și să apese Instalează.
+## Documentatie si fisier explicativ
+Documentatia poate fi gasita aici: [Documentatie](Documentatie.pdf)
+Fisierul explicativ poate fi gasit aici: [Fisier Explicativ]
 
 ## Ajutor
 Pentru orice problema intalnita puteti trimite un email la adresa: fitopolis.channel@gmail.com
