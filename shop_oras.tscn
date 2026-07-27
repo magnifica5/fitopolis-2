@@ -90,7 +90,7 @@ grow_vertical = 2
 mouse_filter = 2
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
-scroll_deadzone = 10
+scroll_deadzone = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
 layout_mode = 2

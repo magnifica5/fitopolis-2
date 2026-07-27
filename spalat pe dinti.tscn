@@ -74,6 +74,7 @@ position = Vector2(406.4, 537.00006)
 scale = Vector2(3.212648, 3.15)
 sprite_frames = SubResource("SpriteFrames_sigox")
 autoplay = "default"
+frame_progress = 0.4232955
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 script = ExtResource("4_p1k7a")
