@@ -19,8 +19,12 @@ Elementele grafice ale jocului sunt preluate din pachete de asseturi free to use
   https://pzuh.itch.io/free-game-gui
 Acestea au fost imbinate si mulate pe ideea si functionalitatile jocului.
 
-De asemenea, pentru crearea personajelor Miss Nutri si Santos a fost folosit modelul ai Gemini.
-
+De asemenea, pentru crearea personajelor Miss Nutri si Santos, imagini pentru animatii cu ei facand activitatile zilnice si fundalul alb de peste stickerele cu pisici a fost folosit modelul ai Gemini.
+Stickerele cu pisici sunt preluate de pe Pinterest.
+Sunetele din joc sunt:
+https://opengameart.org/content/childrens-march-theme
+https://opengameart.org/content/happy-arcade-tune
+https://opengameart.org/content/ui-sound-effects-button-clicks-user-feedback-notifications
 Au fost utilizate pluginurile:
   https://github.com/kyoz/godot-local-notification => pentru trimiterea notificarilor catre utilozatori
   https://github.com/supabase-community/godot-engine.supabase => pentru conectarea la baza de date Supabase
