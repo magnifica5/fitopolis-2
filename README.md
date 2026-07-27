@@ -22,7 +22,7 @@ Pentru a instala respectivul fișier este nevoie ca utilizatorul să:
 6) Să deschidă fișierul din bara de notificări sau din Downloads și să apese Instalează.
 ## Documentatie si fisier explicativ
 Documentatia poate fi gasita aici: [Documentatie](Documentatie.pdf)
-Fisierul explicativ poate fi gasit aici: [Fisier Explicativ]
+Fisierul explicativ poate fi gasit aici: [Fisier Explicativ](https://github.com/magnifica5/fitopolis-2/blob/main/Fisier%20Explicativ)
 
 ## Ajutor
 Pentru orice problema intalnita puteti trimite un email la adresa: fitopolis.channel@gmail.com
