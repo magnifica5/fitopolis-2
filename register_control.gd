@@ -9,6 +9,7 @@ extends Control
 @onready var popup_conditii = $CanvasLayer3/Panel/Panel2
 @onready var panel_register = $CanvasLayer3/Panel
 @onready var panel_check = $CanvasLayer3/Panel2
+@onready var back = $CanvasLayer3/Panel/TextureButton
 var result
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +17,7 @@ func _ready() -> void:
 	popup_conditii.hide()
 	panel_register.show()
 	panel_check.hide()
+	back.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -23,10 +25,12 @@ func _process(delta: float) -> void:
 
 
 func _on_terms_pressed() -> void:
+	back.hide()
 	popup_termeni.show()
 
 
 func _on_policy_pressed() -> void:
+	back.hide()
 	popup_conditii.show()
 
 
@@ -66,10 +70,12 @@ func _on_inregistreaza() -> void:
 		
 func _close_termeni() -> void:
 	popup_termeni.hide()
+	back.show()
 
 
 func _close_politica() -> void:
 	popup_conditii.hide()
+	back.show()
 
 
 func _back_inregistrare() -> void:
