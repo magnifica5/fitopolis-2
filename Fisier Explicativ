@@ -25,6 +25,7 @@ Sunetele din joc sunt:
 https://opengameart.org/content/childrens-march-theme
 https://opengameart.org/content/happy-arcade-tune
 https://opengameart.org/content/ui-sound-effects-button-clicks-user-feedback-notifications
+Pentru replicile lui Santos si Miss Nutri a fost folosit ElevenLabs.
 Au fost utilizate pluginurile:
   https://github.com/kyoz/godot-local-notification => pentru trimiterea notificarilor catre utilozatori
   https://github.com/supabase-community/godot-engine.supabase => pentru conectarea la baza de date Supabase
