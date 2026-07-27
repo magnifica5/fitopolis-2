@@ -7,8 +7,8 @@ Link cattre site web:  https://www.cngmm.ro/fitopolis/
 
 ## Cerinte de sistem
 Conexiune la Internet
-Android 7.0 sau versiune mai nouă
-iOS 13 sau versiune mai nouă
+Android 13.0 sau versiune mai nouă
+iOS 16.2 sau versiune mai nouă
 
 
 ## Instalare
