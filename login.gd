@@ -1,7 +1,7 @@
 extends Node2D
 # Called when the node enters the scene tree for the first time.
-@onready var avatar_final = $bg/VBoxContainer/PanelContainer/TextureButton
-@onready var label_username = $bg/VBoxContainer/Label
+@onready var avatar_final = $bg/TextureRect2/TextureButton
+@onready var label_username = $bg/TextureRect2/Label4
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3

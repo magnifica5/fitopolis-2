@@ -1,7 +1,9 @@
 TextureButton
-Sprite2D
 Label
+NinePatchRect
+ProgressBar
 TextureRect
+Sprite2D
 ColorRect
 CanvasLayer
 Window
@@ -10,5 +12,3 @@ Area2D
 VBoxContainer
 LinkButton
 HBoxContainer
-Control
-Button
