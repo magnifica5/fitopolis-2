@@ -6,7 +6,7 @@ extends Control
 @onready var days = $Panel2/Label2
 @onready var avatar_final = $HBoxContainer/VBoxContainer/PanelContainer/TextureButton
 @onready var activity = $Panel/HBoxContainer2/Label3
-var sprite_sheet := preload("res://assets/animals.png")
+var sprite_sheet := preload("res://assets/animals1.png")
 var cols := 7
 var rows := 3
 # Called when the node enters the scene tree for the first time.

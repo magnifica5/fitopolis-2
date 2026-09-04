@@ -16,7 +16,7 @@ var trebuie_relogare : bool = false
 signal start_eye
 var modif_username = 0
 var email_final
-var sprite_sheet := preload("res://assets/animals.png")
+var sprite_sheet := preload("res://assets/animals1.png")
 var cols := 7
 var rows := 3
 var id_copil

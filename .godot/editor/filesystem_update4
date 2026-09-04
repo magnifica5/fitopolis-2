@@ -1,3 +1,3 @@
-res://login.tscn
-res://start_mission.gd
-res://login.gd
+res://upgrade_level.tscn
+res://fake_3d.gdshader
+res://upgrade_level.gd

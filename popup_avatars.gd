@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var panel = $PopupPanel
 @onready var grid = $PopupPanel/GridContainer
 # Called when the node enters the scene tree for the first time.
-var sprite_sheet := preload("res://assets/animals.png")
+var sprite_sheet := preload("res://assets/animals1.png")
 var cols := 7
 var rows := 3
 func _ready() -> void:
