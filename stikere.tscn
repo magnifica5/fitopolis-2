@@ -48,7 +48,7 @@
 [ext_resource type="Script" uid="uid://6jab54rs3vgd" path="res://s7.gd" id="35_7wdl4"]
 [ext_resource type="Texture2D" uid="uid://ch36nh4apgss6" path="res://lkj23-removebg-preview.png" id="35_santy"]
 [ext_resource type="Texture2D" uid="uid://2yb2dt5241ml" path="res://raf_360x360_075_t_fafafa_ca443f4786-removebg-preview.png" id="36_ktcrk"]
-[ext_resource type="Texture2D" uid="uid://bbswfoh5wnprq" path="res://Gemini_Generated_Image_k5yek5k5yek5k5ye-removebg-preview.png" id="37_ktlrv"]
+[ext_resource type="Texture2D" uid="uid://bbswfoh5wnprq" path="res://pisicaalba2.png" id="37_ktlrv"]
 [ext_resource type="Script" uid="uid://bexq5r2ny4jc2" path="res://disp8.gd" id="38_81i1o"]
 [ext_resource type="Texture2D" uid="uid://jjadfh2nifj8" path="res://animals-photoshopped-cats-koty-vezde-fb-png__700-removebg-preview.png" id="38_ul524"]
 [ext_resource type="Script" uid="uid://ds4ya0vkebl62" path="res://s8.gd" id="39_j1hem"]
@@ -783,19 +783,19 @@ position = Vector2(164.24998, 1170.5)
 scale = Vector2(0.7875, 0.7750001)
 texture = ExtResource("36_ktcrk")
 
-[node name="GeminiGeneratedImageK5Yek5k5Yek5k5YeRemovebgPreview" type="Sprite2D" parent="."]
+[node name="_" type="Sprite2D" parent="."]
 position = Vector2(161.5, 1172.0001)
 scale = Vector2(0.594, 0.5700003)
 texture = ExtResource("37_ktlrv")
 script = ExtResource("62_inukf")
 
-[node name="Area2D7" type="Area2D" parent="GeminiGeneratedImageK5Yek5k5Yek5k5YeRemovebgPreview"]
+[node name="Area2D7" type="Area2D" parent="_"]
 z_index = 3
 position = Vector2(1699.495, -1573.9031)
 scale = Vector2(1.3858389, 1.3552746)
 script = ExtResource("63_t2qwx")
 
-[node name="Label" type="Label" parent="GeminiGeneratedImageK5Yek5k5Yek5k5YeRemovebgPreview/Area2D7"]
+[node name="Label" type="Label" parent="_/Area2D7"]
 offset_left = -1285.2467
 offset_top = 1094.0032
 offset_right = -1066.2467
@@ -805,12 +805,12 @@ theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 
 theme_override_font_sizes/font_size = 39
 text = "300"
 
-[node name="CollisionShape2Dsa" type="CollisionShape2D" parent="GeminiGeneratedImageK5Yek5k5Yek5k5YeRemovebgPreview/Area2D7"]
+[node name="CollisionShape2Dsa" type="CollisionShape2D" parent="_/Area2D7"]
 position = Vector2(-1252.4473, 1123.1292)
 scale = Vector2(0.9999998, 0.9999996)
 shape = SubResource("RectangleShape2D_1m5r5")
 
-[node name="AdfaasddsaRemovebgPreview13" type="Sprite2D" parent="GeminiGeneratedImageK5Yek5k5Yek5k5YeRemovebgPreview"]
+[node name="AdfaasddsaRemovebgPreview13" type="Sprite2D" parent="_"]
 position = Vector2(-39.56228, -50.87732)
 scale = Vector2(1.7519822, 1.7443382)
 texture = ExtResource("11_j2aks")
@@ -1655,7 +1655,7 @@ stream = ExtResource("83_ovxm6")
 [connection signal="modificare" from="ImageRemovebgPreview(16)/Area2D4" to="CanvasLayer/TextureButton/Label" method="_on_area_2d_modificare"]
 [connection signal="modificare" from="ImageRemovebgPreview(17)/Area2D5" to="CanvasLayer/TextureButton/Label" method="_on_area_2d_modificare"]
 [connection signal="modificare" from="Lkj23RemovebgPreview/Area2D6" to="CanvasLayer/TextureButton/Label" method="_on_area_2d_modificare"]
-[connection signal="modificare" from="GeminiGeneratedImageK5Yek5k5Yek5k5YeRemovebgPreview/Area2D7" to="CanvasLayer/TextureButton/Label" method="_on_area_2d_modificare"]
+[connection signal="modificare" from="_/Area2D7" to="CanvasLayer/TextureButton/Label" method="_on_area_2d_modificare"]
 [connection signal="modificare" from="ImageRemovebgPreview(18)/Area2D8" to="CanvasLayer/TextureButton/Label" method="_on_area_2d_modificare"]
 [connection signal="modificare" from="ImageRemovebgPreview(19)/Area2D9" to="CanvasLayer/TextureButton/Label" method="_on_area_2d_modificare"]
 [connection signal="modificare" from="PisicaaaRemovebgPreview/Area2D9" to="CanvasLayer/TextureButton/Label" method="_on_area_2d_modificare"]

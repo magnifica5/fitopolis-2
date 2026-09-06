@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dtsa03c6hr31p" path="res://assets/bara meniu/exercitii.png" id="7_0trqi"]
 [ext_resource type="Texture2D" uid="uid://cbnjdq8xtv12b" path="res://assets/1000_F_262551537_Rk34ewPEqNd257BAfimSPaSLzAwYfPsx-removebg-preview.png" id="7_on3y8"]
 [ext_resource type="Texture2D" uid="uid://bcekdlppvjn0j" path="res://addons/supabase/Storage/images-removebg-preview (2).png" id="8_ysypo"]
-[ext_resource type="Texture2D" uid="uid://bjnaxpevceujt" path="res://assets/bara meniu/stikere.jpg" id="9_2rjvb"]
+[ext_resource type="Texture2D" uid="uid://bjnaxpevceujt" path="res://stikere.jpg" id="9_2rjvb"]
 [ext_resource type="Script" uid="uid://bj8h8sxumd4ug" path="res://labeloras.gd" id="10_mgw1h"]
 [ext_resource type="Script" uid="uid://dmryn8xccyd2f" path="res://labelstickere.gd" id="14_affgl"]
 [ext_resource type="Texture2D" uid="uid://dc0gqvsbb6mku" path="res://assets/happyB.png" id="14_qyti6"]

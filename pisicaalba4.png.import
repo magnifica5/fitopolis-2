@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjnaxpevceujt"
-path="res://.godot/imported/stikere.jpg-80708057fb8258dce5f2ed1ea5bf2fee.ctex"
+uid="uid://c6nbaxxfsogxm"
+path="res://.godot/imported/pisicaalba4.png-19d7851f30f655e2cd81fdc728f76942.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bara meniu/stikere.jpg"
-dest_files=["res://.godot/imported/stikere.jpg-80708057fb8258dce5f2ed1ea5bf2fee.ctex"]
+source_file="res://pisicaalba4.png"
+dest_files=["res://.godot/imported/pisicaalba4.png-19d7851f30f655e2cd81fdc728f76942.ctex"]
 
 [params]
 

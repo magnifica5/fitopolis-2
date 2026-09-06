@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6nbaxxfsogxm"
-path="res://.godot/imported/Gemini_Generated_Image_1rz84j1rz84j1rz8.png-3a87707c472b6ece7b26a3d148fa455d.ctex"
+uid="uid://dc1me3hwmq4y4"
+path="res://.godot/imported/nigu6.svg-3723ce6cd95bed9df7445cca50d66299.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gemini_Generated_Image_1rz84j1rz84j1rz8.png"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_1rz84j1rz84j1rz8.png-3a87707c472b6ece7b26a3d148fa455d.ctex"]
+source_file="res://addons/nigu6.svg"
+dest_files=["res://.godot/imported/nigu6.svg-3723ce6cd95bed9df7445cca50d66299.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=5.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
