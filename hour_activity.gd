@@ -25,6 +25,7 @@ func save_progress():
 		"somn": int(complete_somn),
 		"missed": int(missed)
 	}
+	print(data)
 	print("ne pregatim de update")
 	var task_upsert = Supabase.database.query(SupabaseQuery.new().from("progres_copil").update(data).eq("connection_code", Globals.citeste_code()))
 	var result = await task_upsert.completed
@@ -51,6 +52,7 @@ func load_progress():
 		var data = result.data
 		if data.size() > 0:
 			data = data[0]
+			print(data)
 			complete_trezire = data.trezire
 			complete_ex = data.ex1
 			complete_dejun = data.masa_dimineata
@@ -59,7 +61,10 @@ func load_progress():
 			complete_cina = data.masa_seara
 			complete_somn = data.somn
 			missed = data.missed
+		else:
+			print(result.error.message)
 		is_data_loaded = true
+		
 	#if not FileAccess.file_exists("user://progress.json"):
 		#return  
 #
@@ -82,13 +87,14 @@ func load_progress():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_progress()
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
 func _on_choose_activity():
+	await load_progress()
 	var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.citeste_code())
 	print(Globals.code)
 	var task = Supabase.database.query(query)
@@ -117,49 +123,49 @@ func _on_choose_activity():
 		elif mins >= trezire and mins <= trezire + 7:
 			if complete_trezire == 0:
 				complete_trezire = 1
-				save_progress()
+				await save_progress()
 				get_tree().change_scene_to_file("res://trezire.tscn")
 			else:
 				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
 		elif mins >= ex_dimineata and mins <= ex_dimineata + 7:
 			if complete_ex == 0:
 				complete_ex = 1
-				save_progress()
+				await save_progress()
 				get_tree().change_scene_to_file("res://exercitii_dimineata.tscn")
 			else:
 				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
 		elif mins >= dejun and mins <= dejun + 7:
 			if complete_dejun == 0:
 				complete_dejun = 1
-				save_progress()
+				await save_progress()
 				get_tree().change_scene_to_file("res://spalat_maini.tscn")
 			else:
 				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
 		elif mins >= pranz and mins <= pranz + 7:
 			if complete_pranz == 0:
 				complete_pranz = 1
-				save_progress()
+				await save_progress()
 				get_tree().change_scene_to_file("res://spalat_maini.tscn")
 			else:
 				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
 		elif mins >= ex_seara and mins <= ex_seara + 7:
 			if complete_ex2 == 0:
 				complete_ex2 = 1
-				save_progress()
+				await save_progress()
 				get_tree().change_scene_to_file("res://exercitii_dimineata.tscn")
 			else:
 				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
 		elif mins >= cina and mins <= cina + 7:
 			if complete_cina == 0:
 				complete_cina = 1
-				save_progress()
+				await save_progress()
 				get_tree().change_scene_to_file("res://spalat_maini.tscn")
 			else:
 				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
 		elif mins >= somn and mins <= somn + 7:
 			if complete_somn == 0:
 				complete_somn = 1
-				save_progress()
+				await save_progress()
 				get_tree().change_scene_to_file("res://baie_dimineata.tscn")
 			else:
 				get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")

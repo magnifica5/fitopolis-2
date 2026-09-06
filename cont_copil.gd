@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-var sprite_sheet := preload("res://assets/animals.png")
+var sprite_sheet := preload("res://assets/animals1.png")
 var cols := 7
 var rows := 3
 var child_name: String

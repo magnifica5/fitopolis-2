@@ -19,13 +19,17 @@ Elementele grafice ale jocului sunt preluate din pachete de asseturi free to use
   https://pzuh.itch.io/free-game-gui
 Acestea au fost imbinate si mulate pe ideea si functionalitatile jocului.
 
-De asemenea, pentru crearea personajelor Miss Nutri si Santos si a frame-urilor cu acestia utilizate in realizarea exercitiilor fizice, a fost
-folosit modelul ai Gemini. Integrarea frame-urilor in joc a fost realizata de autorii proiectului.
-
+De asemenea, pentru crearea personajelor Miss Nutri si Santos, imagini pentru animatii cu ei facand activitatile zilnice si fundalul alb de peste stickerele cu pisici a fost folosit modelul ai Gemini.
+Stickerele cu pisici sunt preluate de pe Pinterest.
+Sunetele din joc sunt:
+https://opengameart.org/content/childrens-march-theme
+https://opengameart.org/content/happy-arcade-tune
+https://opengameart.org/content/ui-sound-effects-button-clicks-user-feedback-notifications
+Pentru replicile lui Santos si Miss Nutri a fost folosit ElevenLabs.
 Au fost utilizate pluginurile:
-  https://github.com/godot-mobile-plugins/godot-notification-scheduler => pentru trimiterea notificarilor catre utilozatori
+  https://github.com/kyoz/godot-local-notification => pentru trimiterea notificarilor catre utilozatori
   https://github.com/supabase-community/godot-engine.supabase => pentru conectarea la baza de date Supabase
-
+Partea de backend a site-ului destinat parintilor este gestionata de serverul Colegiului National "Gheorghe Munteanu Murgoci" din Braila.
 In realizarea proiectului:
   Tăbârcă Ioana - clasa a X-a - rolul în echipă: Programarea unor funcționalități ale jocului, realizarea site-ului web, 
   gestionarea bazei de date, pregătirea discursului

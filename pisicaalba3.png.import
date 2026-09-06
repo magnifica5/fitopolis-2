@@ -2,16 +2,35 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dyho6iys1k5qo"
+<<<<<<<< HEAD:pisicaalba3.png.import
 path="res://.godot/imported/pisicaalba3.png-676d9ce597c2503d291bfaf0b64756d2.ctex"
+========
+path="res://.godot/imported/pisicaalba2.png-27d9c7b08d5cfbe9764aaaf58bbde1d3.ctex"
+>>>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9:pisicaalba2.png.import
+=======
+uid="uid://bbswfoh5wnprq"
+path="res://.godot/imported/pisicaalba3.png-676d9ce597c2503d291bfaf0b64756d2.ctex"
+>>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD
+<<<<<<<< HEAD:pisicaalba3.png.import
 source_file="res://pisicaalba3.png"
 dest_files=["res://.godot/imported/pisicaalba3.png-676d9ce597c2503d291bfaf0b64756d2.ctex"]
+========
+source_file="res://pisicaalba2.png"
+dest_files=["res://.godot/imported/pisicaalba2.png-27d9c7b08d5cfbe9764aaaf58bbde1d3.ctex"]
+>>>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9:pisicaalba2.png.import
+=======
+source_file="res://pisicaalba3.png"
+dest_files=["res://.godot/imported/pisicaalba3.png-676d9ce597c2503d291bfaf0b64756d2.ctex"]
+>>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9
 
 [params]
 

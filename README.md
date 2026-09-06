@@ -7,8 +7,8 @@ Link cattre site web:  https://www.cngmm.ro/fitopolis/
 
 ## Cerinte de sistem
 Conexiune la Internet
-Android 7.0 sau versiune mai nouă
-iOS 13 sau versiune mai nouă
+Android 13.0 sau versiune mai nouă
+iOS 16.2 sau versiune mai nouă
 
 
 ## Instalare
@@ -20,6 +20,8 @@ Pentru a instala respectivul fișier este nevoie ca utilizatorul să:
 4) Să apese pe semnul de download din site-ul MediaFire către care a fost redirecționat
 5) Să permită instalarea din setările telefonului (Setări → Aplicații → Chrome → Permite surse necunoscute → Activează)
 6) Să deschidă fișierul din bara de notificări sau din Downloads și să apese Instalează.
+## Documentatie si fisier explicativ
+Documentatia poate fi gasita aici: [Documentatie](Documentatie.pdf), fisierul explicativ poate fi gasit aici: [Fisier Explicativ](https://github.com/magnifica5/fitopolis-2/blob/main/Fisier%20Explicativ)
 
 ## Ajutor
 Pentru orice problema intalnita puteti trimite un email la adresa: fitopolis.channel@gmail.com

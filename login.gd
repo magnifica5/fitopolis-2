@@ -1,7 +1,7 @@
 extends Node2D
 # Called when the node enters the scene tree for the first time.
-@onready var avatar_final = $bg/VBoxContainer/PanelContainer/TextureButton
-@onready var label_username = $bg/VBoxContainer/Label
+@onready var avatar_final = $bg/TextureRect2/TextureButton
+@onready var label_username = $bg/TextureRect2/Label4
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 
 func _catre_oras_pressed() -> void:
 	$AudioStreamPlayer.play()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://oras2.0.tscn")
 
 

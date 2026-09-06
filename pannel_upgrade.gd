@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 
 
 func _on_upgrade() -> void:
-	
+	$TextureButton/AudioStreamPlayer.play()
+	await get_tree().create_timer(0.1).timeout
 	Globals.code = Globals.citeste_code()
 	var cost_item = int(label.text)
 	

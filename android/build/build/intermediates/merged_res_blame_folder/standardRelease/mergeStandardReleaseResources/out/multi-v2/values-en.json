@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.godot.game-mergeStandardReleaseResources-17:/values-en/values-en.xml",
+            "outputFile": "com.godot.game-mergeStandardReleaseResources-20:/values-en/values-en.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Butea Nicolae\\OneDrive\\Documents\\Desktop\\fitopolis3221\\fitopolis-2\\android\\build\\res\\values-en\\godot_project_name_string.xml",
+                    "source": "D:\\proiect joc final\\fitopolis\\android\\build\\res\\values-en\\godot_project_name_string.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "1",

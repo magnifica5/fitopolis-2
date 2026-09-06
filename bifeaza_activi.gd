@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 
 
 func _back_to_start() -> void:
+	await HourActivity.load_progress()
 	var score = 0
 	var missed = 0
 	if b1.button_pressed and HourActivity.complete_trezire == 1:
