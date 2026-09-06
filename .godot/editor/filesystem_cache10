@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1788537467
+::res://::1788636395
 1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png::CompressedTexture2D::7536361269957601271::1787829251::1787829416::1::::<><><>0<>0<>90887020950a425c34a5a32d52c2c2b1<>res://.godot/imported/1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png-31eeab7255796e435b6bef19b2230d3b.ctex::
 3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png::CompressedTexture2D::7203370797049039625::1787829251::1787829416::1::::<><><>0<>0<>d5101df9ac9e6f9ffa28680a865de1e5<>res://.godot/imported/3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png-905d6c87ca81b69e818b1aa13f4ebe47.ctex::
 046af01fa841d786d1e967f8797ece8c-removebg-preview.png::CompressedTexture2D::4015776957699399800::1787829251::1787829416::1::::<><><>0<>0<>0b1d9f31e2a0afb977f3245961ba208a<>res://.godot/imported/046af01fa841d786d1e967f8797ece8c-removebg-preview.png-d634b8e8ab617928486f71008f63f162.ctex::
@@ -153,6 +153,7 @@ exercitii_dimineata.gd::GDScript::2605176707245651271::1787829268::0::1::::<>Nod
 exercitii_dimineata.tscn::PackedScene::5318395315619441575::1787829268::0::1::::<><><>0<>0<><>::uid://bdd7458t6thpf::::res://exercitii_dimineata.gd<>uid://cn75pyluqa4ta::::res://exercitii_dimineata/animatie1/animatie1_0000.png
 export_presets.cfg::TextFile::-1::1787829270::0::1::::<><><>0<>0<><>::
 eye_script.gd::GDScript::1730310678342737432::1787829270::0::1::::<>LineEdit<><>0<>0<><>::
+fake_3d.gdshader::Shader::9014276628722755603::1788538224::0::1::::<><><>0<>0<><>::
 fata.gd::GDScript::3218114218797088254::1787829270::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
 fata_costum.gd::GDScript::3434552860317747141::1787829270::0::1::::<>TextureRect<><>0<>0<><>::
 fata_somn.gd::GDScript::5099703037428360455::1787829270::0::1::::<>TextureRect<><>0<>0<><>::
@@ -435,7 +436,8 @@ Untitled-design-removebg-preview.png::CompressedTexture2D::3891642580466324739::
 upgrade.gd::GDScript::1291214010748189890::1787829270::0::1::::<>TextureRect<><>0<>0<><>::
 upgradebutton.gd::GDScript::5857359903028104551::1787829270::0::1::::<>TextureButton<><>0<>0<><>::
 upgradegamestate.gd::GDScript::1354053627982680874::1787829270::0::1::::<>TextureButton<><>0<>0<><>::
-upgrade_level.tscn::PackedScene::3410023239879722331::1788535423::0::1::::<><><>0<>0<><>::uid://2mn6f0podjy::::res://assets/font/Signika-Medium.ttf<>uid://dojrkukspudi3::::res://assets/rounded_rect.png<>uid://bqvkyelrupf1j::::res://assets/rays.png<>uid://bb8ytkwjrxikn::::res://assets/shield.svg<>uid://vvy0ehssscut::::res://assets/ribbon.png<>uid://b3u7x6rbqx0sk::::res://assets/font/Signika-SemiBold.ttf<>uid://btq1101rngqg8::::res://assets/font/Signika-Bold.ttf<>uid://d4ggqu31e2x6c::::res://assets/font/Signika-Regular.ttf<>uid://bqkyyqh371m3g::::res://assets/castig/stea1.png<>uid://1lbmgu7bx6sr::::res://assets/stickere_item.svg<>uid://dl22bopov6wms::::res://oras_logo.svg
+upgrade_level.gd::GDScript::3626183888897095324::1788544823::0::1::::<>Control<><>0<>0<><>::
+upgrade_level.tscn::PackedScene::3410023239879722331::1788542331::0::1::::<><><>0<>0<><>::uid://brwsyo8841tnw::::res://upgrade_level.gd<>uid://2mn6f0podjy::::res://assets/font/Signika-Medium.ttf<>uid://dojrkukspudi3::::res://assets/rounded_rect.png<>uid://bqvkyelrupf1j::::res://assets/rays.png<>uid://bb8ytkwjrxikn::::res://assets/shield.svg<>uid://vvy0ehssscut::::res://assets/ribbon.png<>uid://d1ot2333ooab8::::res://fake_3d.gdshader<>uid://b3u7x6rbqx0sk::::res://assets/font/Signika-SemiBold.ttf<>uid://btq1101rngqg8::::res://assets/font/Signika-Bold.ttf<>uid://d4ggqu31e2x6c::::res://assets/font/Signika-Regular.ttf<>uid://bqkyyqh371m3g::::res://assets/castig/stea1.png<>uid://1lbmgu7bx6sr::::res://assets/stickere_item.svg<>uid://dl22bopov6wms::::res://oras_logo.svg
 upgrade_pannel.gd::GDScript::1447600182370288500::1787829270::0::1::::<>TextureRect<><>0<>0<><>::
 verif_dinti.gd::GDScript::5341451301901462406::1787829270::0::1::::<>CanvasLayer<><>0<>0<><>::
 vezip.gd::GDScript::8486313229581143128::1787829270::0::1::::<>Label<><>0<>0<><>::
@@ -2276,6 +2278,8 @@ tocanita.webp::CompressedTexture2D::4353240330161463024::1787829270::1787829414:
 ton_si_porumb.jpg::CompressedTexture2D::9185293269834831159::1787829270::1787829414::1::::<><><>0<>0<>03b78470e5730c67536e29f60eba08be<>res://.godot/imported/ton_si_porumb.jpg-68b928154eee20e1cb78b4846c95a1f9.ctex::
 ::res://replici/::1787829270
 replici_dimineata.json::JSON::-1::1787829270::0::1::::<><><>0<>0<><>::
+::res://shaders/::1788537615
+gradientgdshader.gdshader::Shader::5969320769385420281::1788516562::0::1::::<><><>0<>0<><>::
 ::res://spalat pe dinti/::1787829417
 1.png::CompressedTexture2D::3032796312790266927::1787829270::1787829415::1::::<><><>0<>0<>8e17d4a07b9c1fec150178a4205a499f<>res://.godot/imported/1.png-1f338e67b37c9d5af12b553605b6c5a4.ctex::
 2.png::CompressedTexture2D::4424520148541528408::1787829270::1787829415::1::::<><><>0<>0<>4f01879d3af9b7cd8c7f8c50c834cd9e<>res://.godot/imported/2.png-facc8643398d28f4980f33ba88cb56c3.ctex::
