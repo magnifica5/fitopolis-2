@@ -1,6 +1,9 @@
+TextureButton
+RichTextLabel
+Label
+CanvasLayer
 GPUParticles2D
 TextureRect
-Label
 Panel
 Button
 HBoxContainer
@@ -9,7 +12,3 @@ AnimatedSprite2D
 ColorRect
 VideoStreamPlayer
 TextureProgressBar
-TextureButton
-NinePatchRect
-ProgressBar
-Sprite2D

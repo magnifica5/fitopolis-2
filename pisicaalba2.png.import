@@ -2,45 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-<<<<<<<< HEAD:pisicaalba2.png.import
-uid="uid://bbswfoh5wnprq"
+uid="uid://t0i363bipy0w"
 path="res://.godot/imported/pisicaalba2.png-27d9c7b08d5cfbe9764aaaf58bbde1d3.ctex"
-========
-uid="uid://cigsxb8kk43pa"
-path="res://.godot/imported/pisicaalbastra.png-81a292fd23afe35043472f30bd090c60.ctex"
->>>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9:pisicaalbastra.png.import
-=======
-uid="uid://dyho6iys1k5qo"
-<<<<<<<< HEAD:pisicaalba3.png.import
-path="res://.godot/imported/pisicaalba3.png-676d9ce597c2503d291bfaf0b64756d2.ctex"
-========
-path="res://.godot/imported/pisicaalba2.png-27d9c7b08d5cfbe9764aaaf58bbde1d3.ctex"
->>>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9:pisicaalba2.png.import
->>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD
-<<<<<<<< HEAD:pisicaalba2.png.import
 source_file="res://pisicaalba2.png"
 dest_files=["res://.godot/imported/pisicaalba2.png-27d9c7b08d5cfbe9764aaaf58bbde1d3.ctex"]
-========
-source_file="res://pisicaalbastra.png"
-dest_files=["res://.godot/imported/pisicaalbastra.png-81a292fd23afe35043472f30bd090c60.ctex"]
->>>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9:pisicaalbastra.png.import
-=======
-<<<<<<<< HEAD:pisicaalba3.png.import
-source_file="res://pisicaalba3.png"
-dest_files=["res://.godot/imported/pisicaalba3.png-676d9ce597c2503d291bfaf0b64756d2.ctex"]
-========
-source_file="res://pisicaalba2.png"
-dest_files=["res://.godot/imported/pisicaalba2.png-27d9c7b08d5cfbe9764aaaf58bbde1d3.ctex"]
->>>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9:pisicaalba2.png.import
->>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9
 
 [params]
 
