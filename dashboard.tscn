@@ -292,7 +292,11 @@ size_flags_horizontal = 3
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tal5t")
+<<<<<<< HEAD
+current_tab = 2
+=======
 current_tab = 3
+>>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9
 tabs_visible = false
 
 [node name="Control" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
@@ -1424,7 +1428,6 @@ theme_override_font_sizes/font_size = 50
 text = "X"
 
 [node name="Control3" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("20_2vt8e")
 metadata/_tab_index = 2

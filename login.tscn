@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cbnjdq8xtv12b" path="res://assets/1000_F_262551537_Rk34ewPEqNd257BAfimSPaSLzAwYfPsx-removebg-preview.png" id="7_on3y8"]
 [ext_resource type="Texture2D" uid="uid://cishe44xdkolv" path="res://assets/bara_progres.svg" id="8_xqlb1"]
 [ext_resource type="Texture2D" uid="uid://bcekdlppvjn0j" path="res://addons/supabase/Storage/images-removebg-preview (2).png" id="8_ysypo"]
-[ext_resource type="Texture2D" uid="uid://bjnaxpevceujt" path="res://assets/bara meniu/stikere.jpg" id="9_2rjvb"]
+[ext_resource type="Texture2D" uid="uid://bjnaxpevceujt" path="res://stikere.jpg" id="9_2rjvb"]
 [ext_resource type="Script" uid="uid://bj8h8sxumd4ug" path="res://labeloras.gd" id="10_mgw1h"]
 [ext_resource type="Texture2D" uid="uid://dics7yhfhnawq" path="res://assets/bar_lvl.svg" id="12_affgl"]
 [ext_resource type="Texture2D" uid="uid://jraohprdfdyt" path="res://assets/content_bar.svg" id="13_mee7c"]
