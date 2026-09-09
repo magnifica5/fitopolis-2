@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:pisicaalba2.png.import
-uid="uid://bbswfoh5wnprq"
-path="res://.godot/imported/pisicaalba2.png-27d9c7b08d5cfbe9764aaaf58bbde1d3.ctex"
-========
-uid="uid://cigsxb8kk43pa"
+uid="uid://j0waahdo0rjl"
 path="res://.godot/imported/pisicaalbastra.png-81a292fd23afe35043472f30bd090c60.ctex"
->>>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9:pisicaalbastra.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:pisicaalba2.png.import
-source_file="res://pisicaalba2.png"
-dest_files=["res://.godot/imported/pisicaalba2.png-27d9c7b08d5cfbe9764aaaf58bbde1d3.ctex"]
-========
 source_file="res://pisicaalbastra.png"
 dest_files=["res://.godot/imported/pisicaalbastra.png-81a292fd23afe35043472f30bd090c60.ctex"]
->>>>>>>> 2bbb6405d2d95f02d77acb921aabffbcf22b4dc9:pisicaalbastra.png.import
 
 [params]
 

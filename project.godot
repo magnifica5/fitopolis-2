@@ -27,6 +27,7 @@ Unlock_levels="*res://unlock_levels.gd"
 SoundManager="*res://sound_manager.tscn"
 GameState="*res://GameState.gd"
 Localization="*res://Localization.gd"
+ControlLevel="*res://control_level.gd"
 
 [display]
 
