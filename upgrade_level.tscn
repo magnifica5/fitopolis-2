@@ -195,7 +195,6 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.39453125, 0.39453125, 0.39453125, 1)
 theme_override_fonts/font = ExtResource("4_yut6b")
 theme_override_font_sizes/font_size = 150
-text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 

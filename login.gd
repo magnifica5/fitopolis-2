@@ -2,6 +2,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 @onready var avatar_final = $bg/TextureRect2/TextureButton
 @onready var label_username = $bg/TextureRect2/Label4
+@onready var label_level = $bg/TextureRect2/Label2
+@onready var progres_bar = $bg/TextureProgressBar
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
@@ -17,6 +19,9 @@ func _ready() -> void:
 	if result.error == null and result.data.size() > 0:
 		var data = result.data[0]
 		Globals.adauga_scor(data.scor)
+		label_level.text = str(ControlLevel.get_level(data.scor))
+		progres_bar.value = ControlLevel.get_progress(data.scor)
+		ControlLevel.level_up.connect(_on_level_up)
 		label_username.text = data.username
 		var avatar = int(data.avatar_number)
 		var sheet_size = sprite_sheet.get_size()
@@ -63,3 +68,6 @@ func _on_level_1() -> void:
 func _catre_stikere() -> void:
 	$AudioStreamPlayer.play()
 	get_tree().change_scene_to_file("res://stikere.tscn")
+
+func _on_level_up(new_level: int):
+	get_tree().change_scene_to_file("res://upgrade_level.tscn")
