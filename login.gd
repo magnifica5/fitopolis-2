@@ -19,9 +19,6 @@ func _ready() -> void:
 	if result.error == null and result.data.size() > 0:
 		var data = result.data[0]
 		Globals.adauga_scor(data.scor)
-		label_level.text = str(ControlLevel.get_level(data.scor))
-		progres_bar.value = ControlLevel.get_progress(data.scor)
-		ControlLevel.level_up.connect(_on_level_up)
 		label_username.text = data.username
 		var avatar = int(data.avatar_number)
 		var sheet_size = sprite_sheet.get_size()

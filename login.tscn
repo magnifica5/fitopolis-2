@@ -110,6 +110,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("19_t1khq")
 theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("20_hkpux")
 
@@ -370,8 +371,8 @@ volume_db = -10.0
 [node name="menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_osbi4")
 
-[connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
 [connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
+[connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton" to="." method="_catre_oras_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton4" to="." method="_catre_exercitii"]

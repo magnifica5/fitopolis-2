@@ -9,6 +9,7 @@ var complete_somn = 0
 var score = 0
 var missed = 0
 var nr_day = 0
+var activities = 0
 var date
 var is_data_loaded = false
 func save_progress():
@@ -23,7 +24,8 @@ func save_progress():
 		"ex2": int(complete_ex2),
 		"masa_seara": int(complete_cina),
 		"somn": int(complete_somn),
-		"missed": int(missed)
+		"missed": int(missed),
+		"activities": int(activities)
 	}
 	print(data)
 	print("ne pregatim de update")
@@ -61,6 +63,7 @@ func load_progress():
 			complete_cina = data.masa_seara
 			complete_somn = data.somn
 			missed = data.missed
+			activities = data.activities
 		else:
 			print(result.error.message)
 		is_data_loaded = true
