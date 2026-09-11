@@ -2,6 +2,7 @@ extends Node
 signal level_up(new_level)
 var current_level: int = 1
 const LEVEL_THRESHOLDS = [
+	 0,
 	 5,
 	15,
 	30,

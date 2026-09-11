@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b15y51ipnvbeq"]
+[gd_scene load_steps=34 format=3 uid="uid://b15y51ipnvbeq"]
 
 [ext_resource type="Script" uid="uid://crrx5y3d4afv7" path="res://login.gd" id="1_0s12h"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_cau7c"]
@@ -27,6 +27,14 @@
 [ext_resource type="AudioStream" uid="uid://tkntsuwyygk5" path="res://audio/menu_music.mp3" id="17_osbi4"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="19_t1khq"]
 [ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="20_hkpux"]
+[ext_resource type="Texture2D" uid="uid://cdws58tpw74u8" path="res://assets/pop_leadeboard.svg" id="28_ysypo"]
+[ext_resource type="Texture2D" uid="uid://4j5up2jbxr4t" path="res://assets/leaderboardIcon.svg" id="29_y2lsy"]
+[ext_resource type="Texture2D" uid="uid://jlsobvk5nvw2" path="res://assets/badgesIcon.svg" id="30_d05sf"]
+[ext_resource type="Script" uid="uid://cs7hxggflvunk" path="res://ledearboard_list.gd" id="31_d05sf"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="31_y2lsy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjkqk"]
+texture = ExtResource("28_ysypo")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0s12h")
@@ -371,8 +379,94 @@ volume_db = -10.0
 [node name="menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_osbi4")
 
-[connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
+[node name="leaderboard" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="leaderboard"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21960784, 0.21176471, 0.21176471, 0.9019608)
+
+[node name="Panel" type="Panel" parent="leaderboard"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -628.0
+offset_top = -445.75
+offset_right = 628.0
+offset_bottom = 445.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bjkqk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="leaderboard/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -112.75
+offset_bottom = 28.25
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="leaderboard/Panel/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("29_y2lsy")
+texture_pressed = ExtResource("29_y2lsy")
+texture_hover = ExtResource("29_y2lsy")
+texture_disabled = ExtResource("29_y2lsy")
+texture_focused = ExtResource("29_y2lsy")
+stretch_mode = 3
+
+[node name="TextureButton2" type="TextureButton" parent="leaderboard/Panel/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("30_d05sf")
+texture_pressed = ExtResource("30_d05sf")
+texture_hover = ExtResource("30_d05sf")
+texture_disabled = ExtResource("30_d05sf")
+texture_focused = ExtResource("30_d05sf")
+stretch_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="leaderboard/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -542.0
+offset_top = -199.5
+offset_right = 518.0
+offset_bottom = 295.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("31_d05sf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="leaderboard/Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="leaderboard"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -162.0
+offset_bottom = 128.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("31_y2lsy")
+theme_override_font_sizes/font_size = 80
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
+[connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton" to="." method="_catre_oras_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton4" to="." method="_catre_exercitii"]

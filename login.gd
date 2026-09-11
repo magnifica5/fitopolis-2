@@ -12,6 +12,16 @@ func _ready() -> void:
 	SoundManager.sound_stop_menu()
 	SoundManager.sound_stop_win()
 	SoundManager.play_music(preload("res://audio/background_sound.mp3"))
+	
+	await HourActivity.load_progress()
+	var level_now = ControlLevel.get_level(HourActivity.activities)
+	var level_saved = Globals.citeste_level()
+	if level_saved != level_now:
+		Globals.adauga_level(str(level_now))
+		get_tree().change_scene_to_file("res://upgrade_level.tscn")
+		
+	label_level.text = str(ControlLevel.get_level(HourActivity.activities))
+	progres_bar.value = ControlLevel.get_progress(HourActivity.activities)
 	Globals.code = Globals.citeste_code()
 	var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
 	var task = Supabase.database.query(query)

@@ -21,6 +21,7 @@ var email
 var codep
 var saved_hours
 var username
+var level = 1
 signal verif_trezire
 signal verif_ex
 signal final_settings
@@ -135,6 +136,7 @@ func adauga_personaj(valoare: int):
 	else:
 		data_existenta = {}
 	data_existenta["personaj"] = valoare #atribuie dictionarului cheia pe care o vreau
+	data_existenta["level"] = "1"
 	succes_inchis = valoare
 	var file = FileAccess.open_encrypted(path_hours, FileAccess.WRITE, key) #salveaza noul dictionar
 	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
@@ -242,6 +244,24 @@ func adauga_code(valoare: String):
 	var file = FileAccess.open_encrypted(path_hours, FileAccess.WRITE, key) 
 	file.store_string(JSON.stringify(data_existenta, "\t")) 
 	file.close()
+
+func adauga_level(valoare: String):
+	var data_existenta = {}
+	var key = Globals.get_secure_key()
+	if FileAccess.file_exists(path_hours):
+		var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key)
+		var content = file.get_as_text()
+		file.close()
+		var result = JSON.parse_string(content)
+		if result:
+			data_existenta = result
+	else:
+		data_existenta = {}
+	data_existenta["level"] = valoare
+	level = valoare
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.WRITE, key) 
+	file.store_string(JSON.stringify(data_existenta, "\t")) 
+	file.close()
 #
 #func adauga_codep(valoare: String):
 	#var data_existenta = {}
@@ -327,6 +347,14 @@ func citeste_personaj():
 	file.close()
 	var valori = JSON.parse_string(content)
 	return int(valori["personaj"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
+
+func citeste_level():
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key)
+	var content = file.get_as_text()
+	file.close()
+	var valori = JSON.parse_string(content)
+	return int(valori["level"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
 
 func citeste_username():
 	var key = Globals.get_secure_key()
