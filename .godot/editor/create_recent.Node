@@ -1,14 +1,14 @@
-Label
+TextureRect
 HBoxContainer
+Node2D
+Label
 VBoxContainer
 ScrollContainer
 TextureButton
 ColorRect
 Panel
 CanvasLayer
-TextureRect
 PopupPanel
 Button
 RichTextLabel
 GPUParticles2D
-Control

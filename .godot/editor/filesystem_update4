@@ -1,12 +1,5 @@
-res://dashboard.tscn
-res://fake_3d.gdshader
-res://bifeaza_activi.gd
 res://login.tscn
-res://control_level.gd
-res://login.gd
-res://globals.gd
-res://upgrade_level.gd
-res://upgrade_level.tscn
+res://fake_3d.gdshader
+res://ledearboard_list.gd
 res://HboxLedearboard.tscn
 res://hbox_ledearboard.gd
-res://ledearboard_list.gd
