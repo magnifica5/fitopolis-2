@@ -4,10 +4,13 @@ extends Node2D
 @onready var label_username = $bg/TextureRect2/Label4
 @onready var label_level = $bg/TextureRect2/Label2
 @onready var progres_bar = $bg/TextureProgressBar
+@onready var leaderboard = $leaderboard
+@onready var leaderboard_scroll = $leaderboard/Leaderboard/ScrollContainer
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
 func _ready() -> void:
+	leaderboard.hide()
 	await get_tree().process_frame
 	SoundManager.sound_stop_menu()
 	SoundManager.sound_stop_win()
@@ -78,3 +81,13 @@ func _catre_stikere() -> void:
 
 func _on_level_up(new_level: int):
 	get_tree().change_scene_to_file("res://upgrade_level.tscn")
+
+
+func _on_esc() -> void:
+	leaderboard.hide()
+
+
+func _leaderboard() -> void:
+	leaderboard.show()
+	await leaderboard_scroll.deschide_leaderboard()
+	

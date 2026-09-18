@@ -141,9 +141,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -733.0
+offset_left = -717.0
 offset_top = -29.0
-offset_right = -436.0
+offset_right = -420.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -342,7 +342,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("19_t1khq")
 theme_override_font_sizes/font_size = 27
 text = "CLASAMENT"
-script = ExtResource("10_mgw1h")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -381,6 +380,7 @@ volume_db = -10.0
 stream = ExtResource("17_osbi4")
 
 [node name="leaderboard" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="leaderboard"]
 anchors_preset = 15
@@ -390,7 +390,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.21960784, 0.21176471, 0.21176471, 0.9019608)
 
-[node name="Panel" type="Panel" parent="leaderboard"]
+[node name="Leaderboard" type="Panel" parent="leaderboard"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -404,7 +404,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_bjkqk")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="leaderboard/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="leaderboard/Leaderboard"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -417,7 +417,7 @@ grow_vertical = 0
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="leaderboard/Panel/HBoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="leaderboard/Leaderboard/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("29_y2lsy")
 texture_pressed = ExtResource("29_y2lsy")
@@ -426,7 +426,7 @@ texture_disabled = ExtResource("29_y2lsy")
 texture_focused = ExtResource("29_y2lsy")
 stretch_mode = 3
 
-[node name="TextureButton2" type="TextureButton" parent="leaderboard/Panel/HBoxContainer"]
+[node name="TextureButton2" type="TextureButton" parent="leaderboard/Leaderboard/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("30_d05sf")
 texture_pressed = ExtResource("30_d05sf")
@@ -435,27 +435,71 @@ texture_disabled = ExtResource("30_d05sf")
 texture_focused = ExtResource("30_d05sf")
 stretch_mode = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="leaderboard/Panel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="leaderboard/Leaderboard"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -542.0
-offset_top = -199.5
-offset_right = 518.0
-offset_bottom = 295.5
+offset_left = -547.0
+offset_top = -217.0
+offset_right = 537.0
+offset_bottom = 315.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("31_d05sf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="leaderboard/Panel/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="leaderboard/Leaderboard/ScrollContainer"]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Label" type="Label" parent="leaderboard/Panel"]
+[node name="TextureRect" type="TextureRect" parent="leaderboard/Leaderboard/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1060, 100)
+layout_mode = 2
+texture = ExtResource("12_affgl")
+
+[node name="Rank" type="Label" parent="leaderboard/Leaderboard/ScrollContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 20.0
+offset_right = 195.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("31_y2lsy")
+theme_override_font_sizes/font_size = 50
+text = "#"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Username" type="Label" parent="leaderboard/Leaderboard/ScrollContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 20.0
+offset_right = 633.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("31_y2lsy")
+theme_override_font_sizes/font_size = 50
+text = "JUCATOR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Activities" type="Label" parent="leaderboard/Leaderboard/ScrollContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 781.0
+offset_top = 20.0
+offset_right = 1023.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("31_y2lsy")
+theme_override_font_sizes/font_size = 50
+text = "ACTIVITATI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="leaderboard/Leaderboard"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -468,27 +512,27 @@ text = "CLASAMENT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="leaderboard/Panel"]
+[node name="TextureButton" type="TextureButton" parent="leaderboard"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -133.0
+offset_bottom = 118.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="leaderboard/TextureButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -396.0
-offset_top = -91.0
-offset_right = 284.0
-offset_bottom = 20.0
+offset_left = -122.5
+offset_top = -36.0
+offset_right = 42.5
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="leaderboard"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -162.0
-offset_bottom = 128.0
-grow_horizontal = 0
 theme_override_fonts/font = ExtResource("31_y2lsy")
 theme_override_font_sizes/font_size = 80
 text = "X"
@@ -500,3 +544,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton" to="." method="_catre_oras_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton4" to="." method="_catre_exercitii"]
+[connection signal="pressed" from="meniu/HBoxContainer/TextureButton2" to="." method="_leaderboard"]
+[connection signal="pressed" from="leaderboard/TextureButton" to="." method="_on_esc"]

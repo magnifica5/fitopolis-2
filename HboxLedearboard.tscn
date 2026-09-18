@@ -1,32 +1,122 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7qwaye3ama4w"]
+[gd_scene load_steps=6 format=3 uid="uid://b7qwaye3ama4w"]
 
 [ext_resource type="FontFile" uid="uid://2mn6f0podjy" path="res://assets/font/Signika-Medium.ttf" id="1_3owf7"]
 [ext_resource type="Script" uid="uid://cm4bun41flijq" path="res://hbox_ledearboard.gd" id="1_4rhri"]
+[ext_resource type="Texture2D" uid="uid://dics7yhfhnawq" path="res://assets/bar_lvl.svg" id="1_el32v"]
+[ext_resource type="Texture2D" uid="uid://cc1ukymuspyrf" path="res://assets/medalie_loc_1_s.svg" id="3_8yci6"]
 
-[node name="HBoxContainer" type="HBoxContainer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8yci6"]
+bg_color = Color(0.1254902, 0.8509804, 0.9490196, 0.2509804)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.65882355, 0.9647059, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.03137255, 0.49411765, 0.65882355, 0.627451)
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(1060, 100)
 offset_right = 1060.0
-offset_bottom = 68.0
-theme_override_constants/separation = 0
+offset_bottom = 100.0
+texture = ExtResource("1_el32v")
 script = ExtResource("1_4rhri")
 
-[node name="Rank" type="Label" parent="."]
+[node name="HighlightPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1060, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8yci6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1060, 100)
+layout_mode = 0
+offset_right = 1060.0
+offset_bottom = 100.0
+theme_override_constants/separation = 0
+
+[node name="RankSlot" type="Control" parent="HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.18033576, 0.1534729, 0.41796875, 1)
-theme_override_fonts/font = ExtResource("1_3owf7")
-theme_override_font_sizes/font_size = 50
-vertical_alignment = 1
 
-[node name="Username" type="Label" parent="."]
-custom_minimum_size = Vector2(460, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+[node name="Rank" type="Label" parent="HBoxContainer/RankSlot"]
+custom_minimum_size = Vector2(85, 95)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -16.0
+offset_right = -3.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.18033576, 0.1534729, 0.41796875, 1)
 theme_override_fonts/font = ExtResource("1_3owf7")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Activities" type="Label" parent="."]
+[node name="MedalTextureRect" type="TextureRect" parent="HBoxContainer/RankSlot"]
+custom_minimum_size = Vector2(107, 121)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -7.0
+offset_right = -3.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8yci6")
+expand_mode = 1
+
+[node name="RankSlot2" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="UserTextureButton" type="TextureButton" parent="HBoxContainer/RankSlot2"]
+custom_minimum_size = Vector2(107, 80)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = 9.0
+offset_right = -6.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Username" type="Label" parent="HBoxContainer/RankSlot2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -33.0
+offset_right = 301.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("1_3owf7")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+
+[node name="Activities" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)

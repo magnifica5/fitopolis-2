@@ -1,5 +1,6 @@
-res://login.tscn
-res://fake_3d.gdshader
-res://ledearboard_list.gd
 res://HboxLedearboard.tscn
+res://fake_3d.gdshader
+res://login.tscn
 res://hbox_ledearboard.gd
+res://ledearboard_list.gd
+res://login.gd
