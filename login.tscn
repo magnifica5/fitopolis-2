@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b15y51ipnvbeq"]
+[gd_scene load_steps=46 format=3 uid="uid://b15y51ipnvbeq"]
 
 [ext_resource type="Script" uid="uid://crrx5y3d4afv7" path="res://login.gd" id="1_0s12h"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_cau7c"]
@@ -33,9 +33,23 @@
 [ext_resource type="Script" uid="uid://cs7hxggflvunk" path="res://ledearboard_list.gd" id="31_d05sf"]
 [ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="31_y2lsy"]
 [ext_resource type="FontFile" uid="uid://b3u7x6rbqx0sk" path="res://assets/font/Signika-SemiBold.ttf" id="32_bjkqk"]
+[ext_resource type="Script" uid="uid://cdg8owu1jneot" path="res://list_of_badges.gd" id="34_bf1lw"]
+[ext_resource type="Shader" uid="uid://dkh6hur8jtllm" path="res://badge.gdshader" id="34_bhobu"]
+[ext_resource type="Texture2D" uid="uid://3du47a3qda3j" path="res://assets/badge1.svg" id="34_v1d1x"]
+[ext_resource type="Texture2D" uid="uid://chxrruam00wne" path="res://assets/badge2.svg" id="37_6eo0u"]
+[ext_resource type="Texture2D" uid="uid://y1sxu3lwexl" path="res://assets/badge3.svg" id="38_2h8cc"]
+[ext_resource type="Texture2D" uid="uid://d4feemk5q7lew" path="res://assets/badge4.svg" id="39_mfram"]
+[ext_resource type="Texture2D" uid="uid://0sfhiqyto8rc" path="res://assets/badge5.svg" id="40_50t3k"]
+[ext_resource type="Texture2D" uid="uid://b10pd2u4bfgov" path="res://assets/badge6.svg" id="41_xeobf"]
+[ext_resource type="Texture2D" uid="uid://cst8w7k4nrehv" path="res://assets/badge7.svg" id="42_fhckf"]
+[ext_resource type="Texture2D" uid="uid://cidnh2df4x7kn" path="res://assets/badge8.svg" id="43_twldv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjkqk"]
 texture = ExtResource("28_ysypo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bf1lw"]
+shader = ExtResource("34_bhobu")
+shader_parameter/grayscale_enabled = true
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0s12h")
@@ -380,7 +394,6 @@ volume_db = -10.0
 stream = ExtResource("17_osbi4")
 
 [node name="leaderboard" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="leaderboard"]
 anchors_preset = 15
@@ -435,7 +448,8 @@ texture_disabled = ExtResource("30_d05sf")
 texture_focused = ExtResource("30_d05sf")
 stretch_mode = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="leaderboard/Leaderboard"]
+[node name="ListOfUsers" type="ScrollContainer" parent="leaderboard/Leaderboard"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -450,17 +464,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("31_d05sf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="leaderboard/Leaderboard/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="leaderboard/Leaderboard/ListOfUsers"]
 layout_mode = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="leaderboard/Leaderboard/ScrollContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="leaderboard/Leaderboard/ListOfUsers/VBoxContainer"]
 custom_minimum_size = Vector2(1060, 100)
 layout_mode = 2
 texture = ExtResource("12_affgl")
 
-[node name="Rank" type="Label" parent="leaderboard/Leaderboard/ScrollContainer/VBoxContainer/TextureRect"]
+[node name="Rank" type="Label" parent="leaderboard/Leaderboard/ListOfUsers/VBoxContainer/TextureRect"]
 layout_mode = 0
 offset_left = -10.0
 offset_top = 20.0
@@ -473,7 +487,7 @@ text = "#"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Username" type="Label" parent="leaderboard/Leaderboard/ScrollContainer/VBoxContainer/TextureRect"]
+[node name="Username" type="Label" parent="leaderboard/Leaderboard/ListOfUsers/VBoxContainer/TextureRect"]
 layout_mode = 0
 offset_left = 428.0
 offset_top = 20.0
@@ -486,7 +500,7 @@ text = "JUCATOR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Activities" type="Label" parent="leaderboard/Leaderboard/ScrollContainer/VBoxContainer/TextureRect"]
+[node name="Activities" type="Label" parent="leaderboard/Leaderboard/ListOfUsers/VBoxContainer/TextureRect"]
 layout_mode = 0
 offset_left = 781.0
 offset_top = 20.0
@@ -499,7 +513,8 @@ text = "ACTIVITATI"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="leaderboard/Leaderboard"]
+[node name="CLASAMENT" type="Label" parent="leaderboard/Leaderboard"]
+visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -511,6 +526,216 @@ theme_override_font_sizes/font_size = 77
 text = "CLASAMENT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BADGES" type="Label" parent="leaderboard/Leaderboard"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 17.0
+offset_bottom = 113.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("32_bjkqk")
+theme_override_font_sizes/font_size = 77
+text = "MEDALII"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ListOfBadges" type="ScrollContainer" parent="leaderboard/Leaderboard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.0
+offset_top = -232.0
+offset_right = 477.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("34_bf1lw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="leaderboard/Leaderboard/ListOfBadges"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer"]
+material = SubResource("ShaderMaterial_bf1lw")
+layout_mode = 2
+texture = ExtResource("34_v1d1x")
+
+[node name="Label" type="Label" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("32_bjkqk")
+theme_override_font_sizes/font_size = 25
+text = "FIT'O EXPLORATOR"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer"]
+material = SubResource("ShaderMaterial_bf1lw")
+layout_mode = 2
+texture = ExtResource("37_6eo0u")
+
+[node name="Label" type="Label" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("32_bjkqk")
+theme_override_font_sizes/font_size = 25
+text = "ZIUA PERFECTA"
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer"]
+material = SubResource("ShaderMaterial_bf1lw")
+layout_mode = 2
+texture = ExtResource("38_2h8cc")
+
+[node name="Label" type="Label" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer/TextureRect3"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("32_bjkqk")
+theme_override_font_sizes/font_size = 25
+text = "COLECTIA FIT'O"
+horizontal_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer"]
+material = SubResource("ShaderMaterial_bf1lw")
+layout_mode = 2
+texture = ExtResource("39_mfram")
+
+[node name="Label" type="Label" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer/TextureRect4"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("32_bjkqk")
+theme_override_font_sizes/font_size = 25
+text = "FIT'O MIND MASTER"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer2"]
+material = SubResource("ShaderMaterial_bf1lw")
+layout_mode = 2
+texture = ExtResource("40_50t3k")
+
+[node name="Label" type="Label" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer2/TextureRect5"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("32_bjkqk")
+theme_override_font_sizes/font_size = 25
+text = "FIT'O ACTIVE SAVER"
+horizontal_alignment = 1
+
+[node name="TextureRect6" type="TextureRect" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer2"]
+material = SubResource("ShaderMaterial_bf1lw")
+layout_mode = 2
+texture = ExtResource("41_xeobf")
+
+[node name="Label" type="Label" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer2/TextureRect6"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("32_bjkqk")
+theme_override_font_sizes/font_size = 25
+text = "MINI SANTOS"
+horizontal_alignment = 1
+
+[node name="TextureRect7" type="TextureRect" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer2"]
+material = SubResource("ShaderMaterial_bf1lw")
+layout_mode = 2
+texture = ExtResource("42_fhckf")
+
+[node name="Label" type="Label" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer2/TextureRect7"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("32_bjkqk")
+theme_override_font_sizes/font_size = 25
+text = "FIT'O CONSTRUCTOR"
+horizontal_alignment = 1
+
+[node name="TextureRect8" type="TextureRect" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer2"]
+material = SubResource("ShaderMaterial_bf1lw")
+layout_mode = 2
+texture = ExtResource("43_twldv")
+
+[node name="Label" type="Label" parent="leaderboard/Leaderboard/ListOfBadges/VBoxContainer/HBoxContainer2/TextureRect8"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -16.0
+offset_right = 6.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.18039216, 0.15294118, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("32_bjkqk")
+theme_override_font_sizes/font_size = 25
+text = "VANATOR DE STELE"
+horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="leaderboard"]
 anchors_preset = 1
@@ -545,4 +770,6 @@ vertical_alignment = 1
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton4" to="." method="_catre_exercitii"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton2" to="." method="_leaderboard"]
+[connection signal="pressed" from="leaderboard/Leaderboard/HBoxContainer/TextureButton" to="." method="_on_leaderboard"]
+[connection signal="pressed" from="leaderboard/Leaderboard/HBoxContainer/TextureButton2" to="." method="_on_badges"]
 [connection signal="pressed" from="leaderboard/TextureButton" to="." method="_on_esc"]

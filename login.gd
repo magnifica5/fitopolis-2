@@ -5,7 +5,11 @@ extends Node2D
 @onready var label_level = $bg/TextureRect2/Label2
 @onready var progres_bar = $bg/TextureProgressBar
 @onready var leaderboard = $leaderboard
-@onready var leaderboard_scroll = $leaderboard/Leaderboard/ScrollContainer
+@onready var leaderboard_scroll = $leaderboard/Leaderboard/ListOfUsers
+@onready var listofusers = $leaderboard/Leaderboard/ListOfUsers
+@onready var listofbadges = $leaderboard/Leaderboard/ListOfBadges
+@onready var medalii = $leaderboard/Leaderboard/BADGES
+@onready var clasament = $leaderboard/Leaderboard/CLASAMENT
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
@@ -89,5 +93,22 @@ func _on_esc() -> void:
 
 func _leaderboard() -> void:
 	leaderboard.show()
+	listofusers.show()
+	listofbadges.hide()
+	clasament.show()
+	medalii.hide()
 	await leaderboard_scroll.deschide_leaderboard()
 	
+
+
+func _on_leaderboard() -> void:
+	listofbadges.hide()
+	listofusers.show()
+	clasament.show()
+	medalii.hide()
+
+func _on_badges() -> void:
+	listofbadges.show()
+	listofusers.hide()
+	clasament.hide()
+	medalii.show()
