@@ -1,5 +1,8 @@
-res://login.tscn
+res://upgrade_level.tscn
 res://fake_3d.gdshader
 res://badge.gdshader
+res://login.tscn
 res://list_of_badges.gd
 res://login.gd
+res://dashboard.tscn
+res://home.gd

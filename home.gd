@@ -21,10 +21,11 @@ func _ready() -> void:
 		var data = d[0]
 		var date = data.created_at
 		var date_dict = Time.get_datetime_dict_from_datetime_string(date, false)
-		var creation_day = int(date_dict["day"])
 		var data_acum = Time.get_datetime_dict_from_system()
-		data_acum = data_acum["day"]
-		days.text = str(int(data_acum) - creation_day)
+		var t_cont = Time.get_unix_time_from_datetime_dict(date_dict)
+		var t_azi = Time.get_unix_time_from_datetime_dict(data_acum)
+		var zile = int((t_azi - t_cont) / 86400)
+		days.text = str(zile)
 		username.text = data.username
 		cod.text = data.connection_code
 		Globals.adauga_code(data.connection_code)

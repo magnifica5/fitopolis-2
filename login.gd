@@ -7,9 +7,17 @@ extends Node2D
 @onready var leaderboard = $leaderboard
 @onready var leaderboard_scroll = $leaderboard/Leaderboard/ListOfUsers
 @onready var listofusers = $leaderboard/Leaderboard/ListOfUsers
-@onready var listofbadges = $leaderboard/Leaderboard/ListOfBadges
+@onready var listofbadges = $leaderboard/Leaderboard/VBoxContainer
 @onready var medalii = $leaderboard/Leaderboard/BADGES
 @onready var clasament = $leaderboard/Leaderboard/CLASAMENT
+@onready var badge1 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer/TextureRect
+@onready var badge2 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer/TextureRect2
+@onready var badge3 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer/TextureRect3
+@onready var badge4 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer/TextureRect4
+@onready var badge5 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer2/TextureRect5
+@onready var badge6 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer2/TextureRect6
+@onready var badge7 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer2/TextureRect7
+@onready var badge8 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer2/TextureRect8
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
@@ -50,6 +58,20 @@ func _ready() -> void:
 		avatar_final.texture_hover = atlas
 		avatar_final.texture_focused = atlas
 		avatar_final.texture_disabled = atlas
+		var date = data.created_at
+		var date_dict = Time.get_datetime_dict_from_datetime_string(date, false)
+		var data_acum = Time.get_datetime_dict_from_system()
+		var t_cont = Time.get_unix_time_from_datetime_dict(date_dict)
+		var t_azi = Time.get_unix_time_from_datetime_dict(data_acum)
+		var zile = int((t_azi - t_cont) / 86400)
+		seteaza_badge(true, badge1)
+		seteaza_badge(false, badge2)
+		seteaza_badge(false, badge3)
+		seteaza_badge(true, badge4)
+		seteaza_badge(false, badge5)
+		seteaza_badge(false, badge6)
+		seteaza_badge(false, badge7)
+		seteaza_badge(false, badge8)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -112,3 +134,13 @@ func _on_badges() -> void:
 	listofusers.hide()
 	clasament.hide()
 	medalii.show()
+
+func seteaza_badge(deblocat: bool, badge) -> void:
+	var material := badge.material as ShaderMaterial
+	if material == null:
+		return
+
+	material.set_shader_parameter(
+		"grayscale_enabled",
+		not deblocat
+	)
