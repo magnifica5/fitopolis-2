@@ -64,14 +64,31 @@ func _ready() -> void:
 		var t_cont = Time.get_unix_time_from_datetime_dict(date_dict)
 		var t_azi = Time.get_unix_time_from_datetime_dict(data_acum)
 		var zile = int((t_azi - t_cont) / 86400)
-		seteaza_badge(true, badge1)
-		seteaza_badge(false, badge2)
-		seteaza_badge(false, badge3)
-		seteaza_badge(true, badge4)
-		seteaza_badge(false, badge5)
-		seteaza_badge(false, badge6)
-		seteaza_badge(false, badge7)
-		seteaza_badge(false, badge8)
+		if zile >= 1:
+			seteaza_badge(true, badge1)
+		else:
+			seteaza_badge(false, badge1)
+		if zile >= 7:
+			seteaza_badge(true, badge2)
+		else:
+			seteaza_badge(false, badge2)
+		if Globals._nr_stickere() >= 12:
+			seteaza_badge(true, badge3)
+		else:
+			seteaza_badge(false, badge3)
+		if level_now >= 5:
+			seteaza_badge(true, badge6)
+		else:
+			seteaza_badge(false, badge6)
+		if Itemshop.nr_cladiri() >= 20:
+			seteaza_badge(true, badge7)
+		else:
+			seteaza_badge(false, badge7)
+		if data.scor >= 1000:
+			seteaza_badge(true, badge8)
+		else:
+			seteaza_badge(false, badge8)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

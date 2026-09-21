@@ -56,7 +56,17 @@ func marcheaza_cumparat(id):
 	file.store_string(JSON.stringify(obiecte_cumparate))
 	file.close()
 
-#
+func _nr_stickere():
+	var path = "user://stikere.save"
+	var key = Globals.get_secure_key()
+	if FileAccess.file_exists(path):
+		var file = FileAccess.open_encrypted(path, FileAccess.READ, key)
+		var content = file.get_as_text()
+		file.close()
+		obiecte_cumparate = JSON.parse_string(content)
+		return obiecte_cumparate.size()
+	return 0
+
 func este_cumparat(id):
 	var path = "user://stikere.save"
 	var key = Globals.get_secure_key()
@@ -138,6 +148,23 @@ func adauga_personaj(valoare: int):
 	data_existenta["personaj"] = valoare #atribuie dictionarului cheia pe care o vreau
 	data_existenta["level"] = "1"
 	succes_inchis = valoare
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.WRITE, key) #salveaza noul dictionar
+	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
+	file.close()
+
+func adauga_ex_bonus(valoare: int):
+	var data_existenta = {}
+	var key = Globals.get_secure_key()
+	if FileAccess.file_exists(path_hours): # verifica daca exista
+		var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key) #citeste
+		var content = file.get_as_text() #ia ca string
+		file.close()
+		var result = JSON.parse_string(content) #transforma in dictionar
+		if result:
+			data_existenta = result #egaleaza ce era cu noul dictionar din functie
+	else:
+		data_existenta = {}
+	data_existenta["ex_bonus"] = valoare #atribuie dictionarului cheia pe care o vreau
 	var file = FileAccess.open_encrypted(path_hours, FileAccess.WRITE, key) #salveaza noul dictionar
 	file.store_string(JSON.stringify(data_existenta, "\t")) # pune tab intre ele
 	file.close()
@@ -363,6 +390,14 @@ func citeste_username():
 	file.close()
 	var valori = JSON.parse_string(content)
 	return str(valori["username"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
+
+func citeste_ex_bonus():
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(path_hours, FileAccess.READ, key)
+	var content = file.get_as_text()
+	file.close()
+	var valori = JSON.parse_string(content)
+	return str(valori["ex_bonus"])	#citeste efectiv transforma in dictionar si ia valoarea de la cheia aia
 
 func citeste_succes():
 	var key = Globals.get_secure_key()

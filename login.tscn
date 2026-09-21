@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://b15y51ipnvbeq"]
+[gd_scene load_steps=60 format=3 uid="uid://b15y51ipnvbeq"]
 
 [ext_resource type="Script" uid="uid://crrx5y3d4afv7" path="res://login.gd" id="1_0s12h"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_cau7c"]
@@ -33,22 +33,57 @@
 [ext_resource type="Script" uid="uid://cs7hxggflvunk" path="res://ledearboard_list.gd" id="31_d05sf"]
 [ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="31_y2lsy"]
 [ext_resource type="FontFile" uid="uid://b3u7x6rbqx0sk" path="res://assets/font/Signika-SemiBold.ttf" id="32_bjkqk"]
-[ext_resource type="Shader" uid="uid://dkh6hur8jtllm" path="res://badge.gdshader" id="34_bhobu"]
+[ext_resource type="Shader" uid="uid://c864l7awf0bgo" path="res://badge6.gdshader" id="34_50t3k"]
+[ext_resource type="Shader" uid="uid://dkh6hur8jtllm" path="res://badge.gdshader" id="34_h8w53"]
 [ext_resource type="Texture2D" uid="uid://3du47a3qda3j" path="res://assets/badge1.svg" id="34_v1d1x"]
 [ext_resource type="FontFile" uid="uid://2mn6f0podjy" path="res://assets/font/Signika-Medium.ttf" id="36_6eo0u"]
+[ext_resource type="Shader" uid="uid://552afojdwaje" path="res://badge2.gdshader" id="37_2h8cc"]
 [ext_resource type="Texture2D" uid="uid://chxrruam00wne" path="res://assets/badge2.svg" id="37_6eo0u"]
 [ext_resource type="Texture2D" uid="uid://y1sxu3lwexl" path="res://assets/badge3.svg" id="38_2h8cc"]
 [ext_resource type="Texture2D" uid="uid://d4feemk5q7lew" path="res://assets/badge4.svg" id="39_mfram"]
+[ext_resource type="Shader" uid="uid://q2dc5h4uqqdv" path="res://badge3.gdshader" id="39_sj8j8"]
 [ext_resource type="Texture2D" uid="uid://0sfhiqyto8rc" path="res://assets/badge5.svg" id="40_50t3k"]
+[ext_resource type="Shader" uid="uid://b44rfnr5bo65q" path="res://badge4.gdshader" id="41_7jibd"]
 [ext_resource type="Texture2D" uid="uid://b10pd2u4bfgov" path="res://assets/badge6.svg" id="41_xeobf"]
 [ext_resource type="Texture2D" uid="uid://cst8w7k4nrehv" path="res://assets/badge7.svg" id="42_fhckf"]
+[ext_resource type="Shader" uid="uid://dny52d3od0xl8" path="res://badge5.gdshader" id="43_l6t3s"]
 [ext_resource type="Texture2D" uid="uid://cidnh2df4x7kn" path="res://assets/badge8.svg" id="43_twldv"]
+[ext_resource type="Shader" uid="uid://cekxwdukfn51f" path="res://badge7.gdshader" id="43_xeobf"]
+[ext_resource type="Shader" uid="uid://buwbsyqaiayg0" path="res://badge8.gdshader" id="45_fhckf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjkqk"]
 texture = ExtResource("28_ysypo")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bf1lw"]
-shader = ExtResource("34_bhobu")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tj7ck"]
+shader = ExtResource("34_h8w53")
+shader_parameter/grayscale_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_taxbo"]
+shader = ExtResource("37_2h8cc")
+shader_parameter/grayscale_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f223x"]
+shader = ExtResource("39_sj8j8")
+shader_parameter/grayscale_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bili6"]
+shader = ExtResource("41_7jibd")
+shader_parameter/grayscale_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qy6h6"]
+shader = ExtResource("43_l6t3s")
+shader_parameter/grayscale_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mrsgy"]
+shader = ExtResource("34_50t3k")
+shader_parameter/grayscale_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t2cs2"]
+shader = ExtResource("43_xeobf")
+shader_parameter/grayscale_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_at62f"]
+shader = ExtResource("45_fhckf")
 shader_parameter/grayscale_enabled = true
 
 [node name="Node2D" type="Node2D"]
@@ -394,6 +429,7 @@ volume_db = -10.0
 stream = ExtResource("17_osbi4")
 
 [node name="leaderboard" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="leaderboard"]
 anchors_preset = 15
@@ -423,8 +459,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -112.75
-offset_bottom = 28.25
+offset_top = -98.75
+offset_bottom = 42.25
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 10
@@ -558,7 +594,7 @@ size_flags_vertical = 0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="leaderboard/Leaderboard/VBoxContainer/HBoxContainer"]
-material = SubResource("ShaderMaterial_bf1lw")
+material = SubResource("ShaderMaterial_tj7ck")
 layout_mode = 2
 texture = ExtResource("34_v1d1x")
 
@@ -599,9 +635,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="leaderboard/Leaderboard/VBoxContainer/HBoxContainer"]
-material = SubResource("ShaderMaterial_bf1lw")
+material = SubResource("ShaderMaterial_taxbo")
 layout_mode = 2
-texture = ExtResource("37_6eo0u")
+texture = ExtResource("41_xeobf")
 
 [node name="Label" type="Label" parent="leaderboard/Leaderboard/VBoxContainer/HBoxContainer/TextureRect2"]
 layout_mode = 1
@@ -634,13 +670,13 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0.23529412, 0.3882353, 0.03137255, 1)
 theme_override_fonts/font = ExtResource("36_6eo0u")
 theme_override_font_sizes/font_size = 21
-text = "Indeplineste toate
-activitatile pentru 1 zi! ✅"
+text = "Fii un super-erou 
+pentru 1 saptamana! 🚀"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect3" type="TextureRect" parent="leaderboard/Leaderboard/VBoxContainer/HBoxContainer"]
-material = SubResource("ShaderMaterial_bf1lw")
+material = SubResource("ShaderMaterial_f223x")
 layout_mode = 2
 texture = ExtResource("38_2h8cc")
 
@@ -681,7 +717,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect4" type="TextureRect" parent="leaderboard/Leaderboard/VBoxContainer/HBoxContainer"]
-material = SubResource("ShaderMaterial_bf1lw")
+material = SubResource("ShaderMaterial_bili6")
 layout_mode = 2
 texture = ExtResource("39_mfram")
 
@@ -717,7 +753,7 @@ theme_override_colors/font_color = Color(0.23529412, 0.3882353, 0.03137255, 1)
 theme_override_fonts/font = ExtResource("36_6eo0u")
 theme_override_font_sizes/font_size = 21
 text = "Descopera lumea jocurilor
-Fit'O Mind! 🧠"
+Fit'O Mind! 🧠 n"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -727,7 +763,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="TextureRect5" type="TextureRect" parent="leaderboard/Leaderboard/VBoxContainer/HBoxContainer2"]
-material = SubResource("ShaderMaterial_bf1lw")
+material = SubResource("ShaderMaterial_qy6h6")
 layout_mode = 2
 texture = ExtResource("40_50t3k")
 
@@ -762,15 +798,15 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0.23529412, 0.3882353, 0.03137255, 1)
 theme_override_fonts/font = ExtResource("36_6eo0u")
 theme_override_font_sizes/font_size = 21
-text = "Fa 20 de exercitii fizice
-bonus! 🏋️ "
+text = "Fa 20 de serii de exercitii fizice
+apasand pe butonul Exercitii! 🏋️ n"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect6" type="TextureRect" parent="leaderboard/Leaderboard/VBoxContainer/HBoxContainer2"]
-material = SubResource("ShaderMaterial_bf1lw")
+material = SubResource("ShaderMaterial_mrsgy")
 layout_mode = 2
-texture = ExtResource("41_xeobf")
+texture = ExtResource("37_6eo0u")
 
 [node name="Label" type="Label" parent="leaderboard/Leaderboard/VBoxContainer/HBoxContainer2/TextureRect6"]
 layout_mode = 1
@@ -803,13 +839,13 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0.23529412, 0.3882353, 0.03137255, 1)
 theme_override_fonts/font = ExtResource("36_6eo0u")
 theme_override_font_sizes/font_size = 21
-text = "Indeplineste 50 de 
+text = "Indeplineste 55 de 
 activitati! 📅"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect7" type="TextureRect" parent="leaderboard/Leaderboard/VBoxContainer/HBoxContainer2"]
-material = SubResource("ShaderMaterial_bf1lw")
+material = SubResource("ShaderMaterial_t2cs2")
 layout_mode = 2
 texture = ExtResource("42_fhckf")
 
@@ -850,7 +886,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect8" type="TextureRect" parent="leaderboard/Leaderboard/VBoxContainer/HBoxContainer2"]
-material = SubResource("ShaderMaterial_bf1lw")
+material = SubResource("ShaderMaterial_at62f")
 layout_mode = 2
 texture = ExtResource("43_twldv")
 
@@ -918,8 +954,8 @@ text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
 [connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
+[connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton" to="." method="_catre_oras_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton4" to="." method="_catre_exercitii"]

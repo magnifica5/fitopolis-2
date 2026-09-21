@@ -46,3 +46,22 @@ func incarca_jocul() -> void:
 			print("Clădirile au fost restaurate cu succes în Autoload.")
 		else:
 			print("Eroare la procesarea fișierului JSON!")
+
+func nr_cladiri():
+	if not FileAccess.file_exists(SAVE_PATH):
+		print("Nu s-a găsit niciun fișier de salvare existent. Pornire curată.")
+		return
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(SAVE_PATH, FileAccess.READ, key)
+	if file:
+		var json_string = file.get_as_text()
+		file.close()
+
+		var json = JSON.new()
+		var parse_result = json.parse(json_string)
+		
+		if parse_result == OK:
+			cladiri = json.get_data()
+			return cladiri.size()
+		return 0
+	return 0
