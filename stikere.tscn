@@ -84,7 +84,7 @@
 [ext_resource type="Texture2D" uid="uid://bqg03714udhid" path="res://image-removebg-preview (37).png" id="59_u0jfn"]
 [ext_resource type="Texture2D" uid="uid://b1rq2mqod7hdk" path="res://image-removebg-preview (38).png" id="60_y8vfg"]
 [ext_resource type="Texture2D" uid="uid://c7q3yb8bofgib" path="res://image-removebg-preview (39).png" id="61_ianpr"]
-[ext_resource type="Texture2D" uid="uid://cmp4fc7q46xwa" path="res://Gemini_Generated_Image_k5yek5k5yek5k5ye-removebg-preview (1).png" id="61_khyji"]
+[ext_resource type="Texture2D" uid="uid://cbw140gwl8pic" path="res://image_probl.png" id="61_khyji"]
 [ext_resource type="Texture2D" uid="uid://boa6c2i1xu5nc" path="res://image-removebg-preview (40).png" id="62_ca50u"]
 [ext_resource type="Script" uid="uid://cwrjk5rsdostj" path="res://disp14.gd" id="62_inukf"]
 [ext_resource type="Script" uid="uid://b2hyf5k70bbei" path="res://s14.gd" id="63_t2qwx"]
@@ -784,8 +784,8 @@ scale = Vector2(0.7875, 0.7750001)
 texture = ExtResource("36_ktcrk")
 
 [node name="GeminiGeneratedImageK5Yek5k5Yek5k5YeRemovebgPreview" type="Sprite2D" parent="."]
-position = Vector2(166.49998, 1172.2501)
-scale = Vector2(0.57799995, 0.5690004)
+position = Vector2(160.925, 1165.145)
+scale = Vector2(0.3117492, 0.30887705)
 texture = ExtResource("61_khyji")
 script = ExtResource("62_inukf")
 
@@ -796,23 +796,23 @@ scale = Vector2(1.3858389, 1.3552746)
 script = ExtResource("63_t2qwx")
 
 [node name="Label" type="Label" parent="GeminiGeneratedImageK5Yek5k5Yek5k5YeRemovebgPreview/Area2D7"]
-offset_left = -1285.2467
-offset_top = 1094.0032
-offset_right = -1066.2467
-offset_bottom = 1269.0032
+offset_left = -1302.5386
+offset_top = 1086.9165
+offset_right = -1083.5386
+offset_bottom = 1261.9165
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
-theme_override_font_sizes/font_size = 39
+theme_override_font_sizes/font_size = 56
 text = "300"
 
 [node name="CollisionShape2Dsa" type="CollisionShape2D" parent="GeminiGeneratedImageK5Yek5k5Yek5k5YeRemovebgPreview/Area2D7"]
-position = Vector2(-1252.4473, 1123.1292)
+position = Vector2(-1252.4473, 1123.1294)
 scale = Vector2(0.9999998, 0.9999996)
 shape = SubResource("RectangleShape2D_1m5r5")
 
 [node name="AdfaasddsaRemovebgPreview13" type="Sprite2D" parent="GeminiGeneratedImageK5Yek5k5Yek5k5YeRemovebgPreview"]
-position = Vector2(-39.56228, -50.87732)
-scale = Vector2(1.7519822, 1.7443382)
+position = Vector2(-41.459618, -45.79488)
+scale = Vector2(2.7932475, 2.8934355)
 texture = ExtResource("11_j2aks")
 
 [node name="AnimalsPhotoshoppedCatsKotyVezdeFbPng700RemovebgPreview" type="Sprite2D" parent="."]
@@ -838,7 +838,7 @@ offset_right = -721.2466
 offset_bottom = 1191.334
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
-theme_override_font_sizes/font_size = 44
+theme_override_font_sizes/font_size = 38
 text = "150"
 
 [node name="CollisionShape2Dsa" type="CollisionShape2D" parent="ImageRemovebgPreview(18)/Area2D8"]

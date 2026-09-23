@@ -43,7 +43,7 @@ func animate() -> void:
 	# Labels
 	tween.parallel().tween_property(level, "self_modulate:a", 1.0, 1.5)
 	tween.parallel().tween_property(level_nb, "self_modulate:a", 1.0, 1.5)
-	tween.tween_method(count_up.bind(level_nb), 0, ControlLevel.get_level(Globals.score), 1.5)
+	tween.tween_method(count_up.bind(level_nb), 0, ControlLevel.get_level(HourActivity.activities), 1.5)
 	tween.tween_property(level_up, "self_modulate:a", 1.0, 0.4)
 	tween.parallel().tween_property(level_up, "position:y", level_up.position.y, 0.8).from(level_up.position.y - 150)
 	
@@ -69,4 +69,5 @@ func start_buttons_loop() -> void:
 func count_up(value: int, label: Label) -> void:
 	label.text = str(value)
 	
-	
+func _esc() -> void:
+	get_tree().change_scene_to_file("res://login.tscn")

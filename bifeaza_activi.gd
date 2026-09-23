@@ -22,8 +22,10 @@ func _back_to_start() -> void:
 	await HourActivity.load_progress()
 	var score = 0
 	var missed = 0
+	var activities = 0
 	if b1.button_pressed and HourActivity.complete_trezire == 1:
 		score += 200
+		activities += 1
 		HourActivity.complete_trezire = 0
 		print("score1")
 	else:
@@ -33,6 +35,7 @@ func _back_to_start() -> void:
 	if b2.button_pressed and HourActivity.complete_ex == 1:
 		print("score2")
 		HourActivity.complete_ex = 0
+		activities += 1
 		score += 200
 	else:
 		HourActivity.complete_ex = 0
@@ -40,6 +43,7 @@ func _back_to_start() -> void:
 		print("s2")
 	if b3.button_pressed and HourActivity.complete_dejun == 1:
 		print("score3")
+		activities += 1
 		score += 200
 		HourActivity.complete_dejun = 0
 	else:
@@ -48,6 +52,7 @@ func _back_to_start() -> void:
 		print("s3")
 	if b4.button_pressed and HourActivity.complete_pranz == 1:
 		print("score4")
+		activities += 1
 		score += 200
 		HourActivity.complete_pranz = 0
 	else:
@@ -56,6 +61,7 @@ func _back_to_start() -> void:
 		print("s4")
 	if b5.button_pressed and HourActivity.complete_ex2 == 1:
 		print("score5")
+		activities += 1
 		HourActivity.complete_ex2 = 0
 		score += 200
 	else:
@@ -64,6 +70,7 @@ func _back_to_start() -> void:
 		print("s5")
 	if b6.button_pressed and HourActivity.complete_cina == 1:
 		print("score6")
+		activities += 1
 		score += 200
 		HourActivity.complete_cina = 0
 	else:
@@ -72,6 +79,7 @@ func _back_to_start() -> void:
 		print("s6")
 	if b7.button_pressed and HourActivity.complete_somn == 1:
 		print("score7")
+		activities += 1
 		score += 200
 		HourActivity.complete_somn = 0
 	else:
@@ -79,6 +87,7 @@ func _back_to_start() -> void:
 		missed += 1
 		print("s7")
 	HourActivity.missed = missed
+	HourActivity.activities += activities
 	print(missed)
 	var query1 = SupabaseQuery.new().from("children").select(["scor"]).eq("connection_code", Globals.citeste_code())
 	var task1 = Supabase.database.query(query1)

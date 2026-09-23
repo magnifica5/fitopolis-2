@@ -4,14 +4,39 @@ extends Node2D
 @onready var label_username = $bg/TextureRect2/Label4
 @onready var label_level = $bg/TextureRect2/Label2
 @onready var progres_bar = $bg/TextureProgressBar
+@onready var leaderboard = $leaderboard
+@onready var leaderboard_scroll = $leaderboard/Leaderboard/ListOfUsers
+@onready var listofusers = $leaderboard/Leaderboard/ListOfUsers
+@onready var listofbadges = $leaderboard/Leaderboard/VBoxContainer
+@onready var medalii = $leaderboard/Leaderboard/BADGES
+@onready var clasament = $leaderboard/Leaderboard/CLASAMENT
+@onready var badge1 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer/TextureRect
+@onready var badge2 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer/TextureRect2
+@onready var badge3 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer/TextureRect3
+@onready var badge4 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer/TextureRect4
+@onready var badge5 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer2/TextureRect5
+@onready var badge6 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer2/TextureRect6
+@onready var badge7 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer2/TextureRect7
+@onready var badge8 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer2/TextureRect8
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
 func _ready() -> void:
+	leaderboard.hide()
 	await get_tree().process_frame
 	SoundManager.sound_stop_menu()
 	SoundManager.sound_stop_win()
 	SoundManager.play_music(preload("res://audio/background_sound.mp3"))
+	
+	await HourActivity.load_progress()
+	var level_now = ControlLevel.get_level(HourActivity.activities)
+	var level_saved = Globals.citeste_level()
+	if level_saved != level_now:
+		Globals.adauga_level(str(level_now))
+		get_tree().change_scene_to_file("res://upgrade_level.tscn")
+		
+	label_level.text = str(ControlLevel.get_level(HourActivity.activities))
+	progres_bar.value = ControlLevel.get_progress(HourActivity.activities)
 	Globals.code = Globals.citeste_code()
 	var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
 	var task = Supabase.database.query(query)
@@ -19,9 +44,6 @@ func _ready() -> void:
 	if result.error == null and result.data.size() > 0:
 		var data = result.data[0]
 		Globals.adauga_scor(data.scor)
-		label_level.text = str(ControlLevel.get_level(data.scor))
-		progres_bar.value = ControlLevel.get_progress(data.scor)
-		ControlLevel.level_up.connect(_on_level_up)
 		label_username.text = data.username
 		var avatar = int(data.avatar_number)
 		var sheet_size = sprite_sheet.get_size()
@@ -36,6 +58,37 @@ func _ready() -> void:
 		avatar_final.texture_hover = atlas
 		avatar_final.texture_focused = atlas
 		avatar_final.texture_disabled = atlas
+		var date = data.created_at
+		var date_dict = Time.get_datetime_dict_from_datetime_string(date, false)
+		var data_acum = Time.get_datetime_dict_from_system()
+		var t_cont = Time.get_unix_time_from_datetime_dict(date_dict)
+		var t_azi = Time.get_unix_time_from_datetime_dict(data_acum)
+		var zile = int((t_azi - t_cont) / 86400)
+		if zile >= 1:
+			seteaza_badge(true, badge1)
+		else:
+			seteaza_badge(false, badge1)
+		if zile >= 7:
+			seteaza_badge(true, badge2)
+		else:
+			seteaza_badge(false, badge2)
+		if Globals._nr_stickere() >= 12:
+			seteaza_badge(true, badge3)
+		else:
+			seteaza_badge(false, badge3)
+		if level_now >= 5:
+			seteaza_badge(true, badge6)
+		else:
+			seteaza_badge(false, badge6)
+		if Itemshop.nr_cladiri() >= 20:
+			seteaza_badge(true, badge7)
+		else:
+			seteaza_badge(false, badge7)
+		if data.scor >= 1000:
+			seteaza_badge(true, badge8)
+		else:
+			seteaza_badge(false, badge8)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -71,3 +124,40 @@ func _catre_stikere() -> void:
 
 func _on_level_up(new_level: int):
 	get_tree().change_scene_to_file("res://upgrade_level.tscn")
+
+
+func _on_esc() -> void:
+	leaderboard.hide()
+
+
+func _leaderboard() -> void:
+	leaderboard.show()
+	listofusers.show()
+	listofbadges.hide()
+	clasament.show()
+	medalii.hide()
+	await leaderboard_scroll.deschide_leaderboard()
+	
+
+
+func _on_leaderboard() -> void:
+	listofbadges.hide()
+	listofusers.show()
+	clasament.show()
+	medalii.hide()
+
+func _on_badges() -> void:
+	listofbadges.show()
+	listofusers.hide()
+	clasament.hide()
+	medalii.show()
+
+func seteaza_badge(deblocat: bool, badge) -> void:
+	var material := badge.material as ShaderMaterial
+	if material == null:
+		return
+
+	material.set_shader_parameter(
+		"grayscale_enabled",
+		not deblocat
+	)
