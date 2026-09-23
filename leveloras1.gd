@@ -24,14 +24,16 @@ func recreaza_casa(date: Dictionary) -> void:
 	var casa := Sprite2D.new()
 	casa.texture = tex
 	
+	# --- ADAUGAT: Setează Z-Index global mare pentru ca clădirea să stea PESTE distrugeri ---
+	casa.z_index = date.get("z_index", 10)
+	casa.z_as_relative = date.get("z_as_relative", false)
+	# ----------------------------------------------------------------------------------------
+	
 	add_child(casa)
 	
-	# NOU: Extragem scala salvată în JSON (dacă nu există dintr-o salvare veche, punem fallback 1.0)
+	# Extragem scala salvată în JSON (dacă nu există dintr-o salvare veche, punem fallback 1.0)
 	var s_factor = date.get("scale_casa", 1.0)
 	
-	# Înlocuim Vector2(2,2) cu scala dinamică stocată în s_factor
 	casa.scale = Vector2(s_factor, s_factor) / scale 
 	
-	casa.global_position = Vector2(date["position_x"], date["date_casa" if date.has("date_casa") else "position_y"]) 
-	# (Siguranță pentru axa Y pe care o aveai deja):
-	casa.global_position.y = date["position_y"]
+	casa.global_position = Vector2(date["position_x"], date["position_y"])

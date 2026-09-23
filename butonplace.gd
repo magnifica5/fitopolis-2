@@ -30,7 +30,6 @@ func _on_pressed() -> void:
 		return
 
 	# --- VERIFICARE ACOPERIRE TILE-URI PE TOATE LAYERELE ACTIVE ---
-	# Luăm primul layer doar ca referință pentru calculele de grilă (au același scale)
 	var layer_ref = layere_valide[0]
 	
 	var dimensiune_pixel = preview.texture.get_size() * preview.scale
@@ -48,13 +47,11 @@ func _on_pressed() -> void:
 			var celula_curenta := Vector2i(x, y)
 			var gasit_pe_vreun_layer := false
 			
-			# Verificăm dacă ACEASTĂ celulă are iarbă pe MĂCAR UNUL dintre layerele vizibile
 			for l in layere_valide:
 				if l.get_cell_source_id(celula_curenta) != -1:
 					gasit_pe_vreun_layer = true
-					break # Am găsit tile valid pe acest layer, trecem la următoarea celulă
+					break
 			
-			# Dacă pentru celula curentă niciun layer activ nu are tile, atunci zona e invalidă
 			if not gasit_pe_vreun_layer:
 				este_zona_valida = false
 				break
@@ -69,7 +66,6 @@ func _on_pressed() -> void:
 	# --- VERIFICARE 2: SUPRAPUNERE CU ALTE CASE ---
 	var rect_casa_noua := Rect2(colt_stanga_sus, dimensiune_pixel)
 	
-	# Verificăm suprapunerea trecând prin casele din TOATE layerele
 	for l in layere_valide:
 		for copil in l.get_children():
 			if copil is Sprite2D:
@@ -82,11 +78,15 @@ func _on_pressed() -> void:
 					return
 
 	# --- PLASAREA PROPRIU-ZISĂ ---
-	# Decidem să adăugăm noua casă fizic pe primul layer vizibil (Layer1 în mod normal)
 	var target_layer = layere_valide[0]
 	
 	var casa := Sprite2D.new()
 	casa.texture = preview.texture
+	
+	# Setează Z-Index global mare pentru a se afișa deasupra layer-ului de distrugeri
+	casa.z_index = 10
+	casa.z_as_relative = false
+	
 	target_layer.add_child(casa)
 
 	casa.scale = preview.scale / target_layer.scale
@@ -96,7 +96,9 @@ func _on_pressed() -> void:
 		"texture": Itemshop.cale_textura_salvata,
 		"position_x": casa.global_position.x,
 		"position_y": casa.global_position.y,
-		"scale_casa": Itemshop.scale_salvat
+		"scale_casa": Itemshop.scale_salvat,
+		"z_index": 10,
+		"z_as_relative": false
 	})
 	
 	Itemshop.salveaza_jocul()
