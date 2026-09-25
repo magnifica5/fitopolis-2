@@ -74,3 +74,21 @@ func populeaza_scena_cu_cladiri(target_layer: TileMapLayer) -> void:
 			casa.scale = Vector2(scale_val, scale_val) / target_layer.scale
 		elif typeof(scale_val) == TYPE_VECTOR2:
 			casa.scale = scale_val / target_layer.scale
+
+func nr_cladiri():
+	if not FileAccess.file_exists(SAVE_PATH):
+		print("Nu s-a găsit niciun fișier de salvare existent. Pornire curată.")
+		return 0 
+	var key = Globals.get_secure_key()
+	var file = FileAccess.open_encrypted(SAVE_PATH, FileAccess.READ, key)
+	if file:
+		var json_string = file.get_as_text()
+		file.close()
+
+		var json = JSON.new()
+		var parse_result = json.parse(json_string)
+		
+		if parse_result == OK:
+			cladiri = json.get_data()
+			return cladiri.size()
+		return 0

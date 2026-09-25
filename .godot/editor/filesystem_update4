@@ -1,5 +1,14 @@
 res://oras2.0.tscn
+res://fake_3d.gdshader
+res://badge6.gdshader
+res://badge.gdshader
+res://badge2.gdshader
+res://badge3.gdshader
+res://badge4.gdshader
+res://badge5.gdshader
+res://badge7.gdshader
+res://badge8.gdshader
+res://login.tscn
 res://globals.gd
-res://butonplace.gd
-res://leveloras1.gd
 res://itemshop.gd
+res://login.gd
