@@ -1,7 +1,7 @@
+TextureRect
 Label
 TextureButton
 HBoxContainer
-TextureRect
 ScrollContainer
 PanelContainer
 Control

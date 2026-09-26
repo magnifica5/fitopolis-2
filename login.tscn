@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://b15y51ipnvbeq"]
+[gd_scene load_steps=61 format=3 uid="uid://b15y51ipnvbeq"]
 
 [ext_resource type="Script" uid="uid://crrx5y3d4afv7" path="res://login.gd" id="1_0s12h"]
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_cau7c"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://tkntsuwyygk5" path="res://audio/menu_music.mp3" id="17_osbi4"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="19_t1khq"]
 [ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="20_hkpux"]
+[ext_resource type="Texture2D" uid="uid://djyoipm0bviyc" path="res://assets/!2.png" id="24_sj8j8"]
 [ext_resource type="Texture2D" uid="uid://cdws58tpw74u8" path="res://assets/pop_leadeboard.svg" id="28_ysypo"]
 [ext_resource type="Texture2D" uid="uid://4j5up2jbxr4t" path="res://assets/leaderboardIcon.svg" id="29_y2lsy"]
 [ext_resource type="Texture2D" uid="uid://jlsobvk5nvw2" path="res://assets/badgesIcon.svg" id="30_d05sf"]
@@ -392,6 +393,14 @@ theme_override_fonts/font = ExtResource("19_t1khq")
 theme_override_font_sizes/font_size = 27
 text = "CLASAMENT"
 
+[node name="TextureRect" type="TextureRect" parent="meniu/HBoxContainer/TextureButton2"]
+layout_mode = 1
+offset_left = -18.5
+offset_top = -32.0
+offset_right = 51.5
+offset_bottom = 38.0
+texture = ExtResource("24_sj8j8")
+
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
@@ -483,6 +492,14 @@ texture_hover = ExtResource("30_d05sf")
 texture_disabled = ExtResource("30_d05sf")
 texture_focused = ExtResource("30_d05sf")
 stretch_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="leaderboard/Leaderboard/HBoxContainer/TextureButton2"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -24.0
+offset_right = 56.0
+offset_bottom = 46.0
+texture = ExtResource("24_sj8j8")
 
 [node name="ListOfUsers" type="ScrollContainer" parent="leaderboard/Leaderboard"]
 visible = false
@@ -954,8 +971,8 @@ text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
 [connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
+[connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton" to="." method="_catre_oras_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton4" to="." method="_catre_exercitii"]
