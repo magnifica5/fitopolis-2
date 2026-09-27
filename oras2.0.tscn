@@ -2946,6 +2946,7 @@ tile_set = SubResource("TileSet_ykcqp")
 script = ExtResource("23_8ef1k")
 
 [node name="Layer2" type="TileMapLayer" parent="."]
+visible = false
 z_index = 1
 use_parent_material = true
 position = Vector2(1, 0)
@@ -2955,6 +2956,7 @@ tile_set = SubResource("TileSet_ykcqp")
 script = ExtResource("22_vp3yx")
 
 [node name="Layer3" type="TileMapLayer" parent="."]
+visible = false
 z_index = 1
 use_parent_material = true
 position = Vector2(1, 0)

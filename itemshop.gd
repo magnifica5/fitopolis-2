@@ -78,8 +78,12 @@ func populeaza_scena_cu_cladiri(target_layer: TileMapLayer) -> void:
 func nr_cladiri() -> int:
 	if not FileAccess.file_exists(SAVE_PATH):
 		print("Nu s-a găsit niciun fișier de salvare existent. Pornire curată.")
+
 		return 0
 		
+
+		return 0 
+
 	var key = Globals.get_secure_key()
 	var file = FileAccess.open_encrypted(SAVE_PATH, FileAccess.READ, key)
 	if file:
