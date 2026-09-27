@@ -438,7 +438,6 @@ volume_db = -10.0
 stream = ExtResource("17_osbi4")
 
 [node name="leaderboard" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="leaderboard"]
 anchors_preset = 15
@@ -729,7 +728,7 @@ theme_override_colors/font_color = Color(0.23529412, 0.3882353, 0.03137255, 1)
 theme_override_fonts/font = ExtResource("36_6eo0u")
 theme_override_font_sizes/font_size = 21
 text = "Colectioneaza
- 12 stickere! 🐱"
+12 stickere! 🐱"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -770,7 +769,7 @@ theme_override_colors/font_color = Color(0.23529412, 0.3882353, 0.03137255, 1)
 theme_override_fonts/font = ExtResource("36_6eo0u")
 theme_override_font_sizes/font_size = 21
 text = "Descopera lumea jocurilor
-Fit'O Mind! 🧠 n"
+Fit'O Mind! 🧠"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -816,7 +815,7 @@ theme_override_colors/font_color = Color(0.23529412, 0.3882353, 0.03137255, 1)
 theme_override_fonts/font = ExtResource("36_6eo0u")
 theme_override_font_sizes/font_size = 21
 text = "Fa 20 de serii de exercitii fizice
-apasand pe butonul Exercitii! 🏋️ n"
+apasand pe butonul Exercitii! 🏋️"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -971,8 +970,8 @@ text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
 [connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
+[connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton" to="." method="_catre_oras_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton4" to="." method="_catre_exercitii"]
