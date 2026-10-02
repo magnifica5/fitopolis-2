@@ -4,24 +4,24 @@
             "outputFile": "com.godot.game-mergeStandardDebugResources-20:/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\flori\\.gradle\\caches\\8.11.1\\transforms\\1f78652368fcaf22ddb356e4bfe9a15a\\transformed\\core-1.8.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\User\\.gradle\\caches\\8.11.1\\transforms\\e90cbead98fa31a340616e42c4e82433\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-zh-rCN\\values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "199",
+                        "endColumns": "94",
+                        "endOffsets": "293"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "10",
                         "startColumns": "4",
-                        "startOffsets": "1869",
-                        "endColumns": "100",
-                        "endOffsets": "1965"
+                        "startOffsets": "917",
+                        "endColumns": "98",
+                        "endOffsets": "1011"
                     }
                 },
                 {
-                    "source": "C:\\Users\\flori\\.gradle\\caches\\8.11.1\\transforms\\f7ae00a2b1e118f9d77de863d655ef37\\transformed\\jetified-play-services-base-18.2.0\\res\\values-zh-rCN\\values.xml",
+                    "source": "C:\\Users\\User\\.gradle\\caches\\8.11.1\\transforms\\f7ae00a2b1e118f9d77de863d655ef37\\transformed\\jetified-play-services-base-18.2.0\\res\\values-zh-rCN\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,20 +38,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\flori\\.gradle\\caches\\8.11.1\\transforms\\e90cbead98fa31a340616e42c4e82433\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-zh-rCN\\values.xml",
+                    "source": "C:\\Users\\User\\.gradle\\caches\\8.11.1\\transforms\\1f78652368fcaf22ddb356e4bfe9a15a\\transformed\\core-1.8.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "199",
-                        "endColumns": "94",
-                        "endOffsets": "293"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "10",
+                        "startLines": "20",
                         "startColumns": "4",
-                        "startOffsets": "917",
-                        "endColumns": "98",
-                        "endOffsets": "1011"
+                        "startOffsets": "1869",
+                        "endColumns": "100",
+                        "endOffsets": "1965"
                     }
                 }
             ]
