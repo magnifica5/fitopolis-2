@@ -24,6 +24,8 @@ func _on_verifica() -> void:
 		print("Cod valid! Am găsit utilizatorul cu ID-ul: ")
 		Globals.adauga_code(code)
 		errors.text = ""
+		SyncManager.sync_data()
+		SyncManager.save_local_data()
 		get_tree().change_scene_to_file("res://alege_personaj.tscn")
 	else:
 		errors.text = "Codul introdus nu este valid."

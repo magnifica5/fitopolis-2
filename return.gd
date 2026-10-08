@@ -5,8 +5,8 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	# Elimină textura salvată
-	$AudioStreamPlayer.play()
-	await get_tree().create_timer(0.1).timeout
+	#$AudioStreamPlayer.play()
+	#await get_tree().create_timer(0.1).timeout
 	Itemshop.textura_salvata = null
 
 	# Dacă sprite-ul ascultă semnalul, îi trimitem valoarea null

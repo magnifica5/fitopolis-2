@@ -42,8 +42,8 @@ func _mission_completed() -> void:
 
 
 func _next_baie() -> void:
-	$AudioStreamPlayer.play()
-	await get_tree().create_timer(0.1).timeout
+	#$AudioStreamPlayer.play()
+	#await get_tree().create_timer(0.1).timeout
 	var personaj = Globals.citeste_personaj()
 	if personaj == 0:
 		get_tree().change_scene_to_file("res://spalat pe dinti.tscn")

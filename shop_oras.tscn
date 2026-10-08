@@ -1,6 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://bq7g65wpt238b"]
 
 [ext_resource type="Texture2D" uid="uid://bx4dgeewi1s58" path="res://assets/level_bg.png" id="1_m7bmd"]
+[ext_resource type="Script" uid="uid://da5nb61l0gftj" path="res://shop_oras.gd" id="1_uf0uh"]
 [ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="2_1fpbl"]
 [ext_resource type="Texture2D" uid="uid://ca7j377dadnxj" path="res://assets/shop_slot2.png" id="2_i607x"]
 [ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="3_a7wd6"]
@@ -17,7 +18,6 @@
 [ext_resource type="Script" uid="uid://c47r35rm2aknv" path="res://casashop3.gd" id="8_vkt0n"]
 [ext_resource type="Texture2D" uid="uid://b8hxqe7rwhkgu" path="res://assets/nigu13.png" id="9_svqdx"]
 [ext_resource type="Texture2D" uid="uid://n5slharny2wh" path="res://image-removebg-preview (60).png" id="12_ay86s"]
-[ext_resource type="Script" uid="uid://ceu2tre0q1gxl" path="res://return2.gd" id="13_r6vcd"]
 [ext_resource type="Script" uid="uid://cp488jw0jlexw" path="res://casashop4.gd" id="14_viup1"]
 [ext_resource type="Script" uid="uid://d0wauq3klxln0" path="res://casashop5.gd" id="16_viup1"]
 [ext_resource type="Script" uid="uid://boas1hl7y4f5q" path="res://casashop6.gd" id="19_8k30y"]
@@ -35,6 +35,7 @@ offset_right = 3712.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uf0uh")
 
 [node name="LevelBg" type="Sprite2D" parent="."]
 position = Vector2(834.00006, 479.00003)
@@ -411,7 +412,6 @@ offset_bottom = 487.50024
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("12_ay86s")
 ignore_texture_size = true
-script = ExtResource("13_r6vcd")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/return"]
 stream = ExtResource("23_uf0uh")
@@ -419,4 +419,4 @@ volume_db = -10.0
 
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" to="ScrollContainer/HBoxContainer/TextureRect/TextureRect/TextureButton" method="_on_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton" to="ScrollContainer/HBoxContainer/TextureRect2/TextureRect/TextureButton" method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/return" to="CanvasLayer/return" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/return" to="." method="_catre_oras"]

@@ -22,8 +22,8 @@ func _process(delta: float) -> void:
 
 
 func _final_preg_dimi() -> void:
-	$AudioStreamPlayer.play()
-	await get_tree().create_timer(0.1).timeout
+	#$AudioStreamPlayer.play()
+	#await get_tree().create_timer(0.1).timeout
 	Globals.code = Globals.citeste_code()
 	var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
 	var task = Supabase.database.query(query)

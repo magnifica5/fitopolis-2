@@ -25,6 +25,6 @@ func _process(delta: float) -> void:
 
 
 func _back_to_levels() -> void:
-	$AudioStreamPlayer.play()
-	await get_tree().create_timer(0.1).timeout
+	#$AudioStreamPlayer.play()
+	#await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://complete_activity.tscn")

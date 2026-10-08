@@ -24,7 +24,13 @@ var badge_nodes
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
+var oras = "res://oras2.0.tscn"
+var stickere = "res://stikere.tscn"
+var exercitii = "res://exercitii_dimineata.tscn"
 func _ready() -> void:
+	preload_scene(oras)
+	preload_scene(stickere)
+	preload_scene(exercitii)
 	new_badge.hide()
 	new_badge2.hide()
 	badge_nodes = [
@@ -46,80 +52,87 @@ func _ready() -> void:
 		
 	label_level.text = str(ControlLevel.get_level(HourActivity.activities))
 	progres_bar.value = ControlLevel.get_progress(HourActivity.activities)
-	Globals.code = Globals.citeste_code()
-	var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
-	var task = Supabase.database.query(query)
-	var result = await task.completed
-	if result.error == null and result.data.size() > 0:
-		var data = result.data[0]
-		Globals.adauga_scor(data.scor)
-		label_username.text = data.username
-		var avatar = int(data.avatar_number)
-		var sheet_size = sprite_sheet.get_size()
-		var cell_size = sheet_size / Vector2(cols, rows)
-		var row = int(avatar / cols)
-		var col = avatar % cols
-		var atlas = AtlasTexture.new()
-		atlas.atlas = sprite_sheet
-		atlas.region = Rect2(Vector2(col, row) * cell_size, cell_size)
-		avatar_final.texture_normal = atlas
-		avatar_final.texture_pressed = atlas
-		avatar_final.texture_hover = atlas
-		avatar_final.texture_focused = atlas
-		avatar_final.texture_disabled = atlas
-		var badges_vechi = data.get("badges", {})
-		var badges_calculate = calculeaza_badges(data)
+	#Globals.code = Globals.citeste_code()
+	#var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
+	#var task = Supabase.database.query(query)
+	#var result = await task.completed
+	#if result.error == null and result.data.size() > 0:
+		#var data = result.data[0]
+		#Globals.adauga_scor(data.scor)
+	label_username.text = Globals.usernamed
+	var avatar = int(Globals.avatar_numberd)
+	var sheet_size = sprite_sheet.get_size()
+	var cell_size = sheet_size / Vector2(cols, rows)
+	var row = int(avatar / cols)
+	var col = avatar % cols
+	var atlas = AtlasTexture.new()
+	atlas.atlas = sprite_sheet
+	atlas.region = Rect2(Vector2(col, row) * cell_size, cell_size)
+	avatar_final.texture_normal = atlas
+	avatar_final.texture_pressed = atlas
+	avatar_final.texture_hover = atlas
+	avatar_final.texture_focused = atlas
+	avatar_final.texture_disabled = atlas
+	var badges_vechi = Globals.badgesd
+	var badges_calculate = calculeaza_badges()
 
-		var badges_noi = combina_badges(
-			badges_vechi,
-			badges_calculate
-		)
+	var badges_noi = combina_badges(
+		badges_vechi,
+		badges_calculate
+	)
 
-		aplica_badges(badges_noi)
+	aplica_badges(badges_noi)
 
-		var schimbari = compara_badges(
-			badges_vechi,
-			badges_noi
-		)
+	var schimbari = compara_badges(
+		badges_vechi,
+		badges_noi
+	)
 
-		if schimbari.size() > 0:
-			new_badge.show()
-			new_badge2.show()
-			print("Badge-uri noi: ", schimbari)
-			await salveaza_badges(badges_noi)
+	if schimbari.size() > 0:
+		new_badge.show()
+		new_badge2.show()
+		print("Badge-uri noi: ", schimbari)
+		await salveaza_badges(badges_noi)
+
+func preload_scene(path: String):
+	ResourceLoader.load_threaded_request(path)
+
+func get_scene(path: String):
+	var status = ResourceLoader.load_threaded_get_status(path)
+	if status == ResourceLoader.THREAD_LOAD_LOADED:
+		return ResourceLoader.load_threaded_get(path)
+	return null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _catre_oras_pressed() -> void:
-	$AudioStreamPlayer.play()
-	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file("res://oras2.0.tscn")
-
-
-func _catre_parinti() -> void:
-	$AudioStreamPlayer.play()
-	SoundManager.stop_music()
-	SoundManager.play_menu_music(preload("res://audio/menu_music.mp3"))
-	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file("res://parola.tscn")
+	var ready = get_scene(oras)
+	if ready:
+		#$AudioStreamPlayer.play()
+		#await get_tree().create_timer(0.1).timeout
+		get_tree().change_scene_to_packed(ready)
 
 
 func _catre_exercitii() -> void:
-	$AudioStreamPlayer.play()
-	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file("res://exercitii_dimineata.tscn")
+	var ready = get_scene(exercitii)
+	if ready:
+		#$AudioStreamPlayer.play()
+		#await get_tree().create_timer(0.1).timeout
+		get_tree().change_scene_to_packed(ready)
 
 
 func _on_level_1() -> void:
-	$AudioStreamPlayer.play()
-	await get_tree().create_timer(0.1).timeout
+	#$AudioStreamPlayer.play()
+	#await get_tree().create_timer(0.1).timeout
 	HourActivity._on_choose_activity()
 
 func _catre_stikere() -> void:
-	$AudioStreamPlayer.play()
-	get_tree().change_scene_to_file("res://stikere.tscn")
+	var ready = get_scene(stickere)
+	if ready:
+		#$AudioStreamPlayer.play()
+		get_tree().change_scene_to_packed(ready)
 
 func _on_level_up(new_level: int):
 	get_tree().change_scene_to_file("res://upgrade_level.tscn")
@@ -161,10 +174,9 @@ func seteaza_badge(deblocat: bool, badge) -> void:
 		not deblocat
 	)
 
-func calculeaza_badges(data: Dictionary) -> Dictionary:
+func calculeaza_badges() -> Dictionary:
 	var zile = 0
-	var date = data.created_at
-	print(data.created_at)
+	var date = Globals.created_atd
 	if date != "":
 		var date_dict = Time.get_datetime_dict_from_datetime_string(date, false)
 		var data_acum = Time.get_datetime_dict_from_system()
@@ -179,7 +191,7 @@ func calculeaza_badges(data: Dictionary) -> Dictionary:
 		"badge5": 0,
 		"badge6": int(ControlLevel.get_level(HourActivity.activities) >= 5),
 		"badge7": int(Itemshop.nr_cladiri() >= 20),
-		"badge8": int(data.scor >= 1000)
+		"badge8": int(Globals.scored >= 1000)
 	}
 	return badges
 

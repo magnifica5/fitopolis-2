@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SyncManager="*res://syncmanager.gd"
 Itemshop="*res://itemshop.gd"
 Supabase="*res://addons/supabase/Supabase/supabase.gd"
 LocalNotification="*res://LocalNotification.gd"

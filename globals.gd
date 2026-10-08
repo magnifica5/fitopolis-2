@@ -36,6 +36,13 @@ var personaj = -1
 var score = 0
 var obiecte_cumparate = {}
 var is_audio_on: bool = true
+var usernamed
+var scored
+var activitiesd
+var badgesd = {}
+var avatar_numberd
+var created_atd
+var connection_coded
 func _ready():
 	var path = "user://avertisment.save"
 	if FileAccess.file_exists(path):

@@ -1,13 +1,32 @@
+# trebuie revenit pt supabase
 extends Node2D
 var path = "user://start.save"
+var main_scene = "res://login.tscn"
+var background_login = "res://background_login.tscn"
+var interfata_parinte = "res://interfata_parinte.tscn"
+var alege_interfata = "res://alege_interfata.tscn"
 func _ready() -> void:
 	await get_tree().process_frame
 	SoundManager.play_music(preload("res://audio/background_sound.mp3"))
+	preload_scene(main_scene)
+	preload_scene(background_login)
+	preload_scene(interfata_parinte)
+	preload_scene(alege_interfata)
 
 func _process(delta: float) -> void:
 	pass
+
+func preload_scene(path: String):
+	ResourceLoader.load_threaded_request(path)
+
+func get_scene(path: String):
+	var status = ResourceLoader.load_threaded_get_status(path)
+	if status == ResourceLoader.THREAD_LOAD_LOADED:
+		return ResourceLoader.load_threaded_get(path)
+	return null
+
 func _on_texture_button_pressed() -> void:
-	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.play()
 	if FileAccess.file_exists(path):
 		var key = Globals.get_secure_key()
 		var f = FileAccess.open_encrypted(path, FileAccess.READ, key)
@@ -15,16 +34,34 @@ func _on_texture_button_pressed() -> void:
 		f.close()
 		print(content)
 		if content == "copil\n":
-			get_tree().change_scene_to_file("res://login.tscn")
+			SyncManager.load_local_data()
+			var ready = get_scene(main_scene)
+			if ready:
+				get_tree().change_scene_to_packed(ready)
+			else:
+				print("not ready yet")
 		else:
 			if await try_auto_login():
 				print("Autentificare automată reușită. Navighez la dashboard.")
-				get_tree().change_scene_to_file("res://interfata_parinte.tscn")
+				var ready = get_scene(interfata_parinte)
+				if ready:
+					get_tree().change_scene_to_packed(ready)
+				else:
+					print("not ready yet")
 			else:
 				print("Nu s-a putut autentifica automat. Navighez la alegerea interfeței.")
-				get_tree().change_scene_to_file("res://background_login.tscn")
+				var ready = get_scene(background_login)
+				if ready:
+					get_tree().change_scene_to_packed(ready)
+				else:
+					print("not ready yet")
 	else:
-		get_tree().change_scene_to_file("res://alege_interfata.tscn")
+		var ready = get_scene(alege_interfata)
+		if ready:
+			get_tree().change_scene_to_packed(ready)
+		else:
+			print("not ready yet")
+
 func try_auto_login() -> bool:
 	if FileAccess.file_exists("user://session.save"):
 		var key = Globals.get_secure_key()
@@ -82,6 +119,6 @@ func _clear_local_session():
 		print("Sesiune locală ștearsă.")
 
 func _functionare() -> void:
-	$AudioStreamPlayer.play()
-	await get_tree().create_timer(0.1).timeout
+	#$AudioStreamPlayer.play()
+	#await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://functionare.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://byxvirf2mbluu"]
+[gd_scene load_steps=49 format=4 uid="uid://byxvirf2mbluu"]
 
 [ext_resource type="Script" uid="uid://dgkvg0xvuouo" path="res://oras_scene.gd" id="1_8qvay"]
 [ext_resource type="Script" uid="uid://bkfahxr3xddjx" path="res://miscare_oras_camera.gd" id="2_04nbv"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://n5slharny2wh" path="res://image-removebg-preview (60).png" id="28_0tq3r"]
 [ext_resource type="Script" uid="uid://dembm5egdbicj" path="res://labelshop.gd" id="29_8ef1k"]
 [ext_resource type="Script" uid="uid://boe1waprc7pv3" path="res://return.gd" id="29_vp3yx"]
-[ext_resource type="Script" uid="uid://ckjh1ndvevrk4" path="res://texture_button_32.gd" id="30_5j8e4"]
 [ext_resource type="Script" uid="uid://dakq5cq5fndpm" path="res://labelplace.gd" id="32_3cfb1"]
 [ext_resource type="Script" uid="uid://elh1g7lu0juv" path="res://butonplace.gd" id="32_83c5t"]
 [ext_resource type="Texture2D" uid="uid://dq4s8ytaf3nsl" path="res://assets/level.png" id="34_vvtkl"]
@@ -3079,7 +3078,6 @@ offset_right = 2060.0
 offset_bottom = 1099.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("22_3i3l4")
-script = ExtResource("30_5j8e4")
 
 [node name="Label3" type="Label" parent="CanvasLayer/TextureButton3"]
 layout_mode = 1
@@ -3478,4 +3476,5 @@ script = ExtResource("24_rnnjr")
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_acasa_pressed"]
 [connection signal="pressed" from="CanvasLayer/return" to="CanvasLayer/return" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureButton3" to="." method="_catre_shop"]
 [connection signal="pressed" from="CanvasLayer/TextureRect/TextureButton" to="CanvasLayer/TextureRect" method="_on_upgrade"]

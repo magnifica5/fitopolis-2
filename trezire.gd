@@ -7,7 +7,9 @@ extends Node2D
 var char_index = 0
 var replica_aleatorie = ""
 var current_text = ""
+var baie_dimineata = "res://baie_dimineata.tscn"
 func _ready():
+	preload_scene(baie_dimineata)
 	Localization.language_changed.connect(_update_text)
 	_update_text()
 	#randomize()
@@ -33,6 +35,14 @@ func _ready():
 func _update_text() -> void:
 	replica_aleatorie = Localization.get_text(translation_key)
 
+func preload_scene(path: String):
+	ResourceLoader.load_threaded_request(path)
+
+func get_scene(path: String):
+	var status = ResourceLoader.load_threaded_get_status(path)
+	if status == ResourceLoader.THREAD_LOAD_LOADED:
+		return ResourceLoader.load_threaded_get(path)
+	return null
 
 func _on_TypeTimer_timeout():
 	if char_index < replica_aleatorie.length():
@@ -48,6 +58,8 @@ func _process(delta: float) -> void:
 
 
 func _mission_completed() -> void:
-	$AudioStreamPlayer.play()
-	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file("res://baie_dimineata.tscn")
+	#$AudioStreamPlayer.play()
+	#await get_tree().create_timer(0.1).timeout
+	var ready = get_scene(baie_dimineata)
+	if ready:
+		get_tree().change_scene_to_packed(ready)
