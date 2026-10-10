@@ -21,37 +21,65 @@ extends Node2D
 @onready var new_badge = $meniu/HBoxContainer/TextureButton2/TextureRect
 @onready var new_badge2 = $leaderboard/Leaderboard/HBoxContainer/TextureButton2/TextureRect
 var badge_nodes
+var leaderboard_ready = false
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
 var oras = "res://oras2.0.tscn"
 var stickere = "res://stikere.tscn"
 var exercitii = "res://exercitii_dimineata.tscn"
+signal modifica_score
 func _ready() -> void:
+	leaderboard_ready = false
 	preload_scene(oras)
 	preload_scene(stickere)
 	preload_scene(exercitii)
 	new_badge.hide()
 	new_badge2.hide()
+	leaderboard.hide()
+	await get_tree().process_frame
 	badge_nodes = [
 		badge1, badge2, badge3, badge4,
 		badge5, badge6, badge7, badge8
 	]
-	leaderboard.hide()
-	await get_tree().process_frame
 	SoundManager.sound_stop_menu()
 	SoundManager.sound_stop_win()
 	SoundManager.play_music(preload("res://audio/background_sound.mp3"))
-	
-	await HourActivity.load_progress()
-	var level_now = ControlLevel.get_level(HourActivity.activities)
+	afiseaza_ui()
+	await SyncManager.sync_data()
+	afiseaza_ui()
+	var badges_vechi = Globals.badgesd
+	var badges_calculate = calculeaza_badges()
+
+	var badges_noi = combina_badges(
+		badges_vechi,
+		badges_calculate
+	)
+
+	aplica_badges(badges_noi)
+
+	var schimbari = compara_badges(
+		badges_vechi,
+		badges_noi
+	)
+
+	if schimbari.size() > 0:
+		new_badge.show()
+		new_badge2.show()
+		print("Badge-uri noi: ", schimbari)
+		await salveaza_badges(badges_noi)
+	leaderboard_ready = true
+
+func afiseaza_ui():
+	await get_tree().process_frame
+	var level_now = ControlLevel.get_level(int(HourActivity.activities))
 	var level_saved = Globals.citeste_level()
 	if level_saved != level_now:
 		Globals.adauga_level(str(level_now))
 		get_tree().change_scene_to_file("res://upgrade_level.tscn")
 		
-	label_level.text = str(ControlLevel.get_level(HourActivity.activities))
-	progres_bar.value = ControlLevel.get_progress(HourActivity.activities)
+	label_level.text = str(ControlLevel.get_level(int(HourActivity.activities)))
+	progres_bar.value = ControlLevel.get_progress(int(HourActivity.activities))
 	#Globals.code = Globals.citeste_code()
 	#var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
 	#var task = Supabase.database.query(query)
@@ -73,26 +101,7 @@ func _ready() -> void:
 	avatar_final.texture_hover = atlas
 	avatar_final.texture_focused = atlas
 	avatar_final.texture_disabled = atlas
-	var badges_vechi = Globals.badgesd
-	var badges_calculate = calculeaza_badges()
-
-	var badges_noi = combina_badges(
-		badges_vechi,
-		badges_calculate
-	)
-
-	aplica_badges(badges_noi)
-
-	var schimbari = compara_badges(
-		badges_vechi,
-		badges_noi
-	)
-
-	if schimbari.size() > 0:
-		new_badge.show()
-		new_badge2.show()
-		print("Badge-uri noi: ", schimbari)
-		await salveaza_badges(badges_noi)
+	modifica_score.emit()
 
 func preload_scene(path: String):
 	ResourceLoader.load_threaded_request(path)
@@ -142,13 +151,26 @@ func _on_esc() -> void:
 	leaderboard.hide()
 
 
+
 func _leaderboard() -> void:
+	leaderboard.hide()
+
+	# Încărcăm datele înainte să afișăm popup-ul.
+	await leaderboard_scroll.incarca_leaderboard()
+
+	# Afișăm popup-ul după încărcare.
 	leaderboard.show()
 	listofusers.show()
 	listofbadges.hide()
 	clasament.show()
 	medalii.hide()
-	await leaderboard_scroll.deschide_leaderboard()
+
+	# Așteptăm actualizarea interfeței.
+	await get_tree().process_frame
+
+	# Pornim animația.
+	await leaderboard_scroll.animeaza_leaderboard()
+
 
 func _on_leaderboard() -> void:
 	listofbadges.hide()

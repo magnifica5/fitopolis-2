@@ -44,7 +44,7 @@ func _on_button_pressed() -> void:
 		var result2 = await task2.completed
 		
 		if result2.error == null:
-			Globals.adauga_scor(scor_nou)
+			Globals.scored = scor_nou
 			print("Scor modificat cu succes!")
 			
 			# 5. Setăm direct textura preîncărcată (FĂRĂ conversii inutile Image -> ImageTexture)

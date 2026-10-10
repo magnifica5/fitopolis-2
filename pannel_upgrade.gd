@@ -12,8 +12,8 @@ func _process(delta: float) -> void:
 
 
 func _on_upgrade() -> void:
-	$TextureButton/AudioStreamPlayer.play()
-	await get_tree().create_timer(0.1).timeout
+	#$TextureButton/AudioStreamPlayer.play()
+	#await get_tree().create_timer(0.1).timeout
 	Globals.code = Globals.citeste_code()
 	var cost_item = int(label.text)
 	
@@ -40,7 +40,7 @@ func _on_upgrade() -> void:
 		var task2 = Supabase.database.query(query2)
 		var result2 = await task2.completed
 		if result2.error == null:
-			Globals.adauga_scor(scor_nou)
+			Globals.scored = scor_nou
 		GameState.valoare_globala += 1
 		GameState.level_updated.emit()
 		self.visible = false

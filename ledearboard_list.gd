@@ -1,26 +1,18 @@
-extends ScrollContainer
 
+extends ScrollContainer
 
 @onready var user_list: VBoxContainer = $VBoxContainer
 
 var user_row_scene = preload("res://HboxLedearboard.tscn")
 
 
-func _ready() -> void:
-	pass
-
-func deschide_leaderboard() -> void:
-	# Pornim de sus de fiecare dată
+# 1. Încarcă utilizatorii fără să pornească animația.
+func incarca_leaderboard() -> void:
 	scroll_vertical = 0
-
-	# Oprim orice animație veche
-	var tween := create_tween()
-	tween.kill()
-
-	# Reîncărcăm utilizatorii și pornim animația
 	await get_users()
 
 
+# 2. Preia datele din Supabase.
 func get_users() -> void:
 	var children_query := SupabaseQuery.new() \
 		.from("children") \
@@ -30,7 +22,7 @@ func get_users() -> void:
 		.from("progres_copil") \
 		.select(["activities", "connection_code"])
 
-	# Query-uri executate în paralel
+	# Executăm query-urile în paralel.
 	var children_task = Supabase.database.query(children_query)
 	var progress_task = Supabase.database.query(progress_query)
 
@@ -78,22 +70,22 @@ func get_users() -> void:
 	await display_users(users)
 
 
-
+# 3. Sortează utilizatorii descrescător după activități.
 func sort_users_by_activities(a, b) -> bool:
 	return a["activities_completed"] > b["activities_completed"]
 
 
+# 4. Creează rândurile în interfață.
+# Nu pornește animația de scroll.
 func display_users(users: Array) -> void:
-	var current_row: Control = null
 	var existing_children = user_list.get_children()
 
-	# Presupunem că primul copil este headerul
+	# Presupunem că primul copil este headerul.
 	for index in range(1, existing_children.size()):
 		existing_children[index].queue_free()
 
+	# Așteptăm eliminarea rândurilor vechi.
 	await get_tree().process_frame
-
-	var current_connection_code := str(Globals.code).strip_edges()
 
 	for i in range(users.size()):
 		var user = users[i]
@@ -108,11 +100,30 @@ func display_users(users: Array) -> void:
 			int(user["avatar_number"])
 		)
 
-		if str(user["connection_code"]).strip_edges() == current_connection_code:
-			current_row = row
+		# Salvăm codul pentru a identifica utilizatorul curent.
+		row.set_meta(
+			"connection_code",
+			str(user["connection_code"]).strip_edges()
+		)
 
+
+# 5. Animează scroll-ul după ce popup-ul este vizibil.
+func animeaza_leaderboard() -> void:
+	# Permitem actualizarea layout-ului și a dimensiunilor.
 	await get_tree().process_frame
 	await get_tree().process_frame
+
+	var current_connection_code := str(
+		Globals.code
+	).strip_edges()
+
+	var current_row: Control = null
+
+	for row in user_list.get_children():
+		if row.has_meta("connection_code"):
+			if str(row.get_meta("connection_code")) == current_connection_code:
+				current_row = row
+				break
 
 	if current_row != null:
 		await scroll_to_current_row(current_row)
@@ -120,6 +131,7 @@ func display_users(users: Array) -> void:
 		print("Nu am găsit utilizatorul curent în leaderboard.")
 
 
+# 6. Centrează utilizatorul curent și îl evidențiază.
 func scroll_to_current_row(row: Control) -> void:
 	var row_y := row.position.y
 	var row_height := row.size.y

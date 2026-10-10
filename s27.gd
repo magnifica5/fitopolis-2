@@ -35,7 +35,7 @@ func _input_event(_viewport, event, _shape_idx):
 						var task2 = Supabase.database.query(query2)
 						var result2 = await task2.completed
 						if result2.error == null:
-							Globals.adauga_scor(int(score))
+							Globals.scored = score
 							modificare.emit()
 							dispare_tot()
 							print("scor modificat")

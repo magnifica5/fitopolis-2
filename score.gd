@@ -3,13 +3,13 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Globals.code = Globals.citeste_code()
-	var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
-	var task = Supabase.database.query(query)
-	var result = await task.completed
-	if result.error == null and result.data.size() > 0:
-		var data = result.data[0]
-		self.text = str(int(data.scor))
+	#Globals.code = Globals.citeste_code()
+	#var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
+	#var task = Supabase.database.query(query)
+	#var result = await task.completed
+	#if result.error == null and result.data.size() > 0:
+		#var data = result.data[0]
+	self.text = str(int(Globals.scored))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,18 +17,23 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_modificare() -> void:
-	self.text = str(Globals.citeste_score())
+	self.text = str(int(Globals.scored))
+	await SyncManager.save_local_data()
 #
 #
 func _on_area_2d_2_modificare() -> void:
-	self.text = str(Globals.citeste_score())
+	self.text = str(int(Globals.scored))
+	await SyncManager.save_local_data()
 #
 #
 func _on_area_2d_3_modificare() -> void:
-	self.text = str(Globals.citeste_score())
+	self.text = str(int(Globals.scored))
+	await SyncManager.save_local_data()
 
 func _modificare():
-	self.text = str(Globals.citeste_score())
-	
-#
-#
+	self.text = str(int(Globals.scored))
+	await SyncManager.save_local_data()
+
+func _modifica_score() -> void:
+	self.text = str(int(Globals.scored))
+	await SyncManager.save_local_data()
