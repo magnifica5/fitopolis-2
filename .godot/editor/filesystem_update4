@@ -1,4 +1,6 @@
-res://login.tscn
-res://login.gd
-res://ledearboard_list.gd
-res://start.tscn
+res://oras2.0.tscn
+res://butonplace.gd
+res://itemshop.gd
+res://leveloras1.gd
+res://reparare.gd
+res://test.gd

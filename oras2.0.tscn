@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://byxvirf2mbluu"]
+[gd_scene load_steps=51 format=4 uid="uid://byxvirf2mbluu"]
 
 [ext_resource type="Script" uid="uid://dgkvg0xvuouo" path="res://oras_scene.gd" id="1_8qvay"]
 [ext_resource type="Script" uid="uid://bkfahxr3xddjx" path="res://miscare_oras_camera.gd" id="2_04nbv"]
@@ -32,8 +32,10 @@
 [ext_resource type="Script" uid="uid://1ey7bcc5emoc" path="res://deleteyes.gd" id="42_nc24j"]
 [ext_resource type="Script" uid="uid://p76a10lsa5e2" path="res://deleteno.gd" id="43_l1lfh"]
 [ext_resource type="Script" uid="uid://cnti6eqvhxahw" path="res://labelyes.gd" id="43_nlo5q"]
+[ext_resource type="Texture2D" uid="uid://m2jb6cspt5ui" path="res://assets/buton_simplu.png" id="44_8f85f"]
 [ext_resource type="Script" uid="uid://ds83la7us4kpf" path="res://deleteX.gd" id="44_nlo5q"]
 [ext_resource type="Script" uid="uid://e0rqw1buvie0" path="res://labelno.gd" id="45_1qshh"]
+[ext_resource type="Script" uid="uid://cvstiuqjxviy3" path="res://reparare.gd" id="45_nc24j"]
 [ext_resource type="Script" uid="uid://bnivn3f3u64r4" path="res://labelstergereireversibila.gd" id="46_nlo5q"]
 [ext_resource type="Script" uid="uid://c7pwtmbaq1h76" path="res://pannel_upgrade.gd" id="50_i6juc"]
 [ext_resource type="Texture2D" uid="uid://bydnxw3csuyet" path="res://assets/castig/castig.png" id="50_smqs4"]
@@ -3463,6 +3465,16 @@ theme_override_font_sizes/font_size = 70
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("56_i6juc")
+
+[node name="reparare" type="TextureButton" parent="CanvasLayer"]
+visible = false
+offset_left = 498.0
+offset_top = 413.0
+offset_right = 602.0
+offset_bottom = 509.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("44_8f85f")
+script = ExtResource("45_nc24j")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_jjpv3")
