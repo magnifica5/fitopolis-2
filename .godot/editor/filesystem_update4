@@ -1,6 +1,4 @@
-res://oras2.0.tscn
-res://butonplace.gd
-res://itemshop.gd
-res://leveloras1.gd
-res://reparare.gd
-res://test.gd
+res://exercitii_fizice_fin.tscn
+res://login.tscn
+res://login.gd
+res://exercitii_fizice_fin.gd

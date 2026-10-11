@@ -27,7 +27,7 @@ var cols := 7
 var rows := 3
 var oras = "res://oras2.0.tscn"
 var stickere = "res://stikere.tscn"
-var exercitii = "res://exercitii_dimineata.tscn"
+var exercitii = "res://exercitii_fizice_fin.tscn"
 signal modifica_score
 func _ready() -> void:
 	leaderboard_ready = false

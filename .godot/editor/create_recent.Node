@@ -1,5 +1,7 @@
 TextureButton
 TextureRect
+AnimatedSprite2D
+AnimationPlayer
 Label
 HBoxContainer
 ScrollContainer
@@ -10,5 +12,3 @@ Node2D
 VBoxContainer
 Panel
 CanvasLayer
-PopupPanel
-Button

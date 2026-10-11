@@ -36,7 +36,7 @@ func sync_data():
 		HourActivity.activities = data.activities
 		save_local_data()
 	is_syncing = false
-
+	
 func get_data_from_supabase_children():
 	Globals.code = Globals.citeste_code()
 	var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.code)
@@ -46,6 +46,8 @@ func get_data_from_supabase_children():
 		var data = result.data[0]
 		return data
 	return null
+	
+	
 
 func get_data_from_supabase_progress():
 	Globals.code = Globals.citeste_code()

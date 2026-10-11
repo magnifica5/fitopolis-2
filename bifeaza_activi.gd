@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 
 
 func _back_to_start() -> void:
-	await HourActivity.load_progress()
+	await SyncManager.sync_data()
 	var score = 0
 	var missed = 0
 	var activities = 0
