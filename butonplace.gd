@@ -4,8 +4,8 @@ func _ready() -> void:
 	pressed.connect(_on_pressed)
 
 func _on_pressed() -> void:
-	#$AudioStreamPlayer.play()
-	#await get_tree().create_timer(0.1).timeout
+	$AudioStreamPlayer.play()
+	await get_tree().create_timer(0.1).timeout
 	var preview = get_tree().current_scene.get_node("Sprite2D")
 	
 	if preview == null or preview.texture == null:
@@ -16,12 +16,12 @@ func _on_pressed() -> void:
 		print("Eroare: Calea texturii nu a fost înregistrată corect din Shop!")
 		return
 
-	# --- NOU: ADUNĂM TOATE LAYERELE ACTIVE/VIZIBILE ---
+	# --- ADUNĂM TOATE LAYERELE ACTIVE/VIZIBILE ---
 	var layere_valide: Array[TileMapLayer] = []
 	
 	# Căutăm în rădăcina scenei curente toate layerele active
 	for copil in get_tree().current_scene.get_children():
-		# Verificăm dacă nodul este un TileMapLayer, dacă numele lui începe cu "Layer" și este vizibil în joc
+		# Verificăm dacă nodul este un TileMapLayer, dacă numele lui începe cu "Layer", nu e "Layer0" și este vizibil
 		if copil is TileMapLayer and copil.name.begins_with("Layer") and copil.name != "Layer0" and copil.visible:
 			layere_valide.append(copil)
 
@@ -63,7 +63,7 @@ func _on_pressed() -> void:
 		print("Nu poți plasa aici! Casa trebuie să fie complet pe iarbă/pământ deblocat.")
 		return
 
-	# --- VERIFICARE 2: SUPRAPUNERE CU ALTE CASE ---
+	# --- VERIFICARE: SUPRAPUNERE CU ALTE CASE ---
 	var rect_casa_noua := Rect2(colt_stanga_sus, dimensiune_pixel)
 	
 	for l in layere_valide:
@@ -92,13 +92,15 @@ func _on_pressed() -> void:
 	casa.scale = preview.scale / target_layer.scale
 	casa.global_position = preview.global_position
 	
+	# Am adăugat "distrusa": false
 	Itemshop.cladiri.append({
 		"texture": Itemshop.cale_textura_salvata,
 		"position_x": casa.global_position.x,
 		"position_y": casa.global_position.y,
 		"scale_casa": Itemshop.scale_salvat,
 		"z_index": 10,
-		"z_as_relative": false
+		"z_as_relative": false,
+		"distrusa": false 
 	})
 	
 	Itemshop.salveaza_jocul()

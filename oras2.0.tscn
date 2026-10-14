@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://byxvirf2mbluu"]
+[gd_scene load_steps=54 format=4 uid="uid://byxvirf2mbluu"]
 
 [ext_resource type="Script" uid="uid://dgkvg0xvuouo" path="res://oras_scene.gd" id="1_8qvay"]
 [ext_resource type="Script" uid="uid://bkfahxr3xddjx" path="res://miscare_oras_camera.gd" id="2_04nbv"]
@@ -36,7 +36,10 @@
 [ext_resource type="Script" uid="uid://ds83la7us4kpf" path="res://deleteX.gd" id="44_nlo5q"]
 [ext_resource type="Script" uid="uid://e0rqw1buvie0" path="res://labelno.gd" id="45_1qshh"]
 [ext_resource type="Script" uid="uid://cvstiuqjxviy3" path="res://reparare.gd" id="45_nc24j"]
+[ext_resource type="Script" uid="uid://dxx4ewpx7qowa" path="res://test3.gd" id="46_nc24j"]
 [ext_resource type="Script" uid="uid://bnivn3f3u64r4" path="res://labelstergereireversibila.gd" id="46_nlo5q"]
+[ext_resource type="Script" uid="uid://x8pebfsijk1" path="res://reparare1.gd" id="47_l1lfh"]
+[ext_resource type="Texture2D" uid="uid://bhbmrcpg8d23r" path="res://assets/repair-removebg-preview.png" id="48_nlo5q"]
 [ext_resource type="Script" uid="uid://c7pwtmbaq1h76" path="res://pannel_upgrade.gd" id="50_i6juc"]
 [ext_resource type="Texture2D" uid="uid://bydnxw3csuyet" path="res://assets/castig/castig.png" id="50_smqs4"]
 [ext_resource type="Script" uid="uid://cmlq7emof78r3" path="res://labelupgrade.gd" id="51_k3t6u"]
@@ -3475,6 +3478,29 @@ offset_bottom = 509.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("44_8f85f")
 script = ExtResource("45_nc24j")
+
+[node name="TextureButton7" type="TextureButton" parent="CanvasLayer"]
+offset_left = 547.0
+offset_top = 726.0
+offset_right = 741.0
+offset_bottom = 917.0
+texture_normal = ExtResource("21_uinss")
+script = ExtResource("46_nc24j")
+
+[node name="TextureButton8" type="TextureButton" parent="CanvasLayer"]
+visible = false
+offset_left = 40.0
+offset_top = 835.0
+offset_right = 134.0
+offset_bottom = 931.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("44_8f85f")
+script = ExtResource("47_l1lfh")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/TextureButton8"]
+position = Vector2(46.375, 44.25)
+scale = Vector2(0.14220648, 0.13168322)
+texture = ExtResource("48_nlo5q")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_jjpv3")

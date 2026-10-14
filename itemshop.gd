@@ -47,15 +47,27 @@ func incarca_jocul() -> void:
 		else:
 			print("Eroare la procesarea fișierului JSON!")
 
-# --- FUNCȚIE NOUĂ: RECONSTRUIEȘTE CASELE ÎN SCENĂ CU Z_INDEX CORECT ---
+# --- RECONSTRUIEȘTE CASELE ÎN SCENĂ CU SUPORT PENTRU TEXTURA DE DISTRUGERE ---
 func populeaza_scena_cu_cladiri(target_layer: TileMapLayer) -> void:
 	if target_layer == null:
 		print("Eroare: Layer-ul țintă pentru încărcarea clădirilor este null!")
 		return
 
 	for date in cladiri:
-		var cale_tex = date.get("texture", "")
-		if not ResourceLoader.exists(cale_tex):
+		# Preluăm starea "distrusa" (fallback la false pentru salvările vechi)
+		var este_distrusa = date.get("distrusa", false)
+		
+		# Decidem calea texturii în funcție de starea de distrugere
+		var cale_tex = ""
+		if este_distrusa:
+			cale_tex = "res://casa.distrusa.png"
+			# Fallback de siguranță: dacă nu există textura distrusă, o lăsăm pe cea normală să nu crape jocul
+			if not ResourceLoader.exists(cale_tex):
+				cale_tex = date.get("texture", "")
+		else:
+			cale_tex = date.get("texture", "")
+
+		if cale_tex == "" or not ResourceLoader.exists(cale_tex):
 			continue
 
 		var casa := Sprite2D.new()
@@ -78,11 +90,7 @@ func populeaza_scena_cu_cladiri(target_layer: TileMapLayer) -> void:
 func nr_cladiri() -> int:
 	if not FileAccess.file_exists(SAVE_PATH):
 		print("Nu s-a găsit niciun fișier de salvare existent. Pornire curată.")
-
 		return 0
-		
-
-		return 0 
 
 	var key = Globals.get_secure_key()
 	var file = FileAccess.open_encrypted(SAVE_PATH, FileAccess.READ, key)

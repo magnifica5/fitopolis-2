@@ -43,16 +43,15 @@ func _process(_delta):
 	var layer = get_tree().current_scene.get_node_or_null("Layer1")
 	if layer == null: return
 	var mouse_pos = get_global_mouse_position()
-#LOGICA DE ȘTERGERE CASĂ ÎN MODUL DELETE
+
+	#LOGICA DE ȘTERGERE CASĂ ÎN MODUL DELETE
 	if Itemshop.delete_mode:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			# Adunăm layerele active (excluzând apa Layer0 ca mai devreme)
 			var layere_valide: Array[TileMapLayer] = []
 			for copil in get_tree().current_scene.get_children():
 				if copil is TileMapLayer and copil.name.begins_with("Layer") and copil.name != "Layer0" and copil.visible:
 					layere_valide.append(copil)
 			
-			# Căutăm casa pe toate layerele active
 			for l in layere_valide:
 				var copii = l.get_children()
 				for i in range(copii.size()):
@@ -62,20 +61,16 @@ func _process(_delta):
 						var rect_copil := Rect2(copil.global_position - (dim_copil / 2), dim_copil)
 						
 						if rect_copil.has_point(mouse_pos):
-							# Am găsit casa! O căutăm în baza de date JSON după poziție
 							for j in range(Itemshop.cladiri.size()):
 								var c = Itemshop.cladiri[j]
 								if abs(c["position_x"] - copil.global_position.x) < 5 and abs(c["position_y"] - copil.global_position.y) < 5:
-									
-									# AICI ESTE SCHIMBAREA: În loc să ștergem, deschidem pop-up-ul!
-									# Folosim %ColorRect pentru a apela direct meniul tău unic
 									var pop_up = get_tree().current_scene.find_child("ColorRect", true, false) as ColorRect
 									if pop_up:
-										pop_up.deschide_confirmare(j) # Îi trimitem indexul 'j'
-									
+										pop_up.deschide_confirmare(j)
 									break
 							break
 		return
+
 	#SELECTARE CASĂ ÎN MODUL EDITARE
 	if Itemshop.edit_mode and texture == null:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not dragging:
@@ -87,6 +82,21 @@ func _process(_delta):
 					var rect_copil := Rect2(copil.global_position - (dim_copil / 2), dim_copil)
 					
 					if rect_copil.has_point(mouse_pos):
+						# --- VERIFICĂM DACĂ CASA ESTE DISTRUSĂ ÎNAINTE DE A O SELECTA/MUTA ---
+						var index_gasit = -1
+						var date_gasite = {}
+						for j in range(Itemshop.cladiri.size()):
+							var c = Itemshop.cladiri[j]
+							if abs(c["position_x"] - copil.global_position.x) < 5 and abs(c["position_y"] - copil.global_position.y) < 5:
+								index_gasit = j
+								date_gasite = c
+								break
+						
+						if date_gasite.get("distrusa", false) == true:
+							print("Nu poți muta o casă distrusă!")
+							return
+						# -------------------------------------------------------------------
+
 						print("Am selectat o casă pentru mutare!")
 						
 						texture = copil.texture
@@ -94,13 +104,9 @@ func _process(_delta):
 						global_position = copil.global_position
 						actualizeaza_dimensiune_indicator()
 						
-						for j in range(Itemshop.cladiri.size()):
-							var c = Itemshop.cladiri[j]
-							if abs(c["position_x"] - copil.global_position.x) < 5 and abs(c["position_y"] - copil.global_position.y) < 5:
-								Itemshop.casa_editata_index = j
-								Itemshop.cale_textura_salvata = c["texture"]
-								Itemshop.scale_salvat = c.get("scale_casa", 1.0)
-								break
+						Itemshop.casa_editata_index = index_gasit
+						Itemshop.cale_textura_salvata = date_gasite.get("texture", "")
+						Itemshop.scale_salvat = date_gasite.get("scale_casa", 1.0)
 						
 						copil.queue_free()
 						
@@ -141,7 +147,6 @@ func actualizeaza_culoare_indicator() -> void:
 		if indicator_fundal: indicator_fundal.visible = false
 		return
 	
-	# Adunăm layerele vizibile în mod dinamic
 	var layere_valide: Array[TileMapLayer] = []
 	for copil in get_tree().current_scene.get_children():
 		if copil is TileMapLayer and copil.name.begins_with("Layer") and copil.name != "Layer0" and copil.visible:
@@ -169,7 +174,8 @@ func actualizeaza_culoare_indicator() -> void:
 			if not gasit_pe_vreun_layer:
 				se_poate_plasa = false
 				break
-		if not se_poate_plasa: break
+		if not se_poate_plasa: 
+			break
 
 	if se_poate_plasa:
 		var rect_casa_noua := Rect2(colt_stanga_sus, dimensiune_pixel)
@@ -187,14 +193,15 @@ func actualizeaza_culoare_indicator() -> void:
 	else:
 		indicator_fundal.color = Color(1.0, 0.0, 0.0, 0.4)
 
-
 func incearca_plasare_editata() -> void:
 	var layere_valide: Array[TileMapLayer] = []
 	for copil in get_tree().current_scene.get_children():
 		if copil is TileMapLayer and copil.name.begins_with("Layer") and copil.name != "Layer0" and copil.visible:
 			layere_valide.append(copil)
 
-	if layere_valide.is_empty(): return
+	if layere_valide.is_empty(): 
+		return
+		
 	var layer_ref = layere_valide[0]
 	
 	var dimensiune_pixel = texture.get_size() * scale
@@ -208,9 +215,14 @@ func incearca_plasare_editata() -> void:
 			var celula = Vector2i(x, y)
 			var gasit = false
 			for l in layere_valide:
-				if l.get_cell_source_id(celula) != -1: gasit = true; break
-			if not gasit: valida = false; break
-		if not valida: break
+				if l.get_cell_source_id(celula) != -1: 
+					gasit = true
+					break
+			if not gasit: 
+				valida = false
+				break
+		if not valida: 
+			break
 
 	if valida:
 		var rect_casa_noua := Rect2(colt_stanga_sus, dimensiune_pixel)
@@ -219,13 +231,14 @@ func incearca_plasare_editata() -> void:
 				if copil is Sprite2D:
 					var dim_copil = copil.texture.get_size() * copil.scale * l.scale
 					var rect_copil := Rect2(copil.global_position - (dim_copil / 2), dim_copil)
-					if rect_casa_noua.intersects(rect_copil): valida = false; break
+					if rect_casa_noua.intersects(rect_copil): 
+						valida = false
+						break
 
 	if not valida:
-		print("Nu poți lașa casa aici!")
+		print("Nu poți lăsa casa aici!")
 		return
 
-	# Fixăm clădirea pe primul layer activ (de exemplu Layer1)
 	var target_layer = layere_valide[0]
 	var casa := Sprite2D.new()
 	casa.texture = texture
@@ -233,24 +246,30 @@ func incearca_plasare_editata() -> void:
 	casa.scale = scale / target_layer.scale
 	casa.global_position = global_position
 
-	if Itemshop.casa_editata_index != -1:
+	if Itemshop.casa_editata_index != -1 and Itemshop.casa_editata_index < Itemshop.cladiri.size():
+		var vechile_date = Itemshop.cladiri[Itemshop.casa_editata_index]
+		
 		Itemshop.cladiri[Itemshop.casa_editata_index] = {
 			"texture": Itemshop.cale_textura_salvata,
 			"position_x": casa.global_position.x,
 			"position_y": casa.global_position.y,
-			"scale_casa": Itemshop.scale_salvat
+			"scale_casa": Itemshop.scale_salvat,
+			"distrusa": vechile_date.get("distrusa", false),
+			"z_index": vechile_date.get("z_index", 10),
+			"z_as_relative": vechile_date.get("z_as_relative", false)
 		}
 	
 	Itemshop.salveaza_jocul()
 
 	texture = null
 	Itemshop.casa_editata_index = -1
-	if indicator_fundal: indicator_fundal.visible = false
-	
+	if indicator_fundal: 
+		indicator_fundal.visible = false
+
 func schimba_textura(textura_noua: Texture2D) -> void:
 	if textura_noua != null:
 		texture = textura_noua
-		scale = Vector2(Itemshop.scale_salvat, Itemshop.scale_salvat)  
+		scale = Vector2(Itemshop.scale_salvat, Itemshop.scale_salvat) 
 	else:
 		texture = poza
 		scale = Vector2.ONE
