@@ -34,7 +34,7 @@ func _on_texture_button_pressed() -> void:
 		f.close()
 		print(content)
 		if content == "copil\n":
-			SyncManager.load_local_data()
+			await SyncManager.load_local_data()
 			var ready = get_scene(main_scene)
 			if ready:
 				get_tree().change_scene_to_packed(ready)
@@ -43,6 +43,7 @@ func _on_texture_button_pressed() -> void:
 		else:
 			if await try_auto_login():
 				print("Autentificare automată reușită. Navighez la dashboard.")
+				await SyncManager.load_parent_data()
 				var ready = get_scene(interfata_parinte)
 				if ready:
 					get_tree().change_scene_to_packed(ready)

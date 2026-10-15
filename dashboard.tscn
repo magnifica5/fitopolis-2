@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://bj6f06xbk5w3q"]
+[gd_scene load_steps=74 format=3 uid="uid://bj6f06xbk5w3q"]
 
 [ext_resource type="Texture2D" uid="uid://cbhbl3xi0b88q" path="res://assets/home_d.png" id="1_gt2mv"]
 [ext_resource type="Script" uid="uid://bv1x4jakl58" path="res://dashboard.gd" id="1_uj34o"]
@@ -33,7 +33,6 @@
 [ext_resource type="Script" uid="uid://bldkbu2kbbwsg" path="res://ore_activitati.gd" id="19_ekiu7"]
 [ext_resource type="Script" uid="uid://vg77sl600xlg" path="res://labelexdupa-amiaza.gd" id="19_i7mf3"]
 [ext_resource type="Script" uid="uid://mq5xobah3gjy" path="res://bifeaza_activi.gd" id="20_2vt8e"]
-[ext_resource type="Texture2D" uid="uid://duvsbfmjpihei" path="res://exercitii_dimineata/image-removebg-preview (63).png" id="20_d434x"]
 [ext_resource type="Script" uid="uid://dewy62jk5c41u" path="res://hour_input_ex_2.gd" id="20_ekiu7"]
 [ext_resource type="Script" uid="uid://kg7a78vs73bh" path="res://check_box.gd" id="20_ovj55"]
 [ext_resource type="Texture2D" uid="uid://dcnfwp3m4001b" path="res://assets/buton_bifa.png" id="21_2vt8e"]
@@ -863,7 +862,6 @@ texture = ExtResource("19_8hgs0")
 [node name="ImageRemovebgPreview(63)" type="Sprite2D" parent="HBoxContainer/MarginContainer/TabContainer/Control2/Button4"]
 position = Vector2(43.000015, 52.000015)
 scale = Vector2(0.31250027, 0.2879334)
-texture = ExtResource("20_d434x")
 
 [node name="LinkButton" type="LinkButton" parent="HBoxContainer/MarginContainer/TabContainer/Control2"]
 layout_mode = 1
