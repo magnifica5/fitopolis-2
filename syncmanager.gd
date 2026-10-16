@@ -41,13 +41,22 @@ func sync_data_parents():
 	if is_syncing_parent:
 		return
 	var date = await get_children_based_on_parent()
-	if date:
+	var datep = await get_children_progress_based_on_parent()
+	if date and datep:
 		Globals.copii.clear()
 		for data in date:
-			Globals.copii.append({
+			Globals.copii[data.connection_code] = {
 				"username": data.username,
-				"avatar_number": data.avatar_number
-			})
+				"avatar_number": data.avatar_number,
+				"verificare": data.verificare,
+				"check_verificare": data.check_verificare,
+				"created_at": data.created_at,
+				"scor": data.scor
+			}
+		for progres in datep:
+			Globals.copii[progres.connection_code] = {
+				"missed" = progres.missed
+			}
 		save_parent_data()
 	is_syncing = false
 	
@@ -65,6 +74,16 @@ func get_children_based_on_parent():
 	var parent = Supabase.auth.client
 	if parent == null: return
 	var query = SupabaseQuery.new().from("children").select().eq("parent_id", parent.id) # selecteaza toate coloanele in care avem id al acestui parinte
+	var task = Supabase.database.query(query)
+	var result = await task.completed
+	if result.error == null:
+		return result.data
+	return null
+
+func get_children_progress_based_on_parent():
+	var parent = Supabase.auth.client
+	if parent == null: return
+	var query = SupabaseQuery.new().from("progres_copil").select().eq("parent_id", parent.id) # selecteaza toate coloanele in care avem id al acestui parinte
 	var task = Supabase.database.query(query)
 	var result = await task.completed
 	if result.error == null:
@@ -158,26 +177,13 @@ func save_parent_data():
 func load_parent_data():
 	if not FileAccess.file_exists("user://parent_data.json"):
 		return
-
 	var file = FileAccess.open("user://parent_data.json", FileAccess.READ)
-
 	if file:
 		var content = file.get_as_text()
 		file.close()
-
 		var data = JSON.parse_string(content)
-
 		if typeof(data) == TYPE_DICTIONARY:
-			var lista = data.get("lista_copii", [])
-
+			var lista = data.get("lista_copii", {})
 			Globals.copii.clear()
-
-			if typeof(lista) == TYPE_ARRAY:
-				for copil in lista:
-					if typeof(copil) == TYPE_DICTIONARY:
-						Globals.copii.append({
-							"username": copil.get("username", ""),
-							"avatar_number": int(copil.get("avatar_number", 0))
-						})
-
-			
+			if typeof(lista) == TYPE_DICTIONARY:
+				Globals.copii = lista

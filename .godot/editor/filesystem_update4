@@ -1,7 +1,8 @@
-res://oras2.0.tscn
-res://interfata_parinte.tscn
-res://syncmanager.gd
 res://dashboard.tscn
+res://dashboard.gd
+res://syncmanager.gd
 res://globals.gd
-res://start_scene.gd
 res://interfata_parinte.gd
+res://home.gd
+res://login.tscn
+res://start.tscn
