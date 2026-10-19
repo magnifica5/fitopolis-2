@@ -1,8 +1,7 @@
-res://dashboard.tscn
-res://dashboard.gd
-res://syncmanager.gd
-res://globals.gd
-res://interfata_parinte.gd
-res://home.gd
-res://login.tscn
 res://start.tscn
+res://syncmanager.gd
+res://dashboard.tscn
+res://home.gd
+res://settings.gd
+res://ore_activitati.gd
+res://dashboard.gd

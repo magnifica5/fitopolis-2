@@ -11,8 +11,7 @@ var cols := 7
 var rows := 3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Globals.code = Globals.citeste_code()
-	var data = Globals.copii[Globals.code]
+	var data = Globals.copii[Globals.connection_coded]
 	if data:
 		var date = data["created_at"]
 		var date_dict = Time.get_datetime_dict_from_datetime_string(date, false)
@@ -22,8 +21,8 @@ func _ready() -> void:
 		var zile = int((t_azi - t_cont) / 86400)
 		days.text = str(zile)
 		username.text = data["username"]
-		cod.text = data["connection_code"]
-		Globals.adauga_code(data["connection_code"])
+		cod.text = Globals.connection_coded
+		Globals.adauga_code(Globals.connection_coded)
 		scor.text = str(int(data["scor"]))
 		var avatar = int(data["avatar_number"])
 		var sheet_size = sprite_sheet.get_size()

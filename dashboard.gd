@@ -6,6 +6,7 @@ extends Control
 @onready var tabs = $HBoxContainer/MarginContainer/TabContainer
 @onready var lacat = $HBoxContainer/MarginContainer/TabContainer/Control3/Panel4
 @onready var succes = $HBoxContainer/MarginContainer/TabContainer/Control3/Panel5
+@onready var ore_incomplete = $HBoxContainer/MarginContainer/TabContainer/Control3/Panel6
 var login_scene = "res://background_login.tscn"
 var interfata_parinte = "res://interfata_parinte.tscn"
 # Called when the node enters the scene tree for the first time.
@@ -37,23 +38,30 @@ func _on_settings_pressed() -> void:
 	tabs.current_tab = 1
 
 func _on_reports_pressed() -> void:
+	ore_incomplete.hide()
 	Globals.code = Globals.citeste_code()
 	var data = Globals.copii[str(Globals.code)]
 	if data:
-		var ora = change_type(data["verificare"])
-		var ora_curenta = Time.get_datetime_dict_from_system()
-		var mins = ora_curenta.hour * 60 + ora_curenta.minute
-		if mins >= ora and mins <= ora + 7:
+		if data["verificare"] == null:
+			print("este null")
+			ore_incomplete.show()
 			tabs.current_tab = 2
-			var check = data["check_verificare"]
-			if check == true:
-				lacat.hide()
+		else:
+			ore_incomplete.hide()
+			var ora = change_type(data["verificare"])
+			var ora_curenta = Time.get_datetime_dict_from_system()
+			var mins = ora_curenta.hour * 60 + ora_curenta.minute
+			if mins >= ora and mins <= ora + 7:
+				tabs.current_tab = 2
+				var check = data["check_verificare"]
+				if check == true:
+					lacat.hide()
+				else:
+					lacat.show()
 			else:
 				lacat.show()
-		else:
-			lacat.show()
-			tabs.current_tab = 2
-			print("merge")
+				tabs.current_tab = 2
+				print("merge")
 	else:
 		lacat.show()
 		tabs.current_tab = 2

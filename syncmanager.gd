@@ -37,28 +37,35 @@ func sync_data():
 		save_local_data()
 	is_syncing = false
 
+
 func sync_data_parents():
 	if is_syncing_parent:
 		return
+	is_syncing_parent = true
 	var date = await get_children_based_on_parent()
 	var datep = await get_children_progress_based_on_parent()
-	if date and datep:
+	if date != null and datep != null:
 		Globals.copii.clear()
-		for data in date:
-			Globals.copii[data.connection_code] = {
-				"username": data.username,
-				"avatar_number": data.avatar_number,
-				"verificare": data.verificare,
-				"check_verificare": data.check_verificare,
-				"created_at": data.created_at,
-				"scor": data.scor
+		# Salvăm datele de bază ale fiecărui copil.
+		for copil in date:
+			var cod = copil.connection_code
+			Globals.copii[cod] = {
+				"username": copil.username,
+				"avatar_number": copil.avatar_number,
+				"verificare": copil.verificare,
+				"check_verificare": copil.check_verificare,
+				"created_at": copil.created_at,
+				"scor": copil.scor
 			}
+		# Adăugăm progresul fără să ștergem datele existente.
 		for progres in datep:
-			Globals.copii[progres.connection_code] = {
-				"missed" = progres.missed
-			}
+			var cod = progres.connection_code
+			if not Globals.copii.has(cod):
+				Globals.copii[cod] = {}
+			Globals.copii[cod]["missed"] = progres.missed
 		save_parent_data()
-	is_syncing = false
+	is_syncing_parent = false
+
 	
 func get_data_from_supabase_children():
 	Globals.code = Globals.citeste_code()

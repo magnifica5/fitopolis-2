@@ -182,6 +182,7 @@ func _close_succes() -> void:
 		await Supabase.auth.sign_out().completed
 		get_tree().change_scene_to_file("res://background_login.tscn")
 	else:
+		await SyncManager.sync_data_parents()
 		get_tree().reload_current_scene()
 
 func check_unique_username(u_name: String) -> bool:

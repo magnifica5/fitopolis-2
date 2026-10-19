@@ -61,6 +61,7 @@ func _on_salveaza() -> void:
 		var res_insert = await task_insert.completed
 		if res_insert.error == null:
 			print("success")
+			await SyncManager.sync_data_parents()
 			succes.show()
 		else:
 			print(res_insert.error.message)
