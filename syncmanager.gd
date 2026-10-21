@@ -37,19 +37,35 @@ func sync_data():
 		save_local_data()
 	is_syncing = false
 
+
 func sync_data_parents():
 	if is_syncing_parent:
 		return
+	is_syncing_parent = true
 	var date = await get_children_based_on_parent()
-	if date:
+	var datep = await get_children_progress_based_on_parent()
+	if date != null and datep != null:
 		Globals.copii.clear()
-		for data in date:
-			Globals.copii.append({
-				"username": data.username,
-				"avatar_number": data.avatar_number
-			})
+		# Salvăm datele de bază ale fiecărui copil.
+		for copil in date:
+			var cod = copil.connection_code
+			Globals.copii[cod] = {
+				"username": copil.username,
+				"avatar_number": copil.avatar_number,
+				"verificare": copil.verificare,
+				"check_verificare": copil.check_verificare,
+				"created_at": copil.created_at,
+				"scor": copil.scor
+			}
+		# Adăugăm progresul fără să ștergem datele existente.
+		for progres in datep:
+			var cod = progres.connection_code
+			if not Globals.copii.has(cod):
+				Globals.copii[cod] = {}
+			Globals.copii[cod]["missed"] = progres.missed
 		save_parent_data()
-	is_syncing = false
+	is_syncing_parent = false
+
 	
 func get_data_from_supabase_children():
 	Globals.code = Globals.citeste_code()
@@ -65,6 +81,16 @@ func get_children_based_on_parent():
 	var parent = Supabase.auth.client
 	if parent == null: return
 	var query = SupabaseQuery.new().from("children").select().eq("parent_id", parent.id) # selecteaza toate coloanele in care avem id al acestui parinte
+	var task = Supabase.database.query(query)
+	var result = await task.completed
+	if result.error == null:
+		return result.data
+	return null
+
+func get_children_progress_based_on_parent():
+	var parent = Supabase.auth.client
+	if parent == null: return
+	var query = SupabaseQuery.new().from("progres_copil").select().eq("parent_id", parent.id) # selecteaza toate coloanele in care avem id al acestui parinte
 	var task = Supabase.database.query(query)
 	var result = await task.completed
 	if result.error == null:
@@ -158,26 +184,13 @@ func save_parent_data():
 func load_parent_data():
 	if not FileAccess.file_exists("user://parent_data.json"):
 		return
-
 	var file = FileAccess.open("user://parent_data.json", FileAccess.READ)
-
 	if file:
 		var content = file.get_as_text()
 		file.close()
-
 		var data = JSON.parse_string(content)
-
 		if typeof(data) == TYPE_DICTIONARY:
-			var lista = data.get("lista_copii", [])
-
+			var lista = data.get("lista_copii", {})
 			Globals.copii.clear()
-
-			if typeof(lista) == TYPE_ARRAY:
-				for copil in lista:
-					if typeof(copil) == TYPE_DICTIONARY:
-						Globals.copii.append({
-							"username": copil.get("username", ""),
-							"avatar_number": int(copil.get("avatar_number", 0))
-						})
-
-			
+			if typeof(lista) == TYPE_DICTIONARY:
+				Globals.copii = lista

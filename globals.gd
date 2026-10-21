@@ -22,7 +22,7 @@ var codep
 var saved_hours
 var username
 var level = 1
-var copii: Array[Dictionary] = []
+var copii: Dictionary = {}
 signal verif_trezire
 signal verif_ex
 signal final_settings
