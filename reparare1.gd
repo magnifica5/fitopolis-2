@@ -20,6 +20,7 @@ func _on_pressed() -> void:
 		# Verificăm dacă clădirea este distrusă în prezent
 		if date.get("distrusa", false) == true:
 			date["distrusa"] = false # O setăm la false (reparată)
+			date.erase("cale_distrusa_salvata") # Ștergem textura distrusă aleatorie anterioară
 			numar_reparate += 1
 
 	if numar_reparate > 0:
