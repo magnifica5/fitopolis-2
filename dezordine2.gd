@@ -3,10 +3,11 @@ extends TileMapLayer # sau Node2D / CanvasItem
 @export var x: int 
 
 func _ready() -> void:
+	x=2
 	actualizeaza_vizibilitate()
 
 func actualizeaza_vizibilitate() -> void:
-	if x == 2:
+	if x >= 2:
 		# 1. Testăm mai întâi dacă nodul curent este Layer4
 		if name == "Layer5":
 			visible = true
