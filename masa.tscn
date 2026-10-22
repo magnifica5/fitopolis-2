@@ -9,8 +9,8 @@
 [ext_resource type="Script" uid="uid://bl344u5hv6t5o" path="res://fata.gd" id="6_k30fw"]
 [ext_resource type="Texture2D" uid="uid://5dot875wpu1b" path="res://masa_dimi/supfinb.png" id="6_o7r20"]
 [ext_resource type="Texture2D" uid="uid://dgpbghamya1sa" path="res://masa_dimi/bsup.png" id="7_k30fw"]
-[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="7_y6o63"]
 [ext_resource type="Script" uid="uid://c3corcmfufupq" path="res://baiat.gd" id="9_8jyr5"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="11_ccvad"]
 [ext_resource type="Script" uid="uid://bfs0j5av1pefj" path="res://labelmasa.gd" id="12_6lg6k"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="12_g8gkr"]
 [ext_resource type="AudioStream" uid="uid://b8ulfuxl4ov1u" path="res://audio/voices/miss_nutri_m.mp3" id="13_x4vyr"]
@@ -124,7 +124,7 @@ offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_y6o63")
+theme_override_fonts/font = ExtResource("11_ccvad")
 theme_override_font_sizes/font_size = 130
 text = "Haide să luăm masa"
 horizontal_alignment = 1

@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://cjx3p1ptw7ecg"]
 
 [ext_resource type="Script" uid="uid://qfqf74d1b7eq" path="res://alege_personaj.gd" id="1_d3isc"]
-[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="1_rk5yx"]
 [ext_resource type="Script" uid="uid://bgqks70fl5tx2" path="res://heroes.gd" id="1_yww3c"]
 [ext_resource type="Texture2D" uid="uid://spelkwm5365q" path="res://assets/santos.png" id="2_germ7"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="3_8shbx"]
 [ext_resource type="Texture2D" uid="uid://cemf3fqpivwum" path="res://assets/miss nutri.png" id="3_yww3c"]
-[ext_resource type="Script" uid="uid://xke1kthnxoij" path="res://alege_text.gd" id="5_ajqpa"]
 [ext_resource type="Script" uid="uid://nmujeq3hp37w" path="res://santos.gd" id="5_dtbfq"]
 [ext_resource type="Script" uid="uid://d2y84dqqq5pys" path="res://miss_nutri.gd" id="7_dtbfq"]
+[ext_resource type="FontFile" uid="uid://b3u7x6rbqx0sk" path="res://assets/font/Signika-SemiBold.ttf" id="8_dihqw"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="9_8shbx"]
 
 [node name="Node2D" type="Node2D"]
@@ -34,9 +34,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 73.0
-offset_top = 158.6
+offset_top = 150.6
 offset_right = 625.22266
-offset_bottom = 177.59998
+offset_bottom = 185.59998
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.9, 0.9)
@@ -48,7 +48,7 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="CanvasLayer2/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_rk5yx")
+theme_override_fonts/font = ExtResource("3_8shbx")
 theme_override_font_sizes/font_size = 70
 text = "Santos"
 horizontal_alignment = 1
@@ -66,7 +66,7 @@ theme_override_constants/separation = 4
 
 [node name="Label" type="Label" parent="CanvasLayer2/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_rk5yx")
+theme_override_fonts/font = ExtResource("3_8shbx")
 theme_override_font_sizes/font_size = 70
 text = "Miss Nutri"
 horizontal_alignment = 1
@@ -79,7 +79,6 @@ texture_hover = ExtResource("3_yww3c")
 script = ExtResource("7_dtbfq")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
-script = ExtResource("5_ajqpa")
 
 [node name="Label" type="Label" parent="CanvasLayer3"]
 anchors_preset = 5
@@ -90,8 +89,9 @@ offset_top = 28.0
 offset_right = 932.0
 offset_bottom = 135.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_rk5yx")
+theme_override_fonts/font = ExtResource("8_dihqw")
 theme_override_font_sizes/font_size = 70
+text = "ALEGE PERSONAJUL CARE TE REPREZINTA"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="CanvasLayer3"]
@@ -102,4 +102,3 @@ volume_db = -10.0
 
 [connection signal="pressed" from="CanvasLayer2/HBoxContainer/VBoxContainer/TextureButton" to="." method="_on_santos_pressed"]
 [connection signal="pressed" from="CanvasLayer2/HBoxContainer/VBoxContainer2/TextureButton" to="." method="_on_miss_nutri_pressed"]
-[connection signal="appear_heroes" from="CanvasLayer3" to="CanvasLayer2/HBoxContainer" method="_on_appear_heroes"]

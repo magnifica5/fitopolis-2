@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bjuhu53phohpc" path="res://spalat pe dinti/schimbare_fata.png" id="4_cblrq"]
 [ext_resource type="Script" uid="uid://bsa5171xfi46h" path="res://baiat_costum.gd" id="5_0ner2"]
 [ext_resource type="Texture2D" uid="uid://dqju5q6qwh7ad" path="res://assets/cuv_nor.png" id="7_0ner2"]
-[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="8_jveo2"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="8_6m1j0"]
 [ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="9_0ner2"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="10_jveo2"]
 [ext_resource type="AudioStream" uid="uid://chpl2cembjbi3" path="res://audio/voices/miss_nutri_t.mp3" id="11_6m1j0"]
@@ -89,7 +89,7 @@ offset_bottom = 255.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("8_jveo2")
+theme_override_fonts/font = ExtResource("8_6m1j0")
 theme_override_font_sizes/font_size = 110
 text = "Haide să ne alegem ținuta"
 horizontal_alignment = 1

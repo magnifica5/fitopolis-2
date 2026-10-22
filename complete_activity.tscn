@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bqkyyqh371m3g" path="res://assets/castig/stea1.png" id="3_0p0x0"]
 [ext_resource type="Texture2D" uid="uid://dx1kk0h60jx2r" path="res://assets/castig/stea2.png" id="4_8isn1"]
 [ext_resource type="Texture2D" uid="uid://b8sxscmoedm3p" path="res://assets/castig/stea3.png" id="5_yvnjm"]
-[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="6_6fsdy"]
 [ext_resource type="Texture2D" uid="uid://pdofnn67ch6d" path="res://assets/castig/scor_bar.png" id="8_0p0x0"]
 [ext_resource type="Script" uid="uid://bs465mnx66o1f" path="res://score.gd" id="9_6fsdy"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="9_hnxaf"]
 [ext_resource type="Script" uid="uid://c28tm426hxo1j" path="res://activitate_finalizata.gd" id="10_f07xr"]
 [ext_resource type="Texture2D" uid="uid://b415284iuneso" path="res://assets/acasa_buton.png" id="10_yvnjm"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="13_op5q4"]
@@ -98,13 +98,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -470.0
-offset_top = -280.0
+offset_top = -336.0
 offset_right = 518.0
-offset_bottom = 25.0
+offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_6fsdy")
+theme_override_fonts/font = ExtResource("9_hnxaf")
 theme_override_font_sizes/font_size = 120
 text = "Activitate
 Finalizată"
@@ -133,13 +133,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -52.666656
-offset_top = -33.333344
+offset_top = -46.750008
 offset_right = 154.99997
-offset_bottom = 26.833328
+offset_bottom = 29.249992
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_6fsdy")
-theme_override_font_sizes/font_size = 70
+theme_override_fonts/font = ExtResource("9_hnxaf")
+theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("9_6fsdy")

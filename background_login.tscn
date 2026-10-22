@@ -1,12 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://gxs45gia7rxs"]
+[gd_scene load_steps=16 format=3 uid="uid://gxs45gia7rxs"]
 
 [ext_resource type="Script" uid="uid://dd1uwnwvv757h" path="res://login_control.gd" id="1_a8ete"]
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="1_kbc7m"]
 [ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="2_5h77j"]
 [ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="3_5h77j"]
 [ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="4_h3scs"]
-[ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="5_3mimh"]
 [ext_resource type="Script" uid="uid://ywf71p3plovo" path="res://eye_script.gd" id="6_3mimh"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="6_i4dpf"]
+[ext_resource type="FontFile" uid="uid://b3u7x6rbqx0sk" path="res://assets/font/Signika-SemiBold.ttf" id="7_2oyw3"]
 [ext_resource type="Texture2D" uid="uid://dc6rnvvthuoqo" path="res://assets/back_sign.png" id="8_a8ete"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h77j"]
@@ -127,9 +128,9 @@ offset_bottom = -139.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("6_i4dpf")
 theme_override_font_sizes/font_size = 60
-text = "Autentificare"
+text = "AUTENTIFICARE"
 
 [node name="Label2" type="Label" parent="CanvasLayer3/Panel"]
 layout_mode = 1
@@ -145,7 +146,7 @@ offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("7_2oyw3")
 theme_override_font_sizes/font_size = 40
 text = "Parola"
 
@@ -163,7 +164,7 @@ offset_bottom = -65.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("7_2oyw3")
 theme_override_font_sizes/font_size = 40
 text = "Email"
 
@@ -222,9 +223,9 @@ offset_bottom = -93.5
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
-theme_override_font_sizes/font_size = 30
-text = "nu ai un cont?"
+theme_override_fonts/font = ExtResource("7_2oyw3")
+theme_override_font_sizes/font_size = 35
+text = "Nu ai un cont?"
 
 [node name="LinkButton" type="LinkButton" parent="CanvasLayer3/Panel"]
 layout_mode = 1
@@ -234,17 +235,17 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -392.25
-offset_top = -133.5
+offset_top = -137.5
 offset_right = -82.25
-offset_bottom = -98.5
+offset_bottom = -93.5
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.38006842, 0.1613617, 0.91796875, 1)
 theme_override_colors/font_focus_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
 theme_override_colors/font_pressed_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
 theme_override_colors/font_hover_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("7_2oyw3")
+theme_override_font_sizes/font_size = 35
 text = "Inregistreaza-te"
 
 [node name="LinkButton2" type="LinkButton" parent="CanvasLayer3/Panel"]
@@ -254,9 +255,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -399.25
-offset_top = -83.5
-offset_right = -77.25
+offset_left = -392.25
+offset_top = -86.5
+offset_right = -70.25
 offset_bottom = -48.5
 grow_horizontal = 0
 grow_vertical = 0
@@ -264,9 +265,9 @@ theme_override_colors/font_color = Color(0.38006842, 0.1613617, 0.91796875, 1)
 theme_override_colors/font_focus_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
 theme_override_colors/font_pressed_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
 theme_override_colors/font_hover_color = Color(0.38039216, 0.16078432, 0.91764706, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
-theme_override_font_sizes/font_size = 30
-text = "reseteaza parola"
+theme_override_fonts/font = ExtResource("7_2oyw3")
+theme_override_font_sizes/font_size = 35
+text = "Reseteaza Parola"
 
 [node name="Button" type="Button" parent="CanvasLayer3/Panel"]
 layout_mode = 1
@@ -300,9 +301,9 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("6_i4dpf")
 theme_override_font_sizes/font_size = 40
-text = "intra"
+text = "INTRA"
 
 [node name="Label5" type="Label" parent="CanvasLayer3/Panel"]
 layout_mode = 1
@@ -318,7 +319,7 @@ offset_bottom = -828.5
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.99609375, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("6_i4dpf")
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -330,16 +331,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -317.0
-offset_top = -83.5
-offset_right = 107.0
+offset_left = -302.0
+offset_top = -87.5
+offset_right = 122.0
 offset_bottom = -43.5
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
-theme_override_font_sizes/font_size = 30
-text = "ai uitat parola?"
+theme_override_fonts/font = ExtResource("7_2oyw3")
+theme_override_font_sizes/font_size = 35
+text = "Ai uitat parola?"
 
 [node name="Panel2" type="Panel" parent="CanvasLayer3"]
 visible = false
@@ -383,9 +384,9 @@ offset_bottom = -114.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("6_i4dpf")
 theme_override_font_sizes/font_size = 60
-text = "resetare parola"
+text = "RESETEAZA PAROLA"
 
 [node name="Label3" type="Label" parent="CanvasLayer3/Panel2"]
 layout_mode = 1
@@ -400,7 +401,7 @@ offset_right = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("7_2oyw3")
 theme_override_font_sizes/font_size = 40
 text = "Email cont"
 
@@ -412,15 +413,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -367.0
-offset_top = 37.0
+offset_top = 59.0
 offset_right = 368.0
-offset_bottom = 110.0
+offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("7_2oyw3")
 theme_override_font_sizes/font_size = 30
-text = "pe acest email veti un cod pentru 
+text = "Pe acest email veti un cod pentru 
 resetarea parolei"
 horizontal_alignment = 1
 
@@ -468,9 +469,9 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("6_i4dpf")
 theme_override_font_sizes/font_size = 40
-text = "continua"
+text = "CONTINUA"
 
 [node name="Label5" type="Label" parent="CanvasLayer3/Panel2"]
 layout_mode = 1
@@ -486,7 +487,7 @@ offset_bottom = -826.5
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.99609375, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("6_i4dpf")
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -537,16 +538,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -294.0
+offset_left = -258.0
 offset_top = -210.0
-offset_right = 308.0
+offset_right = 247.0
 offset_bottom = -114.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("6_i4dpf")
 theme_override_font_sizes/font_size = 60
-text = "resetare parola"
+text = "RESETARE PAROLA"
 
 [node name="Label3" type="Label" parent="CanvasLayer3/Panel3"]
 layout_mode = 1
@@ -562,9 +563,9 @@ offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("7_2oyw3")
 theme_override_font_sizes/font_size = 40
-text = "cod primit pe email"
+text = "Cod primit pe email"
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer3/Panel3"]
 layout_mode = 1
@@ -592,9 +593,9 @@ offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("7_2oyw3")
 theme_override_font_sizes/font_size = 40
-text = "parola noua"
+text = "Parola noua"
 
 [node name="Button" type="Button" parent="CanvasLayer3/Panel3"]
 layout_mode = 1
@@ -628,9 +629,9 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("6_i4dpf")
 theme_override_font_sizes/font_size = 40
-text = "verifica"
+text = "VERIFICA"
 
 [node name="Button2" type="Button" parent="CanvasLayer3/Panel3"]
 layout_mode = 1
@@ -664,9 +665,9 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("7_2oyw3")
 theme_override_font_sizes/font_size = 40
-text = "reseteaza"
+text = "RESETEAZA"
 
 [node name="Label5" type="Label" parent="CanvasLayer3/Panel3"]
 layout_mode = 1
@@ -682,7 +683,7 @@ offset_bottom = -823.5
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.99609375, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("6_i4dpf")
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -763,7 +764,7 @@ offset_bottom = 69.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.2803789, 0.6015625, 0.07989502, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("6_i4dpf")
 theme_override_font_sizes/font_size = 60
 text = "Parola resetata
 cu succes"
@@ -801,9 +802,9 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_3mimh")
+theme_override_fonts/font = ExtResource("6_i4dpf")
 theme_override_font_sizes/font_size = 40
-text = "catre login"
+text = "CATRE LOGIN"
 
 [connection signal="text_changed" from="CanvasLayer3/Panel/LineEdit" to="CanvasLayer3/Panel/LineEdit" method="_on_text_changed"]
 [connection signal="pressed" from="CanvasLayer3/Panel/LineEdit2/TextureButton" to="CanvasLayer3/Panel/LineEdit2" method="_on_eye_pressed"]

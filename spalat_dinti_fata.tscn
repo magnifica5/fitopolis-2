@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://d2sb8pinqfabg" path="res://spalat pe dinti/fata spalat_dinti.png" id="1_el0bg"]
 [ext_resource type="Script" uid="uid://dpi7a00calruy" path="res://spalat_dinti_fata.gd" id="1_kla15"]
 [ext_resource type="Script" uid="uid://dbidmmg3sw4qj" path="res://numaratoare_dinti.gd" id="1_q4n57"]
-[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="3_72k1y"]
 [ext_resource type="Script" uid="uid://xawpdt1yhwd" path="res://fin_dinti.gd" id="4_o3rc8"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="4_vlao8"]
 [ext_resource type="Texture2D" uid="uid://c0xme8c5axc82" path="res://spalat pe dinti/final_fata.png" id="5_kla15"]
 [ext_resource type="Script" uid="uid://cido6mp1ecxcw" path="res://verif_dinti.gd" id="6_vlao8"]
 [ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="7_kla15"]
@@ -59,14 +59,14 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -982.0
-offset_top = -223.0
-offset_right = -629.0
-offset_bottom = 94.0
+offset_left = -762.0
+offset_top = -249.5
+offset_right = -409.0
+offset_bottom = 120.5
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_72k1y")
+theme_override_fonts/font = ExtResource("4_vlao8")
 theme_override_font_sizes/font_size = 300
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]

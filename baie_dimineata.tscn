@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://spelkwm5365q" path="res://assets/santos.png" id="4_o3sq6"]
 [ext_resource type="Script" uid="uid://m4fyv56d2a3v" path="res://santos_dormitor.gd" id="5_yf5j4"]
 [ext_resource type="Texture2D" uid="uid://dqju5q6qwh7ad" path="res://assets/cuv_nor.png" id="7_yf5j4"]
-[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="8_ubccr"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="8_ynk1r"]
 [ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="9_yf5j4"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="10_ubccr"]
 [ext_resource type="AudioStream" uid="uid://daxkhnwuqjmin" path="res://audio/voices/miss_nutri_b.mp3" id="11_ynk1r"]
@@ -89,7 +89,7 @@ offset_bottom = 335.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.0390625, 0.0032043457, 0.0032043457, 1)
-theme_override_fonts/font = ExtResource("8_ubccr")
+theme_override_fonts/font = ExtResource("8_ynk1r")
 theme_override_font_sizes/font_size = 110
 text = "Pregateste-ti
 periuta si apasa

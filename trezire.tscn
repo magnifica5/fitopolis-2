@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cemf3fqpivwum" path="res://assets/miss nutri.png" id="4_dq8ui"]
 [ext_resource type="Script" uid="uid://cus5npeeqq5d5" path="res://miss_nutri_dormitor.gd" id="5_csggo"]
 [ext_resource type="Texture2D" uid="uid://dqju5q6qwh7ad" path="res://assets/cuv_nor.png" id="6_dq8ui"]
-[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="7_csggo"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="8_h7roh"]
 [ext_resource type="Texture2D" uid="uid://covmoie8dsgvh" path="res://assets/finished.png" id="9_0f5av"]
 [ext_resource type="AudioStream" uid="uid://de4l7mci4e068" path="res://audio/ui_ogg/ui_ogg/click_2.ogg" id="10_f2u85"]
 [ext_resource type="AudioStream" uid="uid://bckmupytq1fl3" path="res://audio/voices/miss_nutri_d.mp3" id="11_h7roh"]
@@ -85,7 +85,7 @@ offset_bottom = 607.3334
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_csggo")
+theme_override_fonts/font = ExtResource("8_h7roh")
 theme_override_font_sizes/font_size = 150
 horizontal_alignment = 1
 vertical_alignment = 1

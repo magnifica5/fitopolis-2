@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://drx173vklsppq"]
+[gd_scene load_steps=13 format=3 uid="uid://drx173vklsppq"]
 
 [ext_resource type="Script" uid="uid://c0btjs7jmfflh" path="res://parental_code.gd" id="1_6rpyh"]
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="2_gyeqv"]
 [ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="3_qi3my"]
 [ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="4_jgbfc"]
 [ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="5_ki4ws"]
-[ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="6_fehne"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="6_qi3my"]
+[ext_resource type="FontFile" uid="uid://b3u7x6rbqx0sk" path="res://assets/font/Signika-SemiBold.ttf" id="7_jgbfc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rn50a"]
 bg_color = Color(1, 1, 1, 1)
@@ -95,9 +96,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -80.0
-offset_top = -3.0
+offset_top = 36.0
 offset_right = 543.0
-offset_bottom = 550.0
+offset_bottom = 589.0
 grow_horizontal = 2
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_ki4ws")
@@ -109,17 +110,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -172.5
-offset_top = -238.0
-offset_right = 206.5
-offset_bottom = -99.0
+offset_left = -183.5
+offset_top = -193.0
+offset_right = 195.5
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_fehne")
+theme_override_fonts/font = ExtResource("6_qi3my")
 theme_override_font_sizes/font_size = 60
-text = "cont
-copil"
+text = "CONT COPIL"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer3/Panel"]
@@ -130,16 +130,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -291.5
-offset_top = -54.0
+offset_top = -20.0
 offset_right = 295.5
-offset_bottom = 42.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_fehne")
+theme_override_fonts/font = ExtResource("7_jgbfc")
 theme_override_font_sizes/font_size = 40
-text = "introdu codul asociat
-copilului"
+text = "Introdu codul asociat copilului"
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer3/Panel"]
 layout_mode = 1
@@ -203,8 +202,8 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_fehne")
+theme_override_fonts/font = ExtResource("6_qi3my")
 theme_override_font_sizes/font_size = 40
-text = "verifica"
+text = "VERIFICA"
 
 [connection signal="pressed" from="CanvasLayer3/Panel/Button" to="." method="_on_verifica"]

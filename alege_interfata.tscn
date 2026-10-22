@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://byyis3x80y6fg"]
+[gd_scene load_steps=12 format=3 uid="uid://byyis3x80y6fg"]
 
 [ext_resource type="Script" uid="uid://cfvskj3ravqq2" path="res://tip_de_cont.gd" id="1_uldaj"]
 [ext_resource type="Texture2D" uid="uid://bwu0vd6pflcw7" path="res://assets/Sunnyside_World_ExampleScene.png" id="2_w0qrc"]
 [ext_resource type="Script" uid="uid://c35m48wiqvudo" path="res://login_backround.gd" id="3_gqlbd"]
 [ext_resource type="Script" uid="uid://d2twt3gac7xts" path="res://login_rect.gd" id="4_77mck"]
 [ext_resource type="Texture2D" uid="uid://duk1lu8hdgurn" path="res://assets/logo_final1.png" id="5_e6b8j"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="6_gqlbd"]
 [ext_resource type="FontFile" uid="uid://bd8iwvq5kuijk" path="res://assets/font/kenvector_future_thin.ttf" id="6_ylu41"]
+[ext_resource type="FontFile" uid="uid://b3u7x6rbqx0sk" path="res://assets/font/Signika-SemiBold.ttf" id="7_77mck"]
 [ext_resource type="Texture2D" uid="uid://byddn16umbufm" path="res://assets/signsc.png" id="7_735ui"]
 [ext_resource type="Texture2D" uid="uid://btex5pnaeiqva" path="res://assets/signa.png" id="8_y4aii"]
 
@@ -92,9 +94,9 @@ offset_bottom = -139.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_ylu41")
+theme_override_fonts/font = ExtResource("6_gqlbd")
 theme_override_font_sizes/font_size = 60
-text = "Alege tipul de cont"
+text = "ALEGE TIPUL DE CONT"
 
 [node name="Label2" type="Label" parent="CanvasLayer3/Panel"]
 layout_mode = 1
@@ -110,9 +112,9 @@ offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_ylu41")
+theme_override_fonts/font = ExtResource("7_77mck")
 theme_override_font_sizes/font_size = 40
-text = "copil"
+text = "COPIL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -130,9 +132,9 @@ offset_bottom = 253.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_ylu41")
+theme_override_fonts/font = ExtResource("7_77mck")
 theme_override_font_sizes/font_size = 40
-text = "parinte"
+text = "PARINTE"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbnljq1pxhlaw" path="res://spalat_pe_dinti.gd" id="1_7gmd0"]
 [ext_resource type="Script" uid="uid://dbidmmg3sw4qj" path="res://numaratoare_dinti.gd" id="2_4ax15"]
-[ext_resource type="FontFile" uid="uid://bs52kyfalaa3h" path="res://assets/font/PeaberryMono.ttf" id="3_5abcd"]
+[ext_resource type="FontFile" uid="uid://btq1101rngqg8" path="res://assets/font/Signika-Bold.ttf" id="3_a1de4"]
 [ext_resource type="Texture2D" uid="uid://c5wnkkpmoyv40" path="res://spalat pe dinti/t.png" id="4_7gmd0"]
 [ext_resource type="Script" uid="uid://xawpdt1yhwd" path="res://fin_dinti.gd" id="4_p1k7a"]
 [ext_resource type="Texture2D" uid="uid://ixm2a5vbsjt5" path="res://spalat pe dinti/s7.png" id="5_sigox"]
@@ -55,14 +55,14 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -974.0
-offset_top = -223.0
-offset_right = -538.0
-offset_bottom = 198.0
+offset_left = -765.0
+offset_top = -275.5
+offset_right = -329.0
+offset_bottom = 145.5
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.01171875, 0.00064086914, 0.00064086914, 1)
-theme_override_fonts/font = ExtResource("3_5abcd")
+theme_override_fonts/font = ExtResource("3_a1de4")
 theme_override_font_sizes/font_size = 300
 horizontal_alignment = 1
 vertical_alignment = 1
