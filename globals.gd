@@ -51,42 +51,104 @@ func _ready():
 	else:
 		avertisment_vizualizat = false
 		
-func marcheaza_cumparat(id):
-	var path = "user://stikere.save"
-	var key = Globals.get_secure_key()
-	if FileAccess.file_exists(path):
-		var file = FileAccess.open_encrypted(path, FileAccess.READ, key)
-		var content = file.get_as_text()
-		file.close()
-		obiecte_cumparate = JSON.parse_string(content)
-	obiecte_cumparate[id] = true
-	var file = FileAccess.open_encrypted(path, FileAccess.WRITE, key)
-	file.store_string(JSON.stringify(obiecte_cumparate))
-	file.close()
+signal sticker_inventory_updated
+var sticker_catalog: Dictionary = {}
+var sticker_shop_ready := false
+var sticker_shop_error := ""
+var _sticker_context := ""
+var _sticker_busy := false
+var _sticker_epoch := 0
 
-func _nr_stickere():
-	var path = "user://stikere.save"
-	var key = Globals.get_secure_key()
-	if FileAccess.file_exists(path):
-		var file = FileAccess.open_encrypted(path, FileAccess.READ, key)
-		var content = file.get_as_text()
-		file.close()
-		obiecte_cumparate = JSON.parse_string(content)
-		return obiecte_cumparate.size()
-	return 0
+func _current_sticker_context() -> String:
+	var user = Supabase.auth.client
+	if user == null or not bool(user.dict.get("is_anonymous", false)):
+		return ""
+	if str(connection_coded).is_empty():
+		return ""
+	return str(user.id) + ":" + str(connection_coded)
 
-func este_cumparat(id):
-	var path = "user://stikere.save"
-	var key = Globals.get_secure_key()
-	if not FileAccess.file_exists(path):
+func clear_sticker_inventory() -> void:
+	_sticker_epoch += 1
+	_sticker_context = ""
+	sticker_shop_ready = false
+	obiecte_cumparate.clear()
+	sticker_catalog.clear()
+	sticker_inventory_updated.emit()
+
+func _nr_stickere() -> int:
+	if not sticker_shop_ready or _sticker_context != _current_sticker_context():
+		return 0
+	return obiecte_cumparate.size()
+
+func este_cumparat(id) -> bool:
+	return sticker_shop_ready and _sticker_context == _current_sticker_context() and obiecte_cumparate.has(str(id))
+
+# Compatibilitate cu codul vechi: inventarul se modifica numai din raspunsul RPC.
+func marcheaza_cumparat(_id) -> void:
+	push_warning("Foloseste Globals.buy_sticker(); inventarul vine de la server.")
+
+func _apply_sticker_state(data: Dictionary, context: String) -> bool:
+	if not data.get("owned") is Array or not data.get("catalog") is Dictionary or not data.has("score"):
 		return false
-	var file = FileAccess.open_encrypted(path, FileAccess.READ, key)
-	var content = file.get_as_text()
-	file.close()
-	var data = JSON.parse_string(content)
-	if data == null:
+	if str(data.get("connection_code", "")) != str(connection_coded):
 		return false
-	return data.has(id)
+	obiecte_cumparate.clear()
+	for item in data.owned:
+		obiecte_cumparate[str(item)] = true
+	sticker_catalog = data.catalog.duplicate(true)
+	scored = int(data.score)
+	HourActivity.score = int(data.score)
+	_sticker_context = context
+	sticker_shop_ready = true
+	SyncManager.save_local_data()
+	sticker_inventory_updated.emit()
+	return true
+
+func refresh_stickers() -> bool:
+	if _sticker_busy:
+		return false
+	_sticker_busy = true
+	clear_sticker_inventory()
+	sticker_shop_error = ""
+	var context := _current_sticker_context()
+	var epoch := _sticker_epoch
+	if context.is_empty():
+		_sticker_busy = false
+		sticker_shop_error = "Conecteaza profilul copilului."
+		return false
+	var task = Supabase.database.Rpc("fitopolis_shop_state")
+	var result = await task.completed
+	_sticker_busy = false
+	if epoch != _sticker_epoch or context != _current_sticker_context():
+		return false
+	if result.error != null:
+		sticker_shop_error = str(result.error.message)
+		return false
+	if not result.data is Dictionary or not _apply_sticker_state(result.data, context):
+		sticker_shop_error = "Inventarul nu a putut fi verificat. Reincearca."
+		return false
+	return true
+
+func buy_sticker(id: String) -> Dictionary:
+	if _sticker_busy:
+		return {"ok": false, "message": "Asteapta finalizarea cererii curente."}
+	var context := _current_sticker_context()
+	if not sticker_shop_ready or context.is_empty() or context != _sticker_context:
+		return {"ok": false, "message": "Redeschide magazinul pentru verificarea inventarului."}
+	_sticker_busy = true
+	var epoch := _sticker_epoch
+	var task = Supabase.database.Rpc("fitopolis_buy_sticker", {"p_sticker_id": id})
+	var result = await task.completed
+	_sticker_busy = false
+	if epoch != _sticker_epoch or context != _current_sticker_context():
+		return {"ok": false, "message": "Sesiunea s-a schimbat. Redeschide magazinul."}
+	if result.error != null:
+		return {"ok": false, "message": str(result.error.message)}
+	if not result.data is Dictionary or not _apply_sticker_state(result.data, context):
+		return {"ok": false, "message": "Raspuns invalid. Redeschide magazinul; nu vei fi taxat de doua ori."}
+	if not bool(result.data.get("ok", false)):
+		return {"ok": false, "message": "Nu ai suficiente stelute pentru acest sticker."}
+	return result.data
 
 func get_secure_key() -> PackedByteArray:
 	var device_id = OS.get_unique_id() # id unic al device ului

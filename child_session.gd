@@ -55,6 +55,7 @@ func _on_signed_out() -> void:
 
 
 func _clear_profile_cache() -> void:
+	Globals.clear_sticker_inventory()
 	if FileAccess.file_exists("user://user_data.json"):
 		DirAccess.remove_absolute("user://user_data.json")
 	Globals.code = ""
@@ -148,7 +149,8 @@ func _fetch_and_apply(expected_child_id: String) -> bool:
 	_user_id = expected_user_id
 	_child_id = expected_child_id
 	SyncManager.save_local_data()
-	return true
+	await Globals.refresh_stickers()
+	return _is_child(Supabase.auth.client) and Supabase.auth.client.id == expected_user_id
 
 
 func activate_current_session(child_id: String) -> bool:
