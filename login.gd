@@ -22,6 +22,7 @@ extends Node2D
 @onready var new_badge2 = $leaderboard/Leaderboard/HBoxContainer/TextureButton2/TextureRect
 var badge_nodes
 var leaderboard_ready = false
+var _badges_loading := false
 var sprite_sheet := preload("res://assets/animals.png")
 var cols := 7
 var rows := 3
@@ -45,31 +46,16 @@ func _ready() -> void:
 	SoundManager.sound_stop_menu()
 	SoundManager.sound_stop_win()
 	SoundManager.play_music(preload("res://audio/background_sound.mp3"))
+	var badges_anterioare: Dictionary = Globals.badgesd.duplicate(true) if Globals.badgesd is Dictionary else {}
+	for badge_node in badge_nodes:
+		if badge_node.material != null:
+			badge_node.material = badge_node.material.duplicate()
+	aplica_badges(badges_anterioare)
 	afiseaza_ui()
 	await SyncManager.sync_data()
 	afiseaza_ui()
-	var badges_vechi = Globals.badgesd
-	var badges_calculate = calculeaza_badges()
-
-	var badges_noi = combina_badges(
-		badges_vechi,
-		badges_calculate
-	)
-
-	aplica_badges(badges_noi)
-
-	var schimbari = compara_badges(
-		badges_vechi,
-		badges_noi
-	)
-
-	if schimbari.size() > 0:
-		new_badge.show()
-		new_badge2.show()
-		print("Badge-uri noi: ", schimbari)
-		await salveaza_badges(badges_noi)
 	leaderboard_ready = true
-
+	actualizeaza_medalii(badges_anterioare)
 func afiseaza_ui():
 	await get_tree().process_frame
 	var level_now = ControlLevel.get_level(int(HourActivity.activities))
@@ -184,6 +170,8 @@ func _on_badges() -> void:
 	clasament.hide()
 	medalii.show()
 	new_badge.hide()
+	await actualizeaza_medalii(Globals.badgesd if Globals.badgesd is Dictionary else {})
+	new_badge.hide()
 	new_badge2.hide()
 
 func seteaza_badge(deblocat: bool, badge) -> void:
@@ -196,67 +184,42 @@ func seteaza_badge(deblocat: bool, badge) -> void:
 		not deblocat
 	)
 
-func calculeaza_badges() -> Dictionary:
-	var zile = 0
-	var date = Globals.created_atd
-	if date != "":
-		var date_dict = Time.get_datetime_dict_from_datetime_string(date, false)
-		var data_acum = Time.get_datetime_dict_from_system()
-		var t_cont = Time.get_unix_time_from_datetime_dict(date_dict)
-		var t_azi = Time.get_unix_time_from_datetime_dict(data_acum)
-		zile = int((t_azi - t_cont) / 86400)
-	var badges = {
-		"badge1": int(zile >= 1),
-		"badge2": int(zile >= 7),
-		"badge3": int(Globals._nr_stickere() >= 12),
-		"badge4": 0,
-		"badge5": 0,
-		"badge6": int(ControlLevel.get_level(HourActivity.activities) >= 5),
-		"badge7": int(Itemshop.nr_cladiri() >= 20),
-		"badge8": int(Globals.scored >= 1000)
-	}
-	return badges
-
-func salveaza_badges(badges: Dictionary) -> void:
-	var query = SupabaseQuery.new() \
-		.from("children") \
-		.update({"badges": badges}) \
-		.eq("connection_code", Globals.code)
-
-	var task = Supabase.database.query(query)
+# Doar serverul calculeaza si acorda medaliile.
+func actualizeaza_medalii(anterioare: Dictionary = {}) -> void:
+	if _badges_loading:
+		return
+	var user = Supabase.auth.client
+	if user == null or not bool(user.dict.get("is_anonymous", false)):
+		return
+	_badges_loading = true
+	var expected_user := str(user.id)
+	var expected_code := str(Globals.connection_coded)
+	var task = Supabase.database.Rpc("fitopolis_refresh_badges")
 	var result = await task.completed
-
+	_badges_loading = false
+	if not is_inside_tree():
+		return
+	var current_user = Supabase.auth.client
+	if current_user == null or str(current_user.id) != expected_user or str(Globals.connection_coded) != expected_code:
+		return
 	if result.error != null:
-		print("Eroare la salvarea badge-urilor: ", result.error)
-	else:
-		print("Badge-urile au fost salvate!")
+		push_warning("Medaliile nu au putut fi actualizate: " + str(result.error.message))
+		return
+	if not result.data is Dictionary or not result.data.get("badges") is Dictionary:
+		push_warning("Raspuns invalid la actualizarea medaliilor.")
+		return
+	var badges: Dictionary = result.data.badges
+	Globals.badgesd = badges.duplicate(true)
+	aplica_badges(badges)
+	SyncManager.save_local_data()
+	for key in badges:
+		if int(badges[key]) == 1 and int(anterioare.get(key, 0)) != 1:
+			new_badge.show()
+			new_badge2.show()
+			break
 
 func aplica_badges(badges: Dictionary) -> void:
 	for i in range(badge_nodes.size()):
 		var key = "badge" + str(i + 1)
 		var deblocat = int(badges.get(key, 0)) == 1
 		seteaza_badge(deblocat, badge_nodes[i])
-
-func compara_badges(vechi: Dictionary, noi: Dictionary) -> Array:
-	var schimbari = []
-	for key in noi.keys():
-		var valoare_veche = int(vechi.get(key, 0))
-		var valoare_noua = int(noi.get(key, 0))
-		if valoare_veche != valoare_noua:
-			schimbari.append({
-				"badge": key,
-				"veche": valoare_veche,
-				"noua": valoare_noua
-			})
-	return schimbari
-
-func combina_badges(vechi: Dictionary, noi: Dictionary) -> Dictionary:
-	var rezultat = {}
-
-	for key in noi.keys():
-		var valoare_veche = int(vechi.get(key, 0))
-		var valoare_noua = int(noi.get(key, 0))
-
-		rezultat[key] = max(valoare_veche, valoare_noua)
-
-	return rezultat

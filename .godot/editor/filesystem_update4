@@ -1,2 +1,3 @@
 res://start.tscn
-res://secure_sticker_button.gd
+res://login.gd
+res://login.tscn
