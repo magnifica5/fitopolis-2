@@ -5,6 +5,7 @@ var main_scene = "res://login.tscn"
 var background_login = "res://background_login.tscn"
 var interfata_parinte = "res://interfata_parinte.tscn"
 var alege_interfata = "res://alege_interfata.tscn"
+var _starting := false
 func _ready() -> void:
 	await get_tree().process_frame
 	SoundManager.play_music(preload("res://audio/background_sound.mp3"))
@@ -26,15 +27,39 @@ func get_scene(path: String):
 	return null
 
 func _on_texture_button_pressed() -> void:
+	if _starting:
+		return
+	_starting = true
+	await _start_selected_account()
+	_starting = false
+
+func _show_session_error(message: String) -> void:
+	var popup := AcceptDialog.new()
+	popup.title = "Conectare"
+	popup.dialog_text = message
+	add_child(popup)
+	popup.confirmed.connect(popup.queue_free)
+	popup.canceled.connect(popup.queue_free)
+	popup.popup_centered()
+
+func _start_selected_account() -> void:
 	#$AudioStreamPlayer.play()
 	if FileAccess.file_exists(path):
 		var key = Globals.get_secure_key()
 		var f = FileAccess.open_encrypted(path, FileAccess.READ, key)
+		if f == null:
+			_show_session_error("Preferinta contului nu poate fi citita.")
+			return
 		var content = f.get_as_text()
 		f.close()
 		print(content)
 		if content == "copil\n":
-			await SyncManager.load_local_data()
+			if not await ChildSession.restore_and_sync():
+				if ChildSession.needs_pairing:
+					get_tree().change_scene_to_file("res://autentificare_copil.tscn")
+				else:
+					_show_session_error(ChildSession.last_error)
+				return
 			var ready = get_scene(main_scene)
 			if ready:
 				get_tree().change_scene_to_packed(ready)

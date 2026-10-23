@@ -1,3 +1,195 @@
+#extends Node
+#var complete_trezire = 0
+#var complete_ex = 0
+#var complete_dejun = 0
+#var complete_pranz = 0
+#var complete_ex2 = 0
+#var complete_cina = 0
+#var complete_somn = 0
+#var score = 0
+#var missed = 0
+#var nr_day = 0
+#var activities = 0
+#var date
+#var is_data_loaded = false
+#func save_progress():
+	##if not is_data_loaded:
+		##print("Salvare anulată: Datele încă nu s-au încărcat din server!")
+		##return
+	#SyncManager.save_local_data()
+	#var data = {
+		#"trezire": int(complete_trezire),
+		#"ex1": int(complete_ex),
+		#"masa_dimineata": int(complete_dejun),
+		#"masa_pranz": int(complete_pranz),
+		#"ex2": int(complete_ex2),
+		#"masa_seara": int(complete_cina),
+		#"somn": int(complete_somn),
+		#"missed": int(missed),
+		#"activities": int(activities)
+	#}
+	#print(data)
+	#print("ne pregatim de update")
+	#var task_upsert = Supabase.database.query(SupabaseQuery.new().from("progres_copil").update(data).eq("connection_code", Globals.citeste_code()))
+	#var result = await task_upsert.completed
+	#if result.error == null:
+		#print("success")
+	#else:
+		#print(result.error.message)
+	##var json_string = JSON.stringify(data)
+	##var file = FileAccess.open("user://progress.json", FileAccess.WRITE)
+	##file.store_string(json_string)
+	##file.close()
+#
+##func load_progress():
+	##var code = Globals.citeste_code()
+	##if code == "" or code == null:
+		##is_data_loaded = false
+		##print("HourActivity: Așteptăm introducerea codului...")
+		##return
+	##is_data_loaded = false
+	##var query = SupabaseQuery.new().from("progres_copil").select().eq("connection_code", Globals.citeste_code())
+	##var task_upsert = Supabase.database.query(query)
+	##var result = await task_upsert.completed
+	##if result.error == null:
+		##var data = result.data
+		##if data.size() > 0:
+			##data = data[0]
+			##print(data)
+			##complete_trezire = data.trezire
+			##complete_ex = data.ex1
+			##complete_dejun = data.masa_dimineata
+			##complete_pranz = data.masa_pranz
+			##complete_ex2 = data.ex2
+			##complete_cina = data.masa_seara
+			##complete_somn = data.somn
+			##missed = data.missed
+			##activities = data.activities
+		##else:
+			##print(result.error.message)
+		##is_data_loaded = true
+		#
+	##if not FileAccess.file_exists("user://progress.json"):
+		##return  
+##
+	##var file = FileAccess.open("user://progress.json", FileAccess.READ)
+	##var content = file.get_as_text()
+	##file.close()
+##
+	##var result = JSON.parse_string(content)
+##
+	##if result:
+		##complete_trezire = result.get("trezire", 0)
+		##complete_ex = result.get("ex", 0)
+		##complete_dejun = result.get("dejun", 0)
+		##complete_pranz = result.get("pranz", 0)
+		##complete_ex2 = result.get("ex2", 0)
+		##complete_cina = result.get("cina", 0)
+		##complete_somn = result.get("somn", 0)
+		##score = result.get("score", 0)
+		##missed = result.get("missed", 0)
+#
+## Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#pass
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+	#pass
+	#
+#func _on_choose_activity():
+	##await load_progress()
+	##var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.citeste_code())
+	##print(Globals.code)
+	##var task = Supabase.database.query(query)
+	##var result = await task.completed
+	##if result.error == null and result.data.size() > 0:
+		##var data = result.data[0]
+		##var trezire = change_type(data.trezire)
+		##var ex_dimineata = change_type(data.ex1)
+		##var dejun = change_type(data.masa_dimineata)
+		##var pranz = change_type(data.masa_pranz)
+		##var ex_seara = change_type(data.ex2)
+		##var cina = change_type(data.masa_seara)
+		##var somn = change_type(data.culcare)
+		##var ora_curenta = Time.get_datetime_dict_from_system()
+		##var mins = ora_curenta.hour * 60 + ora_curenta.minute
+		##print(mins)
+		##print(pranz)
+		##var data = result.data[0]
+	#var trezire = change_type(Globals.trezire)
+	#var ex_dimineata = change_type(Globals.ex)
+	#var dejun = change_type(Globals.dejun)
+	#var pranz = change_type(Globals.pranz)
+	#var ex_seara = change_type(Globals.ex2)
+	#var cina = change_type(Globals.cina)
+	#var somn = change_type(Globals.somn)
+	#var ora_curenta = Time.get_datetime_dict_from_system()
+	#var mins = ora_curenta.hour * 60 + ora_curenta.minute
+	#if (not(mins >= trezire and mins <= trezire + 7) 
+	#and not(mins >= ex_dimineata and mins <= ex_dimineata + 7)
+	#and not(mins >= dejun and mins <= dejun + 7) 
+	#and not(mins >= pranz and mins <= pranz + 7)
+	#and not(mins >= ex_seara and mins <= ex_seara + 7)
+	#and not(mins >= cina and mins <= cina + 7)
+	#and not(mins >= somn and mins <= somn + 7)):
+		#get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+	#elif mins >= trezire and mins <= trezire + 7:
+		#if complete_trezire == 0:
+			#complete_trezire = 1
+			#await save_progress()
+			#get_tree().change_scene_to_file("res://trezire.tscn")
+		#else:
+			#get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+	#elif mins >= ex_dimineata and mins <= ex_dimineata + 7:
+		#if complete_ex == 0:
+			#complete_ex = 1
+			#await save_progress()
+			#get_tree().change_scene_to_file("res://exercitii_dimineata.tscn")
+		#else:
+			#get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+	#elif mins >= dejun and mins <= dejun + 7:
+		#if complete_dejun == 0:
+			#complete_dejun = 1
+			#await save_progress()
+			#get_tree().change_scene_to_file("res://spalat_maini.tscn")
+		#else:
+			#get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+	#elif mins >= pranz and mins <= pranz + 7:
+		#if complete_pranz == 0:
+			#complete_pranz = 1
+			#await save_progress()
+			#get_tree().change_scene_to_file("res://spalat_maini.tscn")
+		#else:
+			#get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+	#elif mins >= ex_seara and mins <= ex_seara + 7:
+		#if complete_ex2 == 0:
+			#complete_ex2 = 1
+			#await save_progress()
+			#get_tree().change_scene_to_file("res://exercitii_dimineata.tscn")
+		#else:
+			#get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+	#elif mins >= cina and mins <= cina + 7:
+		#if complete_cina == 0:
+			#complete_cina = 1
+			#await save_progress()
+			#get_tree().change_scene_to_file("res://spalat_maini.tscn")
+		#else:
+			#get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+	#elif mins >= somn and mins <= somn + 7:
+		#if complete_somn == 0:
+			#complete_somn = 1
+			#await save_progress()
+			#get_tree().change_scene_to_file("res://baie_dimineata.tscn")
+		#else:
+			#get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+#
+#func change_type(string):
+	#var parti = string.split(":")
+	#var ore = parti[0].to_int()
+	#var minute = parti[1].to_int()
+	#var total_minute = (ore * 60) + minute
+	#return total_minute
 extends Node
 var complete_trezire = 0
 var complete_ex = 0
@@ -12,181 +204,80 @@ var nr_day = 0
 var activities = 0
 var date
 var is_data_loaded = false
-func save_progress():
-	#if not is_data_loaded:
-		#print("Salvare anulată: Datele încă nu s-au încărcat din server!")
-		#return
+var _starting := false
+
+const ACTIVITY_SCENES := {
+	"trezire": "res://trezire.tscn",
+	"ex1": "res://exercitii_dimineata.tscn",
+	"masa_dimineata": "res://spalat_maini.tscn",
+	"masa_pranz": "res://spalat_maini.tscn",
+	"ex2": "res://exercitii_dimineata.tscn",
+	"masa_seara": "res://spalat_maini.tscn",
+	"somn": "res://baie_dimineata.tscn"
+}
+
+# Compatibilitate: acest apel mai salveaza doar cache-ul local.
+# Punctele/progresul oficial nu mai sunt trimise direct de client.
+func save_progress() -> void:
 	SyncManager.save_local_data()
-	var data = {
-		"trezire": int(complete_trezire),
-		"ex1": int(complete_ex),
-		"masa_dimineata": int(complete_dejun),
-		"masa_pranz": int(complete_pranz),
-		"ex2": int(complete_ex2),
-		"masa_seara": int(complete_cina),
-		"somn": int(complete_somn),
-		"missed": int(missed),
-		"activities": int(activities)
-	}
-	print(data)
-	print("ne pregatim de update")
-	var task_upsert = Supabase.database.query(SupabaseQuery.new().from("progres_copil").update(data).eq("connection_code", Globals.citeste_code()))
-	var result = await task_upsert.completed
-	if result.error == null:
-		print("success")
-	else:
-		print(result.error.message)
-	#var json_string = JSON.stringify(data)
-	#var file = FileAccess.open("user://progress.json", FileAccess.WRITE)
-	#file.store_string(json_string)
-	#file.close()
 
-#func load_progress():
-	#var code = Globals.citeste_code()
-	#if code == "" or code == null:
-		#is_data_loaded = false
-		#print("HourActivity: Așteptăm introducerea codului...")
-		#return
-	#is_data_loaded = false
-	#var query = SupabaseQuery.new().from("progres_copil").select().eq("connection_code", Globals.citeste_code())
-	#var task_upsert = Supabase.database.query(query)
-	#var result = await task_upsert.completed
-	#if result.error == null:
-		#var data = result.data
-		#if data.size() > 0:
-			#data = data[0]
-			#print(data)
-			#complete_trezire = data.trezire
-			#complete_ex = data.ex1
-			#complete_dejun = data.masa_dimineata
-			#complete_pranz = data.masa_pranz
-			#complete_ex2 = data.ex2
-			#complete_cina = data.masa_seara
-			#complete_somn = data.somn
-			#missed = data.missed
-			#activities = data.activities
-		#else:
-			#print(result.error.message)
-		#is_data_loaded = true
-		
-	#if not FileAccess.file_exists("user://progress.json"):
-		#return  
-#
-	#var file = FileAccess.open("user://progress.json", FileAccess.READ)
-	#var content = file.get_as_text()
-	#file.close()
-#
-	#var result = JSON.parse_string(content)
-#
-	#if result:
-		#complete_trezire = result.get("trezire", 0)
-		#complete_ex = result.get("ex", 0)
-		#complete_dejun = result.get("dejun", 0)
-		#complete_pranz = result.get("pranz", 0)
-		#complete_ex2 = result.get("ex2", 0)
-		#complete_cina = result.get("cina", 0)
-		#complete_somn = result.get("somn", 0)
-		#score = result.get("score", 0)
-		#missed = result.get("missed", 0)
+func load_progress() -> void:
+	await SyncManager.sync_data()
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+func _show_error(message: String) -> void:
+	var popup := AcceptDialog.new()
+	popup.title = "Activitate"
+	popup.dialog_text = message
+	get_tree().root.add_child(popup)
+	popup.confirmed.connect(popup.queue_free)
+	popup.canceled.connect(popup.queue_free)
+	popup.popup_centered()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-func _on_choose_activity():
-	#await load_progress()
-	#var query = SupabaseQuery.new().from("children").select().eq("connection_code", Globals.citeste_code())
-	#print(Globals.code)
-	#var task = Supabase.database.query(query)
-	#var result = await task.completed
-	#if result.error == null and result.data.size() > 0:
-		#var data = result.data[0]
-		#var trezire = change_type(data.trezire)
-		#var ex_dimineata = change_type(data.ex1)
-		#var dejun = change_type(data.masa_dimineata)
-		#var pranz = change_type(data.masa_pranz)
-		#var ex_seara = change_type(data.ex2)
-		#var cina = change_type(data.masa_seara)
-		#var somn = change_type(data.culcare)
-		#var ora_curenta = Time.get_datetime_dict_from_system()
-		#var mins = ora_curenta.hour * 60 + ora_curenta.minute
-		#print(mins)
-		#print(pranz)
-		#var data = result.data[0]
-	var trezire = change_type(Globals.trezire)
-	var ex_dimineata = change_type(Globals.ex)
-	var dejun = change_type(Globals.dejun)
-	var pranz = change_type(Globals.pranz)
-	var ex_seara = change_type(Globals.ex2)
-	var cina = change_type(Globals.cina)
-	var somn = change_type(Globals.somn)
-	var ora_curenta = Time.get_datetime_dict_from_system()
-	var mins = ora_curenta.hour * 60 + ora_curenta.minute
-	if (not(mins >= trezire and mins <= trezire + 7) 
-	and not(mins >= ex_dimineata and mins <= ex_dimineata + 7)
-	and not(mins >= dejun and mins <= dejun + 7) 
-	and not(mins >= pranz and mins <= pranz + 7)
-	and not(mins >= ex_seara and mins <= ex_seara + 7)
-	and not(mins >= cina and mins <= cina + 7)
-	and not(mins >= somn and mins <= somn + 7)):
+func _on_choose_activity() -> void:
+	if _starting:
+		return
+	_starting = true
+	var task = Supabase.database.Rpc("fitopolis_start_current_activity")
+	var result = await task.completed
+	if result.error != null:
+		_starting = false
+		var mesaj := str(result.error.message)
+
+		if mesaj == "Ziua a fost deja confirmata de parinte.":
+			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+		else:
+			_show_error(mesaj)
+
+		return
+	if not result.data is Dictionary:
+		_starting = false
+		_show_error("Nu am primit raspunsul serverului. Verifica internetul.")
+		return
+	if not bool(result.data.get("available", false)) or bool(result.data.get("already_started", false)):
+		_starting = false
 		get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= trezire and mins <= trezire + 7:
-		if complete_trezire == 0:
-			complete_trezire = 1
-			await save_progress()
-			get_tree().change_scene_to_file("res://trezire.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= ex_dimineata and mins <= ex_dimineata + 7:
-		if complete_ex == 0:
-			complete_ex = 1
-			await save_progress()
-			get_tree().change_scene_to_file("res://exercitii_dimineata.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= dejun and mins <= dejun + 7:
-		if complete_dejun == 0:
-			complete_dejun = 1
-			await save_progress()
-			get_tree().change_scene_to_file("res://spalat_maini.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= pranz and mins <= pranz + 7:
-		if complete_pranz == 0:
-			complete_pranz = 1
-			await save_progress()
-			get_tree().change_scene_to_file("res://spalat_maini.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= ex_seara and mins <= ex_seara + 7:
-		if complete_ex2 == 0:
-			complete_ex2 = 1
-			await save_progress()
-			get_tree().change_scene_to_file("res://exercitii_dimineata.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= cina and mins <= cina + 7:
-		if complete_cina == 0:
-			complete_cina = 1
-			await save_progress()
-			get_tree().change_scene_to_file("res://spalat_maini.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
-	elif mins >= somn and mins <= somn + 7:
-		if complete_somn == 0:
-			complete_somn = 1
-			await save_progress()
-			get_tree().change_scene_to_file("res://baie_dimineata.tscn")
-		else:
-			get_tree().change_scene_to_file("res://revino_mai_tarziu.tscn")
+		return
+	var activity := str(result.data.get("activity", ""))
+	if not ACTIVITY_SCENES.has(activity):
+		_starting = false
+		_show_error("Activitate necunoscuta in raspunsul serverului.")
+		return
+	match activity:
+		"trezire": complete_trezire = 1
+		"ex1": complete_ex = 1
+		"masa_dimineata": complete_dejun = 1
+		"masa_pranz": complete_pranz = 1
+		"ex2": complete_ex2 = 1
+		"masa_seara": complete_cina = 1
+		"somn": complete_somn = 1
+	save_progress()
+	_starting = false
+	get_tree().change_scene_to_file(str(ACTIVITY_SCENES[activity]))
 
-func change_type(string):
-	var parti = string.split(":")
-	var ore = parti[0].to_int()
-	var minute = parti[1].to_int()
-	var total_minute = (ore * 60) + minute
-	return total_minute
+func change_type(value) -> int:
+	if value == null:
+		return -1
+	var parts := str(value).split(":")
+	if parts.size() < 2:
+		return -1
+	return parts[0].to_int() * 60 + parts[1].to_int()

@@ -51,6 +51,9 @@ var _auth : String = ""
 var _expires_in : float = 0
 
 var client : SupabaseUser
+var _session_epoch := 0
+var _refresh_timer: Timer
+var _refresh_in_flight: AuthTask
 
 func _init(conf : Dictionary, head : PackedStringArray) -> void:
 	_config = conf
@@ -60,10 +63,16 @@ func _init(conf : Dictionary, head : PackedStringArray) -> void:
 func __get_session_header() -> PackedStringArray :
 	return PackedStringArray([_bearer[0] % ( _auth if not _auth.is_empty() else _config.supabaseKey )])
 
+func _failed_task(message: String) -> AuthTask:
+	var task := AuthTask.new()
+	task.reference()
+	task.call_deferred("complete", null, {}, SupabaseAuthError.new({
+		"error": "client_error", "code": 400, "msg": message
+	}))
+	return task
+
 func _check_auth() -> AuthTask:
-	var auth_task : AuthTask = AuthTask.new()
-	auth_task.completed.emit()
-	return auth_task
+	return _failed_task("Exista deja o sesiune. Deconecteaza-te mai intai.")
 
 # Allow your users to sign up and create a new account.
 func sign_up(email : String, password : String) -> AuthTask:
@@ -161,11 +170,16 @@ func verify_otp_email(email : String, token : String, type : String) -> AuthTask
 
 # Sign in as an anonymous user
 func sign_in_anonymous() -> AuthTask:
-	if _auth != "": return _check_auth()
-	var auth_task : AuthTask = AuthTask.new()._setup(AuthTask.Task.SIGNINANONYM, "", [])
-	auth_task.user = SupabaseUser.new({user = {}, access_token = _config.supabaseKey})
-	_process_task(auth_task, true)
-	return auth_task
+	if not _auth.is_empty():
+		return _check_auth()
+	var task: AuthTask = AuthTask.new()._setup(
+		AuthTask.Task.SIGNINANONYM,
+		_config.supabaseUrl + _signup_endpoint,
+		_header,
+		JSON.stringify({})
+	)
+	_process_task(task)
+	return task
 
 
 # [     CURRENTLY UNSUPPORTED       ]
@@ -179,6 +193,11 @@ func sign_in_with_provider(provider : String, grab_from_browser : bool = true, p
 
 # If a user is logged in, this will log it out
 func sign_out() -> AuthTask:
+	# Invalideaza raspunsurile refresh aflate deja in zbor.
+	_session_epoch += 1
+	_refresh_in_flight = null
+	if is_instance_valid(_refresh_timer):
+		_refresh_timer.stop()
 	var auth_task : AuthTask = AuthTask.new()._setup(
 		AuthTask.Task.LOGOUT,
 		_config.supabaseUrl + _logout_endpoint, 
@@ -259,17 +278,53 @@ func invite_user_by_email(email : String) -> AuthTask:
 
 # Refresh the access_token of the authenticated client using the refresh_token
 # No need to call this manually except specific needs, since the process will be handled automatically
-func refresh_token(refresh_token : String = client.refresh_token, expires_in : float = client.expires_in) -> AuthTask:
-	await get_tree().create_timer(expires_in - 10).timeout
-	var payload : Dictionary = {refresh_token = refresh_token}
-	var auth_task : AuthTask = AuthTask.new()._setup(
+# Al doilea argument este pastrat pentru compatibilitatea cu start_scene.gd.
+# Refresh-ul explicit este imediat; programarea automata foloseste un singur Timer.
+func refresh_token(token: String = "", _delay_compat: float = 0.0) -> AuthTask:
+	# Pastreaza compatibilitatea cu apelurile existente "await refresh_token(...)".
+	await get_tree().process_frame
+	if _refresh_in_flight != null:
+		return _refresh_in_flight
+	if token.is_empty() and client != null:
+		token = client.refresh_token
+	if token.is_empty():
+		return _failed_task("Lipseste refresh token-ul.")
+	if is_instance_valid(_refresh_timer):
+		_refresh_timer.stop()
+	var task: AuthTask = AuthTask.new()._setup(
 		AuthTask.Task.REFRESH,
-		_config.supabaseUrl + _refresh_token_endpoint, 
-		_header + __get_session_header(),
-		JSON.stringify(payload))
-	_process_task(auth_task)
-	return auth_task 
+		_config.supabaseUrl + _refresh_token_endpoint,
+		_header,
+		JSON.stringify({"refresh_token": token})
+	)
+	_refresh_in_flight = task
+	_process_task(task)
+	return task
 
+func _schedule_refresh(delay: float = -1.0) -> void:
+	if client == null or client.refresh_token.is_empty():
+		return
+	if not is_instance_valid(_refresh_timer):
+		_refresh_timer = Timer.new()
+		_refresh_timer.one_shot = true
+		add_child(_refresh_timer)
+		_refresh_timer.timeout.connect(_on_refresh_timer)
+	var seconds := delay
+	if seconds < 0.0:
+		seconds = maxf(1.0, client.expires_in - 60.0)
+	_refresh_timer.start(seconds)
+
+func _on_refresh_timer() -> void:
+	await refresh_token()
+
+func clear_local_session() -> void:
+	_session_epoch += 1
+	if is_instance_valid(_refresh_timer):
+		_refresh_timer.stop()
+	_refresh_in_flight = null
+	client = null
+	_auth = ""
+	_expires_in = 0.0
 
 
 # Retrieve the response from the server
@@ -286,21 +341,38 @@ func _get_link_response(delta : float) -> String:
 
 # Process a specific task
 func _process_task(task : AuthTask, _fake : bool = false) -> void:
+	task.set_meta("session_epoch", _session_epoch)
 	task.completed.connect(_on_task_completed)
 	if _fake:
 		await get_tree().create_timer(0.5).timeout
 		task.complete(task.user, task.data, task.error)
 	else:
 		var httprequest : HTTPRequest = HTTPRequest.new()
+		httprequest.timeout = 20.0
 		add_child(httprequest)
 		task.push_request(httprequest)
 
 
 func _on_task_completed(task : AuthTask) -> void:
+	if task == _refresh_in_flight:
+		_refresh_in_flight = null
+	if int(task.get_meta("session_epoch", _session_epoch)) != _session_epoch:
+		task.user = null
+		task.data = {}
+		task.error = SupabaseAuthError.new({
+			"error": "stale_response", "code": 409,
+			"msg": "Raspuns ignorat: sesiunea a fost schimbata."
+		})
+		return
 	if task.error != null:
+		if task._code == AuthTask.Task.REFRESH:
+			var status := int(task.error._error.get("_http_status", 0))
+			if status == 0 or status == 429 or status >= 500:
+				_schedule_refresh(20.0)
 		error.emit(task.error)
 	else:
 		if task.user != null:
+			_session_epoch += 1
 			client = task.user
 			_auth = client.access_token
 			_expires_in = client.expires_in
@@ -321,9 +393,9 @@ func _on_task_completed(task : AuthTask) -> void:
 					otp_verified.emit(client)
 				AuthTask.Task.SIGNINANONYM:
 					signed_in_anonyous.emit()
-			refresh_token()
+			_schedule_refresh()
 		else: 
-			if task.data.is_empty() or task.data == null:
+			if task.data == null or task.data.is_empty():
 				match task._code:
 					AuthTask.Task.MAGICLINK:
 						magic_link_sent.emit()
@@ -332,9 +404,7 @@ func _on_task_completed(task : AuthTask) -> void:
 					AuthTask.Task.INVITE:
 						user_invited.emit()
 					AuthTask.Task.LOGOUT:
-						client = null
-						_auth = ""
-						_expires_in = 0
+						clear_local_session()
 						signed_out.emit()
 
 # A timer used to listen through TCP on the redirect uri of the request

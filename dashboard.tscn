@@ -274,11 +274,10 @@ size_flags_horizontal = 3
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tal5t")
-current_tab = 1
+current_tab = 0
 tabs_visible = false
 
 [node name="Control" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("6_4741l")
 metadata/_tab_index = 0
@@ -576,7 +575,44 @@ rotation = -0.5235988
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("9_q8aok")
 
+[node name="Button" type="Button" parent="HBoxContainer/MarginContainer/TabContainer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -247.0
+offset_top = -727.0
+offset_right = 101.0
+offset_bottom = -623.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1kl5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lhl8p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1cli1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p5lni")
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_df04x")
+theme_override_font_sizes/font_size = 40
+text = "GENEREAZA"
+
 [node name="Control2" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("12_2k5vf")
 metadata/_tab_index = 1
@@ -2149,6 +2185,7 @@ text = "X"
 [connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/TextureButton3" to="." method="_on_reports_pressed"]
 [connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/TextureButton4" to="." method="_on_schedule_pressed"]
 [connection signal="pressed" from="HBoxContainer/Panel/TextureButton" to="." method="_back"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control/Button" to="HBoxContainer/MarginContainer/TabContainer/Control" method="_on_genereaza_cod_asociere"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/PanelContainer/TextureButton/TextureButton2" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_on_edit_avatar"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit/TextureButton2" to="HBoxContainer/MarginContainer/TabContainer/Control2" method="_on_edit_username"]
 [connection signal="text_changed" from="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit2" to="HBoxContainer/MarginContainer/TabContainer/Control2/LineEdit2" method="_on_text_changed"]

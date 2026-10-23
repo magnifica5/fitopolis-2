@@ -84,3 +84,40 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+# ADAUGA aceste declaratii/functia in home.gd, nu inlocui intregul fisier.
+# Conecteaza pressed de la noul buton la _on_genereaza_cod_asociere.
+var generare_cod_in_curs := false
+
+
+func _on_genereaza_cod_asociere() -> void:
+	if generare_cod_in_curs:
+		return
+	if Supabase.auth.client == null:
+		cod.text = "Conecteaza-te ca parinte."
+		return
+
+	generare_cod_in_curs = true
+	cod.text = "Se genereaza codul..."
+	var task = Supabase.database.Rpc(
+		"fitopolis_issue_pairing_code",
+		{"p_child_code": str(Globals.connection_coded)}
+	)
+	var result = await task.completed
+	generare_cod_in_curs = false
+
+	if result.error != null:
+		cod.text = "Generarea a esuat."
+		push_error(str(result.error.message))
+		return
+	if not result.data is Dictionary:
+		cod.text = "Raspuns invalid de la server."
+		return
+
+	var pairing_code := str(result.data.get("pairing_code", ""))
+	if pairing_code.length() != 32:
+		cod.text = "Cod invalid in raspunsul serverului."
+		return
+
+	DisplayServer.clipboard_set(pairing_code)
+	cod.text = "Cod copiat! Valabil 5 minute."

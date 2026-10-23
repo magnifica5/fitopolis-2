@@ -75,17 +75,13 @@ func _on_inregistreaza() -> void:
 		var res_insert = await task_insert.completed
 		
 		if res_insert.error == null:
-			print("Succes! Copilul a fost adăugat.")
-			salvat = true
-			var query1 = SupabaseQuery.new().from("progres_copil").insert([{"connection_code": new_data.connection_code}])
-			var task1 = Supabase.database.query(query1)
-			var result1 = await task1.completed
-			if result1.error == null:
+			if res_insert.error == null:
+				salvat = true
 				Globals.adauga_username(username.text.strip_edges())
 				get_tree().change_scene_to_file("res://interfata_parinte.tscn")
 			else:
-				print(result1.error.message)
-			# Aici poți schimba scena sau închide meniul
+				error.text = "Eroare la salvare: " + res_insert.error.message
+				break
 		else:
 			if "duplicate" in res_insert.error.message.to_lower():
 				print("Codul exista deja. Generăm altul...")
