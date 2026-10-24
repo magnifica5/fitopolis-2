@@ -139,23 +139,16 @@ func _on_esc() -> void:
 
 
 func _leaderboard() -> void:
-	leaderboard.hide()
-
-	# Încărcăm datele înainte să afișăm popup-ul.
-	await leaderboard_scroll.incarca_leaderboard()
-
-	# Afișăm popup-ul după încărcare.
+	if leaderboard.visible:
+		return
 	leaderboard.show()
 	listofusers.show()
 	listofbadges.hide()
 	clasament.show()
 	medalii.hide()
-
-	# Așteptăm actualizarea interfeței.
-	await get_tree().process_frame
-
-	# Pornim animația.
-	await leaderboard_scroll.animeaza_leaderboard()
+	var loaded: bool = await leaderboard_scroll.incarca_leaderboard()
+	if loaded and is_inside_tree() and leaderboard.visible and listofusers.visible:
+		leaderboard_scroll.animeaza_leaderboard()
 
 
 func _on_leaderboard() -> void:
