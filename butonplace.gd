@@ -1,9 +1,18 @@
 extends TextureButton
 
+var _placing := false
+
 func _ready() -> void:
 	pressed.connect(_on_pressed)
 
 func _on_pressed() -> void:
+	if _placing:
+		return
+	_placing = true
+	await _place_local()
+	_placing = false
+
+func _place_local() -> void:
 	$AudioStreamPlayer.play()
 	await get_tree().create_timer(0.1).timeout
 	var preview = get_tree().current_scene.get_node("Sprite2D")
@@ -77,6 +86,10 @@ func _on_pressed() -> void:
 					print("Nu poți plasa aici! Zona este deja ocupată de o altă clădire.")
 					return
 
+	var payments = Itemshop.get_node_or_null("HousePayments")
+	var payment_id := ""
+	if payments != null:
+		payment_id = payments.placement_request()
 	# --- PLASAREA PROPRIU-ZISĂ ---
 	var target_layer = layere_valide[0]
 	
@@ -100,10 +113,16 @@ func _on_pressed() -> void:
 		"scale_casa": Itemshop.scale_salvat,
 		"z_index": 10,
 		"z_as_relative": false,
-		"distrusa": false 
+		"distrusa": false,
+		"house_payment_request": payment_id 
 	})
 	
 	Itemshop.salveaza_jocul()
+	if not payment_id.is_empty() and not payments.finish_placement():
+		Itemshop.cladiri.pop_back()
+		casa.queue_free()
+		payments.show_error("Casa nu a putut fi salvata local. Reincearca plasarea; plata ramane confirmata.")
+		return
 
 	# --- CURĂȚARE ȘI IEȘIRE DIN MODUL PLASARE ---
 	Itemshop.textura_salvata = null

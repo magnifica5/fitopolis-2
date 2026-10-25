@@ -971,8 +971,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="modifica_score" from="." to="bg/TextureRect2/Label3" method="_modifica_score"]
-[connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
 [connection signal="pressed" from="levels/Level1Button" to="." method="_on_level_1"]
+[connection signal="pressed" from="levels/Level1Button" to="." method="_level1_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton" to="." method="_catre_oras_pressed"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton3" to="." method="_catre_stikere"]
 [connection signal="pressed" from="meniu/HBoxContainer/TextureButton4" to="." method="_catre_exercitii"]
