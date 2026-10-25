@@ -6,6 +6,36 @@ var needs_pairing := false
 var _user_id := ""
 var _child_id := ""
 var _busy := false
+signal preparation_finished
+const VALIDATION_WINDOW_MS := 15000
+var _verified_at := -1
+var _verified_context := ""
+var _last_preparation_ok := false
+
+func _session_context() -> String:
+	var user = Supabase.auth.client
+	if not _is_child(user) or _child_id.is_empty():
+		return ""
+	return str(user.id) + ":" + _child_id + ":" + str(user.access_token)
+
+func has_recent_validation() -> bool:
+	return _verified_at >= 0 and Time.get_ticks_msec() - _verified_at < VALIDATION_WINDOW_MS and not _verified_context.is_empty() and _verified_context == _session_context()
+
+func _finish_preparation(ok: bool) -> void:
+	_last_preparation_ok = ok
+	if ok:
+		_verified_context = _session_context()
+		_verified_at = Time.get_ticks_msec()
+	else:
+		_verified_context = ""
+		_verified_at = -1
+	_busy = false
+	preparation_finished.emit()
+
+func _receive(box: Dictionary, result) -> void:
+	box.result = result
+	box.done = true
+
 
 
 func _ready() -> void:
@@ -76,6 +106,9 @@ func _clear_profile_cache() -> void:
 
 
 func forget_child() -> void:
+	_verified_at = -1
+	_verified_context = ""
+	_last_preparation_ok = false
 	_user_id = ""
 	_child_id = ""
 	if FileAccess.file_exists(SESSION_PATH):
@@ -91,8 +124,22 @@ func _fetch_and_apply(expected_child_id: String) -> bool:
 		last_error = "Este necesara sesiunea copilului."
 		return false
 	var expected_user_id: String = user.id
+	# RLS limiteaza ambele raspunsuri la copilul asociat sesiunii.
+	# Le cerem impreuna, apoi verificam explicit ca apartin aceluiasi profil.
+	var child_reply := {"done":false,"result":null}
+	var progress_reply := {"done":false,"result":null}
 	var task = Supabase.database.query(SupabaseQuery.new().from("children").select())
-	var result = await task.completed
+	_connect_reply(task, child_reply)
+	var progress_task = Supabase.database.query(SupabaseQuery.new().from("progres_copil").select())
+	_connect_reply(progress_task, progress_reply)
+	var deadline := Time.get_ticks_msec() + 15000
+	while not (bool(child_reply.done) and bool(progress_reply.done)):
+		if Time.get_ticks_msec() >= deadline:
+			last_error = "Serverul raspunde greu. Reincearca verificarea profilului."
+			return false
+		await get_tree().create_timer(0.01).timeout
+	var result = child_reply.result
+	var progress_result = progress_reply.result
 	if result.error != null or not result.data is Array:
 		last_error = "Profilul nu a putut fi verificat online. Reincearca."
 		return false
@@ -106,10 +153,6 @@ func _fetch_and_apply(expected_child_id: String) -> bool:
 		return false
 	var child: Dictionary = result.data[0]
 	var code := str(child.get("connection_code", ""))
-	var progress_task = Supabase.database.query(
-		SupabaseQuery.new().from("progres_copil").select().eq("connection_code", code)
-	)
-	var progress_result = await progress_task.completed
 	if progress_result.error != null or not progress_result.data is Array:
 		last_error = "Progresul nu a putut fi incarcat. Reincearca."
 		return false
@@ -121,6 +164,9 @@ func _fetch_and_apply(expected_child_id: String) -> bool:
 		return false
 
 	var progress: Dictionary = progress_result.data[0]
+	if str(progress.get("connection_code", "")) != code:
+		last_error = "Progresul nu corespunde copilului verificat. Acces oprit."
+		return false
 	_clear_profile_cache()
 	Globals.adauga_code(code)
 	Globals.connection_coded = code
@@ -149,7 +195,7 @@ func _fetch_and_apply(expected_child_id: String) -> bool:
 	_user_id = expected_user_id
 	_child_id = expected_child_id
 	SyncManager.save_local_data()
-	await Globals.refresh_stickers()
+	# Magazinul de stickere isi verifica inventarul in propriul _ready().
 	return _is_child(Supabase.auth.client) and Supabase.auth.client.id == expected_user_id
 
 
@@ -162,19 +208,27 @@ func activate_current_session(child_id: String) -> bool:
 	var valid := await _fetch_and_apply(child_id)
 	if valid:
 		valid = _save()
-	_busy = false
+	_finish_preparation(valid)
 	return valid
 
 
 func restore_and_sync() -> bool:
 	if _busy:
-		return false
+		await preparation_finished
+		return _last_preparation_ok and has_recent_validation()
+	if has_recent_validation():
+		return true
 	_busy = true
 	last_error = ""
 	needs_pairing = false
 	var result := await _restore()
-	_busy = false
+	_finish_preparation(result)
 	return result
+
+func _connect_reply(task, box: Dictionary) -> void:
+	task.completed.connect(func(result):
+		_receive(box, result)
+	, CONNECT_ONE_SHOT)
 
 
 func _restore() -> bool:

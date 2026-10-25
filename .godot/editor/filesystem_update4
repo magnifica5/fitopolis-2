@@ -1,1 +1,6 @@
 res://shop_oras.tscn
+res://child_session.gd
+res://start_scene.gd
+res://start.tscn
+res://login.tscn
+res://badge_seen_store.gd

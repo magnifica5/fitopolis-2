@@ -13,12 +13,45 @@ func _ready() -> void:
 	preload_scene(background_login)
 	preload_scene(interfata_parinte)
 	preload_scene(alege_interfata)
+	_create_status()
+	_prepare_child_early()
 
 func _process(delta: float) -> void:
 	pass
 
 func preload_scene(path: String):
-	ResourceLoader.load_threaded_request(path)
+	if ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
+		ResourceLoader.load_threaded_request(path)
+
+func _create_status() -> void:
+	var layer := CanvasLayer.new()
+	layer.layer = 50
+	add_child(layer)
+
+func _child_selected() -> bool:
+	if not FileAccess.file_exists(path):
+		return false
+	var file := FileAccess.open_encrypted(path, FileAccess.READ, Globals.get_secure_key())
+	return file != null and file.get_as_text().strip_edges() == "copil"
+
+func _prepare_child_early() -> void:
+	if not _child_selected():
+		return
+	var ok := await ChildSession.restore_and_sync()
+
+func _enter_scene(scene_path: String) -> void:
+	preload_scene(scene_path)
+	var deadline := Time.get_ticks_msec() + 60000
+	while ResourceLoader.load_threaded_get_status(scene_path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+		if Time.get_ticks_msec() >= deadline:
+			_show_session_error("Scena se incarca prea greu. Reincearca.")
+			return
+		await get_tree().create_timer(0.02).timeout
+	var ready = get_scene(scene_path)
+	if ready == null:
+		_show_session_error("Scena nu a putut fi incarcata.")
+		return
+	get_tree().change_scene_to_packed(ready)
 
 func get_scene(path: String):
 	var status = ResourceLoader.load_threaded_get_status(path)
@@ -53,18 +86,14 @@ func _start_selected_account() -> void:
 		var content = f.get_as_text()
 		f.close()
 		print(content)
-		if content == "copil\n":
+		if content.strip_edges() == "copil":
 			if not await ChildSession.restore_and_sync():
 				if ChildSession.needs_pairing:
 					get_tree().change_scene_to_file("res://autentificare_copil.tscn")
 				else:
 					_show_session_error(ChildSession.last_error)
 				return
-			var ready = get_scene(main_scene)
-			if ready:
-				get_tree().change_scene_to_packed(ready)
-			else:
-				print("not ready yet")
+			await _enter_scene(main_scene)
 		else:
 			if await try_auto_login():
 				print("Autentificare automată reușită. Navighez la dashboard.")
