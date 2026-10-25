@@ -4,7 +4,6 @@ extends TileMapLayer # sau Node2D / CanvasItem
 
 func _ready() -> void:
 	GameState.level_updated.connect(actualizeaza_vizibilitate)
-	x=3
 	actualizeaza_vizibilitate()
 
 func actualizeaza_vizibilitate() -> void:

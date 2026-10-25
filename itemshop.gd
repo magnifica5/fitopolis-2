@@ -55,35 +55,20 @@ func populeaza_scena_cu_cladiri(target_layer: TileMapLayer) -> void:
 
 	for date in cladiri:
 		var este_distrusa = date.get("distrusa", false)
-		var cale_tex = ""
+		var calea_normala = date.get("texture", "")
+		var cale_tex = calea_normala
 		
-		if este_distrusa:
-			# Verificăm dacă clădirii i s-a atribuit deja o variantă distrusă în salvare
-			cale_tex = date.get("cale_distrusa_salvata", "")
+		if este_distrusa and calea_normala != "":
+			# Generăm automat calea texturii distruse (ex: "res://casa1.png" devine "res://casa1x.png")
+			var baza = calea_normala.get_basename() # Ia calea fără extensie (ex: "res://casa1")
+			var calea_generata = baza + "x.png"
 			
-			# Dacă nu are una salvată, alegem una random din cele 6 posibile
-			if cale_tex == "" or not ResourceLoader.exists(cale_tex):
-				var variante_distruse = [
-					"res://casa.distrusa.png",
-					"res://casa.distrusa1.png",
-					"res://casa.distrusa2.png",
-					"res://casa.distrusa3.png"
-				]
-				# Filtrăm doar variantele care există fizic în proiect
-				var variante_valide = []
-				for v in variante_distruse:
-					if ResourceLoader.exists(v):
-						variante_valide.append(v)
-				
-				if not variante_valide.is_empty():
-					variante_valide.shuffle()
-					cale_tex = variante_valide[0]
-					# O salvăm în dicționar ca să rămână aceeași textură când dai reload
-					date["cale_distrusa_salvata"] = cale_tex
-				else:
-					cale_tex = "res://casa.distrusa.png" # Fallback final
-		else:
-			cale_tex = date.get("texture", "")
+			# Verificăm dacă există fișierul specific, altfel punem un fallback (ex: "res://casa.distrusa.png")
+			if ResourceLoader.exists(calea_generata):
+				cale_tex = calea_generata
+			else:
+				print("Atenție: Nu s-a găsit textura specifică ", calea_generata, ", se folosește fallback-ul.")
+				cale_tex = "res://casa.distrusa.png"
 
 		if cale_tex == "" or not ResourceLoader.exists(cale_tex):
 			continue

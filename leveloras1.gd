@@ -32,29 +32,11 @@ func recreaza_casa(date: Dictionary) -> void:
 
 	var este_distrusa = date.get("distrusa", false)
 	if este_distrusa:
-		var calea_distrusa = date.get("cale_distrusa_salvata", "")
+		var baza = calea_normala.get_basename()
+		var calea_distrusa = baza + "x.png"
 		
-		# Dacă nu are una salvată, alegem una random
-		if calea_distrusa == "" or not ResourceLoader.exists(calea_distrusa):
-			var variante_distruse = [
-				"res://casa.distrusa.png",
-				"res://casa.distrusa1.png",
-				"res://casa.distrusa2.png",
-				"res://casa.distrusa3.png",
-				"res://casa.distrusa4.png",
-				"res://casa.distrusa5.png"
-			]
-			var variante_valide = []
-			for v in variante_distruse:
-				if ResourceLoader.exists(v):
-					variante_valide.append(v)
-			
-			if not variante_valide.is_empty():
-				variante_valide.shuffle()
-				calea_distrusa = variante_valide[0]
-				date["cale_distrusa_salvata"] = calea_distrusa
-			else:
-				calea_distrusa = "res://casa.distrusa.png"
+		if not ResourceLoader.exists(calea_distrusa):
+			calea_distrusa = "res://casa.distrusa.png" # Fallback dacă nu există varianta cu x
 
 		if ResourceLoader.exists(calea_distrusa):
 			var tex_distrusa = load(calea_distrusa)
