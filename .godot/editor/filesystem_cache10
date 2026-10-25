@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1792918676
+::res://::1792920421
 1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png::CompressedTexture2D::7536361269957601271::1787829251::1787829416::1::::<><><>0<>0<>90887020950a425c34a5a32d52c2c2b1<>res://.godot/imported/1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png-31eeab7255796e435b6bef19b2230d3b.ctex::
 3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png::CompressedTexture2D::7203370797049039625::1787829251::1787829416::1::::<><><>0<>0<>d5101df9ac9e6f9ffa28680a865de1e5<>res://.godot/imported/3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png-905d6c87ca81b69e818b1aa13f4ebe47.ctex::
 046af01fa841d786d1e967f8797ece8c-removebg-preview.png::CompressedTexture2D::4015776957699399800::1787829251::1787829416::1::::<><><>0<>0<>0b1d9f31e2a0afb977f3245961ba208a<>res://.godot/imported/046af01fa841d786d1e967f8797ece8c-removebg-preview.png-d634b8e8ab617928486f71008f63f162.ctex::
@@ -43,7 +43,7 @@ baie_dimineata.tscn::PackedScene::4957893976993850918::1792683762::0::1::::<><><
 bg_f8f8f8-flat_750x_075_f-pad_750x1000_f8f8f8-removebg-preview.png::CompressedTexture2D::8990319021738988305::1787829268::1787829416::1::::<><><>0<>0<>78edca7a9b51ee8bb08b77afa5ac0d76<>res://.godot/imported/bg_f8f8f8-flat_750x_075_f-pad_750x1000_f8f8f8-removebg-preview.png-01fa87de2bd0e20cb92f621d15be4d0b.ctex::
 bifeaza_activi.gd::GDScript::877159487646320114::1792769823::0::1::::<>Control<><>0<>0<><>::
 butoane_parola.gd::GDScript::541494534921556831::1787829268::0::1::::<>CanvasLayer<><>0<>0<><>::
-butonplace.gd::GDScript::303935344539031881::1792861407::0::1::::<>TextureButton<><>0<>0<><>::
+butonplace.gd::GDScript::303935344539031881::1792920305::0::1::::<>TextureButton<><>0<>0<><>::
 butonsonor2.gd::GDScript::1367085911343777156::1787829268::0::1::::<>TextureButton<><>0<>0<><>::
 butonsonor.gd::GDScript::5046537299102680195::1787829268::0::1::::<>Button<><>0<>0<><>::
 buttoncancel.gd::GDScript::4749392341147866139::1791472631::0::1::::<>TextureButton<><>0<>0<><>::
@@ -103,9 +103,9 @@ deletepopup.gd::GDScript::5387406733641017262::1792860309::0::1::::<>ColorRect<>
 deleteX.gd::GDScript::8492505472345929267::1787829268::0::1::::<>TextureButton<><>0<>0<><>::
 deleteyes.gd::GDScript::1834681854580524366::1787829268::0::1::::<>TextureButton<><>0<>0<><>::
 delete_mode.gd::GDScript::5507029394208979930::1791472605::0::1::::<>TextureButton<><>0<>0<><>::
-dezordine1.gd::GDScript::3487362916183873074::1792860309::0::1::::<>TileMapLayer<><>0<>0<><>::
-dezordine2.gd::GDScript::1561440154216267483::1792860309::0::1::::<>TileMapLayer<><>0<>0<><>::
-dezordine3.gd::GDScript::4988348123497424427::1792860309::0::1::::<>TileMapLayer<><>0<>0<><>::
+dezordine1.gd::GDScript::3487362916183873074::1792920305::0::1::::<>TileMapLayer<><>0<>0<><>::
+dezordine2.gd::GDScript::1561440154216267483::1792920305::0::1::::<>TileMapLayer<><>0<>0<><>::
+dezordine3.gd::GDScript::4988348123497424427::1792920305::0::1::::<>TileMapLayer<><>0<>0<><>::
 disp2.gd::GDScript::3676757511239847193::1792773707::0::1::::<>Sprite2D<><>0<>0<><>::
 disp3.gd::GDScript::8748177550457562161::1792773707::0::1::::<>Sprite2D<><>0<>0<><>::
 disp4.gd::GDScript::4015201046317496946::1792773707::0::1::::<>Sprite2D<><>0<>0<><>::
@@ -162,7 +162,7 @@ fit'ogames.tscn::PackedScene::6940744760480553761::1788895700::0::1::::<><><>0<>
 functionare.gd::GDScript::4154876653488029914::1787829270::0::1::::<>Node2D<><>0<>0<><>::
 functionare.tscn::PackedScene::7862982206068932257::1787829270::0::1::::<><><>0<>0<><>::uid://b0gwhgo0nyafa::::res://functionare.gd<>uid://bx4dgeewi1s58::::res://assets/level_bg.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://b415284iuneso::::res://assets/acasa_buton.png<>uid://d2gere5adq5g8::::res://labelfunctionare.gd<>uid://cn725kfuu8ili::::res://functionare_content.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg
 functionare_content.gd::GDScript::5753049889326642726::1787829270::0::1::::<>RichTextLabel<><>0<>0<><>::
-GameState.gd::GDScript::8954292387188004206::1792860309::0::1::::<>Node<><>0<>0<><>::
+GameState.gd::GDScript::8954292387188004206::1792920305::0::1::::<>Node<><>0<>0<><>::
 Gemini_Generated_Image_k5yek5k5yek5k5ye-removebg-preview (1).png::CompressedTexture2D::5647843034360647184::1789058865::1790352470::1::::<><><>0<>0<>8c2fdf5c14f83609f208fe9ec2d96d65<>res://.godot/imported/Gemini_Generated_Image_k5yek5k5yek5k5ye-removebg-preview (1).png-ea3a037c735d2d49cc3ebbd444535939.ctex::
 Gemini_Generated_Image_k5yek5k5yek5k5ye.png::CompressedTexture2D::41169688137743985::1789058865::1790352470::1::::<><><>0<>0<>ed3c8add052aadd82b755be418115a61<>res://.godot/imported/Gemini_Generated_Image_k5yek5k5yek5k5ye.png-de3592c32b3df327842fc498020c64ca.ctex::
 get_dressed.gd::GDScript::2514238448190102263::1791473129::0::1::::<>Node2D<><>0<>0<><>::
@@ -186,7 +186,7 @@ hour_input_parinte.gd::GDScript::5930946901296622286::1787829270::0::1::::<>Line
 hour_input_pranz.gd::GDScript::297159938556336002::1787829270::0::1::::<>LineEdit<><>0<>0<><>::
 hour_input_somn.gd::GDScript::7489357937606739679::1787829270::0::1::::<>LineEdit<><>0<>0<><>::
 hour_input_trezire.gd::GDScript::9011737687409076000::1787829270::0::1::::<>LineEdit<><>0<>0<><>::
-house_payment_service.gd::GDScript::6041226989876925839::1792861407::0::1::::<>Node<><>0<>0<><>::
+house_payment_service.gd::GDScript::6041226989876925839::1792920305::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D::8448219222678256099::1787829270::1787829417::1::::<><><>0<>0<>8384042b90f14e22aa99cf13c008c67f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 image-removebg-preview (1).png::CompressedTexture2D::4557724284065833844::1787829270::1787829417::1::::<><><>0<>0<>13abe573f87964a565eced8bc1dcf842<>res://.godot/imported/image-removebg-preview (1).png-647283c848a3a819ee2ea5621a55b767.ctex::
 image-removebg-preview (2).png::CompressedTexture2D::9167705960712221409::1787829270::1787829417::1::::<><><>0<>0<>ccd6197970f34037e8585393b1fb7414<>res://.godot/imported/image-removebg-preview (2).png-8866cb77df469c449dae03cd5049779b.ctex::
@@ -328,7 +328,7 @@ oras.tscn::PackedScene::1725619029150364093::1787829270::0::1::::<><><>0<>0<><>:
 oras_logo.svg::CompressedTexture2D::7988719434220244298::1788531945::1792680593::1::::<><><>0<>0<>54f90c87388c4a58058b5302c85a7202<>res://.godot/imported/oras_logo.svg-3a65c06cc0f042afaf886565e78092dd.ctex::
 oras_scene.gd::GDScript::223597823872215294::1792860309::0::1::::<>Node2D<><>0<>0<><>::
 ore_activitati.gd::GDScript::3165301145327684186::1792440446::0::1::::<>Control<><>0<>0<><>::
-pannel_upgrade.gd::GDScript::7051220365886608907::1792860309::0::1::::<>TextureRect<><>0<>0<><>::
+pannel_upgrade.gd::GDScript::7051220365886608907::1792920305::0::1::::<>TextureRect<><>0<>0<><>::
 parental_code.gd::GDScript::6530797526377979801::1792754845::0::1::::<>Control<><>0<>0<><>::
 parola.gd::GDScript::3279948435417141121::1787829270::0::1::::<>Node2D<><>0<>0<><>::
 password_input.gd::GDScript::2565091584089432583::1787829270::0::1::::<>LineEdit<><>0<>0<><>::
@@ -358,7 +358,7 @@ reparare.gd::GDScript::6285134868196123684::1792860309::0::1::::<>TextureButton<
 resetare_parola.gd::GDScript::3587594727406418075::1787829270::0::1::::<>Panel<><>0<>0<><>::
 resetcode.gd::GDScript::940295923560363341::1787829270::0::1::::<>Label<><>0<>0<><>::
 retur.gd::GDScript::8510699404874765011::1787829270::0::1::::<>TextureButton<><>0<>0<><>::
-return.gd::GDScript::3378939958868046242::1792860309::0::1::::<>TextureButton<><>0<>0<><>::
+return.gd::GDScript::3378939958868046242::1792920305::0::1::::<>TextureButton<><>0<>0<><>::
 revino_mai_tarziu.tscn::PackedScene::4133302896957358938::1792684237::0::1::::<><><>0<>0<><>::uid://b14oj42bfkqsp::::res://tarziu.gd<>uid://dc0gqvsbb6mku::::res://assets/happyB.png<>uid://d3cvf2cjwrkmr::::res://assets/happyF.png<>uid://btq1101rngqg8::::res://assets/font/Signika-Bold.ttf<>uid://b415284iuneso::::res://assets/acasa_buton.png<>uid://d3v23clat8kbj::::res://labelcomeback.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg<>uid://ca3jivv1v7xn7::::res://audio/voices/miss_nutri_r.mp3<>uid://b1k612eb0pv36::::res://audio/voices/santos_r.mp3<>uid://bclipbctwpknv::::res://audio/voices_eng/miss_nutri_eng_comebackLater.mp3<>uid://3uoyjslim22k::::res://audio/voices_eng/santos_eng_comebackLater.mp3
 rosie-removebg-preview.png::CompressedTexture2D::3348052942184256593::1787829270::1787829416::1::::<><><>0<>0<>b825cb71aa76489922d5b66dcb84a8e0<>res://.godot/imported/rosie-removebg-preview.png-05307f069782e12bfaf7a83ae1cdae22.ctex::
 s2.gd::GDScript::6056221997285319563::1792773707::0::1::::<>Area2D<><>0<>0<><>::
@@ -406,14 +406,14 @@ scena_de_test.gd::GDScript::6746229968692623181::1787829270::0::1::::<>Control<>
 score.gd::GDScript::3711623276088660537::1791645696::0::1::::<>Label<><>0<>0<><>::
 script buton schimbare limba.gd::GDScript::3746102277509238495::1787829270::0::1::::<>TextureButton<><>0<>0<><>::
 secure_city_button.gd::GDScript::4083126595169636537::1792859942::0::1::::<>TextureButton<><>0<>0<><>::
-secure_house_button.gd::GDScript::750199043503369075::1792862168::0::1::::<>TextureButton<><>0<>0<><>::
+secure_house_button.gd::GDScript::750199043503369075::1792920305::0::1::::<>TextureButton<><>0<>0<><>::
 secure_sticker_button.gd::GDScript::1420963168876001838::1792775313::0::1::::<>Area2D<><>0<>0<><>::
 secure_sticker_cover.gd::GDScript::2089926574936995759::1792773707::0::1::::<>Sprite2D<><>0<>0<><>::
 select_level.gd::GDScript::8869354021500198633::1787829270::0::1::::<>Label<><>0<>0<><>::
 settings.gd::GDScript::5056050591262053906::1792436492::0::1::::<>Control<><>0<>0<><>::
 setup.gd::GDScript::4978321840933142322::1787829270::0::1::::<>Node2D<><>0<>0<><>::
-shop_oras.gd::GDScript::7221986159323174979::1792860309::0::1::::<>Control<><>0<>0<><>::
-shop_oras.tscn::PackedScene::3575923541993400507::1792862168::0::1::::<><><>0<>0<><>::uid://bx4dgeewi1s58::::res://assets/level_bg.png<>uid://da5nb61l0gftj::::res://shop_oras.gd<>uid://pdofnn67ch6d::::res://assets/castig/scor_bar.png<>uid://ca7j377dadnxj::::res://assets/shop_slot2.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://cwojkdbr0vwtk::::res://assets/nigu232-removebg-preview.png<>uid://bsw8nfhjqxvcp::::res://casashop.gd<>uid://bs465mnx66o1f::::res://score.gd<>uid://bwy3ghmhj1wrb::::res://stea2-removebg-preview.png<>uid://gp8uoihmi6rl::::res://assets/nigu2.png<>uid://bu7q1olq6exc1::::res://assets/nigu5.png<>uid://fj6s36sw1kih::::res://casashop2.gd<>uid://ca3kfjp3epnjg::::res://assets/nigu4.png<>uid://dr4lbscfbjbeb::::res://assets/nigu7.png<>uid://dv3jlg2naq8y6::::res://assets/nigu1.png<>uid://c47r35rm2aknv::::res://casashop3.gd<>uid://b8hxqe7rwhkgu::::res://assets/nigu13.png<>uid://n5slharny2wh::::res://image-removebg-preview (60).png<>uid://cp488jw0jlexw::::res://casashop4.gd<>uid://d0wauq3klxln0::::res://casashop5.gd<>uid://boas1hl7y4f5q::::res://casashop6.gd<>uid://cvcjind643db2::::res://casashop7.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg
+shop_oras.gd::GDScript::7221986159323174979::1792920305::0::1::::<>Control<><>0<>0<><>::
+shop_oras.tscn::PackedScene::3575923541993400507::1792918755::0::1::::<><><>0<>0<><>::uid://bx4dgeewi1s58::::res://assets/level_bg.png<>uid://da5nb61l0gftj::::res://shop_oras.gd<>uid://pdofnn67ch6d::::res://assets/castig/scor_bar.png<>uid://ca7j377dadnxj::::res://assets/shop_slot2.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://cwojkdbr0vwtk::::res://assets/nigu232-removebg-preview.png<>uid://bsw8nfhjqxvcp::::res://casashop.gd<>uid://bs465mnx66o1f::::res://score.gd<>uid://bwy3ghmhj1wrb::::res://stea2-removebg-preview.png<>uid://gp8uoihmi6rl::::res://assets/nigu2.png<>uid://bu7q1olq6exc1::::res://assets/nigu5.png<>uid://fj6s36sw1kih::::res://casashop2.gd<>uid://ca3kfjp3epnjg::::res://assets/nigu4.png<>uid://dr4lbscfbjbeb::::res://assets/nigu7.png<>uid://dv3jlg2naq8y6::::res://assets/nigu1.png<>uid://c47r35rm2aknv::::res://casashop3.gd<>uid://b8hxqe7rwhkgu::::res://assets/nigu13.png<>uid://n5slharny2wh::::res://image-removebg-preview (60).png<>uid://cp488jw0jlexw::::res://casashop4.gd<>uid://d0wauq3klxln0::::res://casashop5.gd<>uid://boas1hl7y4f5q::::res://casashop6.gd<>uid://cvcjind643db2::::res://casashop7.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg
 sound.gd::GDScript::6522673405066743629::1787829270::0::1::::<>Node2D<><>0<>0<><>::
 sound_manager.tscn::PackedScene::2838586068434577227::1787829270::0::1::::<><><>0<>0<><>::uid://cy6vqitt46f7r::::res://sound.gd
 spalat pe dinti.tscn::PackedScene::9150072353942251395::1792683831::0::1::::<><><>0<>0<><>::uid://cbnljq1pxhlaw::::res://spalat_pe_dinti.gd<>uid://dbidmmg3sw4qj::::res://numaratoare_dinti.gd<>uid://btq1101rngqg8::::res://assets/font/Signika-Bold.ttf<>uid://c5wnkkpmoyv40::::res://spalat pe dinti/t.png<>uid://xawpdt1yhwd::::res://fin_dinti.gd<>uid://ixm2a5vbsjt5::::res://spalat pe dinti/s7.png<>uid://cido6mp1ecxcw::::res://verif_dinti.gd<>uid://covmoie8dsgvh::::res://assets/finished.png<>uid://b8fg8wo6wid17::::res://inapoi_baie.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg
@@ -458,10 +458,10 @@ unlock_levels.gd::GDScript::9074732281277048345::1787829270::0::1::::<>Node<><>0
 Untitled-design-removebg-preview.png::CompressedTexture2D::3891642580466324739::1787829252::1787829416::1::::<><><>0<>0<>64066c1ad44eff8b50c619c77056a305<>res://.godot/imported/Untitled-design-removebg-preview.png-9ad4101d146b84bcca72f0e67a9d821b.ctex::
 upgrade.gd::GDScript::1291214010748189890::1787829270::0::1::::<>TextureRect<><>0<>0<><>::
 upgradebutton.gd::GDScript::5857359903028104551::1791472418::0::1::::<>TextureButton<><>0<>0<><>::
-upgradegamestate.gd::GDScript::1354053627982680874::1792860309::0::1::::<>TextureButton<><>0<>0<><>::
+upgradegamestate.gd::GDScript::1354053627982680874::1792920305::0::1::::<>TextureButton<><>0<>0<><>::
 upgrade_level.gd::GDScript::3626183888897095324::1789147297::0::1::::<>Control<><>0<>0<><>::
 upgrade_level.tscn::PackedScene::3410023239879722331::1789904849::0::1::::<><><>0<>0<><>::uid://brwsyo8841tnw::::res://upgrade_level.gd<>uid://2mn6f0podjy::::res://assets/font/Signika-Medium.ttf<>uid://dojrkukspudi3::::res://assets/rounded_rect.png<>uid://bqvkyelrupf1j::::res://assets/rays.png<>uid://bb8ytkwjrxikn::::res://assets/shield.svg<>uid://vvy0ehssscut::::res://assets/ribbon.png<>uid://d1ot2333ooab8::::res://fake_3d.gdshader<>uid://b3u7x6rbqx0sk::::res://assets/font/Signika-SemiBold.ttf<>uid://btq1101rngqg8::::res://assets/font/Signika-Bold.ttf<>uid://d4ggqu31e2x6c::::res://assets/font/Signika-Regular.ttf<>uid://bqkyyqh371m3g::::res://assets/castig/stea1.png<>uid://1lbmgu7bx6sr::::res://assets/stickere_item.svg<>uid://dl22bopov6wms::::res://oras_logo.svg
-upgrade_pannel.gd::GDScript::1447600182370288500::1792860309::0::1::::<>TextureRect<><>0<>0<><>::
+upgrade_pannel.gd::GDScript::1447600182370288500::1792920305::0::1::::<>TextureRect<><>0<>0<><>::
 verif_dinti.gd::GDScript::5341451301901462406::1787829270::0::1::::<>CanvasLayer<><>0<>0<><>::
 vezip.gd::GDScript::8486313229581143128::1787829270::0::1::::<>Label<><>0<>0<><>::
 vezit.gd::GDScript::1227556896426735498::1787829270::0::1::::<>Label<><>0<>0<><>::

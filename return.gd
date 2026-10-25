@@ -4,6 +4,13 @@ func _ready() -> void:
 	pass
 
 func _on_pressed() -> void:
+	var payments = Itemshop.get_node_or_null("HousePayments")
+	if payments != null:
+		if payments.busy:
+			return
+		if not payments.abandon_placement():
+			return
+	Itemshop.cale_textura_salvata = ""
 	# Elimină textura salvată
 	#$AudioStreamPlayer.play()
 	#await get_tree().create_timer(0.1).timeout

@@ -13,18 +13,16 @@ func _ready() -> void:
 	incarca_jocul()
 
 # --- FUNCȚIA DE SALVARE ---
-func salveaza_jocul() -> void:
-	var date_salvate := {
-		"valoare_globala": valoare_globala
-	}
-	var key = Globals.get_secure_key()
-	var json_string := JSON.stringify(date_salvate, "\t")
-	var file := FileAccess.open_encrypted(SAVE_PATH, FileAccess.WRITE, key)
-	
-	if file:
-		file.store_string(json_string)
-		file.close()
-		print("GameState salvat cu succes!")
+func salveaza_jocul() -> bool:
+	var temporary := SAVE_PATH + ".tmp"
+	var file := FileAccess.open_encrypted(temporary, FileAccess.WRITE, Globals.get_secure_key())
+	if file == null:
+		return false
+	file.store_string(JSON.stringify({"valoare_globala":valoare_globala}))
+	file.flush()
+	var ok := file.get_error() == OK
+	file.close()
+	return ok and DirAccess.rename_absolute(temporary, SAVE_PATH) == OK
 
 # --- FUNCȚIA DE ÎNCĂRCARE ---
 func incarca_jocul() -> void:
