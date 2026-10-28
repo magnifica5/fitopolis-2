@@ -21,12 +21,12 @@ res://stikere.tscn::8da153320b85fc91b70f1e412f415c56::1791646521::res://.godot/e
 res://functionare.tscn::22ee40bc635cdfa467a51e688fa1c4e9::1787829270::res://.godot/exported/133200997/export-3cf261261ec593200e68cbd9fd1c2cd9-functionare.scn
 res://background_login.tscn::a066ccc0c8be29f839205e21096779f0::1792681821::res://.godot/exported/133200997/export-c3eb58822853a79a92de885843e6d05f-background_login.scn
 res://login_child.tscn::26fc2b43cebc63864611006e148188b3::1792752086::res://.godot/exported/133200997/export-16813ea01c260d0eb844ebb52b17b2ee-login_child.scn
-res://oras2.0.tscn::07d953c3760e08533a6bcafbb9abc80b::1793040625::res://.godot/exported/133200997/export-53e961a374c0dd1b56c1fc8ec21741b6-oras2.0.scn
+res://oras2.0.tscn::07d953c3760e08533a6bcafbb9abc80b::1793200311::res://.godot/exported/133200997/export-53e961a374c0dd1b56c1fc8ec21741b6-oras2.0.scn
 res://register_parrent.tscn::6aaf5986f85e1c51696ced8b26b62bca::1792681550::res://.godot/exported/133200997/export-6df776c8d05ac21e6c46158631557773-register_parrent.scn
-res://shop_oras.tscn::b3c724f95cb9ec12b12f55a2160a6c7f::1793009621::res://.godot/exported/133200997/export-e7d8783dbac83a6cc11199a82c26fc34-shop_oras.scn
+res://shop_oras.tscn::d544748424025f1ed8921b752c537a70::1793217210::res://.godot/exported/133200997/export-e7d8783dbac83a6cc11199a82c26fc34-shop_oras.scn
 res://alege_interfata.tscn::96b3199c9dcf414cc3398b9106a89465::1792680742::res://.godot/exported/133200997/export-d6ba78779cdf297ab2653da9a2bedb99-alege_interfata.scn
 res://autentificare_copil.tscn::87590ca4efe658f4d2adc99ac1a20990::1792681980::res://.godot/exported/133200997/export-26c1b690e6c1c30479cecc054f1ab15c-autentificare_copil.scn
-res://dashboard.tscn::6baa4bc23daf14bfd0eedd71ae918b84::1792755340::res://.godot/exported/133200997/export-9b22698c929bf530fe88cb6a5d5077f5-dashboard.scn
+res://dashboard.tscn::c464d8799bf55134b05d01ac2256665f::1793201107::res://.godot/exported/133200997/export-9b22698c929bf530fe88cb6a5d5077f5-dashboard.scn
 res://interfata_parinte.tscn::05dcee89fef637ba766d0c4ad93784a0::1792085850::res://.godot/exported/133200997/export-f0347429d062ef4cc3bc124851d4d67a-interfata_parinte.scn
 res://kids_account.tscn::cc16ce07e6cfdd47c959efaa9b8fdc4b::1788370372::res://.godot/exported/133200997/export-51375bf666a005a7e41be1801ac86f6e-kids_account.scn
 res://animatii.tscn::c6fcd1c66248cada1d1b522b53a59210::1788525258::res://.godot/exported/133200997/export-bc3fcd52fc6d12e77c7fd2ea907c663b-animatii.scn

@@ -5,7 +5,10 @@ var main_scene = "res://login.tscn"
 var background_login = "res://background_login.tscn"
 var interfata_parinte = "res://interfata_parinte.tscn"
 var alege_interfata = "res://alege_interfata.tscn"
+const LOADING_SCREEN = preload("res://start_loading_overlay.gd")
 var _starting := false
+var _changing_scene := false
+var _loading: CanvasLayer
 func _ready() -> void:
 	await get_tree().process_frame
 	SoundManager.play_music(preload("res://audio/background_sound.mp3"))
@@ -13,7 +16,6 @@ func _ready() -> void:
 	preload_scene(background_login)
 	preload_scene(interfata_parinte)
 	preload_scene(alege_interfata)
-	_create_status()
 	_prepare_child_early()
 
 func _process(delta: float) -> void:
@@ -22,11 +24,6 @@ func _process(delta: float) -> void:
 func preload_scene(path: String):
 	if ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
 		ResourceLoader.load_threaded_request(path)
-
-func _create_status() -> void:
-	var layer := CanvasLayer.new()
-	layer.layer = 50
-	add_child(layer)
 
 func _child_selected() -> bool:
 	if not FileAccess.file_exists(path):
@@ -37,7 +34,7 @@ func _child_selected() -> bool:
 func _prepare_child_early() -> void:
 	if not _child_selected():
 		return
-	var ok := await ChildSession.restore_and_sync()
+	await ChildSession.restore_and_sync()
 
 func _enter_scene(scene_path: String) -> void:
 	preload_scene(scene_path)
@@ -51,7 +48,14 @@ func _enter_scene(scene_path: String) -> void:
 	if ready == null:
 		_show_session_error("Scena nu a putut fi incarcata.")
 		return
-	get_tree().change_scene_to_packed(ready)
+	var error := get_tree().change_scene_to_packed(ready)
+	if error != OK:
+		_show_session_error("Scena nu a putut fi deschisa. Reincearca.")
+		return
+	_changing_scene = true
+	# Acest nod apartine radacinii, deci supravietuieste scenei Start.
+	if is_instance_valid(_loading):
+		_loading.finish_when_scene_ready()
 
 func get_scene(path: String):
 	var status = ResourceLoader.load_threaded_get_status(path)
@@ -63,10 +67,23 @@ func _on_texture_button_pressed() -> void:
 	if _starting:
 		return
 	_starting = true
+	_changing_scene = false
+	_loading = LOADING_SCREEN.new()
+	get_tree().root.add_child(_loading)
+	# Permite desenarea mesajului inainte de autentificare/incarcare.
+	await _loading.wait_until_drawn()
 	await _start_selected_account()
-	_starting = false
+	if not _changing_scene:
+		_hide_loading()
+		_starting = false
+
+func _hide_loading() -> void:
+	if is_instance_valid(_loading):
+		_loading.queue_free()
+	_loading = null
 
 func _show_session_error(message: String) -> void:
+	_hide_loading()
 	var popup := AcceptDialog.new()
 	popup.title = "Conectare"
 	popup.dialog_text = message
@@ -89,7 +106,7 @@ func _start_selected_account() -> void:
 		if content.strip_edges() == "copil":
 			if not await ChildSession.restore_and_sync():
 				if ChildSession.needs_pairing:
-					get_tree().change_scene_to_file("res://autentificare_copil.tscn")
+					await _enter_scene("res://autentificare_copil.tscn")
 				else:
 					_show_session_error(ChildSession.last_error)
 				return
@@ -98,24 +115,11 @@ func _start_selected_account() -> void:
 			if await try_auto_login():
 				print("Autentificare automată reușită. Navighez la dashboard.")
 				await SyncManager.load_parent_data()
-				var ready = get_scene(interfata_parinte)
-				if ready:
-					get_tree().change_scene_to_packed(ready)
-				else:
-					print("not ready yet")
+				await _enter_scene(interfata_parinte)
 			else:
-				print("Nu s-a putut autentifica automat. Navighez la alegerea interfeței.")
-				var ready = get_scene(background_login)
-				if ready:
-					get_tree().change_scene_to_packed(ready)
-				else:
-					print("not ready yet")
+				await _enter_scene(background_login)
 	else:
-		var ready = get_scene(alege_interfata)
-		if ready:
-			get_tree().change_scene_to_packed(ready)
-		else:
-			print("not ready yet")
+		await _enter_scene(alege_interfata)
 
 func try_auto_login() -> bool:
 	if FileAccess.file_exists("user://session.save"):
@@ -174,6 +178,8 @@ func _clear_local_session():
 		print("Sesiune locală ștearsă.")
 
 func _functionare() -> void:
+	if _starting:
+		return
 	#$AudioStreamPlayer.play()
 	#await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://functionare.tscn")
