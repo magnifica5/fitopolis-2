@@ -21,7 +21,6 @@ func _ready() -> void:
 		var zile = int((t_azi - t_cont) / 86400)
 		days.text = str(zile)
 		username.text = data["username"]
-		cod.text = Globals.connection_coded
 		Globals.adauga_code(Globals.connection_coded)
 		scor.text = str(int(data["scor"]))
 		var avatar = int(data["avatar_number"])

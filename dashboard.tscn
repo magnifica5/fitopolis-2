@@ -284,11 +284,11 @@ metadata/_tab_index = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/TabContainer/Control"]
 layout_mode = 1
-offset_left = 139.0
+offset_left = 88.0
 offset_top = 80.0
-offset_right = 1530.0
-offset_bottom = 340.0
-theme_override_constants/separation = 200
+offset_right = 1479.0
+offset_bottom = 345.0
+theme_override_constants/separation = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/TabContainer/Control/HBoxContainer"]
 layout_mode = 2
@@ -327,7 +327,7 @@ theme_override_font_sizes/font_size = 60
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainer/TabContainer/Control/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 10
 
 [node name="Label2" type="Label" parent="HBoxContainer/MarginContainer/TabContainer/Control/HBoxContainer/VBoxContainer2/HBoxContainer2"]
 layout_mode = 2
@@ -340,7 +340,7 @@ text = "COD DE CONECTARE:"
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_df04x")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 45
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/MarginContainer/TabContainer/Control/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -370,9 +370,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 94.0
-offset_top = -48.0
+offset_top = -11.0
 offset_right = 615.0
-offset_bottom = 421.0
+offset_bottom = 458.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6n714")
 
@@ -488,9 +488,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 703.0
-offset_top = -48.0
+offset_top = -7.0
 offset_right = 1515.0
-offset_bottom = 419.0
+offset_bottom = 460.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6n714")
 
@@ -582,10 +582,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -247.0
-offset_top = -727.0
-offset_right = 101.0
-offset_bottom = -623.0
+offset_left = -347.0
+offset_top = -701.0
+offset_right = 299.0
+offset_bottom = -597.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_k1kl5")
@@ -609,7 +609,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_df04x")
 theme_override_font_sizes/font_size = 40
-text = "GENEREAZA"
+text = "GENEREAZA COD DE CONECTARE"
 
 [node name="Control2" type="Control" parent="HBoxContainer/MarginContainer/TabContainer"]
 visible = false
