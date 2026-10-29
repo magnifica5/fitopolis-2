@@ -90,7 +90,7 @@ func _show_session_error(message: String) -> void:
 	add_child(popup)
 	popup.confirmed.connect(popup.queue_free)
 	popup.canceled.connect(popup.queue_free)
-	popup.popup_centered()
+	preload("res://dialog_style.gd").show_dialog(popup)
 
 func _start_selected_account() -> void:
 	#$AudioStreamPlayer.play()

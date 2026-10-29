@@ -146,7 +146,7 @@ func _message(message: String) -> void:
 	add_child(popup)
 	popup.confirmed.connect(popup.queue_free)
 	popup.canceled.connect(popup.queue_free)
-	popup.popup_centered()
+	preload("res://dialog_style.gd").show_dialog(popup)
 
 func load_day() -> void:
 	if _busy:
@@ -208,7 +208,7 @@ func _back_to_start() -> void:
 		popup.queue_free()
 		_submit_day(selected)
 	)
-	popup.popup_centered()
+	preload("res://dialog_style.gd").show_dialog(popup)
 
 func _submit_day(selected: Array[String]) -> void:
 	var task = Supabase.database.Rpc("fitopolis_confirm_day", {

@@ -1,2 +1,5 @@
 res://shop_oras.tscn
-res://alege_personaj.gd
+res://start.tscn
+res://start_scene.gd
+res://dialog_style.gd
+res://login.tscn

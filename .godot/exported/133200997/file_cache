@@ -1,5 +1,5 @@
-res://login.tscn::3baf1214a1d871830be6cfb058a9ffe4::1792923444::res://.godot/exported/133200997/export-7aeadb58d35a3c0bfb71a821ef748161-login.scn
-res://start.tscn::beb22ad6b9989a37721c5838779d774f::1792922503::res://.godot/exported/133200997/export-f6e8b96a6111f62e406d12d8b3ddab90-start.scn
+res://login.tscn::6bedd10bec869e45131824f3cafe4f59::1793300253::res://.godot/exported/133200997/export-7aeadb58d35a3c0bfb71a821ef748161-login.scn
+res://start.tscn::beb22ad6b9989a37721c5838779d774f::1793298748::res://.godot/exported/133200997/export-f6e8b96a6111f62e406d12d8b3ddab90-start.scn
 res://alege_personaj.tscn::4a5d9d95201b8f7a601c5f5211611c7f::1792771087::res://.godot/exported/133200997/export-d584769746bde324e94adb837746843b-alege_personaj.scn
 res://trezire.tscn::57884082737703970fd059675aebb162::1792683652::res://.godot/exported/133200997/export-8de8308e575ff4d2fc29d9fcb4d65f6f-trezire.scn
 res://oras.tscn::f10de90acb8df6180cec9164bd571a2a::1787829270::res://.godot/exported/133200997/export-59f7d8bdee2bb3eef1948e2aa02de248-oras.scn
@@ -23,7 +23,7 @@ res://background_login.tscn::a066ccc0c8be29f839205e21096779f0::1792681821::res:/
 res://login_child.tscn::26fc2b43cebc63864611006e148188b3::1792752086::res://.godot/exported/133200997/export-16813ea01c260d0eb844ebb52b17b2ee-login_child.scn
 res://oras2.0.tscn::07d953c3760e08533a6bcafbb9abc80b::1793200311::res://.godot/exported/133200997/export-53e961a374c0dd1b56c1fc8ec21741b6-oras2.0.scn
 res://register_parrent.tscn::6aaf5986f85e1c51696ced8b26b62bca::1792681550::res://.godot/exported/133200997/export-6df776c8d05ac21e6c46158631557773-register_parrent.scn
-res://shop_oras.tscn::d544748424025f1ed8921b752c537a70::1793217210::res://.godot/exported/133200997/export-e7d8783dbac83a6cc11199a82c26fc34-shop_oras.scn
+res://shop_oras.tscn::d544748424025f1ed8921b752c537a70::1793298073::res://.godot/exported/133200997/export-e7d8783dbac83a6cc11199a82c26fc34-shop_oras.scn
 res://alege_interfata.tscn::96b3199c9dcf414cc3398b9106a89465::1792680742::res://.godot/exported/133200997/export-d6ba78779cdf297ab2653da9a2bedb99-alege_interfata.scn
 res://autentificare_copil.tscn::87590ca4efe658f4d2adc99ac1a20990::1792681980::res://.godot/exported/133200997/export-26c1b690e6c1c30479cecc054f1ab15c-autentificare_copil.scn
 res://dashboard.tscn::c464d8799bf55134b05d01ac2256665f::1793201107::res://.godot/exported/133200997/export-9b22698c929bf530fe88cb6a5d5077f5-dashboard.scn

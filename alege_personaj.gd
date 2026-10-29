@@ -103,4 +103,4 @@ func _show_error(message: String) -> void:
 	add_child(popup)
 	popup.confirmed.connect(popup.queue_free)
 	popup.canceled.connect(popup.queue_free)
-	popup.popup_centered()
+	preload("res://dialog_style.gd").show_dialog(popup)

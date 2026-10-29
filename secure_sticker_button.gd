@@ -52,7 +52,7 @@ func _input_event(_viewport, event, _shape_idx) -> void:
 		get_tree().root.add_child(popup)
 		popup.confirmed.connect(popup.queue_free)
 		popup.canceled.connect(popup.queue_free)
-		popup.popup_centered()
+		preload("res://dialog_style.gd").show_dialog(popup)
 
 func dispare_tot() -> void:
 	_refresh()

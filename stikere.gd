@@ -14,7 +14,7 @@ func _ready() -> void:
 		add_child(popup)
 		popup.confirmed.connect(popup.queue_free)
 		popup.canceled.connect(popup.queue_free)
-		popup.popup_centered()
+		preload("res://dialog_style.gd").show_dialog(popup)
 
 func preload_scene(path: String):
 	ResourceLoader.load_threaded_request(path)
