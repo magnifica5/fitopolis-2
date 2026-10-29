@@ -437,6 +437,7 @@ volume_db = -10.0
 stream = ExtResource("17_osbi4")
 
 [node name="leaderboard" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="leaderboard"]
 anchors_preset = 15
