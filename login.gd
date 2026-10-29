@@ -20,6 +20,8 @@ extends Node2D
 @onready var badge8 = $leaderboard/Leaderboard/VBoxContainer/HBoxContainer2/TextureRect8
 @onready var new_badge = $meniu/HBoxContainer/TextureButton2/TextureRect
 @onready var new_badge2 = $leaderboard/Leaderboard/HBoxContainer/TextureButton2/TextureRect
+const BADGE_SEEN_STORE = preload("res://badge_seen_store.gd")
+var _badge_seen = BADGE_SEEN_STORE.new()
 var badge_nodes
 var leaderboard_ready = false
 var _badges_loading := false
@@ -51,6 +53,8 @@ func _ready() -> void:
 		if badge_node.material != null:
 			badge_node.material = badge_node.material.duplicate()
 	aplica_badges(badges_anterioare)
+	_actualizeaza_notificarea_badges()
+	_porneste_verificarea_badges()
 	afiseaza_ui()
 	await SyncManager.sync_data()
 	afiseaza_ui()
@@ -135,18 +139,24 @@ func _on_level_up(new_level: int):
 
 func _on_esc() -> void:
 	leaderboard.hide()
-
+	_actualizeaza_notificarea_badges()
 
 
 func _leaderboard() -> void:
 	if leaderboard.visible:
 		return
+
 	leaderboard.show()
 	listofusers.show()
 	listofbadges.hide()
 	clasament.show()
 	medalii.hide()
+
+	_actualizeaza_notificarea_badges()
+	actualizeaza_medalii()
+
 	var loaded: bool = await leaderboard_scroll.incarca_leaderboard()
+
 	if loaded and is_inside_tree() and leaderboard.visible and listofusers.visible:
 		leaderboard_scroll.animeaza_leaderboard()
 
@@ -157,15 +167,26 @@ func _on_leaderboard() -> void:
 	clasament.show()
 	medalii.hide()
 
+	_actualizeaza_notificarea_badges()
+
+
 func _on_badges() -> void:
 	listofbadges.show()
 	listofusers.hide()
 	clasament.hide()
 	medalii.show()
-	new_badge.hide()
-	await actualizeaza_medalii(Globals.badgesd if Globals.badgesd is Dictionary else {})
-	new_badge.hide()
-	new_badge2.hide()
+
+	# Afișăm medaliile cunoscute înainte să le marcăm drept văzute.
+	var badges: Dictionary = {}
+	if Globals.badgesd is Dictionary:
+		badges = Globals.badgesd
+
+	aplica_badges(badges)
+	_actualizeaza_notificarea_badges()
+
+	# Dacă serverul întoarce alte medalii, funcția le afișează
+	# și actualizează din nou notificarea.
+	await actualizeaza_medalii()
 
 func seteaza_badge(deblocat: bool, badge) -> void:
 	var material := badge.material as ShaderMaterial
@@ -205,14 +226,47 @@ func actualizeaza_medalii(anterioare: Dictionary = {}) -> void:
 	Globals.badgesd = badges.duplicate(true)
 	aplica_badges(badges)
 	SyncManager.save_local_data()
-	for key in badges:
-		if int(badges[key]) == 1 and int(anterioare.get(key, 0)) != 1:
-			new_badge.show()
-			new_badge2.show()
-			break
+	_actualizeaza_notificarea_badges()
 
 func aplica_badges(badges: Dictionary) -> void:
 	for i in range(badge_nodes.size()):
 		var key = "badge" + str(i + 1)
 		var deblocat = int(badges.get(key, 0)) == 1
 		seteaza_badge(deblocat, badge_nodes[i])
+
+func _actualizeaza_notificarea_badges() -> void:
+	var user = Supabase.auth.client
+
+	if user == null or str(Globals.connection_coded).is_empty():
+		new_badge.hide()
+		new_badge2.hide()
+		return
+
+	# Fișier separat pentru fiecare cont/profil.
+	var profile := str(user.id) + ":" + str(Globals.connection_coded)
+	_badge_seen.configure(profile)
+
+	var badges: Dictionary = {}
+	if Globals.badgesd is Dictionary:
+		badges = Globals.badgesd
+
+	# Marcăm medaliile drept văzute doar când fila lor este deschisă.
+	if leaderboard.visible and listofbadges.visible:
+		_badge_seen.mark_seen(badges)
+
+	var exista_medalii_noi: bool = _badge_seen.has_unseen(badges)
+
+	new_badge.visible = exista_medalii_noi and not leaderboard.visible
+	new_badge2.visible = exista_medalii_noi
+
+
+func _porneste_verificarea_badges() -> void:
+	var timer := Timer.new()
+	timer.wait_time = 30.0
+	timer.timeout.connect(_verifica_badges_periodic)
+	add_child(timer)
+	timer.start()
+
+
+func _verifica_badges_periodic() -> void:
+	actualizeaza_medalii()

@@ -1,5 +1,3 @@
 res://shop_oras.tscn
-res://start.tscn
-res://start_scene.gd
-res://dialog_style.gd
 res://login.tscn
+res://login.gd
