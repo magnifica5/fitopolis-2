@@ -1,4 +1,4 @@
-[gd_scene load_steps=276 format=3 uid="uid://ch51ak722qigj"]
+[gd_scene load_steps=400 format=3 uid="uid://ch51ak722qigj"]
 
 [ext_resource type="Texture2D" uid="uid://b15e10kh15mwk" path="res://assets/background_ex.jpg" id="1_bilrp"]
 [ext_resource type="Script" uid="uid://c3103bv1fnrj2" path="res://exercitii_fizice_fin.gd" id="1_esi5w"]
@@ -22,49 +22,98 @@
 [ext_resource type="Texture2D" uid="uid://y2haqrc5jwvh" path="res://Fito/cald raises/frame00396_no_bg.png" id="18_iiw8e"]
 [ext_resource type="Texture2D" uid="uid://0cech4nhjhaq" path="res://Fito/cald raises/frame00401_no_bg.png" id="19_kwpa7"]
 [ext_resource type="Texture2D" uid="uid://d0f0vd4gy0dit" path="res://Fito/cald raises/frame00406_no_bg.png" id="20_5ueq0"]
+[ext_resource type="Texture2D" uid="uid://xf52sqoywp6k" path="res://Fito/arm cross over/frame00001.png" id="20_d3y3c"]
+[ext_resource type="Texture2D" uid="uid://m04aof8k2x70" path="res://Fito/arm cross over/frame00006.png" id="21_pg52m"]
 [ext_resource type="Texture2D" uid="uid://bs7j67p24vk70" path="res://Fito/cald raises/frame00411_no_bg.png" id="21_tvgj6"]
 [ext_resource type="Texture2D" uid="uid://dxtloe3rgspse" path="res://Fito/cald raises/frame00416_no_bg.png" id="22_cwfqc"]
+[ext_resource type="Texture2D" uid="uid://chmtrh3euptn1" path="res://Fito/arm cross over/frame00011.png" id="22_vnynu"]
+[ext_resource type="Texture2D" uid="uid://ce5rtgpfhx3jw" path="res://Fito/arm cross over/frame00016.png" id="23_4wcv6"]
 [ext_resource type="Texture2D" uid="uid://ej0o3okip42k" path="res://Fito/cald raises/frame00421_no_bg.png" id="23_ernqx"]
 [ext_resource type="Texture2D" uid="uid://cyi7hhqscns18" path="res://Fito/cald raises/frame00426_no_bg.png" id="24_6isqj"]
+[ext_resource type="Texture2D" uid="uid://dv1scclee11p5" path="res://Fito/arm cross over/frame00021.png" id="24_py6kl"]
+[ext_resource type="Texture2D" uid="uid://drc111pnpmi2" path="res://Fito/arm cross over/frame00026.png" id="25_avthw"]
 [ext_resource type="Texture2D" uid="uid://d0wwkqsdw5k23" path="res://Fito/cald raises/frame00431_no_bg.png" id="25_nwbc8"]
+[ext_resource type="Texture2D" uid="uid://dk2v0si1k4xx8" path="res://Fito/arm cross over/frame00031.png" id="26_f1wws"]
 [ext_resource type="Texture2D" uid="uid://cycdqltcgky6g" path="res://Fito/cald raises/frame00436_no_bg.png" id="26_hcdk7"]
+[ext_resource type="Texture2D" uid="uid://qo74bnedo51y" path="res://Fito/arm cross over/frame00036.png" id="27_gpcqn"]
 [ext_resource type="Texture2D" uid="uid://dv065ydqfbnkm" path="res://Fito/cald raises/frame00441_no_bg.png" id="27_hhck3"]
+[ext_resource type="Texture2D" uid="uid://cfhcy4blelqmw" path="res://Fito/arm cross over/frame00041.png" id="28_3ltn4"]
 [ext_resource type="Texture2D" uid="uid://c7kmooleerdr2" path="res://Fito/cald raises/frame00446_no_bg.png" id="28_uwugc"]
+[ext_resource type="Texture2D" uid="uid://cd0un71un1dk6" path="res://Fito/arm cross over/frame00046.png" id="29_12de1"]
 [ext_resource type="Texture2D" uid="uid://bv5cv1u4beyhg" path="res://Fito/cald raises/frame00451_no_bg.png" id="29_damiv"]
 [ext_resource type="Texture2D" uid="uid://c57nulnlkmv5g" path="res://Fito/cald raises/frame00456_no_bg.png" id="30_8fd60"]
+[ext_resource type="Texture2D" uid="uid://csavs8jonpvn0" path="res://Fito/arm cross over/frame00051.png" id="30_r4i48"]
+[ext_resource type="Texture2D" uid="uid://vfvakw7dtcig" path="res://Fito/arm cross over/frame00056.png" id="31_4meq7"]
 [ext_resource type="Texture2D" uid="uid://cpwajs173b1xq" path="res://Fito/Extensions/frame00036.png" id="32_whqjp"]
+[ext_resource type="Texture2D" uid="uid://uka47781oquk" path="res://Fito/arm cross over/frame00061.png" id="32_yp0c4"]
 [ext_resource type="Texture2D" uid="uid://coubobwouk70t" path="res://Fito/Extensions/frame00041.png" id="33_78rwj"]
+[ext_resource type="Texture2D" uid="uid://5wr8poffa5nh" path="res://Fito/arm cross over/frame00066.png" id="33_fgenk"]
 [ext_resource type="Texture2D" uid="uid://blhebs8ue46o1" path="res://Fito/Extensions/frame00046.png" id="34_eh77f"]
+[ext_resource type="Texture2D" uid="uid://dxd7ehxwttlrc" path="res://Fito/arm cross over/frame00071.png" id="34_qb46g"]
 [ext_resource type="Texture2D" uid="uid://c7jbggb37hveb" path="res://Fito/Extensions/frame00051.png" id="35_el158"]
+[ext_resource type="Texture2D" uid="uid://duqaujcukqc2x" path="res://Fito/arm cross over/frame00076.png" id="35_mbvc3"]
+[ext_resource type="Texture2D" uid="uid://cf2hjiqdf6gco" path="res://Fito/arm cross over/frame00081.png" id="36_tapyb"]
 [ext_resource type="Texture2D" uid="uid://bg1qh70wb5ymw" path="res://Fito/Extensions/frame00056.png" id="36_v5v4a"]
+[ext_resource type="Texture2D" uid="uid://dk0h25h143f7u" path="res://Fito/arm cross over/frame00086.png" id="37_fkp5q"]
 [ext_resource type="Texture2D" uid="uid://bi34qh5w04rst" path="res://Fito/Extensions/frame00061.png" id="37_xpt5q"]
 [ext_resource type="Texture2D" uid="uid://bqfarm44xrimn" path="res://Fito/Extensions/frame00066.png" id="38_av3tb"]
+[ext_resource type="Texture2D" uid="uid://cek0qjm2r78m5" path="res://Fito/arm cross over/frame00091.png" id="38_ckutq"]
 [ext_resource type="Texture2D" uid="uid://bck1stqjbrdqy" path="res://Fito/Extensions/frame00071.png" id="39_gctgc"]
+[ext_resource type="Texture2D" uid="uid://c0fgvqjcua1xb" path="res://Fito/arm cross over/frame00092.png" id="39_tncst"]
+[ext_resource type="Texture2D" uid="uid://1tiw3gugioqj" path="res://Fito/arm cross over/frame00093.png" id="40_383rk"]
 [ext_resource type="Texture2D" uid="uid://bj5mf2roahkv0" path="res://Fito/Extensions/frame00076.png" id="40_lyjt4"]
 [ext_resource type="Texture2D" uid="uid://7qp2dpmo6kg0" path="res://Fito/Extensions/frame00081.png" id="41_o3jpt"]
+[ext_resource type="Texture2D" uid="uid://iypu5ardp1f8" path="res://Fito/arm cross over/frame00094.png" id="41_su1sy"]
+[ext_resource type="Texture2D" uid="uid://byx27g7m0x7yv" path="res://Fito/arm cross over/frame00095.png" id="42_dtiva"]
 [ext_resource type="Texture2D" uid="uid://40cyorftio5e" path="res://Fito/Extensions/frame00086.png" id="42_y14m8"]
 [ext_resource type="Texture2D" uid="uid://dn2xn3m20tag" path="res://Fito/Jumping Jacks/frame00001.png" id="43_hn3rv"]
+[ext_resource type="Texture2D" uid="uid://cc56i0em652wr" path="res://Fito/arm cross over/frame00099.png" id="43_qdqn8"]
 [ext_resource type="Texture2D" uid="uid://bmcfqg8ouvtxg" path="res://Fito/Jumping Jacks/frame00006.png" id="44_fyh5p"]
+[ext_resource type="Texture2D" uid="uid://dntjpo4in7d36" path="res://Fito/arm cross over/frame00100.png" id="44_ng284"]
+[ext_resource type="Texture2D" uid="uid://dr6wl5prmqny0" path="res://Fito/Hip rotation/frame00011.png" id="44_v5v4a"]
+[ext_resource type="Texture2D" uid="uid://bohucaihm8usr" path="res://Fito/arm cross over/frame00101.png" id="45_e13h3"]
 [ext_resource type="Texture2D" uid="uid://cdhogl3v2wxef" path="res://Fito/Jumping Jacks/frame00011.png" id="45_whrno"]
+[ext_resource type="Texture2D" uid="uid://cipdkotijvqkn" path="res://Fito/Hip rotation/frame00016.png" id="45_xpt5q"]
+[ext_resource type="Texture2D" uid="uid://cahdrsyngurw0" path="res://Fito/Hip rotation/frame00021.png" id="46_av3tb"]
+[ext_resource type="Texture2D" uid="uid://3nln6lcwwd8p" path="res://Fito/arm cross over/frame00103.png" id="46_btt4b"]
 [ext_resource type="Texture2D" uid="uid://ce8dfswo1esgn" path="res://Fito/Jumping Jacks/frame00016.png" id="46_vfpyh"]
+[ext_resource type="Texture2D" uid="uid://dpvth74qwtb5e" path="res://Fito/arm cross over/frame00104.png" id="47_f4r7u"]
+[ext_resource type="Texture2D" uid="uid://bimxt2c0031ak" path="res://Fito/Hip rotation/frame00026.png" id="47_gctgc"]
 [ext_resource type="Texture2D" uid="uid://cmygfperu7ls7" path="res://Fito/Jumping Jacks/frame00021.png" id="47_sg00i"]
+[ext_resource type="Texture2D" uid="uid://bdwsqwb3yfwpv" path="res://Fito/Hip rotation/frame00031.png" id="48_lyjt4"]
 [ext_resource type="Texture2D" uid="uid://ddowrlnkmdxgn" path="res://Fito/Jumping Jacks/frame00026.png" id="48_ov03i"]
+[ext_resource type="Texture2D" uid="uid://3tnc127t2opk" path="res://Fito/Hip rotation/frame00036.png" id="49_o3jpt"]
 [ext_resource type="Texture2D" uid="uid://uc3gl3vda5mo" path="res://Fito/Jumping Jacks/frame00031.png" id="49_xu1e5"]
 [ext_resource type="Texture2D" uid="uid://cnkeq7os1pe74" path="res://Fito/Jumping Jacks/frame00036.png" id="50_kufjv"]
+[ext_resource type="Texture2D" uid="uid://3tpineiveoev" path="res://Fito/Hip rotation/frame00041.png" id="50_y14m8"]
 [ext_resource type="Texture2D" uid="uid://nrfe1eiiklwk" path="res://Fito/Jumping Jacks/frame00041.png" id="51_heb4c"]
+[ext_resource type="Texture2D" uid="uid://sbo8cajbthhk" path="res://Fito/Hip rotation/frame00046.png" id="51_hn3rv"]
+[ext_resource type="Texture2D" uid="uid://b51w5hlsmhiyy" path="res://Fito/Hip rotation/frame00051.png" id="52_fyh5p"]
 [ext_resource type="Texture2D" uid="uid://boddj3qrqpue1" path="res://Fito/Jumping Jacks/frame00046.png" id="52_ogmow"]
+[ext_resource type="Texture2D" uid="uid://bbuws35a146jb" path="res://Fito/Hip rotation/frame00056.png" id="53_whrno"]
 [ext_resource type="Texture2D" uid="uid://dmg50vs5u4ebg" path="res://Fito/Jumping Jacks/frame00051.png" id="53_ww7sq"]
 [ext_resource type="Texture2D" uid="uid://cykw3cm5t0yff" path="res://Fito/Jumping Jacks/frame00081.png" id="54_65cmv"]
+[ext_resource type="Texture2D" uid="uid://b0h3lkw7ynbwl" path="res://Fito/Hip rotation/frame00061.png" id="54_vfpyh"]
 [ext_resource type="Texture2D" uid="uid://dar4j5dxeugem" path="res://Fito/Jumping Jacks/frame00086.png" id="55_b2qmf"]
+[ext_resource type="Texture2D" uid="uid://bptpuj706btd6" path="res://Fito/Hip rotation/frame00066.png" id="55_sg00i"]
+[ext_resource type="Texture2D" uid="uid://cnx3fvtr4c534" path="res://Fito/Hip rotation/frame00071.png" id="56_ov03i"]
 [ext_resource type="Texture2D" uid="uid://qobcicohrtvs" path="res://Fito/Jumping Jacks/frame00091.png" id="56_qkklf"]
 [ext_resource type="Texture2D" uid="uid://cfq5tbooy00at" path="res://Fito/Jumping Jacks/frame00096.png" id="57_4gh1t"]
+[ext_resource type="Texture2D" uid="uid://dyfdnd4cx1tdo" path="res://Fito/Hip rotation/frame00076.png" id="57_xu1e5"]
 [ext_resource type="Texture2D" uid="uid://biwx0f55agc2s" path="res://Fito/Jumping Jacks/frame00101.png" id="58_4m8hj"]
+[ext_resource type="Texture2D" uid="uid://cbmmydwmqxxab" path="res://Fito/Hip rotation/frame00081.png" id="58_kufjv"]
+[ext_resource type="Texture2D" uid="uid://vx68jvj0iene" path="res://Fito/Hip rotation/frame00086.png" id="59_heb4c"]
 [ext_resource type="Texture2D" uid="uid://cd4ln8lvltr4u" path="res://Fito/Jumping Jacks/frame00106.png" id="59_th3i6"]
 [ext_resource type="Texture2D" uid="uid://coxc6sk4bft3j" path="res://Fito/Jumping Jacks/frame00111.png" id="60_airfa"]
+[ext_resource type="Texture2D" uid="uid://bo5vjw57vviww" path="res://Fito/Hip rotation/frame00091.png" id="60_ogmow"]
 [ext_resource type="Texture2D" uid="uid://b6ek7d4neafmq" path="res://Fito/Marching in place/frame00001_no_bg.png" id="61_mn0as"]
+[ext_resource type="Texture2D" uid="uid://bruv015eg3tdt" path="res://Fito/Hip rotation/frame00096.png" id="61_ww7sq"]
 [ext_resource type="Texture2D" uid="uid://dbm2kfpw3wwxo" path="res://Fito/Marching in place/frame00006_no_bg.png" id="62_2rxra"]
+[ext_resource type="Texture2D" uid="uid://citvtie47ki0q" path="res://Fito/Hip rotation/frame00101.png" id="62_65cmv"]
+[ext_resource type="Texture2D" uid="uid://r0h4ffvkxxdc" path="res://Fito/Hip rotation/frame00106.png" id="63_b2qmf"]
 [ext_resource type="Texture2D" uid="uid://c0k6f6ev4q7ic" path="res://Fito/Marching in place/frame00011_no_bg.png" id="63_pyw2k"]
 [ext_resource type="Texture2D" uid="uid://bk3u120nkm02q" path="res://Fito/Marching in place/frame00016_no_bg.png" id="64_ki2hj"]
+[ext_resource type="Texture2D" uid="uid://dnshkwesqdcn0" path="res://Fito/Hip rotation/frame00111.png" id="64_qkklf"]
 [ext_resource type="Texture2D" uid="uid://cgv7nx4wgwwmk" path="res://Fito/Marching in place/frame00021_no_bg.png" id="65_wpb8b"]
 [ext_resource type="Texture2D" uid="uid://cd8n0bmhnosb3" path="res://Fito/Marching in place/frame00026_no_bg.png" id="66_gavk5"]
 [ext_resource type="Texture2D" uid="uid://dyte4sxpu6c2b" path="res://Fito/Marching in place/frame00031_no_bg.png" id="67_0i2lk"]
@@ -83,17 +132,29 @@
 [ext_resource type="Texture2D" uid="uid://bm5wtpvep3una" path="res://Fito/Marching in place/frame00216_no_bg.png" id="80_w85i1"]
 [ext_resource type="Texture2D" uid="uid://bcs6eckbkstw1" path="res://Fito/Marching in place/frame00221_no_bg.png" id="81_13ant"]
 [ext_resource type="Texture2D" uid="uid://tovit5cmbxkm" path="res://Fito/Marching in place/frame00226_no_bg.png" id="82_hk3fw"]
+[ext_resource type="Texture2D" uid="uid://by2lk5lnryy0o" path="res://Fito/knee push up/frame00001.png" id="83_4gh1t"]
 [ext_resource type="Texture2D" uid="uid://bwu4aiew8rg2w" path="res://Fito/Marching in place/frame00231_no_bg.png" id="83_mwjg2"]
+[ext_resource type="Texture2D" uid="uid://cyb35iss8lh38" path="res://Fito/knee push up/frame00006.png" id="84_4m8hj"]
 [ext_resource type="Texture2D" uid="uid://bbiftvr2vov3x" path="res://Fito/Marching in place/frame00236_no_bg.png" id="84_r3ud6"]
 [ext_resource type="Texture2D" uid="uid://c5yoyde44n1xp" path="res://Fito/Marching in place/frame00241_no_bg.png" id="85_0j41n"]
+[ext_resource type="Texture2D" uid="uid://dxoqxmtycqolr" path="res://Fito/knee push up/frame00011.png" id="85_th3i6"]
+[ext_resource type="Texture2D" uid="uid://dusru2oq6epbs" path="res://Fito/knee push up/frame00021.png" id="86_airfa"]
 [ext_resource type="Texture2D" uid="uid://cpqs0rxlg0esn" path="res://Fito/Plank/frame00246_no_bg.png" id="86_ayov5"]
 [ext_resource type="Texture2D" uid="uid://bstjolqyh6qbb" path="res://Fito/Plank/frame00251_no_bg.png" id="87_0erht"]
+[ext_resource type="Texture2D" uid="uid://bxnr6sh6rf1tv" path="res://Fito/knee push up/frame00016.png" id="87_mn0as"]
+[ext_resource type="Texture2D" uid="uid://bd3j1vb853gan" path="res://Fito/knee push up/frame00026.png" id="88_2rxra"]
 [ext_resource type="Texture2D" uid="uid://cx1wpb3jufyi4" path="res://Fito/Plank/frame00256_no_bg.png" id="88_q22ka"]
 [ext_resource type="Texture2D" uid="uid://hp7ebwpu8id6" path="res://Fito/Plank/frame00261_no_bg.png" id="89_jcknf"]
+[ext_resource type="Texture2D" uid="uid://pawt2k433btd" path="res://Fito/knee push up/frame00031.png" id="89_pyw2k"]
 [ext_resource type="Texture2D" uid="uid://4tynxo4o15cm" path="res://Fito/Plank/frame00266_no_bg.png" id="90_0hfd0"]
+[ext_resource type="Texture2D" uid="uid://ba26wpgel2wce" path="res://Fito/knee push up/frame00036.png" id="90_ki2hj"]
 [ext_resource type="Texture2D" uid="uid://dpko8gcf27l4g" path="res://Fito/Plank/frame00271_no_bg.png" id="91_r8xw1"]
+[ext_resource type="Texture2D" uid="uid://c2tq1d5vns7af" path="res://Fito/knee push up/frame00037.png" id="91_wpb8b"]
 [ext_resource type="Texture2D" uid="uid://cvwa1xnlf4nun" path="res://Fito/Plank/frame00276_no_bg.png" id="92_dg3qg"]
+[ext_resource type="Texture2D" uid="uid://brwdet2f4hhp2" path="res://Fito/knee push up/frame00038.png" id="92_gavk5"]
+[ext_resource type="Texture2D" uid="uid://bs3rawj0nl8qu" path="res://Fito/knee push up/frame00039.png" id="93_0i2lk"]
 [ext_resource type="Texture2D" uid="uid://ck06olw38xe1" path="res://Fito/Plank/frame00281_no_bg.png" id="93_ch55j"]
+[ext_resource type="Texture2D" uid="uid://b23qhsn7faev7" path="res://Fito/knee push up/frame00040.png" id="94_03478"]
 [ext_resource type="Texture2D" uid="uid://bj2j0cpt47q7u" path="res://Fito/Plank/frame00286_no_bg.png" id="94_ebt0e"]
 [ext_resource type="Texture2D" uid="uid://cxa8vmri008dy" path="res://Fito/Plank/frame00291_no_bg.png" id="95_kcg8j"]
 [ext_resource type="Texture2D" uid="uid://bky5yt27g0f4e" path="res://Fito/Plank/frame00296_no_bg.png" id="96_aeuct"]
@@ -274,6 +335,69 @@
 [ext_resource type="Texture2D" uid="uid://djcesopujvu8j" path="res://Fito/toe touches/frame00631_no_bg.png" id="271_0vsuu"]
 [ext_resource type="Texture2D" uid="uid://c8yg1bvvhgjw0" path="res://Fito/toe touches/frame00636_no_bg.png" id="272_y80ri"]
 [ext_resource type="Texture2D" uid="uid://dcnfwp3m4001b" path="res://assets/buton_bifa.png" id="274_esi5w"]
+[ext_resource type="Texture2D" uid="uid://bslnd4tmxglp7" path="res://Fito/Side lyting leg lift/frame00026.png" id="304_pdn53"]
+[ext_resource type="Texture2D" uid="uid://dlj51h2fxi7lw" path="res://Fito/Side lyting leg lift/frame00031.png" id="305_kt4k7"]
+[ext_resource type="Texture2D" uid="uid://cfd6ly4lka7h4" path="res://Fito/Side lyting leg lift/frame00036.png" id="306_a1nub"]
+[ext_resource type="Texture2D" uid="uid://uvgx3fk5gef2" path="res://Fito/Side lyting leg lift/frame00041.png" id="307_inh6x"]
+[ext_resource type="Texture2D" uid="uid://dbnm8ccqioo7f" path="res://Fito/Side lyting leg lift/frame00046.png" id="308_ggkn1"]
+[ext_resource type="Texture2D" uid="uid://belibxpc6g557" path="res://Fito/Side lyting leg lift/frame00049.png" id="309_spgrh"]
+[ext_resource type="Texture2D" uid="uid://d0466ktg3ii4i" path="res://Fito/Side lyting leg lift/frame00050.png" id="310_sshqa"]
+[ext_resource type="Texture2D" uid="uid://ckjw4k7y02k77" path="res://Fito/Side lyting leg lift/frame00053.png" id="311_vbbbo"]
+[ext_resource type="Texture2D" uid="uid://c3vggh8s3p2e2" path="res://Fito/Side lyting leg lift/frame00054.png" id="312_pkchm"]
+[ext_resource type="Texture2D" uid="uid://cursb6cniicgj" path="res://Fito/Side lyting leg lift/frame00055.png" id="313_ii6at"]
+[ext_resource type="Texture2D" uid="uid://bffls513ow848" path="res://Fito/standing leg raises/standing leg raises/frame00001_no_bg.png" id="314_cbsix"]
+[ext_resource type="Texture2D" uid="uid://b5vimgu0b8ar6" path="res://Fito/standing leg raises/standing leg raises/frame00006_no_bg.png" id="315_p03f0"]
+[ext_resource type="Texture2D" uid="uid://c5xttmeuqsyxt" path="res://Fito/standing leg raises/standing leg raises/frame00011_no_bg.png" id="316_vw8ob"]
+[ext_resource type="Texture2D" uid="uid://dg35sj2457vh0" path="res://Fito/standing leg raises/standing leg raises/frame00016_no_bg.png" id="317_ava5r"]
+[ext_resource type="Texture2D" uid="uid://cncamv6ldyvts" path="res://Fito/standing leg raises/standing leg raises/frame00021_no_bg.png" id="318_daigl"]
+[ext_resource type="Texture2D" uid="uid://cvghknsnedn0s" path="res://Fito/standing leg raises/standing leg raises/frame00026_no_bg.png" id="319_6pkl0"]
+[ext_resource type="Texture2D" uid="uid://pnkk4dkpyswe" path="res://Fito/standing leg raises/standing leg raises/frame00031_no_bg.png" id="320_81fme"]
+[ext_resource type="Texture2D" uid="uid://bbg07xqc1fl1i" path="res://Fito/standing leg raises/standing leg raises/frame00036_no_bg.png" id="321_6748s"]
+[ext_resource type="Texture2D" uid="uid://cb1dgvpwtqd0y" path="res://Fito/standing leg raises/standing leg raises/frame00041_no_bg.png" id="322_khmof"]
+[ext_resource type="Texture2D" uid="uid://bchhifblg5cnc" path="res://Fito/standing leg raises/standing leg raises/frame00046_no_bg.png" id="323_w8cju"]
+[ext_resource type="Texture2D" uid="uid://dxr7lb044atd0" path="res://Fito/standing leg raises/standing leg raises/frame00051_no_bg.png" id="324_47bxe"]
+[ext_resource type="Texture2D" uid="uid://df12i5wsew5g7" path="res://Fito/standing leg raises/standing leg raises/frame00056_no_bg.png" id="325_fxobq"]
+[ext_resource type="Texture2D" uid="uid://bc17hvghkk26c" path="res://Fito/standing leg raises/standing leg raises/frame00061_no_bg.png" id="326_27ld5"]
+[ext_resource type="Texture2D" uid="uid://0oud1o71j3tl" path="res://Fito/standing leg raises/standing leg raises/frame00066_no_bg.png" id="327_vaqmu"]
+[ext_resource type="Texture2D" uid="uid://cwks5m2uam8l7" path="res://Fito/standing leg raises/standing leg raises/frame00071_no_bg.png" id="328_gp2ml"]
+[ext_resource type="Texture2D" uid="uid://cf3bmlu7rcedu" path="res://Fito/standing leg raises/standing leg raises/frame00076_no_bg.png" id="329_4jdnm"]
+[ext_resource type="Texture2D" uid="uid://ckcg7x3pgpjrr" path="res://Fito/standing leg raises/standing leg raises/frame00081_no_bg.png" id="330_gsi4v"]
+[ext_resource type="Texture2D" uid="uid://cpkcqy273f8b5" path="res://Fito/standing leg raises/standing leg raises/frame00086_no_bg.png" id="331_dycw4"]
+[ext_resource type="Texture2D" uid="uid://dvwcw4dxvgfas" path="res://Fito/standing leg raises/standing leg raises/frame00091_no_bg.png" id="332_24678"]
+[ext_resource type="Texture2D" uid="uid://ca1l62una5ix5" path="res://Fito/standing leg raises/standing leg raises/frame00096_no_bg.png" id="333_2wf3d"]
+[ext_resource type="Texture2D" uid="uid://ubptsyschfrk" path="res://Fito/standing leg raises/standing leg raises/frame00101_no_bg.png" id="334_mica0"]
+[ext_resource type="Texture2D" uid="uid://dyqbeav1o8xee" path="res://Fito/standing leg raises/standing leg raises/frame00106_no_bg.png" id="335_h1fin"]
+[ext_resource type="Texture2D" uid="uid://f7b8fuu1kq63" path="res://Fito/standing leg raises/standing leg raises/frame00111_no_bg.png" id="336_mwvo3"]
+[ext_resource type="Texture2D" uid="uid://cslut7jv353bl" path="res://Fito/standing leg raises/standing leg raises/frame00116_no_bg.png" id="337_g1s64"]
+[ext_resource type="Texture2D" uid="uid://fhxrpnifgejm" path="res://Fito/standing leg raises/standing leg raises/frame00121_no_bg.png" id="338_tfjc1"]
+[ext_resource type="Texture2D" uid="uid://dlhhrv57woiuq" path="res://Fito/standing leg raises/standing leg raises/frame00126_no_bg.png" id="339_wxdhp"]
+[ext_resource type="Texture2D" uid="uid://4hi5uddcpgw6" path="res://Fito/standing leg raises/standing leg raises/frame00131_no_bg.png" id="340_dekis"]
+[ext_resource type="Texture2D" uid="uid://253l06glfpf8" path="res://Fito/standing leg raises/standing leg raises/frame00136_no_bg.png" id="341_juity"]
+[ext_resource type="Texture2D" uid="uid://da655e1fqon1e" path="res://Fito/standing leg raises/standing leg raises/frame00141_no_bg.png" id="342_t81sq"]
+[ext_resource type="Texture2D" uid="uid://cd0grgn2lpx3s" path="res://Fito/standing leg raises/standing leg raises/frame00146_no_bg.png" id="343_15sn4"]
+[ext_resource type="Texture2D" uid="uid://dqep7qdarqbva" path="res://Fito/standing leg raises/standing leg raises/frame00151_no_bg.png" id="344_q78xc"]
+[ext_resource type="Texture2D" uid="uid://ig6u0kb4rm8f" path="res://Fito/standing leg raises/standing leg raises/frame00156_no_bg.png" id="345_5vo12"]
+[ext_resource type="Texture2D" uid="uid://rya23nhd0qj3" path="res://Fito/standing leg raises/standing leg raises/frame00161_no_bg.png" id="346_5crpk"]
+[ext_resource type="Texture2D" uid="uid://jyxmg214tk8y" path="res://Fito/standing leg raises/standing leg raises/frame00166_no_bg.png" id="347_8w8pj"]
+[ext_resource type="Texture2D" uid="uid://cme4alxkseagl" path="res://Fito/standing leg raises/standing leg raises/frame00171_no_bg.png" id="348_ihs08"]
+[ext_resource type="Texture2D" uid="uid://ciecs2gpd5qmv" path="res://Fito/standing leg raises/standing leg raises/frame00176_no_bg.png" id="349_ue5pl"]
+[ext_resource type="Texture2D" uid="uid://rwtjwy7jo7xu" path="res://Fito/standing leg raises/standing leg raises/frame00181_no_bg.png" id="350_e7msd"]
+[ext_resource type="Texture2D" uid="uid://b46i547ndtoxw" path="res://Fito/standing leg raises/standing leg raises/frame00186_no_bg.png" id="351_u7poq"]
+[ext_resource type="Texture2D" uid="uid://c2idmn4cv7dos" path="res://Fito/standing leg raises/standing leg raises/frame00191_no_bg.png" id="352_b5nl4"]
+[ext_resource type="Texture2D" uid="uid://by5jexano2lud" path="res://Fito/Step jacks/frame00001.png" id="353_busmw"]
+[ext_resource type="Texture2D" uid="uid://cx4de1to48ct3" path="res://Fito/Step jacks/frame00006.png" id="354_plphb"]
+[ext_resource type="Texture2D" uid="uid://bkjv4qrrwph4o" path="res://Fito/Step jacks/frame00021.png" id="355_d8bsq"]
+[ext_resource type="Texture2D" uid="uid://cyl28wj8np83t" path="res://Fito/Step jacks/frame00026.png" id="356_ki64f"]
+[ext_resource type="Texture2D" uid="uid://bleot8qqjqggh" path="res://Fito/Step jacks/frame00031.png" id="357_alfgk"]
+[ext_resource type="Texture2D" uid="uid://ciaswtv51l5yt" path="res://Fito/Step jacks/frame00036.png" id="358_tjypg"]
+[ext_resource type="Texture2D" uid="uid://bqx6ooqs6tbau" path="res://Fito/Step jacks/frame00041.png" id="359_v4fwq"]
+[ext_resource type="Texture2D" uid="uid://b640s6k5tl27u" path="res://Fito/Step jacks/frame00046.png" id="360_3rvgw"]
+[ext_resource type="Texture2D" uid="uid://bldoes64lf71m" path="res://Fito/Step jacks/frame00051.png" id="361_x0olr"]
+[ext_resource type="Texture2D" uid="uid://ctvp4lw0ib5eg" path="res://Fito/Step jacks/frame00052.png" id="362_8vrnd"]
+[ext_resource type="Texture2D" uid="uid://ckjgqbu1ewv6m" path="res://Fito/Step jacks/frame00053.png" id="363_dgxnc"]
+[ext_resource type="Texture2D" uid="uid://b1rqkif1wk67n" path="res://Fito/Step jacks/frame00054.png" id="364_uknrn"]
+[ext_resource type="Texture2D" uid="uid://cyslwsflv2vgs" path="res://Fito/Step jacks/frame00055.png" id="365_n4uy6"]
+[ext_resource type="Texture2D" uid="uid://c10st13p46kf2" path="res://Fito/Step jacks/frame00056.png" id="366_ccjt4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i7poj"]
 animations = [{
@@ -370,7 +494,96 @@ animations = [{
 }],
 "loop": true,
 "name": &"aplecari_de_cap",
-"speed": 5.0
+"speed": 4.3
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_d3y3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_pg52m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vnynu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4wcv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_py6kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_avthw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_f1wws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_gpcqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3ltn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_12de1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_r4i48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_4meq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_yp0c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_fgenk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_qb46g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_mbvc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_tapyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_fkp5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ckutq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_tncst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_383rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_su1sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_dtiva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_qdqn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ng284")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_e13h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_btt4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_f4r7u")
+}],
+"loop": true,
+"name": &"arm_cross_over",
+"speed": 4.3
 }, {
 "frames": [{
 "duration": 1.0,
@@ -414,7 +627,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"calf_rases",
-"speed": 5.0
+"speed": 4.3
 }, {
 "frames": [{
 "duration": 1.0,
@@ -452,7 +665,75 @@ animations = [{
 }],
 "loop": true,
 "name": &"extensions",
-"speed": 5.0
+"speed": 4.2
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_v5v4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_xpt5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_av3tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_gctgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_lyjt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_o3jpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_y14m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_hn3rv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_fyh5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_whrno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_vfpyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_sg00i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ov03i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_xu1e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_kufjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_heb4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_ogmow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_ww7sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_65cmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_b2qmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_qkklf")
+}],
+"loop": true,
+"name": &"hip_rotation",
+"speed": 4.3
 }, {
 "frames": [{
 "duration": 1.0,
@@ -511,7 +792,48 @@ animations = [{
 }],
 "loop": true,
 "name": &"jumping_jacks",
-"speed": 5.0
+"speed": 4.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("83_4gh1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_4m8hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_th3i6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_airfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_mn0as")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_2rxra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_pyw2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_ki2hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_wpb8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_gavk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_0i2lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_03478")
+}],
+"loop": true,
+"name": &"knee_pushup",
+"speed": 4.3
 }, {
 "frames": [{
 "duration": 1.0,
@@ -740,7 +1062,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"plank",
-"speed": 5.0
+"speed": 4.3
 }, {
 "frames": [{
 "duration": 1.0,
@@ -865,7 +1187,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"push_up",
-"speed": 5.0
+"speed": 4.3
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1122,6 +1444,210 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("304_pdn53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("305_kt4k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("306_a1nub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("307_inh6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("308_ggkn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("309_spgrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("310_sshqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("311_vbbbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("312_pkchm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("313_ii6at")
+}],
+"loop": true,
+"name": &"side_leg_lift",
+"speed": 4.3
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("314_cbsix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("315_p03f0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("316_vw8ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_ava5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("318_daigl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("319_6pkl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("320_81fme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("321_6748s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("322_khmof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("323_w8cju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("324_47bxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("325_fxobq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("326_27ld5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("327_vaqmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("328_gp2ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("329_4jdnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("330_gsi4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("331_dycw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("332_24678")
+}, {
+"duration": 1.0,
+"texture": ExtResource("333_2wf3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("334_mica0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("335_h1fin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("336_mwvo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("337_g1s64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("338_tfjc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("339_wxdhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("340_dekis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("341_juity")
+}, {
+"duration": 1.0,
+"texture": ExtResource("342_t81sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("343_15sn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("344_q78xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("345_5vo12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("346_5crpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("347_8w8pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("348_ihs08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("349_ue5pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("350_e7msd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("351_u7poq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("352_b5nl4")
+}],
+"loop": true,
+"name": &"standing_leg_raises",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("353_busmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("354_plphb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("355_d8bsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("356_ki64f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("357_alfgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("358_tjypg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("359_v4fwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("360_3rvgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("361_x0olr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("362_8vrnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("363_dgxnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("364_uknrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("365_n4uy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("366_ccjt4")
+}],
+"loop": true,
+"name": &"step_jacks",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("242_1a2x5")
 }, {
 "duration": 1.0,
@@ -1247,11 +1773,11 @@ grow_vertical = 2
 texture = ExtResource("1_bilrp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(978, 633)
+position = Vector2(935, 593)
 sprite_frames = SubResource("SpriteFrames_i7poj")
-animation = &"calf_rases"
-frame = 2
-frame_progress = 0.80652237
+animation = &"standing_leg_raises"
+frame = 14
+frame_progress = 0.09227846
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 1
