@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1795046638
+::res://::1795267533
 1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png::CompressedTexture2D::7536361269957601271::1778606586::1778606982::1::::<><><>0<>0<>90887020950a425c34a5a32d52c2c2b1<>res://.godot/imported/1vtCa5FDK1tr5Iz5N97pt-removebg-preview (1).png-31eeab7255796e435b6bef19b2230d3b.ctex::
 3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png::CompressedTexture2D::7203370797049039625::1778606586::1778606982::1::::<><><>0<>0<>d5101df9ac9e6f9ffa28680a865de1e5<>res://.godot/imported/3f78d295d8fcaef7e2da2874529ab42f-removebg-preview (1).png-905d6c87ca81b69e818b1aa13f4ebe47.ctex::
 046af01fa841d786d1e967f8797ece8c-removebg-preview.png::CompressedTexture2D::4015776957699399800::1778606586::1778606982::1::::<><><>0<>0<>0b1d9f31e2a0afb977f3245961ba208a<>res://.godot/imported/046af01fa841d786d1e967f8797ece8c-removebg-preview.png-d634b8e8ab617928486f71008f63f162.ctex::
@@ -163,7 +163,7 @@ fit'ogames.tscn::PackedScene::6940744760480553761::1793364456::0::1::::<><><>0<>
 functionare.gd::GDScript::4154876653488029914::1784413785::0::1::::<>Node2D<><>0<>0<><>::
 functionare.tscn::PackedScene::7862982206068932257::1784413785::0::1::::<><><>0<>0<><>::uid://b0gwhgo0nyafa::::res://functionare.gd<>uid://bx4dgeewi1s58::::res://assets/level_bg.png<>uid://bs52kyfalaa3h::::res://assets/font/PeaberryMono.ttf<>uid://b415284iuneso::::res://assets/acasa_buton.png<>uid://d2gere5adq5g8::::res://labelfunctionare.gd<>uid://cn725kfuu8ili::::res://functionare_content.gd<>uid://de4l7mci4e068::::res://audio/ui_ogg/ui_ogg/click_2.ogg
 functionare_content.gd::GDScript::5753049889326642726::1779119840::0::1::::<>RichTextLabel<><>0<>0<><>::
-game.tscn::PackedScene::7956276460726873409::1795044913::0::1::::<><><>0<>0<><>::uid://bedpvawxvmxak::::res://sudoku.gd
+game.tscn::PackedScene::7956276460726873409::1795046747::0::1::::<><><>0<>0<><>::uid://bedpvawxvmxak::::res://sudoku.gd<>uid://cvrurp31wb3me::::res://assets/poza_numere-removebg-preview.png
 GameState.gd::GDScript::8954292387188004206::1792953151::0::1::::<>Node<><>0<>0<><>::
 Gemini_Generated_Image_k5yek5k5yek5k5ye-removebg-preview (1).png::CompressedTexture2D::5647843034360647184::1788981823::1788981824::1::::<><><>0<>0<>8c2fdf5c14f83609f208fe9ec2d96d65<>res://.godot/imported/Gemini_Generated_Image_k5yek5k5yek5k5ye-removebg-preview (1).png-ea3a037c735d2d49cc3ebbd444535939.ctex::
 Gemini_Generated_Image_k5yek5k5yek5k5ye.png::CompressedTexture2D::41169688137743985::1788981714::1788981715::1::::<><><>0<>0<>ed3c8add052aadd82b755be418115a61<>res://.godot/imported/Gemini_Generated_Image_k5yek5k5yek5k5ye.png-de3592c32b3df327842fc498020c64ca.ctex::
@@ -514,7 +514,7 @@ storage_task.gd::GDScript::3999283318880161718::1782136032::0::1::::StorageTask<
 supabase.gd::GDScript::120352095999156786::1782488727::0::1::::<>Node<><>0<>1<><>::
 ::res://android/::1788716942
 ::res://android/plugins/::1788716942
-::res://assets/::1795046677
+::res://assets/::1795046678
 510-5103107_mute-volume-sound-music-off-silent-audio-svg.png::CompressedTexture2D::8801415973143298866::1784909605::1784909608::1::::<><><>0<>0<>d1d1c7e4c70e51bae016816013b59e18<>res://.godot/imported/510-5103107_mute-volume-sound-music-off-silent-audio-svg.png-f9868c279a75bddc4f36c2dc95606ff8.ctex::
 1000_F_262551537_Rk34ewPEqNd257BAfimSPaSLzAwYfPsx-removebg-preview.png::CompressedTexture2D::4870419824567033975::1784911266::1784911266::1::::<><><>0<>0<>d0c7aede51ee11fe1f7a62773a6fc8da<>res://.godot/imported/1000_F_262551537_Rk34ewPEqNd257BAfimSPaSLzAwYfPsx-removebg-preview.png-913ac0d45c91801d85c0de7e588a3f75.ctex::
 !2.png::CompressedTexture2D::7841371841694961450::1790439947::1790449595::1::::<><><>0<>0<>e346b71aed0dec072a41c4ce07db0edf<>res://.godot/imported/!2.png-01b9e2791b678c8608486cafd2a7f02d.ctex::

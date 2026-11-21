@@ -1,7 +1,98 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlmcyf1qyn106"]
+[gd_scene load_steps=49 format=3 uid="uid://dlmcyf1qyn106"]
 
 [ext_resource type="Script" uid="uid://bedpvawxvmxak" path="res://sudoku.gd" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://cvrurp31wb3me" path="res://assets/poza_numere-removebg-preview.png" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://ctkaefwyc4oi0" path="res://number_button.gd" id="3_feb5d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_feb5d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fc0e3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jktm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ryrav"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eow3j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5wjh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vef74"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hve3p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mfdv2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iotsf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lc2xo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_215e1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7sc4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80cx4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e8heu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvswv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_boyg6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e36ub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hb5m1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x5p1p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhcbd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1jbl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vaj68"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i2p71"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xa8c5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5b14r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bnpwn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_36jdj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xfvwf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhpj7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7knny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_082n1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xex6t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aa0lp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iu0sx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4v2jo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1i01"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r62pu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_klri6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eu6ph"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edr7y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kq12w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t46w6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m28ev"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwlx3"]
 
 [node name="game" type="Control"]
 layout_mode = 3
@@ -22,22 +113,145 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = -1.0
+offset_bottom = -1.0
 grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
-layout_mode = 2
 columns = 9
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 3.0
+offset_left = -21.0
 offset_top = 767.0
-offset_right = 1926.0
+offset_right = 1902.0
 offset_bottom = 1075.0
 texture = ExtResource("2_e2o6t")
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 70.0
+offset_right = 204.0
+offset_bottom = 226.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_feb5d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fc0e3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7jktm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ryrav")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eow3j")
+script = ExtResource("3_feb5d")
+
+[node name="Button2" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1334.0
+offset_top = 70.0
+offset_right = 1465.0
+offset_bottom = 226.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j5wjh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vef74")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hve3p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mfdv2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iotsf")
+script = ExtResource("3_feb5d")
+number = 7
+
+[node name="Button3" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 71.0
+offset_right = 1032.0
+offset_bottom = 227.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lc2xo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_215e1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7sc4i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_80cx4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e8heu")
+script = ExtResource("3_feb5d")
+number = 5
+
+[node name="Button4" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1120.0
+offset_top = 70.0
+offset_right = 1251.0
+offset_bottom = 226.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rvswv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_boyg6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e36ub")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hb5m1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x5p1p")
+script = ExtResource("3_feb5d")
+number = 6
+
+[node name="Button5" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 71.0
+offset_right = 824.0
+offset_bottom = 227.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qhcbd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f1jbl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vaj68")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i2p71")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xa8c5")
+script = ExtResource("3_feb5d")
+number = 4
+
+[node name="Button6" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 68.0
+offset_right = 617.0
+offset_bottom = 224.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5b14r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnpwn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_36jdj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xfvwf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dhpj7")
+script = ExtResource("3_feb5d")
+number = 3
+
+[node name="Button7" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 70.0
+offset_right = 412.0
+offset_bottom = 226.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7knny")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_082n1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xex6t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_aa0lp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iu0sx")
+script = ExtResource("3_feb5d")
+number = 2
+
+[node name="Button8" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1542.0
+offset_top = 70.0
+offset_right = 1673.0
+offset_bottom = 226.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4v2jo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l1i01")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r62pu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_klri6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eu6ph")
+script = ExtResource("3_feb5d")
+number = 8
+
+[node name="Button9" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1755.0
+offset_top = 70.0
+offset_right = 1886.0
+offset_bottom = 226.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_edr7y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kq12w")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t46w6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m28ev")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lwlx3")
+script = ExtResource("3_feb5d")
+number = 9
