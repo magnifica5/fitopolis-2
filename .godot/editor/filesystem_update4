@@ -1,6 +1,6 @@
 res://memory_card.tscn
+res://memory_game.tscn
+res://memory_game.gd
 res://login.tscn
 res://login.gd
 res://memory_card.gd
-res://memory_game.tscn
-res://memory_game.gd

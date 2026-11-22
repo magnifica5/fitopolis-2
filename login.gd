@@ -119,7 +119,8 @@ func _catre_exercitii() -> void:
 	if ready:
 		#$AudioStreamPlayer.play()
 		#await get_tree().create_timer(0.1).timeout
-		get_tree().change_scene_to_packed(ready)
+		#get_tree().change_scene_to_packed(ready)
+		get_tree().change_scene_to_file("res://memory_game.tscn")
 
 
 func _on_level_1() -> void:

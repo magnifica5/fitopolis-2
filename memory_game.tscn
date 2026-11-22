@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbppshn764tpm"]
+[gd_scene load_steps=4 format=3 uid="uid://bbppshn764tpm"]
 
 [ext_resource type="Script" uid="uid://chu801wossmlq" path="res://memory_game.gd" id="1_kfi1n"]
+[ext_resource type="Texture2D" uid="uid://cuw5v5tqvhv25" path="res://memory_cards_game/background.png" id="2_mr8fx"]
+[ext_resource type="Texture2D" uid="uid://2iamec2n518q" path="res://memory_cards_game/Glossy Green Rounded Board.png" id="3_gp6wq"]
 
 [node name="MemoryGame" type="Control"]
 layout_mode = 3
@@ -11,23 +13,77 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kfi1n")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -3.0
+offset_right = 1672.0
+offset_bottom = 938.0
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("2_mr8fx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -750.0
-offset_top = -384.0
-offset_right = 750.0
-offset_bottom = 384.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(768, 768)
+[node name="LeftPannel" type="Control" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="LevelLabel" type="Label" parent="HBoxContainer/LeftPannel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ModeLabel" type="Label" parent="HBoxContainer/LeftPannel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TimeLabel" type="Label" parent="HBoxContainer/LeftPannel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MistakesLabel" type="Label" parent="HBoxContainer/LeftPannel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="GameArea" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 7.0
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/GameArea"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Board" type="Control" parent="HBoxContainer/GameArea/CenterContainer"]
+layout_mode = 2
+
+[node name="BoardBackground" type="TextureRect" parent="HBoxContainer/GameArea/CenterContainer/Board"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 98.0
+offset_right = 1333.0
+offset_bottom = 1030.0
+texture = ExtResource("3_gp6wq")
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/GameArea/CenterContainer/Board"]
+custom_minimum_size = Vector2(768, 768)
+layout_mode = 0
+offset_left = 317.0
+offset_top = 186.0
+offset_right = 1085.0
+offset_bottom = 954.0
 columns = 3
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="GameTimer" type="Timer" parent="."]

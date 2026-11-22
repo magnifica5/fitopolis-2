@@ -32,10 +32,6 @@ var _pending_texture: Texture2D = null
 # Funcția este apelată automat când nodul intră în scenă.
 func _ready() -> void:
 
-	# Stabilim dimensiunea minimă a cartonașului.
-	# Este utilă atunci când cartonașele sunt într-un GridContainer.
-	custom_minimum_size = Vector2(256, 256)
-
 	# Imaginile nu vor intercepta apăsările.
 	# Astfel, nodul MemoryCard poate detecta clickurile.
 	front.mouse_filter = Control.MOUSE_FILTER_IGNORE

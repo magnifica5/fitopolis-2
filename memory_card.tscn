@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpo5h8cv647n2" path="res://memory_card.gd" id="1_knfgb"]
 [ext_resource type="Texture2D" uid="uid://cqbvlj856fdyn" path="res://memory_cards_game/Green apple memory card back-38.png" id="2_o8b3w"]
-[ext_resource type="Texture2D" uid="uid://cjjb0y21ub81v" path="res://memory_cards_game/Folded Towel Memory Card-13.png" id="3_i6all"]
+[ext_resource type="Texture2D" uid="uid://di4rgl1ewo4q2" path="res://memory_cards_game/fronts/Folded Towel Memory Card-13.png" id="3_i6all"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
