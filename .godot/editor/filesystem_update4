@@ -1,1 +1,6 @@
-res://oras2.0.tscn
+res://memory_card.tscn
+res://login.tscn
+res://login.gd
+res://memory_card.gd
+res://memory_game.tscn
+res://memory_game.gd

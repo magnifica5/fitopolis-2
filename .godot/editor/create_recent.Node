@@ -1,7 +1,8 @@
-Button
-TextureRect
-GridContainer
 CenterContainer
+Timer
+GridContainer
+TextureRect
+Button
 ColorRect
 AnimatedSprite2D
 Sprite2D
@@ -11,5 +12,3 @@ Label
 HBoxContainer
 ScrollContainer
 PanelContainer
-Control
-Node2D
