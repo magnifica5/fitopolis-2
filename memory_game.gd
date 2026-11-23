@@ -104,7 +104,6 @@ func _ready() -> void:
 
 
 
-
 # Încarcă automat imaginile, inclusiv pe Android.
 func load_card_textures() -> void:
 	# Golim lista înainte de încărcare.
@@ -318,65 +317,84 @@ func configure_grid_layout() -> void:
 
 # Redimensionează tabla și cartonașele în funcție
 # de numărul de perechi și de spațiul disponibil.
-func resize_board() -> void:
-	var total_cards: int = pairs_count * 2
-	var columns: int = grid.columns
-	var rows: int = ceili(float(total_cards) / columns)
 
-	# Spațiul dintre cartonașe.
+func resize_board() -> void:
+	# Numărul total de cartonașe.
+	var total_cards: int = pairs_count * 2
+
+	# Numărul de coloane și rânduri.
+	var columns: int = grid.columns
+	var rows: int = ceili(float(total_cards) / float(columns))
+
+	# Spațierea dintre cartonașe.
 	var spacing: float = 12.0
 
-	# Marginea interioară a tablei.
+	# Spațiul dintre marginea tablei și cartonașe.
 	var padding: float = 35.0
 
-	# Spațiul disponibil în GameArea.
+	# Dimensiunea disponibilă în GameArea.
 	var available_width: float = game_area.size.x * 0.95
 	var available_height: float = game_area.size.y * 0.95
 
-	# Calculăm dimensiunea maximă a unui cartonaș.
-	var card_width: float = (
+	# Calculăm lățimea maximă a cartonașului.
+	var max_card_width: float = (
 		available_width - padding * 2.0
-		- spacing * (columns - 1)
-	) / columns
+		- spacing * float(columns - 1)
+	) / float(columns)
 
-	var card_height: float = (
+	# Calculăm înălțimea maximă.
+	var max_card_height: float = (
 		available_height - padding * 2.0
-		- spacing * (rows - 1)
-	) / rows
+		- spacing * float(rows - 1)
+	) / float(rows)
 
-	# Păstrăm proporția cartonașelor: 3:4.
-	var final_width: float = min(card_width, card_height * 0.75)
-	var final_height: float = final_width / 0.75
+	# Păstrăm proporția de 3:4.
+	var card_width: float = min(
+		max_card_width,
+		max_card_height * 0.75
+	)
 
-	# Evităm dimensiunile negative.
-	if final_width <= 0.0:
+	if card_width <= 0.0:
 		return
 
-	# Configurăm spațierea din GridContainer.
+	var card_height: float = card_width / 0.75
+
+	# Configurăm spațiul dintre cartonașe.
 	grid.add_theme_constant_override("h_separation", int(spacing))
 	grid.add_theme_constant_override("v_separation", int(spacing))
 
-	# Redimensionăm fiecare cartonaș.
+	# Aplicăm dimensiunea calculată fiecărui cartonaș.
 	for card in grid.get_children():
-		card.custom_minimum_size = Vector2(final_width, final_height)
+		card.custom_minimum_size = Vector2(card_width, card_height)
 
-	# Calculăm dimensiunea totală a grilei.
-	var grid_width: float = columns * final_width + (columns - 1) * spacing
-	var grid_height: float = rows * final_height + (rows - 1) * spacing
+	# Calculăm dimensiunea reală a grilei.
+	var grid_width: float = (
+		float(columns) * card_width
+		+ float(columns - 1) * spacing
+	)
 
-	# Dimensionăm tabla astfel încât să includă
-	# și marginile din jurul cartonașelor.
-	var board_size := Vector2(
+	var grid_height: float = (
+		float(rows) * card_height
+		+ float(rows - 1) * spacing
+	)
+
+	# Dimensiunea tablei include și marginile interioare.
+	var new_board_size := Vector2(
 		grid_width + padding * 2.0,
 		grid_height + padding * 2.0
 	)
 
-	board.custom_minimum_size = board_size
+	# Actualizăm dimensiunea minimă a tablei.
+	board.custom_minimum_size = new_board_size
+	board.size = new_board_size
 
 	# Poziționăm grila în interiorul tablei.
 	grid.position = Vector2(padding, padding)
 	grid.size = Vector2(grid_width, grid_height)
 
-	# Fundalul ocupă întreaga suprafață a tablei.
+	# Fundalul acoperă întreaga tablă.
 	board_background.position = Vector2.ZERO
-	board_background.size = board_size
+	board_background.size = new_board_size
+
+	print("Dimensiune cartonaș: ", card_width, " x ", card_height)
+	print("Dimensiune tablă: ", new_board_size)
