@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5gl5qnimmoa4"
-path="res://.godot/imported/Lime Pixel Back Arrow Button-36.png-92cb134369abcfabaaa7fe07a4eb40bd.ctex"
+uid="uid://u6lk50rk7p5v"
+path="res://.godot/imported/nivel.png-3cb6ebb98f7bb5c237e529c5f0710608.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://memory_cards_game/Lime Pixel Back Arrow Button-36.png"
-dest_files=["res://.godot/imported/Lime Pixel Back Arrow Button-36.png-92cb134369abcfabaaa7fe07a4eb40bd.ctex"]
+source_file="res://memory_cards_game/nivel.png"
+dest_files=["res://.godot/imported/nivel.png-3cb6ebb98f7bb5c237e529c5f0710608.ctex"]
 
 [params]
 

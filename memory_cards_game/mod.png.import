@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chmxheslw8du0"
-path="res://.godot/imported/Fit'O Polis Healthy Habits Game-40.png-fd1ddfd0c3cccf60687b352672d43796.ctex"
+uid="uid://durevkyau05w"
+path="res://.godot/imported/mod.png-74efb051578dcbfab66b0fcc4c900135.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://memory_cards_game/Fit'O Polis Healthy Habits Game-40.png"
-dest_files=["res://.godot/imported/Fit'O Polis Healthy Habits Game-40.png-fd1ddfd0c3cccf60687b352672d43796.ctex"]
+source_file="res://memory_cards_game/mod.png"
+dest_files=["res://.godot/imported/mod.png-74efb051578dcbfab66b0fcc4c900135.ctex"]
 
 [params]
 

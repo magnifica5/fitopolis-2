@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rfsxukr813v8"
-path="res://.godot/imported/Fit'O Polis restart button-39.png-6ac47a1c0d3f262098bd25082ced2e68.ctex"
+uid="uid://dy0lcmmig0pdx"
+path="res://.godot/imported/timp.png-4fd09179d187ac82a26ea80306edb7bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://memory_cards_game/Fit'O Polis restart button-39.png"
-dest_files=["res://.godot/imported/Fit'O Polis restart button-39.png-6ac47a1c0d3f262098bd25082ced2e68.ctex"]
+source_file="res://memory_cards_game/timp.png"
+dest_files=["res://.godot/imported/timp.png-4fd09179d187ac82a26ea80306edb7bb.ctex"]
 
 [params]
 

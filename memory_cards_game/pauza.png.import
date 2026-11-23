@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccrytmjfpvi45"
-path="res://.godot/imported/Lime green pixel pause button-29.png-34225d4a212d77855af48b621de2336a.ctex"
+uid="uid://bpmpxc01lctun"
+path="res://.godot/imported/pauza.png-db99eb528187623b72912f2c4bc30234.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://memory_cards_game/Lime green pixel pause button-29.png"
-dest_files=["res://.godot/imported/Lime green pixel pause button-29.png-34225d4a212d77855af48b621de2336a.ctex"]
+source_file="res://memory_cards_game/pauza.png"
+dest_files=["res://.godot/imported/pauza.png-db99eb528187623b72912f2c4bc30234.ctex"]
 
 [params]
 

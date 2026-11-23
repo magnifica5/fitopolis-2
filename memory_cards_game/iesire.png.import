@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx7b2wf02ea7j"
-path="res://.godot/imported/Fit'O Polis healthy habits memory panel-34.png-7096551dd66d04ed03b0ee2ca81226b6.ctex"
+uid="uid://bxq3m0ihho26y"
+path="res://.godot/imported/iesire.png-792090aff2bb6febd4e2896ad0ca0879.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://memory_cards_game/Fit'O Polis healthy habits memory panel-34.png"
-dest_files=["res://.godot/imported/Fit'O Polis healthy habits memory panel-34.png-7096551dd66d04ed03b0ee2ca81226b6.ctex"]
+source_file="res://memory_cards_game/iesire.png"
+dest_files=["res://.godot/imported/iesire.png-792090aff2bb6febd4e2896ad0ca0879.ctex"]
 
 [params]
 

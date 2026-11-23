@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://di4rgl1ewo4q2" path="res://memory_cards_game/fronts/Folded Towel Memory Card-13.png" id="3_i6all"]
 
 [node name="Control" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,6 +26,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_o8b3w")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Front" type="TextureRect" parent="."]
 layout_mode = 1
@@ -34,3 +37,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_i6all")
+expand_mode = 1
+stretch_mode = 5

@@ -6,6 +6,22 @@ const CARD_SCENE: PackedScene = preload("res://memory_card.tscn")
 
 # Folderul cu imaginile pentru fața cartonașelor.
 const FRONTS_PATH: String = "res://memory_cards_game/fronts/"
+# Dimensiunea originală a unei imagini.
+# Cartonașele tale au 256 × 256 px.
+const CARD_SOURCE_SIZE: int = 256
+
+# Distanța dintre două cartonașe alăturate.
+const CARD_SPACING: int = 12
+
+# Marginea interioară a tablei:
+# distanța dintre marginea tablei și grila de cartonașe.
+const BOARD_PADDING: int = 85
+const CARD_SIZE_STEP: int = 16
+
+# Reținem dacă am programat deja o redimensionare.
+# Astfel, mai multe notificări apropiate nu declanșează
+# inutil același calcul de mai multe ori.
+var _board_resize_queued: bool = false
 
 # Lista în care încărcăm toate imaginile disponibile.
 var card_textures: Array[Texture2D] = []
@@ -14,7 +30,7 @@ var card_textures: Array[Texture2D] = []
 # 3 perechi = 6 cartonașe.
 
 # Nivelul la care se află copilul.
-var current_level: int = 300
+var current_level: int = 102
 
 # Numărul maxim de niveluri disponibile.
 const MAX_LEVEL: int = 300
@@ -78,30 +94,32 @@ func configure_level() -> void:
 
 
 func _ready() -> void:
-	# Încărcăm imaginile disponibile.
+	# GameArea este spațiul disponibil pentru tablă.
+	# Dacă dimensiunea lui se schimbă, recalculăm așezarea.
+	game_area.resized.connect(_queue_board_resize)
+
+	# Încărcăm imaginile disponibile pentru perechi.
 	load_card_textures()
 
-	# Configurăm timerul pentru perechile greșite.
+	# Acest timer controlează cât timp rămâne vizibilă
+	# o pereche greșită înainte să întoarcem cartonașele.
 	timer.one_shot = true
 	timer.timeout.connect(_on_timer_timeout)
 
-	# Configurăm dificultatea nivelului actual.
+	# Stabilim numărul de perechi pentru nivelul actual.
 	configure_level()
 
-	# Stabilim numărul de coloane în funcție de nivel.
+	# Stabilim numărul de coloane pentru aceste perechi.
 	configure_grid_layout()
 
-	# Verificăm dacă avem suficiente imagini.
+	# Fiecare pereche are nevoie de o imagine distinctă.
 	if card_textures.size() < pairs_count:
 		push_error("Nu există suficiente imagini pentru acest nivel!")
 		return
 
-	# Generăm cartonașele.
+	# Creăm cartonașele.
+	# La finalul acestei funcții vom programa și redimensionarea.
 	create_cards()
-	await get_tree().process_frame
-	resize_board()
-
-
 
 
 # Încarcă automat imaginile, inclusiv pe Android.
@@ -193,6 +211,9 @@ func create_cards() -> void:
 
 	print("Cartonașe generate: ", card_ids.size())
 	print("Perechi de găsit: ", pairs_count)
+	# Acum există toate cartonașele în grilă.
+	# Putem programa calcularea dimensiunii lor și a tablei.
+	_queue_board_resize()
 
 
 # Apelată când copilul întoarce un cartonaș.
@@ -294,107 +315,217 @@ func level_completed() -> void:
 
 # Stabilește numărul de coloane și rânduri
 # în funcție de numărul de perechi.
+# Stabilește câte coloane are grila.
+# Godot calculează automat rândurile din numărul de cartonașe.
 func configure_grid_layout() -> void:
+	# Fiecare pereche este formată din două cartonașe.
 	var total_cards: int = pairs_count * 2
 
-	# Alegem numărul de coloane.
-	if total_cards <= 6:
-		grid.columns = 3
-	elif total_cards <= 10:
-		grid.columns = 5 if total_cards == 10 else 4
-	elif total_cards <= 16:
-		grid.columns = 4
-	else:
-		grid.columns = 5
+	# Alegem aranjamente cu rânduri complete.
+	# Valorile reprezintă numărul de COLOANE.
+	match total_cards:
+		6:
+			grid.columns = 3  # 3 coloane × 2 rânduri
 
-	# Calculăm câte rânduri sunt necesare.
-	var rows: int = ceili(float(total_cards) / grid.columns)
+		8:
+			grid.columns = 4  # 4 coloane × 2 rânduri
+
+		10:
+			grid.columns = 5  # 5 coloane × 2 rânduri
+
+		12:
+			grid.columns = 4  # 4 coloane × 3 rânduri
+
+		14:
+			grid.columns = 7  # 7 coloane × 2 rânduri
+
+		16:
+			grid.columns = 4  # 4 coloane × 4 rânduri
+
+		18:
+			grid.columns = 6  # 6 coloane × 3 rânduri
+
+		20:
+			grid.columns = 5  # 5 coloane × 4 rânduri
+
+	# Împărțim numărul cartonașelor la numărul de coloane.
+	# ceili() rotunjește în sus dacă rezultatul nu este întreg.
+	var rows: int = ceili(
+		float(total_cards) / float(grid.columns)
+	)
 
 	print("Cartonașe: ", total_cards)
 	print("Coloane: ", grid.columns)
 	print("Rânduri: ", rows)
 
 
-# Redimensionează tabla și cartonașele în funcție
-# de numărul de perechi și de spațiul disponibil.
+# Programează recalcularea dimensiunilor.
+func _queue_board_resize() -> void:
+	# Dacă există deja un apel programat, nu mai adăugăm unul.
+	if _board_resize_queued:
+		return
 
+	_board_resize_queued = true
+
+	# call_deferred() amână executarea până la procesarea
+	# apelurilor amânate de Godot.
+	# Nu recalculăm direct în mijlocul notificării de redimensionare.
+	resize_board.call_deferred()
+
+
+# Calculează dimensiunea cartonașelor, a grilei și a tablei.
 func resize_board() -> void:
-	# Numărul total de cartonașe.
-	var total_cards: int = pairs_count * 2
+	# Redimensionarea programată este executată acum.
+	_board_resize_queued = false
 
-	# Numărul de coloane și rânduri.
+	var total_cards: int = grid.get_child_count()
+
+	# Nu calculăm dimensiunile înainte să existe cartonașe.
+	if total_cards == 0:
+		return
+
+	# Numărul de coloane este stabilit în configure_grid_layout().
 	var columns: int = grid.columns
-	var rows: int = ceili(float(total_cards) / float(columns))
 
-	# Spațierea dintre cartonașe.
-	var spacing: float = 12.0
+	# Calculăm numărul de rânduri necesare.
+	var rows: int = ceili(
+		float(total_cards) / float(columns)
+	)
 
-	# Spațiul dintre marginea tablei și cartonașe.
-	var padding: float = 35.0
+	# Folosim constantele declarate anterior în script.
+	var spacing: float = float(CARD_SPACING)
+	var padding: float = float(BOARD_PADDING)
 
-	# Dimensiunea disponibilă în GameArea.
-	var available_width: float = game_area.size.x * 0.95
-	var available_height: float = game_area.size.y * 0.95
+	# PANOU:
+	# Dimensiunea lui depinde doar de spațiul disponibil.
+	# Nu îl mai micșorăm după dimensiunea grilei.
+	#
+	# La schimbarea nivelului, panoul rămâne la aceeași mărime
+	# dacă GameArea nu și-a schimbat dimensiunea.
+	var available_width: float = floorf(game_area.size.x * 0.95)
+	var available_height: float = floorf(game_area.size.y * 0.95)
 
-	# Calculăm lățimea maximă a cartonașului.
+	# Calculăm câtă lățime poate avea un cartonaș.
+	#
+	# Scădem:
+	# - marginile interioare din stânga și dreapta;
+	# - spațiile dintre coloane.
+	#
+	# Împărțim spațiul rămas la numărul de coloane.
 	var max_card_width: float = (
-		available_width - padding * 2.0
+		available_width
+		- padding * 2.0
 		- spacing * float(columns - 1)
 	) / float(columns)
 
-	# Calculăm înălțimea maximă.
+	# Facem același calcul pentru înălțime.
 	var max_card_height: float = (
-		available_height - padding * 2.0
+		available_height
+		- padding * 2.0
 		- spacing * float(rows - 1)
 	) / float(rows)
 
-	# Păstrăm proporția de 3:4.
-	var card_width: float = min(
-		max_card_width,
-		max_card_height * 0.75
+	# Cartonașele rămân pătrate.
+	# Alegem cea mai mică dintre limitele de lățime și înălțime.
+	#
+	# Limităm și la dimensiunea originală de 256 px,
+	# pentru a evita mărirea peste rezoluția texturilor.
+	var max_card_size: float = minf(
+		float(CARD_SOURCE_SIZE),
+		minf(max_card_width, max_card_height)
 	)
 
-	if card_width <= 0.0:
+	if max_card_size < 1.0:
 		return
 
-	var card_height: float = card_width / 0.75
+	# Alegem cel mai mare multiplu de 16 care încape.
+	#
+	# Exemplu:
+	# Dacă avem loc pentru maximum 230 px:
+	# 230 / 16 = 14,375
+	# floori(...) = 14
+	# 14 * 16 = 224 px
+	var card_side: int = (
+		floori(max_card_size / float(CARD_SIZE_STEP))
+		* CARD_SIZE_STEP
+	)
 
-	# Configurăm spațiul dintre cartonașe.
-	grid.add_theme_constant_override("h_separation", int(spacing))
-	grid.add_theme_constant_override("v_separation", int(spacing))
+	# Protecție pentru o zonă de joc extrem de mică:
+	# evităm să obținem cartonașe cu dimensiunea zero.
+	if card_side < 1:
+		card_side = floori(max_card_size)
 
-	# Aplicăm dimensiunea calculată fiecărui cartonaș.
+	var card_size := Vector2(card_side, card_side)
+
+	# Spațierea reală trebuie să fie aceeași cu cea din calcule.
+	grid.add_theme_constant_override(
+		"h_separation",
+		CARD_SPACING
+	)
+
+	grid.add_theme_constant_override(
+		"v_separation",
+		CARD_SPACING
+	)
+
+	# Aplicăm aceeași dimensiune tuturor cartonașelor.
+	# Front și Back vor urma dimensiunea părintelui,
+	# folosind setările pe care le-ai corectat deja.
 	for card in grid.get_children():
-		card.custom_minimum_size = Vector2(card_width, card_height)
+		card.custom_minimum_size = card_size
+		card.size = card_size
 
-	# Calculăm dimensiunea reală a grilei.
+	# Calculăm dimensiunea grilei, inclusiv spațiile.
 	var grid_width: float = (
-		float(columns) * card_width
+		float(columns * card_side)
 		+ float(columns - 1) * spacing
 	)
 
 	var grid_height: float = (
-		float(rows) * card_height
+		float(rows * card_side)
 		+ float(rows - 1) * spacing
 	)
 
-	# Dimensiunea tablei include și marginile interioare.
-	var new_board_size := Vector2(
-		grid_width + padding * 2.0,
-		grid_height + padding * 2.0
-	)
+	var grid_size := Vector2(grid_width, grid_height)
 
-	# Actualizăm dimensiunea minimă a tablei.
+	# Panoul trebuie să cuprindă grila și marginile interioare.
+	#
+	# Îi permitem să se micșoreze până la 80% din dimensiunea
+	# maximă disponibilă, pentru a evita schimbările prea mari.
+	#
+	# clampf(valoare, minim, maxim) păstrează valoarea
+	# între limita minimă și cea maximă.
+	var new_board_size := Vector2(
+		clampf(
+			grid_size.x + padding * 2.0,
+			available_width * 0.80,
+			available_width
+		),
+		clampf(
+			grid_size.y + padding * 2.0,
+			available_height * 0.80,
+			available_height
+		)
+	).floor()
 	board.custom_minimum_size = new_board_size
 	board.size = new_board_size
 
-	# Poziționăm grila în interiorul tablei.
-	grid.position = Vector2(padding, padding)
-	grid.size = Vector2(grid_width, grid_height)
+	# Centrăm grila în panou.
+	#
+	# Diferența dintre dimensiunea panoului și cea a grilei
+	# reprezintă spațiul liber. Îl împărțim în două,
+	# astfel încât marginile opuse să fie egale.
+	#
+	# floor() păstrează poziția pe coordonate întregi.
+	grid.position = (
+		(new_board_size - grid_size) / 2.0
+	).floor()
 
-	# Fundalul acoperă întreaga tablă.
+	grid.size = grid_size
+
+	# Fundalul acoperă întregul panou.
 	board_background.position = Vector2.ZERO
 	board_background.size = new_board_size
 
-	print("Dimensiune cartonaș: ", card_width, " x ", card_height)
-	print("Dimensiune tablă: ", new_board_size)
+	print("Dimensiune cartonaș: ", card_side, " × ", card_side)
+	print("Dimensiune panou: ", new_board_size)
