@@ -38,6 +38,30 @@ const MAX_LEVEL: int = 300
 # Numărul de perechi din nivelul actual.
 var pairs_count: int = 3
 
+# Durata totală a nivelului, în secunde.
+# Nu este timpul rămas; acesta va fi citit ulterior din GameTimer.
+var time_limit: int = 75
+
+# Limita de greșeli a nivelului.
+# mistakes, declarată deja în script, numără greșelile efectuate.
+var max_mistakes: int = 3
+
+# Fiecare dicționar descrie un interval de niveluri:
+# first / last = primul și ultimul nivel, inclusiv;
+# pairs = numărul de perechi;
+# mistakes = limita de greșeli;
+# time_start / time_end = timpul la începutul și la finalul intervalului.
+const LEVEL_RULES: Array[Dictionary] = [
+	{"first": 1, "last": 10, "pairs": 3, "mistakes": 3, "time_start": 75, "time_end": 55},
+	{"first": 11, "last": 30, "pairs": 4, "mistakes": 3, "time_start": 90, "time_end": 65},
+	{"first": 31, "last": 60, "pairs": 5, "mistakes": 4, "time_start": 110, "time_end": 80},
+	{"first": 61, "last": 100, "pairs": 6, "mistakes": 4, "time_start": 130, "time_end": 95},
+	{"first": 101, "last": 150, "pairs": 7, "mistakes": 10, "time_start": 150, "time_end": 110},
+	{"first": 151, "last": 200, "pairs": 8, "mistakes": 5, "time_start": 170, "time_end": 125},
+	{"first": 201, "last": 250, "pairs": 9, "mistakes": 6, "time_start": 190, "time_end": 140},
+	{"first": 251, "last": 300, "pairs": 10, "mistakes": 6, "time_start": 210, "time_end": 155}
+]
+
 
 # Referințe către nodurile scenei.
 @onready var grid: GridContainer = $HBoxContainer/GameArea/CenterContainer/Board/GridContainer
@@ -45,6 +69,22 @@ var pairs_count: int = 3
 @onready var board: Control = $HBoxContainer/GameArea/CenterContainer/Board
 @onready var board_background: Control = $HBoxContainer/GameArea/CenterContainer/Board/BoardBackground
 @onready var timer: Timer = $Timer
+# Timerul pentru durata întregului nivel.
+@onready var game_timer: Timer = $GameTimer
+
+# Valorile din barele existente în scena ta.
+@onready var level_value: Label = $HBoxContainer/LeftPannel/VBoxContainer/LevelBar/TextureRect/LevelValue
+@onready var mode_value: Label = $HBoxContainer/LeftPannel/VBoxContainer/ModeBar/TextureRect/ModeValue
+@onready var time_value: Label = $HBoxContainer/LeftPannel/VBoxContainer/TimeBar/TextureRect/TimeValue
+@onready var mistake_value: Label = $HBoxContainer/LeftPannel/VBoxContainer/MistakeBar/TextureRect/MistakeValue
+
+# Reținem ultima secundă afișată.
+# Astfel, nu rescriem același text în fiecare cadru.
+var _last_displayed_second: int = -1
+
+# Reținem dacă runda s-a terminat prin victorie.
+# Vom folosi această informație și la panoul de rezultat.
+var level_won: bool = false
 
 # Cele două cartonașe selectate.
 var first_card: Control = null
@@ -61,65 +101,80 @@ var is_checking: bool = false
 
 # Devine true atunci când nivelul este terminat.
 var game_finished: bool = false
-
-
 # Stabilește numărul de perechi în funcție de nivel.
 func configure_level() -> void:
-	# Ne asigurăm că nivelul este între 1 și 300.
+	# Încadrăm nivelul în limitele jocului: 1–300.
 	current_level = clampi(current_level, 1, MAX_LEVEL)
 
-	# Stabilim numărul de perechi.
-	if current_level <= 10:
-		pairs_count = 3
-	elif current_level <= 30:
-		pairs_count = 4
-	elif current_level <= 60:
-		pairs_count = 5
-	elif current_level <= 100:
-		pairs_count = 6
-	elif current_level <= 150:
-		pairs_count = 7
-	elif current_level <= 200:
-		pairs_count = 8
-	elif current_level <= 250:
-		pairs_count = 9
-	else:
-		pairs_count = 10
+	# Căutăm intervalul din care face parte nivelul.
+	for rule in LEVEL_RULES:
+		var first_level: int = int(rule["first"])
+		var last_level: int = int(rule["last"])
 
-	print("Nivel: ", current_level)
-	print("Perechi: ", pairs_count)
+		# Dacă nivelul nu aparține acestui interval,
+		# trecem la următoarea regulă.
+		if current_level < first_level or current_level > last_level:
+			continue
 
+		# Perechile și limita de greșeli sunt fixe
+		# în interiorul intervalului.
+		pairs_count = int(rule["pairs"])
+		max_mistakes = int(rule["mistakes"])
 
-# Se execută automat când începe jocul.
+		# Calculăm poziția nivelului în interval:
+		# 0.0 la primul nivel și 1.0 la ultimul.
+		#
+		# maxi(..., 1) evită împărțirea la zero dacă vei defini
+		# vreodată un interval format dintr-un singur nivel.
+		var interval_length: int = maxi(last_level - first_level, 1)
+		var progress: float = (
+			float(current_level - first_level) / float(interval_length)
+		)
 
+		var start_time: float = float(rule["time_start"])
+		var end_time: float = float(rule["time_end"])
 
-func _ready() -> void:
-	# GameArea este spațiul disponibil pentru tablă.
-	# Dacă dimensiunea lui se schimbă, recalculăm așezarea.
-	game_area.resized.connect(_queue_board_resize)
+		# Timpul scade treptat de la start_time la end_time.
+		# roundi() rotunjește rezultatul la secunde întregi.
+		time_limit = roundi(lerpf(start_time, end_time, progress))
 
-	# Încărcăm imaginile disponibile pentru perechi.
-	load_card_textures()
+		# Verificăm valorile în panoul Output al editorului.
+		print("Nivel: ", current_level)
+		print("Perechi: ", pairs_count)
+		print("Cartonașe: ", pairs_count * 2)
+		print("Timp disponibil: ", time_limit, " secunde")
+		print("Limită de greșeli: ", max_mistakes)
 
-	# Acest timer controlează cât timp rămâne vizibilă
-	# o pereche greșită înainte să întoarcem cartonașele.
-	timer.one_shot = true
-	timer.timeout.connect(_on_timer_timeout)
-
-	# Stabilim numărul de perechi pentru nivelul actual.
-	configure_level()
-
-	# Stabilim numărul de coloane pentru aceste perechi.
-	configure_grid_layout()
-
-	# Fiecare pereche are nevoie de o imagine distinctă.
-	if card_textures.size() < pairs_count:
-		push_error("Nu există suficiente imagini pentru acest nivel!")
+		# Am găsit regula potrivită; încheiem funcția.
 		return
 
-	# Creăm cartonașele.
-	# La finalul acestei funcții vom programa și redimensionarea.
-	create_cards()
+	# Ajungem aici numai dacă tabelul este modificat
+	# și rămâne un interval neacoperit.
+	push_error("Lipsește configurația pentru nivelul %d." % current_level)
+
+func _ready() -> void:
+	game_area.resized.connect(_queue_board_resize)
+
+	# Oprim eventualele porniri automate din Inspector.
+	timer.stop()
+	game_timer.stop()
+
+	# Fiecare timer se oprește după expirare.
+	timer.one_shot = true
+	game_timer.one_shot = true
+
+	# Conectăm fiecare semnal o singură dată.
+	if not timer.timeout.is_connected(_on_timer_timeout):
+		timer.timeout.connect(_on_timer_timeout)
+
+	if not game_timer.timeout.is_connected(_on_game_timer_timeout):
+		game_timer.timeout.connect(_on_game_timer_timeout)
+
+	# Imaginile se încarcă o singură dată, la deschiderea scenei.
+	load_card_textures()
+
+	# Configurăm și pornim nivelul.
+	start_level(current_level)
 
 
 # Încarcă automat imaginile, inclusiv pe Android.
@@ -216,74 +271,79 @@ func create_cards() -> void:
 	_queue_board_resize()
 
 
-# Apelată când copilul întoarce un cartonaș.
 func _on_card_flipped(card: Control) -> void:
-	# Nu acceptăm selecții dacă nivelul s-a terminat
-	# sau dacă o pereche este deja în verificare.
-	if game_finished or is_checking:
+	# Ignorăm selecțiile după final sau în timpul verificării.
+	if game_finished or is_checking or card.is_matched:
 		return
 
-	# Memorăm primul cartonaș selectat.
+	# O apăsare chiar la expirarea timpului
+	# nu trebuie să poată aduce victoria.
+	if game_timer.time_left <= 0.0:
+		card.show_back()
+		_on_game_timer_timeout()
+		return
+
+	# Un cartonaș nu poate forma o pereche cu el însuși.
+	if card == first_card:
+		return
+
+	# Prima selecție: memorăm cartonașul și așteptăm al doilea.
 	if first_card == null:
 		first_card = card
 		return
 
-	# Memorăm al doilea cartonaș.
+	# A doua selecție: verificăm perechea.
 	second_card = card
-
-	# Începem verificarea perechii.
 	is_checking = true
-
-	# Blocăm temporar toate cartonașele.
 	lock_all_cards(true)
 
-	# Comparăm ID-urile celor două imagini.
 	if first_card.card_id == second_card.card_id:
 		# Pereche corectă.
 		first_card.mark_matched()
 		second_card.mark_matched()
 
-		# Creștem numărul perechilor găsite.
 		matched_pairs += 1
-
-		print("Pereche găsită! ", matched_pairs, "/", pairs_count)
-
-		# Resetăm cartonașele selectate.
 		reset_selection()
 
-		# Verificăm dacă toate perechile au fost găsite.
 		if matched_pairs == pairs_count:
 			level_completed()
 		else:
-			# Dacă nivelul continuă, deblocăm cartonașele.
 			lock_all_cards(false)
 
 	else:
-		# Pereche greșită.
+		# Două imagini diferite înseamnă o singură greșeală.
 		mistakes += 1
+		update_mistakes_label()
 
-		print("Pereche greșită! Greșeli: ", mistakes)
+		# La zero greșeli rămase, runda se încheie.
+		if mistakes >= max_mistakes:
+			finish_level(false, "Ai ajuns la limita de greșeli.")
+			return
 
-		# Lăsăm ambele imagini vizibile o secundă.
-		# Celelalte cartonașe rămân blocate în acest timp.
+		# Lăsăm imaginile vizibile o secundă.
+		# Cronometrul nivelului continuă în acest timp.
 		timer.start(1.0)
 
-
-# Este apelată după expirarea timerului.
 func _on_timer_timeout() -> void:
-	# Întoarcem cele două cartonașe greșite.
-	if first_card != null:
+	# Un semnal întârziat nu trebuie să deblocheze
+	# cartonașele după terminarea rundei.
+	if game_finished or not is_checking:
+		return
+
+	# Verificăm și timpul nivelului înainte de deblocare.
+	if game_timer.time_left <= 0.0:
+		_on_game_timer_timeout()
+		return
+
+	# Întoarcem perechea greșită cu spatele.
+	if is_instance_valid(first_card):
 		first_card.show_back()
 
-	if second_card != null:
+	if is_instance_valid(second_card):
 		second_card.show_back()
 
-	# Resetăm selecția.
 	reset_selection()
-
-	# Permitem din nou apăsarea cartonașelor.
-	if not game_finished:
-		lock_all_cards(false)
+	lock_all_cards(false)
 
 
 # Resetează cartonașele selectate.
@@ -303,14 +363,9 @@ func lock_all_cards(lock: bool) -> void:
 
 # Apelată când toate perechile au fost găsite.
 func level_completed() -> void:
-	# Marcăm nivelul ca terminat.
-	game_finished = true
-
-	# Blocăm toate cartonașele.
-	lock_all_cards(true)
-
-	print("Felicitări! Nivel completat!")
-	print("Greșeli efectuate: ", mistakes)
+	# Folosim aceeași funcție de finalizare,
+	# dar precizăm că rezultatul este o victorie.
+	finish_level(true, "Ai găsit toate perechile!")
 
 
 # Stabilește numărul de coloane și rânduri
@@ -529,3 +584,110 @@ func resize_board() -> void:
 
 	print("Dimensiune cartonaș: ", card_side, " × ", card_side)
 	print("Dimensiune panou: ", new_board_size)
+
+func start_level(level: int) -> void:
+	# Anulăm temporizările rundei anterioare.
+	timer.stop()
+	game_timer.stop()
+
+	timer.paused = false
+	game_timer.paused = false
+
+	game_finished = true
+	level_won = false
+	reset_selection()
+
+	# Folosim configurarea realizată în etapa 1.
+	current_level = level
+	configure_level()
+	configure_grid_layout()
+
+	# Fiecare pereche trebuie să aibă propria imagine.
+	if card_textures.size() < pairs_count:
+		lock_all_cards(true)
+		push_error("Nu există suficiente imagini pentru acest nivel.")
+		return
+
+	# Funcția ta existentă resetează contoarele și creează
+	# cartonașele cu spatele în sus.
+	# Tot ea setează game_finished înapoi la false.
+	create_cards()
+
+	# Afișăm doar valorile.
+	# Denumirile sunt deja desenate pe imaginile barelor.
+	level_value.text = str(current_level)
+
+	# Mixt = timpul și limita de greșeli sunt active simultan.
+	mode_value.text = "Mixt"
+
+	update_mistakes_label()
+
+	# Pornim direct timpul de joc, fără memorare inițială.
+	_last_displayed_second = -1
+	game_timer.start(float(time_limit))
+	update_time_label()
+
+
+func _process(_delta: float) -> void:
+	# După terminarea rundei, afișajul rămâne nemodificat.
+	if game_finished:
+		return
+
+	update_time_label()
+
+
+func update_time_label() -> void:
+	# Rotunjim în sus:
+	# de exemplu, 74,8 secunde se afișează ca 01:15.
+	var seconds_left: int = ceili(game_timer.time_left)
+
+	# Actualizăm textul numai când se schimbă secunda afișată.
+	if seconds_left == _last_displayed_second:
+		return
+
+	_last_displayed_second = seconds_left
+
+	# Transformăm secundele totale în minute și secunde.
+	var minutes: int = int(seconds_left / 60.0)
+	var seconds: int = seconds_left % 60
+
+	# %02d afișează două cifre:
+	# 2 minute și 9 secunde devin 02:09.
+	time_value.text = "%02d:%02d" % [minutes, seconds]
+
+
+func update_mistakes_label() -> void:
+	# Afișăm greșelile RĂMASE.
+	# Exemplu: limita 5, greșeli efectuate 2 -> afișăm 3.
+	var remaining: int = maxi(max_mistakes - mistakes, 0)
+
+	mistake_value.text = str(remaining)
+
+
+func _on_game_timer_timeout() -> void:
+	# Se execută când timpul nivelului ajunge la zero.
+	finish_level(false, "Timpul s-a terminat.")
+
+
+func finish_level(won: bool, message: String) -> void:
+	# Prevenim finalizarea repetată a aceleiași runde.
+	if game_finished:
+		return
+
+	# Actualizăm afișajul ÎNAINTE să oprim timerul.
+	# După stop(), time_left devine zero.
+	# La victorie vrem să păstrăm afișat timpul rămas.
+	update_time_label()
+
+	game_finished = true
+	level_won = won
+
+	# Oprim atât cronometrul, cât și întoarcerea perechii greșite.
+	timer.stop()
+	game_timer.stop()
+
+	reset_selection()
+	lock_all_cards(true)
+
+	# În etapa următoare vom afișa panoul de rezultat aici.
+	print(message)
