@@ -78,6 +78,15 @@ const LEVEL_RULES: Array[Dictionary] = [
 @onready var time_value: Label = $HBoxContainer/LeftPannel/VBoxContainer/TimeBar/TextureRect/TimeValue
 @onready var mistake_value: Label = $HBoxContainer/LeftPannel/VBoxContainer/MistakeBar/TextureRect/MistakeValue
 
+# Referințe către elementele panoului de rezultat.
+# Le vom crea o singură dată, în _ready().
+var result_overlay: ColorRect
+var result_title: Label
+var result_message: Label
+var result_stats: Label
+var result_next_button: Button
+var result_retry_button: Button
+
 # Reținem ultima secundă afișată.
 # Astfel, nu rescriem același text în fiecare cadru.
 var _last_displayed_second: int = -1
@@ -153,6 +162,7 @@ func configure_level() -> void:
 	push_error("Lipsește configurația pentru nivelul %d." % current_level)
 
 func _ready() -> void:
+	create_result_panel()
 	game_area.resized.connect(_queue_board_resize)
 
 	# Oprim eventualele porniri automate din Inspector.
@@ -586,6 +596,7 @@ func resize_board() -> void:
 	print("Dimensiune panou: ", new_board_size)
 
 func start_level(level: int) -> void:
+	result_overlay.hide()
 	# Anulăm temporizările rundei anterioare.
 	timer.stop()
 	game_timer.stop()
@@ -691,3 +702,215 @@ func finish_level(won: bool, message: String) -> void:
 
 	# În etapa următoare vom afișa panoul de rezultat aici.
 	print(message)
+	show_result_panel(won, message)
+
+func create_result_panel() -> void:
+	# Stratul 10 afișează panoul deasupra jocului.
+	var layer := CanvasLayer.new()
+	layer.name = "ResultLayer"
+	layer.layer = 10
+	add_child(layer)
+
+	# Fundalul întunecat acoperă ecranul.
+	# MOUSE_FILTER_STOP împiedică apăsările pe interfața din spate.
+	result_overlay = ColorRect.new()
+	result_overlay.color = Color(0, 0, 0, 0.55)
+	result_overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+
+	# Panoul este ascuns cât timp se joacă nivelul.
+	result_overlay.hide()
+	layer.add_child(result_overlay)
+	result_overlay.set_anchors_and_offsets_preset(
+		Control.PRESET_FULL_RECT
+	)
+
+	# Acest container ține panoul în centrul ecranului.
+	var center := CenterContainer.new()
+	result_overlay.add_child(center)
+	center.set_anchors_and_offsets_preset(
+		Control.PRESET_FULL_RECT
+	)
+
+	var panel := PanelContainer.new()
+	panel.custom_minimum_size = Vector2(680, 0)
+	center.add_child(panel)
+
+	# Folosim același font ca pe bara nivelului.
+	var popup_theme := Theme.new()
+	popup_theme.default_font = level_value.get_theme_font("font")
+	popup_theme.default_font_size = 32
+
+	popup_theme.set_color(
+		"font_color", "Label", Color("#214b25")
+	)
+
+	for property in [
+		"font_color",
+		"font_hover_color",
+		"font_pressed_color",
+		"font_focus_color"
+	]:
+		popup_theme.set_color(
+			property, "Button", Color("#214b25")
+		)
+
+	panel.theme = popup_theme
+
+	# Aspectul panoului: crem, cu margine verde.
+	var panel_style := StyleBoxFlat.new()
+	panel_style.bg_color = Color("#fff5dc")
+	panel_style.border_color = Color("#4c8d15")
+	panel_style.set_border_width_all(5)
+	panel_style.set_corner_radius_all(24)
+	panel_style.set_content_margin_all(32)
+
+	panel.add_theme_stylebox_override("panel", panel_style)
+
+	# Culorile butoanelor în cele trei stări.
+	var button_colors := {
+		"normal": Color("#82ce24"),
+		"hover": Color("#9ae144"),
+		"pressed": Color("#6db91a")
+	}
+
+	for state in button_colors:
+		var style := StyleBoxFlat.new()
+		style.bg_color = button_colors[state]
+		style.set_corner_radius_all(14)
+		style.set_content_margin_all(12)
+
+		popup_theme.set_stylebox(state, "Button", style)
+
+	# Așezăm textele și butoanele unul sub altul.
+	var content := VBoxContainer.new()
+	content.add_theme_constant_override("separation", 18)
+	panel.add_child(content)
+
+	result_title = Label.new()
+	result_message = Label.new()
+	result_stats = Label.new()
+
+	for label in [
+		result_title,
+		result_message,
+		result_stats
+	]:
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		content.add_child(label)
+
+	result_title.add_theme_font_size_override("font_size", 48)
+	result_stats.add_theme_font_size_override("font_size", 28)
+
+	# Creăm cele două butoane.
+	result_next_button = Button.new()
+	result_next_button.text = "Nivelul următor"
+
+	result_retry_button = Button.new()
+
+	for button in [
+		result_next_button,
+		result_retry_button
+	]:
+		button.custom_minimum_size = Vector2(0, 72)
+		content.add_child(button)
+
+	# Conectăm semnalele o singură dată.
+	result_next_button.pressed.connect(_on_result_next_pressed)
+	result_retry_button.pressed.connect(_on_result_retry_pressed)
+
+
+
+func show_result_panel(won: bool, message: String) -> void:
+	# Alegem titlul în funcție de rezultat.
+	if won:
+		if current_level == MAX_LEVEL:
+			result_title.text = (
+				"Ai încheiat nivelul %d!" % MAX_LEVEL
+			)
+		else:
+			result_title.text = "Bravo!"
+	else:
+		result_title.text = "Mai încearcă!"
+
+	# Mesajul vine din finish_level():
+	# timp expirat, limită de greșeli sau toate perechile găsite.
+	result_message.text = message
+
+	# Afișăm rezultatele rundei.
+	# Folosim textul deja păstrat pe bara timpului,
+	# deoarece GameTimer este acum oprit.
+	result_stats.text = (
+		"Nivelul %d  •  Perechi: %d/%d\n"
+		+ "Greșeli: %d/%d  •  Timp rămas: %s"
+	) % [
+		current_level,
+		matched_pairs,
+		pairs_count,
+		mistakes,
+		max_mistakes,
+		time_value.text
+	]
+
+	# Următorul nivel este disponibil numai după victorie
+	# și numai dacă nu am terminat deja nivelul 300.
+	result_next_button.visible = (
+		won and current_level < MAX_LEVEL
+	)
+
+	# Același buton poate relua atât un nivel pierdut,
+	# cât și unul câștigat.
+	result_retry_button.text = (
+		"Joacă din nou" if won else "Reîncearcă"
+	)
+
+	result_overlay.show()
+
+	# Alegem butonul selectat pentru utilizarea cu tastatura.
+	var first_button: Button = result_retry_button
+
+	if result_next_button.visible:
+		first_button = result_next_button
+
+	# Cu Tab, selecția rămâne pe butoanele panoului.
+	result_retry_button.focus_next = (
+		result_retry_button.get_path_to(first_button)
+	)
+	result_retry_button.focus_previous = (
+		result_retry_button.focus_next
+	)
+
+	result_next_button.focus_next = (
+		result_next_button.get_path_to(result_retry_button)
+	)
+	result_next_button.focus_previous = (
+		result_next_button.focus_next
+	)
+
+	first_button.grab_focus()
+
+
+func _on_result_retry_pressed() -> void:
+	# Acceptăm acțiunea numai după terminarea rundei.
+	if not game_finished:
+		return
+
+	# Reluăm același nivel.
+	# start_level() resetează timpul, greșelile și perechile.
+	# create_cards() amestecă din nou cartonașele.
+	start_level(current_level)
+
+
+func _on_result_next_pressed() -> void:
+	# Putem avansa numai după o victorie.
+	# Verificarea împiedică și avansarea repetată
+	# dacă butonul este apăsat foarte rapid.
+	if not game_finished or not level_won:
+		return
+
+	# Nu există nivelul 301.
+	if current_level >= MAX_LEVEL:
+		return
+
+	start_level(current_level + 1)
